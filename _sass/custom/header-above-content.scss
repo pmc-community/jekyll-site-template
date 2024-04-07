@@ -1,0 +1,31 @@
+// HEADER ABOVE CONTENT SETTINGS
+$headerBackground: $siteHeaderBackground;
+$stickyElementPosition: $pos-sticky;
+$stickyElementTopOffset: $m-top0px;
+$stickyElementZIndex: $z-max;
+$correctionMargin: $m-corr-1px; // to mask the 1px border between the content area and left sidebar
+$elementsPositionInHeader: $al-h-left; // if algolia is active, otherwise should be removed
+$auxContainerPaddingRight: $siteHeaderPaddingRight;
+$auxItemHeightToFitInHeader: $sz-h-65p;
+$auxItemVerticalAlignment: $al-v-center;
+$algoliaSearchBtnVerticalAlignment: $al-v-center;
+$algoliaOverlay:$c-transparent; // to mask the 1px white line between the search modal and the header
+$defaultSearchHeightToFitInHeader: $sz-h-60p;
+$defaultSearchVerticalAlignment: $al-v-center;
+$defaultSearchPaddingLeft:$p-20px;
+
+@import 'meta.scss';
+
+// STYLE HEADER ABOVE THE CONTENT
+$siteHeaderElements: (
+    elementsForBackground:('.site-header', '.site-header a', '.site-title', '.search', '.aux-nav', '.main-header'),
+    stickyElement: '#main-header',
+    auxLinksContainer: '.aux-nav',
+    auxLinksItem: '.aux-nav .aux-nav-list-item',
+    algoliaSearchBtn: '#docsearch',
+    algoliaSearchBox: '.DocSearch-Container',
+    defaultSearch: '.search' //may be not active if site search is with algolia. (de)activation in _config.yml
+    
+);
+
+@include headerAboveContent($siteHeaderElements);
