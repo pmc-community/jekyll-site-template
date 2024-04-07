@@ -1,0 +1,92 @@
+// define the custom vars to be used instead of theme defaults
+// as much as possible, custom vars must be based on them defaults
+
+// colors
+// check with jtd if the global var exists, when dev this may raise error since the scss file is not actually local
+$sidebarBackground: $body-background-color; 
+$textColor: $body-text-color;
+$c-neutral: #eaeaea;
+$c-black: #000;
+$c-transparent: #00000000;
+
+// font family to be poppins
+$siteFontFamily: 'poppins';
+$siteTitleFontWeight: 600;
+$f-thin:400;
+$f-medium:500;
+$f-semiBold: 600;
+
+$siteHeaderBackground: $purple-200;
+$siteHeaderTextColor: #fff;
+
+// spaces
+$s-20px: 20px;
+$s-10px: 10px;
+$s-30px: 30px;
+
+// sizes, widths, heights
+$sz-full: 100%;
+$sz-70p: 70%;
+$sz-20p: 20%;
+$sz-25px: 25px;
+$sz-h-65p: 65%;
+$sz-h-60p: 60%;
+
+
+// paddings
+$p-10px: 10px;
+$p-20px: 20px;
+$p-0px:0px;
+$p-1rem:1rem;
+
+// margins
+$m-10px: $s-10px;
+$m-20px: $s-20px;
+$m-top0px: 0;
+$m-corr-1px: -1px;
+
+// borders
+@mixin thinBorder {
+    border: $border;
+    border-color: $border-color;
+}
+$b-thin: 1px;
+$b-2px: 2px;
+$b-solid: solid;
+$b-dot: dotted;
+$b-DotThinNeutral: $b-thin $b-dot $c-neutral;
+$b-Sol2pxBlack: $b-2px $b-solid $c-black;
+$b-none:none;
+
+$brad-10px: 10px;
+
+// content area config
+$contentAreaWidth: $sz-70p;
+
+// sidebar config
+$sideBarFixedWidth: $sz-20p;
+$sideBarMinWidth:$sideBarFixedWidth;
+$contentAreaLeftMargin: $sideBarFixedWidth;
+$siteHeaderPaddingLeft: map-get($spacers, sp-7);
+$siteHeaderPaddingRight: $siteHeaderPaddingLeft;
+$siteTitlePaddingLeft: $p-1rem; //because of the logo
+
+// decorations
+$dec-none: none;
+
+// positions
+$pos-fixed: fixed;
+$pos-sticky: sticky;
+
+// cursors
+$c-pointer: pointer;
+
+// display
+$d-hidden: none;
+
+// z-index
+$z-max: 999;
+
+// alignment
+$al-h-left: flex-end;
+$al-v-center: center;
