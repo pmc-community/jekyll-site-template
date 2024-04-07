@@ -1,1 +1,1 @@
-Documentation site for Figma Resources
+Kekyll Template for Documentation Site
