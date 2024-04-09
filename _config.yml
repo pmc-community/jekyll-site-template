@@ -1,0 +1,135 @@
+# Site settings
+
+title: Figma Resources
+email: florin@innohub.space
+description: >- # this means to ignore newlines until next yml key
+  Plugin Templates | Plugins | Design Systems
+baseurl: "/"
+url: "https://figmares.innohub.space" # the base hostname & protocol for the site
+
+# Build settings
+#theme: just-the-docs
+remote_theme: just-the-docs/just-the-docs@v0.8.0 # it works only with remote_theme. as of April 2024, v0.8.0 is the latest that works
+
+#plugins:
+#  - jekyll-feed # activate only if the site has posts
+
+# DEFAULT EXCLUDES (SHOWN HERE JUST TO BE AWARE OF THEM)
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+
+aux_links:
+  "GitHub":
+    - "//github.com/pmc-community/figma"
+  "About us":
+    - "//pmc-expert.com"
+
+# Makes Aux links open in a new tab. Default is false
+aux_links_new_tab: true
+
+# we go with agolia, otherwise set to true or remove it (true is default)
+search_enabled: false
+
+ga_tracking: G-T86D5YQ5WF # ihs
+ga_tracking_anonymize_ip: true
+
+# site vars (nested)
+siteVars:
+  siteTestBadge: '[![](https://img.shields.io/badge/System%20Analysis-YES-1478B6?style=for-the-badge&logo=react)](#)'
+  siteTestVar: site test variable
+
+# site configuration
+# content markers
+siteConfig:
+  extContentMarkers:
+    startExposedSection: '<!-- START_EXPOSED_SECTION -->'
+    endExposedSection: '<!-- END_EXPOSED_SECTION -->'
+  algoliaSearch:
+    appId: 'LU8ABE5OK9'
+    apiKey: '93c6d0120f05c7d6a1fe3136c0122626'
+    indexName: 'figmares-innohub'
+    container: '#docsearch'
+    debug: false
+    maxResultsPerGroup: 20
+  feedbackForm:
+    container: '#docFeedbackForm'
+  pageToc:
+    tocContainer: '#toc_container'
+    toc: '#toc'
+    tocLoadedEvent: 'page_toc_loaded'
+    scrollSpyBase: 'body'
+    desktop:
+      referenceContainer: '.main-content'
+      offsetFromHeader: 25
+      offsetFromReferenceContainer: 100
+      leftSideBar: '.side-bar'
+  colSchemaCorrections:
+    elementsWithBackgroundAffected: 'body'
+    backgroundColorOnElementsAffected:
+      light: '#fff'
+      dark: '#27262b'
+    elementsWithTextAffected: 'body, p, ul li, ol li, li a'
+    textColorOnElementsAffected:
+      light: '#000'
+      dark: '#dee2e6'
+    elementsWithBorderTopAffected: '.site-footer'
+    borderTopOnElementsAffected:
+      light: '1px solid #eeebee'
+      dark: '1px solid #44434d'
+  goToTopBtn:
+    btnContainer: '.main'
+    # don't forget to escape double quotes
+    content: '<div id=\"ihs_go_to_top_btn\"><img src=\"/assets/img/goToTop.png\" loading=\"lazy\" alt=\"tick-circle\"></div>'
+    topOfPageMarker: '<div id =\"ihs_top_of_page\"></div>'
+    topOfPageId: '#ihs_top_of_page'
+    btnId: '#ihs_go_to_top_btn'
+    topOfPageContainer: '.main-content-wrap'
+  externalContent:
+    containerToIncludeExternalContent: '.main-content main'
+  themeSwitch:
+    cookie: 'JTDThemeCookie'
+    btnContent: '<img id=\"themeSwitcher\" class=\"themeSwitcher mx-2\" src=\"/assets/img/icon-dark-mode-100.png\" />'
+    btnContainer: '.aux-nav-list'
+    append: false
+    btnId: '#themeSwitcher'
+  siteFooter:
+    container: '.site-footer'
+    rows:
+      - content: '<div class=\"footer_first_row\"><a href=\"https://innohub.space/eng/terms-of-service/\" target=_blank>Terms</a> | <a href=\"https://innohub.space/eng/privacy/\" target=_blank>Privacy</a> | <a href=\"https://innohub.space/eng/cookie-policy/\" target=_blank>Cookies</a></div>'
+      - content: '<div class=\"footer_first_row\">Copyright <a href=\"https://pmc-expert.com\" target=_blank>PMC</a></div>'
+  headerAboveContent:
+    headerID: '#main-header'
+    offsetWhenScroll: 20
+  headerAboveSideBar:
+    logo: '<a href=\"/\"><img class = \"site_logo\" src=\"/assets/img/logo.png\" /></a>'
+    container: '.site-header'
+
+
+
+# heading anchors must be false because it generates a weird effect of showing huge blue anchors 
+# when loading the page and until the page is loaded. nevertheless, page ToC is good and enough
+heading_anchors: false
+
+# define the folder where jekyll will look for collection, otherwise will look in the root folder
+collections_dir: doc-contents
+
+collections:
+  collection-1:
+    permalink: "/:collection/:path"
+    output: true
+
+# see https://just-the-docs.com/docs/configuration/#document-collections
+just_the_docs:
+  collections:
+    collection-1:
+      name: Collection One
+      nav_fold: true
