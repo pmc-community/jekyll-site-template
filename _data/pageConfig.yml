@@ -1,8 +1,0 @@
-"/intro/":
-  prop1: "testProp1_intro"
-"/pwc/":
-  prop1: "testProps_pwc"
-"/xyz/":
-  prop1: "testProps_pwc"
-"collection-2/Z/z/":
-  prop1: "z page"
