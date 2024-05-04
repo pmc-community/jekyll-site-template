@@ -1,0 +1,176 @@
+---
+layout: page
+---
+{% comment %}
+
+this is how to handle some arrays which are not recognised by liquid as arrays but as strings
+objects are fine, but simple arrays may be seen as strings
+{% assign tagsArray = site.data.tag_list  | remove: '["' | remove: '"]' | split: '","' %}
+
+or using the custom filter
+{% assign tagsArray= site.data.tag_list  | json_string_to_object %}
+
+{% endcomment %}
+
+<!-- content from the page using this template -->
+{{ content }}
+
+<!-- Tag search -->
+{% assign tagsArray= site.data.tag_list  | json_string_to_object %}
+<div id="cloud_tag_search_container" class="container mb-5">
+    <div class=" card shadow bg-transparent">
+        <div class="card-header d-flex justify-content-between">
+            <span class="fs-6 fw-medium">Search tag</span>
+        </div>
+        <div class="card-body d-flex justify-content-between">
+            <input type="text" autocomplete="off" class="form-control" id="tagSearchInput" placeholder="type, select, hit enter ...">
+            <ul siteFunction="searchTagList" id="tagSearchResults">
+                {% for tagItem in tagsArray %}
+                    <li siteFunction="searchTagListItem">{{tagItem}}</li>
+                {% endfor %}
+            </ul>
+            <button 
+                siteFunction="openTagCloud" 
+                id="openTagCloud" 
+                type="button" 
+                class="btn btn-sm btn-success"
+                title = "Open Tag Cloud">
+                Tag Cloud
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Tag cloud -->
+<div id="cloud_tag_container" class="container">
+    <div class=" card shadow bg-transparent overflow-y-auto" style="max-height: 300px">
+        <div class="card-header d-flex justify-content-between">
+            <span class="fs-6 fw-medium">Tag cloud</span>
+            <button siteFunction="btnClose" whatToClose="#cloud_tag_container" type="button" class="btn-close" aria-label="Close"></button>
+        </div>
+        <div class="card-body d-flex">
+            {% for tagItem in site.data.tags_details %}
+                <button 
+                    siteFunction="tagButton" 
+                    id="{{ tagItem[0] }}" type="button" 
+                    class="focus-ring focus-ring-warning px-3 mr-5 btn btn-sm btn-primary position-relative"
+                    title = "Details for tag {{ tagItem[0] }}">
+                    {{ tagItem[0] }}
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg-warning">
+                        {{ tagItem[1]["numPages"] }}
+                        <span class="visually-hidden">number of pages</span>
+                    </span>
+                </button>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- Tag details -->
+<div id="tag_details" class="container my-5 " >
+    {% for tagItem in site.data.tags_details %}
+        <div tagReference="{{ tagItem[0] }}" siteFunction="tagDetails" class="d-none card shadow bg-transparent">
+            <div class="card-header d-flex justify-content-between">
+                <span class="fs-6 fw-medium">Pages having tag: 
+                    <button siteFunction="tagButton" id="{{ tagItem[0] }}" type="button" class="focus-ring focus-ring-warning px-3 mr-5 btn btn-sm btn-primary position-relative">
+                        {{ tagItem[0] }}       
+                    </button>
+                </span>
+                <button siteFunction="btnClose" whatToClose='div[tagReference="{{ tagItem[0] }}"]' type="button" class="btn-close" aria-label="Close"></button>
+            </div>
+            <div class="card-body">
+                <table siteFunction="tagDetailsPageTable" class="table table-hover" tagReference="{{ tagItem[0] }}">
+                    <thead>
+                        <tr>
+                            <th>Page</th>
+                            <th>Actions</th>
+                            <th>Excerpt</th>
+                            <th>Other Tags</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            {% for pageItem in tagItem[1]["pages"] %}
+                                <tr>
+
+                                    <td class="fw-normal align-self-center align-middle">
+                                        <span>{{ pageItem.title }}</span>
+                                    </td>
+
+                                    <td class="fw-normal align-self-center align-middle">
+                                        <div class="btn-group">
+                                            <a 
+                                                siteFunction="tagPageItemLinkToDoc" 
+                                                class="btn btn-sm btn-info" 
+                                                href="{{ pageItem.permalink }}"
+                                                title="Read {{ pageItem.title }}">
+                                                <i class="bi bi-book" style="font-size:1.2rem"></i>
+                                            </a>
+
+                                            <button 
+                                                siteFunction="tagPageItemSaveForLaterRead" 
+                                                pageRefPermalink = "{{ pageItem.permalink }}" 
+                                                pageRefTitle="{{ pageItem.title }}" 
+                                                class="btn btn-sm btn-success"
+                                                title="Save {{ pageItem.title }} for later read">
+                                                <i class="bi bi-bookmark-plus" style="font-size:1.2rem"></i>
+                                            </button>
+
+                                            <button 
+                                                siteFunction="tagPageItemRemoveFromSavedItems" 
+                                                pageRefPermalink = "{{ pageItem.permalink }}" 
+                                                pageRefTitle="{{ pageItem.title }}" 
+                                                class="btn btn-sm btn-warning"
+                                                title="Remove {{ pageItem.title }} from saved documents">
+                                                <i class="bi bi-bookmark-x" style="font-size:1.2rem"></i>
+                                            </button>
+                                        
+                                        </div>
+                                    </td>
+
+                                    <td class="fw-normal align-self-center align-middle">
+                                        <span>
+                                            {% capture permalink_param %}
+                                                {
+                                                    "permalink": "{{pageItem.permalink | escape}}"
+                                                }
+                                            {% endcapture %}
+                                            {% PageExcerpt {{ permalink_param | json_string_to_object }} %}
+                                        </span>
+                                    </td>
+                                    
+                                    <td class="fw-normal align-self-center align-middle">
+                                        <span>
+                                            {% capture permalink_param %}
+                                                {
+                                                    "permalink": "{{pageItem.permalink | escape}}",
+                                                    "except": ["{{ tagItem[0] }}"]
+                                                }
+                                            {% endcapture %}
+
+                                            {% capture pageTags %}
+                                                {% PageTags {{ permalink_param | json_string_to_object }} %}
+                                            {% endcapture %}
+                                            {% assign pageTagsArray = pageTags | json_string_to_object  %}
+                                            {% for pageTag in pageTagsArray %}
+                                                <button 
+                                                    siteFunction="pageTagButton" 
+                                                    id="pageTag_{{ pageTag }}" type="button" 
+                                                    class="focus-ring focus-ring-warning px-3 mr-2 my-1 btn btn-sm btn-primary position-relative"
+                                                    title = "Details for tag {{ pageTag }}">
+                                                    {{ pageTag }}
+                                                </button>
+                                            {% endfor %}
+                                        </span>
+                                    </td>
+
+                                </tr>
+                            {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<!-- setting up the page -->
+<script>setTagsSupport();</script>
