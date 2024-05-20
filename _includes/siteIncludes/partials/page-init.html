@@ -1,8 +1,0 @@
-<script>
-  const settings = JSON.parse('{{ site.data.siteConfig }}'.replaceAll(/=>/g,':'));
-  console.log(settings);
-  let pageSettings = {};
-  const page = "{{ page.url }}";
-  pageSettings = JSON.parse('{{ site.data.pageConfig }}'.replaceAll(/=>/g,':'))[page];
-  console.log(pageSettings);
-</script>
