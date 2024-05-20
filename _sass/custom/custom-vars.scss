@@ -1,0 +1,150 @@
+// define the custom vars to be used instead of theme defaults
+// colors
+$c-neutral: #eaeaea;
+$c-black: #000;
+$c-transparent: #00000000;
+$c-purple:#4e26af;
+$c-grey:#44434d;
+$c-grey-alt: #cccccc49;
+$c-white: #fff;
+$c-light-grey: #f0f0f0;
+$c-error-message: #dc3545;
+$c-not-set: initial;
+$c-metal-grey: #f5f6fa;
+
+// typography
+$siteFontFamily: 'poppins';
+$textColor: $c-black;
+$siteTitleFontWeight: 600;
+$f-thin:400;
+$f-medium:500;
+$f-semiBold: 600;
+$fs-body:14px;
+$fs-small: 12px;
+
+$siteHeaderBackground: $c-purple;
+$siteHeaderTextColor: #fff;
+
+// spaces
+$s-20px: 20px;
+$s-8px: 8px;
+$s-10px: 10px;
+$s-30px: 30px;
+$s-50px: 50px;
+$s-0px:0px;
+$s-2px:2px;
+$s-5px:5px;
+$s-1rem:1rem;
+$s-neg-1px:-1px;
+$s-neg-5px:-5px;
+$s-neg-25px: -25px;
+
+// sizes, widths, heights
+$sz-full: 100%;
+$sz-70p: 70%;
+$sz-80p: 80%;
+$sz-20p: 20%;
+$sz-40p: 40%;
+$sz-50p: 50%;
+$sz-25px: 25px;
+$sz-h-65p: 65%;
+$sz-h-60p: 60%;
+$sz-30px: 30px;
+$sz-35px: 35px;
+$sz-200px: 200px;
+$sz-300px: 300px;
+$sz-6rem: 6rem;
+
+// paddings
+$p-5px:$s-5px;
+$p-8px: $s-8px;
+$p-10px: $s-10px;
+$p-20px: $s-20px;
+$p-50px:$s-50px;
+$p-0px:$s-0px;
+$p-1rem:$s-1rem;
+$p-2px:$s-2px;
+
+// margins
+$m-0px:$s-0px;
+$m-10px: $s-10px;
+$m-20px: $s-20px;
+$m-top0px: $s-0px;
+$m-corr-1px: $s-neg-1px;
+$m-50px: $s-50px;
+
+// borders
+$b-thin: 1px;
+$b-2px: 2px;
+$b-solid: solid;
+$b-dot: dotted;
+$b-DotThinNeutral: $b-thin $b-dot $c-neutral;
+$b-SolThinNeutral: $b-thin $b-solid $c-neutral;
+$b-Sol2pxBlack: $b-2px $b-solid $c-black;
+$b-Sol2pxWhite: $b-2px $b-solid $c-white;
+$b-SolThinGrey: $b-thin $b-solid $c-grey;
+$b-none:none;
+
+// border radius
+$brad-10px: 10px;
+$brad-5px: 5px;
+$brad-50p: 50%;
+$brad-0px: 0px;
+
+// content area config
+$contentAreaWidth: $sz-70p;
+
+// sidebar config
+$sideBarFixedWidth: $sz-20p;
+$sideBarMinWidth:$sideBarFixedWidth;
+$contentAreaLeftMargin: $sideBarFixedWidth;
+$siteHeaderPaddingLeft: $p-50px;
+$siteHeaderPaddingRight: $siteHeaderPaddingLeft;
+$siteTitlePaddingLeft: $p-1rem; //because of the logo
+
+// decorations
+$dec-none: none;
+$dec-underline: underline;
+
+// positions
+$pos-fixed: fixed;
+$pos-sticky: sticky;
+$pos-absolute: absolute;
+$pos-top-neg-5px: $s-neg-5px;
+$pos-left-neg-25px: $s-neg-25px;
+
+// cursors
+$cr-pointer: pointer;
+
+// display
+$d-hidden: none;
+$d-block: block;
+
+// z-index
+$z-max: 999;
+$z-1:1;
+$z-9:9;
+
+//element alignment
+$al-h-left: flex-end;
+$al-v-center: center;
+$al-v-baseline: baseline;
+
+//text alignment
+$tal-h-left: left;
+
+// lists
+$lstyle-none: none;
+
+// overflows
+$ov-auto: auto;
+$ov-none: hidden;
+
+// shadows
+$sh-none: none;
+
+// container fill
+$fl-all-available-space: auto; //this is flex:auto
+
+// list styles
+$ls-none: none;

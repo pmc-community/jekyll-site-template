@@ -1,0 +1,24 @@
+#!/bin/bash
+#bundle exec jekyll build
+#rackup config.ru
+
+
+#!/bin/bash
+
+# Function to run Jekyll build with watch
+run_jekyll() {
+  echo "Starting Jekyll build with watch..."
+  bundle exec jekyll build --watch
+}
+
+# Function to run Rack server
+run_rackup() {
+  echo "Starting Rack server..."
+  bundle exec rackup config.ru
+}
+
+# Run Jekyll build in background
+run_jekyll &
+
+# Run Rack server in foreground
+run_rackup

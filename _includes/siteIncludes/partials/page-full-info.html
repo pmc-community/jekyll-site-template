@@ -1,0 +1,189 @@
+<div 
+    class="offcanvas offcanvas-start" 
+    data-bs-scroll="true" 
+    id="offcanvasPageFullInformation"  
+    data-bs-config='{"keyboard": false}' 
+    data-bs-focus="false">
+    
+    <div class="offcanvas-header px-5 pt-5">
+        <span class="offcanvas-title fs-5" id="offcanvasPageFullInformationTitle">Page information</span>
+        <button siteFunction="offcanvasPageFullInfoClose" type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+    <div class="offcanvas-body px-5" id="offcanvasPageFullInformationBody">
+       
+        <!-- general -->
+        <div siteFunction="offcanvasPageFullInfoPageGeneralCard" class="card shadow bg-transparent mb-5">
+            <div class="card-header d-flex justify-content-between">
+                <span siteFunction="offcanvasPageFullInfoPageOpenGeneral" class="fs-6 fw-medium alwaysCursorPointer">General</span>
+                <button siteFunction="btnClose" whatToClose='div[siteFunction="offcanvasPageFullInfoPageGeneral"]' type="button" class="btn-close" aria-label="Close"></button>
+            </div>
+            <div siteFunction="offcanvasPageFullInfoPageGeneral" class="card-body">
+                
+                <!-- title and last update -->
+                <div class=" d-flex justify-content-between">
+                    <!-- title -->
+                    <div 
+                        siteFunction="offcanvasPageFullInfoPageGeneralTitle"
+                        class="mb-2">
+                        <span class="fw-medium">Title:</span> 
+                        <a 
+                            siteFunction="offcanvasPageFullInfoPageGeneralDocLink" href="#">
+                            DocLink
+                        </a>
+                    </div>
+                    <!-- last update -->
+                    <div 
+                        siteFunction="offcanvasPageFullInfoPageGeneralLastUpdate"
+                        class="mb-2">
+                        <span class="fw-medium">Last update:</span> 
+                        <span siteFunction="offcanvasPageFullInfoPageGeneralLastUpdateDate" class="fw-medium">docLAstUpdate</span>
+                    </div>
+                </div>
+
+                <!-- excerpt -->
+                <div 
+                    siteFunction="offcanvasPageFullInfoPageGeneralExcerpt"
+                    class="mb-2">
+                    <span class="fw-medium">Excerpt:</span> 
+                    <span 
+                        siteFunction="offcanvasPageFullInfoPageGeneralExcerptText">
+                        Excerpt Text
+                    </span>
+                </div>
+
+                <!-- custom notes -->
+                <div 
+                    siteFunction="offcanvasPageFullInfoPageGeneralCustomNotes">
+                    <span class="fw-medium">Custom Notes:</span>
+
+                    <div 
+                        siteFunction="offcanvasPageFullInfoPageGeneralCustomNotesLimitsAlert" 
+                        class="alert alert-warning mt-2" role="alert">
+                        Notes are limited to 50 words or 250 characters.
+                    </div>
+
+                    <div 
+                        siteFunction="offcanvasPageFullInfoPageGeneralCustomNotesSavePageAlert" 
+                        class="alert alert-warning mt-2" role="alert">
+                        Save page in saved items to be able to add custom notes.
+                    </div>
+                    
+                    <div siteFunction="offcanvasPageFullInfoPageGeneralCustomNotesContainer">
+
+                        <table 
+                            siteFunction="offcanvasPageFullInfoPageGeneralCustomNotesTable" 
+                            id ="offcanvasPageFullInfoPageGeneralCustomNotesTable" 
+                            class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th siteFunction="tableDateField">Date</th>
+                                    <th>Note</th>
+                                    <th>ID</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        
+                        <div class="form-group">
+                            <label class="fw-medium" for="offcanvasPageFullInfoPageGeneralCustomNotesEdit">Add/Update/Delete Custom Note</label>
+                            <textarea class="form-control mb-2" id="offcanvasPageFullInfoPageGeneralCustomNotesEdit" rows="3"></textarea>
+                            <div class = "d-flex justify-content-between">
+                                <div class="d-flex justify-content-start">
+                                    <button 
+                                        siteFunction="offcanvasPageFullInfoPageGeneralCustomNotesEditAdd" 
+                                        id="offcanvasPageFullInfoPageGeneralCustomNotesEditAdd" 
+                                        type="button" 
+                                        class="px-3 m-1 btn btn-sm btn-success position-relative offcanvasPageFullInfoPageGeneralCustomNoteButton">
+                                        Add      
+                                    </button>
+                                    <button 
+                                        siteFunction="offcanvasPageFullInfoPageGeneralCustomNotesEditUpdate" 
+                                        id="offcanvasPageFullInfoPageGeneralCustomNotesEditUpdate" 
+                                        type="button" 
+                                        class="px-3 m-1 btn btn-sm btn-warning position-relative offcanvasPageFullInfoPageGeneralCustomNoteButton disabled">
+                                        Update      
+                                    </button>
+                                    <button 
+                                        siteFunction="offcanvasPageFullInfoPageGeneralCustomNotesEditDelete" 
+                                        id="offcanvasPageFullInfoPageGeneralCustomNotesEditDelete" 
+                                        type="button" 
+                                        class="px-3 m-1 btn btn-sm btn-danger position-relative offcanvasPageFullInfoPageGeneralCustomNoteButton disabled">
+                                        Delete      
+                                    </button>
+                                </div>
+                                <div class="d-flex justify-content-end">
+                                    <span siteFunction="offcanvasPageFullInfoPageGeneralCustomNoteWords" class="align-middle mr-2">W: 0</span>
+                                    <span siteFunction="offcanvasPageFullInfoPageGeneralCustomNoteChars" class="align-middle">C: 0</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="card-footer">
+                <button 
+                    siteFunction="offcanvasPageFullInfoPageSaveToSavedItems" 
+                    class="btn btn-sm btn-success"
+                    title="Save page for later read">
+                    <i class="bi bi-bookmark-plus"></i>
+                </button>
+
+                <button 
+                    siteFunction="offcanvasPageFullInfoPageRemoveFromSavedItems" 
+                    class="btn btn-sm btn-warning"
+                    title="Remove page from saved documents">
+                    <i class="bi bi-bookmark-x"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- tags -->
+        <div siteFunction="offcanvasPageFullInfoPageTagsCard" class="card shadow bg-transparent mb-5">
+            <div class="card-header d-flex justify-content-between">
+                <span siteFunction="offcanvasPageFullInfoPageTagsOpen" class="fs-6 fw-medium alwaysCursorPointer">Page tags</span>
+                <button siteFunction="btnClose" whatToClose='div[siteFunction="offcanvasPageFullInfoPageTags"]' type="button" class="btn-close" aria-label="Close"></button>
+            </div>
+            <div siteFunction="offcanvasPageFullInfoPageTags" class="card-body">
+                <!-- page tags -->
+                <div siteFunction="offcanvasPageFullInfoPageTagsList" class="mb-2">
+                    <a 
+                        siteFunction="offcanvasPageFullInfoPageTagButton" 
+                        type="button" 
+                        class="focus-ring focus-ring-warning px-3 mr-5 my-2 btn btn-sm position-relative"
+                        href="#">
+                        tag
+                    </a>
+                </div>
+
+                <!-- tag editor -->
+                <div siteFunction="offcanvasPageFullInfoPageCustomTags">
+                    <div 
+                        siteFunction="offcanvasPageFullInfoPageTagsEditorMenubar"
+                        id="offcanvasPageFullInfoPageTagsEditorMenubar">
+                    </div>
+                    <div 
+                        siteFunction="offcanvasPageFullInfoPageCustomTagsAlert" 
+                        class="alert alert-warning mt-2" role="alert">
+                        Enter tags one by one and hit enter after each one. You can enter multiple tags in a single batch. When ready, hit enter again. Custom tags will be added to the page. Repeat as many times as you want. Tags are case insensitive (TaG is the same as tag or Tag). When entering tags, don't worry about duplicates, we will handle them. If some of the tags you entered are not added, it's because these are duplicates of existing ones. Right click (or press long on mobile) on a tag to remove it.
+                    </div>
+                    <div 
+                        siteFunction="offcanvasPageFullInfoPageTagsEditorToolbar"
+                        id="offcanvasPageFullInfoPageTagsEditorToolbar">
+                    </div>
+                    <div 
+                        siteFunction="offcanvasPageFullInfoPageTagsEditor" 
+                        id="offcanvasPageFullInfoPageTagsEditor"
+                        class="rounded">
+                    </div>
+                </div>
+                    
+            </div>
+        </div>
+    
+    </div>
+
+</div>
