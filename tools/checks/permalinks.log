@@ -1,3 +1,0 @@
-Inconsistent pattern for permalink "collection-2/X/x/" → doc-contents/_collection-2/x.md; Consider to use: "/collection-2/X/x/"
-Inconsistent pattern for permalink "/cat-info" → doc-contents/_tools/cat-info.html; Consider to use: "/cat-info/"
-Inconsistent pattern for permalink "/tag-info" → doc-contents/_tools/tag-info.html; Consider to use: "/tag-info/"
