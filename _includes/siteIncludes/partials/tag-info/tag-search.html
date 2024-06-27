@@ -1,0 +1,30 @@
+{% assign tagsArray= site.data.tag_list  | json_string_to_object %}
+    
+<div id="cloud_tag_search_container" class="container mb-5">
+    <div class=" card shadow bg-transparent">
+        <div class="card-header d-flex justify-content-between">
+            <span class="fs-6 fw-medium">Search tag</span>
+        </div>
+        <div class="card-body d-flex justify-content-between">
+            <input type="text" autocomplete="off" class="form-control" id="tagSearchInput" placeholder="type, select, hit enter ...">
+            <ul siteFunction="searchTagList" id="tagSearchResults">
+                {% for tagItem in tagsArray %}
+                    <li 
+                        siteFunction="searchTagListItem"
+                        tagType="siteTag"
+                        tagReference="{{tagItem}}">
+                        {{tagItem}}
+                    </li>
+                {% endfor %}
+            </ul>
+            <button 
+                siteFunction="openTagCloud" 
+                id="openTagCloud" 
+                type="button" 
+                class="btn btn-sm btn-success"
+                title = "Open Tag Cloud">
+                Tags
+            </button>
+        </div>
+    </div>
+</div>
