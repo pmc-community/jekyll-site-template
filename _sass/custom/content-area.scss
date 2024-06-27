@@ -1,0 +1,11 @@
+@import 'custom-vars.scss';
+// CONTENT AREA SETTINGS
+$contentAreaWidth: $sz-70p !default;
+$contentAreaMaxWidth: $sz-full !default;
+$contentAreaMarginLeft: $sideBarFixedWidth !default;
+@import 'meta.scss';
+
+// STYLE CONTENT AREA
+$content: '.main';
+@include contentArea($content);
+

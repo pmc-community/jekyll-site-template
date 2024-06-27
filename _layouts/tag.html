@@ -1,0 +1,31 @@
+---
+layout: page
+---
+{% comment %}
+
+this is how to handle some arrays which are not recognised by liquid as arrays but as strings
+objects are fine, but simple arrays may be seen as strings
+{% assign tagsArray = site.data.tag_list  | remove: '["' | remove: '"]' | split: '","' %}
+
+or using the custom filter
+{% assign tagsArray= site.data.tag_list  | json_string_to_object %}
+
+{% endcomment %}
+
+<!-- content from the page using this template -->
+{{ content }}
+
+<!-- Tag search -->
+{% include siteIncludes/partials/tag-info/tag-search.html %} 
+
+<!-- Tag cloud -->
+{% include siteIncludes/partials/tag-info/tag-cloud.html %} 
+
+<!-- Tag details -->
+{% include siteIncludes/partials/tag-info/tag-details.html %} 
+
+<!-- off canvas for page full information -->
+{% include siteIncludes/partials/page-full-info.html %} 
+
+<!-- setting up the page -->
+<script>setTagsSupport();</script>
