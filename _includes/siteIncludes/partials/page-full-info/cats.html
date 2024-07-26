@@ -1,0 +1,42 @@
+<!-- Cats -->
+<div siteFunction="offcanvasPageFullInfoPageCatsCard" class="card shadow bg-transparent mb-5">
+<div class="card-header d-flex justify-content-between">
+    <span siteFunction="offcanvasPageFullInfoPageCatsOpen" class="fs-6 fw-medium alwaysCursorPointer">Categories</span>
+    <button siteFunction="btnClose" whatToClose='div[siteFunction="offcanvasPageFullInfoPageCats"]' type="button" class="btn-close" aria-label="Close"></button>
+</div>
+<div siteFunction="offcanvasPageFullInfoPageCats" class="card-body">
+    <!-- page Cats -->
+    <div siteFunction="offcanvasPageFullInfoPageCatsList" class="mb-2">
+        <a 
+            siteFunction="offcanvasPageFullInfoPageCatButton" 
+            type="button" 
+            class="focus-ring focus-ring-warning px-3 mr-5 my-2 btn btn-sm text-danger fw-medium border-0 shadow-none position-relative"
+            href="#">
+            cat
+        </a>
+    </div>
+
+    <!-- Cat editor -->
+    <div siteFunction="offcanvasPageFullInfoPageCustomCats">
+        <div 
+            siteFunction="offcanvasPageFullInfoPageCatsEditorMenubar"
+            id="offcanvasPageFullInfoPageCatsEditorMenubar">
+        </div>
+        <div 
+            siteFunction="offcanvasPageFullInfoPageCustomCatsAlert" 
+            class="alert alert-warning mt-2" role="alert">
+            Enter Categories one by one and hit enter after each one. You can enter multiple categories in a single batch. When ready, hit enter again. Repeat as many times as you want. Right click (or press long on mobile) on a category to remove it.
+        </div>
+        <div 
+            siteFunction="offcanvasPageFullInfoPageCatsEditorToolbar"
+            id="offcanvasPageFullInfoPageCatsEditorToolbar">
+        </div>
+        <div 
+            siteFunction="offcanvasPageFullInfoPageCatsEditor" 
+            id="offcanvasPageFullInfoPageCatsEditor"
+            class="rounded">
+        </div>
+    </div>
+        
+</div>
+</div>

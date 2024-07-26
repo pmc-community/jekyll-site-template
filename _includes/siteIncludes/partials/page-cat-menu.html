@@ -1,0 +1,67 @@
+{% assign catMenu = site.data.ordered_categories | cat_main_menu %}
+
+{% if site.data.siteConfig.catMenu %}
+    {% if catMenu.catNo > 0 %}
+        <ul id="category-menu" class="pl-5 nav align-items-center">
+        {% for cat in catMenu.firstLevelMenuItems %}
+        <li class="nav-item">
+            {% assign rawCatUrl = "/cat-info?cat=" | append: cat %}
+            {% assign sanitizedCatUrl = rawCatUrl | sanitize_url %}
+            <a 
+                siteFunction="menuItemLevel1" 
+                class="fs-6 nav-link active" 
+                aria-current="page" 
+                href="{{ sanitizedCatUrl }}">
+                {{cat}}
+            </a>
+        </li>
+        {% endfor %}
+
+        {% if catMenu.hasMoreCat %}
+            <li class="nav-item">
+                <div class="dropdown" id="category-menu-more" >
+                    <a siteFunction="menuItemLevel1" class="btn shadow-none dropdown-toggle fs-6 bg-transparent border-0" role="button" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="manual">
+                        More
+                    </a>
+
+                    <ul class="dropdown-menu px-2" id="category-menu-more-list">
+                        {% for cat in catMenu.secondLevelMenuItems %}
+                            {% assign rawCatUrl = "/cat-info?cat=" | append: cat %}
+                            {% assign sanitizedCatUrl = rawCatUrl | sanitize_url %}
+                            <li>
+                                <a 
+                                    siteFunction="menuItemLevel2" 
+                                    class="dropdown-item fs-6" 
+                                    href="{{ sanitizedCatUrl }}">
+                                    {{cat}}
+                                </a>
+                            </li>
+                        {% endfor %}
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a siteFunction="menuItemLevel2" class="dropdown-item fs-6 fw-medium text-primary" href="/cat-info">Categories</a></li>
+                        <li><a siteFunction="menuItemLevel2" class="dropdown-item fs-6 fw-medium text-primary" href="/tag-info">Tags</a></li>
+                        <li><a siteFunction="menuItemLevel2" class="dropdown-item fs-6 fw-medium text-primary" href="/site-pages">Pages</a></li>
+                    </ul>
+
+                </div>
+            </li>
+        {% else %}
+            <li class="nav-item">
+                <div class="dropdown" id="category-menu-more" >
+                    <a siteFunction="menuItemLevel1" class="btn shadow-none dropdown-toggle fs-6 bg-transparent border-0" role="button" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="manual">
+                        More
+                    </a>
+                    <ul class="dropdown-menu px-2" id="category-menu-more-list">
+                        <li><a siteFunction="menuItemLevel2" class="dropdown-item fs-6 fw-medium text-primary" href="/cat-info">Categories</a></li>
+                        <li><a siteFunction="menuItemLevel2" class="dropdown-item fs-6 fw-medium text-primary" href="/tag-info">Tags</a></li>
+                        <li><a siteFunction="menuItemLevel2" class="dropdown-item fs-6 fw-medium text-primary" href="/site-pages">Pages</a></li>
+                    </ul>
+                </div>
+            </li>
+        {% endif %}
+
+        </ul>
+    {% endif %}
+{% endif %}
+
+
