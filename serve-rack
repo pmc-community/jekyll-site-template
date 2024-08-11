@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# PYTHON PRE-BUILD SCRIPTS
+pyEnable=$(grep 'pyEnable' _data/buildConfig.yml | awk '{print $2}')
+
+if [ "$pyEnable" = "true" ]; then
+  ./tools_py/pyScripts
+else
+  echo "pyEnable is false. Skipping the execution of python scripts."
+fi
+
+# PRE-FLIGHT CHECKS
+# that's good only for local dev environment
+# the deployment Github action ignores preFlight check flag
+preFlight=$(grep 'preFlight' _data/buildConfig.yml | awk '{print $2}')
+
+if [ "$preFlight" = "true" ]; then
+  ./check
+else
+  echo "HEADS UP!!! PRE-FLIGHT CHECKS WILL NOT RUN WHEN BUILDING IN PRODUCTION,  IT IS ONLY FOR DEV ..."
+  echo "preFlight check is false. Skipping pre-build site checking."
+fi
+
+
+# Function to run Jekyll build with watch
+run_jekyll() {
+  echo "Starting Jekyll build with watch..."
+  bundle exec jekyll build --watch
+}
+
+# Function to run Rack server
+run_rackup() {
+  echo "Starting Rack server..."
+  bundle exec rackup config.ru
+}
+
+# Run Jekyll build in background
+run_jekyll &
+
+# Run Rack server in foreground
+run_rackup
