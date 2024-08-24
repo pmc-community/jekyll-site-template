@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<div siteFunction="homePageContent" class="{{site.data.pageConfig["/"].additionalContentPadding}}">
+    
+    <!-- header section -->
+    <div siteFunction="homePageHeaderSection" class="py-5">
+        {% include siteIncludes/partials/home/header-section.html %}
+    </div>
+   
+    <!-- collections section -->
+    {% if site.data.pageBuildConfig["/"].sections.collections_section.enabledInHome %}
+        <div siteFunction="homePageCollctionsSection" class="mt-4 py-5">
+            {% include siteIncludes/partials/home/collections-section.html %}
+        </div>
+    {% endif %}
+
+    <!-- recent and popular section -->
+    <div siteFunction="homePageRecentAndPopularSection" class="py-5">
+        {% include siteIncludes/partials/home/recent-and-popular-section.html %}
+    </div>
+
+    <!-- recent and popular section -->
+    <div siteFunction="homePageStatsSection" class="py-5">
+        {% include siteIncludes/partials/home/stats-section.html %}
+    </div>
+
+    <!-- other content from the parent page (index.md) -->
+    {{content}}
+</div>
+
