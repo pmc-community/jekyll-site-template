@@ -1,0 +1,99 @@
+# Site settings
+
+title: Figma Resources
+email: florin@innohub.space
+description: >- # this means to ignore newlines until next yml key
+  Plugin Templates | Plugins | Design Systems
+baseurl: "/"
+url: "https://figmares.innohub.space"
+
+# Build settings
+# THEME CAN BE THE LAST AS BELOW IF DEPLOY TO GHP FROM ACTION
+theme: just-the-docs
+
+# THEME SOULD BE AS BELOW IF DEPLOY TO GHR FROM BRANCH
+#remote_theme: just-the-docs/just-the-docs@v0.8.0 # it works only with remote_theme. as of April 2024, v0.8.0 is the latest that works
+
+#plugins:
+#  - jekyll-feed # activate only if the site has posts
+
+# DEFAULT EXCLUDES (SHOWN HERE JUST TO BE AWARE OF THEM)
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+
+exclude:
+  - tools/
+  - tools_py/
+  - tools_sh/
+  - check
+  - test
+  - netlify.toml
+  - CNAME
+  - LICENSE
+  - README.md
+  - serve
+  - serve-rack
+  - config.ru
+  - .github/
+  - doc-raw-contents/
+  - _data/
+  - _plugins/
+  - _sass/custom/*.css
+  - assets/*.scss
+
+aux_links:
+  "GitHub":
+    - "//github.com/pmc-community/figma"
+  "About us":
+    - "//pmc-expert.com"
+
+# Makes Aux links open in a new tab. Default is false
+aux_links_new_tab: true
+
+# we go with algolia, otherwise set to true or remove it (true is default)
+search_enabled: false
+
+ga_tracking: G-T86D5YQ5WF # ihs
+ga_tracking_anonymize_ip: true
+
+# heading anchors must be false because it generates a weird effect of showing huge blue anchors 
+# when loading the page and until the page is loaded. nevertheless, page ToC is good and enough
+heading_anchors: false
+
+# define the folder where jekyll will look for collection, otherwise will look in the root folder
+collections_dir: doc-contents
+
+# MARKER COLLECTIONS START
+collections:
+  collection-1:
+    permalink: "/:collection/:path"
+    output: true
+  collection-2:
+    permalink: "/:collection/:path"
+    output: true
+  tools:
+    permalink: "/:collection/:path"
+    output: true
+
+# see https://just-the-docs.com/docs/configuration/#document-collections
+just_the_docs:
+  collections:
+    collection-1:
+      name: Collection One
+      nav_fold: true
+    collection-2:
+      name: Collection Two
+      nav_fold: true
+    tools:
+      name: Tools
+      nav_fold: true
+# MARKER COLLECTIONS END
