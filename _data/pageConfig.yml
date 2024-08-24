@@ -1,0 +1,6 @@
+"/":
+  additionalContentPadding: "p-5" # needs to be here because should be used to apply styles to other elements (e.g. page footer)
+  sections:
+    mostRecentAndPopular_section:
+      popularCatsToShow: 8
+      popularTagsToShow: 8

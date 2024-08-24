@@ -1,0 +1,12 @@
+@import 'custom-vars.scss';
+
+$pageExcerptInListItemsFontSize: $fs-0-75;
+$pageStatsSectionDocumentsListItemBtnSize: $sz-8rem;
+
+$homePageElements: (
+    pageExcerptInListItems: '.pageExcerptInListItems',
+    pageStatsSectionDocumentsListItemBtn: '.pageStatsSectionDocumentsListItemBtn'
+);
+
+@import 'meta.scss';
+@include homePage($homePageElements);
