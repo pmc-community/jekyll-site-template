@@ -1,0 +1,290 @@
+[
+  {
+    "title": "Introduction",
+    "permalink": "/intro/",
+    "categories": [
+      "general",
+      "intro"
+    ],
+    "tags": [
+      "t a g 1",
+      "tag2"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2024-08-11 23:02:58 +0300",
+    "lastUpdateUTC": 1723406578,
+    "createTime": "2024-08-11 23:02:58 +0300",
+    "createTimeUTC": 1723406578,
+    "relatedPages": [
+
+    ],
+    "autoSummary": "",
+    "similarByContent": [
+
+    ],
+    "readingTime": 0
+  },
+  {
+    "title": "Intro Child Page",
+    "permalink": "/intro/introChild/",
+    "categories": [
+
+    ],
+    "tags": [
+
+    ],
+    "excerpt": "",
+    "lastUpdate": "2024-08-11 23:02:59 +0300",
+    "lastUpdateUTC": 1723406579,
+    "createTime": "2024-08-11 23:02:59 +0300",
+    "createTimeUTC": 1723406579,
+    "relatedPages": [
+
+    ],
+    "autoSummary": "",
+    "similarByContent": [
+
+    ],
+    "readingTime": 0
+  },
+  {
+    "title": "Intro Grand Child Page",
+    "permalink": "/intro/introChild/introGrandChild/",
+    "categories": [
+
+    ],
+    "tags": [
+
+    ],
+    "excerpt": "",
+    "lastUpdate": "2024-08-11 23:02:59 +0300",
+    "lastUpdateUTC": 1723406579,
+    "createTime": "2024-08-11 23:02:59 +0300",
+    "createTimeUTC": 1723406579,
+    "relatedPages": [
+
+    ],
+    "autoSummary": "",
+    "similarByContent": [
+
+    ],
+    "readingTime": 0
+  },
+  {
+    "title": "Play with content",
+    "permalink": "/pwc/",
+    "categories": [
+      "general",
+      "content"
+    ],
+    "tags": [
+      "tag1",
+      "tag3",
+      "alfa"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2024-08-11 23:02:59 +0300",
+    "lastUpdateUTC": 1723406579,
+    "createTime": "2024-08-11 23:02:59 +0300",
+    "createTimeUTC": 1723406579,
+    "relatedPages": [
+
+    ],
+    "autoSummary": "",
+    "similarByContent": [
+
+    ],
+    "readingTime": 0
+  },
+  {
+    "title": "External content",
+    "permalink": "/ec/",
+    "categories": [
+      "c10",
+      "c12"
+    ],
+    "tags": [
+      "tag1",
+      "tag4",
+      "tag3"
+    ],
+    "excerpt": "a very nice excerpt for a dynamically created file, having the content imported from an external private GitHub repo",
+    "lastUpdate": "2024-08-11 23:02:59 +0300",
+    "lastUpdateUTC": 1723406579,
+    "createTime": "2024-08-11 23:02:59 +0300",
+    "createTimeUTC": 1723406579,
+    "relatedPages": [
+
+    ],
+    "autoSummary": "",
+    "similarByContent": [
+
+    ],
+    "readingTime": 0
+  },
+  {
+    "title": "Terms",
+    "permalink": "/terms/",
+    "categories": [
+
+    ],
+    "tags": [
+      "legal"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2024-08-11 23:02:59 +0300",
+    "lastUpdateUTC": 1723406579,
+    "createTime": "2024-08-11 23:02:59 +0300",
+    "createTimeUTC": 1723406579,
+    "relatedPages": [
+
+    ],
+    "autoSummary": "",
+    "similarByContent": [
+
+    ],
+    "readingTime": 0
+  },
+  {
+    "title": "Collection-1/G1",
+    "permalink": "/collection-1/g1/",
+    "categories": [
+
+    ],
+    "tags": [
+
+    ],
+    "excerpt": "",
+    "lastUpdate": "2024-08-11 23:02:59 +0300",
+    "lastUpdateUTC": 1723406579,
+    "createTime": "2024-08-11 23:02:59 +0300",
+    "createTimeUTC": 1723406579,
+    "relatedPages": [
+
+    ],
+    "autoSummary": "",
+    "similarByContent": [
+
+    ],
+    "readingTime": 0
+  },
+  {
+    "title": "Collection-1/G11",
+    "permalink": "/collection1/g11/",
+    "categories": [
+      "general",
+      "content"
+    ],
+    "tags": [
+      "bootstrap",
+      "tag1",
+      "exa"
+    ],
+    "excerpt": "this a sample excerpt for a file. this will be shown wherever exerpt is needed",
+    "lastUpdate": "2024-08-11 23:02:59 +0300",
+    "lastUpdateUTC": 1723406579,
+    "createTime": "2024-08-11 23:02:59 +0300",
+    "createTimeUTC": 1723406579,
+    "relatedPages": [
+
+    ],
+    "autoSummary": "",
+    "similarByContent": [
+
+    ],
+    "readingTime": 0
+  },
+  {
+    "title": "Collection-2/Y",
+    "permalink": "/collection-2/y/y/",
+    "categories": [
+
+    ],
+    "tags": [
+
+    ],
+    "excerpt": "",
+    "lastUpdate": "2024-08-15 11:59:43 +0300",
+    "lastUpdateUTC": 1723712383,
+    "createTime": "2024-08-11 23:02:59 +0300",
+    "createTimeUTC": 1723406579,
+    "relatedPages": [
+
+    ],
+    "autoSummary": "",
+    "similarByContent": [
+
+    ],
+    "readingTime": 0
+  },
+  {
+    "title": "Collection-2/Z",
+    "permalink": "/collection-2/Z/z/",
+    "categories": [
+      "general",
+      "intro"
+    ],
+    "tags": [
+
+    ],
+    "excerpt": "",
+    "lastUpdate": "2024-08-11 23:02:59 +0300",
+    "lastUpdateUTC": 1723406579,
+    "createTime": "2024-08-11 23:02:59 +0300",
+    "createTimeUTC": 1723406579,
+    "relatedPages": [
+
+    ],
+    "autoSummary": "",
+    "similarByContent": [
+
+    ],
+    "readingTime": 0
+  },
+  {
+    "title": "Collection-2/X",
+    "permalink": "collection-2/X/x/",
+    "categories": [
+
+    ],
+    "tags": [
+      "tag1"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2024-08-11 23:02:59 +0300",
+    "lastUpdateUTC": 1723406579,
+    "createTime": "2024-08-11 23:02:59 +0300",
+    "createTimeUTC": 1723406579,
+    "relatedPages": [
+
+    ],
+    "autoSummary": "",
+    "similarByContent": [
+
+    ],
+    "readingTime": 0
+  },
+  {
+    "title": "Subfolder/F1",
+    "permalink": "/sf/f1/",
+    "categories": [
+
+    ],
+    "tags": [
+
+    ],
+    "excerpt": "",
+    "lastUpdate": "2024-08-11 23:02:59 +0300",
+    "lastUpdateUTC": 1723406579,
+    "createTime": "2024-08-11 23:02:59 +0300",
+    "createTimeUTC": 1723406579,
+    "relatedPages": [
+
+    ],
+    "autoSummary": "",
+    "similarByContent": [
+
+    ],
+    "readingTime": 0
+  }
+]

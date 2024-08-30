@@ -1,0 +1,12 @@
+{% assign algolia = site.data.algolia_integration  | json_string_to_object %}
+{% if algolia.algoliaEnabled == 'true' %}
+  <div id="docsearch" class="pr-3"></div>
+  <script id="algoliaSearch" type="text/javascript">
+    algolia.setDocSearchBox();
+  </script>
+{% elsif site.search_enabled %}
+  <script>
+    $('#category-menu').addClass('justify-content-end');
+    $('.search').css('cssText', 'width: {{ site.data.buildConfig.JTDSearch.searchBoxWidth }} !important;');
+  </script>
+{% endif %}
