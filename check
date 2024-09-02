@@ -1,0 +1,31 @@
+#!/bin/bash
+
+if [ -n "$1" ]; then
+    silent=$1
+else
+    silent=true
+fi
+
+# init log
+ruby tools/log-init.rb
+
+# checking permalinks
+ruby tools/permalinks.rb  doc-contents true $silent
+
+# checking for broken include or include_relative tags
+ruby tools/brinclude.rb doc-contents false $silent
+
+# checking for broken internal links
+ruby tools/brlinks.rb doc-contents false $silent
+
+# checking for broken external links
+ruby tools/brextlinks.rb doc-contents false $silent
+
+# checking for broken external content
+ruby tools/brextcontent.rb doc-contents false $silent
+
+# checking for pageConfig issues
+ruby tools/pageConfig.rb  doc-contents false $silent
+
+# show log
+ruby tools/log-show.rb
