@@ -1,0 +1,42 @@
+<!-- tags -->
+<div siteFunction="offcanvasPageFullInfoPageTagsCard" class="border border-secondary border-opacity-25 card shadow bg-transparent mb-5">
+<div class="card-header d-flex justify-content-between border-bottom border-secondary border-opacity-25">
+    <span siteFunction="offcanvasPageFullInfoPageTagsOpen" class="fs-6 fw-medium alwaysCursorPointer">Tags</span>
+    <button siteFunction="btnClose" whatToClose='div[siteFunction="offcanvasPageFullInfoPageTags"]' type="button" class="btn-close" aria-label="Close"></button>
+</div>
+<div siteFunction="offcanvasPageFullInfoPageTags" class="card-body">
+    <!-- page tags -->
+    <div siteFunction="offcanvasPageFullInfoPageTagsList" class="mb-2">
+        <a 
+            siteFunction="offcanvasPageFullInfoPageTagButton" 
+            type="button" 
+            class="focus-ring focus-ring-warning px-3 mr-5 my-2 btn btn-sm position-relative"
+            href="#">
+            tag
+        </a>
+    </div>
+
+    <!-- tag editor -->
+    <div siteFunction="offcanvasPageFullInfoPageCustomTags">
+        <div 
+            siteFunction="offcanvasPageFullInfoPageTagsEditorMenubar"
+            id="offcanvasPageFullInfoPageTagsEditorMenubar">
+        </div>
+        <div 
+            siteFunction="offcanvasPageFullInfoPageCustomTagsAlert" 
+            class="alert alert-warning mt-2" role="alert">
+            Enter tags one by one and hit enter after each one. You can enter multiple tags in a single batch. When ready, hit enter again. Repeat as many times as you want. Right click (or press long on mobile) on a tag to remove it.
+        </div>
+        <div 
+            siteFunction="offcanvasPageFullInfoPageTagsEditorToolbar"
+            id="offcanvasPageFullInfoPageTagsEditorToolbar">
+        </div>
+        <div 
+            siteFunction="offcanvasPageFullInfoPageTagsEditor" 
+            id="offcanvasPageFullInfoPageTagsEditor"
+            class="rounded">
+        </div>
+    </div>
+        
+</div>
+</div>
