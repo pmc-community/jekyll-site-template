@@ -1,1 +1,0 @@
-this is a file from a collection. this file loads some external content from another repo and place it inline. link to file in different folder
