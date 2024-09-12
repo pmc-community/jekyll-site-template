@@ -1,0 +1,38 @@
+@import 'custom-vars.scss';
+
+$hitMarkerColor: $c-primary-theme-dark;
+$hitDetailsContainerBackground: $c-inherit;
+$hitDetailsContainerPosition: $pos-fixed;
+$hitDetailsContainerLeft: $s-20px;
+$hitDetailsContainerBorderRadius: $b-rad-inherit;
+$hitDetailsContainerBoxShadow: $sh-inherit;
+$hitDetailsContainerOverflowY: $ov-auto;
+$hitDetailsContainerBorderZIndex: $z-999;
+$docSearchBtnZIndex: $z-max + 1;
+$docSearchBtnOutline: $outl-none;
+$docSearchBtnCursor: $cr-default;
+$docSearchModalOutline: $outl-none;
+$docSearchFontSmallFontSize: $fs-0-75;
+$docSearchFontStandardFontSize: $fs-docSearchStandard;
+$docSearchHitDetailsHeaderPosition: $pos-sticky;
+$docSearchHitDetailsHeaderTop: $s-0;
+$docSearchHitDetailsHeaderZIndex: $docSearchBtnZIndex + 1;
+$docSearchHitDetailsHitTargetContentItemDecoration: $dec-underline;
+
+$hitTargetPageTocPopoverBodyFontSize: $fs-docSearchStandard;
+$hitTargetPageTocPopoverBodyFontColor: $c-black;
+
+$algoliaElements: (
+    hitMarker: '.algolia-docsearch-suggestion--highlight',
+    hitDetailsContainer:'div[siteFunction="docSearchListItemDetails"]',
+    docSearchBtn: '.DocSearch',
+    docSearchModal: '.DocSearch-Modal',
+    docSearchFontSmall: '.docSearchFontSmall',
+    docSearchFontStandard: '.docSearchFontStd',
+    docSearchHitDetailsHeader: 'div[siteFunction="docSearch_searchHitDetails_header_container"]',
+    docSearchHitDetailsHitTargetContentItem: 'a[siteFunction="docSearch_searchHitDetails_hitPage_Toc_Item"]',
+    hitTargetPageTocPopover: '.custom-popover'
+);
+
+@import 'meta.scss';
+@include algolia($algoliaElements);
