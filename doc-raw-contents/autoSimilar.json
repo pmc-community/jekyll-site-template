@@ -1,0 +1,59 @@
+[
+    {
+        "permalink": "/intro/",
+        "similarFiles": [
+            "/collection-2/y/y/",
+            "/intro/introChild/"
+        ]
+    },
+    {
+        "permalink": "/intro/introChild/",
+        "similarFiles": [
+            "/collection-2/y/y/",
+            "/intro/"
+        ]
+    },
+    {
+        "permalink": "/intro/introChild/introGrandChild/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/pwc/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/ec/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/terms/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/collection-1/g1/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/collection1/g11/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/collection-2/y/y/",
+        "similarFiles": [
+            "/intro/introChild/",
+            "/intro/"
+        ]
+    },
+    {
+        "permalink": "/collection-2/Z/z/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "collection-2/X/x/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/sf/f1/",
+        "similarFiles": []
+    }
+]

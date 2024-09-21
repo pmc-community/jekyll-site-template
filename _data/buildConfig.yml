@@ -1,0 +1,84 @@
+verbose: true #not used
+pyEnable: true
+pyLaunch: "python3"
+pyPageSummary:
+  allInOneStep: true
+  allInOneStepScript: "tools_py/page-summary/auto-summary.py"
+  summaryLength: 30
+  model: 
+    name: "t5-small"
+    max_length: 35
+    min_length: 10
+    length_penalty: 1
+    num_beams: 2
+    early_stopping: true
+  threadMultiplicator: 4
+  tokenizer:
+    prompt: "generate 30 words intepretation for the following text:"
+    max_length: 256
+    return_tensors: "tf"
+    truncation: true
+    skip_special_tokens: true
+rawContentFolder: "doc-raw-contents"
+preFlight: false
+relatedPages:
+  "enable": true
+  "relPagesNo": 3
+  "scoreLimit": -0.1
+  "batchSize": 100
+  "tf_idf_weigths": #sum of weights must be 1
+    "keywords": 0.5
+    "tags": 0.3
+    "cats": 0.1
+    "content": 0.1
+autoExcerpt:
+  keywords: 10
+  minKeywordLength: 3
+tagsToRemoveOnDryRender: ["script", "style", "h1", "h2", "h3", "h4", "h5", "h6"]
+pySimilarPagesByContent:
+  enable: true
+  script: "tools_py/similar-pages/similar-pages.py"
+  similarity_threshold: 0.75
+  files_batch: 100
+  chunk_size_in_files_batch: 100
+  threadMultiplicator: 4
+  model_url: "https://tfhub.dev/google/universal-sentence-encoder/4"
+pageKeywords:
+  enable: true
+github:
+  enabled: true
+  user: "pmc-community"
+  repo: "figma"
+  discussionOrg: "pmc-community"
+  discussionsRepo: "discussions"
+readingTime:
+  enabled: true
+  average_adult: 240        # Average adult reading speed
+  comprehension_study: 200  # Study with focus on comprehension
+  skimming_study: 300       # Speed reading or skimming
+algoliaSearch:
+  container: '#docsearch'
+  debug: false
+  maxResultsPerGroup: 20
+  hitsPerPage: 10
+  insights: true
+  textHighlightPrefixTag: "<mark>" # prefix and postfix tags must be exactly as defined in Algolia DocSearch Index/Configuration/Hightlighting
+  textHighlightPostfixTag: "</mark>"
+  netlifySearchBranch: "main"
+  netlifySiteId: "337777c9-8f1b-4962-a904-9c5542b6e0b2"
+  customIndexContentMaxSize: 500
+JTDSearch:
+  searchBoxWidth: "fit-content"
+changeLog:
+  history: 5
+siteFooter:
+  container: ".site-footer"
+  rows:
+    - content: "<div class=\"footer_first_row\"><a href=\"https://innohub.space/eng/terms-of-service/\" target=_blank>Terms</a> | <a href=\"https://innohub.space/eng/privacy/\" target=_blank>Privacy</a> | <a href=\"https://innohub.space/eng/cookie-policy/\" target=_blank>Cookies</a></div>"
+    - content: "<div class=\"footer_first_row\">Copyright <i class=\"bi bi-c-circle\"></i> <a href=\"https://pmc-expert.com\" target=_blank>PMC</a></div>"
+googleAnalytics:
+  enabled: true
+  ga: "G-T86D5YQ5WF"
+googleTagManager:
+  enabled: true
+  gtm: "GTM-KCLM93S"

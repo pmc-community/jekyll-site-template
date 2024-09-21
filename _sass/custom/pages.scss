@@ -1,0 +1,39 @@
+@import 'custom-vars.scss';
+// SETTINGS FOR ELEMENTS RELATED TO PAGES
+
+// pages search
+$pageSearchWidth: $sz-300px;
+$pageSearchInputPadding: $p-10px;
+$pageSearchBackground: $c-white;
+$pageSearchTextColor: $c-black;
+$pageSearchBorders: $b-SolThinNeutral;
+$pageSearchResultsZIndex: $z-max;
+$pageSearchResultsMarginTop: $s-neg-5px;
+$pageSearchResultsMaxHeight:$sz-200px;
+$pageSearchResultsPosition: $pos-absolute;
+$pageSearchResultsPadding: $p-0px;
+$pageSearchResultsMargin: $m-0px;
+$pageSearchResultsListStyle: $lstyle-none;
+$pageSearchResultsOverflow: $ov-auto;
+$pageSearchResultsDefaultDisplay: $d-hidden;
+$pageSearchResultsBorderBottomRadius: $brad-5px;
+$pageSearchResultsItemPadding: $p-10px;
+$pageSearchResultsItemMargin: $m-0px;
+$pageSearchResultsItemCursor: $cr-pointer;
+$pageSearchResultsItemMarkedBackground: $c-light-grey;
+
+$pageSearchResultsOverflowY: $ov-auto;
+$pageCloudShowButtonWidth: $sz-6rem;
+
+// no selector identifier (#, .) to be used here because page search box
+// may be creaded dynamic and the css selector may be in the form #<something>_pageSearchInput
+// see mixin @mixin pageSearch in meta scss
+$pageSearchElements: (
+    searchInput: 'pageSearchInput', 
+    searchResults: 'pageSearchResults',
+);
+
+@import 'meta.scss';
+@include pageSearch($pageSearchElements);
+
+  
