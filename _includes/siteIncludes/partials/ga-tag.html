@@ -1,0 +1,11 @@
+{% if site.data.buildConfig.googleAnalytics.enabled %}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{site.data.buildConfig.googleAnalytics.ga}}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '{{site.data.buildConfig.googleAnalytics.ga}}');
+    </script>
+{% endif %}

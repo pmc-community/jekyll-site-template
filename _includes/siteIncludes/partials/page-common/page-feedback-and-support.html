@@ -1,0 +1,171 @@
+{% assign pageList = site.data['page_list'] | json_string_to_object %}      
+{% assign cleanPermalink = page.url | clean_permalink%}   
+{% assign match1 = pageList | where: "permalink", cleanPermalink %}  
+{% assign c2 = "/" | append: cleanPermalink %}
+{% assign match2 = pageList | where: "permalink",  c2 %}
+{% assign c3 = "/" | append: cleanPermalink | append: "/" %}
+{% assign match3 = pageList | where: "permalink", c3 %}
+{% assign c4 = cleanPermalink | append:"/" %}
+{% assign match4 = pageList | where: "permalink", c4 %}
+{% assign match = match1.size | plus: match2.size | plus: match3.size | plus: match4.size %}
+    
+{% if match > 0 %}
+    {% assign additionalFooterPaddingClass = "" %}
+{% else %}
+    {% assign additionalFooterPaddingClass = "px-5" %}
+{% endif %}
+
+<div
+    id="pageFeedbackAndSupport"
+    siteFunction="pageFeedbackAndSupport"
+    class="my-4 d-none {{additionalFooterPaddingClass}}">
+    {% if site.data.siteConfig.hsIntegration.enabled %}
+        <span class="fs-5 fw-medium">Feedback and Support</span>
+    {% else %}
+        <span class="fs-5 fw-medium">Support</span>
+    {% endif %}
+    <hr siteFunction="pageFeedbackAndSupportSeparator">
+    <div siteFunction="pageFeedbackAndSupportContainer">
+        <div class="row">
+            
+            <!-- col need help -->
+            <div 
+                siteFunction="pageFeedbackAndSupport_Support"
+                class="col-4">
+                <div class="fs-6 fw-medium">
+                    Need help?
+                    <div class="mt-3">
+                        <div class="ghBtnLink mt-2 text-primary">
+                            <a href="{{site.data.siteConfig.links.supportLink}}" target=_blank>
+                                <i class="bi bi-textarea-resize mr-1"></i>
+                                Contact support
+                            </a>
+                        </div>
+                    </div>
+
+                    {% if site.data.buildConfig.github.enabled %}
+                        <div class="mt-2">
+                            <div class="ghBtnLink text-primary">
+                                <a 
+                                    href="https://github.com/{{site.data.buildConfig.github.user}}/{{site.data.buildConfig.github.repo}}/{{site.data.buildConfig.github.discussionsRepo}}"
+                                    target=_blank>
+                                    <i class="bi bi-people"></i>
+                                    Ask the community
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="mt-2">
+                            <div class="ghBtnLink text-primary">
+                                <a 
+                                    href="https://github.com/{{site.data.buildConfig.github.user}}/{{site.data.buildConfig.github.repo}}/issues"
+                                    target=_blank>
+                                    <i class="bi bi-bug"></i>
+                                    Report issue
+                                </a>
+                            </div>
+                        </div>
+
+                        <hr siteFunction="pageFeedbackAndSupportCol1Separator" class="w-75">
+                        <div>
+                            <p class="ghBtnLink">Get your own copy</p>
+                        </div>
+                        <!-- download -->
+                        <div class="mt-2">
+                            <div>
+                                <a 
+                                    class="ghBtnLink text-light btn btn-sm btn-danger"
+                                    href="https://github.com/{{site.data.buildConfig.github.user}}/{{site.data.buildConfig.github.repo}}/archive/HEAD.zip"
+                                    target=_blank>
+                                    Download
+                                </a>
+                            </div>
+                        </div>
+                    
+                    {% endif %}
+
+                </div>
+            </div>
+            
+            <!-- col get involved -->
+            {% if site.data.buildConfig.github.enabled %}
+                <div 
+                    siteFunction="pageFeedbackAndSupport_Involve"
+                    class="col-4">
+                        <div class="fs-6 fw-medium">
+                            Get involved!
+
+                            <!-- follow us -->
+                            <div class="mt-3">
+                                <div class="ghBtnLink text-primary">
+                                    <a 
+                                        href="https://github.com/{{site.data.buildConfig.github.user}}" 
+                                        target=_blank>
+                                        <i class="bi bi-github"></i>
+                                        Follow us
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- subscribe -->
+                            <div class="mt-2">
+                                <div class="ghBtnLink text-primary">
+                                    <a 
+                                        href="https://github.com/{{site.data.buildConfig.github.user}}/{{site.data.buildConfig.github.repo}}/subscription"
+                                        target=_blank>
+                                        <i class="bi bi-ear"></i>
+                                        Subscribe
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- star -->
+                            <div class="mt-2">
+                                <div class="ghBtnLink text-primary">
+                                    <a 
+                                        href="https://github.com/{{site.data.buildConfig.github.user}}/{{site.data.buildConfig.github.repo}}"
+                                        target=_blank>
+                                        <i class="bi bi-star"></i>
+                                        Like us
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- fork -->
+                            <div class="mt-2">
+                                <div class="ghBtnLink text-primary">
+                                    <a 
+                                        href="https://github.com/{{site.data.buildConfig.github.user}}/{{site.data.buildConfig.github.repo}}/fork"
+                                        target=_blank>
+                                        <i class="bi bi-plus-circle"></i>
+                                        Contribute
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    
+                </div>
+            {% endif %}
+
+            <!-- col form feedback -->
+            <div
+                siteFunction="pageFeedbackAndSupport_Feedback"
+                class="col-4">
+                <!-- feedback form-->
+                {% if site.data.siteConfig.hsIntegration.enabled %}
+                    <span class="fs-6 fw-medium">
+                        Help us improve!
+                    <span>
+                    {% include siteIncludes/partials/page-common/page-feedback-form.html %}
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+<div>
+
+<!-- hubspot feedback form, called from footer_custom.html -->
+<script>
+    page__getPageFeedbackAndSupport();
+</script>

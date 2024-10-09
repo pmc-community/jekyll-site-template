@@ -1,0 +1,26 @@
+<script id="init-hooks">
+    
+    /*
+     * define here the actions that hooks into site init proces
+     * init process = any function executed before document.ready event
+     * can be useful to hook on any function called by <script> tag
+     * only settings superglobal is visible here
+     * HEADS UP!!!
+     * AT LEAST ONE INIT HOOK ACTION MUST BE SET IN ORDER TO ALLOW PRE AND POST HOOKS
+    */
+
+    hooks.addAction('customiseTheme', (functionName, result, args) => { 
+        console.log(`init hook after: ${functionName} on {{page.permalink}}`);
+        nrLog(
+            'loading page', 
+            `executed ${functionName}`, 
+            'info', 
+            {
+                functionName: functionName,
+                result: result,
+                args: args
+            }
+        );
+    }, 0, 'init');
+
+</script>

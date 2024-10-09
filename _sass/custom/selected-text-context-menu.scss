@@ -1,0 +1,39 @@
+@import 'custom-vars.scss';
+
+$containerInitialVisibilty: $d-hidden;
+$containerPosition: $pos-fixed;
+$containerBackground: $c-grey-alt-2;
+$containerBorder: $b-selected-text-context-menu;
+$containerPadding: $p-4px $p-0px;
+$containerCursor: $cr-pointer;
+$containerZIndex: $z-9;
+$containerBoxShadow: $s-0 $s-4px $s-8px $c-close-to-black;
+$containerFontSize: $fs-small;
+$containerLineHeight: $lh-1-5;
+$containerMinWidth: $sz-250px;
+$containerMaxWidth: $sz-250px;
+$containerBorderRadius: $brad-4px;
+
+$itemsContainerListStyle: $ls-none;
+$itemsContainerPadding: $p-0;
+$itemsContainerMargin: $m-0px;
+
+$itemPadding: $p-4px $p-12px;
+$itemColor: $c-dark-grey;
+$itemWhiteSpace: $wr-no;
+$itemBackgroundHover: $c-light-grey;
+$itemColorHover: $c-black;
+
+$addCommentBtnFontSize: $fs-0-75;
+$addCommentTextareaFontSize: $addCommentBtnFontSize;
+
+$selectedTextContextMenuElements: (
+    container: '#selected-text-context-menu',
+    itemsContainer: '#selected-text-context-menu ul',
+    item: '.selected-text-context-menu-item',
+    addCommentBtn: 'button[sitefunction="pageAddCommentToSelectedText_btn"]',
+    addCommentTextarea: 'textarea[sitefunction="pageAddCommentToSelectedText_comment"]'
+);
+
+@import 'meta.scss';
+@include selectedTextContextMenu($selectedTextContextMenuElements);
