@@ -1,0 +1,144 @@
+---
+layout: table_wrappers
+---
+
+<!DOCTYPE html>
+
+<html lang="{{ site.lang | default: 'en-US' }}">
+  {% include head.html %}
+  <body>
+    <a class="skip-to-main" href="#main-content">Skip to main content</a>
+    {% include icons/icons.html %}
+
+    {% if page.nav_enabled == true %}
+      {% include components/sidebar.html %}
+    {% elsif layout.nav_enabled == true and page.nav_enabled == nil %}
+      {% include components/sidebar.html %}
+    {% elsif site.nav_enabled != false and layout.nav_enabled == nil and page.nav_enabled == nil %}
+      {% include components/sidebar.html %}
+    {% endif %}
+
+    <div class="main" id="top">
+
+      {% include components/header.html %}
+
+      {% assign pageList = site.data['page_list'] | json_string_to_object %}      
+      {% assign cleanPermalink = page.url | clean_permalink%}   
+      {% assign match1 = pageList | where: "permalink", cleanPermalink %}  
+      {% assign c2 = "/" | append: cleanPermalink %}
+      {% assign match2 = pageList | where: "permalink",  c2 %}
+      {% assign c3 = "/" | append: cleanPermalink | append: "/" %}
+      {% assign match3 = pageList | where: "permalink", c3 %}
+      {% assign c4 = cleanPermalink | append:"/" %}
+      {% assign match4 = pageList | where: "permalink", c4 %}
+      {% assign match = match1.size | plus: match2.size | plus: match3.size | plus: match4.size %}
+      
+      <!-- to be applied on home page -->
+      {% assign mainContentWrapPadding = "px-0 pt-0 px-md-5 pt-md-5" %}
+
+      <!-- document page needs extra x padding -->
+      {% if match > 0 %}
+        {% assign mainContentWrapPadding = "px-4 pt-0 px-md-5 pt-md-5" %}
+      {% endif %}
+
+      <div class="main-content-wrap {{mainContentWrapPadding}}">
+
+        {% include components/breadcrumbs_custom.html %}
+
+        <div id="ihs_top_of_page"></div>
+
+        <div id="main-content" class="main-content">
+
+          {% if match > 0 %}
+
+            <!-- this is a document page -->
+            <hr sitefunction="pageContentTopSeparator" class="my-4 container-xl px-2">
+
+            <div 
+              class="accordion d-md-none d-block accordion-flush border border-warning border-opacity-25"
+              id="toc_mobile">
+              <div class="accordion-item">
+                <div 
+                  siteFunction="mobile_toc_header"
+                  id="mobile_toc_header"
+                  class="accordion-header border-0">
+                  <button 
+                    class="accordion-button fw-medium text-primary d-flex justify-content-between align-items-center" 
+                    type="button" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#mobile_toc_content" 
+                    aria-expanded="true" 
+                    aria-controls="#mobile_toc_content">
+                    On this page
+                    <i
+                      siteFunction="togglePageTocOnMobile" 
+                      class="bg-success py-1 px-2 rounded bi bi-arrow-down text-light"></i>
+                  </button>
+                  
+                </div>
+                <div id="mobile_toc_content" 
+                  class="accordion-collapse collapse" 
+                  data-bs-parent="#toc_mobile">
+                  <div class="accordion-body border-0 border-top border-secondary border-opacity-25"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex col-12 container-xl p-0">
+              <main class="col-12 col-md-7">
+                {% if site.heading_anchors != false %}
+                  {% include vendor/anchor_headings.html html=content beforeHeading="true" anchorBody="<svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><use xlink:href=\"#svg-link\"></use></svg>" anchorClass="anchor-heading" anchorAttrs="aria-labelledby=\"%html_id%\"" %}
+                {% else %}
+                  {{ content }}
+                {% endif %}
+              </main>
+
+              <div class="col-1 d-none d-md-block" siteFunction="contentAreaConten2TocSeparator"></div>
+              <div class="col-4 d-none d-md-block">
+                <!-- Page Toc -->
+                {% include siteIncludes/partials/page-common/page-toc.html %}
+              </div>
+
+            </div>
+            
+            <hr sitefunction="pageContentBottomSeparator" class="my-4 container-xl px-2">
+          {% else %}
+            <!-- this is home page -->
+            <main class="px-4 px-md-5">
+              {% if site.heading_anchors != false %}
+                {% include vendor/anchor_headings.html html=content beforeHeading="true" anchorBody="<svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><use xlink:href=\"#svg-link\"></use></svg>" anchorClass="anchor-heading" anchorAttrs="aria-labelledby=\"%html_id%\"" %}
+              {% else %}
+                {{ content }}
+              {% endif %}
+            </main>
+          {% endif %}
+
+        </div>
+      
+        {% include components/footer.html %}
+
+      </div>
+
+      <div id="ihs_go_to_top_btn" class="btn btn-sm btn-primary rounded-circle"><i class="bi bi-arrow-up"></i></div>
+
+    </div>
+    
+    <div>
+      {% if site.search_enabled != false %}
+        {% include components/search_footer.html %}
+      {% endif %}
+    </div>
+
+    {% if site.mermaid %}
+      {% include components/mermaid.html %}
+    {% endif %}
+    
+  </body>
+
+  <!-- Toast is here -->
+  {% include siteIncludes/partials/page-common/toast.html %}
+
+  <!-- selected text context menu -->
+  {% include siteIncludes/partials/page-common/selected-text-context-menu.html %}
+
+</html>

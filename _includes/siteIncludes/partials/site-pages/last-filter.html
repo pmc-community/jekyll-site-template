@@ -1,0 +1,116 @@
+<div 
+    sitefunction="sitePagesDetailsLastFilter" 
+    class="card d-none shadow-sm alert alert-warning mt-2" role="alert">
+
+    <!-- filter warning header (title and buttons) -->
+    <div 
+        sitefunction="sitePagesDetailsLastFilterHeader" 
+        class="d-flex align-items-center justify-content-between pb-2 border-bottom border-secondary border-opacity-25">
+        <div>
+            <span 
+                class="spinner-grow spinner-grow-sm mr-2 text-danger" 
+                aria-hidden="true">
+            </span>
+            <span 
+                sitefunction="sitePagesDetailsLastFilterLabel" 
+                class="fs-6 fw-medium text-black">
+                Last filter
+            </span>
+        </div>
+        <div>
+            <button 
+                siteFunction="sitePagesDetailsShowSearchPanes" 
+                class="btn btn-sm btn-danger text-light"
+                title="Re-activate/Modify/Clear filter">
+                <div class="d-flex align-items-center">
+                    <span
+                        siteFunction="sitePagesDetailsShowSearchPanes_loader" 
+                        class="spinner-border spinner-border-sm mr-1 d-none"
+                        aria-hidden="true">
+                    </span>
+                    <span role="status">
+                        Open
+                    </span>
+                </div>
+            </button>
+            <button 
+                siteFunction="sitePagesDetailsClearFilter" 
+                class="btn btn-sm btn-primary text-light"
+                title="Re-activate/Modify/Clear filter">
+                <div class="d-flex align-items-center">
+                    <span
+                        siteFunction="sitePagesDetailsClearFilter_loader" 
+                        class="spinner-border spinner-border-sm mr-1 d-none"
+                        aria-hidden="true">
+                    </span>
+                    <span role="status">
+                        Clear
+                    </span>
+                </div>
+            </button>
+            <button
+                siteFunction="sitePagesDetailsShowFilter" 
+                class="btn btn-sm btn-success text-light d-md-none noShow">
+                <i class="bi bi-eye"></i>
+            </button>
+        </div>
+    </div>
+
+     <!-- filter warning details -->
+    <div 
+        sitefunction="sitePagesDetailsLastFilterDetails" 
+        class="pt-2">
+
+        <div 
+            class="text-black"
+            sitefunction="sitePagesDetailsLastFilterDetailsPageDetails_container">
+            <span class="fw-medium text-black">Details:</span>
+            <span 
+                class="text-primary" 
+                sitefunction="sitePagesDetailsLastFilterDetailsPageDetails">
+            </span>
+        </div>
+
+        <div 
+            class="text-black"
+            sitefunction="sitePagesDetailsLastFilterDetailsPageRelatedPages_container">
+            <span class="fw-medium text-black">Related pages:</span>
+            <span 
+                class="text-primary" 
+                sitefunction="sitePagesDetailsLastFilterDetailsPageRelatedPages">
+            </span>
+        </div>
+
+        <div 
+            class="text-black"
+            sitefunction="sitePagesDetailsLastFilterDetailsPageSimilarPages_container">
+            <span class="fw-medium text-black">Similar pages:</span>
+            <span 
+                class="text-primary" 
+                sitefunction="sitePagesDetailsLastFilterDetailsPageSimilarPages">
+            </span>
+        </div>
+
+        <div 
+            class="text-black"
+            sitefunction="sitePagesDetailsLastFilterDetailsPageTags_container">
+            <span class="fw-medium text-black">Tags:</span>
+            <span 
+                class="text-primary" 
+                sitefunction="sitePagesDetailsLastFilterDetailsPageTags">
+            </span>
+        </div>
+
+        <div 
+            class="text-black"
+            sitefunction="sitePagesDetailsLastFilterDetailsPageCategories_container">
+            <span class="fw-medium text-black">Categories:</span>
+            <span 
+                class="text-primary" 
+                sitefunction="sitePagesDetailsLastFilterDetailsPageCategories">
+            </span>
+        </div>
+
+    </div>
+
+</div>

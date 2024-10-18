@@ -1,0 +1,116 @@
+# HEADS UP!!!
+# KEY VALUES MUST BE ENCLOSED WITH DOUBLE QUOTES
+# DOUBLE QUOTES INSIDE KEY VALUES MUST BE ESCAPED WITH \"
+extContentMarkers:
+  startExposedSection: "<!-- START_EXPOSED_SECTION -->"
+  endExposedSection: "<!-- END_EXPOSED_SECTION -->"
+pageToc:
+  tocContainer: "#toc_container"
+  toc: "#toc"
+  tocLoadedEvent: "page_toc_loaded"
+  scrollSpyBase: "body"
+  tocItemLink: "#toc li a"
+  tocItemLinkClass:
+    light: "pageTocActiveLight"
+    dark: "pageTocActiveDark"
+  desktop:
+    referenceContainer: ".main-content"
+    offsetFromHeader: 35
+    offsetFromReferenceContainer: 100
+    leftSideBar: ".side-bar"
+  mobile:
+    height: 300
+  pagesWithoutToc:
+    - tag-info
+    - cat-info
+    - site-pages
+colSchemaCorrections:
+  elementsWithBackgroundAffected: "body, #category-menu-more-list, table, tbody, thead, tr, td, th, td[class=\"child\"], .offcanvas, .ck-editor__main, .side-bar, #hs-eu-cookie-confirmation, #toc_mobile, .accordion-item, .accordion-header, .accordion-button"
+  backgroundColorOnElementsAffected:
+    light: "#fff"
+    dark: "#0d1117" # HERE TO CHANGE DARK THEME BACKGROUND
+  elementsWithTextAffected: "body, p, ul li, ol li, li a, h1, h2, span, .dt-info, label[for^=\"dt-length-\"], label[for^=\"dt-search-\"], #category-menu-more-list li a, .offcanvas-title, td, div[siteFunction=\"labelForPageSearchList\"], label[for=\"offcanvasPageFullInfoPageGeneralCustomNotesEdit\"], #toc_mobile, .accordion-item, .accordion-header, .accordion-button"
+  textColorOnElementsAffected:
+    light: "#000"
+    dark: "#dee2e6"  # HERE TO CHANGE DARK THEME TEXT COLOR
+  elementsWithBorderTopAffected: ".site-footer"
+  borderTopOnElementsAffected:
+    light: "1px solid #eeebee"
+    dark: "1px solid #44434d"
+  elementsWithBorderLeftAffected: ".main-header"
+  borderLeftOnElementsAffected:
+    light: "1px solid #44434d"
+    dark: "1px solid #44434d"
+  hideBodyUntilLoadTimeout: 0
+goToTopBtn:
+  topOfPageId: "#ihs_top_of_page"
+  btnId: "#ihs_go_to_top_btn"
+externalContent:
+  containerToIncludeExternalContent: ".main-content main"
+themeSwitch:
+  cookie: "JTDThemeCookie"
+  btnId: "themeSwitcher"
+headerAboveContent:
+  headerID: "#main-header"
+  offsetWhenScroll: 20
+layouts:
+    contentArea:
+      mainContainer: ".main-content-wrap"
+      contentContainer: ".main-content main"
+      contentWrapper: ".main-content"
+    leftSideBar:
+      container: ".side-bar"
+      sideNav: "#site-nav"
+      header: ".site-header"
+      link: ".nav-list-link"
+      siteTitle: ".site-title"
+      mobileMenuBtnIcon: ".site-button-icon"
+      mobileNavLinkExpander: ".page-with-children-expander"
+toBeRemovedAfterLoad:
+  - "script": # selector for the element to be removed, in the form of tag, .class, #id
+    - "externalContent" # each selector[siteAttr = ...] will be removed
+    - "init_not_needed_anymore"
+    - "page_var_init_script"
+  - "h1":
+    - "testAttr"
+    - "testAttr_1"
+catMenu: true
+catMenuMoreBtn: "category-menu-more"
+siteVars:
+  siteTestBadge: "xxx"
+similarByContent:
+  maxPages: 4
+hsIntegration:
+  enabled: true
+  bootstrapCSS: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  bootstrapJS: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  bootstrapIconsCSS: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  forms:
+    elements:
+      fieldValidationErrorMessagesGroup: ".hs-error-msgs"
+      formErrorMesage: ".hs_error_rollup"
+      submittedMessage: ".submitted-message"
+    submisionSource: 
+      propName: "source"
+      propValue: "figmares_doc_site"
+scripts:
+  jQuery: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+  fontFamily: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+links:
+  privacyLink: "https://innohub.space/eng/privacy"
+  supportLink: "https://innohub.space/eng/mypmc/technical-support/"
+selectedTextContextMenu:
+  enabled: true
+  minWords: 1
+  maxWords: 10
+  comments:
+    enabled: false
+    maxChar: 250
+    maxWords: 50
+  tags:
+    maxWords: 3
+    maxChars: 20
+user:
+  userTokenCookie: "userToken"
+savedItems:
+  autoSaveBeforeLoad: true

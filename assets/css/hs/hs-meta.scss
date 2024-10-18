@@ -1,0 +1,23 @@
+@import "../../../_sass/custom/custom-vars.scss";
+
+@mixin hsForms($hsFormsElements) {
+    #{map-get($hsFormsElements, fieldLabel)} {
+        font-size: $hsFormFieldLabelFontSize;
+    }
+
+    #{map-get($hsFormsElements, textAreaField)} {
+        font-size: $hsTextAreaFieldFontSize !important;
+    }
+
+    #{map-get($hsFormsElements, inputField)} {
+        font-size: $hsInputFieldFontSize !important;
+    }
+
+    #{map-get($hsFormsElements, fieldValidationErrorMessage)} {
+        font-size: $hsfieldValidationErrorMessageFontSize !important;
+    }
+
+    #{map-get($hsFormsElements, regularText)} {
+        font-size: $hsFormFieldLabelFontSize !important;
+    }
+}

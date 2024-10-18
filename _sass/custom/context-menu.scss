@@ -1,0 +1,25 @@
+@import 'custom-vars.scss';
+
+$contextMenuZIndex: calc(#{$z-max} + 1000);
+$contextMenuItemCursor: $cr-pointer;
+$contextMenuLinkFontSize: $fs-body;
+$contextMenuListPaddingLeft: $p-0px;
+$contextMenuItemPaddingLeft: $p-0px;
+$contextMenuItemAlgnItemsVertical: $al-v-baseline;
+$contextMenuContainerPosition: $pos-fixed;
+$contextMenuContainerBackground: $c-metal-grey;
+$contextMenuListStyle: $ls-none;
+$contextMenuPageTagFooterBtnWidth: $sz-6rem;
+$tagAndCatContextMenuFontSize: $fs-0-90;
+
+$contextMenuElements: (
+    container: '.context-menu',
+    menuItem: '.context-menu-item',
+    menuItemLink: '.context-menu-item a',
+    menuItemList: '.context-menu-list',
+    pageTagContextMenuFooterButton: '.pageTagContextMenuFooterBtn',
+    tagAndCatContextMenu: '.tagAndCatContextMenu'
+);
+
+@import 'meta.scss';
+@include contextMenu($contextMenuElements);

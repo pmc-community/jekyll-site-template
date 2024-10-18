@@ -1,0 +1,1020 @@
+/* HEADS UP!
+ * here we define all objects as mixins and we use them in the main or
+ * component scss files
+*/
+
+@import 'custom-vars.scss';
+
+// content area
+@mixin contentArea ($contentAreaId) {
+    #{$contentAreaId} {
+        margin-left: $contentAreaMarginLeft !important;
+        max-width: 100%;
+
+        @include phone {
+            margin-left: $contentAreaMarginLeft_phone !important;
+            max-width: $contentAreaMaxWidth_phone;
+        }
+
+        @include tablet {
+            margin-left: $contentAreaMarginLeft_tablet !important;
+            max-width: $contentAreaMaxWidth_tablet;
+        }
+    }
+
+}
+
+// go to top button
+@mixin goToTopBtn($btnID) {
+    #{$btnID} {
+        position: $pos-fixed;
+        bottom: $m-2rem;
+        right: $m-2rem;
+    }
+}
+
+// page toc
+// toc_container = the container containing the page toc
+// toc = the actually toc
+// tocItem = the li or li.a element inside the toc
+@mixin toc($tocBase) {
+    
+    #{$tocBase} {
+        padding: $tocPadding;
+    }
+
+    // all toc items visible
+    #{$tocBase} .nav .nav {
+        display: $allTocItemsVisibility;
+      }
+    
+    #{$tocBase}  ul {
+        padding-left: $tocListPadding !important
+      }
+    
+    #{$tocBase}_container {
+        position: $tocContainerPosition;
+        display: $tocContainerInitialView;
+        padding: $tocContainerPadding;
+        border-left: $tocContainerBorderLeft;
+        border-top: $tocContainerBorderTop;
+        border-bottom: $tocContainerBorderBottom;
+        border-right: $tocContainerBorderRight;
+        border-radius:$tocContainerBorderRadius;
+        height: $tocContainerMaxHeight;
+        overflow-y: $tocContainerOverflowY;
+        //width: $tocContainerWidth;
+    }
+
+    #{$tocBase}_container_heading {
+        text-align: $tocContainerHeadingTextAlignment;
+    }
+}
+
+@mixin tocItem($tocBase) {
+    nav[data-toggle=#{$tocBase}] {
+        padding-left:$tocNavPaddingLeft !important;
+    }
+
+    nav[data-toggle=#{$tocBase}] .nav-link+ul {
+        padding-bottom:$tocNavNestedULPaddingBottm !important;
+        padding-left:$tocNavNestedULPaddingLeft !important;
+        padding-top:$tocNavNestedULPaddingTop !important;
+    }
+
+    nav[data-toggle=#{$tocBase}] .nav>li>a {
+        font-weight:$tocFontWeight !important;
+        padding-bottom:$tocItemLinkPaddingBottom !important;
+        padding-top:$tocItemLinkPaddingTop !important;
+        font-size: $tocItemLinkFontSize !important;
+    }
+
+    nav[data-toggle=#{$tocBase}] .nav-link.active, nav[data-toggle=#{$tocBase}] .nav-link.active:focus, nav[data-toggle=#{$tocBase}] .nav-link.active:hover {
+        font-weight:$tocFontWeight !important;  
+    }
+    
+    nav[data-toggle=#{$tocBase}] .nav>li>a {
+        color:$tocFontColor
+    }
+
+    nav[data-toggle=#{$tocBase}] .nav>li::before {
+        display:$tocItemSymbolBeforeLiTagVisibility;
+    }
+
+    #{$tocItemActiveLight}, #{$tocItemActiveLight}:hover {
+        border-left: $tocItemLinkBorderLeftOnActiveLight !important;
+    }
+
+    #{$tocItemActiveDark}, #{$tocItemActiveDark}:hover {
+        border-left: $tocItemLinkBorderLeftOnActiveDark !important;
+    }
+    
+}
+
+@mixin tocMobile($tocMobile) {
+    #{$tocMobile} {
+        @include phone {
+            position: $tocMobilePosition;
+            top: $tocMobileTop;
+            z-index: $tocMobileZIndex !important;
+        }
+
+        @include tablet {
+            position: $tocMobilePosition;
+            top: $tocMobileTop;
+            z-index: $tocMobileZIndex !important;
+        }
+    }
+
+    #{$tocMobile} .accordion-item .accordion-header button::after {
+        @include phone {
+            display: $tocMobileHeaderAfterVisibility !important;
+        }
+
+        @include tablet {
+            display: $tocMobileHeaderAfterVisibility !important;
+        }
+    }
+
+    #{$tocMobile} .accordion-header button:focus, #{$tocMobile} .accordion-header button[aria-expanded="true"] {
+        @include phone {
+            outline: $tocMobileHeaderFocusOutline !important;
+            box-shadow: $tocMobileHeaderBoxShadow !important;
+        }
+
+        @include tablet {
+            outline: $tocMobileHeaderFocusOutline !important;
+            box-shadow: $tocMobileHeaderBoxShadow !important;
+        }
+    }
+
+    #{$toc} {
+        @include phone {
+            overflow-y: $tocMobileOverflowY;
+        }
+
+        @include tablet {
+            overflow-y: $tocMobileOverflowY;
+        }
+    }
+
+    #{$tocMobileContent} {
+        @include phone {
+            height: $tocMobileContentHeightBeforeShow_phone;
+            opacity: $tocMobileContentOpacityBeforeShow_phone;
+            overflow: $tocMobileContentOpacityBeforeShow_phone;
+        }
+
+        @include tablet {
+            height: $tocMobileContentHeightBeforeShow_phone;
+            opacity: $tocMobileContentOpacityBeforeShow_phone;
+            overflow: $tocMobileContentOpacityBeforeShow_phone;
+        }
+    }
+
+    #{$tocMobileContent}.show {
+        @include phone {
+            height: $tocMobileContentHeightAfterShow_phone;
+            opacity: $tocMobileContentOpacityAfterShow_phone;
+        }
+
+        @include tablet {
+            height: $tocMobileContentHeightAfterShow_phone;
+            opacity: $tocMobileContentOpacityAfterShow_phone;
+        }
+    }
+
+}
+
+// sidebar
+@mixin sidebar($sidebarContainer, $sidebarDocListContainer, $sidebarElements, $sidebarContentList, $sidebarCustomFooter, $sidebarTitle, 
+$sidebarLogo, $sideBarFooter, $sideBarHeader, $sideBarDocLink,$sideBarCategoryBtn, $sideBarButtonMobile) {
+    
+    #{$sideBarButtonMobile} {
+        background-image: $sideBarButtonMobileBgImage !important;
+    }
+
+    #{$sidebarContainer} {
+        width: $sidebarWidth;
+        min-width: $sidebarMinWidth;
+
+        @include phone {
+            width: $sideBarContainerWidth_phone;
+            min-width: $sideBarContainerMinWidth_phone;
+        }
+
+        @include tablet {
+            width:$sideBarContainerWidth_phone;
+            min-width: $sideBarContainerMinWidth_phone;
+        }
+    }
+
+    #{$sideBarDocLink} {
+        @extend .px-0 !optional;
+    }
+    
+    #{$sideBarDocLink}.active, #{$sideBarDocLink}:hover {
+        @include phone {
+            background-image: $sideBarLinkActiveBgImage !important;
+        }
+
+        @include tablet {
+            background-image: $sideBarLinkActiveBgImage !important;
+        }
+    }
+
+    #{$sideBarCategoryBtn} {
+        @extend .px-0 !optional;
+    }
+    
+    #{$sidebarContentList} {
+        padding-right: 0 !important;
+    }
+
+    @each $element in $sidebarContentList {
+        #{$element} {
+            padding-right: $sidebarPaddingRight;
+        }
+    }
+
+    #{$sidebarCustomFooter} #footer_first_row {
+        margin-bottom:$sidebarFooterFirstRowMarginBottom;
+    }
+
+    #{$sidebarTitle} {
+        padding-left: $sidebarTitlePaddingLeft;
+    }
+
+    #{$sidebarLogo} {
+        width:$sidebarLogoSize;
+    }
+
+    #{$sideBarFooter} {
+        border-top:$sidebarFooterBorderTop;
+    }
+
+
+}
+
+// header above the content
+@mixin headerAboveContent($siteHeaderElements) {
+    
+    // set the background
+    @each $element in map-get($siteHeaderElements, elementsForBackground) {
+        #{$element}, #{$element}:hover {
+            background: $headerBackground;
+        }
+    }
+
+    // make the header sicky
+    #{map-get($siteHeaderElements, stickyElement)} {
+        position:$stickyElementPosition;
+        top:$stickyElementTopOffset;
+        z-index:$stickyElementZIndex;
+        margin-left:$correctionMargin;
+        justify-content: $elementsPositionInHeader;
+
+        @include phone {
+            top: $stickyElementTop_phone !important;
+        }
+
+        @include tablet {
+            top: $stickyElementTop_phone !important;
+        }
+    }
+
+    // style aux links container and links
+    #{map-get($siteHeaderElements, auxLinksContainer)} {
+        //padding-right: $auxContainerPaddingRight;
+        @extend .px-6 !optional;
+    }
+
+    // style algolia search button and contaner
+    #{map-get($siteHeaderElements, algoliaSearchBtn)} {
+        align-self: $algoliaSearchBtnVerticalAlignment;
+    }
+
+    #{map-get($siteHeaderElements, algoliaSearchBox)} {
+        background-color: $algoliaOverlay !important;
+    }
+
+    // style the default theme search (if available)
+    #{map-get($siteHeaderElements, defaultSearch)} {
+        height: $defaultSearchHeightToFitInHeader !important;
+        align-self: $defaultSearchVerticalAlignment;
+        padding-left: $defaultSearchPaddingLeft;
+    }
+
+    #{map-get($siteHeaderElements, themeSwitcher)} {
+        width: $themeSwitcherWidth; 
+        height: $themeSwitcherHeight;
+        align-self: $themeSwitcherVerticalAlignement; 
+        cursor: $themeSwitcherCursor;
+        border: $themeSwitcherBorder;
+        border-radius: $themeSwitcherBorderRadius;
+        padding: $themeStwitcherPadding;
+    }
+
+    #{map-get($siteHeaderElements, themeSwitcher)}:hover{
+        transform: scale(1.1);
+    }
+
+    #{map-get($siteHeaderElements, menuMoreDivider)} {
+        border-color: $menuMoreDividerColor !important;
+    }
+
+}
+
+// tag search
+@mixin tagSearch($tagSearchElements) {
+    #{map-get($tagSearchElements, searchInput)} {
+        width: $tagSearchWidth;
+        padding: $tagSearchInputPadding;
+        background-color: $tagSearchBackground;
+        border: $tagSearchBorders;
+        color: $tagSearchTextColor;
+
+        @include phone {
+            width: $tagSearchWidth_phone;
+        }
+
+        @include tablet {
+            width: $tagSearchWidth_phone;
+        }
+
+    }
+
+    #{map-get($tagSearchElements, searchResults)} {
+        position: $tagSearchResultsPosition;
+        z-index: $tagSearchResultsZIndex;
+        background-color: $tagSearchBackground;
+        border: $b-none;
+        border-top: $tagSearchBorders;
+        border-bottom: $tagSearchBorders;
+        border-left: $tagSearchBorders;
+        border-right: $tagSearchBorders;
+        width: $tagSearchWidth;
+        padding: $tagSearchResultsPadding;
+        margin: $tagSearchResultsMargin;
+        list-style: $tagSearchResultsListStyle;
+        max-height: $tagSearchResultsMaxHeight;
+        overflow-y: $tagSearchResultsOverflow;
+        display: $tagSearchResultsDefaultDisplay;
+      
+        margin-top: $tagSearchResultsMarginTop;
+        border-radius: $brad-0px $brad-0px $tagSearchResultsBorderBottomRadius $tagSearchResultsBorderBottomRadius;
+        border-top: $tagSearchBorders;
+
+        overflow-y: $tagSearchResultsOverflowY !important;
+
+    }
+
+    #{map-get($tagSearchElements, searchResults)} li {
+        padding: $tagSearchResultsItemPadding;
+        cursor: $tagSearchResultsItemCursor;
+        color: $tagSearchTextColor !important;
+        margin: $tagSearchResultsItemMargin !important;
+    }
+
+    #{map-get($tagSearchElements, searchResults)} li:hover {
+        background-color: $tagSearchResultsItemMarkedBackground;
+    }
+
+    #{map-get($tagSearchElements, searchResults)} li.selected {
+        background-color: $tagSearchResultsItemMarkedBackground;
+    }
+
+    #{map-get($tagSearchElements, showTagCloudButton)}{
+        width: $tagCloudShowButtonWidth;
+    }
+}
+
+// tags on page
+@mixin tagsOnPage($tagOnPageElements) {
+    #{map-get($tagOnPageElements, badge)} {
+        top: $badgeTopPosition;
+        left: $badgeLeftPosition_desktop;
+
+        @include phone {
+            left: $badgeLeftPosition_phone;
+        }
+    
+        @include tablet {
+            left: $badgeLeftPosition_phone;
+        }
+    }
+}
+
+// tag cloud
+@mixin tagCloud($tagCloudElements) {
+    #{map-get($tagCloudElements, tagCloudContainer)} {
+        max-height:$tagCloudBodyMaxHeight;
+        overflow-y: $tagCloudBodyOverflowY;
+    }
+}
+
+// data tables
+@mixin dataTable($tableElements) {
+    
+    #{map-get($tableElements, tableWrapper)} {
+        box-shadow: $tableBoxShadow;
+        overflow-x: $tableOverflowX;
+        padding:$tableWrapperPadding;
+    }
+
+    #{map-get($tableElements, paginationButtonLink)} {
+        font-size:$tablePaginationFontSize !important;
+    }
+
+    #{map-get($tableElements, nothingFound)} {
+        background-color:$tableNothingFoundBackground !important;
+        color: $tableNothingFoundTextColor !important       
+    }
+
+    #{map-get($tableElements, tableRow)} {
+        border-color: $tableInnerBorderColor !important;
+    }
+
+    #{map-get($tableElements, firstColumn)} {
+        z-index:$tableFreezeColumnZIndex !important;
+        cursor: $tableFirstColumnCursor;
+    }
+
+    #{map-get($tableElements, dateField)} {
+        text-align: $tableDateFieldTextAlignment !important;
+    }
+
+    #{map-get($tableElements, colvisButton)} {
+        font-size:$tableColvisBtnFontSize;
+    }
+
+    #{map-get($tableElements, searchPaneButton)} {
+        width:$tableSearchPaneBtnWidth;
+    }
+
+    #{map-get($tableElements, clearFiltersButton)} {
+        width:$tableClearFiltersBtnWidth;
+    }
+
+    #{map-get($tableElements, searchPanesPaneSearchInput)} {
+        height:$tableSearchPaneSearchInputHeight !important;
+        background-color: $tableSearchPanesPaneSearchInputBackground !important;
+    }
+
+    #{map-get($tableElements, seachPanesButtons)} {
+        box-shadow:$tableSearchPaneButtonsBoxShadow !important;
+    }
+
+    #{map-get($tableElements, searchPanesGlobButtons)} {
+        padding: $tableSearchPanesGlobalBtnPadding !important;  /* Adjusts the padding inside the button */
+        font-size: $tableSearchPanesGlobalBtnFontSize !important;      /* Sets a smaller font size */
+        line-height: $tableSearchPanesGlobalBtnLineHeight!important;         /* Adjusts the line height */
+        border-radius: $tableSearchPanesGlobalBtnBorderRadius !important;
+    }
+
+    #{map-get($tableElements, searchPanesContainer)} {
+        background: $tableSearchPanesContainerBackground !important;
+    }
+
+    #{map-get($tableElements, searchPanesForcedBackground)} {
+        background: $tableSearchPanesMainContainerBackground !important;
+    }
+
+    #{map-get($tableElements, searchPanesFilterFakeBtn)} {
+        width: $tableFiltersFakeBtnWidth !important;
+    }
+
+    #{map-get($tableElements, searchPanesActiveFilterWarning)} {
+        width: $tableSearchPanesActiveFilterWarningWidth;
+        z-index: $tableSearchPanesActiveFilterWarningZIndex;
+        position: $tableSearchPanesActiveFilterWarningPosition;
+        font-size: $tableSearchPanesActiveFilterWarningFontSize;
+    }
+
+    #{map-get($tableElements, searchPanesPaneList)} {
+        background: $tableSearchPanesPaneBackground !important;
+    }
+
+    #{map-get($tableElements, searchPanesPaneListItem)} {
+        color: $tableSearchPanesPaneFontColor !important;
+    }
+
+    #{map-get($tableElements, tableFilterProcessingLoader)} {
+        background: $tableFilterProcessingLoaderBackground !important;
+    }
+
+    #{map-get($tableElements, tableBody)} {
+        border-bottom-color: $tableOuterBorderBottomColor !important;
+    }
+
+    #{map-get($tableElements, paginationActivePageThemeLight)} {
+        background: $paginationButtonThemeLightBackground !important;
+        color: $paginationActivePageTextColor !important;
+        border-color: $paginationButtonThemeLightBorderColor !important;
+    }
+
+    #{map-get($tableElements, paginationActivePageThemeDark)} {
+        background: $paginationButtonThemeDarkBackground !important;
+        color: $paginationActivePageTextColor !important;
+        border-color: $paginationButtonThemeDarkBorderColor !important;
+    }
+
+    #{map-get($tableElements, tableEntriesPerPageGroup)} {
+        
+        @include phone {
+            display: $tableEntriesPerPageGroupDisplay_phone !important;
+        }
+    }
+
+    #{map-get($tableElements, tableSearchInputGroup)} {
+        
+        @include phone {
+            display: $tableSearchInputGroupDisplay_phone !important;
+        }
+    }
+
+    #{map-get($tableElements, tableEntriesPerPageGroup)} {
+        
+        @include phone {
+            display: $tableEntriesPerPageGroupDisplay_phone !important;
+        }
+    }
+
+    #{map-get($tableElements, tablePaginationLabel)} {
+        
+        @include phone {
+            display: $tablePaginationLabelDisplay_phone !important;
+        }
+    }
+
+    #{map-get($tableElements, tablePagination)} {
+        
+        @include phone {
+            display: $tablePaginationDisplay_phone !important;
+        }
+    }
+
+    #{map-get($tableElements, tableFooterButtons)} {
+        @include phone {
+            width: $tableFooterButtonsWidth_phone !important;
+            flex: $tableFooterButtonsFlexGrow_phone !important;
+        }
+
+        @include tablet {
+            width: $tableFooterButtonsWidth_phone !important;
+            flex: $tableFooterButtonsFlexGrow_phone !important;
+        }
+    }
+
+    #{map-get($tableElements, tablePaginationPgNumbers)} {
+        @include phone {
+            padding-left: $tablePaginationPgNumbersPaddingLeft_phone !important;
+        }
+
+        @include tablet {
+            padding-left: $tablePaginationPgNumbersPaddingLeft_phone !important;
+        }
+    }
+}
+
+// cat search
+@mixin catSearch($catSearchElements) {
+    #{map-get($catSearchElements, searchInput)} {
+        width: $catSearchWidth;
+        padding: $catSearchInputPadding;
+        background-color: $catSearchBackground;
+        border: $catSearchBorders;
+        color: $catSearchTextColor;
+
+        @include phone {
+            width: $catSearchWidth_phone;
+        }
+
+        @include tablet {
+            width: $catSearchWidth_phone;
+        }
+    }
+
+    #{map-get($catSearchElements, searchResults)} {
+        position: $catSearchResultsPosition;
+        z-index: $catSearchResultsZIndex;
+        background-color: $catSearchBackground;
+        border: $b-none;
+        border-top: $catSearchBorders;
+        border-bottom: $catSearchBorders;
+        border-left: $catSearchBorders;
+        border-right: $catSearchBorders;
+        width: $catSearchWidth;
+        padding: $catSearchResultsPadding;
+        margin: $catSearchResultsMargin;
+        list-style: $catSearchResultsListStyle;
+        max-height: $catSearchResultsMaxHeight;
+        overflow-y: $catSearchResultsOverflow;
+        display: $catSearchResultsDefaultDisplay;
+      
+        margin-top: $catSearchResultsMarginTop;
+        border-radius: $brad-0px $brad-0px $catSearchResultsBorderBottomRadius $catSearchResultsBorderBottomRadius;
+        border-top: $catSearchBorders;
+
+        overflow-y: $catSearchResultsOverflowY !important;
+
+        @include phone {
+            width: $catSearchWidth_phone;
+        }
+
+        @include tablet {
+            width: $catSearchWidth_phone;
+        }
+
+    }
+
+    #{map-get($catSearchElements, searchResults)} li {
+        padding: $catSearchResultsItemPadding;
+        cursor: $catSearchResultsItemCursor;
+        color: $catSearchTextColor !important;
+        margin: $catSearchResultsItemMargin !important;
+    }
+
+    #{map-get($catSearchElements, searchResults)} li:hover {
+        background-color: $catSearchResultsItemMarkedBackground;
+    }
+
+    #{map-get($catSearchElements, searchResults)} li.selected {
+        background-color: $catSearchResultsItemMarkedBackground;
+    }
+
+    #{map-get($catSearchElements, showCatCloudButton)}{
+        width: $catCloudShowButtonWidth;
+    }
+}
+
+// cats on page
+@mixin catsOnPage($catOnPageElements) {
+    #{map-get($catOnPageElements, badge)} {
+        top: $badgeTopPosition;
+        left: $badgeLeftPositions;
+    }
+}
+
+// page full info offcanvas
+@mixin offCanvasPageFullInfo($offcanvasElements) {
+    #{map-get($offcanvasElements, container)} {
+        width: $offcanvasWidth !important;
+
+        @include phone {
+            width: $offCanvasWidth_phone !important;
+        }
+
+        @include tablet {
+            width: $offCanvasWidth_phone !important;
+        }
+    }
+
+    #{map-get($offcanvasElements, body)} {
+
+        @include phone {
+            font-size: $bodyFontSize !important;
+        }
+
+        @include tablet {
+            font-size: $bodyFontSize !important;
+        }
+    }
+
+    #{map-get($offcanvasElements, tagsCardBody)} {
+        //max-height: $tagsCardBodyMaxHeight;
+        overflow-y: $tagsCardBodyOverflowY;
+    }
+
+    #{map-get($offcanvasElements, customNoteButton)} {
+        width: $customNotesButtonWidth !important;
+    }
+
+    #{map-get($offcanvasElements, alertInfoMessages)} {
+        @include phone {
+            font-size: $alertInfoMessagesFontSize_phone;
+        }
+
+        @include tablet {
+            font-size: $alertInfoMessagesFontSize_phone;
+        }
+    }
+
+}
+
+// context menu
+@mixin editor($editorElements) {
+    #{map-get($editorElements, editZone)} {
+        background: $editZoneBackground;
+    }
+
+    #{map-get($editorElements, documentEditor)} {
+        height:$documentEditorHeight;
+        margin-top:$documentEditorTopMargin;
+        border-radius: $documentEditorBorderRadius !important;
+    }
+
+    #{map-get($editorElements, balloon)} {
+        z-index: $documentEditorBaloonZIndex !important;        
+    }
+
+    #{map-get($editorElements, addTagLine)} {
+        border-top: $documentEditorAddTagLineBorderTop;
+        padding-top: $documentEditorAddTagLinePaddingTop;        
+    }
+
+    #{map-get($editorElements, addCatLine)} {
+        border-top: $documentEditorAddCatLineBorderTop;
+        padding-top: $documentEditorAddCatLinePaddingTop;        
+    }
+}
+
+// editor
+@mixin contextMenu($contextMenuElements) {
+    #{map-get($contextMenuElements, container)} {
+        z-index: $contextMenuZIndex !important;
+        position: $contextMenuContainerPosition;
+        //background: $contextMenuContainerBackground;
+    }
+
+    #{map-get($contextMenuElements, menuItem)} {
+        cursor: $contextMenuItemCursor;
+        padding-left: $contextMenuItemPaddingLeft !important;
+    }
+
+    #{map-get($contextMenuElements, menuItemLink)} {
+        font-size: $contextMenuLinkFontSize;
+        align-items: $contextMenuItemAlgnItemsVertical !important;
+    }
+
+    #{map-get($contextMenuElements, menuItemList)} {
+        padding-left: $contextMenuListPaddingLeft !important;
+        list-style: $contextMenuListStyle;
+    }
+
+    #{map-get($contextMenuElements, pageTagContextMenuFooterButton)} {
+        width: $contextMenuPageTagFooterBtnWidth;
+    }
+
+    #{map-get($contextMenuElements, tagAndCatContextMenu)} {
+        font-size: $tagAndCatContextMenuFontSize !important;
+    }
+}
+
+// page search
+@mixin pageSearch($pageSearchElements) {
+    ##{map-get($pageSearchElements, searchInput)}, input[id$="#{map-get($pageSearchElements, searchInput)}"] {
+        width: $pageSearchWidth;
+        padding: $pageSearchInputPadding;
+        background-color: $pageSearchBackground;
+        border: $pageSearchBorders;
+        color: $pageSearchTextColor;
+
+        @include phone {
+            width: $pageSearchWidth_phone;
+        }
+
+        @include tablet {
+            width: $pageSearchWidth_phone;
+        }
+    }
+
+    ##{map-get($pageSearchElements, searchResults)}, ul[id$="#{map-get($pageSearchElements, searchResults)}"] {
+        position: $pageSearchResultsPosition;
+        z-index: $pageSearchResultsZIndex;
+        background-color: $pageSearchBackground;
+        border: $b-none;
+        border-top: $pageSearchBorders;
+        border-bottom: $pageSearchBorders;
+        border-left: $pageSearchBorders;
+        border-right: $pageSearchBorders;
+        width: $pageSearchWidth;
+        padding: $pageSearchResultsPadding;
+        margin: $pageSearchResultsMargin;
+        list-style: $pageSearchResultsListStyle;
+        max-height: $pageSearchResultsMaxHeight;
+        overflow-y: $pageSearchResultsOverflow;
+        display: $pageSearchResultsDefaultDisplay;
+      
+        margin-top: $pageSearchResultsMarginTop;
+        border-radius: $brad-0px $brad-0px $pageSearchResultsBorderBottomRadius $pageSearchResultsBorderBottomRadius;
+        border-top: $pageSearchBorders;
+
+        overflow-y: $pageSearchResultsOverflowY !important;
+
+        @include phone {
+            width: $pageSearchWidth_phone;
+        }
+
+        @include tablet {
+            width: $pageSearchWidth_phone;
+        }
+
+    }
+
+    ##{map-get($pageSearchElements, searchResults)} li, ul[id$="#{map-get($pageSearchElements, searchResults)}"] li {
+        padding: $pageSearchResultsItemPadding;
+        cursor: $pageSearchResultsItemCursor;
+        color: $pageSearchTextColor !important;
+        margin: $pageSearchResultsItemMargin !important;
+    }
+
+    ##{map-get($pageSearchElements, searchResults)} li:hover, ul[id$="#{map-get($pageSearchElements, searchResults)}"] li:hover {
+        background-color: $pageSearchResultsItemMarkedBackground;
+    }
+
+    ##{map-get($pageSearchElements, searchResults)} li.selected, ul[id$="#{map-get($pageSearchElements, searchResults)}"] li.selected {
+        background-color: $pageSearchResultsItemMarkedBackground;
+    }
+
+    #{map-get($pageSearchElements, searchDocsSectionButton)} {
+        width: $searchDocsSectionButtonWidth;
+        height: $searchDocsSectionButtonHeight;
+    }
+
+}
+
+// page saved items
+@mixin pageSavedItems($pageSavedItemsElements) {
+    #{map-get($pageSavedItemsElements, savedDocsSectionButton)} {
+        width: $savedDocsSectionButtonWidth;
+        height: $savedDocsSectionButtonHeight;
+    }
+
+    #{map-get($pageSavedItemsElements, savedDocsInfoText)} {
+        font-size: $savedDocsInfoTextFontSize;
+    }
+
+    #{map-get($pageSavedItemsElements, savedItemsFileDropZone)} {
+        border: $savedItemsFileDropZoneBorder;
+    }
+
+    #{map-get($pageSavedItemsElements, savedItemsFileDropZoneDragover)} {
+        background: $savedItemsFileDropZoneDragoverBackground;
+    }
+}
+
+// hs integration (for what is outside iframes)
+@mixin hs($hsElements) {
+    #{map-get($hsElements, formLink)} {
+        font-size: $hsFormLinkFontSize;
+    }
+
+    #{map-get($hsElements, cookieSettingsContainer)} {
+        background-color: $hsModalContentBackground !important;
+        font-family: $hsModalContentFontFamily !important;
+    }
+}
+
+// github
+@mixin gitHub($ghFormsElements) {
+    #{map-get($ghFormsElements, ghBtnLink)} {
+        font-size: $ghBtnLinkFontSize;
+    }
+}
+
+// single page
+@mixin singlePage($singlePageElements) {
+    
+    #{map-get($singlePageElements, pageInfoButtons)} {
+        width: $pageInfoButtonsWidth;
+    }
+
+    #{map-get($singlePageElements, breadcrumbItem)}::after {
+        content: $breadcrumbItemSeparatorContent;
+    }
+
+    #{map-get($singlePageElements, customBreadcrumbItem)}::before {
+        display: $customBreadcrumbItemSeparatorContentVisibility !important;
+    }
+
+    #{map-get($singlePageElements, customBreadcrumbItem)} {
+        font-size: $customBreadcrumbItemFontSize !important;
+    }
+
+    #{map-get($singlePageElements, breadcrumb)} {
+        @include phone {
+            display: $breadcrumbVisibility_phone;
+        }
+
+        @include tablet {
+            display: $breadcrumbVisibility_phone;
+        }
+    }
+}
+
+// home page
+@mixin homePage($homePageElements) {
+    #{map-get($homePageElements, pageExcerptInListItems)} {
+        font-size: $pageExcerptInListItemsFontSize;
+    }
+
+    #{map-get($homePageElements, pageStatsSectionDocumentsListItemBtn)} {
+        width: $pageStatsSectionDocumentsListItemBtnSize;
+    }
+}
+
+// selected text context menu
+@mixin selectedTextContextMenu($selectedTextContextMenuElements) {
+    #{map-get($selectedTextContextMenuElements, container)} {
+        display: $containerInitialVisibilty;
+        position: $containerPosition;
+        background-color: $containerBackground;
+        border: $containerBorder;
+        padding: $containerPadding;
+        cursor: $containerCursor;
+        z-index: $containerZIndex;
+        box-shadow: $containerBoxShadow;
+        font-size: $containerFontSize;
+        line-height: $containerLineHeight;
+        min-width: $containerMinWidth;
+        max-width: $containerMaxWidth;
+        border-radius: $containerBorderRadius;
+    }
+
+    #{map-get($selectedTextContextMenuElements, itemsContainer)} {
+        list-style: $itemsContainerListStyle;
+        padding: $itemsContainerPadding;
+        margin: $itemsContainerMargin;
+    }
+
+    #{map-get($selectedTextContextMenuElements, item)} {
+        padding: $itemPadding;
+        color: $itemColor;
+        white-space: $itemWhiteSpace;
+    }
+
+    #{map-get($selectedTextContextMenuElements, item)}:hover {
+        background-color: $itemBackgroundHover;
+        color: $itemColorHover;
+    }
+
+    #{map-get($selectedTextContextMenuElements, addCommentBtn)} {
+        font-size: $addCommentBtnFontSize;
+    }
+
+    #{map-get($selectedTextContextMenuElements, addCommentTextarea)} {
+        font-size: $addCommentTextareaFontSize;
+    }
+
+   
+}
+
+// 404
+@mixin page404($page404Elements) {
+    #{map-get($page404Elements, container)} {
+        margin: $containerMargin;
+        max-width: $containerMaxWidth;
+        text-align: $containerTextAlign;
+    }
+}
+
+// algolia DocSearch
+@mixin algolia($algoliaElements) {
+    #{map-get($algoliaElements, hitMarker)} {
+        color: $hitMarkerColor;
+    }
+
+    #{map-get($algoliaElements, hitDetailsContainer)} {
+        background: $hitDetailsContainerBackground;
+        position: $hitDetailsContainerPosition;
+        box-shadow: $hitDetailsContainerBoxShadow;
+        border-radius: $hitDetailsContainerBorderRadius;
+        z-index: $hitDetailsContainerBorderZIndex;
+        overflow-y: $hitDetailsContainerOverflowY;
+    }
+
+    #{map-get($algoliaElements, docSearchBtn)} {
+        z-index: $docSearchBtnZIndex !important;
+        outline: $docSearchBtnOutline !important;
+        cursor: $docSearchBtnCursor !important;
+        margin-left: $docSearchBtnLeftMargin !important;
+    }
+
+    #{map-get($algoliaElements, docSearchModal)} {
+        outline: $docSearchModalOutline !important;
+    }
+
+    #{map-get($algoliaElements, docSearchFontSmall)} {
+        font-size: $docSearchFontSmallFontSize !important;
+    }
+
+    #{map-get($algoliaElements, docSearchFontStandard)} {
+        font-size: $docSearchFontStandardFontSize !important;
+    }
+
+    #{map-get($algoliaElements, docSearchHitDetailsHeader)} {
+        position: $docSearchHitDetailsHeaderPosition;
+        top: $docSearchHitDetailsHeaderTop;
+        z-index: $docSearchHitDetailsHeaderZIndex !important
+    }
+
+    #{map-get($algoliaElements, docSearchHitDetailsHitTargetContentItem)}:hover {
+        text-decoration: $docSearchHitDetailsHitTargetContentItemDecoration !important;
+    }
+
+    #{map-get($algoliaElements, hitTargetPageTocPopover)} .popover-body {
+        --bs-popover-body-font-size: $hitTargetPageTocPopoverBodyFontSize
+    }
+}
+
