@@ -1,4 +1,0 @@
-*.rb linguist-detectable=true
-*.py linguist-detectable=true
-*.js linguist-detectable=true
-*.html linguist-detectable=true
