@@ -1,0 +1,37 @@
+name: Copy Last Commit of gh-pages Branch
+
+on:
+  workflow_dispatch:
+
+jobs:
+  copy-last-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source repository
+        uses: actions/checkout@v2
+        with:
+          repository: pmc-community/figma
+          ref: gh-pages
+
+      - name: Prepare destination repository
+        run: |
+          git config --global user.name 'florinhoinarescu'
+          git config --global user.email 'florin_hoinarescu@yahoo.com'
+          git clone https://github.com/pmc-community/jekyll-site-template.git ../destination-repo
+          cd ../destination-repo
+          git checkout -B main
+
+      - name: Copy last commit content
+        run: |
+          # Copy content from the source repository to the destination repository
+          rsync -a --exclude='.git' ./ ../destination-repo/
+
+          # Navigate to the destination repository
+          cd ../destination-repo
+          git add .
+          git commit -m "Sync last commit from gh-pages branch of pmc-community/figma"
+          git push -f https://x-access-token:${{ secrets.PAT_COPY_GHPAGES_TO_JEKYLL_SITE_TEMPLATE_MAIN }}@github.com/pmc-community/jekyll-site-template.git main
+
+      - name: Clean up
+        run: |
+          rm -rf ../destination-repo
