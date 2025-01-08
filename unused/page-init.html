@@ -1,0 +1,38 @@
+<script id="init_superglobals_mainSettings" siteAttr="page_var_init_script">
+  const settings = {{site.data.siteConfig | replace: "=>", ":" | jsonify | json_string_to_object}}
+</script>
+
+<script id="init_superglobals_pageSettings" siteAttr="page_var_init_script">
+  {% assign allSettings = site.data.pageConfig %}
+  {% assign crtPage = page.url %}
+  {% assign crtPageClientSettings = allSettings[crtPage] | jsonify %}
+  const pageSettings = {{crtPageClientSettings}}
+</script>
+
+<script id="init_superglobals_tagList" siteAttr="page_var_init_script">
+  const tagList = {{site.data.tag_list | jsonify | json_string_to_object}}
+</script>
+
+<script id="init_superglobals_tagDetails" siteAttr="page_var_init_script">
+  const tagDetails = {{site.data.tags_details | replace: "=>", ":" | jsonify | json_string_to_object}}
+</script>
+
+<script id="init_superglobals_catList" siteAttr="page_var_init_script">
+  const catList = {{site.data.category_list | jsonify | json_string_to_object}}
+</script>
+
+<script id="init_superglobals_catDetails" siteAttr="page_var_init_script">
+  const catDetails = {{site.data.categories_details | replace: "=>", ":" | jsonify | json_string_to_object}}
+</script>
+
+<script id="init_superglobals_pageList" siteAttr="page_var_init_script">
+  const pageList = {{site.data.page_list | jsonify | json_string_to_object}}
+</script>
+
+<script id="init_superglobals_hs" siteAttr="page_var_init_script">
+  const hsSettings = {{site.data.hs_integration | replace: "=>", ":" | jsonify | json_string_to_object}}
+</script>
+
+<script id="init_superglobals_algoliaClient" siteAttr="page_var_init_script">
+  const algoliaSettings = {{site.data.algolia_client_integration | jsonify | json_string_to_object}}
+</script>

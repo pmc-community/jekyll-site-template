@@ -1,0 +1,360 @@
+<style>body {visibility: hidden}</style>
+
+<script type="application/javascript">
+    let userIP = undefined;
+    const getIP = (json) => {
+        userIP = json.ip;
+    }
+</script>
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preconnect" href="https://cdn.datatables.net" crossorigin>
+<link rel="preconnect" href="https://cdn.ckeditor.com" crossorigin>
+<link rel="preconnect" href="https://buttons.github.io" crossorigin>
+<link rel="preconnect" href="https://js.hs-scripts.com" crossorigin>
+<link rel="preconnect" href="https://js.hsforms.net" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+
+{% if site.data.siteConfig.scripts.fontFamily and site.data.siteConfig.scripts.fontFamily != "" %}
+    <link href="{{ site.data.siteConfig.scripts.fontFamily }}" rel="stylesheet">
+{% endif %}
+
+<!-- make settings available asap -->
+<link href="/assets/config/siteSettings.js" rel="preload" as="script">
+<script src="/assets/config/siteSettings.js"></script>
+
+<!-- New Relic if applicable -->
+{% include siteIncludes/partials/new-relic.html %}
+
+{% include siteIncludes/partials/global-utilities.html %}
+{% include siteIncludes/partials/init-hooks.html %}
+
+<link rel="icon" type="image/png" href="{{ '/favicon.png' | relative_url }}">
+<script siteAttr="init_not_needed_anymore">const pagePermalink = "{{page.permalink}}"</script>
+
+{% assign pageArray= site.data.page_list  | json_string_to_object %}
+{% assign permalink = page.permalink %}
+{% assign pg = pageArray | where: "permalink", permalink %}
+{% assign pageObj = pg | replace: "=>", ":" | json_string_to_object %}
+
+<meta name="description" content="{{site.title}} - {{page.title}} ({{pageObj[0].excerpt}})">
+
+<!-- necessary for deployments in multiple domains -->
+<!-- mandatory if using Algolia search. the crawler rejects url which does not match its allowed domains -->
+{% assign baseUrl = site.data.deploy_base_url %}
+
+{% if permalink[0] != '/' %}
+    {% assign permalink_with_slash = '/' | append: permalink %}
+{% else %}
+    {% assign permalink_with_slash = permalink %}
+{% endif %}
+
+{% assign canonicalPath = baseUrl | append: permalink_with_slash %}
+{% assign canonicalPath_with_placeholder = canonicalPath | replace: '://', 'PLACEHOLDER' %}
+{% assign canonicalPath_replaced_string = canonicalPath_with_placeholder | replace: '//', '/' %}
+{% assign canonicalPath_final_string = canonicalPath_replaced_string | replace: 'PLACEHOLDER', '://' %}
+
+<link rel="canonical" href="{{canonicalPath_final_string}}">    
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.5/js.cookie.min.js" rel="preload" as="script">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.5/js.cookie.min.js" 
+    referrerpolicy="no-referrer">
+</script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" rel="preload" as="script">
+<script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    referrerpolicy="no-referrer">
+</script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" defer rel="preload" as="script">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js" defer rel="preload" as="script">
+<script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js" 
+    referrerpolicy="no-referrer">
+</script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" defer rel="preload" as="script">
+<script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" 
+    referrerpolicy="no-referrer">
+</script>
+
+<link 
+    rel="preload" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" 
+    as="style" 
+    onload="this.rel='stylesheet'">
+<noscript>
+    <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+    referrerpolicy="no-referrer"/>
+</noscript>
+
+<link 
+    rel="preload" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" 
+    as="style" 
+    onload="this.rel='stylesheet'">
+<noscript>
+    <link 
+        rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" 
+        referrerpolicy="no-referrer" />
+</noscript>
+
+{% if page.permalink != "/" %}
+
+    <link href="/assets/js/bootstrap-toc.min.js" rel="preload" as="script">
+    <script src="/assets/js/bootstrap-toc.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/bootstrap-toc.min.css" async defer>
+
+    <!-- md to html converter -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js" rel="preload" as="script">
+    <script 
+        src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"
+        referrerpolicy="no-referrer">
+    </script>
+
+   <link 
+    rel="preload" 
+    href="https://cdn.datatables.net/v/bs5/jq-3.7.0/jszip-3.10.1/dt-2.0.5/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.1/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/rr-1.5.0/sc-2.4.1/sb-1.7.1/sp-2.3.1/sl-2.0.1/sr-1.4.1/datatables.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript>
+        <link 
+            rel="stylesheet" 
+            href="https://cdn.datatables.net/v/bs5/jq-3.7.0/jszip-3.10.1/dt-2.0.5/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.1/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/rr-1.5.0/sc-2.4.1/sb-1.7.1/sp-2.3.1/sl-2.0.1/sr-1.4.1/datatables.min.css">
+    </noscript>
+
+    <link 
+        href="https://cdn.datatables.net/v/bs5/jq-3.7.0/jszip-3.10.1/dt-2.0.5/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.1/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/rr-1.5.0/sc-2.4.1/sb-1.7.1/sp-2.3.1/sl-2.0.1/sr-1.4.1/datatables.min.js" rel="preload" 
+        as="script">
+    <script 
+        src="https://cdn.datatables.net/v/bs5/jq-3.7.0/jszip-3.10.1/dt-2.0.5/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.1/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/rr-1.5.0/sc-2.4.1/sb-1.7.1/sp-2.3.1/sl-2.0.1/sr-1.4.1/datatables.min.js">
+    </script>
+
+    <link 
+        href="https://cdn.ckeditor.com/ckeditor5/41.3.1/decoupled-document/ckeditor.js" 
+        rel="preload" 
+        as="script">
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.3.1/decoupled-document/ckeditor.js"></script>
+
+{% endif %}
+
+<link 
+    href="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js" 
+    rel="preload" 
+    as="script">
+<script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js" 
+    referrerpolicy="no-referrer">
+</script>
+
+<!-- jquery ui load last to be sure that jquery is available -->
+<link 
+    rel="preload" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.0/themes/base/jquery-ui.min.css" 
+    as="style" 
+    onload="this.rel='stylesheet'"/>
+<noscript>
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.0/themes/base/jquery-ui.min.css" 
+        referrerpolicy="no-referrer" />
+</noscript>
+<link 
+    href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.0/jquery-ui.min.js" 
+    rel="preload" 
+    as="script">
+<script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.0/jquery-ui.min.js" 
+    referrerpolicy="no-referrer">
+</script>
+
+<!-- hs -->
+{% if site.data.siteConfig.hsIntegration.enabled %}
+    <link 
+        href="//js.hs-scripts.com/{{site.data.hs_portal_id}}.js" 
+        rel="preload" 
+        as="script">
+    <script 
+        type="text/javascript" 
+        id="hs-script-loader" 
+        async defer 
+        src="//js.hs-scripts.com/{{site.data.hs_portal_id}}.js">
+    </script>
+    <link 
+        href="//js.hsforms.net/forms/embed/v2.js" 
+        rel="preload" 
+        as="script">
+    <script 
+        charset="utf-8" 
+        type="text/javascript" 
+        src="//js.hsforms.net/forms/embed/v2.js" 
+        async defer>
+    </script>
+{% endif %}
+
+<!-- gh -->
+{% if site.data.buildConfig.github.enabled %}
+    <link 
+        href="https://buttons.github.io/buttons.js" 
+        rel="preload" 
+        as="script">
+    <script 
+        async defer 
+        src="https://buttons.github.io/buttons.js">
+    </script>
+{% endif %}
+
+<!-- algolia -->
+{% assign appID = "" %}
+{% assign algolia = site.data.algolia_integration | json_string_to_object %}
+{% if algolia.algoliaEnabled %}
+
+    {% if algolia.algoliaDocSearchEnabled %}
+
+        {% assign appID = algolia.algoliaAppID %}
+        <link rel="preload" 
+            href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" 
+            as="style" 
+            onload="this.rel='stylesheet'">
+        <noscript>
+            <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+        </noscript>
+
+        <link 
+            href="https://cdn.jsdelivr.net/npm/@docsearch/js@3" 
+            rel="preload" 
+            as="script">
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+
+    {% elsif algolia.algoliaNetlifyEnabled %}
+
+        {% assign appID = algolia.algoliaNetlifyAppID %}
+
+        <link 
+            rel="preload" 
+            href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css" 
+            as="style" 
+            onload="this.rel='stylesheet'">
+        <noscript>
+            <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css" />
+        </noscript>
+
+        <link 
+            href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js" 
+            rel="preload" 
+            as="script">
+        <script 
+            type="text/javascript" 
+            src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js">
+        </script>
+    
+    {% elsif algolia.algoliaNetlifyEnabled %}
+
+        {% assign appID = algolia.algoliaCustomAppID %}
+
+    {% endif %}
+
+    {% if appID != "" %}
+        <link rel="preconnect" href="https://{{appID}}-dsn.algolia.net" crossorigin />
+    {% endif %}
+
+    <link 
+        href="https://cdn.jsdelivr.net/npm/algoliasearch@4.24.0/dist/algoliasearch.umd.js" 
+        rel="preload" 
+        as="script">
+    <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.24.0/dist/algoliasearch.umd.js"></script>
+    
+{% endif %}
+    
+<!-- site js assets -->
+
+<link href="/assets/js/preflight-check.js" rel="preload" as="script">
+<script src="/assets/js/preflight-check.js"></script>
+
+<link href="/assets/js/utilities.js" rel="preload" as="script">
+<script src="/assets/js/utilities.js"></script>
+
+<!-- pre-hooks to functions executed until page loaded -->
+<link href="/assets/js/pre-hooks.js" rel="preload" as="script">
+<script src="/assets/js/pre-hooks.js"></script>
+
+<link href="/assets/js/main.js" rel="preload" as="script">
+<script src="/assets/js/main.js"></script>
+
+<link href="/assets/js/saved-items.js" rel="preload" as="script">
+<script src="/assets/js/saved-items.js"></script>
+
+{% if page.permalink != "/" %}
+
+    <link href="/assets/js/tags.js" rel="preload" as="script">
+    <script src="/assets/js/tags.js"></script>
+
+    <link href="/assets/js/cat.js" rel="preload" as="script">
+    <script src="/assets/js/cat.js"></script>
+
+
+    <link href="/assets/js/page-full-info.js" rel="preload" as="script">
+    <script src="/assets/js/page-full-info.js"></script>
+
+    <link href="/assets/js/site-pages.js" rel="preload" as="script">
+    <script src="/assets/js/site-pages.js"></script>
+
+{% endif %}
+
+<link href="/assets/js/site-page.js" rel="preload" as="script">
+<script src="/assets/js/site-page.js"></script>
+
+<link href="/assets/js/home.js" rel="preload" as="script">
+<script src="/assets/js/home.js"></script>
+
+{% if site.data.siteConfig.hsIntegration.enabled %}
+    <link href="/assets/js/hs-integrate.js" rel="preload" as="script">
+    <script src="/assets/js/hs-integrate.js"></script>
+{% endif %}
+
+{% assign algolia = site.data.algolia_integration | json_string_to_object %}
+{% if algolia.algoliaEnabled %}
+    <link href="/assets/js/algolia-integrate.js" rel="preload" as="script">
+    <script src="/assets/js/algolia-integrate.js" async defer></script>
+{% endif %}
+
+<!-- preloading heavy assets -->
+<link rel="preload" as="image" href="/assets/img/logo.png" type="image/png">
+{% if page.permalink == "/" %}
+    <link rel="preload" as="image" href="/assets/img/home-600.webp" type="image/webp">
+{% endif %}
+
+<!-- post-hooks are last to allow hooking everywhere -->
+<link href="/assets/js/post-hooks.js" rel="preload" as="script">
+<script src="/assets/js/post-hooks.js"></script>
+
+<!-- end site js assets -->
+
+<script 
+    src="//instant.page/5.2.0" 
+    type="module"> 
+</script>
+
+<!-- GA tag if applicable -->
+{% include siteIncludes/partials/ga-tag.html %}
+
+<!-- GTM tag if applicable -->
+{% include siteIncludes/partials/gtm-head.html %}
+    
+
+
+
+
+

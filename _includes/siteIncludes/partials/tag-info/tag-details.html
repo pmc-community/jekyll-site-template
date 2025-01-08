@@ -1,0 +1,141 @@
+{% assign tagsArray= site.data.tag_list  | json_string_to_object %}
+
+<div id="tag_details" class="my-5 ">
+    {% for tagItem in site.data.tags_details %}
+        <div tagReference="{{ tagItem[0] }}" siteFunction="tagDetails" class="d-none card shadow bg-transparent border border-secondary border-opacity-25">
+            <div class="card-header d-flex justify-content-between border-bottom border-secondary border-opacity-25">
+                <span class="fs-6 fw-medium">Tag:
+                    <button siteFunction="tagForActiveTagDetailsDatatable" id="{{ tagItem[0] }}" type="button" class="px-3 ml-1 btn btn-sm btn-primary position-relative">
+                        {{ tagItem[0] }}       
+                    </button>
+                </span>
+                <button siteFunction="btnClose" whatToClose='div[tagReference="{{ tagItem[0] }}"]' type="button" class="btn-close" aria-label="Close"></button>
+            </div>
+            <div class="card-body">
+                <table siteFunction="tagDetailsPageTable" class="table table-hover" tagReference="{{ tagItem[0] }}">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th siteFunction="tableDateField">Last Update</th>
+                            <th>Actions</th>
+                            <th>Excerpt</th>
+                            <th>Other Tags</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            {% for pageItem in tagItem[1]["pages"] %}
+                                <tr
+                                    siteFunction="tagInfoTagTablePageRow"
+                                    tagReference="{{ tagItem[0] }}"
+                                    pageTitleReference="{{ pageItem.title }}"
+                                    pagePermalinkReference="{{ pageItem.permalink }}">
+                                    <td 
+                                        siteFunction="tagInfoTagTablePageTitle" 
+                                        class="fw-normal align-self-center align-middle"
+                                        title="Click here for more info about page {{ pageItem.title }}"
+                                        tagReference="{{ tagItem[0] }}"
+                                        colFunction="pageTitle">
+                                        <span>{{ pageItem.title }}</span>
+                                    </td>
+
+                                    <td 
+                                        siteFunction="tableDateField" 
+                                        class="fw-normal align-self-center align-middle"
+                                        tagReference="{{ tagItem[0] }}"
+                                        colFunction="pageLastUpdate">
+                                        <span>{{ pageItem.lastUpdate }}</span>
+                                    </td>
+
+                                    <td 
+                                        class="fw-normal align-self-center align-middle"
+                                        tagReference="{{ tagItem[0] }}"
+                                        colFunction="pageActions">
+                                        <div class="btn-group">
+                                            <a 
+                                                siteFunction="tagPageItemLinkToDoc" 
+                                                class="btn btn-sm btn-info" 
+                                                href="{{ pageItem.permalink }}"
+                                                title="Read page {{ pageItem.title }}"
+                                                tagForTagTableDetailsReference="{{ tagItem[0] }}"
+                                                target=_blank>
+                                                <i class="bi bi-book" style="font-size:1.2rem"></i>
+                                            </a>
+
+                                            <button 
+                                                siteFunction="tagPageItemSaveForLaterRead" 
+                                                pageRefPermalink = "{{ pageItem.permalink }}" 
+                                                pageRefTitle="{{ pageItem.title }}" 
+                                                class="btn btn-sm btn-success"
+                                                title="Save page {{ pageItem.title }} for later read"
+                                                tagForTagTableDetailsReference="{{ tagItem[0] }}">
+                                                <i class="bi bi-bookmark-plus" style="font-size:1.2rem"></i>
+                                            </button>
+
+                                            <button 
+                                                siteFunction="tagPageItemRemoveFromSavedItems" 
+                                                pageRefPermalink = "{{ pageItem.permalink }}" 
+                                                pageRefTitle="{{ pageItem.title }}" 
+                                                class="btn btn-sm btn-warning"
+                                                title="Remove page {{ pageItem.title }} from saved documents"
+                                                tagForTagTableDetailsReference="{{ tagItem[0] }}">
+                                                <i class="bi bi-bookmark-x" style="font-size:1.2rem"></i>
+                                            </button>
+                                        
+                                        </div>
+                                    </td>
+
+                                    <td 
+                                        class="fw-normal align-self-center align-middle"
+                                        tagReference="{{ tagItem[0] }}"
+                                        colFunction="pageExcerpt">
+                                        <span>
+                                            {% capture permalink_param %}
+                                                {
+                                                    "permalink": "{{pageItem.permalink | escape}}"
+                                                }
+                                            {% endcapture %}
+                                            {% PageExcerpt {{ permalink_param | json_string_to_object }} %}
+                                        </span>
+                                    </td>
+                                    
+                                    <td 
+                                        class="fw-normal align-self-center align-middle"
+                                        tagReference="{{ tagItem[0] }}"
+                                        colFunction="tagInfoTagTablePageOtherTags"
+                                        pageTitleReference="{{ pageItem.title }}"
+                                        pagePermalinkReference="{{ pageItem.permalink }}">
+                                        <span>
+                                            {% capture permalink_param %}
+                                                {
+                                                    "permalink": "{{pageItem.permalink | escape}}",
+                                                    "except": ["{{ tagItem[0] }}"]
+                                                }
+                                            {% endcapture %}
+
+                                            {% capture pageTags %}
+                                                {% PageTags {{ permalink_param | json_string_to_object }} %}
+                                            {% endcapture %}
+                                            {% assign pageTagsArray = pageTags | json_string_to_object  %}
+                                            {% for pageTag in pageTagsArray %}
+                                                <button 
+                                                    siteFunction="pageTagButton"
+                                                    tagType="siteTag"
+                                                    tagReference="{{ pageTag }}" 
+                                                    id="pageTag_{{ pageTag }}" 
+                                                    type="button" 
+                                                    class="align-self-center focus-ring focus-ring-warning px-3 mr-2 my-1 btn btn-sm btn-primary position-relative text-nowrap"
+                                                    title = "Details for tag {{ pageTag }}">
+                                                    {{ pageTag }}
+                                                </button>
+                                            {% endfor %}
+                                        </span>
+                                    </td>
+
+                                </tr>
+                            {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    {% endfor %}
+</div>

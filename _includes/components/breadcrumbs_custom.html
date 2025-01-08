@@ -1,0 +1,68 @@
+{% assign breadcrumbs = "" %}
+{% assign breadcrumbsNo = 0 %}
+{% assign current_page = pageList | where: "title", page.title | first %}
+{% assign partTitle = "" %}
+{% assign partUrl = "" %}
+{% assign partTextClass = 'text-secondary' %}
+{% assign pageList = site.data['page_list'] | json_string_to_object %}
+{% assign collections= site.data.filtered_collections %}
+{% assign docCollection = '' %}
+{% assign max_loops = site.data["buildConfig"]["breadcrumbs"]["depth"] %}
+
+<!-- Loop through parents -->
+{% for i in (1..max_loops) %}
+    {% if current_page.parent %}
+        {% assign parent_page = pageList | where: "title", current_page.parent | first %}
+        
+        {% if parent_page %}
+            {% assign partTitle = parent_page.title %}
+            {% assign partUrl = parent_page.permalink %}
+
+            <!-- Add leading slash if it doesn't exist -->
+            {% if partUrl[0] != "/" %}
+                {% assign partUrl = "/" | append: partUrl %}
+            {% endif %}
+
+            <!-- Add trailing slash if it doesn't exist -->
+            {% if partUrl[-1] != "/" %}
+                {% assign partUrl = partUrl | append: "/" %}
+            {% endif %}
+
+            {% assign partUrl = partUrl | replace: '//', '/' %}
+            
+            <!-- Add breadcrumb for parent -->
+            {% capture breadcrumb_item %}
+                <li class="breadcrumb-item my-1 px-2 py-0 rounded border border-warning border-opacity-25 shadow-none">
+                    <a class="fw-light {{ partTextClass }}" href="{{ partUrl }}">{{ partTitle }}</a>
+                </li>
+                <i class="align-self-center bi bi-chevron-right"></i>
+            {% endcapture %}
+            {% assign breadcrumbs = breadcrumb_item | append: breadcrumbs %}
+
+            {% assign breadcrumbsNo = breadcrumbsNo | plus: 1 %}
+            
+            <!-- Move up to the next parent -->
+            {% assign current_page = parent_page %}
+        {% else %}
+            {% break %}
+        {% endif %}
+    {% else %}
+        {% break %}
+    {% endif %}
+{% endfor %}
+
+<!-- Add current page as the active breadcrumb -->
+{% assign partTitle = page.title %}
+{% capture active_breadcrumb %}
+    <li class="breadcrumb-item active my-1 px-2 py-0 rounded border border-warning border-opacity-25 shadow-none" aria-current="page">{{ partTitle }}</li>
+{% endcapture %}
+{% assign breadcrumbs = breadcrumbs | append: active_breadcrumb %}
+
+<!-- Display breadcrumbs only if there's more than one breadcrumb -->
+{% if breadcrumbsNo > 0 %}
+    <nav aria-label="breadcrumb" class="container-xl p-0 mt-4 mt-md-0">
+        <ol class="breadcrumb">
+            {{ breadcrumbs }}
+        </ol>
+    </nav>
+{% endif %}

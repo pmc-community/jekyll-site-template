@@ -1,0 +1,95 @@
+@import 'custom-vars.scss';
+
+$tableBoxShadow: $sh-none;
+$tableOverflowX: $ov-auto;
+$tableWrapperPadding: $p-10px;
+$tablePaginationFontSize: $fs-small;
+$tableNothingFoundBackground: $c-transparent;
+$tableNothingFoundTextColor: $c-error-message;
+$tableInnerBorderColor: $c-grey-alt;
+$tableFreezeColumnZIndex: $z-9;
+$tableDateFieldTextAlignment: $tal-h-left;
+$tableFirstColumnCursor: $cr-pointer;
+$tableColvisBtnFontSize: $fs-body;
+$tableSearchPaneBtnWidth: $sz-6rem;
+$tableClearFiltersBtnWidth: $tableSearchPaneBtnWidth;
+$tableFiltersFakeBtnWidth: $tableSearchPaneBtnWidth;
+$tableSearchPaneSearchInputHeight: $sz-full;
+$tableSearchPaneButtonsBoxShadow: $sh-none;
+$tableSearchPanesContainerBackground: $c-metal-grey;
+$tableSearchPanesMainContainerBackground: $tableSearchPanesContainerBackground;
+
+$tableSearchPanesGlobalBtnPadding: $p-0-25 $p-0-5;
+$tableSearchPanesGlobalBtnFontSize: $fs-btn-sm;
+$tableSearchPanesGlobalBtnLineHeight: $lh-1-5;
+$tableSearchPanesGlobalBtnBorderRadius: $b-rad-0-2;
+$tableSearchPanesActiveFilterWarningPosition: $pos-fixed;
+$tableSearchPanesActiveFilterWarningZIndex: $z-999;
+$tableSearchPanesActiveFilterWarningWidth: $sz-400px;
+
+$tableSearchPanesActiveFilterWarningWidth_phone: $sz-full;
+$tableSearchPanesActiveFilterWarningLeft_phone: $s-0;
+$tableSearchPanesActiveFilterWarningBottom_phone: $s-0;
+
+$tableSearchPanesActiveFilterWarningFontSize: $fs-btn-sm;
+$tableSearchPanesPaneBackground: $c-white;
+$tableSearchPanesPaneFontColor: $c-black;
+$tableSearchPanesPaneSearchInputBackground: $c-white;
+$tableFilterProcessingLoaderBackground: $c-transparent;
+$tableOuterBorderBottomColor: $tableInnerBorderColor;
+$paginationButtonThemeLightBackground: $c-primary-theme-light;
+$paginationButtonThemeLightBorderColor: $paginationButtonThemeLightBackground;
+$paginationButtonThemeDarkBackground: $c-primary-theme-dark;
+$paginationButtonThemeDarkBorderColor:$paginationButtonThemeDarkBackground;
+$paginationActivePageTextColor: $c-white;
+$tableEntriesPerPageLabelVisibility_phone: $d-hidden;
+
+$tableEntriesPerPageGroupDisplay_phone: $d-flex;
+$tableSearchInputGroupDisplay_phone: $d-flex;
+$tablePaginationLabelDisplay_phone: $d-flex;
+$tablePaginationDisplay_phone: $d-flex;
+
+$tableFooterButtonsWidth_phone: $sz-auto;
+$tableFooterButtonsFlexGrow_phone: $flex-no-spread;
+
+$tablePaginationPgNumbersPaddingLeft_phone: $p-0;
+
+$tableElements: (
+    tableWrapper: '.table-wrapper',
+    paginationButtonLink: '.page-link',
+    nothingFound: '.dt-empty',
+    tableRow: 'td',
+    firstColumn: 'td[siteFunction="tableFirstColumn"]',
+    dateField: 'th[siteFunction="tableDateField"], td[siteFunction="tableDateField"]',
+    colvisButton: '.buttons-columnVisibility',
+    searchPaneButton: 'button[siteFunction="tableSearchPanes"]',
+    clearFiltersButton: 'button[siteFunction="tableClearFiltersSP"]',
+    searchPanesPaneSearchInput: '.dtsp-searchCont input',
+    seachPanesButtons: '.dtsp-searchIcon, .clearButton, .dtsp-nameButton, .dtsp-countButton, .dtsp-collapseButton',
+    searchPanesGlobButtons: '.dtsp-collapseAll, .dtsp-clearAll, .dtsp-showAll',
+    searchPanesContainer: '.dtsp-panes, .dropdown-menu',
+    searchPanesMainContainer: '.dropdown-menu .dt-button-collection .dtb-collection-closeable',
+    searchPanesForcedBackground: '.sp-forced-background',
+    searchPanesFilterFakeBtn: '.sitePagesDetailsLastFilterFakeBtn',
+    searchPanesActiveFilterWarning: 'div[sitefunction="sitePagesDetailsLastFilter"]',
+    searchPanesPaneList: '.dtsp-nameColumn',
+    searchPanesPaneListItem: '.dtsp-nameCont span',
+    tableFilterProcessingLoader: '.dt-processing,',
+    //used with cascade:true to avoid black background of "No data in the table" situation on dark theme
+    tableBody: 'div.dt-scroll-body',
+    paginationActivePageThemeDark: '.paginationActivePageThemeDark',
+    paginationActivePageThemeLight: '.paginationActivePageThemeLight',
+    tableEntriesPerPageLabel:'.dt-length label',
+    tableEntriesPerPageGroup: '.dt-length',
+    tableSearchInputGroup: '.dt-search',
+    tablePaginationLabel: '.dt-info',
+    tablePagination: '.dt-paging',
+    tablePaginationPgNumbers: '.pagination', // this is the ul element inside .dt-paging
+    tableFooterButtons: '.dt-buttons'
+);
+
+@import 'meta.scss';
+@include dataTable($tableElements);
+
+
+

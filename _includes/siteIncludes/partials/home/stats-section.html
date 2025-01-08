@@ -1,0 +1,29 @@
+
+<div siteFunction="homeStatsContainer">
+    <div class="row gx-5">
+        
+        <div 
+            siteFunction="homeStats_pages"
+            class="col-md-4 col-12 my-4">
+            {% include siteIncludes/partials/home/stats/pages.html %}
+        </div>
+
+        <div 
+            siteFunction="homeStats_cats"
+             class="col-md-4 col-12 my-md-4 my-2">
+            {% include siteIncludes/partials/home/stats/cats.html %}
+        </div>
+
+         <!-- tags stats -->
+         <div 
+            siteFunction="homeStats_tags"
+            class="col-md-4 col-12 my-md-4 my-2">
+            {% include siteIncludes/partials/home/stats/tags.html %}
+        </div>
+
+    </div>
+</div>
+
+<script>
+    home__statsSection();
+</script>

@@ -1,0 +1,24 @@
+[
+  {
+    "permalink": "/intro/",
+    "imported_by": [
+      "/pwc/",
+      "/collection-1/g1/"
+    ]
+  },
+  {
+    "permalink": "/collection-2/Z/z/",
+    "imported_by": [
+      "/pwc/",
+      "/collection-1/g1/",
+      "collection-2/X/x/"
+    ]
+  },
+  {
+    "permalink": "/collection-2/y/y/",
+    "imported_by": [
+      "/collection-1/g1/",
+      "collection-2/X/x/"
+    ]
+  }
+]
