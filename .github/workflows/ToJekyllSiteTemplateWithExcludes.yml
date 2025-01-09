@@ -1,4 +1,4 @@
-name: Copy Last Commit of gh-pages Branch
+name: Copy (with Excludes) Last Commit of gh-pages Branch
 
 on:
   workflow_dispatch:
@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
         with:
           repository: pmc-community/figma
           ref: gh-pages
@@ -24,7 +24,7 @@ jobs:
       - name: Copy last commit content
         run: |
           # Copy content from the source repository to the destination repository
-          rsync -a --exclude='.git' ./ ../destination-repo/
+          rsync -a --exclude='.git' --exclude='doc-contents/' --exclude='doc-raw-contents/' --exclude='doc-change-log/' ./ ../destination-repo/
 
           # Navigate to the destination repository
           cd ../destination-repo
