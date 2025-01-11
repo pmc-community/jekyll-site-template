@@ -166,10 +166,10 @@
         "tag2"
       ],
       "excerpt": "lorem ipsum, latin, cicero, sections, malorum, finibus bonorum, latin literature, standard chunk, rackham, translation",
-      "lastUpdate": "2024-09-29 17:31:15 +0300",
-      "lastUpdateUTC": 1727620275,
-      "createTime": "2024-08-22 12:39:46 +0300",
-      "createTimeUTC": 1724319586,
+      "lastUpdate": "2025-01-09 14:46:04 +0200",
+      "lastUpdateUTC": 1736426764,
+      "createTime": "2025-01-09 14:46:04 +0200",
+      "createTimeUTC": 1736426764,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -209,10 +209,10 @@
 
       ],
       "excerpt": "lorem ipsum, latin, latin literature, line, evil, extremes, malorum, cicero, book, treatise",
-      "lastUpdate": "2024-08-22 12:39:46 +0300",
-      "lastUpdateUTC": 1724319586,
-      "createTime": "2024-08-22 12:39:46 +0300",
-      "createTimeUTC": 1724319586,
+      "lastUpdate": "2025-01-09 14:46:04 +0200",
+      "lastUpdateUTC": 1736426764,
+      "createTime": "2025-01-09 14:46:04 +0200",
+      "createTimeUTC": 1736426764,
       "relatedPages": [
         {
           "title": "Collection-2/Y",
@@ -252,10 +252,10 @@
 
       ],
       "excerpt": "child page",
-      "lastUpdate": "2024-08-22 12:39:46 +0300",
-      "lastUpdateUTC": 1724319586,
-      "createTime": "2024-08-22 12:39:46 +0300",
-      "createTimeUTC": 1724319586,
+      "lastUpdate": "2025-01-09 14:46:04 +0200",
+      "lastUpdateUTC": 1736426764,
+      "createTime": "2025-01-09 14:46:04 +0200",
+      "createTimeUTC": 1736426764,
       "relatedPages": [
 
       ],
@@ -280,22 +280,22 @@
         "alfa"
       ],
       "excerpt": "file, lorem ipsum, site, markdown content, title, link, latin, cicero, malorum, sections",
-      "lastUpdate": "2025-01-06 12:30:36 +0200",
-      "lastUpdateUTC": 1736159436,
-      "createTime": "2024-08-22 12:39:46 +0300",
-      "createTimeUTC": 1724319586,
+      "lastUpdate": "2025-01-09 14:46:04 +0200",
+      "lastUpdateUTC": 1736426764,
+      "createTime": "2025-01-09 14:46:04 +0200",
+      "createTimeUTC": 1736426764,
       "relatedPages": [
         {
           "title": "Introduction",
           "permalink": "/intro/"
         },
         {
-          "title": "Collection-2/Y",
-          "permalink": "/collection-2/y/y/"
-        },
-        {
           "title": "Collection-2/X",
           "permalink": "collection-2/X/x/"
+        },
+        {
+          "title": "Collection-2/Y",
+          "permalink": "/collection-2/y/y/"
         }
       ],
       "autoSummary": "markdown content direct included in the page. heads up!!!links to other site docs must be given using the permalinks, not the ...",
@@ -319,10 +319,10 @@
         "tag3"
       ],
       "excerpt": "a very nice excerpt for a dynamically created file, having the content imported from an external private GitHub repo",
-      "lastUpdate": "2024-08-22 12:39:46 +0300",
-      "lastUpdateUTC": 1724319586,
-      "createTime": "2024-08-22 12:39:46 +0300",
-      "createTimeUTC": 1724319586,
+      "lastUpdate": "2025-01-09 14:46:04 +0200",
+      "lastUpdateUTC": 1736426764,
+      "createTime": "2025-01-09 14:46:04 +0200",
+      "createTimeUTC": 1736426764,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -347,10 +347,10 @@
         "legal"
       ],
       "excerpt": "services, space services, software, innohub, terms, service, website, content, user, property",
-      "lastUpdate": "2024-08-22 12:39:46 +0300",
-      "lastUpdateUTC": 1724319586,
-      "createTime": "2024-08-22 12:39:46 +0300",
-      "createTimeUTC": 1724319586,
+      "lastUpdate": "2025-01-09 14:46:04 +0200",
+      "lastUpdateUTC": 1736426764,
+      "createTime": "2025-01-09 14:46:04 +0200",
+      "createTimeUTC": 1736426764,
       "relatedPages": [
         {
           "title": "Subfolder/F1",
@@ -379,10 +379,10 @@
 
       ],
       "excerpt": "content, lorem ipsum, services, innohub, registration, email, access, process, latin, ihsutilities",
-      "lastUpdate": "2025-01-04 13:46:47 +0200",
-      "lastUpdateUTC": 1735991207,
-      "createTime": "2024-08-22 12:39:46 +0300",
-      "createTimeUTC": 1724319586,
+      "lastUpdate": "2025-01-09 14:46:04 +0200",
+      "lastUpdateUTC": 1736426764,
+      "createTime": "2025-01-09 14:46:04 +0200",
+      "createTimeUTC": 1736426764,
       "relatedPages": [
         {
           "title": "Subfolder/F1",
@@ -418,10 +418,10 @@
         "exa"
       ],
       "excerpt": "this a sample excerpt for a file. this will be shown wherever exerpt is needed",
-      "lastUpdate": "2024-10-16 14:11:25 +0300",
-      "lastUpdateUTC": 1729077085,
-      "createTime": "2024-08-22 12:39:46 +0300",
-      "createTimeUTC": 1724319586,
+      "lastUpdate": "2025-01-09 14:46:04 +0200",
+      "lastUpdateUTC": 1736426764,
+      "createTime": "2025-01-09 14:46:04 +0200",
+      "createTimeUTC": 1736426764,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -446,10 +446,10 @@
 
       ],
       "excerpt": "lorem ipsum, latin, latin literature, line, file, extremes, evil, malorum, cicero, book",
-      "lastUpdate": "2025-01-06 11:59:44 +0200",
-      "lastUpdateUTC": 1736157584,
-      "createTime": "2024-08-22 12:39:46 +0300",
-      "createTimeUTC": 1724319586,
+      "lastUpdate": "2025-01-09 14:48:16 +0200",
+      "lastUpdateUTC": 1736426896,
+      "createTime": "2025-01-09 14:46:04 +0200",
+      "createTimeUTC": 1736426764,
       "relatedPages": [
         {
           "title": "Intro Child Page",
@@ -490,10 +490,10 @@
 
       ],
       "excerpt": "file, file loads, inline, place, repo, content, link, collection, folder",
-      "lastUpdate": "2024-08-22 12:39:46 +0300",
-      "lastUpdateUTC": 1724319586,
-      "createTime": "2024-08-22 12:39:46 +0300",
-      "createTimeUTC": 1724319586,
+      "lastUpdate": "2025-01-09 14:46:04 +0200",
+      "lastUpdateUTC": 1736426764,
+      "createTime": "2025-01-09 14:46:04 +0200",
+      "createTimeUTC": 1736426764,
       "relatedPages": [
         {
           "title": "Collection-2/X",
@@ -522,10 +522,10 @@
         "tag1"
       ],
       "excerpt": "file, content, source file, markdown content, inline, link, collection-2, folder, classes head1, head",
-      "lastUpdate": "2024-08-22 12:39:46 +0300",
-      "lastUpdateUTC": 1724319586,
-      "createTime": "2024-08-22 12:39:46 +0300",
-      "createTimeUTC": 1724319586,
+      "lastUpdate": "2025-01-09 14:46:04 +0200",
+      "lastUpdateUTC": 1736426764,
+      "createTime": "2025-01-09 14:46:04 +0200",
+      "createTimeUTC": 1736426764,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -554,10 +554,10 @@
 
       ],
       "excerpt": "services, lorem ipsum, products, latin, user, user content, content, sites, website, updates",
-      "lastUpdate": "2024-08-22 12:39:46 +0300",
-      "lastUpdateUTC": 1724319586,
-      "createTime": "2024-08-22 12:39:46 +0300",
-      "createTimeUTC": 1724319586,
+      "lastUpdate": "2025-01-09 14:46:04 +0200",
+      "lastUpdateUTC": 1736426764,
+      "createTime": "2025-01-09 14:46:04 +0200",
+      "createTimeUTC": 1736426764,
       "relatedPages": [
         {
           "title": "Terms",
@@ -598,7 +598,7 @@
         {
           "title": "Play with content",
           "permalink": "/pwc/",
-          "lastUpdate": "06-Jan-2025"
+          "lastUpdate": "09-Jan-2025"
         }
       ],
       "numPages": 1
@@ -608,7 +608,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "16-Oct-2024"
+          "lastUpdate": "09-Jan-2025"
         }
       ],
       "numPages": 1
@@ -618,7 +618,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "16-Oct-2024"
+          "lastUpdate": "09-Jan-2025"
         }
       ],
       "numPages": 1
@@ -628,7 +628,7 @@
         {
           "title": "Terms",
           "permalink": "/terms/",
-          "lastUpdate": "22-Aug-2024"
+          "lastUpdate": "09-Jan-2025"
         }
       ],
       "numPages": 1
@@ -638,7 +638,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "29-Sep-2024"
+          "lastUpdate": "09-Jan-2025"
         }
       ],
       "numPages": 1
@@ -648,22 +648,22 @@
         {
           "title": "Play with content",
           "permalink": "/pwc/",
-          "lastUpdate": "06-Jan-2025"
+          "lastUpdate": "09-Jan-2025"
         },
         {
           "title": "External content",
           "permalink": "/ec/",
-          "lastUpdate": "22-Aug-2024"
+          "lastUpdate": "09-Jan-2025"
         },
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "16-Oct-2024"
+          "lastUpdate": "09-Jan-2025"
         },
         {
           "title": "Collection-2/X",
           "permalink": "collection-2/X/x/",
-          "lastUpdate": "22-Aug-2024"
+          "lastUpdate": "09-Jan-2025"
         }
       ],
       "numPages": 4
@@ -673,7 +673,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "29-Sep-2024"
+          "lastUpdate": "09-Jan-2025"
         }
       ],
       "numPages": 1
@@ -683,12 +683,12 @@
         {
           "title": "Play with content",
           "permalink": "/pwc/",
-          "lastUpdate": "06-Jan-2025"
+          "lastUpdate": "09-Jan-2025"
         },
         {
           "title": "External content",
           "permalink": "/ec/",
-          "lastUpdate": "22-Aug-2024"
+          "lastUpdate": "09-Jan-2025"
         }
       ],
       "numPages": 2
@@ -698,7 +698,7 @@
         {
           "title": "External content",
           "permalink": "/ec/",
-          "lastUpdate": "22-Aug-2024"
+          "lastUpdate": "09-Jan-2025"
         }
       ],
       "numPages": 1
@@ -717,7 +717,7 @@
         {
           "title": "External content",
           "permalink": "/ec/",
-          "lastUpdate": "22-Aug-2024"
+          "lastUpdate": "09-Jan-2025"
         }
       ],
       "numPages": 1
@@ -727,7 +727,7 @@
         {
           "title": "External content",
           "permalink": "/ec/",
-          "lastUpdate": "22-Aug-2024"
+          "lastUpdate": "09-Jan-2025"
         }
       ],
       "numPages": 1
@@ -737,12 +737,12 @@
         {
           "title": "Play with content",
           "permalink": "/pwc/",
-          "lastUpdate": "06-Jan-2025"
+          "lastUpdate": "09-Jan-2025"
         },
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "16-Oct-2024"
+          "lastUpdate": "09-Jan-2025"
         }
       ],
       "numPages": 2
@@ -752,22 +752,22 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "29-Sep-2024"
+          "lastUpdate": "09-Jan-2025"
         },
         {
           "title": "Play with content",
           "permalink": "/pwc/",
-          "lastUpdate": "06-Jan-2025"
+          "lastUpdate": "09-Jan-2025"
         },
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "16-Oct-2024"
+          "lastUpdate": "09-Jan-2025"
         },
         {
           "title": "Collection-2/Z",
           "permalink": "/collection-2/Z/z/",
-          "lastUpdate": "22-Aug-2024"
+          "lastUpdate": "09-Jan-2025"
         }
       ],
       "numPages": 4
@@ -777,12 +777,12 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "29-Sep-2024"
+          "lastUpdate": "09-Jan-2025"
         },
         {
           "title": "Collection-2/Z",
           "permalink": "/collection-2/Z/z/",
-          "lastUpdate": "22-Aug-2024"
+          "lastUpdate": "09-Jan-2025"
         }
       ],
       "numPages": 2

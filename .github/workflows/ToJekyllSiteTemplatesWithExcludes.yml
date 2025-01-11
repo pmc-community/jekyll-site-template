@@ -24,7 +24,6 @@ jobs:
       - name: Copy last commit content
         run: |
           # Copy content from the source repository to the destination repository
-
           rsync -a \
             --exclude='.git' \
             --exclude='doc-raw-contents/' \
@@ -32,8 +31,7 @@ jobs:
             --exclude='doc-contents/*' \
             --include='doc-contents/general/' \
             --include='doc-contents/_tools/' \
-          ./ ../destination-repo/
-          
+          ./ ../destination-repo/       
           # Navigate to the destination repository
           cd ../destination-repo
           git add .
