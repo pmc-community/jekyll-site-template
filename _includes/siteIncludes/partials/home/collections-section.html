@@ -51,8 +51,10 @@
                                 {% assign startDoc = collection.start %}
                                 {% if startDoc != empty %}
                                     <a 
+                                        siteFunction="collectionStartDocument"
                                         href="{{startDoc.permalink}}"
-                                        class="btn btn-sm {{site.data.pageBuildConfig["/"].sections.collections_section.buttonsTextClass}} {{site.data.pageBuildConfig["/"].sections.collections_section.buttonsClass}}">
+                                        class="btn btn-sm {{site.data.pageBuildConfig["/"].sections.collections_section.buttonsTextClass}} {{site.data.pageBuildConfig["/"].sections.collections_section.buttonsClass}}"
+                                        data-i18n="home_page_collections_section_start_here_btn">
                                         {{site.data.pageBuildConfig["/"].sections.collections_section.collectionStartBtnText}}
                                     </a>
                                 {% endif %}

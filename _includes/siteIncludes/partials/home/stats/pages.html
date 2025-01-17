@@ -3,7 +3,8 @@
 <!-- pages stats -->
 <div
     siteFunction="homeStats_pages_title"
-    class="fs-6 fw-medium">
+    class="fs-6 fw-medium"
+    data-i18n="home_page_stats_section_docs_col_title">
     Documents
 </div>
 <div siteFunction="homeStats_pages_container">
@@ -18,7 +19,11 @@
                     siteFunction="homeStats_pages_list_item"
                     class="list-group-item d-flex align-items-center justify-content-between align-items-start py-2 px-md-2 px-0 my-0 bg-transparent border-top border-secondary border-opacity-25 text-secondary">
                         <div class="d-flex align-items-center">
-                            Total documents:
+                            <span
+                                data-i18n="home_page_stats_section_docs_col_total_docs"
+                                class="text-secondary">
+                                Total documents:
+                            </span>
                             <span class="ml-1 fw-medium text-primary">
                                 {{pagesNo}}
                             </span>
@@ -37,7 +42,11 @@
                     siteFunction="homeStats_pages_list_item"
                     class="list-group-item d-flex align-items-center justify-content-between align-items-start py-2 px-md-2 px-0 my-0 bg-transparent border-top border-secondary border-opacity-25 text-secondary">
                         <div class="d-flex align-items-center">
-                            Saved documents:
+                            <span
+                                data-i18n="home_page_stats_section_docs_col_saved_docs"
+                                class="text-secondary">
+                                Saved documents:
+                            </span>
                             <span 
                                 class="ml-1 fw-medium text-success"
                                 siteFunction="homeStats_pages_savedPages_no">
@@ -60,7 +69,11 @@
                     siteFunction="homeStats_pages_list_item"
                     class="list-group-item d-flex align-items-center justify-content-between align-items-start py-2 px-md-2 px-0 my-0 bg-transparent border-top border-secondary border-opacity-25 text-secondary">
                         <div class="d-flex align-items-center">
-                            Avg. reading time:
+                            <span
+                                data-i18n="home_page_stats_section_docs_col_avg_read_time"
+                                class="text-secondary">
+                                Avg. reading time:
+                            </span>
                             <span 
                                 class="ml-1 fw-medium text-primary"
                                 siteFunction="homeStats_pages_avg_reading_time">
@@ -77,7 +90,11 @@
                     siteFunction="homeStats_pages_list_item"
                     class="list-group-item d-flex align-items-center justify-content-between align-items-start py-2 px-md-2 px-0 my-0 bg-transparent border-top border-secondary border-opacity-25 text-secondary">
                         <div class="d-flex align-items-center">
-                            Max. reading time:
+                            <span
+                                data-i18n="home_page_stats_section_docs_col_max_read_time"
+                                class="text-secondary">
+                                Max. reading time:
+                            </span>
                             <span 
                                 class="ml-1 fw-medium text-primary"
                                 siteFunction="homeStats_pages_max_reading_time">
@@ -100,7 +117,11 @@
                     siteFunction="homeStats_pages_list_item"
                     class="list-group-item d-flex align-items-center justify-content-between align-items-start py-2 px-md-2 px-0 my-0 bg-transparent border-top border-secondary border-opacity-25 text-secondary">
                         <div class="d-flex align-items-center">
-                            Min. reading time:
+                            <span
+                                data-i18n="home_page_stats_section_docs_col_min_read_time"
+                                class="text-secondary">
+                                Min. reading time:
+                            </span> 
                             <span 
                                 class="ml-1 fw-medium text-primary"
                                 siteFunction="homeStats_pages_min_reading_time">

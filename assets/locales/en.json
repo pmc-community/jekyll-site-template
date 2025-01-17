@@ -1,0 +1,108 @@
+{
+    "common" :{
+        "yes": "Yes",
+        "no": "No",
+        "months": {
+            "Jan": "Jan",
+            "Feb": "Feb",
+            "Mar": "Mar",
+            "Apr": "Apr",
+            "May": "May",
+            "Jun": "Jun",
+            "Jul": "Jul",
+            "Aug": "Aug",
+            "Sep": "Sep",
+            "Oct": "Oct",
+            "Nov": "Nov",
+            "Dec": "Dec"
+          }
+    },
+
+    "home_page_intro_section_buttons_sections": "Sections",
+    "home_page_intro_section_buttons_quickstart": "Quickstart",
+    "home_page_intro_section_buttons_statistics": "Docs info",
+    "home_page_intro_section_buttons_support": "Support",
+    "home_page_intro_section_buttons_overview": "Overview",
+
+    "home_page_collections_section_start_here_btn": "Start here",
+
+    "home_page_recent_and_popular_section_most_recent_col_header": "Most recent",
+    "home_page_recent_and_popular_section_most_recent_col_go_to_docs_btn": "Documents",
+    "home_page_recent_and_popular_section_popular_cats_col_header": "Popular categories",
+    "home_page_recent_and_popular_section_popular_cats_col_go_to_cats_btn": "Categories",
+    "home_page_recent_and_popular_section_popular_tags_col_header": "Popular tags",
+    "home_page_recent_and_popular_section_popular_tags_col_go_to_tags_btn": "Tags",
+    
+    "home_page_stats_section_cats_col_title": "Categories",
+    "home_page_stats_section_cats_col_total_cats": "Total categories:",
+    "home_page_stats_section_cats_col_site_cats": "Site categories:",
+    "home_page_stats_section_cats_col_custom_cats": "Custom categories:",
+    "home_page_stats_section_cats_col_docs_with_custom_cats": "Docs with custom categories:",
+
+    "home_page_stats_section_tags_col_title": "Tags",
+    "home_page_stats_section_tags_col_total_tags": "Total tags:",
+    "home_page_stats_section_tags_col_site_tags": "Site tags:",
+    "home_page_stats_section_tags_col_custom_tags": "Custom tags:",
+    "home_page_stats_section_tags_col_docs_with_custom_tags": "Docs with custom tags:",
+
+    "home_page_stats_section_docs_col_title": "Documents",
+    "home_page_stats_section_docs_col_total_docs": "Total docs:",
+    "home_page_stats_section_docs_col_saved_docs": "Saved docs:",
+    "home_page_stats_section_docs_col_avg_read_time": "Avg. reading time:",
+    "home_page_stats_section_docs_col_max_read_time": "Max. reading time:",
+    "home_page_stats_section_docs_col_min_read_time": "Min. reading time:",
+
+    "page_footer_feedback_and_support_title": "Feedback and Support",
+    "page_footer_help_needed_col_title": "Need help?",
+    "page_footer_help_needed_contact_support": "Contact support",
+    "page_footer_help_needed_ask_community": "Ask community",
+    "page_footer_help_needed_report_issue": "Report issue",
+
+    "page_footer_download_text": "Get your own copy",
+    "page_footer_download": "Download",
+
+    "page_footer_get_involved_col_title": "Get involved!",
+    "page_footer_get_involved_follow_us": "Follow us",
+    "page_footer_get_involved_subscribe": "Subscribe",
+    "page_footer_get_involved_star": "Like us",
+    "page_footer_get_involved_contribute": "Contribute",
+
+    "page_footer_help_us_improve_col_title": "Help us improve!",
+    "page_footer_help_us_improve_privacy_policy": "Privacy policy",
+
+    "hs_feedback_form_was_this_useful_text": "Was this useful:",
+    "hs_feedback_form_submit_btn_text": "Submit your rating!",
+    "hs_feedback_form_email_placeholder_text": "Leave your email if we can contact you (optional)",
+    "hs_feedback_form_message_placeholder_text": "Can you tell us more about your rating? (optional)",
+    "hs_feedback_form_yes_label": "{{common.yes}}",
+    "hs_feedback_form_no_label": "{{common.no}}",
+    "hs_feedback_form_message_was_this_useful_radio_btn_label": "Was this useful?",
+    "hs_feedback_form_was_this_useful_confirmation_text_yes": "{{common.yes}}",
+    "hs_feedback_form_was_this_useful_confirmation_text_no": "{{common.no}}",
+    "hs_feedback_form_message_after_submission": "Thanks for the feedback! 👍",
+
+    "page_page_info_tags": "Tags",
+    "page_page_info_badge_has_custom_tags_title": "Document has custom tags",
+    "page_page_info_badge_has_site_tags_title": "Document {{title}}has site tags",
+    "page_page_info_badge_has_related_title": "Document has related documents",
+    "page_page_info_related": "Related",
+    "page_page_info_badge_has_summary_title": "Document has auto generated summary",
+    "page_page_info_summary": "Summary",
+    "page_page_info_badge_has_custom_cats_title":"Document has custom categories",
+    "page_page_info_cats": "Categories",
+    "page_page_info_badge_has_custom_notes_title":"Document has custom notes",
+    "page_page_info_notes": "Notes",
+    "page_page_info_read_time_text": "min. read",
+    "page_page_info_last_update_badge_text": "Last update",
+    "page_page_info_doc_info_btn": "Doc Info",
+    "page_page_info_support_btn": "Support",
+    "page_page_info_support_btn_title": "Go to Feedback&Support section for this document",
+    "page_page_info_doc_info_btn_title": "See document detailed information",
+    "page_info_similar_pages_title": "Similar documents based on content",
+    "page_info_similar_pages_text": "Similar",
+
+    "page_toc_toc_title": "On this page",
+    "page_tags_section_title": "Tags",
+    "page_notes_section_title": "Notes",
+    "page_related_section_title": "Related"
+}

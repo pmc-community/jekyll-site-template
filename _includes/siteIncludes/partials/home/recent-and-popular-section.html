@@ -9,7 +9,8 @@
             class="col-md-4 col-12 my-md-4 my-2">
             <div
                 siteFunction="homeRecentAndPopular_most_recent_title"
-                class="fs-6 fw-medium">
+                class="fs-6 fw-medium"
+                data-i18n="home_page_recent_and_popular_section_most_recent_col_header">
                 Most recent
             </div>
             <div siteFunction="homeRecentAndPopular_most_recent_list_container">
@@ -44,7 +45,9 @@
                 </ul>
                 <a 
                     href="/site-pages?showPages=1"
-                    class="btn btn-sm {{site.data.pageBuildConfig["/"].sections.mostRecentAndPopular_section.buttonsTextClass}} {{site.data.pageBuildConfig["/"].sections.mostRecentAndPopular_section.buttonsClass}}">
+                    siteFunction="home_page_recent_and_popular_section_most_recent_col_go_to_docs_btn"
+                    class="btn btn-sm {{site.data.pageBuildConfig["/"].sections.mostRecentAndPopular_section.buttonsTextClass}} {{site.data.pageBuildConfig["/"].sections.mostRecentAndPopular_section.buttonsClass}}"
+                    data-i18n="home_page_recent_and_popular_section_most_recent_col_go_to_docs_btn">
                     {{site.data.pageBuildConfig["/"].sections.mostRecentAndPopular_section.allDocsBtnText}}
                 </a>
             </div>
@@ -56,13 +59,16 @@
             class="col-md-4 col-12 my-md-4 my-2">
             <div
                 siteFunction="homeRecentAndPopular_popular_categories_title"
-                class="fs-6 fw-medium">
+                class="fs-6 fw-medium"
+                data-i18n="home_page_recent_and_popular_section_popular_cats_col_header">
                 Popular categories
             </div>
             <div siteFunction="homeRecentAndPopular_popular_categories_container">
                 <a 
                     href="/cat-info"
-                    class="btn btn-sm {{site.data.pageBuildConfig["/"].sections.mostRecentAndPopular_section.buttonsTextClass}} {{site.data.pageBuildConfig["/"].sections.mostRecentAndPopular_section.buttonsClass}}">
+                    class="btn btn-sm {{site.data.pageBuildConfig["/"].sections.mostRecentAndPopular_section.buttonsTextClass}} {{site.data.pageBuildConfig["/"].sections.mostRecentAndPopular_section.buttonsClass}}"
+                    siteFunction="home_page_recent_and_popular_section_popular_cats_col_go_to_cats_btn"
+                    data-i18n="home_page_recent_and_popular_section_popular_cats_col_go_to_cats_btn">
                     {{site.data.pageBuildConfig["/"].sections.mostRecentAndPopular_section.allCatsBtnText}}
                 </a>
             </div>
@@ -74,13 +80,16 @@
             class="col-md-4 col-12 my-md-4 my-2">
             <div
                 siteFunction="homeRecentAndPopular_popular_tags_title"
-                class="fs-6 fw-medium">
+                class="fs-6 fw-medium"
+                data-i18n="home_page_recent_and_popular_section_popular_tags_col_header">
                 Popular tags
             </div>
             <div siteFunction="homeRecentAndPopular_popular_tags_container">
                 <a 
                     href="/tag-info"
-                    class="btn btn-sm {{site.data.pageBuildConfig["/"].sections.mostRecentAndPopular_section.buttonsTextClass}} {{site.data.pageBuildConfig["/"].sections.mostRecentAndPopular_section.buttonsClass}}">
+                    class="btn btn-sm {{site.data.pageBuildConfig["/"].sections.mostRecentAndPopular_section.buttonsTextClass}} {{site.data.pageBuildConfig["/"].sections.mostRecentAndPopular_section.buttonsClass}}"
+                    siteFunction="home_page_recent_and_popular_section_popular_tags_col_go_to_tags_btn"
+                    data-i18n="home_page_recent_and_popular_section_popular_tags_col_go_to_tags_btn">
                     {{site.data.pageBuildConfig["/"].sections.mostRecentAndPopular_section.allTagsBtnText}}
                 </a>
             </div>

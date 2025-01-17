@@ -3,9 +3,6 @@ require_relative "../../tools/modules/file-utilities"
 require 'nokogiri'
 require 'tf-idf-similarity'
 require 'matrix'
-require 'dotenv'
-
-Dotenv.load
 
 module Jekyll
 
@@ -13,18 +10,14 @@ module Jekyll
     safe true
     priority :highest # actually can be anywhere, but the sooner, the better
 
-    # HEADS UP!!!
-    # THIS IS HOW TO GET ACCESS TO SITE CONFIG DATA FROM AN EXTERNAL FILE
-    # THE FILE IS buildConfig.yml AND IS LOCATED IN _data FOLDER
-    # content.index(site.data["siteConfig"]["marker404"])
-
     def generate(site)
       if (site.data["siteConfig"]["hsIntegration"]["enabled"])
         Globals.putsColText(Globals::PURPLE,"Generating HubSpot client settings ...")
         hsSettings = {
-          "region" => ENV["HS_REGION"],
-          "portalID" => ENV["HS_PORTAL_ID"],
-          "feedbackFormID" => ENV["HS_FEDBACK_FORM_ID"]
+          "region" => site.data["buildConfig"]["hubspot"]["region"],
+          "portalID" => site.data["buildConfig"]["hubspot"]["portalID"],
+          "feedbackFormID" => site.data["buildConfig"]["hubspot"]["feedbackFormID"]["ID"],
+          "feedbackForm" => site.data["buildConfig"]["hubspot"]["feedbackFormID"]
         }
         site.data['hs_integration'] = hsSettings.to_json
         Globals.moveUpOneLine
@@ -44,7 +37,7 @@ module Jekyll
 
     def generate(site)
       if (site.data["siteConfig"]["hsIntegration"]["enabled"])
-        portalID = ENV["HS_PORTAL_ID"]
+        portalID = site.data["buildConfig"]["hubspot"]["portalID"]
         site.data['hs_portal_id'] = portalID
       else
         portalID = ""

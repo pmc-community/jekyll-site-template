@@ -82,9 +82,9 @@ similarByContent:
   maxPages: 4
 hsIntegration:
   enabled: true
-  bootstrapCSS: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-  bootstrapJS: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-  bootstrapIconsCSS: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  bootstrapCSS: "https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+  bootstrapJS: "https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"
+  bootstrapIconsCSS: "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
   forms:
     elements:
       fieldValidationErrorMessagesGroup: ".hs-error-msgs"
@@ -93,6 +93,10 @@ hsIntegration:
     submisionSource: 
       propName: "source"
       propValue: "figmares_doc_site"
+    prefLang:
+      propName: "hs_language"
+    userToken:
+      propName: "subject"
 scripts:
   jQuery: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
   fontFamily: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
@@ -114,3 +118,23 @@ user:
   userTokenCookie: "userToken"
 savedItems:
   autoSaveBeforeLoad: true
+multilang:
+  enabled: true
+  timeout: 1000
+  scripts:
+    i18: "https://cdn.jsdelivr.net/npm/i18next@24.2.1/i18next.min.js"
+    i18Backend: "https://cdn.jsdelivr.net/npm/i18next-http-backend@3.0.1/i18nextHttpBackend.min.js"
+    i18JQuery: "https://cdn.jsdelivr.net/npm/jquery-i18next@1.2.1/jquery-i18next.min.js"
+    i18Sprintf: "https://cdn.jsdelivr.net/npm/i18next-sprintf-postprocessor@0.2.2/dist/umd/i18nextSprintfPostProcessor.min.js"
+  availableLang: 
+    - lang: "en" # ISO639-1 codes must be used / to be checked against Preferred Language(hs_language) Contact prop too if HS forms are used
+      name: "English"
+    - lang: "ro"
+      name: "Româna"
+    - lang: "sr"
+      name: "Serbian"
+  siteLanguage: 1
+  fallbackLang: 0
+  needsTranslation:
+    - "body"
+  dateFieldClass: "DSTcustomDateField"

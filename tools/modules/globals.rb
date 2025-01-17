@@ -78,7 +78,7 @@ module Globals
     # Create a new thread for the spinner
     spinner_thread = Thread.new do
         loop do
-            if (ENV["CONSOLE_BLANK_SPINNER_CHARS"] != "true")
+            if (ENV["CONSOLE_BLANK_SPINNER_CHARS"] != true)
                 CHARS.each do |char|
                     print char
                     sleep interval

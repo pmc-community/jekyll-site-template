@@ -62,9 +62,6 @@ jobs:
           JEKYLL_ACCESS_TOKEN: ${{ secrets.JEKYLL_ACCESS_TOKEN }}
           JEKYLL_GIT_USER: ${{ secrets.JEKYLL_GIT_USER }}
           CONSOLE_BLANK_SPINNER_CHARS: ${{ secrets.CONSOLE_BLANK_SPINNER_CHARS }}
-          HS_PORTAL_ID: ${{ secrets.HS_PORTAL_ID }}
-          HS_FEDBACK_FORM_ID: ${{ secrets.HS_FEDBACK_FORM_ID }}
-          HS_REGION: ${{ secrets.HS_REGION }}
           ALGOLIA_WRITE_API_KEY: ${{ secrets.ALGOLIA_WRITE_API_KEY }}
           ALGOLIA_INDEX: ${{ secrets.ALGOLIA_INDEX }}
           ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
@@ -85,7 +82,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: build
     steps:
       - name: Deploy to GitHub Pages

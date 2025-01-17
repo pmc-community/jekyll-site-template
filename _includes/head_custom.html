@@ -29,6 +29,7 @@
 <!-- New Relic if applicable -->
 {% include siteIncludes/partials/new-relic.html %}
 
+<!-- init hooks system and defines some utilities that needs to be available asap -->
 {% include siteIncludes/partials/global-utilities.html %}
 {% include siteIncludes/partials/init-hooks.html %}
 
@@ -43,7 +44,7 @@
 <meta name="description" content="{{site.title}} - {{page.title}} ({{pageObj[0].excerpt}})">
 
 <!-- necessary for deployments in multiple domains -->
-<!-- mandatory if using Algolia search. the crawler rejects url which does not match its allowed domains -->
+<!-- mandatory if using Algolia search the crawler rejects url which does not match its allowed domains -->
 {% assign baseUrl = site.data.deploy_base_url %}
 
 {% if permalink[0] != '/' %}
@@ -69,6 +70,19 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
     referrerpolicy="no-referrer">
 </script>
+
+<!-- internationalization -->
+{% if site.data.siteConfig.multilang.enabled %}
+    <link href="{{site.data.siteConfig.multilang.scripts.i18}}" defer rel="preload" as="script">
+    <script src="{{site.data.siteConfig.multilang.scripts.i18}}"></script>
+    <link href="{{site.data.siteConfig.multilang.scripts.i18Backend}}" defer rel="preload" as="script">
+    <script src="{{site.data.siteConfig.multilang.scripts.i18Backend}}"></script>
+    <link href="{{site.data.siteConfig.multilang.scripts.i18JQuery}}" defer rel="preload" as="script">
+    <script src="{{site.data.siteConfig.multilang.scripts.i18JQuery}}"></script>
+    <link href="{{site.data.siteConfig.multilang.scripts.i18Sprintf}}" defer rel="preload" as="script">
+    <script src="{{site.data.siteConfig.multilang.scripts.i18Sprintf}}"></script>
+{% endif %}
+
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" defer rel="preload" as="script">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
@@ -352,8 +366,6 @@
 
 <!-- GTM tag if applicable -->
 {% include siteIncludes/partials/gtm-head.html %}
-    
-
 
 
 

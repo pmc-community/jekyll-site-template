@@ -56,12 +56,29 @@ window.customiseTheme = (pageObj = null) => {
             null;
 
         // set some utilities for iframes
-        window.utilities = iframe__utilities();
+        // shouldn't be moved to iframe-global.js
+        window['utilities'] = iframe__utilities();
 
         setAnonymousUserToken();
         if (gData.gtm.enabled) pushInfoToGTM(pageInfo);
 
+        // finally, translate what is needed to be translated
+        // after translation add ids to iframes and show everything
+        const translationCompleteEvent = new Event('translationComplete');
+        doTranslation().then(() => {
+            document.dispatchEvent(translationCompleteEvent);
+        });
+        
+    });
+
+    $(document).on('translationComplete', function() {
         setTimeout( () => {
+
+            $('iframe').each(function(index) {
+                $(this).attr('iframe-data-id', `iframe-${index}`);
+            });
+            
+            // body was hidden in _includes/head_custom.html
             $('body').css('visibility','visible');
             $('#contentLoading').addClass('d-none');  
         }, settings.colSchemaCorrections.hideBodyUntilLoadTimeout);
@@ -70,6 +87,8 @@ window.customiseTheme = (pageObj = null) => {
 }
 
 /* HERE ARE THE FUNCTIONS */
+
+
 const adjustBodyHeight_mobile = () => {
     if (preFlight.envInfo.device.deviceType === 'mobile') {
         const bodyHeight = $('body').outerHeight(true);

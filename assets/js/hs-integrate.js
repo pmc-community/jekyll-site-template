@@ -72,7 +72,40 @@ hsIntegrate = {
                                 const emailObject = _.find(data, { name: "email" });
                                 if (emailObject && (_.isEmpty(emailObject.value) || !isValidEmail(emailObject.value)) ) 
                                     $form.find('input[name=email]').val('visitor@noreply.com');
-                                $form.find(`input[name="${settings.hsIntegration.forms.submisionSource.propName}"]`).val(settings.hsIntegration.forms.submisionSource.propValue);
+
+                                // By default we save some info when submitting the any HS form
+                                // We save:
+                                // - source of last submission
+                                // - the language in which the user browsed the site when submitting the form
+                                // - the user anonymous token to be used when the visitor does not provide his email
+                                // The above info is saved in HubSpot Contact props which can be configured in siteConfig.hsIntegration.forms
+                                // Any HubSpot Contact default and/or custom props can be used as long as their internal names are configured in siteConfig.hsIntegration.forms
+                                // IMPORTANT!!
+                                // FOR DROPDOWN LIST TYPE PROPS 
+                                // BE ALWAYS SURE THAT YOU SUBMIT VALUES THAT MATCHES THE PROP OPTIONS DEFINED IN HS FOR THE PROP
+
+                                // We use a custom prop with internal name = source
+                                // and the meaning (name) = Source of last submission
+                                // this prop must be a hidden non-mandatory field on the form
+                                if ( $form.find(`input[name="${settings.hsIntegration.forms.submisionSource.propName}"]`).length > 0 ) {
+                                    const submissionSource =`${settings.hsIntegration.forms.submisionSource.propValue} `;
+                                    $form.find(`input[name="${settings.hsIntegration.forms.submisionSource.propName}"]`).val(`${submissionSource}`);
+                                }
+
+                                // We use Preferred Language standard prop of the Contact
+                                // the internal name is hs_language
+                                // this prop must be a hidden non-mandatory field on the form
+                                // IMPORTANT!!!
+                                // ALWAYS USE ISO639 CODES FOR LANGUAGES IN siteConfig.multilang.availableLang
+                                // ALSO, CHECK WITH THE OPTIONS AVAILABLE IN THE Preferred Language Contact prop in HubSpot
+                                if ($form.find(`input[name="${settings.hsIntegration.forms.prefLang.propName}"]`).length > 0 )
+                                    $form.find(`input[name="${settings.hsIntegration.forms.prefLang.propName}"]`).val(settings.multilang.availableLang[settings.multilang.siteLanguage].lang);
+
+                                // We use a custom prop with internal name = subject
+                                // this prop must be a hidden non-mandatory field on the form
+                                if ($form.find(`input[name="${settings.hsIntegration.forms.userToken.propName}"]`).length > 0 )
+                                    $form.find(`input[name="${settings.hsIntegration.forms.userToken.propName}"]`).val(setAnonymousUserToken());
+                                
                                 hsIntegrate.sanitizeAll($form);
 
                                 const iframeDocument = $form[0].ownerDocument;
@@ -90,14 +123,14 @@ hsIntegrate = {
                                 const iframeDocument = $form[0].ownerDocument;
                                 $(iframeDocument).find('#hsFormLoading').remove();
                                 $(iframeDocument).find('body').show();
-
+                                
                                 if(callbackOnFormSubmitted) callbackOnFormSubmitted($form, data);
                             }
                             catch (e) {
                                 console.error(`An error occurred in onFormSubmitted for ${formIdentification.formID}:`, e);
                             }
                         },
-                        onBeforeFormInit: (ctx) => {
+                        onBeforeFormInit: (ctx) => {                            
                             callbackOnBeforeFormInit(ctx);
                         }
                     });
@@ -139,6 +172,7 @@ hsIntegrate = {
     },
 
     loadScriptsAndStyles: ($form, cssScripts, jsScripts) => {
+        //iframe__addI18ToIFrames($form);
         iframe__addBootstrapToIFrames($form);
         iframe__addCustomScriptsToIFrames($form, cssScripts, jsScripts);
     },

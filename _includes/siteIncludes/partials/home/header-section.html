@@ -8,30 +8,36 @@
                 {% if site.data.pageBuildConfig["/"].sections.collections_section.enabledInHome %}
                     <button 
                         siteFunction="homePageHeaderNavBtns_collections"
-                        class="btn btn-sm btn-outline-secondary border border-secondary border-opacity-25 my-1 shadow-none">
+                        class="btn btn-sm btn-outline-secondary border border-secondary border-opacity-25 my-1 shadow-none"
+                        data-i18n="home_page_intro_section_buttons_sections">
                         Sections
                     </button>
                 {% endif %}
                 <button 
                     siteFunction="homePageHeaderNavBtns_recentAndPopular"
-                    class="btn btn-sm btn-outline-secondary border border-secondary border-opacity-25 my-1 shadow-none">
+                    class="btn btn-sm btn-outline-secondary border border-secondary border-opacity-25 my-1 shadow-none"
+                    data-i18n="home_page_intro_section_buttons_quickstart">
                     Quickstart
                 </button>
                 <button 
                     siteFunction="homePageHeaderNavBtns_stats"
-                    class="btn btn-sm btn-outline-secondary border border-secondary border-opacity-25 my-1 shadow-none">
+                    class="btn btn-sm btn-outline-secondary border border-secondary border-opacity-25 my-1 shadow-none"
+                    data-i18n="home_page_intro_section_buttons_statistics">
                     Docs info
                 </button>
                 <button 
                     siteFunction="homePageHeaderNavBtns_support"
-                    class="btn btn-sm btn-outline-secondary border border-secondary border-opacity-25 my-1 shadow-none">
+                    class="btn btn-sm btn-outline-secondary border border-secondary border-opacity-25 my-1 shadow-none"
+                    data-i18n="home_page_intro_section_buttons_support">
                     Support
                 </button>
             </div>
             <p class="fs-5 text-secondary">{{site.data.pageBuildConfig["/"].sections.header_section.text}}</p>
             <a 
+                siteFunction="jumpToIntroDoc"
                 class="btn btn-success" 
-                href="{{site.data.pageBuildConfig["/"].startPermalink}}">
+                href="{{site.data.pageBuildConfig["/"].startPermalink}}"
+                data-i18n="home_page_intro_section_buttons_overview">
                 {{site.data.pageBuildConfig["/"].sections.header_section.startBtnText}}
             </a>
         </div>

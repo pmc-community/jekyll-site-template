@@ -16,7 +16,7 @@
   {% assign hasTags = pageTagsArray | size %}
   {% if hasTags > 0 %}
     <hr siteFunction="pageTagsSeparator">
-    <span siteFunction="pageTagsContainer" class="mr-5 fs-6 fw-medium">Tags:</span>
+    <span siteFunction="pageTagsContainer" class="mr-5 fs-6 fw-medium"><span data-i18n="page_tags_section_title">Tags</span>:</span>
     {% for pageTag in pageTagsArray %}
       <div sitefunction="pageSiteTagButton" class="d-inline-flex align-items-center">
         {% assign rawPageTagUrl = "/tag-info?tag=" | append: pageTag %}

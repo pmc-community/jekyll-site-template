@@ -69,6 +69,7 @@ algoliaSearch:
 JTDSearch:
   searchBoxWidth: "fit-content"
 changeLog:
+  enabled: false
   history: 5
 siteFooter:
   container: ".site-footer"
@@ -83,3 +84,8 @@ googleTagManager:
   gtm: "GTM-KCLM93S"
 breadcrumbs:
   depth: 100
+hubspot:
+  portalID: "7598952"
+  region: "na1"
+  feedbackFormID: 
+    ID: "e166804c-61ea-4b51-801d-f4299cb5c06c"
