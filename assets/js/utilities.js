@@ -698,7 +698,7 @@ const setDataTable = (
             searchPanes: {
                 clearMessage: 'Clear All',
                 collapse: { 0: searchPanesBtnText(), _: searchPanesBtnText()},
-            }
+            },
         },
         
     };
