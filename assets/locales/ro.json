@@ -31,11 +31,25 @@
             "Oct": "Oct",
             "Nov": "Noi",
             "Dec": "Dec"
-          }
+          },
+        "months_l": {
+            "January": "Ianuarie",
+            "February": "Februarie",
+            "March": "Martie",
+            "April": "Aprilie",
+            "May": "Mai",
+            "June": "Iunie",
+            "July": "Iulie",
+            "August": "August",
+            "September": "Septembrie",
+            "October": "Octombrie",
+            "November": "Noiembrie",
+            "December": "Decembrie"
+        }
     },
 
     "home_page_intro_section_buttons_sections": "Sectiuni",
-    "home_page_intro_section_buttons_quickstart": "{{common.start}}",
+    "home_page_intro_section_buttons_quickstart": "Start",
     "home_page_intro_section_buttons_statistics": "Statistici",
     "home_page_intro_section_buttons_support": "{{common.support}}",
     "home_page_intro_section_buttons_overview": "Introducere",
@@ -118,7 +132,15 @@
     "page_info_similar_pages_text": "Similare",
     
     "page_toc_toc_title": "Cuprins",
+    "page_toc_toc_title_mobile": "{{page_toc_toc_title}}",
     "page_tags_section_title": "{{common.tags}}",
     "page_notes_section_title": "Note",
-    "page_related_section_title": "Conexe"
+    "page_related_section_title": "Conexe",
+
+    "dt_custom_buttons_go_to_tags_btn_title": "Informatii etichete",
+    "dt_custom_buttons_go_to_tags_btn_text": "Etichete",
+    "dt_custom_buttons_go_to_cats_btn_title": "Informatii categorii",
+    "dt_custom_buttons_go_to_cats_btn_text": "Categorii",
+    "dt_search_panes_button_title": "Filtrare avansata"
+
 }

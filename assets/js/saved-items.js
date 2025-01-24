@@ -824,6 +824,24 @@ const cleanSavedItems = () => {
     _.pullAt(savedItems, toRemove);
     localStorage.setItem('savedItems', JSON.stringify(savedItems));
 
+    // ensure that the date field separator used in note.date prop is the one defined in siteConfig.multilang.dateFieldSeparator
+    // in order to be sure that dates are shown consistently across the site and is also correctly translated
+    const replaceSeparator = (dateString, newSeparator) => {
+        const dateRegex = /^(\d{2})(.)(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)(.)(\d{4})$/;
+        return dateString.replace(dateRegex, (match, day, sep1, month, sep2, year) => {
+          return `${day}${newSeparator}${month}${newSeparator}${year}`;
+        });
+    };
+
+    savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
+    const dateFieldSeparator = settings.multilang.dateFieldSeparator;
+    savedItems.forEach(page => {
+        customNotes = page.customNotes;
+        customNotes.forEach(note => {
+            note.date =  replaceSeparator(note.date, dateFieldSeparator)
+        });
+    });
+    localStorage.setItem('savedItems', JSON.stringify(savedItems));
 }
 
 const getItemsNoHavingCustomProp = (what) => {

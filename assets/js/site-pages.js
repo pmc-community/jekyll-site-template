@@ -932,14 +932,14 @@ sitePagesFn = {
 
     addAdditionalPagesTableButtons: (table) => {
         // post processing table: adding 2 buttons in the bottom2 zone
-
         goToTagBtn = {
            attr: {
                siteFunction: 'tableNavigateToTagsSP',
-               title: 'Go to tags'
+               title: i18next.t('dt_custom_buttons_go_to_tags_btn_title'),
+               "data-i18n": '[title]dt_custom_buttons_go_to_tags_btn_title;dt_custom_buttons_go_to_tags_btn_text'
            },
-           className: 'btn-warning btn-sm text-light mb-2',
-           text: 'Tags info',
+           className: 'btn-warning btn-sm text-dark mb-2',
+           text: i18next.t('dt_custom_buttons_go_to_tags_btn_text'),
            action: () => {
                window.location.href = '/tag-info'
            }
@@ -948,10 +948,11 @@ sitePagesFn = {
        goToCatsBtn = {
            attr: {
                siteFunction: 'tableNavigateToCategoriesSP',
-               title: 'Go to categories'
+               title: i18next.t('dt_custom_buttons_go_to_cats_btn_title'),
+               "data-i18n": '[title]dt_custom_buttons_go_to_cats_btn_title;dt_custom_buttons_go_to_cats_btn_text'
            },
            className: 'btn-success btn-sm text-light mb-2',
-           text: 'Categories',
+           text: i18next.t('dt_custom_buttons_go_to_cats_btn_text'),
            action: () => {
                window.location.href = '/cat-info'
            }

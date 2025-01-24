@@ -624,11 +624,11 @@ const setDataTable = (
             },
             {
                 extend: ['searchPanes'],
-                text: 'Filter', // this is actually set in defaultSettings object .language.searchPanes
                 attr: {
-                    title: 'Advanced filter',
+                    //title: 'Advanced filter',
                     siteFunction: `tableSearchPanes`,
-                    id: `tableSearchPanes_${tableUniqueID}`
+                    id: `tableSearchPanes_${tableUniqueID}`,
+                    "data-i18n": '[title]dt_search_panes_button_title'
                 },
                 className: 'btn-danger btn-sm text-light mb-2 btnSearchPanesFilter',
                 config: {
@@ -650,6 +650,8 @@ const setDataTable = (
             }
         ];
     
+    // not used with dt language plugins
+    /*
     const searchPanesBtnText = () => {
         return (
             `
@@ -660,12 +662,17 @@ const setDataTable = (
                         aria-hidden="true">
                     </span>
                     <span role="status">
-                        Filter
+                        ${i18next.t('')}
                     </span>
                 </div>
             `
         );
     }; // should be defined here because is used in defaultSettings object (defaultSettings.language.searchPanes)
+    */
+
+    const siteLanguage = settings.multilang.enabled
+        ? settings.multilang.availableLang[settings.multilang.siteLanguage].lang
+        : 'en';
 
     const defaultSettings = {
         serverSide: false,
@@ -696,9 +703,12 @@ const setDataTable = (
         columns: columnsConfig,
         language: {
             searchPanes: {
-                clearMessage: 'Clear All',
-                collapse: { 0: searchPanesBtnText(), _: searchPanesBtnText()},
+                // no need to set the labels since we use dt language plugins
+                // we keep these settings here for reference, just in case
+                //clearMessage: 'Clear All',
+                //collapse: { 0: searchPanesBtnText(), _: searchPanesBtnText()},
             },
+            url: `${window.location.protocol}//${window.location.host}/assets/locales/dt-${siteLanguage}.json`
         },
         
     };
@@ -757,25 +767,29 @@ const setDataTable = (
                     // since we don't use responsive = true for datatables
                     // we need to apply some css corrections because some things may look weird on mobile 
                     if (preFlight.envInfo.device.deviceType === 'mobile') {
-                        // apply corrections to entries per page group
-                        $('.dt-length')
-                            .addClass('d-flex justify-content-between align-items-center')
-                            .find('select').addClass('order-2 mr-0 mr-md-1')
-                            .find('label').addClass('order-1');
+                         // we do this on draw event because of the translation
+                        table.one('draw.dt', function () {
+                            // apply corrections to entries per page group
+                            $('.dt-length')
+                                .addClass('d-flex justify-content-between align-items-center')
+                                .find('select').addClass('order-2 mr-0 mr-md-1')
+                                .find('label').addClass('order-1');
+                            
+                            $('.dt-length').find('label').addClass('text-capitalize fs-6 w-100 d-flex justify-content-between ');
+                    
+                            // apply corrections to search box group
+                            $('.dt-search')
+                                .addClass('d-flex justify-content-between align-items-center')
+                                .find('input').css('width', '50%');
+                            
+                            $('.dt-search').find('label')
+                                    .addClass('fs-6');
+        
+                            $('.dt-info').addClass('text-start fs-6');   
+                        });
+
                         
-                        $('.dt-length').find('label').addClass('text-capitalize fs-6');
-                
-                         // apply corrections to search box group
-                        $('.dt-search')
-                            .addClass('d-flex justify-content-between align-items-center')
-                            .find('input').css('width', '50%');
-                        
-                        $('.dt-search').find('label')
-                                .addClass('fs-6');
-    
-                        $('.dt-info').addClass('text-start fs-6');
-                        
-                    }
+                    };
                 }
             }
 
@@ -1057,9 +1071,26 @@ const setDataTable = (
 }
 
 const addAdditionalButtonsToTable = (table, tableSelector=null, zone=null, btnArray) => {
-    btnArray.forEach(btnConfig => {
-        table.button().add(null, btnConfig);
+    
+    const addButtons = (table, btnArray) => {
+        btnArray.forEach(btnConfig => {
+            table.button().add(null, btnConfig);
+        });
+    }
+
+    // buttons must be added on draw event
+    // otherwiswe the draw event when applying internationalization plugin will not add the custom buttons
+    // alternative is to use setTimeout(....) to give time for translation and then add the buttons
+    /*
+    setTimeout(()=>{
+        addButtons(table, btnArray);
+    },500)
+    */
+
+    table.one('draw.dt', function () {
+        addButtons(table, btnArray);
     });
+    
     applyColorSchemaCorrections();
 }
 
@@ -1213,7 +1244,7 @@ const formatDate = (dateString) => {
     //const hh = String(today.getHours()).padStart(2, '0');
     //const mm = String(today.getMinutes()).padStart(2, '0');
     
-    const formattedDate = `${dd}-${mmm}-${yyyy}`;
+    const formattedDate = `${dd}${settings.multilang.dateFieldSeparator}${mmm}${settings.multilang.dateFieldSeparator}${yyyy}`;
     return formattedDate;
 }
 
@@ -1230,7 +1261,7 @@ const formatDateFull = (dateString) => {
     const minutes = String(date.getMinutes()).padStart(2, '0');
     const seconds = String(date.getSeconds()).padStart(2, '0');
     const milliseconds = String(date.getMilliseconds()).padStart(3, '0'); // 3-digit ms
-    return `${day}-${month}-${year} ${hours}:${minutes}:${seconds}:${milliseconds}`;
+    return `${day}${settings.multilang.dateFieldSeparator}${month}${settings.multilang.dateFieldSeparator}${year} ${hours}:${minutes}:${seconds}:${milliseconds}`;
 }
 
 const keepTextInputLimits = (textInputSelector, maxWords, maxChars, wordCountSelector, charCountSelector) => {
@@ -2627,8 +2658,10 @@ const setSingleFileUploadDropArea = (dropAreaSelector, fileInputSelector, callba
 
 const doTranslation = (isIFrame = null, iFrame = null) => {
     return new Promise((resolve, reject) => {
-        if (!settings.multilang.enabled) return;
-        const siteLanguage = settings.multilang.availableLang[settings.multilang.siteLanguage];
+        let siteLanguage;
+        if (!settings.multilang.enabled) siteLanguage = 'en';
+        else siteLanguage = settings.multilang.availableLang[settings.multilang.siteLanguage];
+
         const fallbackLanguage = settings.multilang.availableLang[settings.multilang.fallbackLang];
 
         i18next
@@ -2637,15 +2670,18 @@ const doTranslation = (isIFrame = null, iFrame = null) => {
             .init(
                 
                 {
-                    lng: siteLanguage.lang, // Default language
+                    
+                    lng: siteLanguage === 'en' ? siteLanguage : siteLanguage.lang, // Default language
                     fallbackLng: fallbackLanguage.lang, // Fallback language
                     debug: false,
                     backend: {
-                        loadPath: `${window.location.protocol}//${window.location.host}/assets/locales/${siteLanguage.lang}.json`,
+                        loadPath: siteLanguage === 'en' 
+                            ? `${window.location.protocol}//${window.location.host}/assets/locales/${siteLanguage}.json` 
+                            : `${window.location.protocol}//${window.location.host}/assets/locales/${siteLanguage.lang}.json`,
                     },
                     interpolation: {
                         escapeValue: false, // Required for using HTML or nested keys
-                        nestingPrefix: '{{', // Define the nesting syntax
+                        nestingPrefix: '{{', // Define interpolation markers 
                         nestingSuffix: '}}',
                     }
                 },
@@ -2682,12 +2718,30 @@ const doTranslation = (isIFrame = null, iFrame = null) => {
 }
 
 const doTranslateDateFields = () => {
+
+    const createDateRegex = (separator, isLongMonthName) => {
+        const escapedSeparator = _.escapeRegExp(separator); // Escape special characters for regex
+        const regexString = !isLongMonthName
+            ? `^\\d{2}${escapedSeparator}(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)${escapedSeparator}\\d{4}$`
+            : `^\\d{2}${escapedSeparator}(January|February|March|April|May|June|July|August|September|October|November|December)${escapedSeparator}\\d{4}$`;
+        return new RegExp(regexString);
+    }
+
+    const dateRegex_ShortMonth = createDateRegex(settings.multilang.dateFieldSeparator, false);
+    const dateRegex_LongMonth = createDateRegex(settings.multilang.dateFieldSeparator, true);
+
     $(`.${settings.multilang.dateFieldClass}`).each(function () {
         const $this = $(this);
-        const originalDate = $this.data('original-date');          
-        const [day, month, year] = originalDate.split('-');
-        const translatedMonth = i18next.t(`common.months.${month}`, { defaultValue: month });           
-        const translatedDate = `${day}-${translatedMonth}-${year}`;
-        $this.text(translatedDate);
+        const originalDate = $this.data('original-date');
+        if (dateRegex_ShortMonth.test(originalDate) || dateRegex_LongMonth.test(originalDate) ) {
+            const monthName = $this.data('month-name');              
+            const [day, month, year] = originalDate.split(settings.multilang.dateFieldSeparator);
+            const translatedMonth = monthName === 'short' || !monthName || monthName === 'undefined'
+                ? i18next.t(`common.months.${month}`, { defaultValue: month })
+                : i18next.t(`common.months_l.${month}`, { defaultValue: month });
+            const translatedDate = 
+                `${day}${settings.multilang.dateFieldSeparator}${translatedMonth}${settings.multilang.dateFieldSeparator}${year}`;
+            $this.text(translatedDate);
+        }
     });
 }

@@ -216,7 +216,7 @@ preFlight = {
         toRemove = document.querySelector('.side-bar');
         toRemove.remove();
     
-        document.body.style.visibility = 'visible';
+        document.body.style.visibility = 'visible'; //because body was made invisible in _includes/head_custom.html
     },
 
     handle404: () => {

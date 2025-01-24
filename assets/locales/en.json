@@ -15,7 +15,21 @@
             "Oct": "Oct",
             "Nov": "Nov",
             "Dec": "Dec"
-          }
+          },
+        "months_l": {
+            "January": "January",
+            "February": "February",
+            "March": "March",
+            "April": "April",
+            "May": "May",
+            "June": "June",
+            "July": "July",
+            "August": "August",
+            "September": "September",
+            "October": "October",
+            "November": "November",
+            "December": "December"
+        }
     },
 
     "home_page_intro_section_buttons_sections": "Sections",
@@ -102,7 +116,15 @@
     "page_info_similar_pages_text": "Similar",
 
     "page_toc_toc_title": "On this page",
+    "page_toc_toc_title_mobile": "{{page_toc_toc_title}}",
     "page_tags_section_title": "Tags",
     "page_notes_section_title": "Notes",
-    "page_related_section_title": "Related"
+    "page_related_section_title": "Related",
+
+    "dt_custom_buttons_go_to_tags_btn_title": "Go to tags info",
+    "dt_custom_buttons_go_to_tags_btn_text": "Tags info",
+    "dt_custom_buttons_go_to_cats_btn_title": "Go to categories info",
+    "dt_custom_buttons_go_to_cats_btn_text": "Categories",
+    "dt_search_panes_button_title": "Advanced filers"
+
 }
