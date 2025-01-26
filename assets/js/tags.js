@@ -971,34 +971,39 @@ const addCustomTagsToPages = (table = null, tag = null) => {
 }
 
 const addAdditionalButtons = (table, tag) => {
-     // post processing table: adding 2 buttons in the bottom2 zone
-     gotToCatBtn = {
-        attr: {
-            siteFunction: 'tableNavigateToCategories',
-            title: 'Go to categories'
-        },
-        className: 'btn-warning btn-sm text-light focus-ring focus-ring-warning mb-2',
-        text: 'Categories',
-        action: () => {
-            window.location.href = '/cat-info'
-        }
-    }
 
-    gotToSavedItemsBtn = {
-        attr: {
-            siteFunction: 'tableNavigateToSavedItems',
-            title: 'Go to saved items'
-        },
-        className: 'btn-success btn-sm text-light focus-ring focus-ring-warning mb-2',
-        text: 'Documents',
-        action: () => {
-            window.location.href = '/site-pages?showPages=1'
+    waitForI18Next().then(() => {
+        // post processing table: adding 2 buttons in the bottom2 zone
+        gotToCatBtn = {
+            attr: {
+                siteFunction: `tableNavigateToCategories_${tag}`,
+                title: i18next.t('dt_custom_buttons_go_to_cats_btn_title'),
+                "data-i18n": '[title]dt_custom_buttons_go_to_cats_btn_title;dt_custom_buttons_go_to_cats_btn_text'
+            },
+            className: 'btn-warning btn-sm text-light focus-ring focus-ring-warning mb-2',
+            text: i18next.t('dt_custom_buttons_go_to_cats_btn_text'),
+            action: () => {
+                window.location.href = '/cat-info'
+            }
         }
-    }
-    const btnArray = [];
-    btnArray.push(gotToCatBtn);
-    btnArray.push(gotToSavedItemsBtn);
-    addAdditionalButtonsToTable(table, `table[tagReference="${tag}"]`, 'bottom2', btnArray);
+
+        gotToSavedItemsBtn = {
+            attr: {
+                siteFunction: `tableNavigateToSavedItems_${tag}`,
+                title: i18next.t('dt_custom_buttons_go_to_docs_btn_title'),
+                "data-i18n": '[title]dt_custom_buttons_go_to_docs_btn_title;dt_custom_buttons_go_to_docs_btn_text'
+            },
+            className: 'btn-success btn-sm text-light focus-ring focus-ring-warning mb-2',
+            text: i18next.t('dt_custom_buttons_go_to_docs_btn_text'),
+            action: () => {
+                window.location.href = '/site-pages?showPages=1'
+            }
+        }
+        const btnArray = [];
+        btnArray.push(gotToCatBtn);
+        btnArray.push(gotToSavedItemsBtn);
+        addAdditionalButtonsToTable(table, `table[tagReference="${tag}"]`, 'bottom2', btnArray);
+    });
 }
 
 const setPageSavedButtonsStatus = () => {

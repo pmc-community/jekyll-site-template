@@ -125,6 +125,9 @@
     "dt_custom_buttons_go_to_tags_btn_text": "Tags info",
     "dt_custom_buttons_go_to_cats_btn_title": "Go to categories info",
     "dt_custom_buttons_go_to_cats_btn_text": "Categories",
-    "dt_search_panes_button_title": "Advanced filers"
+    "dt_search_panes_button_title": "Advanced filers",
+    "dt_custom_buttons_go_to_docs_btn_title": "Go to documents",
+    "dt_custom_buttons_go_to_docs_btn_text": "Documents",
+    "dt_colvis_button_title": "Show/Hide columns"
 
 }

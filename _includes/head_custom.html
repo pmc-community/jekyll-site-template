@@ -91,32 +91,32 @@
     referrerpolicy="no-referrer">
 </script>
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" defer rel="preload" as="script">
+<link href="{{site.data.siteConfig.hsIntegration.bootstrapJS}}" defer rel="preload" as="script">
 <script 
-    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" 
+    src="{{site.data.siteConfig.hsIntegration.bootstrapJS}}" 
     referrerpolicy="no-referrer">
 </script>
 
 <link 
     rel="preload" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" 
+    href="{{site.data.siteConfig.hsIntegration.bootstrapCSS}}" 
     as="style" 
     onload="this.rel='stylesheet'">
 <noscript>
     <link 
     rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+    href="{{site.data.siteConfig.hsIntegration.bootstrapCSS}}"
     referrerpolicy="no-referrer"/>
 </noscript>
 
 <link 
     rel="preload" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" 
+    href="{{site.data.siteConfig.hsIntegration.bootstrapIconsCSS}}" 
     as="style" 
     onload="this.rel='stylesheet'">
 <noscript>
     <link 
-        rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" 
+        rel="stylesheet" href="{{site.data.siteConfig.hsIntegration.bootstrapIconsCSS}}" 
         referrerpolicy="no-referrer" />
 </noscript>
 
@@ -247,32 +247,7 @@
             as="script">
         <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
 
-
-    {% elsif algolia.algoliaNetlifyEnabled %}
-
-        {% assign appID = algolia.algoliaNetlifyAppID %}
-
-        <link 
-            rel="preload" 
-            href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css" 
-            as="style" 
-            onload="this.rel='stylesheet'">
-        <noscript>
-            <link 
-                rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css" />
-        </noscript>
-
-        <link 
-            href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js" 
-            rel="preload" 
-            as="script">
-        <script 
-            type="text/javascript" 
-            src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js">
-        </script>
-    
-    {% elsif algolia.algoliaNetlifyEnabled %}
+    {% elsif algolia.algoliaCustomEnabled %}
 
         {% assign appID = algolia.algoliaCustomAppID %}
 

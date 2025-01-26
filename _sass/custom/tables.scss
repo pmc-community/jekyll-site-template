@@ -37,12 +37,19 @@ $tableSearchPanesPaneFontColor: $c-black;
 $tableSearchPanesPaneSearchInputBackground: $c-white;
 $tableFilterProcessingLoaderBackground: $c-transparent;
 $tableOuterBorderBottomColor: $tableInnerBorderColor;
+
 $paginationButtonThemeLightBackground: $c-primary-theme-light;
 $paginationButtonThemeLightBorderColor: $paginationButtonThemeLightBackground;
 $paginationButtonThemeDarkBackground: $c-primary-theme-dark;
 $paginationButtonThemeDarkBorderColor:$paginationButtonThemeDarkBackground;
 $paginationActivePageTextColor: $c-white;
 $tableEntriesPerPageLabelVisibility_phone: $d-hidden;
+
+$paginationButtonLinkPaddingLeft_mobile: $p-0-75;
+$paginationButtonLinkPaddingRight_mobile: $paginationButtonLinkPaddingLeft_mobile;
+$paginationButtonLinkPaddingTop_mobile: $p-5px;
+$paginationButtonLinkPaddingBottom_mobile: $paginationButtonLinkPaddingTop_mobile;
+$paginationButtonLinkBorder_mobile: $b-none;
 
 $tableEntriesPerPageGroupDisplay_phone: $d-flex;
 $tableSearchInputGroupDisplay_phone: $d-flex;
@@ -53,6 +60,9 @@ $tableFooterButtonsWidth_phone: $sz-auto;
 $tableFooterButtonsFlexGrow_phone: $flex-no-spread;
 
 $tablePaginationPgNumbersPaddingLeft_phone: $p-0;
+
+$tableCustomButtonWidth: $sz-8rem;
+$tableCustomButtonMaxWidth: $tableCustomButtonWidth;
 
 $tableElements: (
     tableWrapper: '.table-wrapper',
@@ -85,7 +95,8 @@ $tableElements: (
     tablePaginationLabel: '.dt-info',
     tablePagination: '.dt-paging',
     tablePaginationPgNumbers: '.pagination', // this is the ul element inside .dt-paging
-    tableFooterButtons: '.dt-buttons'
+    tableFooterButtons: '.dt-buttons',
+    tableCustomButton: '.DTCustomButton'
 );
 
 @import 'meta.scss';

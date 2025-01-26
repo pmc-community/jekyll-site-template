@@ -353,7 +353,7 @@ const page__getPageInfo = () => {
                     <span
                         siteFunction="pageHasCustomCategoriesBadge"
                         title="${i18next.t('page_page_info_badge_has_custom_cats_title')}" 
-                        class="m-1 px-3 py-2 fw-medium badge rounded-pill text-bg-success"
+                        class="m-1 px-3 py-2 fw-medium badge rounded-pill text-bg-success alwaysCursorPointer"
                         data-i18n="[title]page_page_info_badge_has_custom_cats_title;page_page_info_cats">
                         ${i18next.t('page_page_info_cats')}
                     </span>
@@ -1032,12 +1032,32 @@ window.setPageButtonsFunctions = () => {
             $('#pageAutoSummary').removeClass('border-warning border-bottom border-opacity-25');
         });
 
+    // click "Summary" badge
+    $(document)
+        .off('click', 'span[siteFunction="pageHasAutoSummaryBadge"]')
+        .on('click', 'span[siteFunction="pageHasAutoSummaryBadge"]', function() {
+            $('html, body').animate({
+                // bookmark is on top of page, so better to be sure that will not go under header
+                scrollTop: $('#pageAutoSummary').offset().top - 100 
+            }, 100);
+        });
+
     // click "Support" button
     $(document)
         .off('click', 'button[siteFunction="pageNavigateToFeedbackAndSupport"]')
         .on('click', 'button[siteFunction="pageNavigateToFeedbackAndSupport"]', function() {
             $('html, body').animate({
-                scrollTop: $('#pageFeedbackAndSupport').offset().top
+                scrollTop: $('#pageFeedbackAndSupport').offset().top 
+            }, 100);
+        });
+
+    // click "Custom Cats" badge
+    $(document)
+        .off('click', 'span[siteFunction="pageHasCustomCategoriesBadge"]')
+        .on('click', 'span[siteFunction="pageHasCustomCategoriesBadge"]', function() {
+            $('html, body').animate({
+                // bookmark is on top of page, so better to be sure that will not go under header
+                scrollTop: $('#pageLastUpdateAndPageInfo').offset().top - 100
             }, 100);
         });
 

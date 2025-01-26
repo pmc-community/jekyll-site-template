@@ -574,7 +574,7 @@ const setSearchList = (
 // DATATABLES
 // columnsConfig is set in the caller, to be fit to the specific table
 // callback and callbackClickRow are set in the caller to do specific processing after the table is initialized
-const setDataTable = (
+const setDataTable = async (
     tableSelector, // css selector of the raw table to be converted to datatable
     tableUniqueID, // will be added to <page permalink>_DataTables_tableUniqueID when saving status in local storage
     columnsConfig, // columns object
@@ -596,6 +596,8 @@ const setDataTable = (
         */
 ) => {
 
+    await waitForI18Next(); // normally, at this time i18next init should have been completed, but let's be on the safe side
+
     const $loading = $(
         `
             <div id="dataTableLoading" class="d-flex justify-content-center align-items-center">
@@ -607,7 +609,7 @@ const setDataTable = (
     );
     $(tableSelector).parent().prepend($loading);
     $(tableSelector).hide(); // hide table here to minimise weird display while creating the table
-
+    
     // ONLY searchPanes TRIGGERED BY BUTTON IS AVALILABLE
     // OTHERWISE THE searchPanes LOGIC WILL FAIL AND WILL RAISE ERRORS
     const bottom2Buttons = searchPanes ?
@@ -615,22 +617,23 @@ const setDataTable = (
             {
                 extend: ['colvis'],
                 columns: ':gt(0)', // except first column which will be always visible
-                text: 'Columns',
+                //text: 'Columns', // no need to give a label since we use DT internationalization plugin
                 attr: {
-                    title: 'Show/Hide Columns',
-                    siteFunction: 'tableColumnsVisibility'
+                    siteFunction: 'tableColumnsVisibility',
+                    "data-i18n": '[title]dt_colvis_button_title',
+                    title: i18next.t('dt_colvis_button_title')
                 },
-                className: 'btn-primary btn-sm text-light mb-2'
+                className: 'btn-primary btn-sm text-light mb-2 rounded border-0 DTCustomButton mr-2 ml-0'
             },
             {
                 extend: ['searchPanes'],
                 attr: {
-                    //title: 'Advanced filter',
                     siteFunction: `tableSearchPanes`,
                     id: `tableSearchPanes_${tableUniqueID}`,
-                    "data-i18n": '[title]dt_search_panes_button_title'
+                    "data-i18n": '[title]dt_search_panes_button_title',
+                    title: i18next.t('dt_search_panes_button_title')
                 },
-                className: 'btn-danger btn-sm text-light mb-2 btnSearchPanesFilter',
+                className: 'btn-danger btn-sm text-light mb-2 btnSearchPanesFilter mr-2 ml-0 rounded DTCustomButton',
                 config: {
                     cascadePanes: searchPanes.cascade
                 },
@@ -641,15 +644,16 @@ const setDataTable = (
             {
                 extend: ['colvis'],
                 columns: ':gt(0)', // except first column which will be always visible
-                text: 'Columns',
+                //text: 'Columns', // no need to give a label since we use DT internationalization plugin
                 attr: {
-                    title: 'Show/Hide Columns',
-                    siteFunction: 'tableColumnsVisibility'
+                    siteFunction: 'tableColumnsVisibility',
+                    "data-i18n": '[title]dt_colvis_button_title',
+                    title: i18next.t('dt_colvis_button_title')
                 },
-                className: 'btn-primary btn-sm text-light mb-2'
+                className: 'btn-primary btn-sm text-light mb-2 rounded border-0 DTCustomButton mr-2 ml-0'
             }
         ];
-    
+
     // not used with dt language plugins
     /*
     const searchPanesBtnText = () => {
@@ -1035,38 +1039,43 @@ const setDataTable = (
         });
     }
 
-    // first: create the table, second: apply active searchPanes selection if available
-    $(document).ready(function() {   
-        createTable_ASYNC(
-            tableSelector,
-            tableUniqueID, 
-            columnsConfig, 
-            callback, 
-            callbackClickRow, 
-            allSettings, 
-            searchPanes
-        )
-            .then((result) => {
-
-                result.table.helpers.applyTableStylesOnMobile();
-                
-                if ( result.selection.length === 0 ||  _.sumBy(result.selection, obj => _.get(obj, 'rows.length', 0)) === 0) {
-                    return result.table;
-                }
-                else {
-                    result.table.helpers.autoApplyActiveFilter(result.tableUniqueID);
-                    return result.table;
-                }       
-            })
-            .then((table) => {
-                setTimeout(()=>table.fixedHeader.adjust(),100);
-
-            })
-            .then(() => {    
-                $('#dataTableLoading').remove(); // remove the table loader placeholder)
-                setTimeout(()=>$(tableSelector).show(), 100);
-            }); 
-        ;
+    // first: create the table, second: apply active searchPanes selection if available, third: remove loader placeholder
+    $(document).ready(function() {
+        waitForI18Next().then(() => {
+            createTable_ASYNC(
+                tableSelector,
+                tableUniqueID, 
+                columnsConfig, 
+                callback, 
+                callbackClickRow, 
+                allSettings, 
+                searchPanes
+            )
+                .then((result) => {
+    
+                    result.table.helpers.applyTableStylesOnMobile();
+                    
+                    if ( result.selection.length === 0 ||  _.sumBy(result.selection, obj => _.get(obj, 'rows.length', 0)) === 0) {
+                        return result.table;
+                    }
+                    else {
+                        result.table.helpers.autoApplyActiveFilter(result.tableUniqueID);
+                        return result.table;
+                    }       
+                })
+                .then((table) => {
+                    setTimeout(()=>table.fixedHeader.adjust(),100);
+                    return table;
+    
+                })
+                .then((table) => {    
+                    $('#dataTableLoading').remove(); // remove the table loader placeholder)
+                    setTimeout(()=>{
+                        $(tableSelector).show();
+                    }, 100);
+                }); 
+        });
+        
     });
 }
 
@@ -1074,24 +1083,22 @@ const addAdditionalButtonsToTable = (table, tableSelector=null, zone=null, btnAr
     
     const addButtons = (table, btnArray) => {
         btnArray.forEach(btnConfig => {
-            table.button().add(null, btnConfig);
+            siteFunctionAttr = btnConfig.attr.siteFunction;
+            btnConfig.className += ' mr-2 ml-0 rounded DTCustomButton'
+            // add the button only if doesn't exist already
+            const btnExists = $(`button[siteFunction="${siteFunctionAttr}"]`).length;
+            if( btnExists === 0 ) table.button().add(null, btnConfig);
         });
     }
 
     // buttons must be added on draw event
-    // otherwiswe the draw event when applying internationalization plugin will not add the custom buttons
-    // alternative is to use setTimeout(....) to give time for translation and then add the buttons
-    /*
-    setTimeout(()=>{
+    // otherwise the draw event when applying internationalization plugin will not add the custom buttons
+    table.off('draw.dt').on('draw.dt', function() {
         addButtons(table, btnArray);
-    },500)
-    */
-
-    table.one('draw.dt', function () {
-        addButtons(table, btnArray);
+        applyColorSchemaCorrections();
     });
     
-    applyColorSchemaCorrections();
+    table.draw(); // to force adding custom buttons
 }
 
 const handleBtnClose = () => {
@@ -2177,7 +2184,8 @@ const iframe__utilities = () => {
         anonymousUserToken: setAnonymousUserToken(),
         func: {
             showToast: showToast,
-            doTranslation: doTranslation
+            doTranslation: doTranslation,
+            waitForI18Next: waitForI18Next
         }
     }
 }
@@ -2745,3 +2753,19 @@ const doTranslateDateFields = () => {
         }
     });
 }
+
+const waitForI18Next = () => {
+    return new Promise((resolve) => {
+      if (i18next.isInitialized) {
+        resolve(); // i18next is already initialized
+      } else {
+        // Listen for the 'initialized' event
+        const onInitialized = () => {
+          resolve();
+          i18next.off('initialized', onInitialized); // Clean up listener
+        };
+        i18next.on('initialized', onInitialized);
+      }
+    });
+};
+  

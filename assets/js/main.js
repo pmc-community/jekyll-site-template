@@ -82,7 +82,7 @@ window.customiseTheme = (pageObj = null) => {
             $('body').css('visibility','visible');
             $('#contentLoading').addClass('d-none');  
         }, settings.colSchemaCorrections.hideBodyUntilLoadTimeout);
-    });
+});
 
 }
 

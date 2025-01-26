@@ -2,7 +2,11 @@
 {% if algolia.algoliaEnabled == 'true' %}
   <!-- docsearch container set in aux items -->
   <script id="algoliaSearch" type="text/javascript">
-    $(document).ready(function() {algolia.setDocSearchBox()});
+    $(document).ready(function() {
+      setTimeout(()=>{
+        algolia.setDocSearchBox();
+      },200);
+    });
   </script>
 {% elsif site.search_enabled %}
   <script>

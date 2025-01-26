@@ -81,6 +81,9 @@ search_enabled: true
 # when loading the page and until the page is loaded. nevertheless, page ToC is good and enough
 heading_anchors: false
 
+# set the favicon just to be sure
+favicon_ico: "favicon.png"
+
 # define the folder where jekyll will look for collection, otherwise will look in the root folder
 collections_dir: doc-contents
 

@@ -424,6 +424,14 @@ $sidebarLogo, $sideBarFooter, $sideBarHeader, $sideBarDocLink,$sideBarCategoryBt
 
     #{map-get($tableElements, paginationButtonLink)} {
         font-size:$tablePaginationFontSize !important;
+
+        @include phone {
+            padding-left: $paginationButtonLinkPaddingLeft_mobile !important;
+            padding-right: $paginationButtonLinkPaddingRight_mobile !important;
+            padding-top: $paginationButtonLinkPaddingTop_mobile !important;
+            padding-bottom: $paginationButtonLinkPaddingBottom_mobile !important;
+            border: $paginationButtonLinkBorder_mobile !important
+        }
     }
 
     #{map-get($tableElements, nothingFound)} {
@@ -574,6 +582,11 @@ $sidebarLogo, $sideBarFooter, $sideBarHeader, $sideBarDocLink,$sideBarCategoryBt
         @include tablet {
             padding-left: $tablePaginationPgNumbersPaddingLeft_phone !important;
         }
+    }
+
+    #{map-get($tableElements, tableCustomButton)} {
+        width: $tableCustomButtonWidth !important;
+        max-width: $tableCustomButtonMaxWidth !important;
     }
 }
 

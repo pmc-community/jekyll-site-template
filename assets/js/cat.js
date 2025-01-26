@@ -400,6 +400,7 @@ const showCatDetails = (cat) => {
         (rowData) => { processCatDetailsTableRowClick(rowData, `table[catReference="${cat}"]`, cat) }, // will execute when click on row
         additionalTableSettings // additional datatable settings for this table instance
     );
+
     if (_.map(globCustomCats, _.toLower).includes(cat.toLowerCase())) setCatInfoPageSearchList(cat);
     history.replaceState({}, document.title, window.location.pathname);
 }
@@ -515,34 +516,38 @@ const processCatDetailsTableRowClick = (rowData, tableSelector, cat) => {
 }
 
 const addAdditionalCatButtons = (table, cat) => {
-    // post processing table: adding 2 buttons in the bottom2 zone
-    gotToTagBtn = {
-       attr: {
-           siteFunction: 'tableNavigateToTags',
-           title: 'Go to tags'
-       },
-       className: 'btn-warning btn-sm text-light focus-ring focus-ring-warning mb-2',
-       text: 'Tags info',
-       action: () => {
-           window.location.href = '/tag-info'
-       }
-   }
-
-   gotToSavedItemsBtn = {
-       attr: {
-           siteFunction: 'tableNavigateToSavedItems',
-           title: 'Go to saved items'
-       },
-       className: 'btn-success btn-sm text-light focus-ring focus-ring-warning mb-2',
-       text: 'Documents',
-       action: () => {
-           window.location.href = '/site-pages?showPages=1'
-       }
-   }
-   const btnArray = [];
-   btnArray.push(gotToTagBtn);
-   btnArray.push(gotToSavedItemsBtn);
-   addAdditionalButtonsToTable(table, `table[catReference="${cat}"]`, 'bottom2', btnArray);
+    waitForI18Next().then(() => {
+        // post processing table: adding 2 buttons in the bottom2 zone
+        gotToTagBtn = {
+            attr: {
+                siteFunction: `tableNavigateToTags_${cat}`,
+                title: i18next.t('dt_custom_buttons_go_to_tags_btn_title'),
+                "data-i18n": '[title]dt_custom_buttons_go_to_tags_btn_title;dt_custom_buttons_go_to_tags_btn_text'
+            },
+            className: 'btn-warning btn-sm text-light focus-ring focus-ring-warning mb-2',
+            text: i18next.t('dt_custom_buttons_go_to_tags_btn_text'),
+            action: () => {
+                window.location.href = '/tag-info'
+            }
+        }
+    
+        gotToSavedItemsBtn = {
+            attr: {
+                siteFunction: `tableNavigateToSavedItems_${cat}`,
+                title: i18next.t('dt_custom_buttons_go_to_docs_btn_title'),
+                "data-i18n": '[title]dt_custom_buttons_go_to_docs_btn_title;dt_custom_buttons_go_to_docs_btn_text'
+            },
+            className: 'btn-success btn-sm text-light focus-ring focus-ring-warning mb-2',
+            text: i18next.t('dt_custom_buttons_go_to_docs_btn_text'),
+            action: () => {
+                window.location.href = '/site-pages?showPages=1'
+            }
+        }
+        const btnArray = [];
+        btnArray.push(gotToTagBtn);
+        btnArray.push(gotToSavedItemsBtn);
+        addAdditionalButtonsToTable(table, `table[catReference="${cat}"]`, 'bottom2', btnArray);
+    });
 }
 
 const updateCatSearchList = () => {

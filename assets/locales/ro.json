@@ -141,6 +141,9 @@
     "dt_custom_buttons_go_to_tags_btn_text": "Etichete",
     "dt_custom_buttons_go_to_cats_btn_title": "Informatii categorii",
     "dt_custom_buttons_go_to_cats_btn_text": "Categorii",
-    "dt_search_panes_button_title": "Filtrare avansata"
+    "dt_search_panes_button_title": "Filtrare avansata",
+    "dt_custom_buttons_go_to_docs_btn_title": "Informatii documente",
+    "dt_custom_buttons_go_to_docs_btn_text": "Documente",
+    "dt_colvis_button_title": "Afisare/Ascundere coloane"
 
 }

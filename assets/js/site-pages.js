@@ -195,7 +195,7 @@ sitePagesFn = {
             $('#site_pages_details').removeClass('d-none');
             sitePagesFn.forceRedrawPagesTable();
             $('div[sitefunction="sitePagesDetails"]').fadeIn();
-        });            
+        });         
     },
     
     // page offcanvas
@@ -218,6 +218,23 @@ sitePagesFn = {
         // from utilities.js
         removeObservers('.offcanvas class=hiding getClass=true');
         setElementChangeClassObserver('.offcanvas', 'hiding', true, () => {
+
+            // change the label of 'Clear' button of Active Filter box to 'Apply' after return from offcanvas
+            // since the first click on it after return from offcanvas will re-apply the filter instead of clearing it
+            if($('div[sitefunction="sitePagesDetailsLastFilter"]').hasClass('d-none'))
+                $('button[sitefunction="sitePagesDetailsClearFilter"]').find('div').find('span').last().text('Clear');
+            else
+                $('button[sitefunction="sitePagesDetailsClearFilter"]').find('div').find('span').last().text('Apply');
+
+            if (preFlight.envInfo.device.deviceType === 'mobile') {
+                // force a click to filter box to reset the show filter button and status
+                // if current filter is shown before open offcanvas, when returning, the filter is hidden but the button is red
+                // so we need to force a click to make it green and change the eye icon
+                // the same is applied when closing searchPanes window on mobile, see onSearchPanesClose below
+                if ($('button[siteFunction="sitePagesDetailsShowFilter"]').hasClass('show'))
+                    $('button[siteFunction="sitePagesDetailsShowFilter"]').click();
+            }
+
             sitePagesFn.bruteRebuildPagesTable();
         });
     },
@@ -228,7 +245,9 @@ sitePagesFn = {
         sitePagesFn.rebuildPagesTableSearchPanes();
         sitePagesFn.setLastFilterInfo('Last filter');
         sitePagesFn.handleDropdownClassOverlap();
-        setTimeout(()=>sitePagesFn.forceRedrawPagesTable(), 100);
+        setTimeout(()=>{
+            sitePagesFn.forceRedrawPagesTable(); 
+        }, 100);
     },
 
     // pages details section
@@ -332,7 +351,6 @@ sitePagesFn = {
                     .css('border-radius', '0');
             }
 
-
             $('div[sitefunction="sitePagesDetailsLastFilter"]').removeClass('d-none');
         }
         else
@@ -412,6 +430,15 @@ sitePagesFn = {
                 showToast(`Document ${title} is now saved!<br><strong>HEADS UP!!!</strong><br>Document will be removed automatically if you don't add some custom info (tags, categories, notes, comments)`, 'bg-warning', 'text-dark');
                 sitePagesFn.setPagesSavedStatus();
             });
+        
+        // change the label of 'Clear' button of Active Filter box if was set to 'Apply' after a return from offcanvas
+        $('button[sitefunction="sitePagesDetailsClearFilter"]').off('click').click(function() {
+            setTimeout(() => {
+                if($('button[sitefunction="sitePagesDetailsClearFilter"]').find('div').find('span').last().text() === 'Apply')
+                    $('button[sitefunction="sitePagesDetailsClearFilter"]').find('div').find('span').last().text('Clear');
+            }, 200);
+            
+        });
 
         // HEADS UP!!!
         // HANDLERS FOR OPEN AND CLOSE ACTIVE FILTER ARE DEFINED IN postProcessPagesTable
@@ -890,6 +917,14 @@ sitePagesFn = {
 
     onSearchPanesClose: (tableSearchPanesSelection) => {
         sitePagesFn.refreshLastFilterInfo(tableSearchPanesSelection);
+
+        if (preFlight.envInfo.device.deviceType === 'mobile') {
+            // force a click to filter box to reset the show filter button and status
+            // if current filter is shown before open offcanvas, when returning, the filter is hidden but the button is red
+            // so we need to force a click to make it green and change the eye icon
+            if ($('button[siteFunction="sitePagesDetailsShowFilter"]').hasClass('show'))
+                $('button[siteFunction="sitePagesDetailsShowFilter"]').click();
+        }
     },
 
     onSearchPanesSelectionChange: (tableSearchPanesSelection) => {
@@ -931,36 +966,42 @@ sitePagesFn = {
     },
 
     addAdditionalPagesTableButtons: (table) => {
-        // post processing table: adding 2 buttons in the bottom2 zone
-        goToTagBtn = {
-           attr: {
-               siteFunction: 'tableNavigateToTagsSP',
-               title: i18next.t('dt_custom_buttons_go_to_tags_btn_title'),
-               "data-i18n": '[title]dt_custom_buttons_go_to_tags_btn_title;dt_custom_buttons_go_to_tags_btn_text'
-           },
-           className: 'btn-warning btn-sm text-dark mb-2',
-           text: i18next.t('dt_custom_buttons_go_to_tags_btn_text'),
-           action: () => {
-               window.location.href = '/tag-info'
-           }
-       }
-    
-       goToCatsBtn = {
-           attr: {
-               siteFunction: 'tableNavigateToCategoriesSP',
-               title: i18next.t('dt_custom_buttons_go_to_cats_btn_title'),
-               "data-i18n": '[title]dt_custom_buttons_go_to_cats_btn_title;dt_custom_buttons_go_to_cats_btn_text'
-           },
-           className: 'btn-success btn-sm text-light mb-2',
-           text: i18next.t('dt_custom_buttons_go_to_cats_btn_text'),
-           action: () => {
-               window.location.href = '/cat-info'
-           }
-       }
-       const btnArray = [];
-       btnArray.push(goToTagBtn);
-       btnArray.push(goToCatsBtn);
-       addAdditionalButtonsToTable(table, 'table[siteFunction="sitePagesDetailsPageTable"]', 'bottom2', btnArray);
+
+        // need to wait for i8next full init, otherwise data-i18n will not be translated when firs show the page
+        waitForI18Next().then(() => {
+            goToTagBtn = {
+                attr: {
+                    siteFunction: 'tableNavigateToTagsSP',
+                    title: i18next.t('dt_custom_buttons_go_to_tags_btn_title'),
+                    "data-i18n": '[title]dt_custom_buttons_go_to_tags_btn_title;dt_custom_buttons_go_to_tags_btn_text'
+                },
+                className: 'btn-warning btn-sm text-dark mb-2',
+                text: i18next.t('dt_custom_buttons_go_to_tags_btn_text'),
+                action: () => {
+                    window.location.href = '/tag-info'
+                }
+             }
+         
+            goToCatsBtn = {
+                 attr: {
+                     siteFunction: 'tableNavigateToCategoriesSP',
+                     title: i18next.t('dt_custom_buttons_go_to_cats_btn_title'),
+                     "data-i18n": '[title]dt_custom_buttons_go_to_cats_btn_title;dt_custom_buttons_go_to_cats_btn_text'
+                 },
+                 className: 'btn-success btn-sm text-light mb-2',
+                 text: i18next.t('dt_custom_buttons_go_to_cats_btn_text'),
+                 action: () => {
+                     window.location.href = '/cat-info'
+                 }
+             }
+             
+            // post processing table: adding 2 buttons in the bottom2 zone
+            const btnArray = [];
+            btnArray.push(goToTagBtn);
+            btnArray.push(goToCatsBtn);
+            addAdditionalButtonsToTable(table, 'table[siteFunction="sitePagesDetailsPageTable"]', 'bottom2', btnArray);
+
+        });
     },
 
     redrawPagesTable: () => {
@@ -983,7 +1024,7 @@ sitePagesFn = {
     forceRedrawPagesTable: () => {
         setTimeout(()=>{
             const table = $(`table[siteFunction="sitePagesDetailsPageTable"]`).DataTable();
-            table.columns.adjust().draw(); 
+            table.columns.adjust().draw();
         },100);
     },
 
@@ -1150,11 +1191,12 @@ sitePagesFn = {
     },
 
     rebuildPagesTableSearchPanes: () => {
+
         getOrphanDataTables('').forEach( table => { localStorage.removeItem(table); });
         let table = $(`table[siteFunction="sitePagesDetailsPageTable"]`).DataTable();
 
         // SELECTION MUST BE CLEARED, OTHERWISE THE TABLE WILL BEHAVE WEIRD
-        // RETURNING FROM OFFCANVAS ON A FILTERED TABLE WILL LOSE ALL RECORDS EXCEPT THE FILTERED ONES
+        // RETURNING FROM OFFCANVAS ON A FILTERED TABLE WILL LOSE/REMOVE ALL RECORDS EXCEPT THE FILTERED ONES
         // AND THESE CANNOT BE SHOWN EVEN IF CLEARING THE FILTER, ONLY RELOADING PAGE WILL RESTORE ALL RECORDS 
         table.searchPanes.clearSelections();
 
