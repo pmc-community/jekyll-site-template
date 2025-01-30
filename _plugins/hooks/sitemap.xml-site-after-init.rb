@@ -15,9 +15,11 @@ Jekyll::Hooks.register :site, :after_init do |site|
     sitemap = []
     Dir.glob(File.join(doc_contents_dir, '**', '*.{md,html}')).each do |file_path|
         next if file_path.index("404")
-        content = File.read(file_path)
+        content = File.open(file_path, "rb", &:read).encode('UTF-8', invalid: :replace, undef: :replace)
+
         front_matter = {}
 
+        content.gsub!("\r\n", "\n")
         if content =~ /^(---\s*\n.*?\n?)^(---\s*$\n?)/m
             begin
                 front_matter = YAML.load(Regexp.last_match[1])

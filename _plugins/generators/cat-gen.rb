@@ -43,6 +43,7 @@ module Jekyll
 
     def valid_front_matter?(file_path)
       content = File.read(file_path)
+      content.force_encoding('UTF-8').encode!('UTF-8', invalid: :replace, undef: :replace)
       !!content.match(/^\s*---\s*\n.*?\n?(\s*---\s*$\n?)/m)
     end
   end

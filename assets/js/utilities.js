@@ -582,22 +582,11 @@ const setDataTable = async (
     callbackClickRow, // will be executed when click on row
     additionalSettings = {}, // any other settings besides the default ones (i.e. columnDefs to define individual search panes)
     searchPanes = null, // search panes configuration and callbacks
-    envInfo = null
-        /*
-        {
-            enable: true,
-            // page load may become very slow. better to use viewCount=false when cascade=false because viewCount doesn't update dynamicaly
-            cascade: false,
-            searchPanesOpenCallback: () => {} || null,
-            searchPanesCloseCallback: (tableSearchPanesSelection) => {} || null,
-            searchPanesSelectionChangeCallback: (tableSearchPanesSelection) => {} || null,
-            searchPanesCurrentSelection: <current selection in the form of [{column:..., rows:[...]}]> || []
-        } || null
-        */
+    envInfo = null,
+    initCompleteCallback = null // callback to be executed after init complete, besides the default one
 ) => {
-
-    await waitForI18Next(); // normally, at this time i18next init should have been completed, but let's be on the safe side
-
+    
+    $(tableSelector).hide(); // hide table here to minimise weird display while creating the table
     const $loading = $(
         `
             <div id="dataTableLoading" class="d-flex justify-content-center align-items-center">
@@ -608,8 +597,9 @@ const setDataTable = async (
         `
     );
     $(tableSelector).parent().prepend($loading);
-    $(tableSelector).hide(); // hide table here to minimise weird display while creating the table
     
+    await waitForI18Next(); // normally, at this time i18next init should have been completed, but let's be on the safe side
+
     // ONLY searchPanes TRIGGERED BY BUTTON IS AVALILABLE
     // OTHERWISE THE searchPanes LOGIC WILL FAIL AND WILL RAISE ERRORS
     const bottom2Buttons = searchPanes ?
@@ -679,6 +669,25 @@ const setDataTable = async (
         : 'en';
 
     const defaultSettings = {
+        initComplete: function(settings) {
+            if (initCompleteCallback) initCompleteCallback(settings);
+            let tableSearchPanesSelection = !searchPanes 
+                ? [] 
+                : !searchPanes.searchPanesCurrentSelection 
+                    ? [] 
+                    : searchPanes.searchPanesCurrentSelection;
+            
+            // show the table if no filter to be applied
+            // otherwise, the table will be shown after applying the filters (see createTable_ASYNC.helpers.autoApplyActiveFilter below)
+            if ( tableSearchPanesSelection.length === 0 || _.sumBy(tableSearchPanesSelection, obj => _.get(obj, 'rows.length', 0)) === 0 ) {
+                $('#dataTableLoading').remove();
+                setTimeout(() => {
+                    $('.dt-length').parent().show();
+                    $('.dt-search').parent().show();   
+                }, 0);
+                $(tableSelector).show();
+            }   
+        },  
         serverSide: false,
         paging: true,
         pageLength: 5,
@@ -727,6 +736,7 @@ const setDataTable = async (
         allSettings, 
         searchPanes
     ) => {
+
         return new Promise ( (resolve, reject) => {
 
             $(`${tableSelector} tr`).removeClass('table-active'); // just to be sure that nothing is marked as selected
@@ -747,32 +757,36 @@ const setDataTable = async (
 
             // define some helpers
             const helpers = {
-                autoApplyActiveFilter: async () => {
-                    await $(`#tableSearchPanes_${tableUniqueID}`).click(); // execute Filter button click to open search panes and apply selection
-                    await $('.dropdown-menu').hide(); // hide search panes
-                    await $('.dtb-popover-close').click(); // force search panes to close
-                    setTimeout(()=>$('body').click(), 500); // force sitePagesDetailsLastFilter to lose focus
+                autoApplyActiveFilter: async (tableSelector) => {
+                    // execute Filter button click to open search panes and apply selection
+                     await $(`#tableSearchPanes_${tableUniqueID}`).click(); 
+                     await $('.dropdown-menu').hide(); // hide search panes
+                     await $('.dtb-popover-close').click(); // force search panes to close
+                    setTimeout(()=>{
+                        $('body').click();
+                        $('#dataTableLoading').remove();
+                        $(tableSelector).show();
+                    }, 200); // force sitePagesDetailsLastFilter to lose focus
                 },
 
                 clearActiveFilter: async (tableUniqueID) => {
                     await $(`#tableSearchPanes_${tableUniqueID}`).click();
                     await $('.dropdown-menu[id!="category-menu-more-list"]').hide();
                     await $('.dtsp-clearAll').click();
-                    await $('.dtb-popover-close').click();
-                    
-                    setTimeout(()=>$('body').click(), 500);   
+                    await $('.dtb-popover-close').click(); 
+                    setTimeout(()=>$('body').click(), 200);   
                 },
 
                 triggerApplyActiveFilter: (tableUniqueID) => {
                     $(`button[id="tableSearchPanes_${tableUniqueID}"]`).click();
                 },
 
-                applyTableStylesOnMobile: () => {
+                applyTableStylesOnMobile: (table) => {
                     // since we don't use responsive = true for datatables
                     // we need to apply some css corrections because some things may look weird on mobile 
                     if (preFlight.envInfo.device.deviceType === 'mobile') {
-                         // we do this on draw event because of the translation
-                        table.one('draw.dt', function () {
+                        table.on('draw.dt', function () {
+                        
                             // apply corrections to entries per page group
                             $('.dt-length')
                                 .addClass('d-flex justify-content-between align-items-center')
@@ -786,13 +800,11 @@ const setDataTable = async (
                                 .addClass('d-flex justify-content-between align-items-center')
                                 .find('input').css('width', '50%');
                             
-                            $('.dt-search').find('label')
-                                    .addClass('fs-6');
+                            $('.dt-search').find('label').addClass('fs-6');
         
-                            $('.dt-info').addClass('text-start fs-6');   
-                        });
-
-                        
+                            $('.dt-info').addClass('text-start fs-6');
+                            
+                        }); 
                     };
                 }
             }
@@ -881,11 +893,11 @@ const setDataTable = async (
             // SINCE WE ONLY USE BUTTON ACTIVATED searchPanes
             // AND THE CLASSES ARE ALWAYS THE SAME
 
-            let tableSearchPanesSelection = !searchPanes ?
-                [] :
-                !searchPanes.searchPanesCurrentSelection ?
-                [] :
-                searchPanes.searchPanesCurrentSelection;
+            let tableSearchPanesSelection = !searchPanes 
+                ? [] 
+                : !searchPanes.searchPanesCurrentSelection 
+                    ? [] 
+                    : searchPanes.searchPanesCurrentSelection;
 
             if (searchPanes && searchPanes.enable) {
         
@@ -1025,23 +1037,48 @@ const setDataTable = async (
                 });
     
             }
-            
+
             // everything set, now we need to resolve the promise 
             // we pass the table and its current search panes selection to the next steps
-            resolve(
-                {
-                    table: table,
-                    selection: tableSearchPanesSelection,
-                    tableUniqueID: tableUniqueID
-                }
-            );
-            
+            /* resolving the promise inside a custom message handler */
+            setTimeout(()=>{
+                $(tableSelector).trigger('timeToBuildTheTable')
+            }, 0);
+
+            $(tableSelector).on('timeToBuildTheTable', function() {
+                resolve(
+                    {
+                        table: table,
+                        selection: tableSearchPanesSelection,
+                        tableUniqueID: tableUniqueID,
+                        tableSelector: tableSelector
+                    }
+                )
+            })
+
+            /* resolving the promise inside a longer setTimeout */
+            /*
+            setTimeout(()=> {
+                resolve(
+                    {
+                        table: table,
+                        selection: tableSearchPanesSelection,
+                        tableUniqueID: tableUniqueID,
+                        tableSelector: tableSelector
+                    }
+                )
+            }, 0);
+            */
+
         });
     }
 
-    // first: create the table, second: apply active searchPanes selection if available, third: remove loader placeholder
     $(document).ready(function() {
+        // first wait for i18next 
+        // then create the table, 
+        // then apply active searchPanes selection if available and some styles on mobile
         waitForI18Next().then(() => {
+            
             createTable_ASYNC(
                 tableSelector,
                 tableUniqueID, 
@@ -1051,32 +1088,22 @@ const setDataTable = async (
                 allSettings, 
                 searchPanes
             )
-                .then((result) => {
-    
-                    result.table.helpers.applyTableStylesOnMobile();
-                    
-                    if ( result.selection.length === 0 ||  _.sumBy(result.selection, obj => _.get(obj, 'rows.length', 0)) === 0) {
-                        return result.table;
-                    }
-                    else {
-                        result.table.helpers.autoApplyActiveFilter(result.tableUniqueID);
-                        return result.table;
-                    }       
-                })
-                .then((table) => {
-                    setTimeout(()=>table.fixedHeader.adjust(),100);
-                    return table;
-    
-                })
-                .then((table) => {    
-                    $('#dataTableLoading').remove(); // remove the table loader placeholder)
-                    setTimeout(()=>{
-                        $(tableSelector).show();
-                    }, 100);
-                }); 
+                .then( (result) => {
+
+                    setTimeout(() => {
+                        if (result.table.helpers && result.table.helpers !== 'undefined') 
+                            result.table.helpers.applyTableStylesOnMobile(result.table);
+                        
+                        if ( !(result.selection.length === 0 || _.sumBy(result.selection, obj => _.get(obj, 'rows.length', 0)) === 0) )
+                            result.table.helpers.autoApplyActiveFilter(result.tableSelector);
+
+                    }, 0);
+                    // That is all
+                    // after table init, the initComplete (see default table settings) function will remove the loader and show the table
+                });
         });
-        
     });
+    
 }
 
 const addAdditionalButtonsToTable = (table, tableSelector=null, zone=null, btnArray) => {

@@ -20,15 +20,15 @@
                 <table siteFunction="sitePagesDetailsPageTable" class="table table-striped table-hover overflow-auto">
                     <thead>
                         <tr>
-                            <th>Title</th>
-                            <th class="text-start" siteFunction="tableDateField">Last Update</th>
-                            <th>Details</th>
-                            <th>Related</th>
-                            <th>Similar</th>
-                            <th>Excerpt</th>
-                            <th>Summary</th>
-                            <th>Tags</th>
-                            <th>Categories</th>
+                            <th data-i18n="dt_pages_col_title_text">Title</th>
+                            <th class="text-start" siteFunction="tableDateField" data-i18n="dt_pages_col_last_update_text">Last Update</th>
+                            <th data-i18n="dt_pages_col_details_text">Details</th>
+                            <th data-i18n="dt_pages_col_related_text">Related</th>
+                            <th data-i18n="dt_pages_col_similar_text">Similar</th>
+                            <th data-i18n="dt_pages_col_excerpt_text">Excerpt</th>
+                            <th data-i18n="dt_pages_col_summary_text">Summary</th>
+                            <th data-i18n="dt_pages_col_tags_text">Tags</th>
+                            <th data-i18n="dt_pages_col_cats_text">Categories</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -43,6 +43,7 @@
                                 <td 
                                     siteFunction="sitePagesTablePageTitle" 
                                     class="fw-normal align-self-center align-middle"
+                                    data-i18n="[title]dt_pages_col_title_title"
                                     title="Click here for more info about document {{ page.title }}"
                                     colFunction="pageTitle"
                                     data-raw="{{ page.title }}"
@@ -63,7 +64,8 @@
                                                 href="{{ page.permalink }}" 
                                                 target=_blank
                                                 class="mx-2 mx-md-2"
-                                                title="Read document {{ page.title }}">
+                                                title="Read document {{ page.title }}"
+                                                data-i18n="[title]dt_pages_col_actions_read_doc_btn_title">
                                                 <i class="bi bi-book" style="font-size:1.4rem"></i>
                                             </a>
                                         </span>
@@ -127,7 +129,8 @@
                                                 pagePermalinkReference="{{ page.permalink }}"
                                                 pageRelatedTitleReference="{{ pageR.title }}"
                                                 pageRelatedPermalinkReference="{{ pageR.permalink }}"
-                                                title = "Details for page {{ pageR.title }}"
+                                                title="Details for page {{ pageR.title }}"
+                                                data-i18n="[title]dt_pages_col_related_title"
                                                 class="alwaysCursorPointer text-primary"
                                                 data-raw="{{pageRelatedTitleString | escape }}">
                                                 {{ pageR.title}}
@@ -177,6 +180,7 @@
                                                 pageSimilarTitleReference="{{ pageS.title }}"
                                                 pageSimilarPermalinkReference="{{ pageS.permalink }}"
                                                 title = "Details for page {{ pageS.title }}"
+                                                data-i18n="[title]dt_pages_col_similar_title"
                                                 class="alwaysCursorPointer text-primary text-nowrap"
                                                 data-raw="{{pageSimilarTitleString | escape }}">
                                                 {{ pageS.title}}

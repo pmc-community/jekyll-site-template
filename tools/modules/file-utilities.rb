@@ -73,7 +73,8 @@ module FileUtilities
     def self.getFileFromPermalink(docsDir, permalink)
         Find.find(docsDir) do |path|
             next unless File.file?(path) && (path.end_with?('.html') || path.end_with?('.md'))
-            front_matter, _ = File.read(path).split('---')[1..2]
+            fileContent = File.open(path, "rb", &:read).encode('UTF-8', invalid: :replace, undef: :replace)
+            front_matter, _ = fileContent.split('---')[1..2]
             page_data = front_matter ? YAML.safe_load(front_matter) : ""
             return path if page_data && page_data['permalink'] == permalink
         end
@@ -81,6 +82,7 @@ module FileUtilities
     end
 
     def self.parse_front_matter(content)
+        content.force_encoding('UTF-8').encode!('UTF-8', invalid: :replace, undef: :replace)
         if content =~ /\A(---\s*\n.*?\n?)^((---|\.\.\.)\s*$\n?)/m
           front_matter = YAML.safe_load($1)
           content = $'

@@ -1,10 +1,10 @@
 <div 
-    sitefunction="sitePagesDetailsLastFilter" 
+    siteFunction="sitePagesDetailsLastFilter" 
     class="card d-none shadow-sm alert alert-warning mt-2" role="alert">
 
     <!-- filter warning header (title and buttons) -->
     <div 
-        sitefunction="sitePagesDetailsLastFilterHeader" 
+        siteFunction="sitePagesDetailsLastFilterHeader" 
         class="d-flex align-items-center justify-content-between pb-2 border-bottom border-secondary border-opacity-25">
         <div>
             <span 
@@ -12,8 +12,9 @@
                 aria-hidden="true">
             </span>
             <span 
-                sitefunction="sitePagesDetailsLastFilterLabel" 
-                class="fs-6 fw-medium text-black">
+                siteFunction="sitePagesDetailsLastFilterLabel" 
+                class="fs-6 fw-medium text-black"
+                data-i18n="dt_pages_active_filter_box_title_last_filter">
                 Last filter
             </span>
         </div>
@@ -28,7 +29,9 @@
                         class="spinner-border spinner-border-sm mr-1 d-none"
                         aria-hidden="true">
                     </span>
-                    <span role="status">
+                    <span 
+                        role="status"
+                        data-i18n="dt_pages_active_filter_box_open_filter_btn_text">
                         Open
                     </span>
                 </div>
@@ -43,7 +46,9 @@
                         class="spinner-border spinner-border-sm mr-1 d-none"
                         aria-hidden="true">
                     </span>
-                    <span role="status">
+                    <span 
+                        role="status"
+                        data-i18n="dt_pages_active_filter_box_clear_filter_btn_text">
                         Clear
                     </span>
                 </div>
@@ -58,56 +63,86 @@
 
      <!-- filter warning details -->
     <div 
-        sitefunction="sitePagesDetailsLastFilterDetails" 
+        siteFunction="sitePagesDetailsLastFilterDetails" 
         class="pt-2">
 
         <div 
             class="text-black"
-            sitefunction="sitePagesDetailsLastFilterDetailsPageDetails_container">
-            <span class="fw-medium text-black">Details:</span>
+            siteFunction="dt_pages_active_filter_details_container_label"
+            data-i18n="[siteFunction]dt_pages_active_filter_details_container_label">
+            <span 
+                class="fw-medium text-black"
+                data-i18n="dt_pages_col_details_text">
+                Details
+            </span>: 
             <span 
                 class="text-primary" 
-                sitefunction="sitePagesDetailsLastFilterDetailsPageDetails">
+                siteFunction="dt_pages_active_filter_details_label"
+                data-i18n="[siteFunction]dt_pages_active_filter_details_label">
             </span>
         </div>
 
         <div 
             class="text-black"
-            sitefunction="sitePagesDetailsLastFilterDetailsPageRelatedPages_container">
-            <span class="fw-medium text-black">Related pages:</span>
+            siteFunction="dt_pages_active_filter_related_container_label"
+            data-i18n="[siteFunction]dt_pages_active_filter_related_container_label">
+            <span 
+                class="fw-medium text-black"
+                data-i18n="dt_pages_col_related_text">
+                Related
+            </span>: 
             <span 
                 class="text-primary" 
-                sitefunction="sitePagesDetailsLastFilterDetailsPageRelatedPages">
+                siteFunction="dt_pages_active_filter_related_label"
+                data-i18n="[siteFunction]dt_pages_active_filter_related_label">
             </span>
         </div>
 
         <div 
             class="text-black"
-            sitefunction="sitePagesDetailsLastFilterDetailsPageSimilarPages_container">
-            <span class="fw-medium text-black">Similar pages:</span>
+            siteFunction="dt_pages_active_filter_similar_container_label"
+            data-i18n="[siteFunction]dt_pages_active_filter_similar_container_label">
+            <span 
+                class="fw-medium text-black"
+                data-i18n="dt_pages_col_similar_text">
+                Similar
+            </span>: 
             <span 
                 class="text-primary" 
-                sitefunction="sitePagesDetailsLastFilterDetailsPageSimilarPages">
+                siteFunction="dt_pages_active_filter_similar_label"
+                data-i18n="[siteFunction]dt_pages_active_filter_similar_label">
             </span>
         </div>
 
         <div 
             class="text-black"
-            sitefunction="sitePagesDetailsLastFilterDetailsPageTags_container">
-            <span class="fw-medium text-black">Tags:</span>
+            siteFunction="dt_pages_active_filter_tags_container_label"
+            data-i18n="[siteFunction]dt_pages_active_filter_tags_container_label">
+            <span 
+                class="fw-medium text-black"
+                data-i18n="dt_pages_col_tags_text">
+                Tags
+            </span>: 
             <span 
                 class="text-primary" 
-                sitefunction="sitePagesDetailsLastFilterDetailsPageTags">
+                siteFunction="dt_pages_active_filter_tags_label"
+                data-i18n="[siteFunction]dt_pages_active_filter_tags_label">
             </span>
         </div>
 
         <div 
             class="text-black"
-            sitefunction="sitePagesDetailsLastFilterDetailsPageCategories_container">
-            <span class="fw-medium text-black">Categories:</span>
+            siteFunction="dt_pages_active_filter_cats_container_label"
+            data-i18n="[siteFunction]dt_pages_active_filter_cats_container_label">
+            <span 
+                class="fw-medium text-black"
+                data-i18n="dt_pages_col_cats_text">
+                Categories
+            </span>: 
             <span 
                 class="text-primary" 
-                sitefunction="sitePagesDetailsLastFilterDetailsPageCategories">
+                siteFunction="dt_pages_active_filter_cats_label"
+                data-i18n="[siteFunction]dt_pages_active_filter_cats_label">
             </span>
         </div>
 

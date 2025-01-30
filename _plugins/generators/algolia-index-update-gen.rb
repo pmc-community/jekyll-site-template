@@ -170,6 +170,7 @@ module Jekyll
         chunks = []
         current_chunk = ""
       
+        content.force_encoding('UTF-8').encode!('UTF-8', invalid: :replace, undef: :replace)
         # Split content into words
         words = content.split(' ')
       

@@ -28,10 +28,12 @@ module Jekyll
 
         doc_raw_contents.each do |file_path|
           content = File.read(file_path)
+          content.force_encoding('UTF-8').encode!('UTF-8', invalid: :replace, undef: :replace)
           word_count = content.split.size
           reading_time = (word_count / reading_speed.to_f).ceil
 
           content = File.read(FileUtilities.get_real_file_from_raw_content_file(file_path))
+          content.force_encoding('UTF-8').encode!('UTF-8', invalid: :replace, undef: :replace)
           front_matter, _ = FileUtilities.parse_front_matter(File.read(FileUtilities.get_real_file_from_raw_content_file(file_path)))
           next if !front_matter
           

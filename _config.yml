@@ -22,7 +22,9 @@ theme: just-the-docs
 #  - jekyll-feed # activate only if the site has posts
 
 # to be ensure that inline md styles such as {:width="123px"} are processed well
+markdown: kramdown
 kramdown:
+  enable_attribute_list: true
   input: GFM
   syntax_highlighter_opts:
     disable: true

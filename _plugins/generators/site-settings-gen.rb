@@ -15,6 +15,7 @@ module Jekyll
     def generate(site)
       Globals.putsColText(Globals::PURPLE,"Generating site settings ...")
       settings_path = "assets/config/siteSettings.json"
+      enLanguage_path = "assets/locales/en.json"
       allSettings = {
         "settings" => site.data["siteConfig"],
         "pageList" => JSON.parse(site.data["page_list"]),
@@ -29,7 +30,8 @@ module Jekyll
           "ga" => site.data["buildConfig"]["googleAnalytics"],
           "gtm" => site.data["buildConfig"]["googleTagManager"]
         },
-        "newRelicSettings" => JSON.parse(site.data["new_relic_client_integration"])
+        "newRelicSettings" => JSON.parse(site.data["new_relic_client_integration"]),
+        "engLanguage" => JSON.parse(File.read(enLanguage_path))
       }
       allSettings["settings"]["siteTitle"] = site.config["title"]
 

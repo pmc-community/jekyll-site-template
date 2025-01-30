@@ -37,4 +37,6 @@ echo ""
 
 print_color_enclosed "$PURPLE" "Time to build the site. Sit back and relax ... "
 bundle exec jekyll clean
-bundle exec jekyll serve --incremental --trace
+
+# serving on localhost:4000 with the possibility to be accessed from other devices in the same network
+bundle exec jekyll serve --incremental --trace --host 0.0.0.0

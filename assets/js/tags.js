@@ -589,7 +589,7 @@ const showTagDetails = (tag) => {
                     .attr('title', `Click here for more info about page ${cellData.replace(/<\/?[^>]+(>|$)/g, "")}`)
                     .attr('tagReference', `${tag}`)
                     .attr('colFunction', 'pageTitle')
-                    .addClass('fw-normal align-self-center align-middle');
+                    .addClass('fw-normal align-self-center align-middle border-bottom border-secondary border-opacity-25');
             }
         }, 
 
@@ -605,7 +605,7 @@ const showTagDetails = (tag) => {
                     .attr('siteFunction', 'tableDateField')
                     .attr('tagReference', `${tag}`)
                     .attr('colFunction', 'pageLastUpdate')
-                    .addClass('fw-normal align-self-center align-middle');
+                    .addClass('fw-normal align-self-center align-middle border-bottom border-secondary border-opacity-25');
             }
         }, 
 
@@ -621,7 +621,7 @@ const showTagDetails = (tag) => {
                 $(td)
                     .attr('tagReference', `${tag}`)
                     .attr('colFunction', 'pageActions')
-                    .addClass('fw-normal align-self-center align-middle')
+                    .addClass('fw-normal align-self-center align-middle border-bottom border-secondary border-opacity-25')
                     .removeClass('dt-type-numeric');
             }
 
@@ -639,7 +639,7 @@ const showTagDetails = (tag) => {
                 $(td)
                     .attr('tagReference', `${tag}`)
                     .attr('colFunction', 'pageExcerpt')
-                    .addClass('fw-normal align-self-center align-middle');
+                    .addClass('fw-normal align-self-center align-middle border-bottom border-secondary border-opacity-25');
             }
         }, 
 
@@ -657,7 +657,7 @@ const showTagDetails = (tag) => {
                     .attr('colFunction', 'tagInfoTagTablePageOtherTags')
                     .attr('pageTitleReference', `${rowData.pageTitle.replace(/<\/?[^>]+(>|$)/g, "").trim()}`)
                     .attr('pagePermalinkReference', `${permalink.trim()}`)
-                    .addClass('fw-normal align-self-center align-middle');
+                    .addClass('fw-normal align-self-center align-middle border-bottom border-secondary border-opacity-25');
                 if(preFlight.envInfo.device.deviceType === 'mobile') {
                     $(td).children().first().addClass('d-flex');
                 }

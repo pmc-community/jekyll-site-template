@@ -648,14 +648,20 @@ const initCustomNotesTable = (pageInfo) => {
                 data: 'date',
                 type: 'date',
                 className: 'dt-left alwaysCursorPointer alwaysTextToLeft align-middle',
-                width:'100px'
+                width:'100px',
+                createdCell: function(td, cellData, rowData, row, col) {
+                    $(td).addClass('border-bottom border-secondary border-opacity-25');
+                }
             }, 
 
             // note
             {
                 data: "note",
                 className: 'alwaysCursorPointer align-middle',
-                width:'350px'
+                width:'350px',
+                createdCell: function(td, cellData, rowData, row, col) {
+                    $(td).addClass('border-bottom border-secondary border-opacity-25');
+                }
             },
 
             // note id
@@ -666,6 +672,9 @@ const initCustomNotesTable = (pageInfo) => {
                 visible: false,
                 width:'100px',
                 className: 'alwaysCursorPointer align-middle',
+                createdCell: function(td, cellData, rowData, row, col) {
+                    $(td).addClass('border-bottom border-secondary border-opacity-25');
+                }
             }
 
         ],
@@ -678,7 +687,9 @@ const initCustomNotesTable = (pageInfo) => {
             ],
             data: getPageNotes(pageInfo),
             autoWidth: false
-        }
+        },
+        null,
+        preFlight.envInfo
     );
 }
 

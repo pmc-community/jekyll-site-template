@@ -583,6 +583,8 @@ const page__setSelectedTextContextMenu = () =>{
     $(document).ready(function() {
         if (!settings.selectedTextContextMenu.enabled) return;
         if (pageInfo.siteInfo === 'none') return;
+        if (preFlight.envInfo.device.deviceType === 'mobile') return; // not consistent behaviour on mobile
+
         const permalink = $('main').attr('pagePermalinkRef') || '';
         const title = $('main').attr('pageTitleRef') || '';
         const page = getObjectFromArray( {permalink: permalink, title: title}, pageList);

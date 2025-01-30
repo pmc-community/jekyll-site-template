@@ -43,6 +43,7 @@ module Jekyll
                   next unless File.file?(path)
 
                   content = File.read(path)
+                  content.force_encoding('UTF-8').encode!('UTF-8', invalid: :replace, undef: :replace)
 
                   if FileUtilities.valid_front_matter?(content)
                     front_matter, content_body = FileUtilities.parse_front_matter(content)

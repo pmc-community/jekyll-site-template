@@ -30,6 +30,7 @@ module ExtContentUtilities
       function_call_regex = /getExternalContent\s*\(\s*(['"])(.*?)\1\s*,\s*(['"])(.*?)\3\s*,\s*(['"])(.*?)\5\s*,\s*(['"])(.*?)\7\s*,\s*(['"])(.*?)\9\s*,\s*(['"])(.*?)\11\s*,\s*(['"])(.*?)\13\s*\)/
       result = false
       file_content = File.read(file_path)
+      file_content.force_encoding('UTF-8').encode!('UTF-8', invalid: :replace, undef: :replace)
       if file_content.match(function_call_regex) 
         result = true
       end
