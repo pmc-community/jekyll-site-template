@@ -2,8 +2,10 @@
 
 // called from siteIncludes/partials/site-pages/pageSearch.html
 const sitePages__pageSearch = () => {
+
     let table; // define table here, otherwise the getters below will not have access to it and will raise errors
-    $(document).ready(function() {
+    $(document).ready(async function() {
+        await waitForI18Next();
 
         sitePagesFn.handleOffCanvasClose();
         sitePagesFn.setPageSearchButtonsFunctions();
@@ -23,12 +25,12 @@ const sitePages__pageSearch = () => {
         showSaved = readQueryString('showSaved');
         showCustomCats = readQueryString('showCustomCats');
         showCustomTags = readQueryString('showCustomTags');
-
+  
         if (showPages === '1') {
             $('#site_pages_details').removeClass('d-none');
             if (isOnlyShowPages()) {
                 history.replaceState({}, document.title, window.location.pathname);
-                return;
+                setTimeout(()=> {return}, 0);
             }       
         }
         
@@ -36,7 +38,7 @@ const sitePages__pageSearch = () => {
             sitePagesFn.pageTableSearchPanesSelection = [
                 {
                     column:2,
-                    rows:['Is Saved'],
+                    rows:[i18next.t('common.active_filter.is_saved')],
                     get name() { return sitePagesFn.getColName(table,this.column) }
                 },
                 {
@@ -57,20 +59,20 @@ const sitePages__pageSearch = () => {
                 {
                     column:8,
                     rows:[],
-                   get name() { return sitePagesFn.getColName(table,this.column) }
+                    get name() { return sitePagesFn.getColName(table,this.column) }
                 }
             ];
             sitePagesFn.setLastFilterInfo(i18next.t('dt_pages_active_filter_box_title_active_filter'));
             sitePagesFn.handleDropdownClassOverlap();
             history.replaceState({}, document.title, window.location.pathname);
-            return;
+            setTimeout(()=> {return}, 0);
         }
 
         if (showCustomCats === '1')  {
             sitePagesFn.pageTableSearchPanesSelection = [
                 {
                     column:2,
-                    rows:['Has Custom Categories'],
+                    rows:[i18next.t('common.active_filter.has_custom_categories')],
                     get name() { return sitePagesFn.getColName(table,this.column) }
                 },
                 {
@@ -94,17 +96,17 @@ const sitePages__pageSearch = () => {
                     get name() { return sitePagesFn.getColName(table,this.column) }
                 }
             ];
-            sitePagesFn.setLastFilterInfo('Active filter');
+            sitePagesFn.setLastFilterInfo(i18next.t('dt_pages_active_filter_box_title_active_filter'));
             sitePagesFn.handleDropdownClassOverlap();
             history.replaceState({}, document.title, window.location.pathname);
-            return;
+            setTimeout(()=> {return}, 0);
         }
 
         if (showCustomTags === '1')  {
             sitePagesFn.pageTableSearchPanesSelection = [
                 {
                     column:2,
-                    rows:['Has Custom Tags'],
+                    rows:[i18next.t('common.active_filter.has_custom_tags')],
                     get name() { return sitePagesFn.getColName(table,this.column) }
                 },
                 {
@@ -128,19 +130,21 @@ const sitePages__pageSearch = () => {
                     get name() { return sitePagesFn.getColName(table,this.column) }
                 }
             ];
-            sitePagesFn.setLastFilterInfo('Active filter');
+            sitePagesFn.setLastFilterInfo(i18next.t('dt_pages_active_filter_box_title_active_filter'));
             sitePagesFn.handleDropdownClassOverlap();
             history.replaceState({}, document.title, window.location.pathname);
-            return;
-        }
+            setTimeout(()=> {return}, 0);
+        }   
 
     });
 }
 
 // called from siteIncludes/partials/site-pages/pages.html
 const sitePages__pages = () => {
+   
     $(document).ready(function() {
-        sitePagesFn.setPagesDataTable(); // always datatable init to be first to ensure rendering of all rows
+       
+        sitePagesFn.setPagesDataTable()
         sitePagesFn.setPagesTableButtonsFunctions();
         sitePagesFn.setPagesSavedStatus();
         sitePagesFn.setPagesTags();
@@ -255,9 +259,9 @@ sitePagesFn = {
 
     // pages details section
     setLastFilterInfo: (lastFilterLabel) => {
-       
+        
         const getFilterValue = (colIndex) => {
-            
+                
             const getKey = (object, value) => {
                 
                 return  _.findKey(object, val => val === value);
@@ -516,8 +520,8 @@ sitePagesFn = {
                         <span
                             cellFunction="siteBadge"
                             siteFunction="pageHasSiteTagsBadge"
-                            title = "dt_pages_col_details_site_tags_badge_title" 
-                            class="btn-primary shadow-none m-1 px-3 py-2 fw-medium badge rounded-pill text-bg-primary"
+                            title = "${i18next.t('dt_pages_col_details_site_tags_badge_title')}" 
+                            class="text-nowrap btn-primary shadow-none m-1 px-3 py-2 fw-medium badge rounded-pill text-bg-primary"
                             pageTitleReference="${page.siteInfo.title}"
                             pagePermaLinkReference="${page.siteInfo.permalink}"
                             data-i18n="[title]dt_pages_col_details_site_tags_badge_title;dt_pages_col_details_site_tags_badge_text">
@@ -533,8 +537,8 @@ sitePagesFn = {
                         <span
                             cellFunction="siteBadge"
                             siteFunction="pageHasSiteCategoryBadge"
-                            title = "dt_pages_col_details_site_cats_badge_title" 
-                            class="m-1 px-3 py-2 fw-medium badge rounded-pill text-bg-danger"
+                            title = "${i18next.t('dt_pages_col_details_site_cats_badge_title')}" 
+                            class="text-nowrap m-1 px-3 py-2 fw-medium badge rounded-pill text-bg-danger"
                             pageTitleReference="${page.siteInfo.title}"
                             pagePermaLinkReference="${page.siteInfo.permalink}"
                             data-i18n="[title]dt_pages_col_details_site_cats_badge_title;dt_pages_col_details_site_cats_badge_text">
@@ -550,8 +554,8 @@ sitePagesFn = {
                         <span
                             cellFunction="siteBadge"
                             siteFunction="pageHasAutoSummaryBadge"
-                            title = "dt_pages_col_details_summary_badge_title" 
-                            class="m-1 px-3 py-2 fw-medium badge rounded-pill text-bg-dark"
+                            title = "${i18next.t('dt_pages_col_details_summary_badge_title')}" 
+                            class="text-nowrap m-1 px-3 py-2 fw-medium badge rounded-pill text-bg-dark"
                             pageTitleReference="${page.siteInfo.title}"
                             pagePermaLinkReference="${page.siteInfo.permalink}"
                             data-i18n="[title]dt_pages_col_details_summary_badge_title;dt_pages_col_details_summary_badge_text">
@@ -567,8 +571,8 @@ sitePagesFn = {
                         <span
                             cellFunction="siteBadge"
                             siteFunction="pageHasExcerptBadge"
-                            title = "dt_pages_col_details_excerpt_badge_title" 
-                            class="m-1 px-3 py-2 fw-medium badge rounded-pill text-bg-secondary"
+                            title = "${i18next.t('dt_pages_col_details_excerpt_badge_title')}" 
+                            class="text-nowrap m-1 px-3 py-2 fw-medium badge rounded-pill text-bg-secondary"
                             pageTitleReference="${page.siteInfo.title}"
                             pagePermaLinkReference="${page.siteInfo.permalink}"
                             data-i18n="[title]dt_pages_col_details_excerpt_badge_title;dt_pages_col_details_excerpt_badge_text">
@@ -592,8 +596,8 @@ sitePagesFn = {
                         <span
                             cellFunction="siteBadge"
                             siteFunction="pageHasCustomTagsBadge"
-                            title = "dt_pages_col_details_custom_tags_badge_title" 
-                            class="m-1 px-3 py-2 fw-medium badge rounded-pill text-bg-success"
+                            title = "${i18next.t('dt_pages_col_details_custom_tags_badge_title')}" 
+                            class="text-nowrap m-1 px-3 py-2 fw-medium badge rounded-pill text-bg-success"
                             pageTitleReference="${page.savedInfo.title}"
                             pagePermaLinkReference="${page.savedInfo.permalink}"
                             data-i18n="[title]dt_pages_col_details_custom_tags_badge_title;dt_pages_col_details_custom_tags_badge_text">
@@ -609,8 +613,8 @@ sitePagesFn = {
                         <span
                             cellFunction="siteBadge"
                             siteFunction="pageHasCustomCategoriesBadge"
-                            title = "dt_pages_col_details_custom_cats_badge_title" 
-                            class="m-1 px-3 py-2 fw-medium badge rounded-pill text-bg-success"
+                            title = "${i18next.t('dt_pages_col_details_custom_cats_badge_title')}" 
+                            class="text-nowrap m-1 px-3 py-2 fw-medium badge rounded-pill text-bg-success"
                             pageTitleReference="${page.savedInfo.title}"
                             pagePermaLinkReference="${page.savedInfo.permalink}"
                             data-i18n="[title]dt_pages_col_details_custom_cats_badge_title;dt_pages_col_details_custom_cats_badge_text">
@@ -620,14 +624,14 @@ sitePagesFn = {
                 flags.push(i18next.t(`common.active_filter.${_.snakeCase('Has Custom Categories')}`));
             }
             
-            if (page.savedInfo.customNotes.length > 0 ) {
+            if (page.savedInfo.customNotes.length > 0) {
                 savedInfoBadges += 
                     `
                         <span
                             cellFunction="siteBadge"
                             siteFunction="pageHasCustomNotesBadge"
-                            title = "dt_pages_col_details_notes_badge_title" 
-                            class="m-1 px-3 py-2 fw-medium badge rounded-pill text-bg-warning"
+                            title = "${i18next.t('dt_pages_col_details_notes_badge_title')}" 
+                            class="text-nowrap m-1 px-3 py-2 fw-medium badge rounded-pill text-bg-warning"
                             pageTitleReference="${page.savedInfo.title}"
                             pagePermaLinkReference="${page.savedInfo.permalink}"
                             data-i18n="[title]dt_pages_col_details_notes_badge_title;dt_pages_col_details_notes_badge_text">
@@ -675,7 +679,6 @@ sitePagesFn = {
 
         if( $.fn.DataTable.isDataTable(tableSelector) ) {
             $(tableSelector).DataTable().destroy();
-            $(tableSelector).removeAttr('id').removeAttr('aria-describedby');
         }
 
         const colDefinition = [
@@ -701,7 +704,7 @@ sitePagesFn = {
                 searchable: true,
                 width:'100px',
                 createdCell: function (td, cellData) {
-                    $(td).addClass('border-bottom border-secondary border-opacity-25');
+                    $(td).addClass(`border-bottom border-secondary border-opacity-25 ${settings.multilang.dateFieldClass}`);
                 },
             }, 
     
@@ -810,7 +813,7 @@ sitePagesFn = {
         const commonAdditionalTableSettings = {
 
             scrollX: true,
-
+           
             fixedColumns: {
                 leftColumns: 1
             },
@@ -999,14 +1002,25 @@ sitePagesFn = {
                 searchPanesCloseCallback: (tableSearchPanesSelection) => {
                     sitePagesFn.onSearchPanesClose(tableSearchPanesSelection);
                 },
-                searchPanesSelectionChangeCallback: (tableSearchPanesSelection) => {
-                    sitePagesFn.onSearchPanesSelectionChange(tableSearchPanesSelection);
+                searchPanesSelectionChangeCallback: (tableSearchPanesSelection, filterInfo) => {
+                    sitePagesFn.onSearchPanesSelectionChange(tableSearchPanesSelection, filterInfo);
                 },
                 searchPanesCurrentSelection: sitePagesFn.pageTableSearchPanesSelection || []
             },
             preFlight.envInfo,
-            (settings) => {sitePagesFn.forceRedrawPagesTable()} // do something on initComplete; settings.api is the table object
+            (settings) => {sitePagesFn.forceRedrawPagesTable()}, // do something on initComplete; settings.api is the table object
+            (afterActiveFilter) => {sitePagesFn.afterActiveFilterProcessing(afterActiveFilter)}, // do something after autoApplyActiveFilter
+            (afterSearchApplied) => {sitePagesFn.afterSearchApplied(afterSearchApplied)} // do something after search applied (incl. search panes and seaech box)
         );
+    },
+
+    afterSearchApplied: (afterSearchApplied) => {
+        //console.log(afterSearchApplied);
+    },
+
+    afterActiveFilterProcessing: (afterActiveFilter) => {
+        //console.log(afterActiveFilter);
+        //$('button[sitefunction="sitePagesDetailsClearFilter"]').click();
     },
 
     onSearchPanesClose: (tableSearchPanesSelection) => {
@@ -1072,7 +1086,7 @@ sitePagesFn = {
                 className: 'btn-warning btn-sm text-dark mb-2',
                 text: i18next.t('dt_custom_buttons_go_to_tags_btn_text'),
                 action: () => {
-                    window.location.href = '/tag-info'
+                    window.location.href = `/tag-info`
                 }
              }
          
@@ -1085,7 +1099,7 @@ sitePagesFn = {
                  className: 'btn-success btn-sm text-light mb-2',
                  text: i18next.t('dt_custom_buttons_go_to_cats_btn_text'),
                  action: () => {
-                     window.location.href = '/cat-info'
+                     window.location.href = `/cat-info`
                  }
              }
              
@@ -1107,7 +1121,7 @@ sitePagesFn = {
          })};
 
         hide__ASYNC()
-            .then((table) => table.columns.adjust().draw())
+            //.then((table) => table.columns.adjust().draw())
             .then(() => $(`table[siteFunction="sitePagesDetailsPageTable"]`).show());
         
     },
@@ -1136,7 +1150,7 @@ sitePagesFn = {
                         tagType="${isSiteTag ? 'siteTag' : 'customTag'}"
                         id="${tag}" 
                         type="button" 
-                        class="focus-ring focus-ring-warning px-3 mr-5 my-2 btn btn-sm ${tagBtnColor} position-relative"
+                        class="text-nowrap focus-ring focus-ring-warning px-3 mr-5 my-2 btn btn-sm ${tagBtnColor} position-relative"
                         title="${tagBtnTitle}"
                         data-i18n="[title]dt_pages_col_tags_title_static"
                         href="tag-info?tag=${tag}"
@@ -1194,7 +1208,7 @@ sitePagesFn = {
                         catType="${isSiteCat ? 'siteCat' : 'customCat'}"
                         id="${cat}" 
                         type="button" 
-                        class="focus-ring focus-ring-warning px-3 mr-5 my-2 btn btn-sm ${catBtnColor} position-relative border-0 shadow-none"
+                        class="text-nowrap focus-ring focus-ring-warning px-3 mr-5 my-2 btn btn-sm ${catBtnColor} position-relative border-0 shadow-none"
                         title = "Details for category ${cat}"
                         data-i18n="[title]dt_pages_col_cats_title_static"
                         href="cat-info?cat=${cat}"
@@ -1300,18 +1314,30 @@ sitePagesFn = {
     },
 
     rebuildPagesTableSearchPanes: () => {
+        $(`table[siteFunction="sitePagesDetailsPageTable"]`).hide();
 
         getOrphanDataTables('').forEach( table => { localStorage.removeItem(table); });
         let table = $(`table[siteFunction="sitePagesDetailsPageTable"]`).DataTable();
 
-        // SELECTION MUST BE CLEARED, OTHERWISE THE TABLE WILL BEHAVE WEIRD
+        // SELECTION MUST BE CLEARED (IF THERE IS AN ACTIVE SEARCH PANES SELECTION), OTHERWISE THE TABLE WILL BEHAVE WEIRD
         // RETURNING FROM OFFCANVAS ON A FILTERED TABLE WILL LOSE/REMOVE ALL RECORDS EXCEPT THE FILTERED ONES
-        // AND THESE CANNOT BE SHOWN EVEN IF CLEARING THE FILTER, ONLY RELOADING PAGE WILL RESTORE ALL RECORDS 
-        table.searchPanes.clearSelections();
-
+        // AND THESE CANNOT BE SHOWN EVEN IF CLEARING THE FILTER, ONLY RELOADING PAGE WILL RESTORE ALL RECORDS
+        if ( 
+            sitePagesFn.pageTableSearchPanesSelection.length > 0 && 
+            _.sumBy(sitePagesFn.pageTableSearchPanesSelection, obj => _.get(obj, 'rows.length', 0)) > 0
+            ) {
+                table.searchPanes.clearSelections();
+            }
+        
         // re-build all to capture all page modifications in table and in searchPanes as well
-        table.destroy();
-        sitePagesFn.setPagesDataTable();
+
+        // first, destroy datatable
+        // delay a bit the table destroy to allow full restore of table rows after searchPanes clean
+        setTimeout(()=>table.destroy(), settings.dataTables.TO_rebuildTableAfterUIInteration);
+
+        // delay a bit the table rebuilding to allow full cleanning after destroy
+        // and to avoid potential duplication of the table when rebuilding it
+        setTimeout(()=> sitePagesFn.setPagesDataTable(), settings.dataTables.TO_rebuildTableAfterUIInteration);
 
     },
 
@@ -1325,7 +1351,19 @@ sitePagesFn = {
           "note": "string",
           "id": "string"
         }],
-        "customComments": "emptyArray"  // Empty array
+        "customComments": [{
+            "date": "date",
+            "anchor": "string",
+            "id": "string",
+            "comment": "string",
+            "matches": [{
+                "node": "object",
+                "offsets": "array",
+                "parent": "object",
+                "parentSelector": "string",
+                "text": "string"
+            }]
+        }]  // Empty array
     },
 
     loadSavedItemsFromJsonFileHandler: (files) => {

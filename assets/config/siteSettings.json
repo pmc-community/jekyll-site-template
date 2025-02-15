@@ -142,8 +142,8 @@
       "minWords": 1,
       "maxWords": 10,
       "comments": {
-        "enabled": false,
-        "maxChar": 250,
+        "enabled": true,
+        "maxChars": 250,
         "maxWords": 50
       },
       "tags": {
@@ -187,6 +187,22 @@
       ],
       "dateFieldClass": "DSTcustomDateField",
       "dateFieldSeparator": "-"
+    },
+    "dataTables": {
+      "TO_rebuildTableAfterUIInteration": 200,
+      "TO_afterAutoApplySearchPanesCurrentFilter": 500,
+      "TO_resolveAutoApplySearchPanesCurrentFilter": 500,
+      "TO_doStuffAfterInitComplete": 100,
+      "TO_forceSearchPanesToLoseFocus": 200,
+      "TO_doStuffAfterSearchPanesContainerOpen": 100,
+      "TO_doStuffAfterSearchPanesContainerClosed": 100,
+      "TO_resolvePromiseIncreateTable_ASYNC": 0,
+      "TO_showLengthSearchInfoPagination": 0,
+      "tableContainerFixedHeightWhenLoading": "200px",
+      "possibleDataTableParents": [
+        ".table-wrapper",
+        ".card-body"
+      ]
     },
     "siteTitle": "Figma Resources"
   },
@@ -238,10 +254,6 @@
         {
           "permalink": "/intro/introChild/",
           "title": "Intro Child Page"
-        },
-        {
-          "permalink": "/sf/f1/",
-          "title": "Subfolder/F1"
         }
       ],
       "readingTime": 6,
@@ -257,9 +269,9 @@
       "tags": [
 
       ],
-      "excerpt": "lorem ipsum, text, model, latin, encoder model, tasks, word, encoder, variety, length",
-      "lastUpdate": "2025-01-18 00:58:45 +0200",
-      "lastUpdateUTC": 1737154725,
+      "excerpt": "lorem ipsum, text, model, latin, tasks, word, encoder model, variety, encoder, length",
+      "lastUpdate": "2025-01-29 13:26:04 +0200",
+      "lastUpdateUTC": 1738149964,
       "createTime": "2025-01-11 18:48:00 +0200",
       "createTimeUTC": 1736614080,
       "relatedPages": [
@@ -285,10 +297,6 @@
         {
           "permalink": "/intro/",
           "title": "Introduction"
-        },
-        {
-          "permalink": "/pwc/",
-          "title": "Play with content"
         }
       ],
       "readingTime": 2,
@@ -335,7 +343,7 @@
         "tag3",
         "alfa"
       ],
-      "excerpt": "file, lorem ipsum, content, site, title, link, latin, cicero, malorum, sections",
+      "excerpt": "file, lorem ipsum, site, markdown content, title, link, latin, cicero, malorum, sections",
       "lastUpdate": "2025-01-11 18:48:00 +0200",
       "lastUpdateUTC": 1736614080,
       "createTime": "2025-01-11 18:48:00 +0200",
@@ -346,15 +354,15 @@
           "permalink": "/intro/"
         },
         {
-          "title": "Subfolder/F1",
-          "permalink": "/sf/f1/"
+          "title": "Collection-2/Y",
+          "permalink": "/collection-2/y/y/"
         },
         {
           "title": "Collection-2/X",
           "permalink": "collection-2/X/x/"
         }
       ],
-      "autoSummary": "intepretation for the following text:: markdown content direct included in the pagestableheads up!!!links to other site docs must be ...",
+      "autoSummary": "markdown content direct included in the page. heads up!!!links to other site docs must be given using the permalinks, not the ...",
       "similarByContent": [
         {
           "permalink": "/collection-2/y/y/",
@@ -369,8 +377,8 @@
           "title": "Collection-1/G1"
         },
         {
-          "permalink": "/intro/introChild/",
-          "title": "Intro Child Page"
+          "permalink": "collection-2/X/x/",
+          "title": "Collection-2/X"
         }
       ],
       "readingTime": 2,
@@ -452,7 +460,7 @@
       "tags": [
 
       ],
-      "excerpt": "content, services, lorem ipsum, innohub, email, access, process, registration, latin, ihsutilities",
+      "excerpt": "content, services, lorem ipsum, innohub, registration, email, access, process, latin, ihsutilities",
       "lastUpdate": "2025-01-11 18:48:00 +0200",
       "lastUpdateUTC": 1736614080,
       "createTime": "2025-01-11 18:48:00 +0200",
@@ -463,23 +471,19 @@
           "permalink": "/sf/f1/"
         },
         {
-          "title": "Play with content",
-          "permalink": "/pwc/"
-        },
-        {
           "title": "Terms",
           "permalink": "/terms/"
+        },
+        {
+          "title": "Introduction",
+          "permalink": "/intro/"
         }
       ],
-      "autoSummary": "lorem ipsum is a piece of classical latin literature from 45 bc. it has roots in a piece of classical literature ...",
+      "autoSummary": "lorem ipsum is a piece of classical latin literature from 45 bc. lorem ipsum comes from sections ...",
       "similarByContent": [
         {
           "permalink": "/collection-2/y/y/",
           "title": "Collection-2/Y"
-        },
-        {
-          "permalink": "/sf/f1/",
-          "title": "Subfolder/F1"
         },
         {
           "permalink": "/intro/introChild/",
@@ -521,7 +525,7 @@
           "permalink": "/pwc/"
         }
       ],
-      "autoSummary": "g11 how it works the accordion uses (internally) to make it collapsible. click the accordions below to expand ...",
+      "autoSummary": "g11 how it works the accordion uses internally to make it collapsible. click the accordions below to expand/collapse accord ...",
       "similarByContent": [
 
       ],
@@ -553,8 +557,8 @@
           "permalink": "/intro/"
         },
         {
-          "title": "Subfolder/F1",
-          "permalink": "/sf/f1/"
+          "title": "Intro Child Page",
+          "permalink": "/intro/introChild/"
         }
       ],
       "autoSummary": "lorem ipsum is a piece of classical latin literature from 45 bc. lorem ipsum comes from sections ...",
@@ -574,10 +578,6 @@
         {
           "permalink": "/pwc/",
           "title": "Play with content"
-        },
-        {
-          "permalink": "/sf/f1/",
-          "title": "Subfolder/F1"
         }
       ],
       "readingTime": 1,
@@ -644,8 +644,12 @@
           "permalink": "/collection-2/Z/z/"
         }
       ],
-      "autoSummary": "ok good swedish fish nice. out of stock good and plenty nice. ok good zoute drop yumm ...",
+      "autoSummary": "own markdown content. this the content directly typed in collection-2/x. this is one good inline external link to https://pmc ...",
       "similarByContent": [
+        {
+          "permalink": "/pwc/",
+          "title": "Play with content"
+        },
         {
           "permalink": "/collection-2/Z/z/",
           "title": "Collection-2/Z"
@@ -664,23 +668,23 @@
       "tags": [
 
       ],
-      "excerpt": "services, content, lorem ipsum, file, site, products, latin, user, title, link",
+      "excerpt": "services, lorem ipsum, products, latin, user, user content, content, sites, website, updates",
       "lastUpdate": "2025-01-11 18:48:00 +0200",
       "lastUpdateUTC": 1736614080,
       "createTime": "2025-01-11 18:48:00 +0200",
       "createTimeUTC": 1736614080,
       "relatedPages": [
         {
-          "title": "Play with content",
-          "permalink": "/pwc/"
+          "title": "Terms",
+          "permalink": "/terms/"
         },
         {
           "title": "Collection-1/G1",
           "permalink": "/collection-1/g1/"
         },
         {
-          "title": "Terms",
-          "permalink": "/terms/"
+          "title": "Collection-2/Y",
+          "permalink": "/collection-2/y/y/"
         }
       ],
       "autoSummary": "goods or services made available on or through such third party sites or resources. either pmc or any third parties may provide links to other websites and/or ...",
@@ -1048,6 +1052,23 @@
     "page_footer_get_involved_contribute": "Contribute",
     "page_footer_help_us_improve_col_title": "Help us improve!",
     "page_footer_help_us_improve_privacy_policy": "Privacy policy",
+    "page_content_context_menu_option_search_in_site": "Search in site",
+    "page_content_context_menu_option_tag_all_documents": "Tag all documents",
+    "page_content_context_menu_option_tag_document": "Tag document",
+    "page_content_context_menu_option_see_selected": "See selected",
+    "page_content_context_menu_option_add_comment": "Add comment",
+    "page_content_context_menu_option_add_comment_button": "Add",
+    "page_content_context_menu_tag_limitation_toast_message": "Tags are limited to %d words and %d characters",
+    "page_content_context_menu_tag_to_document_toast_message": "Tag %s was applied to document",
+    "page_content_context_menu_tag_to_all_documents_toast_crtPageInfo_message_part": "This document was not found in saved items, so the tag was not applied to it.",
+    "page_content_context_menu_tag_to_all_documents_toast_outOf_message_part": "out of",
+    "page_content_context_menu_tag_to_all_documents_toast_docs_not_in_saved_items_message_part": "document(s) not found in saved items.",
+    "page_content_context_menu_tag_to_all_documents_toast_message": "Tag %s was applied to %d %s document(s)! %d %s",
+    "page_content_context_menu_tag_to_all_documents_noSense_toast_message": "All documents should be tagged with tag %s and this doesn't make sense! We skip ... You can manually apply the tag on the docs you want.",
+    "page_content_custom_comment_anchor_offcanvas_title": "Comments",
+    "page_content_custom_comment_anchor_offcanvas_doc_title_text": "Title",
+    "page_content_custom_comment_anchor_offcanvas_anchor_text": "Reference",
+    "page_content_context_menu_comment_in_comment_toast_message": "Comment inside comment is not allowed!",
     "hs_feedback_form_was_this_useful_text": "Was this useful:",
     "hs_feedback_form_submit_btn_text": "Submit your rating!",
     "hs_feedback_form_email_placeholder_text": "Leave your email if we can contact you (optional)",

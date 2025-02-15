@@ -80,7 +80,11 @@
                                     class="fw-normal align-self-center align-middle"
                                     colFunction="pageLastUpdate"
                                     data-raw="{{ formatted_date }}">
-                                    <span>
+                                    <span 
+                                        class="{{ site.data.siteConfig.multilang.dateFieldClass }}"
+                                        data-i18n="[text]formatted_date"
+                                        data-original-date="{{ formatted_date }}"
+                                        data-month-name="short">
                                         {{ formatted_date }}
                                     </span>
                                 </td>

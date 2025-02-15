@@ -1,0 +1,22 @@
+<div 
+    class="offcanvas offcanvas-end border-start border-secondary border-opacity-25 shadow-none" 
+    data-bs-scroll="true" 
+    id="offcanvasPageComments"  
+    data-bs-config='{"keyboard": false}' 
+    data-bs-focus="false"
+    data-bs-backdrop="false">
+    
+    {% include siteIncludes/partials/page-common/page-comments-header.html %}
+
+    <div class="offcanvas-body px-4 px-md-5" id="offcanvasPageCommentsBody">
+
+        <!-- page and anchor info -->
+        {% include siteIncludes/partials/page-common/page-comments-info.html %}
+        
+        <!-- comments -->
+        <div id="offcanvasPageComments_comments_list" >
+            <!-- place for page comments -->
+        </div>
+    </div>
+
+</div>

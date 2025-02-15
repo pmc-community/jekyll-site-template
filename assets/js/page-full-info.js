@@ -1,95 +1,20 @@
 // HEADS UP!!!
 // pageInfo is a global
 
-/* FUNCTION WRAPPERS
- * HEADS UP!!!
- * because of the many async operations, events and callbacks used by datatables or CKEditor, sometimes
- * pageInfo global may fall behind when passing from one function to another (a subsequent function may use an older version of pageInfo), 
- * so is safer to refresh it whenever is needed, before or after a function execution or even before and after. we use the wrappers for this. 
- * - don't forget to wrap the function after its definition
- * - wrapped external functions are defined below
- * - each function that needs updated pageInfo should be wrapped with BEFORE
- * - each function that modifies pageInfo shoud be wrapped with AFTER
-*/
+// DISABLE INTERACTIONS UNTIL OFFCANVAS IS FULLY LOADED
+// TO PREVENT CLOSING OFFCANVAS TOO FAST WHICH MAY LEAD TO DATATABLES INIT WARNINGS IN MAIN PAGE
+$(document).on('show.bs.offcanvas', '#offcanvasPageFullInformation', function () {
+    // Disable clicks on the entire page
+    $('body').css('pointer-events', 'none');
+});
 
-// refresh pageInfo global, after the function execution
-const REFRESH_PAGE_INFO_AFTER = (func) => {
-    return function(...args) {
-        const result = func(...args);
-
-        const oldPageInfo = pageInfo;
-        pageInfo = {
-            siteInfo: getObjectFromArray ({permalink: pageInfo.siteInfo.permalink, title: pageInfo.siteInfo.title}, pageList),
-            savedInfo: getPageSavedInfo (pageInfo.siteInfo.permalink, pageInfo.siteInfo.title),
-            tag: oldPageInfo.tag, // used when pageFullInfo is called from tag-info page
-            cat: oldPageInfo.cat, // used when pageFullInfo is called from cat-info page
-            page: oldPageInfo.page // used when pageFullInfo is called from site-pages page
-        };
-
-        return result;
-    };
-}
-
-// refresh the pageInfo global, before the function execution
-const REFRESH_PAGE_INFO_BEFORE = (func) => {
-    return function(...args) {
-        return new Promise((resolve) => {
-
-            const oldPageInfo = pageInfo;
-            pageInfo = {
-                siteInfo: getObjectFromArray ({permalink: pageInfo.siteInfo.permalink, title: pageInfo.siteInfo.title}, pageList),
-                savedInfo: getPageSavedInfo (pageInfo.siteInfo.permalink, pageInfo.siteInfo.title),
-                tag: oldPageInfo.tag, // used when pageFullInfo is called from tag-info page
-                cat: oldPageInfo.cat, // used when pageFullInfo is called from cat-info page
-                page: oldPageInfo.page // used when pageFullInfo is called from site-pages page
-
-            };
-
-            resolve(pageInfo);
-        })
-        .then((updatedPageInfo) => {
-            const pageInfoArgIndex = func.toString().match(/\((.*?)\)/)[1].split(',').findIndex(arg => arg.includes('pageInfo'));
-            args.splice(pageInfoArgIndex, 0, updatedPageInfo);
-            return func.apply(this, args);
-        });
-    };
-}
-
-// refresh the pageInfo global, before and after the function execution
-const REFRESH_PAGE_INFO_BEFORE_AND_AFTER = (func) => {
-    return function(...args) {
-        return new Promise((resolve) => {
-
-            const oldPageInfo = pageInfo;
-            pageInfo = {
-                siteInfo: getObjectFromArray ({permalink: pageInfo.siteInfo.permalink, title: pageInfo.siteInfo.title}, pageList),
-                savedInfo: getPageSavedInfo (pageInfo.siteInfo.permalink, pageInfo.siteInfo.title),
-                tag: oldPageInfo.tag, // used when pageFullInfo is called from tag-info page
-                cat: oldPageInfo.cat, // used when pageFullInfo is called from cat-info page
-                page: oldPageInfo.page // used when pageFullInfo is called from site-pages page
-            };
-
-            resolve(pageInfo);
-        })
-        .then((updatedPageInfo) => {
-            const pageInfoArgIndex = func.toString().match(/\((.*?)\)/)[1].split(',').findIndex(arg => arg.includes('pageInfo'));
-            args.splice(pageInfoArgIndex, 0, updatedPageInfo);
-            return func.apply(this, args);
-        })
-        .then (() => {
-            const oldPageInfo = pageInfo;
-            pageInfo = {
-                siteInfo: getObjectFromArray ({permalink: pageInfo.siteInfo.permalink, title: pageInfo.siteInfo.title}, pageList),
-                savedInfo: getPageSavedInfo (pageInfo.siteInfo.permalink, pageInfo.siteInfo.title),
-                tag: oldPageInfo.tag, // used when pageFullInfo is called from tag-info page
-                cat: oldPageInfo.cat, // used when pageFullInfo is called from cat-info page
-                page: oldPageInfo.page // used when pageFullInfo is called from site-pages page
-            };
-        });
-    };
-}
+$(document).on('shown.bs.offcanvas', '#offcanvasPageFullInformation', function () {
+    // Re-enable clicks after fully opened, with a small delay, just in case!
+    setTimeout(()=>$('body').css('pointer-events', 'auto'), 100);
+});
 
 // WRAPPED EXTERNAL FUNCTIONS
+// see wrappers in utilities.js
 REFRESH_PAGE_INFO_AFTER__savePageToSavedItems = REFRESH_PAGE_INFO_AFTER(savePageToSavedItems);
 REFRESH_PAGE_INFO_AFTER__removePageFromSavedItems = REFRESH_PAGE_INFO_AFTER(removePageFromSavedItems);
 REFRESH_PAGE_INFO_AFTER__removeAllCustomNotes = REFRESH_PAGE_INFO_AFTER(removeAllCustomNotes);

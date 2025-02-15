@@ -8,6 +8,9 @@
 </script>
 <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 
+<!-- New Relic if applicable -->
+{% include siteIncludes/partials/new-relic.html %}
+
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 <link rel="preconnect" href="https://cdn.datatables.net" crossorigin>
@@ -26,12 +29,6 @@
 <link href="/assets/config/siteSettings.js" rel="preload" as="script">
 <script src="/assets/config/siteSettings.js"></script>
 
-<!-- New Relic if applicable -->
-{% include siteIncludes/partials/new-relic.html %}
-
-<!-- init hooks system and defines some utilities that needs to be available asap -->
-{% include siteIncludes/partials/global-utilities.html %}
-{% include siteIncludes/partials/init-hooks.html %}
 
 <link rel="icon" type="image/png" href="{{ '/favicon.png' | relative_url }}">
 <script siteAttr="init_not_needed_anymore">const pagePermalink = "{{page.permalink}}"</script>
@@ -81,7 +78,6 @@
 <link href="{{site.data.siteConfig.multilang.scripts.i18Sprintf}}" defer rel="preload" as="script">
 <script src="{{site.data.siteConfig.multilang.scripts.i18Sprintf}}"></script>
 
-
 <link href="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" defer rel="preload" as="script">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
 
@@ -90,6 +86,10 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js" 
     referrerpolicy="no-referrer">
 </script>
+
+<!-- init hooks system and defines some utilities that needs to be available asap -->
+{% include siteIncludes/partials/global-utilities.html %}
+{% include siteIncludes/partials/init-hooks.html %}
 
 <link href="{{site.data.siteConfig.hsIntegration.bootstrapJS}}" defer rel="preload" as="script">
 <script 

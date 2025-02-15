@@ -195,16 +195,17 @@ window.removeUselessElements = () => {
 const setSwitchThemeFunction = () => {
     $(window).on('load', () => {
         $(`#${settings.themeSwitch.btnId}`).off('click').on('click', () => {
+            const isSecure = location.protocol === 'https:'; // just to be sure that the cookie is set also in dev env which can be http
             $('body').css('visibility','hidden');
             let themeCookie = Cookies.get(settings.themeSwitch.cookie);
-            if (typeof themeCookie === 'undefined') 
-                Cookies.set(settings.themeSwitch.cookie,0, { expires:365 , secure: true, sameSite: 'strict' });
+            if (typeof themeCookie === 'undefined')
+                Cookies.set(settings.themeSwitch.cookie,0, { expires:365 , secure: isSecure, sameSite: 'strict' });
             
             themeCookie = Cookies.get(settings.themeSwitch.cookie);
             if (themeCookie === '0' ) 
-                Cookies.set(settings.themeSwitch.cookie,1, { expires:365 , secure: true, sameSite: 'strict' });
+                Cookies.set(settings.themeSwitch.cookie,1, { expires:365 , secure: isSecure, sameSite: 'strict' });
             else 
-                Cookies.set(settings.themeSwitch.cookie,0, { expires:365 , secure: true, sameSite: 'strict' });
+                Cookies.set(settings.themeSwitch.cookie,0, { expires:365 , secure: isSecure, sameSite: 'strict' });
             
             setTheTheme();
             
@@ -254,8 +255,9 @@ const advRestoreCodeBlocksStyle = () => {
 
 const setTheTheme = () => {
     let themeCookie = Cookies.get(settings.themeSwitch.cookie);
+    const isSecure = location.protocol === 'https:'; // just to be sure that the cookie is set also in dev env which can be http
     if (typeof themeCookie === 'undefined') 
-        Cookies.set(settings.themeSwitch.cookie,0, { expires:365 , secure: true, sameSite: 'strict' });
+        Cookies.set(settings.themeSwitch.cookie,0, { expires:365 , secure: isSecure, sameSite: 'strict' });
     
     themeCookie = Cookies.get(settings.themeSwitch.cookie);
     if (Cookies.get(settings.themeSwitch.cookie) === '0' ) { 

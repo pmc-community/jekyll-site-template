@@ -561,7 +561,6 @@ const showTagDetails = (tag) => {
 
     if( $.fn.DataTable.isDataTable(`table[tagReference="${tag}"]`) ) {
         $(`table[tagReference="${tag}"]`).DataTable().destroy();
-        $(`table[tagReference="${tag}"]`).removeAttr('id').removeAttr('aria-describedby');
     }
 
     let tableData = [];

@@ -254,6 +254,7 @@ const allPageSettings = allSettings.pageSettings;
 const gData = allSettings.gData;
 const nrSettings = allSettings.newRelicSettings;
 const engLanguage = allSettings.engLanguage;
+const dtSettings =  settings.dataTables;
 
 // we use a function to get permalink options
 // as permalink extraction from url returns always /permalink/

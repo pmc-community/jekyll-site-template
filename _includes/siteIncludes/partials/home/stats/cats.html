@@ -84,8 +84,9 @@
                         </span>
                     </div>
                 </div>
+                {% assign unix_timestamp = 'now' | date: '%s' %}
                 <a 
-                    href="/site-pages?showPages=1&showCustomCats=1"
+                    href="/site-pages?showPages=1&showCustomCats=1&nocache={{ unix_timestamp }}"
                     class="btn btn-sm rounded-circle {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsTextClass}} {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsClass}}">
                     <i class="bi {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsIcon}}"></i>
                 </a> 

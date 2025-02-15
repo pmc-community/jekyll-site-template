@@ -217,7 +217,7 @@ homePage = {
     showDocumentsSavedDocsListItem: () => {
         savedPagesNo = getSavedItemsSize();
         if (savedPagesNo === 0 ) return;
-        $('a[siteFunction="homeStats_pages_savedPages_BtnLink"]').attr('href', '/site-pages?showPages=1&showSaved=1');
+        $('a[siteFunction="homeStats_pages_savedPages_BtnLink"]').attr('href', `/site-pages?showPages=1&showSaved=1&nocache=${new Date().getTime()}`);
         $('span[siteFunction="homeStats_pages_savedPages_no"]').text(savedPagesNo);
         $('div[siteFunction="homeStats_pages_savedPages"]').removeClass('d-none');
     },

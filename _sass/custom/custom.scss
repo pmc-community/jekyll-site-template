@@ -167,7 +167,8 @@ $hiddenElements: (
     'div[sitefunction="offcanvasPageFullInfoPageTagsEditor"] li::before',
     '.ck-menu-bar__menu__item::before',
     '.ck-list__separator::before',
-    '.dtfh-floatingparent'
+    '.dtfh-floatingparent',
+    '.dt-processing'
 );
 @each $element in $hiddenElements {
         #{$element} {

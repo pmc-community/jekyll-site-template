@@ -55,6 +55,20 @@ postHooksActions = {
                 argsExtra: extraArgs, 
             }
         );
+    },
+
+    showToastAction: (functionName, result, args, ...extraArgs) => {
+        nrLog(
+            'toast was shown', 
+            'show toast', 
+            'warn', 
+            {
+                functionName: functionName,
+                result: result,
+                args: args, 
+                argsExtra: extraArgs, 
+            }
+        );
     }
 
 }
@@ -64,6 +78,8 @@ hooks.addAction('addTag', globUtils.bindArgsAtEnd(postHooksActions.addTagAction,
 hooks.addAction('addCat', globUtils.bindArgsAtEnd(postHooksActions.addCatAction, []), 0, 'post');
 hooks.addAction('saveLocalStorageKeyAsJsonFile', postHooksActions.savedItemsToJsonAction, 0, 'post');
 hooks.addAction('loadLocalStorageKeyFromJsonFile', globUtils.bindArgsAtEnd(postHooksActions.savedItemsFromJsonAction, [{ autoSaveBeforeLoad: settings.savedItems.autoSaveBeforeLoad }]), 0, 'post');
+
+hooks.addAction('showToast', postHooksActions.showToastAction, 0, 'post');
 
 // the following hooks are tests, may be removed later
 hooks.addActionEX(deleteNote, (functionName, result, args) => { 

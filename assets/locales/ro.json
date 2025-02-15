@@ -80,7 +80,7 @@
     "home_page_stats_section_cats_col_total_cats": "{{common.total}}:",
     "home_page_stats_section_cats_col_site_cats": "{{common.site_def}}:",
     "home_page_stats_section_cats_col_custom_cats": "{{common.custom}}:",
-    "home_page_stats_section_cats_col_docs_with_custom_cats": "Doc cu cat {{common.custom_s}}:",
+    "home_page_stats_section_cats_col_docs_with_custom_cats": "Doc cu categorii {{common.custom_s}}:",
 
     "home_page_stats_section_tags_col_title": "{{common.tags}}",
     "home_page_stats_section_tags_col_total_tags": "{{common.total}}:",
@@ -112,6 +112,24 @@
 
     "page_footer_help_us_improve_col_title": "Feedback",
     "page_footer_help_us_improve_privacy_policy": "Confidentialitate",
+
+    "page_content_context_menu_option_search_in_site": "Cauta in documente",
+    "page_content_context_menu_option_tag_all_documents": "Eticheteaza toate doc.",
+    "page_content_context_menu_option_tag_document": "Eticheteaza documentul",
+    "page_content_context_menu_option_see_selected": "Vezi selectia",
+    "page_content_context_menu_option_add_comment": "Adauga comentariu",
+    "page_content_context_menu_option_add_comment_button": "Adauga",
+    "page_content_context_menu_tag_limitation_toast_message": "Etichetele sunt limitate la %d cuvinte si %d caractere",
+    "page_content_context_menu_tag_to_document_toast_message": "Eticheta %s a fost aplicata documentului",
+    "page_content_context_menu_tag_to_all_documents_toast_crtPageInfo_message_part": "Documentul nu este salvat local, eticheta nu poate fi aplicata acestui document",
+    "page_content_context_menu_tag_to_all_documents_toast_outOf_message_part": "din",
+    "page_content_context_menu_tag_to_all_documents_toast_docs_not_in_saved_items_message_part": "document(e) nu sunt salvate local.",
+    "page_content_context_menu_tag_to_all_documents_toast_message": "Eticheta %s a fost aplicata pe %d %s document(e)! %s %s",
+    "page_content_context_menu_tag_to_all_documents_noSense_toast_message": "Totate documentele ar trebui etichetate cu eticheta %s si asta nu are sens! Eticheta poate fi aplicata manual pe orice document.",
+    "page_content_custom_comment_anchor_offcanvas_title": "Comentarii",
+    "page_content_custom_comment_anchor_offcanvas_doc_title_text": "Titlu",
+    "page_content_custom_comment_anchor_offcanvas_anchor_text": "Referinta",
+    "page_content_context_menu_comment_in_comment_toast_message": "Nu este permis comentariu in interiorul altui comentariu!",
 
     "hs_feedback_form_was_this_useful_text": "{{common.doc}} util:",
     "hs_feedback_form_submit_btn_text": "Trimite!",
@@ -200,7 +218,7 @@
     "dt_pages_active_filter_tags_label": "{{ common.active_filter.label_prefix}}{{dt_pages_col_tags_text}}",
     "dt_pages_active_filter_cats_container_label": "{{ common.active_filter.label_prefix}}{{dt_pages_col_cats_text}}_container",
     "dt_pages_active_filter_cats_label": "{{ common.active_filter.label_prefix}}{{dt_pages_col_cats_text}}",
-    "dt_pages_active_filter_box_title_last_filter": "Ultimels filtre active",
+    "dt_pages_active_filter_box_title_last_filter": "Ultimele filtre",
     "dt_pages_active_filter_box_title_active_filter": "Filtre active",
     "dt_pages_active_filter_box_open_filter_btn_text": "Deschide",
     "dt_pages_active_filter_box_clear_filter_btn_text": "Sterge"

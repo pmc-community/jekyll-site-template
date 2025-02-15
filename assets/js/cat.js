@@ -269,7 +269,6 @@ const showCatDetails = (cat) => {
 
     if( $.fn.DataTable.isDataTable(`table[catReference="${cat}"]`) ) {
         $(`table[catReference="${cat}"]`).DataTable().destroy();
-        $(`table[catReference="${cat}"]`).removeAttr('id').removeAttr('aria-describedby');
     }
 
     let tableData = [];

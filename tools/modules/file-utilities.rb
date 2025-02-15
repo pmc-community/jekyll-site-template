@@ -143,6 +143,7 @@ module FileUtilities
         raw_content_file_path = "#{site.data["buildConfig"]["rawContentFolder"]}/#{file_front_matter["permalink"].gsub("/", "_")}.txt"
         return true if !File.exist?(raw_content_file_path)
         saved_raw_content = File.read(raw_content_file_path)
+        saved_raw_content.force_encoding('UTF-8').encode!('UTF-8', invalid: :replace, undef: :replace)
         return true if saved_raw_content != current_raw_content
         return false
     end

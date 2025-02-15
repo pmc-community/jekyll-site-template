@@ -1,3 +1,15 @@
+// disable interactions while offcanvas is in transition
+// enable interation once offcanvas is fully loaded
+$(document).on('show.bs.offcanvas', '#offcanvasPageComments', function () {
+    // Disable clicks on the entire page
+    $('body').css('pointer-events', 'none');
+});
+
+$(document).on('shown.bs.offcanvas', '#offcanvasPageComments', function () {
+    // Re-enable clicks after fully opened, with a small delay, just in case!
+    setTimeout(()=>$('body').css('pointer-events', 'auto'), 100);
+});
+
 // FUNCTIONS FOR EACH PAGE
 // called from _includes/siteIncludes/partials/page-common/page-auto-summary.html
 
@@ -295,7 +307,7 @@ const page__getPageInfo = () => {
                     <span
                         siteFunction="pageHasSiteTagsBadge"
                         title = "${i18next.t('page_page_info_badge_has_site_tags_title')}" 
-                        class="btn-primary shadow-none m-1 px-3 py-2 fw-medium badge rounded-pill text-bg-primary alwaysCursorPointer"
+                        class="text-nowrap btn-primary shadow-none m-1 px-3 py-2 fw-medium badge rounded-pill text-bg-primary alwaysCursorPointer"
                         data-i18n="[title]page_page_info_badge_has_site_tags_title;page_page_info_tags"
                         data-i18n-options='{"title":"123"}'>
                         ${i18next.t('page_page_info_tags')}
@@ -308,7 +320,7 @@ const page__getPageInfo = () => {
                     <span
                         siteFunction="pageHasRelatedPagesBadge"
                         title = "${i18next.t('page_page_info_badge_has_related_title')}" 
-                        class="m-1 px-3 py-2 fw-medium badge rounded-pill text-bg-danger alwaysCursorPointer"
+                        class="text-nowrap m-1 px-3 py-2 fw-medium badge rounded-pill text-bg-danger alwaysCursorPointer"
                         data-i18n="[title]page_page_info_badge_has_related_title;page_page_info_related">
                         ${i18next.t('page_page_info_related')}
                     </span>
@@ -320,7 +332,7 @@ const page__getPageInfo = () => {
                     <span
                         siteFunction="pageHasAutoSummaryBadge"
                         title = "${i18next.t('page_page_info_badge_has_summary_title')}"
-                        class="m-1 px-3 py-2 fw-medium badge rounded-pill text-bg-dark alwaysCursorPointer"
+                        class="text-nowrap m-1 px-3 py-2 fw-medium badge rounded-pill text-bg-dark alwaysCursorPointer"
                         data-i18n="[title]page_page_info_badge_has_summary_title;page_page_info_summary">
                         ${i18next.t('page_page_info_summary')}
                     </span>
@@ -341,7 +353,7 @@ const page__getPageInfo = () => {
                     <span
                         siteFunction="pageHasCustomTagsBadge"
                         title = "${i18next.t('page_page_info_badge_has_custom_tags_title')}" 
-                        class="m-1 px-3 py-2 fw-medium badge rounded-pill text-bg-success alwaysCursorPointer"
+                        class="text-nowrap m-1 px-3 py-2 fw-medium badge rounded-pill text-bg-success alwaysCursorPointer"
                         data-i18n="[title]page_page_info_badge_has_custom_tags_title;page_page_info_tags">
                         ${i18next.t('page_page_info_tags')}
                     </span>
@@ -353,19 +365,19 @@ const page__getPageInfo = () => {
                     <span
                         siteFunction="pageHasCustomCategoriesBadge"
                         title="${i18next.t('page_page_info_badge_has_custom_cats_title')}" 
-                        class="m-1 px-3 py-2 fw-medium badge rounded-pill text-bg-success alwaysCursorPointer"
+                        class="text-nowrap m-1 px-3 py-2 fw-medium badge rounded-pill text-bg-success alwaysCursorPointer"
                         data-i18n="[title]page_page_info_badge_has_custom_cats_title;page_page_info_cats">
                         ${i18next.t('page_page_info_cats')}
                     </span>
                 `;
         
-        if (page.savedInfo.customNotes.length > 0 ) 
+        if (page.savedInfo.customNotes.length > 0) 
             savedInfoBadges += 
                 `
                     <span
                         siteFunction="pageHasCustomNotesBadge"
                         title="${i18next.t('page_page_info_badge_has_custom_notes_title')}"
-                        class="m-1 px-3 py-2 fw-medium badge rounded-pill text-bg-warning alwaysCursorPointer"
+                        class="text-nowrap m-1 px-3 py-2 fw-medium badge rounded-pill text-bg-warning alwaysCursorPointer"
                         data-i18n="[title]page_page_info_badge_has_custom_notes_title;page_page_info_notes">
                         ${i18next.t('page_page_info_notes')}
                     </span>
@@ -396,7 +408,7 @@ const page__getPageInfo = () => {
                     <div >
                         <a
                             href="/cat-info?cat=${cat}"
-                            class="${catColor} fw-medium btn btn-sm border-0 shadow-none px-0 my-1 mr-3"
+                            class="${catColor} fw-medium btn btn-sm border-0 shadow-none px-0 my-1 mr-3 text-nowrap"
                             title="Click for details for category ${cat}\nPages in category: ${numPages}">
                             ${cat}
                             <span 
@@ -513,7 +525,7 @@ const page__getPageInfo = () => {
                                         ${i18next.t('page_page_info_last_update_badge_text')}
                                     </span>: 
                                     <span
-                                        class="${settings.multilang.dateFieldClass}"
+                                        class="${settings.multilang.dateFieldClass} text-light"
                                         data-i18n="[text]formatted_date"
                                         data-original-date="${formatDate(page.siteInfo.lastUpdate)}"
                                         data-month-name="short">
@@ -575,15 +587,23 @@ const page__getPageInfo = () => {
         // we take the opportunity to set some observers
         setTriggerReorderSectionsInFooter();
         refreshPageAfterOffCanvasClose();
+        
+        // page comments related stuff
+        refreshPageAfterCommentsOffCanvasClose();
+        // mark the custom comments, if any
+        if (!settings.selectedTextContextMenu.comments.enabled) return; 
+        markCustomComments(pageInfo);
     })
 }
 
 const page__setSelectedTextContextMenu = () =>{
 
-    $(document).ready(function() {
+    $(document).ready(async function() {
         if (!settings.selectedTextContextMenu.enabled) return;
         if (pageInfo.siteInfo === 'none') return;
         if (preFlight.envInfo.device.deviceType === 'mobile') return; // not consistent behaviour on mobile
+
+        await waitForI18Next();
 
         const permalink = $('main').attr('pagePermalinkRef') || '';
         const title = $('main').attr('pageTitleRef') || '';
@@ -601,10 +621,14 @@ const page__setSelectedTextContextMenu = () =>{
             4. the rectangle on the screen where the selected text is located
         */
         const addCommentToSelectedText = (page = null, itemText = null, selectedText, selectedTextHtml, rectangle=null) => {
-            $('div[sitefunction="pageAddCommentToSelectedText_text"]').text(selectedText);
-            $('div[siteFunction="pageAddCommentToSelectedText_container"]').removeClass('d-none');
-            $('textarea[sitefunction="pageAddCommentToSelectedText_comment"]')[0].setSelectionRange(0, 0);
-            $('textarea[sitefunction="pageAddCommentToSelectedText_comment"]').focus();
+            if(isSelectionInsideCustomSelectionMarkup()) {
+                showToast(i18next.t('page_content_context_menu_comment_in_comment_toast_message'), 'bg-warning', 'text-dark');
+            } else {
+                $('div[sitefunction="pageAddCommentToSelectedText_text"]').text(selectedText);
+                $('div[siteFunction="pageAddCommentToSelectedText_container"]').removeClass('d-none');
+                $('textarea[sitefunction="pageAddCommentToSelectedText_comment"]')[0].setSelectionRange(0, 0);
+                $('textarea[sitefunction="pageAddCommentToSelectedText_comment"]').focus();
+            }
         }
 
         const searchInSite = (page = null, itemText = null, selectedText, selectedTextHtml, rectangle=null) => {
@@ -619,11 +643,18 @@ const page__setSelectedTextContextMenu = () =>{
             if (
                 _.words(selectedText).length > settings.selectedTextContextMenu.tags.maxWords || 
                 selectedText.length > settings.selectedTextContextMenu.tags.maxChars) {
-                    showToast(
-                        `Tags are limited to ${settings.selectedTextContextMenu.tags.maxWords} words and ${settings.selectedTextContextMenu.tags.maxChars} characters`, 
-                        'bg-danger', 
-                        'text-light'
+                    const toastMessage = i18next.t(
+                        'page_content_context_menu_tag_limitation_toast_message',
+                        {
+                            postProcess: 'sprintf', 
+                            sprintf: 
+                                [
+                                    settings.selectedTextContextMenu.tags.maxWords, 
+                                    settings.selectedTextContextMenu.tags.maxChars
+                                ]
+                        }
                     );
+                    showToast(toastMessage, 'bg-danger', 'text-light');
                     return;
                 }
             const tag = DOMPurify.sanitize(selectedText);
@@ -642,11 +673,16 @@ const page__setSelectedTextContextMenu = () =>{
                 }
                 $('div[siteFunction="pageCustomTagButton"]').remove();
                 refreshPageDynamicInfo();
-                showToast(
-                    `Tag <span class="badge mx-1 text-bg-primary fw-normal">${tag}</span> was applied to the document!`, 
-                    'bg-success', 
-                    'text-light'
+                const formattedTag = `<span class="badge mx-1 text-bg-primary fw-normal">${tag}</span>`;
+                const toastMessage = i18next.t(
+                    'page_content_context_menu_tag_to_document_toast_message',
+                    {
+                        postProcess: 'sprintf', 
+                        sprintf: [formattedTag]
+                    }
                 );
+
+                showToast(toastMessage, 'bg-success', 'text-light');
             }
 
             $('#selected-text-context-menu').hide();
@@ -659,11 +695,18 @@ const page__setSelectedTextContextMenu = () =>{
             if (
                 _.words(selectedText).length > settings.selectedTextContextMenu.tags.maxWords || 
                 selectedText.length > settings.selectedTextContextMenu.tags.maxChars) {
-                    showToast(
-                        `Tags are limited to ${settings.selectedTextContextMenu.tags.maxWords} words and ${settings.selectedTextContextMenu.tags.maxChars} characters`, 
-                        'bg-danger', 
-                        'text-light'
+                    const toastMessage = i18next.t(
+                        'page_content_context_menu_tag_limitation_toast_message',
+                        {
+                            postProcess: 'sprintf', 
+                            sprintf: 
+                                [
+                                    settings.selectedTextContextMenu.tags.maxWords, 
+                                    settings.selectedTextContextMenu.tags.maxChars
+                                ]
+                        }
                     );
+                    showToast(toastMessage, 'bg-danger', 'text-light');
                     return;
                 }
             const crtPage = page;
@@ -713,43 +756,50 @@ const page__setSelectedTextContextMenu = () =>{
                     $('div[siteFunction="pageCustomTagButton"]').remove();
                     refreshPageDynamicInfo();
 
-                    const crtPageInfo = getPageSavedInfo(crtPage.siteInfo.permalink, crtPage.siteInfo.title) ==='none' ?
-                        'This document was not found in saved items, so the tag was not applied to it.' :
-                        '';
+                    const crtPageInfo = getPageSavedInfo(crtPage.siteInfo.permalink, crtPage.siteInfo.title) ==='none' 
+                        ? i18next.t('page_content_context_menu_tag_to_all_documents_toast_crtPageInfo_message_part')
+                        : '';
 
                     if (numPages > 0) {
 
                         const numPagesDiff = numPages === cleanMatchingPages.length ? 
                         '' : 
-                        `(out of ${cleanMatchingPages.length})`;
+                        `(${i18next.t('page_content_context_menu_tag_to_all_documents_toast_outOf_message_part')} ${cleanMatchingPages.length})`;
 
                         const toastEnd = numPages === cleanMatchingPages.length ? 
                         '' : 
-                        `${cleanMatchingPages.length - numPages} document(s) not found in saved items. `;
+                        `${cleanMatchingPages.length - numPages} ${i18next.t('page_content_context_menu_tag_to_all_documents_toast_docs_not_in_saved_items_message_part')} `;
 
-                        showToast(
-                            `
-                                Tag 
-                                <span class="badge mx-1 text-bg-primary fw-normal">
-                                ${tag}
-                                </span> 
-                                was applied to 
-                                ${numPages} ${numPagesDiff} 
-                                document(s)!
-                                ${toastEnd}
-                                ${crtPageInfo}
-                            `, 
-                            'bg-success',
-                            'text-light'
+                        const formattedTag = `<span class="badge mx-1 text-bg-primary fw-normal">${tag}</span>`;
+                        const toastMessage = i18next.t(
+                            'page_content_context_menu_tag_to_all_documents_toast_message',
+                            {
+                                postProcess: 'sprintf', 
+                                sprintf: 
+                                    [
+                                        formattedTag, 
+                                        numPages,
+                                        numPagesDiff,
+                                        toastEnd,
+                                        crtPageInfo
+                                    ]
+                            }
                         );
+
+                        showToast(toastMessage, 'bg-success', 'text-light');
                     }
                 }
-                else
-                    showToast(
-                        `All documents should be tagged with tag <span class="badge mx-1 text-bg-primary fw-normal">${tag}</span> and this doesn't make sense! We skip ... You can manually apply the tag on the docs you want.`, 
-                        'bg-warning', 
-                        'text-dark'
+                else{
+                    const formattedTag = `<span class="badge mx-1 text-bg-primary fw-normal">${tag}</span>`;
+                    const toastMessage = i18next.t(
+                        'page_content_context_menu_tag_to_all_documents_noSense_toast_message',
+                        {
+                            postProcess: 'sprintf', 
+                            sprintf: [formattedTag]
+                        }
                     );
+                    showToast(toastMessage, 'bg-warning', 'text-dark');
+                }
             });
             
             $('#selected-text-context-menu').hide();
@@ -770,27 +820,33 @@ const page__setSelectedTextContextMenu = () =>{
         {
             menu:[
                 {
-                    label: '<div class="text-danger pb-2 border-bottom border-secondary border-opacity-25">See selected</div>',
+                    label: `<div class="text-danger pb-2 border-bottom border-secondary border-opacity-25" data-i18n="page_content_context_menu_option_see_selected">${i18next.t('page_content_context_menu_option_see_selected')}</div>`,
                     // no handler here, is just for moving the focus to selected text because it may be lost when activating the textarea
                     handler: '' 
                 },
                 {
-                    label: settings.selectedTextContextMenu.comments.enabled ? 'Add comment' : '',
+                    label: settings.selectedTextContextMenu.comments.enabled 
+                        ? i18next.t('page_content_context_menu_option_add_comment') 
+                        : '',
                     handler: addCommentToSelectedText
                 },
                 {
-                    label: algoliaSettings.algoliaEnabled ? 'Search in site' : '',
+                    label: algoliaSettings.algoliaEnabled ? i18next.t('page_content_context_menu_option_search_in_site') : '',
                     handler: searchInSite, // works only with algolia
                 },
                 {
-                    label: 'Tag document',
+                    label: i18next.t('page_content_context_menu_option_tag_document'),
                     handler: tagDocWithSelectedText,
                 },
                 {
-                    label: algoliaSettings.algoliaEnabled ? 'Tag all documents' : '',
+                    label: algoliaSettings.algoliaEnabled ? i18next.t('page_content_context_menu_option_tag_all_documents') : '',
                     handler: tagAllDocsWithSelectedText,
                 }
             ],
+
+            // OPS IS USEFUL TO ADD A CUSTOM FOOTER TO THE CONTEXT MENU
+            // BELOW IS A FOOTER TO ADD COMMENTS TO A SELECTED TEXT, BUT IS NOT ACTIVE,
+            // ACTIVATE FROM siteConfig.selectedTextContextMenu.comments.enabled
             ops: 
                 `
                     <div 
@@ -815,8 +871,9 @@ const page__setSelectedTextContextMenu = () =>{
                                 sitefunction="pageAddCommentToSelectedText_btn" 
                                 id="pageAddCommentToSelectedText_btn" 
                                 type="button" 
-                                class="focus-ring focus-ring-warning btn btn-sm btn-success mt-2 position-relative pageExcerptInListItems">
-                                Add comment     
+                                class="focus-ring focus-ring-warning btn btn-sm btn-success mt-2 position-relative pageExcerptInListItems"
+                                data-i18n="page_content_context_menu_option_add_comment_button">
+                                ${i18next.t('page_content_context_menu_option_add_comment_button')}     
                             </button>
                             <div class="d-flex justify-content-end align-items-center mt-2"> 
                                 <span 
@@ -853,8 +910,8 @@ const page__setSelectedTextContextMenu = () =>{
         const onBeforeInitCallback = (selectedText, selectedTextHtml, rectangle) => {
             keepTextInputLimits(
                 'textarea[sitefunction="pageAddCommentToSelectedText_comment"]',
-                5,
-                50,
+                settings.selectedTextContextMenu.comments.maxWords,
+                settings.selectedTextContextMenu.comments.maxChars,
                 'span[sitefunction="addCommentSelectedTextContextMenuWords"]',
                 'span[sitefunction="addCommentSelectedTextContextMenuChars"]'
             );
@@ -863,19 +920,56 @@ const page__setSelectedTextContextMenu = () =>{
                 .on('click', 'button[sitefunction="pageAddCommentToSelectedText_btn"]', handleAddCommentToSelectedText.bind(null, page, selectedText, selectedTextHtml, rectangle));
         }
 
-        // HANDLERS
+        // HANDLERS FOR OPS CONTAINER ELEMENTS
         const handleAddCommentToSelectedText = (page, selectedText, selectedTextHtml, rectangle) => {
-            console.log(page);
-            console.log(selectedText);
-            console.log(rectangle);
-            highlightTextInRectangle (selectedText, rectangle);
+
+            const pageInfo =  {
+                siteInfo: {
+                    title: page.title,
+                    permalink: page.permalink
+                }
+            };
+
+            
+            const matches = getTextNodeInRect(rectangle);
+            
+            if (matches) {
+                const comment = {
+                    anchor: selectedText.trim(),
+                    comm: $('textarea[sitefunction="pageAddCommentToSelectedText_comment"]').val().trim(),
+                    matches: matches,
+                    uuid: uuid(),
+                    // here we add a comment as parent comment to the anchor; comment.id = comment.refId
+                    // see addComment(..) from savedItems.js
+                    get refUuid() {return this.uuid}
+                };
+
+                if (addComment(comment, pageInfo)) {
+                    highlightSavedSelection(comment.matches, comment.uuid, comment.anchor);
+                   
+                    markCustomComments(
+                        {
+                            savedInfo: getPageSavedInfo(pageInfo.siteInfo.permalink, pageInfo.siteInfo.title)
+                        }
+                    );
+                    
+                    initPageCommentsCanvasBeforeShow(
+                        {
+                            savedInfo: getPageSavedInfo(pageInfo.siteInfo.permalink, pageInfo.siteInfo.title)
+                        }, 
+                        comment.anchor
+                    );
+                }
+                
+                //highlightTextInRectangle (selectedText, rectangle);
+            }
 
             initAddCommentContainer();
             $('#selected-text-context-menu').hide();
             $('body').css('overflow', '');    
         }
 
-        // set the menu
+        // finally, set the menu
         setSelectedTextContextMenu(
             'main',
             contextMenuContent,
@@ -920,7 +1014,7 @@ const page__showPageCustomTags = () => {
                         href="/tag-info?tag=${tag}" 
                         sitefunction="pageTagButton" 
                         type="button" 
-                        class="focus-ring focus-ring-warning px-3 my-2 mr-md-5 btn btn-sm btn-success position-relative">
+                        class="text-nowrap focus-ring focus-ring-warning px-3 my-2 mr-md-5 btn btn-sm btn-success position-relative">
                         ${tag}
                     </a> 
                     <span 
@@ -963,6 +1057,83 @@ const page__showPageCustomTags = () => {
 };
 
 // INTERNAL FUNCTIONS, NOT CALLED FROM HTML TEMPLATES
+
+const showPageCommentsCanvas = (pageInfo, anchor, commentId = null) => {
+    if (pageInfo) {
+        REFRESH_PAGE_INFO_BEFORE__initPageCommentsCanvasBeforeShow(pageInfo, anchor, commentId);
+        $('#offcanvasPageComments').offcanvas('show');
+    }
+}
+
+const initPageCommentsCanvasBeforeShow = (pageInfo, anchor, commentId = null) => {
+
+    // first, we need to refresh the pageInfo global
+    // NOT USED WHEN USING REFRESH_PAGE_INFO_BEFORE__ wrapper
+    /*
+    pageInfo = {
+        siteInfo: getObjectFromArray ({permalink: pageInfo.savedInfo.permalink, title: pageInfo.savedInfo.title}, pageList),
+        savedInfo: getPageSavedInfo (pageInfo.savedInfo.permalink, pageInfo.savedInfo.title),
+    };
+    */
+
+    const commentItem = (comment) => {
+        return (
+            `
+                <div 
+                    class="card mt-4 bg-secondary bg-opacity-10 border-0 border-secondary border-opacity-10 shadow-none offcanvasPageComments_comment" 
+                    id="offcanvasPageComments_comment_${comment.id}">
+                    <div 
+                        class="card-body alwaysCursorPointer offcanvasPageComments_comment_body" 
+                        id="offcanvasPageComments_comment_body_${comment.id}">
+                        <div class="mb-2">
+                            <span 
+                                id="offcanvasPageCommentsBody_comment_date_${comment.id}"
+                                class="text-primary"
+                                data-i18n="[text]formatted_date"
+                                data-original-date="${comment.date}"
+                                data-month-name="short">
+                                ${comment.date}
+                            </span>
+                        </div>
+
+                        <div>
+                            <span
+                                class="text-secondary"
+                                id="offcanvasPageCommentsBody_comment_comment_${comment.id}">
+                                ${comment.comment}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            `
+        )
+    }
+
+    // general info
+    $('#offcanvasPageCommentsBody_pageLink').text(pageInfo.savedInfo.title);
+    $('#offcanvasPageCommentsBody_pageLink').attr('href', pageInfo.savedInfo.permalink);
+    $('#offcanvasPageCommentsBody_anchor').text(anchor);
+
+    // comments
+    const pageComments = pageInfo.savedInfo.customComments || []; 
+    const filteredComments = _.chain(pageComments)
+        .filter({ anchor: anchor }) // Filter by anchor
+        .orderBy(item => new Date(item.date).getTime(), 'desc') // Order by Unix timestamp of date descending
+        .groupBy('refId') // Group by refId
+        .flatMap(group => group) // Flatten the grouped result into an array
+        .value();
+    
+    let commentsHTML = '';
+    filteredComments.forEach( com => {
+        commentsHTML += commentItem(com);
+    });
+
+    $('#offcanvasPageComments_comments_list').html(commentsHTML);
+ 
+}
+const REFRESH_PAGE_INFO_BEFORE__initPageCommentsCanvasBeforeShow = REFRESH_PAGE_INFO_BEFORE(initPageCommentsCanvasBeforeShow);
+
+
 const refreshPageDynamicInfo = () => {
     keepScrollFixed(() => {
         page__showPageCustomTags();
@@ -1063,6 +1234,71 @@ window.setPageButtonsFunctions = () => {
             }, 100);
         });
 
+    // click on highlighted comment anchor
+    $(document)
+        .off('mouseup keyup', 'span[id^="customSelection_"]')
+        .on('mouseup keyup', 'span[id^="customSelection_"]', function() {
+            // skip if there is a selection, to allow the context menu to open and get focus
+            // otherwise the offcanvas will not allow the interactions with the context menu
+            if (hasSelection($(this))) return; 
+
+            const commentID = $(this).attr('id').replace(/^customSelection_/, '').trim();
+            const anchor = $(this).text().trim();
+            $('span[id^="customSelection_"]').removeClass('bg-danger').removeClass('bg-success').addClass('bg-secondary');
+            $('span[id^="customSelection_"]').each(function() {
+                if ($(this).text() === anchor) $(this).removeClass('bg-secondary').addClass('bg-danger');
+            })
+            
+            showPageCommentsCanvas(pageInfo, anchor, commentID);
+        });
+    
+    // click on comment card body
+    $(document)
+        .off('click', 'div[id^="offcanvasPageComments_comment_body_"]')
+        .on('click', 'div[id^="offcanvasPageComments_comment_body_"]', function() {
+
+            // first, we need to refresh the pageInfo global because we cannot use the REFRESH_PAGE_INFO_BEFORE__ wrapper here
+            pageInfo = {
+                siteInfo: getObjectFromArray ({permalink: pageInfo.savedInfo.permalink, title: pageInfo.savedInfo.title}, pageList),
+                savedInfo: getPageSavedInfo (pageInfo.savedInfo.permalink, pageInfo.savedInfo.title),
+            };
+
+            $('.offcanvasPageComments_comment').removeClass('bg-success').addClass('bg-secondary');
+            $(this).parent().removeClass('bg-secondary').addClass('bg-success');
+
+            const pageComments = pageInfo.savedInfo.customComments || [];
+            const commentID = $(this).attr('id').replace(/^offcanvasPageComments_comment_body_/, '').trim();
+            comment = getObjectFromArray ({id: commentID}, pageComments);
+            
+            // we use refId prop to navigate because we may want to group comments based on the anchor position in document
+            target = `#customSelection_${comment.refId}`;
+            $('html, body').animate({
+                scrollTop: $(target).offset().top - $(settings.layouts.leftSideBar.header).outerHeight() - 40
+            }, 100);
+
+            $('span[id^="customSelection_"]').each(function() {
+                if ($(this).text() !== comment.anchor) $(this).removeClass('bg-success').addClass('bg-secondary');
+                else $(this).removeClass('bg-success').addClass('bg-danger');
+            });
+            $(target).removeClass('bg-danger').addClass('bg-success');
+
+            if (preFlight.envInfo.device.deviceType !== 'desktop') {
+                $('button[sitefunction="offcanvasPageCommentsClose"]').click();
+            }
+        });
+
+     // hover comment card body
+     $(document)
+        .off('mouseenter', 'div[id^="offcanvasPageComments_comment_body_"]')
+        .on('mouseenter', 'div[id^="offcanvasPageComments_comment_body_"]', function() {
+            if ($(this).parent().hasClass('bg-secondary'))
+                $(this).parent().removeClass('bg-opacity-10').addClass('bg-opacity-25');
+        })
+        .off('mouseleave', 'div[id^="offcanvasPageComments_comment_body_"]')
+        .on('mouseleave', 'div[id^="offcanvasPageComments_comment_body_"]', function() {
+            if ($(this).parent().hasClass('bg-secondary'))
+                $(this).parent().removeClass('bg-opacity-25').addClass('bg-opacity-10');
+        })
 }
 
 const refreshPageAfterOffCanvasClose = () => {
@@ -1070,6 +1306,15 @@ const refreshPageAfterOffCanvasClose = () => {
     setElementChangeClassObserver('.offcanvas', 'hiding', true, () => {
         $('div[siteFunction="pageCustomTagButton"]').remove();
         refreshPageDynamicInfo();
+    });
+}
+
+const refreshPageAfterCommentsOffCanvasClose = () => {
+    $('#offcanvasPageComments').on('hidden.bs.offcanvas', function () {
+        $('span[id^="customSelection_"]')
+            .removeClass('bg-danger')
+            .removeClass('bg-success')
+            .addClass('bg-secondary');
     });
 }
 

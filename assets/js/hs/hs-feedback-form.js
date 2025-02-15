@@ -1,9 +1,9 @@
-
 const {settings, pageSettings, hsSettings} = window.parent.utilities;
 const { showToast, doTranslation } = window.parent.utilities.func;
 
 hsFeedbackForm = {
     doTheWork: () => {
+        
         if (mainJQuery) {
             $(hsFeedbackForm.iframeDocument).ready(function() {
                 hsFeedbackForm.addMarkersForTranslation();

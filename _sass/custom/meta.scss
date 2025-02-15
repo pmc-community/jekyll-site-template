@@ -715,7 +715,7 @@ $sidebarLogo, $sideBarFooter, $sideBarHeader, $sideBarDocLink,$sideBarCategoryBt
 
 }
 
-// context menu
+// editor
 @mixin editor($editorElements) {
     #{map-get($editorElements, editZone)} {
         background: $editZoneBackground;
@@ -742,7 +742,7 @@ $sidebarLogo, $sideBarFooter, $sideBarHeader, $sideBarDocLink,$sideBarCategoryBt
     }
 }
 
-// editor
+// context menu
 @mixin contextMenu($contextMenuElements) {
     #{map-get($contextMenuElements, container)} {
         z-index: $contextMenuZIndex !important;
@@ -771,6 +771,18 @@ $sidebarLogo, $sideBarFooter, $sideBarHeader, $sideBarDocLink,$sideBarCategoryBt
 
     #{map-get($contextMenuElements, tagAndCatContextMenu)} {
         font-size: $tagAndCatContextMenuFontSize !important;
+    }
+
+    #{map-get($contextMenuElements, customSelectionMarkup)} {
+        cursor: $customSelectionMarkupCursor !important;
+    }
+
+    #{map-get($contextMenuElements, customCommentsOffCanvas)} {
+        width: $customCommentsOffCanvasWidth_desktop !important;
+
+        @include phone {
+            width: $customCommentsOffCanvasWidth_phone !important
+        }
     }
 }
 

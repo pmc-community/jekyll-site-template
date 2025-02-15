@@ -1,3 +1,10 @@
+// just to be consistent with styles and have rounded (not circle) buttons
+// adding 'rouded' class to Algolia docSearch button in site header
+removeObservers('body (class=DocSearch DocSearch-Button)');
+setElementCreatedByClassObserver('DocSearch DocSearch-Button', () => {
+    $('button.DocSearch.DocSearch-Button').addClass('rounded');
+});
+
 // removing additional docSearch features when click on clear query button
 // since is not wise to try to overwrite the clear query button handler, we use a DOM event to handle this
 removeObservers('.DocSearch-Reset receive attribute=hidden');
@@ -7,7 +14,7 @@ setElementReceiveAttributeObserver('.DocSearch-Reset', 'hidden', () => {
 });
 
 // setup the search hit details box
-// we force esults to be shown in the custom fomat defined in setDocSearchBox/refreshResults by force navigating to first page
+// we force results to be shown in the custom format defined in setDocSearchBox/refreshResults by force navigating to first page
 // we create the search hit details container
 removeObservers('body class=DocSearch--active getClass=true');
 setElementChangeClassObserver ('body', 'DocSearch--active', true, () => {
@@ -16,7 +23,7 @@ setElementChangeClassObserver ('body', 'DocSearch--active', true, () => {
 }); 
 
 // setting some events to modify the default behaviour of DocSearch
-// search results must be shown in the custom fomat defined in setDocSearchBox/refreshResults
+// search results must be shown in the custom format defined in setDocSearchBox/refreshResults
 // and search box dropdown list should navigate to first page of results
 // so we overwrite the default behaviour of showing results which is based on the built-in DocSearch autocomplete
 $(document).off('input', '.DocSearch-Input').on('input', '.DocSearch-Input', function() {

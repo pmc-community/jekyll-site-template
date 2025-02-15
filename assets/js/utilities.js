@@ -1,6 +1,13 @@
+
 /* SOME IMPORTANT STUFF THAT MUST BE OUTSIDE ANY FUNCTION */
 // take care of fixed header when scrolling to target, if the case
 // this has to be here, orherwise the hash will be removed before handling the fixed header
+
+// Override the default alert function to not show ugly message boxes
+window.alert = function(message) {
+    showToast('Something did not work as expected (details in console)! You may refresh page and try again. If the problem persists, contact support.', 'bg-warning', 'text-dark');
+    console.error(message);
+};
 
 $(window).on('scroll', () => {
 
@@ -80,6 +87,8 @@ $.fn.sizeChanged = function (handleFunction) {
     return element;
 };
 
+// add also some datatables enhancements if not home page
+// such as ordering by datetime cols
 if (pagePermalink !== '/') {
 
     // init page toc
@@ -94,13 +103,39 @@ if (pagePermalink !== '/') {
 
     // CONVERSION FUNCTIONS FOR DATATABLES SORTING PURPOSES
     // type dd-mmm-yyyy to Unix Timestamp
-
+    // used to sort date fields based on unix timestamp and not based on date string
     $.fn.dataTable.ext.type.order['date-dd-mmm-yyyy-pre'] = function(d) {
-        const months = {
-            "Jan": 0, "Feb": 1, "Mar": 2, "Apr": 3,
-            "May": 4, "Jun": 5, "Jul": 6, "Aug": 7,
-            "Sep": 8, "Oct": 9, "Nov": 10, "Dec": 11
-        };
+        let months = {};
+
+        if (!settings.multilang.enabled)
+            months = {
+            "Jan": 0, 
+            "Feb": 1, 
+            "Mar": 2, 
+            "Apr": 3,
+            "May": 4, 
+            "Jun": 5, 
+            "Jul": 6, 
+            "Aug": 7,
+            "Sep": 8, 
+            "Oct": 9, 
+            "Nov": 10, 
+            "Dec": 11
+            };
+        else {
+            _.set(months, i18next.t('common.months.Jan'), 0);
+            _.set(months, i18next.t('common.months.Feb'), 1);
+            _.set(months, i18next.t('common.months.Mar'), 2);
+            _.set(months, i18next.t('common.months.Apr'), 3);
+            _.set(months, i18next.t('common.months.May'), 4);
+            _.set(months, i18next.t('common.months.Jun'), 5);
+            _.set(months, i18next.t('common.months.Jul'), 6);
+            _.set(months, i18next.t('common.months.Aug'), 7);
+            _.set(months, i18next.t('common.months.Sep'), 8);
+            _.set(months, i18next.t('common.months.Oct'), 9);
+            _.set(months, i18next.t('common.months.Nov'), 10);
+            _.set(months, i18next.t('common.months.Dec'), 11);
+        }
         const dateParts = stripHtml(d).split('-');
         const day = parseInt(dateParts[0], 10);
         const month = months[dateParts[1]];
@@ -110,14 +145,15 @@ if (pagePermalink !== '/') {
     };
 
     // type html-string to html stripped text
+    // used to order by text only in HTML cols
     $.fn.dataTable.ext.type.order['html-string-pre'] = function(s) {
         return stripHtml(s);
     };
 
     // Extend DataTables with custom search function
-    $.fn.dataTable.ext.type.search['raw-data'] = function(data) {
+    $.fn.dataTable.ext.type.search['data-raw'] = function(data) {
         try {
-            var parsedData = JSON.parse(data);
+            const parsedData = JSON.parse(data);
             if (Array.isArray(parsedData)) {
                 if (typeof parsedData[0] === 'object' && parsedData[0] !== null) {
                     // Extract titles from array of objects
@@ -136,10 +172,14 @@ if (pagePermalink !== '/') {
 
 /* SOME GENERAL PURPOSE UTILITIES */
 
-// global function execution interceptor for pre and post hooks
-// the interceptor use a list of functions that are set to be intrercepted
-// the list must be available prior to the definition of this interceptor
-// SEE MORE DETAILS FOR USAGE IN pre-hooks.js and post-hooks.js
+const waitUntilCompleteOrTimeout = (task, timeoutMs) => {
+    return Promise.race([
+      task(),  // The task to wait for
+      new Promise((_, reject) => 
+        setTimeout(() => reject(new Error('Timeout expired')), timeoutMs)
+      )
+    ]);
+}
 
 const removeChildrenExceptFirst = (nodeSelector) => {
     var $node = $(nodeSelector);
@@ -233,12 +273,11 @@ const getExternalContent = async (file, position, startMarker , endMarker, heade
                     addTopOfPage();
                 }
 
+                markCustomComments(pageInfo);
+
             },
             error: async (xhr, status, error) => {
-                toast = new bootstrap.Toast($('.toast'));
-                $('.toast').addClass('bg-danger');
-                $('.toast-body').html('Error loading external content. Details in console ...');
-                toast.show();
+                showToast(`Error loading external content! Details in console ...`, 'bg-danger', 'text-light');
                 const placeholder = position === 'before' || position === 'after' ? 'N/A for this position' : whereID;
                 console.error(`Error fetching file: ${file}\nStatus: ${status} / ${xhr.responseText}\nPosition: ${position}\nPlaceholder: ${placeholder}\nOrigin: ${whoCalled}`,error);
             }
@@ -583,13 +622,16 @@ const setDataTable = async (
     additionalSettings = {}, // any other settings besides the default ones (i.e. columnDefs to define individual search panes)
     searchPanes = null, // search panes configuration and callbacks
     envInfo = null,
-    initCompleteCallback = null // callback to be executed after init complete, besides the default one
+    initCompleteCallback = null, // callback to be executed after init complete, besides the default one
+    afterSearchPanesCallback = null, // to be executed after autoApplyActiveFilter
+    afterSearchApplied = null, // to be executed after search crieria is applied (searchPanes or search box)
 ) => {
     
     $(tableSelector).hide(); // hide table here to minimise weird display while creating the table
+    let bodyBgColor = $('body').css('background-color');
     const $loading = $(
         `
-            <div id="dataTableLoading" class="d-flex justify-content-center align-items-center">
+            <div id="dataTableLoading" class="d-flex justify-content-center align-items-center" style="position:absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10;  background-color: ${bodyBgColor}">
                 <div class="spinner-border text-primary" role="status">
                     <span class="visually-hidden">Loading...</span>
                 </div>
@@ -597,6 +639,8 @@ const setDataTable = async (
         `
     );
     $(tableSelector).parent().prepend($loading);
+    $(tableSelector).parent().height(settings.dataTables.tableContainerFixedHeightWhenLoading);
+
     
     await waitForI18Next(); // normally, at this time i18next init should have been completed, but let's be on the safe side
 
@@ -681,12 +725,13 @@ const setDataTable = async (
             // otherwise, the table will be shown after applying the filters (see createTable_ASYNC.helpers.autoApplyActiveFilter below)
             if ( tableSearchPanesSelection.length === 0 || _.sumBy(tableSearchPanesSelection, obj => _.get(obj, 'rows.length', 0)) === 0 ) {
                 $('#dataTableLoading').remove();
-                setTimeout(() => {
-                    $('.dt-length').parent().show();
-                    $('.dt-search').parent().show();   
-                }, 0);
+                dtSettings.possibleDataTableParents.forEach( selector => $(selector).height('auto'));
                 $(tableSelector).show();
-            }   
+            }
+            
+            // callback to be personalised for each table
+            // for post processing the table (i.e. adding buttons based on context)
+            if (callback) callback(table);
         },  
         serverSide: false,
         paging: true,
@@ -725,6 +770,7 @@ const setDataTable = async (
         },
         
     };
+
     const allSettings = {...defaultSettings, ...additionalSettings};
     
     const createTable_ASYNC = (
@@ -734,7 +780,9 @@ const setDataTable = async (
         callback, 
         callbackClickRow, 
         allSettings, 
-        searchPanes
+        searchPanes,
+        afterSearchPanesCallback,
+        afterSearchApplied
     ) => {
 
         return new Promise ( (resolve, reject) => {
@@ -755,18 +803,32 @@ const setDataTable = async (
                 });
             }
 
-            // define some helpers
+            // define some helpers 
             const helpers = {
-                autoApplyActiveFilter: async (tableSelector) => {
-                    // execute Filter button click to open search panes and apply selection
-                     await $(`#tableSearchPanes_${tableUniqueID}`).click(); 
-                     await $('.dropdown-menu').hide(); // hide search panes
-                     await $('.dtb-popover-close').click(); // force search panes to close
-                    setTimeout(()=>{
-                        $('body').click();
-                        $('#dataTableLoading').remove();
-                        $(tableSelector).show();
-                    }, 200); // force sitePagesDetailsLastFilter to lose focus
+                autoApplyActiveFilter: (table,tableSelector) => {
+                    return new Promise( async (resolve) => {
+
+                        simulateSearchPanes = async () => {
+                                // Execute Filter button click to open search panes and apply selection
+                                // we use #tableSearchPanes_${tableUniqueID} to select the right table in case if there are many tables on page
+                                // we can use .dropdown-menu and .dtb-popover-close
+                                // because there can be only one search pane open regardless of how many tables are on page
+                                await $(`#tableSearchPanes_${tableUniqueID}`).click();
+                                await $('.dropdown-menu').hide(); // Hide search panes
+                                await $('.dtb-popover-close').click(); // Force search panes to close
+                        }  
+                        await simulateSearchPanes();
+                        setTimeout(() => {
+                            settings.dataTables.possibleDataTableParents.forEach( selector => $(selector).height('auto'));
+                            $('#dataTableLoading').remove();
+                            $('body').click();
+                            $(tableSelector).show();                            
+                            resolve();
+                        }, settings.dataTables.TO_resolveAutoApplySearchPanesCurrentFilter);
+
+                       
+                      
+                    });
                 },
 
                 clearActiveFilter: async (tableUniqueID) => {
@@ -774,7 +836,7 @@ const setDataTable = async (
                     await $('.dropdown-menu[id!="category-menu-more-list"]').hide();
                     await $('.dtsp-clearAll').click();
                     await $('.dtb-popover-close').click(); 
-                    setTimeout(()=>$('body').click(), 200);   
+                    setTimeout(()=>$('body').click(), settings.dataTables.TO_forceSearchPanesToLoseFocus);   
                 },
 
                 triggerApplyActiveFilter: (tableUniqueID) => {
@@ -806,22 +868,56 @@ const setDataTable = async (
                             
                         }); 
                     };
+                },
+
+                getFilterInfo: (table, tableSearchPanesSelection) => {
+                    //console.log(tableSearchPanesSelection)
+                    const hasFilter =  
+                        (
+                            tableSearchPanesSelection.length === 0 || 
+                            _.sumBy(tableSearchPanesSelection, obj => _.get(obj, 'rows.length', 0)) === 0
+                        )
+                            ? false
+                            : true;
+                    const filteredRows = table.rows({ search: 'applied' }).nodes().length;
+                    const removedRows = table.rows( {search:'removed'} ).nodes().length;
+                    const totalRows = table.rows().count();
+
+                    return (
+                        {
+                            hasFilter: hasFilter,
+                            filteredRows: filteredRows,
+                            removedRows: removedRows,
+                            totalRows: totalRows,
+                            table: table,
+                            tableSelector: tableSelector,
+                            tableSearchPanesSelection: tableSearchPanesSelection
+                        }
+                    );
                 }
             }
 
             table.helpers = helpers;
 
-            // callback to be personalised for each table
-            // for post processing the table (i.e. adding buttons based on context)
-            callback(table);
-
             // set the columns which are active when click on row
             // HEADS UP!!! THIS WORKS ONLY WHEN THE callbackClickRow IS USED
             const composeRowClickColumnsSelector = () => {
-                // safer to read the columns defs from the table settings
+                // try to read the columns defs from the table settings
                 // because it may not be always diectly available in all contexts
-                // i.e. when returning from page info offcanvas, columnsConfig is not available anymore for direct access
-                colDef = tableConfiguration = table.settings().init().columns;
+                // i.e. when returning from page info offcanvas, columnsConfig may not be available anymore for direct access
+                
+                try {
+                    cD = table.settings().init().columns; // read cols definitions directly from table object
+                } catch (error) {
+                    showToast('Something went wrong when building the table! You may refresh page and try again. If the problem persists, contact support.', 'bg-danger', 'text-light');
+                    console.error('Docs table error:', error);
+                }
+
+                colDef = cD && cD !== 'undefined' 
+                    ? cD 
+                    : columnsConfig && columnsConfig !== 'undefined'
+                        ? columnsConfig // if not available from table object, assign it from columnsConfig
+                        : []; // if something goes wrong and columnsConfig is not available, assign [] to avoid error in next forEach(...)
                 colDefIndex = 0;
                 colVisIndex = 0;
                 disabledForClick = [];
@@ -880,11 +976,19 @@ const setDataTable = async (
             // if switch theme and increase no of rows/page, new rows will have the previous scheme background
             //applyColorSchemaCorrections();
             // also on draw event to cover all potential cases
-            table.on('draw', function () { applyColorSchemaCorrections(); });
+            table.one('draw.dt', function () {              
+                applyColorSchemaCorrections();
+            });
 
             // when display hidden table columns in dark mode, the column backgroud may be light, so corrections should be applied
             $(document).off('click','.buttons-columnVisibility').on('click', '.buttons-columnVisibility', function() {
                 applyColorSchemaCorrections();            
+            });
+
+
+            // EXECUTE CUSTOM CALLBACK AFTER SEARCH IS APPLIED (INCL. SEARCH PANES AND SEARCH BOX)
+            table.off('search.dt').on('search.dt', function() {
+                if (afterSearchApplied) afterSearchApplied( table.helpers.getFilterInfo(table, tableSearchPanesSelection));
             });
 
             // searchPanes logic
@@ -1009,7 +1113,7 @@ const setDataTable = async (
                         
                         if (searchPanes.searchPanesOpenCallback) searchPanes.searchPanesOpenCallback();
             
-                    }, 100);
+                    }, settings.dataTables.TO_doStuffAfterSearchPanesContainerOpen);
                 });
 
                 // PROCESSING WHEN SEARCH PANES CONTAINER IS CLOSED
@@ -1017,7 +1121,7 @@ const setDataTable = async (
                 setElementRemovalByClassObserver('dropdown-menu dt-button-collection dtb-collection-closeable', () => {
                     setTimeout(() => {
                         if (searchPanes.searchPanesCloseCallback) searchPanes.searchPanesCloseCallback(tableSearchPanesSelection);
-                    }, 100);
+                    }, settings.dataTables.TO_doStuffAfterSearchPanesContainerClosed);
                     
                 });
 
@@ -1026,16 +1130,17 @@ const setDataTable = async (
                 removeObservers('div.dtsp-searchPane table tr class=selected getClass=true');
                 setElementChangeClassObserver('div.dtsp-searchPane table tr', 'selected', true, () => {
                     getSearchPanesSelection();
-                    if (searchPanes.searchPanesSelectionChangeCallback) searchPanes.searchPanesSelectionChangeCallback(tableSearchPanesSelection);
+                    if (searchPanes.searchPanesSelectionChangeCallback)
+                        searchPanes.searchPanesSelectionChangeCallback(tableSearchPanesSelection);
                 });
 
                 // unselect option
                 removeObservers('div.dtsp-searchPane table tr class=selected getClass=false');
                 setElementChangeClassObserver('div.dtsp-searchPane table tr', 'selected', false, () => {
                     getSearchPanesSelection();
-                    if (searchPanes.searchPanesSelectionChangeCallback) searchPanes.searchPanesSelectionChangeCallback(tableSearchPanesSelection);
+                    if (searchPanes.searchPanesSelectionChangeCallback) 
+                        searchPanes.searchPanesSelectionChangeCallback(tableSearchPanesSelection);
                 });
-    
             }
 
             // everything set, now we need to resolve the promise 
@@ -1043,7 +1148,7 @@ const setDataTable = async (
             /* resolving the promise inside a custom message handler */
             setTimeout(()=>{
                 $(tableSelector).trigger('timeToBuildTheTable')
-            }, 0);
+            }, settings.dataTables.TO_resolvePromiseIncreateTable_ASYNC);
 
             $(tableSelector).on('timeToBuildTheTable', function() {
                 resolve(
@@ -1051,7 +1156,7 @@ const setDataTable = async (
                         table: table,
                         selection: tableSearchPanesSelection,
                         tableUniqueID: tableUniqueID,
-                        tableSelector: tableSelector
+                        tableSelector: tableSelector,
                     }
                 )
             })
@@ -1077,6 +1182,7 @@ const setDataTable = async (
         // first wait for i18next 
         // then create the table, 
         // then apply active searchPanes selection if available and some styles on mobile
+
         waitForI18Next().then(() => {
             
             createTable_ASYNC(
@@ -1086,18 +1192,49 @@ const setDataTable = async (
                 callback, 
                 callbackClickRow, 
                 allSettings, 
-                searchPanes
+                searchPanes,
+                afterSearchPanesCallback,
+                afterSearchApplied
             )
                 .then( (result) => {
-
+                    
+                    const timeout = settings.dataTables.TO_afterAutoApplySearchPanesCurrentFilter;
                     setTimeout(() => {
                         if (result.table.helpers && result.table.helpers !== 'undefined') 
-                            result.table.helpers.applyTableStylesOnMobile(result.table);
-                        
-                        if ( !(result.selection.length === 0 || _.sumBy(result.selection, obj => _.get(obj, 'rows.length', 0)) === 0) )
-                            result.table.helpers.autoApplyActiveFilter(result.tableSelector);
-
+                            result.table.helpers.applyTableStylesOnMobile(result.table);       
                     }, 0);
+
+                    const doTask = () => new Promise((resolve) => {
+                        let res = {
+                            table: result.table, 
+                            tableSelector: result.tableSelector,
+                            tableSearchPanesSelection: result.selection
+                        };
+
+                        if ( !(result.selection.length === 0 || _.sumBy(result.selection, obj => _.get(obj, 'rows.length', 0)) === 0) )
+                            result.table.helpers.autoApplyActiveFilter(result.table, result.tableSelector).then(() => res.hasFilter = true);
+                        else res.hasFilter = false; 
+
+                        setTimeout(() => resolve(res), timeout);
+                    });
+
+                    /* use Promise.race */
+                    /*
+                    waitUntilCompleteOrTimeout(doTask, timeout)
+                        .then((res) => {
+                            if (afterSearchPanesCallback) afterSearchPanesCallback(res);
+                        })
+                        .catch(error => console.error(error.message));
+                    */
+                    
+                    /* or setTimeout */
+                    setTimeout( () => {
+                        doTask()
+                            .then((res) => {
+                                if (afterSearchPanesCallback) afterSearchPanesCallback(res);
+                            });
+                    }, timeout);
+                    
                     // That is all
                     // after table init, the initComplete (see default table settings) function will remove the loader and show the table
                 });
@@ -1119,13 +1256,15 @@ const addAdditionalButtonsToTable = (table, tableSelector=null, zone=null, btnAr
     }
 
     // buttons must be added on draw event
-    // otherwise the draw event when applying internationalization plugin will not add the custom buttons
-    table.off('draw.dt').on('draw.dt', function() {
-        addButtons(table, btnArray);
-        applyColorSchemaCorrections();
-    });
+    table
+        .off('draw.dt')
+        .on('draw.dt', function() {
+            addButtons(table, btnArray);
+            applyColorSchemaCorrections();
+        });
     
-    table.draw(); // to force adding custom buttons
+    table.draw();
+    //table.trigger('timeToRenderTableAdditionalButtons');
 }
 
 const handleBtnClose = () => {
@@ -1145,7 +1284,8 @@ const applyColorSchemaCorrections = (theme=null) => {
     // jtd forgets to change some colors when switching from light to dark and back
     if (!theme) {
         let themeCookie = Cookies.get(settings.themeSwitch.cookie);
-        if (typeof themeCookie === 'undefined') Cookies.set(settings.themeSwitch.cookie,0, { expires:365 , secure: true, sameSite: 'strict' });
+        const isSecure = location.protocol === 'https:'; // just to be sure that the cookie is set also in dev env which can be http
+        if (typeof themeCookie === 'undefined') Cookies.set(settings.themeSwitch.cookie,0, { expires:365 , secure: isSecure, sameSite: 'strict' });
         themeCookie = Cookies.get(settings.themeSwitch.cookie);
         if (Cookies.get(settings.themeSwitch.cookie) === '0' ) theme = 'light';
         else  theme = 'dark';
@@ -1255,7 +1395,7 @@ const applyColorSchemaCorrectionsOnTD = () => {
     }
 }
 
-const showToast = (message, type, textType) => {
+window.showToast = (message, type, textType) => {
     toast = new bootstrap.Toast($('.toast'));
     $('.toast').removeClass('bg-warning').removeClass('bg-danger').removeClass('bg-success').removeClass('bg-info');
     $('.toast').addClass(type);
@@ -1263,6 +1403,7 @@ const showToast = (message, type, textType) => {
     $('.toast .toast-body').addClass(textType);
     $('.toast-body').html(message);
     toast.show();
+    return $('.toast-body').text(); // used for New Relic logging
 }
 
 const getCurrentDateTime = () => {
@@ -1765,6 +1906,7 @@ const transformEditorTextToArray = (htmlString) => {
     return uniqueArray;
 }
 
+// global lists
 const createGlobalLists = () => {
     globCustomCats = _.uniq(getCustomCats());
     globCustomTags = _.uniq(getCustomTags());
@@ -1782,6 +1924,8 @@ const createGlobalLists = () => {
 
 }
 
+// get tables with state saved in local storage but not existing anymore
+// we do this to clean the local storage from time to time
 const getOrphanDataTables = (what) => {
     
     let substring = '';
@@ -1830,6 +1974,8 @@ const getOrphanDataTables = (what) => {
     return matchingKeys;
 }
 
+// CONTEXT MENU (different than selected text context menu)
+// we use this (for example) for custom tags and custom categories
 // elementTriggerCloseWhenScroll is the element which triggers the closure of the context menu when scrolled vertically. 
 // usually is the window element but can be the parent of the element on which the context menu is applied 
 // (to be used when the context menu is applied on an element which is on a modal or offcanvas that blocks the window scroll when active)
@@ -2028,6 +2174,7 @@ const getSearchPaneOptionsFromArray = (tableSelector, columnIndex, initCallback=
         // WE CANNOT ACCES CELLS USING datatable OBJECT SINCE DATATABLE DOES NOT EXIST YET
         let table = $(tableSelector);
         const rows = table.find('tbody tr');
+
         
         // Iterate over all rows to collect unique values from the specified column
         rows.each(function() {
@@ -2063,8 +2210,7 @@ const getSearchPaneOptionsFromArray = (tableSelector, columnIndex, initCallback=
     // THIS IS AFTER DATATABLE INIT, 
     // WE CANNOT ACCESS THE CELLS USING JQERY SINCE SOME COLUMNS MAY BE NOT VISIBLE = NOT IN THE DOM
     // WE CAN ACCESS CELLS USING datatable OBJECT IF WE NEED TO DO SO
-
-    return Array.from(values).map(value => ({
+    const options = Array.from(values).map(value => ({
         label: `${value}`,
         value: function(row) {
             const cell = $(row[columnIndex]);
@@ -2083,12 +2229,13 @@ const getSearchPaneOptionsFromArray = (tableSelector, columnIndex, initCallback=
             // if callback is provided, we send back some info, maybe is needed for extra custom processing
             if (callback) callback(row, value);
             
-            // Check if cellData is an array or a single value
-            if (Array.isArray(cellData)) return cellData.includes(value);
-            else return cellData === value;
+            const match = Array.isArray(cellData) ? cellData.includes(value) : cellData === value;
+
+            return match;
         },
         viewCount: 0
     }));
+    return options;
 }
 
 const allPagesTitles = (data, key) => {
@@ -2248,7 +2395,7 @@ const textContainsHtmlTags = (text) => {
     return htmlTagPattern.test(text);
 };
 
-// selected text context menu
+// selected text context menu for selected text in document content
 const setSelectedTextContextMenu = (
     hotZoneSelector, // the area inside the context menu is active; cannot be document or window
     contextMenuContent, // the content object to be rendered inside the context menu
@@ -2499,6 +2646,169 @@ const getPermalinksFromURLArray = (urlArray) => {
     return permalinks;
 }
 
+const getTextNodeInRect = (rect) => {
+    let treeWalker = document.createTreeWalker(
+        document.body,
+        NodeFilter.SHOW_TEXT, // Only process text nodes
+        null,
+        false
+    );
+
+    let matches = [];
+    let exactMatchNodes = []; // Store exact matching nodes
+
+    while (treeWalker.nextNode()) {
+        let node = treeWalker.currentNode;
+        let $parent = $(node.parentElement);
+        if (!$parent.length) continue; // Skip orphaned nodes
+
+        let range = document.createRange();
+        range.selectNode(node);
+        let nodeRect = range.getBoundingClientRect();
+
+        // Check if text node overlaps with the selection rectangle
+        let overlapX = Math.max(0, Math.min(rect.right, nodeRect.right) - Math.max(rect.left, nodeRect.left));
+        let overlapY = Math.max(0, Math.min(rect.bottom, nodeRect.bottom) - Math.max(rect.top, nodeRect.top));
+        let overlapArea = overlapX * overlapY;
+
+        if (overlapArea > 0) {
+            let text = node.textContent;
+            let offsets = [];
+
+            // Find exact character offsets inside the selection rectangle
+            for (let i = 0; i < text.length; i++) {
+                range.setStart(node, i);
+                range.setEnd(node, i + 1);
+                let charRect = range.getBoundingClientRect();
+
+                if (
+                    charRect.left >= rect.left &&
+                    charRect.right <= rect.right &&
+                    charRect.top >= rect.top &&
+                    charRect.bottom <= rect.bottom
+                ) {
+                    offsets.push(i);
+                }
+            }
+
+            if (offsets.length > 0) {
+                let matchData = {
+                    node,
+                    text,
+                    offsets, // Exact character offsets in the text node
+                    parent: node.parentElement,
+                    parentSelector: getUniqueSelector(node.parentElement),
+                };
+
+                matches.push(matchData);
+
+                // If this node fully contains the selection, prioritize it
+                if (offsets.length === text.length) {
+                    exactMatchNodes.push(matchData);
+                }
+            }
+        }
+    }
+
+    // If we have exact matches, return them instead of partial matches
+    return exactMatchNodes.length ? exactMatchNodes : matches.length ? matches : null;
+};
+
+const getUniqueSelector = (element) => {
+    if (!element) return null;
+    let $el = $(element);
+    if ($el.attr("id")) return `#${$el.attr("id")}`;
+    if ($el.attr("class")) return `${element.tagName.toLowerCase()}.${$el.attr("class").trim().replace(/\s+/g, '.')}`;
+    return element.tagName.toLowerCase();
+};
+
+const highlightSavedSelection = (selectionData, uniqueID, referenceText) => {
+    
+    if (!selectionData || !selectionData.length || !referenceText) return;
+
+    $.each(selectionData, function (index, { parentSelector, offsets }) {
+        let $parent = $(parentSelector);
+        if (parentSelector !== selectionData[index].parentSelector) return;
+        if (!$parent.length) return;
+
+        let textNodes = $parent.contents().filter(function () {
+            return this.nodeType === Node.TEXT_NODE && this.textContent.trim().length > 0;
+        });
+
+        let remainingText = referenceText; // Track remaining text to match
+        let offsetIndex = 0; // Track which offset belongs to which text node
+        let highlightCompleted = false; // Stop when the full selection is found
+
+        textNodes.each(function () {
+            if (highlightCompleted) return; // Stop if already highlighted
+
+            let node = this;
+            let nodeText = stripHtml(node.textContent);
+            if (!nodeText.includes(referenceText)) return; // skip if the node does not contain the text to be highlighted
+
+            let nodeLength = nodeText.length;
+
+            // skip if the parent content changed and does not match anymore with the content at the time when the comment was created
+            if (nodeText !== selectionData[index].text) return; 
+
+            // Skip if this text node is already inside a highlight span
+            if ($(node).parent().hasClass("customSelectionMarkup")) return;
+
+            let nodeOffsets = [];
+
+            // Collect offsets belonging to this node
+            while (offsetIndex < offsets.length && offsets[offsetIndex] < nodeLength) {
+                nodeOffsets.push(offsets[offsetIndex]);
+                offsetIndex++;
+            }
+
+            if (!nodeOffsets.length) return; // Skip if no valid offsets exist
+
+            let startIndex = nodeText.indexOf(remainingText);
+            if (startIndex !== -1) {
+                let range = document.createRange();
+                range.setStart(node, startIndex);
+                range.setEnd(node, startIndex + remainingText.length);
+
+                let highlightSpan = $("<span>")
+                    .addClass('customSelectionMarkup rounded border border-secondary border-opacity-25 shadow-none bg-secondary px-1 bg-opacity-25')
+                    .attr("id", `customSelection_${uniqueID}`) // Unique ID for each highlight
+                    .get(0);
+
+                range.surroundContents(highlightSpan);
+                highlightCompleted = true; // Stop further processing
+            }
+        });
+    });
+}
+
+const markCustomComments = (pageInfo) => {
+    if (!pageInfo.savedInfo || pageInfo.savedInfo === 'undefined') return;
+    if (!pageInfo.savedInfo.customComments || pageInfo.savedInfo.customComments === 'undefined') return;
+    pageComments = pageInfo.savedInfo.customComments || [];
+    if (pageComments.length === 0) return;
+    pageComments.forEach( comment => {
+        highlightSavedSelection(comment.matches, comment.id, comment.anchor);
+    });
+}
+
+const hasSelection = ($element) => {
+    const selection = window.getSelection();
+    return selection.rangeCount > 0 &&
+           $element[0].contains(selection.anchorNode) &&
+           selection.toString().trim().length > 0; // Ensure there's actual text selected
+}
+
+const isSelectionInsideCustomSelectionMarkup = () => {
+    const selection = window.getSelection();
+    
+    if (selection.rangeCount > 0) {
+        const selectedElement = selection.anchorNode?.parentElement; // Get the parent of the selected text
+        return selectedElement && $(selectedElement).closest('.customSelectionMarkup').length > 0;
+    }
+    return false;
+}
+
 // some utilities for pages
 const orderSectionsInContainer = (order, containerSelector) => {
     // order should be an array containing the desired order
@@ -2621,7 +2931,8 @@ const getPageTitleFromUrl = (url) => {
 // anonymous user token
 const setAnonymousUserToken = () => {
     let userTokenCookie = Cookies.get(settings.user.userTokenCookie);
-    if (typeof userTokenCookie === 'undefined') Cookies.set(settings.user.userTokenCookie,`userToken_${uuid()}`, { expires:365 , secure: true, sameSite: 'strict' });
+    const isSecure = location.protocol === 'https:'; // just to be sure that the cookie is set also in dev env which can be http
+    if (typeof userTokenCookie === 'undefined') Cookies.set(settings.user.userTokenCookie,`userToken_${uuid()}`, { expires:365 , secure: isSecure, sameSite: 'strict' });
     const userToken = Cookies.get(settings.user.userTokenCookie);
     return userToken;
 }
@@ -2795,4 +3106,131 @@ const waitForI18Next = () => {
       }
     });
 };
-  
+
+
+/* FUNCTION WRAPPERS
+ * HEADS UP!!!
+ * because of the many async operations, events and callbacks used by datatables or CKEditor, sometimes
+ * pageInfo global may fall behind when passing from one function to another (a subsequent function may use an older version of pageInfo), 
+ * so is safer to refresh it whenever is needed, before or after a function execution or even before and after. we use the wrappers for this. 
+ * - don't forget to wrap the function after its definition
+ * - each function that needs updated pageInfo should be wrapped with BEFORE
+ * - each function that modifies pageInfo shoud be wrapped with AFTER
+*/
+
+// refresh pageInfo global, after the function execution
+const REFRESH_PAGE_INFO_AFTER = (func) => {
+    return function(...args) {
+        const result = func(...args);
+
+        const oldPageInfo = pageInfo;
+
+        const permalink = !pageInfo.siteInfo || pageInfo.siteInfo === 'undefined' 
+            ? pageInfo.savedInfo.permalink 
+            : pageInfo.siteInfo.permalink;
+
+        const title = !pageInfo.siteInfo || pageInfo.siteInfo === 'undefined' 
+            ? pageInfo.savedInfo.title 
+            : pageInfo.siteInfo.title;
+
+        pageInfo = {
+            siteInfo: getObjectFromArray ({permalink: permalink, title: title}, pageList),
+            savedInfo: getPageSavedInfo (permalink, title),
+            tag: oldPageInfo.tag, // used when pageFullInfo is called from tag-info page
+            cat: oldPageInfo.cat, // used when pageFullInfo is called from cat-info page
+            page: oldPageInfo.page // used when pageFullInfo is called from site-pages page
+        };
+
+        return result;
+    };
+}
+
+// refresh the pageInfo global, before the function execution
+const REFRESH_PAGE_INFO_BEFORE = (func) => {
+    return function(...args) {
+        return new Promise((resolve) => {
+
+            const oldPageInfo = pageInfo;
+
+            const permalink = !pageInfo.siteInfo || pageInfo.siteInfo === 'undefined' 
+                ? pageInfo.savedInfo.permalink 
+                : pageInfo.siteInfo.permalink;
+
+            const title = !pageInfo.siteInfo || pageInfo.siteInfo === 'undefined' 
+                ? pageInfo.savedInfo.title 
+                : pageInfo.siteInfo.title;
+
+            pageInfo = {
+                siteInfo: getObjectFromArray ({permalink: permalink, title: title}, pageList),
+                savedInfo: getPageSavedInfo (permalink, title),
+                tag: oldPageInfo.tag, // used when pageFullInfo is called from tag-info page
+                cat: oldPageInfo.cat, // used when pageFullInfo is called from cat-info page
+                page: oldPageInfo.page // used when pageFullInfo is called from site-pages page
+
+            };
+
+            resolve(pageInfo);
+        })
+        .then((updatedPageInfo) => {
+            const pageInfoArgIndex = func.toString().match(/\((.*?)\)/)[1].split(',').findIndex(arg => arg.includes('pageInfo'));
+            if (pageInfoArgIndex !== -1) {
+                args[pageInfoArgIndex] = updatedPageInfo; // Replace instead of inserting
+            }
+            return func.apply(this, args);
+        });
+    };
+}
+
+// refresh the pageInfo global, before and after the function execution
+const REFRESH_PAGE_INFO_BEFORE_AND_AFTER = (func) => {
+    return function(...args) {
+        return new Promise((resolve) => {
+
+            const oldPageInfo = pageInfo;
+
+            const permalink = !pageInfo.siteInfo || pageInfo.siteInfo === 'undefined' 
+            ? pageInfo.savedInfo.permalink 
+            : pageInfo.siteInfo.permalink;
+
+            const title = !pageInfo.siteInfo || pageInfo.siteInfo === 'undefined' 
+                ? pageInfo.savedInfo.title 
+                : pageInfo.siteInfo.title;
+
+            pageInfo = {
+                siteInfo: getObjectFromArray ({permalink: permalink, title: title}, pageList),
+                savedInfo: getPageSavedInfo (permalink, title),
+                tag: oldPageInfo.tag, // used when pageFullInfo is called from tag-info page
+                cat: oldPageInfo.cat, // used when pageFullInfo is called from cat-info page
+                page: oldPageInfo.page // used when pageFullInfo is called from site-pages page
+            };
+
+            resolve(pageInfo);
+        })
+        .then((updatedPageInfo) => {
+            const pageInfoArgIndex = func.toString().match(/\((.*?)\)/)[1].split(',').findIndex(arg => arg.includes('pageInfo'));
+            if (pageInfoArgIndex !== -1) {
+                args[pageInfoArgIndex] = updatedPageInfo; // Replace instead of inserting
+            }
+            return func.apply(this, args);
+        })
+        .then (() => {
+            const oldPageInfo = pageInfo;
+
+            const permalink = !pageInfo.siteInfo || pageInfo.siteInfo === 'undefined' 
+            ? pageInfo.savedInfo.permalink 
+            : pageInfo.siteInfo.permalink;
+
+            const title = !pageInfo.siteInfo || pageInfo.siteInfo === 'undefined' 
+                ? pageInfo.savedInfo.title 
+                : pageInfo.siteInfo.title;
+
+            pageInfo = {
+                siteInfo: getObjectFromArray ({permalink: permalink, title: title}, pageList),
+                savedInfo: getPageSavedInfo (permalink, title),
+                tag: oldPageInfo.tag, // used when pageFullInfo is called from tag-info page
+                cat: oldPageInfo.cat, // used when pageFullInfo is called from cat-info page
+                page: oldPageInfo.page // used when pageFullInfo is called from site-pages page
+            };
+        });
+    };
+}
