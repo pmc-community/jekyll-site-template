@@ -1,7 +1,12 @@
 <!-- general -->
 <div siteFunction="offcanvasPageFullInfoPageGeneralCard" class="border border-secondary border-opacity-25 card shadow bg-transparent mb-5">
     <div class="card-header d-flex justify-content-between border-bottom border-secondary border-opacity-25">
-        <span siteFunction="offcanvasPageFullInfoPageOpenGeneral" class="fs-6 fw-medium alwaysCursorPointer">General & Notes</span>
+        <span 
+            siteFunction="offcanvasPageFullInfoPageOpenGeneral" 
+            class="fs-6 fw-medium alwaysCursorPointer"
+            data-i18n="page_full_info_gen_section_title">
+            General & Notes
+        </span>
         <button siteFunction="btnClose" whatToClose='div[siteFunction="offcanvasPageFullInfoPageGeneral"]' type="button" class="btn-close" aria-label="Close"></button>
     </div>
     <div siteFunction="offcanvasPageFullInfoPageGeneral" class="card-body">
@@ -12,7 +17,12 @@
             <div 
                 siteFunction="offcanvasPageFullInfoPageGeneralTitle"
                 class="mb-2">
-                <span class="text-decoration-underline fw-medium">Title:</span> 
+                <span 
+                    class="text-decoration-underline fw-medium"
+                    data-i18n="page_full_info_gen_page_title">
+                    Title
+                </span>
+                <span>: </span>
                 <a 
                     siteFunction="offcanvasPageFullInfoPageGeneralDocLink" href="#">
                     DocLink
@@ -22,7 +32,12 @@
             <div 
                 siteFunction="offcanvasPageFullInfoPageGeneralLastUpdate"
                 class="mb-2">
-                <span class="text-decoration-underline fw-medium">Last update:</span> 
+                <span 
+                    class="text-decoration-underline fw-medium"
+                    data-i18n="page_full_info_gen_page_last_update">
+                    Last update
+                </span>
+                <span>: </span> 
                 <span 
                     siteFunction="offcanvasPageFullInfoPageGeneralLastUpdateDate" 
                     class="fw-medium">
@@ -36,8 +51,14 @@
         <div 
             siteFunction="offcanvasPageFullInfoPageGeneralExcerpt"
             class="mb-2"
-            title="Page excerpt or generated keywords">
-            <span class="text-decoration-underline fw-medium">Excerpt:</span> 
+            title="Page excerpt or generated keywords"
+            data-i18n="[title]page_full_info_gen_page_excerpt_div_title">
+            <span 
+                class="text-decoration-underline fw-medium"
+                data-i18n="page_full_info_gen_page_excerpt">
+                Excerpt
+            </span>
+            <span>: </span>
             <span 
                 siteFunction="offcanvasPageFullInfoPageGeneralExcerptText">
                 Excerpt
@@ -48,10 +69,14 @@
         <div 
             siteFunction="offcanvasPageFullInfoPageGeneralAutoSummary"
             class="mb-2"
-            title="Generated summary (if feature is available)">
-            <span class="text-decoration-underline fw-medium">
-                Summary:
-            </span> 
+            title="Generated summary (if feature is available)"
+            data-i18n="[title]page_full_info_gen_page_summary_div_title">
+            <span 
+                class="text-decoration-underline fw-medium"
+                data-i18n="page_full_info_gen_page_summary">
+                Summary
+            </span>
+            <span>: </span> 
             <span 
                 siteFunction="offcanvasPageFullInfoPageGeneralAutoSummaryText">
                 Auto summary
@@ -61,12 +86,14 @@
         <!-- related pages -->
         <div 
             siteFunction="offcanvasPageFullInfoPageGeneralRelatedPages"
-            class="d-flex my-3 align-items-center">
+            class="d-flex align-items-center">
             <span 
                 class="text-decoration-underline fw-medium"
-                title="Related pages based on tags, categories, keywords and content">
-                Related:
-            </span> 
+                title="Related pages based on tags, categories, keywords and content"
+                data-i18n="[title]page_full_info_gen_page_related_title;page_full_info_gen_page_related">
+                Related
+            </span>
+            <span>: </span> 
             <div 
                 siteFunction="offcanvasPageFullInfoPageGeneralRelatedPagesText"
                 class="d-md-flex">
@@ -77,12 +104,14 @@
         <!-- similar by content pages -->
         <div 
             siteFunction="offcanvasPageFullInfoPageGeneralSimilarPages"
-            class="d-flex my-3 align-items-center">
+            class="d-flex align-items-center">
             <span 
                 class="text-decoration-underline fw-medium"
-                title="Similar pages based on content">
-                Similar:
-            </span> 
+                title="Similar pages based on content"
+                data-i18n="[title]page_full_info_gen_page_similar_title;page_full_info_gen_page_similar">
+                Similar
+            </span>
+            <span>: </span> 
             <div 
                 siteFunction="offcanvasPageFullInfoPageGeneralSimilarPagesText"
                 class="d-md-flex">
@@ -93,17 +122,26 @@
         <!-- custom notes -->
         <div 
             siteFunction="offcanvasPageFullInfoPageGeneralCustomNotes">
-            <span class="fw-medium">Custom Notes:</span>
+            <span 
+                class="fw-medium"
+                data-i18n="page_full_info_gen_page_notes">
+                Custom Notes
+            </span>
+            <span>: </span>
 
             <div 
                 siteFunction="offcanvasPageFullInfoPageGeneralCustomNotesLimitsAlert" 
-                class="alert alert-warning mt-2 p-2" role="alert">
+                class="ghBtnLink text-primary alert alert-warning mt-2 p-2" 
+                role="alert"
+                data-i18n="page_full_info_gen_page_notes_limits">
                 Notes are limited to 50 words or 250 characters.
             </div>
 
             <div 
                 siteFunction="offcanvasPageFullInfoPageGeneralCustomNotesSavePageAlert" 
-                class="alert alert-warning mt-2 p-2" role="alert">
+                class="ghBtnLink text-danger alert alert-warning mt-2 p-2" 
+                role="alert"
+                data-i18n="page_full_info_gen_page_notes_page_save_warning">
                 Save page in saved items to be able to add custom notes.
             </div>
             
@@ -115,9 +153,9 @@
                     class="table table-hover">
                     <thead>
                         <tr>
-                            <th siteFunction="tableDateField">Date</th>
-                            <th>Note</th>
-                            <th>ID</th>
+                            <th data-i18n="page_full_info_gen_notes_dt_col_date" siteFunction="tableDateField">Date</th>
+                            <th data-i18n="page_full_info_gen_notes_dt_col_note">Note</th>
+                            <th data-i18n="page_full_info_gen_notes_dt_col_id">ID</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -125,7 +163,11 @@
                 </table>
                 
                 <div class="form-group">
-                    <label class="fw-medium" for="offcanvasPageFullInfoPageGeneralCustomNotesEdit">Add/Update/Delete Custom Note</label>
+                    <label 
+                        class="fw-medium" for="offcanvasPageFullInfoPageGeneralCustomNotesEdit"
+                        data-i18n="page_full_info_gen_notes_handling_label">
+                        Add/Update/Delete Custom Note
+                    </label>
                     <textarea class="form-control mb-2" id="offcanvasPageFullInfoPageGeneralCustomNotesEdit" rows="3"></textarea>
                     <div class = "d-md-flex justify-content-between">
                         <div class="d-flex justify-content-start order-2 order-md-1">
@@ -133,21 +175,24 @@
                                 siteFunction="offcanvasPageFullInfoPageGeneralCustomNotesEditAdd" 
                                 id="offcanvasPageFullInfoPageGeneralCustomNotesEditAdd" 
                                 type="button" 
-                                class="px-3 m-1 btn btn-sm btn-success position-relative offcanvasPageFullInfoPageGeneralCustomNoteButton">
+                                class="px-3 m-1 btn btn-sm btn-success position-relative offcanvasPageFullInfoPageGeneralCustomNoteButton"
+                                data-i18n="page_full_info_gen_notes_handling_add_btn_text">
                                 Add      
                             </button>
                             <button 
                                 siteFunction="offcanvasPageFullInfoPageGeneralCustomNotesEditUpdate" 
                                 id="offcanvasPageFullInfoPageGeneralCustomNotesEditUpdate" 
                                 type="button" 
-                                class="px-3 m-1 btn btn-sm btn-warning position-relative offcanvasPageFullInfoPageGeneralCustomNoteButton disabled">
+                                class="px-3 m-1 btn btn-sm btn-warning position-relative offcanvasPageFullInfoPageGeneralCustomNoteButton disabled"
+                                data-i18n="page_full_info_gen_notes_handling_update_btn_text">
                                 Update      
                             </button>
                             <button 
                                 siteFunction="offcanvasPageFullInfoPageGeneralCustomNotesEditDelete" 
                                 id="offcanvasPageFullInfoPageGeneralCustomNotesEditDelete" 
                                 type="button" 
-                                class="px-3 m-1 btn btn-sm btn-danger position-relative offcanvasPageFullInfoPageGeneralCustomNoteButton disabled">
+                                class="px-3 m-1 btn btn-sm btn-danger position-relative offcanvasPageFullInfoPageGeneralCustomNoteButton disabled"
+                                data-i18n="page_full_info_gen_notes_handling_delete_btn_text">
                                 Delete      
                             </button>
                         </div>
@@ -166,14 +211,16 @@
         <button 
             siteFunction="offcanvasPageFullInfoPageSaveToSavedItems" 
             class="btn btn-sm btn-success"
-            title="Save page for later read">
+            title="Save document data to saved items"
+            data-i18n="[title]page_full_info_gen_save_to_saved_items_btn_title">
             <i class="bi bi-bookmark-plus"></i>
         </button>
 
         <button 
             siteFunction="offcanvasPageFullInfoPageRemoveFromSavedItems" 
             class="btn btn-sm btn-warning"
-            title="Remove page from saved documents">
+            title="Remove document data from saved items"
+            data-i18n="[title]page_full_info_gen_remove_from_saved_items_btn_title">
             <i class="bi bi-bookmark-x"></i>
         </button>
     </div>

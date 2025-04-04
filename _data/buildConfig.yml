@@ -63,9 +63,8 @@ algoliaSearch:
   insights: true
   textHighlightPrefixTag: "<mark>" # prefix and postfix tags must be exactly as defined in Algolia DocSearch Index/Configuration/Hightlighting
   textHighlightPostfixTag: "</mark>"
-  netlifySearchBranch: "main"
-  netlifySiteId: "337777c9-8f1b-4962-a904-9c5542b6e0b2"
   customIndexContentMaxSize: 500
+  searchBtnLoadTimeout: 500
 JTDSearch:
   searchBoxWidth: "fit-content"
 changeLog:

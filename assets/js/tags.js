@@ -1,7 +1,8 @@
 // Let's do some work
 
-const setTagsSupport = () => {
-
+const setTagsSupport = async () => {
+    await waitForI18Next();
+    
     $(document).ready(()=> {
     
         setPageSavedButtonsStatus();  
@@ -152,7 +153,7 @@ const setPageTagButtonsContextMenu = () => {
         header: '',
         menu:[
             {
-                html: getMenuItemHtml(`Remove the tag from page`,'Remove tag', 'bi-x-circle'),
+                html: getMenuItemHtml(`${i18next.t('tags_tag_table_btn_ctx_menu_remove_tag_title')}`,`${i18next.t('tags_tag_table_btn_ctx_menu_remove_tag_text')}`, 'bi-x-circle'),
                 handler: handlePageTagDelete
             }
         ],
@@ -160,15 +161,16 @@ const setPageTagButtonsContextMenu = () => {
             `
                 <input type="text" autocomplete="off" class="form-control my-2 d-none d-md-block" id="pageTagEditCustomTagInput">
 
-                <div class="mb-2  d-none d-md-block">
+                <div class="mb-2 d-none d-md-block">
                     <button 
                         siteFunction="pageTagEditCustomTag"
                         tagForTagTableDetailsReference="" 
                         tagReference=""
                         id="pageTagEditCustomTag" 
                         type="button" 
-                        class="focus-ring focus-ring-warning btn btn-sm btn-warning mt-2 position-relative pageTagContextMenuFooterBtn">
-                        Update      
+                        class="focus-ring focus-ring-warning btn btn-sm btn-warning mt-2 position-relative pageCatContextMenuFooterBtn"
+                        data-i18n="tags_tag_cloud_btn_ctx_menu_update_tag_text">
+                        ${i18next.t('tags_tag_cloud_btn_ctx_menu_update_tag_text')}      
                     </button>
 
                     <button 
@@ -177,8 +179,9 @@ const setPageTagButtonsContextMenu = () => {
                         tagReference=""
                         id="pageTagEditCustomTag" 
                         type="button" 
-                        class="focus-ring focus-ring-warning btn btn-sm btn-success mt-2 position-relative pageTagContextMenuFooterBtn">
-                        Add      
+                        class="focus-ring focus-ring-warning btn btn-sm btn-success mt-2 position-relative pageCatContextMenuFooterBtn"
+                        data-i18n="tags_tag_table_btn_ctx_menu_add_tag_text">
+                        ${i18next.t('tags_tag_table_btn_ctx_menu_add_tag_text')}      
                     </button>
                 </div>
             ` :
@@ -333,7 +336,7 @@ const setTagCloudButtonsContextMenu = () => {
         header: '',
         menu:[
             {
-                html: getMenuItemHtml(`Remove the tag from all pages`,'Remove tag', 'bi-trash'),
+                html: getMenuItemHtml(`${i18next.t('tags_tag_cloud_btn_ctx_menu_remove_tag_title')}`,`${i18next.t('tags_tag_cloud_btn_ctx_menu_remove_tag_text')}`, 'bi-trash'),
                 handler: handleTagRemoval
             }
         ],
@@ -346,8 +349,9 @@ const setTagCloudButtonsContextMenu = () => {
                     tagReference=""
                     id="tagCloudEditCustomTag" 
                     type="button" 
-                    class="focus-ring focus-ring-warning btn btn-sm btn-warning my-2 position-relative d-none d-md-block">
-                    Update      
+                    class="focus-ring focus-ring-warning btn btn-sm btn-warning my-2 position-relative d-none d-md-block"
+                    data-i18n="tags_tag_cloud_btn_ctx_menu_update_tag_text">
+                    ${i18next.t('tags_tag_cloud_btn_ctx_menu_update_tag_text')}      
                 </button>
             ` :
             ``
@@ -441,7 +445,9 @@ const setPageOtherCustomTags = (pageInformation, crtTag = null) => {
                     id="pageTag_${tag}" 
                     type="button" 
                     class="align-self-center text-nowrap focus-ring focus-ring-warning px-3 mr-2 my-1 btn btn-sm btn-success position-relative"
-                    title = "Details for tag ${tag}">${tag}
+                    title = "${i18next.t('tags_tag_cloud_tag_btn_title')} ${tag}"
+                    data-i18n="[title]tags_tag_cloud_tag_btn_title">
+                    ${tag}
                 </button>
             `
         )
@@ -529,7 +535,7 @@ const setCustomTagCloud = () => {
                     tagType="customTag"
                     id="${tag}" type="button" 
                     class="focus-ring focus-ring-warning px-3 mr-5 my-2 btn btn-sm btn-success position-relative"
-                    title = "Details for tag ${tag}">
+                    title = "${i18next.t('tags_tag_cloud_tag_btn_title')} ${tag}">
                     ${tag}
                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg-warning">
                         ${numPages}
@@ -581,21 +587,21 @@ const showTagDetails = (tag) => {
         {
             data: 'pageTitle',
             className: 'alwaysCursorPointer',
-            title:'Title',
+            title: i18next.t('tags_dt_tag_col_title_text'),
             createdCell: function(td, cellData, rowData, row, col) {
                 $(td)
                     .attr('siteFunction', 'tagInfoTagTablePageTitle')
-                    .attr('title', `Click here for more info about page ${cellData.replace(/<\/?[^>]+(>|$)/g, "")}`)
+                    .attr('title', `${i18next.t('tags_dt_tag_col_title_title')} ${cellData.replace(/<\/?[^>]+(>|$)/g, "")}`)
                     .attr('tagReference', `${tag}`)
                     .attr('colFunction', 'pageTitle')
-                    .addClass('fw-normal align-self-center align-middle border-bottom border-secondary border-opacity-25');
+                    .addClass(`fw-normal align-self-center align-middle border-bottom border-secondary border-opacity-25`);
             }
         }, 
 
         // last update
         {
             data: 'pageLastUpdate',
-            title:'Last Update',
+            title: i18next.t('tags_dt_tag_col_last_update_text'),
             type: 'date-dd-MMM-yyyy', 
             className: 'dt-left', 
             exceptWhenRowSelect: true,
@@ -604,14 +610,15 @@ const showTagDetails = (tag) => {
                     .attr('siteFunction', 'tableDateField')
                     .attr('tagReference', `${tag}`)
                     .attr('colFunction', 'pageLastUpdate')
-                    .addClass('fw-normal align-self-center align-middle border-bottom border-secondary border-opacity-25');
+                    .attr('data-original-date', $(cellData).text().trim())
+                    .addClass(`fw-normal align-self-center align-middle border-bottom border-secondary border-opacity-25 ${settings.multilang.dateFieldClass}`);
             }
         }, 
 
         // action buttons
         { 
             data: 'pageActions',
-            title:'Actions',
+            title: i18next.t('tags_dt_tag_col_actions_text'),
             type: 'string',
             searchable: false, 
             orderable: false, 
@@ -630,7 +637,7 @@ const showTagDetails = (tag) => {
         {
             data: 'pageExcerpt',
             type: 'string',
-            title:'Excerpt',
+            title: i18next.t('tags_dt_tag_col_excerpt_text'),
             exceptWhenRowSelect: true,
             width: '30%',
             visible: false,
@@ -645,7 +652,7 @@ const showTagDetails = (tag) => {
         // other tags
         {
             data: 'pageOtherTags',
-            title:'Other Tags',
+            title: i18next.t('tags_dt_tag_col_other_tags_text'),
             type: 'string',
             exceptWhenRowSelect: true,
             width: '400px',
@@ -715,13 +722,19 @@ const createSimpleTable = (tag, tableData) => {
         return (
             `
                 <div class="card-header d-flex justify-content-between border-bottom border-secondary border-opacity-25">
-                    <span class="fs-6 fw-medium">Tag:
+                    <span class="fs-6 fw-medium">
+                        <span data-i18n="tags_tag_details_section_title">
+                            ${i18next.t('tags_tag_details_section_title')}
+                        </span>
+                        <span>:</span>
+                        
                         <button 
                             siteFunction="tagForActiveTagDetailsDatatable" id="${tag}" 
                             type="button" 
                             class="px-3 ml-1 btn btn-sm btn-success position-relative">
                             ${tag}       
                         </button>
+
                     </span>
                     <button 
                         siteFunction="btnClose" 
@@ -741,11 +754,11 @@ const createSimpleTable = (tag, tableData) => {
                     <table style="display:none" siteFunction="tagDetailsPageTable" class="table table-hover" tagReference="${tag}">
                         <thead>
                             <tr>
-                                <th>Title</th>
-                                <th siteFunction="tableDateField">Last Update</th>
-                                <th>Actions</th>
-                                <th>Excerpt</th>
-                                <th>Other Tags</th>
+                                <th data-i18n="tags_dt_tag_col_title_text">${i18next.t('tags_dt_tag_col_title_text')}</th>
+                                <th data-i18n="tags_dt_tag_col_last_update_text" siteFunction="tableDateField">${i18next.t('tags_dt_tag_col_last_update_text')}</th>
+                                <th data-i18n="tags_dt_tag_col_actions_text">${i18next.t('tags_dt_tag_col_actions_text')}</th>
+                                <th data-i18n="tags_dt_tag_col_excerpt_text">${i18next.t('tags_dt_tag_col_excerpt_text')}</th>
+                                <th data-i18n="tags_dt_tag_col_other_tags_text">${i18next.t('tags_dt_tag_col_other_tags_text')}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -797,9 +810,10 @@ const buildTagPagesListForCustomTag = (tag) => {
                         siteFunction="tagPageItemLinkToDoc" 
                         class="btn btn-sm btn-info" 
                         href="${permalink}" 
-                        title="Read page ${title}" 
+                        title="${i18next.t('tags_tag_tag_details_actions_read_doc')}" 
                         tagForTagTableDetailsReference="${tag}" 
-                        target="_blank"> 
+                        target="_blank"
+                        data-i18n="[title]tags_tag_tag_details_actions_read_doc"> 
                         <i class="bi bi-book" style="font-size:1.2rem"></i> 
                     </a> 
                     
@@ -808,8 +822,9 @@ const buildTagPagesListForCustomTag = (tag) => {
                         pageRefPermalink="${permalink}" 
                         pageRefTitle="${title}" 
                         class="btn btn-sm btn-success disabled" 
-                        title="Save page ${title} for later read" 
-                        tagForTagTableDetailsReference="${tag}"> 
+                        title="${i18next.t('tags_tag_tag_details_actions_save_doc')}" 
+                        tagForTagTableDetailsReference="${tag}"
+                        data-i18n="[title]tags_tag_tag_details_actions_save_doc"> 
                         <i class="bi bi-bookmark-plus" style="font-size:1.2rem"></i> 
                     </button>
                     
@@ -818,8 +833,9 @@ const buildTagPagesListForCustomTag = (tag) => {
                         pageRefPermalink="${permalink}" 
                         pageRefTitle="${title}" 
                         class="btn btn-sm btn-warning" 
-                        title="Remove page ${title} from saved documents" 
-                        tagForTagTableDetailsReference="${tag}"> 
+                        title="${i18next.t('tags_tag_tag_details_actions_remove_from_saved_doc')}" 
+                        tagForTagTableDetailsReference="${tag}"
+                        data-i18n="[title]tags_tag_tag_details_actions_remove_from_saved_doc"> 
                         <i class="bi bi-bookmark-x" style="font-size:1.2rem"></i> 
                     </button>
                 </div>
@@ -853,7 +869,8 @@ const buildTagPagesListForCustomTag = (tag) => {
                         id="pageTag_${tag}" 
                         type="button" 
                         class="focus-ring focus-ring-warning px-3 mr-2 my-1 btn btn-sm ${tagBtnType} position-relative" 
-                        title="Details for tag ${tag}"> 
+                        title="${i18next.t('tags_tag_cloud_tag_btn_title')} ${tag}"
+                        data-i18n="[title]tags_tag_cloud_tag_btn_title"> 
                         ${tag} 
                     </button>
                 `
@@ -944,6 +961,7 @@ const postProcessTagDetailsTable = (table, tag) => {
     if(table) {
         addAdditionalButtons(table, tag);
         addCustomTagsToPages(table, tag);
+        doTranslateDateFields(); // just to be sure that date filed is translated
     }   
 }
 
@@ -1053,14 +1071,15 @@ const setTagInfoPageSearchList = (tag) => {
         return (
             `
                 <div id="${tag.replace(/ /g, "_")}_add_page_to_tag" class="p-3">
-                    <div class="mb-2 fw-medium" siteFunction="labelForPageSearchList">Add document to tag</div>
+                    <div class="mb-2 fw-medium" siteFunction="labelForPageSearchList">${i18next.t('tags_tag_details_add_doc_to_tag')}</div>
                     <div>
                         <input 
                             type="text" 
                             autocomplete="off" 
                             class="form-control" 
                             id="${tag.replace(/ /g, "_")}_pageSearchInput"  
-                            placeholder="type, select, hit enter ...">
+                            placeholder="${i18next.t('tags_tag_table_page_search_input_placeholder')}"
+                            data-i18n="[placeholder]tags_tag_table_page_search_input_placeholder">
                         <ul 
                             siteFunction="searchPageList" 
                             id="${tag.replace(/ /g, "_")}_pageSearchResults">

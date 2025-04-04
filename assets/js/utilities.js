@@ -172,6 +172,121 @@ if (pagePermalink !== '/') {
 
 /* SOME GENERAL PURPOSE UTILITIES */
 
+// items = an array of objects having the same structure
+// the function groups items by groupByProp and returns an object having
+// the keys as distinct values of groupByProp and the values as 
+// array of objects ordered by orderByInResultProp ASC/DESC (orderInResult)
+// the resulted arrays contains unique objects based on the pkInResultProp primary key
+// HEADS UP!!!
+// THE BEST USE CASE IS WHEN THE ORIGINAL ARRAY (items) CONTAINES LINKED LISTS OF OBJECTS
+// childObject.groupByProp = parentObject.linkProp 
+
+// buildHierarchy returns each list
+const buildHierarchy = (items, groupByProp, linkProp, orderByInResultProp, orderInResult, pkInResultProp) => {
+    // Group items by groupByProp
+    const groupedByRef = _.groupBy(items, groupByProp);
+
+    // Find root node for a given item, avoiding infinite loops
+    const findRoot = (item, visited = new Set()) => {
+        let current = item;
+        while (current && current[linkProp] !== current[groupByProp] && !visited.has(current[linkProp])) {
+            visited.add(current[linkProp]);
+            current = items.find(i => i[linkProp] === current[groupByProp]);
+        }
+        return current;
+    };
+
+    // Build hierarchy recursively with date sorting
+    const buildTree = (parentId, visitedIds = new Set()) => {
+        // Avoid infinite loops by ensuring we don't process the same item again
+        if (visitedIds.has(parentId)) return [];
+        visitedIds.add(parentId);
+
+        return _(groupedByRef[parentId] || [])
+            .orderBy([orderByInResultProp], [orderInResult])
+            .map(item => ({
+                ...item,
+                root: findRoot(item, visitedIds),
+                children: buildTree(item[linkProp], visitedIds) // Pass visitedIds to avoid infinite loops
+            }))
+            .value();
+    };
+
+    // Construct result object, ensuring root nodes without children are included
+    const hierarchy = {};
+    items.forEach(item => {
+        if (!hierarchy[item[linkProp]]) {
+            // Ensure uniqueness by using uniqBy to remove duplicates based on pkInResultProp
+            hierarchy[item[linkProp]] = _.uniqBy([item, ...buildTree(item[linkProp])], pkInResultProp);
+        }
+    });
+
+    return { hierarchy };
+};
+
+// groupByRootNodes consolidates the lists under each root node
+// rodt node has pkProp = linkedProp; any other node has linkedProp = parent.pkProp 
+const groupByRootNodes = (data, pkProp, linkedProp, orderProp, sortOrder) => {
+    // Map elements by id for quick lookup
+    const elementsById = _.keyBy(data, pkProp, orderProp);
+    
+    // Function to gather all linked elements
+    function collectChain(node) {
+        const chain = [];
+        while (node) {
+            chain.push(node);
+            node = elementsById[node[linkedProp]] !== node ? elementsById[node[linkedProp]] : null;
+        }
+        return chain;
+    }
+    
+    // Build the result object for all nodes
+    return _.reduce(data, (result, node) => {
+        const chain = collectChain(node);
+        
+        if (sortOrder.toLowerCase() === 'asc') {
+            // Convert 'date' to UNIX timestamp and sort the chain by the timestamp in ascending order
+            chain.sort((a, b) => {
+                const timestampA = Date.parse(a[orderProp]);  // Convert 'date' to UNIX timestamp
+                const timestampB = Date.parse(b[orderProp]);  // Convert 'date' to UNIX timestamp
+                return timestampA - timestampB;         // Sort in ascending order
+            });
+        } else {
+             // Convert 'date' to UNIX timestamp and sort the chain by the timestamp in descending order
+            chain.sort((a, b) => {
+                const timestampA = Date.parse(a.date);  // Convert 'date' to UNIX timestamp
+                const timestampB = Date.parse(b.date);  // Convert 'date' to UNIX timestamp
+                return timestampB - timestampA;         // Sort in descending order
+            });
+        }
+
+        
+        // Find the root node (node where id === refId)
+        const rootNode = chain.find(n => n[pkProp] === n[linkedProp]);
+        
+        // Use the root node's id as the key in the result
+        if (rootNode) {
+            result[rootNode[pkProp]] = chain;
+        }
+        
+        return result;
+    }, {});
+}
+
+// clean an object having the structure like the one created by buildHierarchy(..)
+// ensuring that each object from the original array is present in the result only one time
+// and removing key:value pairs form the data object where a found duplicate is the single element in the value array
+// px is the primary key that identifies an object in the original array 
+const cleanObject = (data, pk) => {
+    // Get all unique IDs from the entire object
+    let allIds = new Set(_.flatMap(data, arr => arr.map(item => item[pk])));
+
+    // Remove entries where the array has only one element, and its ID exists elsewhere
+    return _.omitBy(data, (arr, key) => arr.length === 1 && allIds.has(key) && 
+        _.some(data, (otherArr, otherKey) => otherKey !== key && _.some(otherArr, o => o[pk] === key))
+    );
+};
+
 const waitUntilCompleteOrTimeout = (task, timeoutMs) => {
     return Promise.race([
       task(),  // The task to wait for
@@ -298,6 +413,13 @@ const getObjectFromArray = (searchCriteria, objectArray) => {
     const found = _.find(objectArray, searchCriteria);
     return !found || found === 'undefined' ? 'none' : found;
 }
+
+const getObjectsFromArray = (searchCriteria, objectArray) => {
+    if (objectArray.length === 0) return [];
+    const found = _.filter(objectArray, searchCriteria);
+    return found.length === 0 ? [] : found;
+}
+
 
 const objectIndexInArray = (searchCriteria, objectArray) => {
     return _.findIndex(objectArray, (obj) => {
@@ -1632,7 +1754,7 @@ const setElementCreatedByClassObserver = (elementClass, callback = () => {}) => 
     const targetNode = document.body;
     const observer = new MutationObserver(mutationCallback); 
     siteObservers.set(observer, `body (class=${elementClass})`); 
-    observer.observe(targetNode, observerOptions);
+    setTimeout(() => {observer.observe(targetNode, observerOptions)},100); //small delay to be sure that body is fully set in DOM
 
     // Return the observer so it can be disconnected if needed
     return observer;
@@ -2770,6 +2892,8 @@ const highlightSavedSelection = (selectionData, uniqueID, referenceText) => {
                 range.setStart(node, startIndex);
                 range.setEnd(node, startIndex + remainingText.length);
 
+                if (!uniqueID) return; // skip if the comment id was not provided, meaning that, probably, the comment was removed
+
                 let highlightSpan = $("<span>")
                     .addClass('customSelectionMarkup rounded border border-secondary border-opacity-25 shadow-none bg-secondary px-1 bg-opacity-25')
                     .attr("id", `customSelection_${uniqueID}`) // Unique ID for each highlight
@@ -2786,9 +2910,23 @@ const markCustomComments = (pageInfo) => {
     if (!pageInfo.savedInfo || pageInfo.savedInfo === 'undefined') return;
     if (!pageInfo.savedInfo.customComments || pageInfo.savedInfo.customComments === 'undefined') return;
     pageComments = pageInfo.savedInfo.customComments || [];
+    unMarkCustomComments();
     if (pageComments.length === 0) return;
     pageComments.forEach( comment => {
         highlightSavedSelection(comment.matches, comment.id, comment.anchor);
+    });
+}
+
+const unMarkCustomComments = () => {
+    
+    $('.customSelectionMarkup').each(function() {
+        const nodeHtml = $(this).parent().prop('outerHTML');
+        const anchor = $(this).text();
+        const $nodeHtml = $(nodeHtml);
+        const $markerHtml = $nodeHtml.find('.customSelectionMarkup');
+        const markerHtml = $markerHtml.prop('outerHTML');
+        const newHtml = nodeHtml.replace(markerHtml, anchor);
+        $(this).parent().replaceWith($(newHtml));
     });
 }
 

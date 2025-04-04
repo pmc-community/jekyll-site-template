@@ -52,6 +52,11 @@ module Jekyll
           "algoliaSendInsights" => site.data["buildConfig"]["algoliaSearch"]["insights"],
           "algoliaTextHighlightPrefixTag" => site.data["buildConfig"]["algoliaSearch"]["textHighlightPrefixTag"],
           "algoliaTextHighlightPostfixTag" => site.data["buildConfig"]["algoliaSearch"]["textHighlightPostfixTag"],
+          # raise issue link is configured from GitHub settings but it can be any link
+          # HEADS UP!!!! the link must always in the form https:// something.com/path?title= because algolia.js
+          # adds the query to the url and may not work if not pointing to GitHub repo
+          # non GitHub links may be more useful for documentations that are mostly accessed by non-tech users
+          # who doesn't have GitHub accounts
           "algoliaRaiseIssueLink" => "https://github.com/#{site.data["buildConfig"]["github"]["user"]}/#{site.data["buildConfig"]["github"]["repo"]}/issues/new?title=",
           "algoliaDocSearchEnabled" => true,
           "algoliaCustomEnabled" => false

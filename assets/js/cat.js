@@ -1,5 +1,6 @@
 // Let's do some work
-const setCatSupport = () => {
+const setCatSupport = async () => {
+    await waitForI18Next();
 
     $(document).ready(() => {
         setCatPageSavedButtonsStatus();
@@ -53,7 +54,6 @@ const updateAllCatInfoOnPage = (catForActiveCatDetailsTable = null) => {
 const setCustomCatCloud = () => {
 
     const getCatCloudElement = (cat, numPages) => {
-         
         return  (
             `
                 <button 
@@ -61,7 +61,7 @@ const setCustomCatCloud = () => {
                     catType="customCat"
                     id="${cat}" type="button" 
                     class="focus-ring focus-ring-warning px-2 mr-2 my-2 btn btn-sm btn btn-sm text-success fw-medium border-0 shadow-none position-relative"
-                    title = "Details for category ${cat}">
+                    title = "${i18next.t('cats_cat_cloud_cat_btn_title')} ${cat}">
                     ${cat}
                     <span class="fw-normal border px-2 rounded bg-warning-subtle text-dark">
                         ${numPages}
@@ -91,7 +91,7 @@ const setCatInfoPageButtonsFunctions = () => {
         .on('click', 'button[siteFunction="catButton"]', function() {
             const selectedCat = $(this).attr('id');
             showCatDetails(selectedCat);
-            setCatPageSavedButtonsStatus(); 
+            setCatPageSavedButtonsStatus();
         });
 
     // click on the cat button in cat details table and show the details table for the clicked cat
@@ -193,14 +193,15 @@ const setCatInfoPageSearchList = (cat) => {
         return (
             `
                 <div id="${cat.replace(/ /g, "_")}_add_page_to_cat" class="p-3">
-                    <div class="mb-2 fw-medium" siteFunction="labelForPageSearchList">Add document to category</div>
+                    <div class="mb-2 fw-medium" siteFunction="labelForPageSearchList">${i18next.t('cats_cat_details_add_doc_to_cat')}</div>
                     <div>
                         <input 
                             type="text" 
                             autocomplete="off" 
                             class="form-control" 
-                            id="${cat.replace(/ /g, "_")}_pageSearchInput"  
-                            placeholder="type, select, hit enter ...">
+                            id="${cat.replace(/ /g, "_")}_pageSearchInput"
+                            data-i18n="[placeholder]cat_search_cat_search_input_placeholder"  
+                            placeholder="${i18next.t('cats_cat_table_page_search_input_placeholder')}">
                         <ul 
                             siteFunction="searchPageList" 
                             id="${cat.replace(/ /g, "_")}_pageSearchResults">
@@ -258,7 +259,6 @@ const catInfoAddPageToCat = (result) => {
 }
 
 const showCatDetails = (cat) => {
-
     if ( !cat ) return;
     if ( cat === 'undefined' ) return;
     if ( cat === '' ) return;
@@ -287,11 +287,11 @@ const showCatDetails = (cat) => {
         {
             data: 'pageTitle',
             className: 'alwaysCursorPointer',
-            title:'Title',
+            title: i18next.t('cats_dt_cat_col_title_text'),
             createdCell: function(td, cellData, rowData, row, col) {
                 $(td)
                     .attr('siteFunction', 'catInfoCatTablePageTitle')
-                    .attr('title', `Click here for more info about page ${cellData.replace(/<\/?[^>]+(>|$)/g, "")}`)
+                    .attr('title', `${i18next.t('cats_dt_cat_col_title_title')} ${cellData.replace(/<\/?[^>]+(>|$)/g, "")}`)
                     .attr('catReference', `${cat}`)
                     .attr('colFunction', 'pageTitle')
                     .addClass('fw-normal align-self-center align-middle border-bottom border-secondary border-opacity-25');
@@ -301,23 +301,24 @@ const showCatDetails = (cat) => {
         // last update
         {
             data: 'pageLastUpdate',
-            title:'Last Update',
+            title: i18next.t('cats_dt_cat_col_last_update_text'),
             type: 'date-dd-MMM-yyyy', 
             className: 'dt-left', 
             exceptWhenRowSelect: true,
             createdCell: function(td, cellData, rowData, row, col) {
                 $(td)
                     .attr('siteFunction', 'tableDateField')
+                    .attr('data-original-date', $(cellData).text().trim())
                     .attr('catReference', `${cat}`)
                     .attr('colFunction', 'pageLastUpdate')
-                    .addClass('fw-normal align-self-center align-middle border-bottom border-secondary border-opacity-25');
+                    .addClass(`fw-normal align-self-center align-middle border-bottom border-secondary border-opacity-25 ${settings.multilang.dateFieldClass}`);
             }
         }, 
 
         // action buttons
         { 
             data: 'pageActions',
-            title:'Actions',
+            title: i18next.t('cats_dt_cat_col_actions_text'),
             type: 'string',
             searchable: false, 
             orderable: false, 
@@ -336,7 +337,7 @@ const showCatDetails = (cat) => {
         {
             data: 'pageExcerpt',
             type: 'string',
-            title:'Excerpt',
+            title: i18next.t('cats_dt_cat_col_excerpt_text'),
             exceptWhenRowSelect: true,
             width: '30%',
             visible: false,
@@ -351,7 +352,7 @@ const showCatDetails = (cat) => {
         // other cats
         {
             data: 'pageOtherCats',
-            title:'Other Categories',
+            title: i18next.t('cats_dt_cat_col_other_cats_text'),
             type: 'string',
             exceptWhenRowSelect: true,
             createdCell: function(td, cellData, rowData, row, col) {
@@ -399,18 +400,21 @@ const showCatDetails = (cat) => {
         (rowData) => { processCatDetailsTableRowClick(rowData, `table[catReference="${cat}"]`, cat) }, // will execute when click on row
         additionalTableSettings // additional datatable settings for this table instance
     );
-
+    
     if (_.map(globCustomCats, _.toLower).includes(cat.toLowerCase())) setCatInfoPageSearchList(cat);
     history.replaceState({}, document.title, window.location.pathname);
 }
 
 const createSimpleCatTable = (cat, tableData) => {
-
     const catDetailsCardHeader = (cat) => {
         return (
             `
                 <div class="card-header d-flex justify-content-between border-bottom border-secondary border-opacity-25">
-                    <span class="fs-6 fw-medium">Category:
+                    <span class="fs-6 fw-medium">
+                        <span data-i18n="cats_cat_details_section_title">
+                            ${i18next.t('cats_cat_details_section_title')}
+                        </span>
+                        <span>:</span>
                         <button 
                             siteFunction="catForActiveCatDetailsDatatable" id="${cat}" 
                             type="button" 
@@ -429,18 +433,18 @@ const createSimpleCatTable = (cat, tableData) => {
         );
     }
 
-    const cardDetailsCardBody = (cat) => {
+    const cardDetailsCardBody =  (cat) => {
         return (
             `
                 <div class="card-body">
                     <table style="display:none" siteFunction="catDetailsPageTable" class="table table-hover" catReference="${cat}">
                         <thead>
                             <tr>
-                                <th>Title</th>
-                                <th siteFunction="tableDateField">Last Update</th>
-                                <th>Actions</th>
-                                <th>Excerpt</th>
-                                <th>Other Categories</th>
+                                <th data-i18n="cats_dt_cat_col_title_text">${i18next.t('cats_dt_cat_col_title_text')}</th>
+                                <th data-i18n="cats_dt_cat_col_last_update_text" siteFunction="tableDateField">${i18next.t('cats_dt_cat_col_last_update_text')}</th>
+                                <th data-i18n="cats_dt_cat_col_actions_text">${i18next.t('cats_dt_cat_col_actions_text')}</th>
+                                <th data-i18n="cats_dt_cat_col_excerpt_text">${i18next.t('cats_dt_cat_col_excerpt_text')}</th>
+                                <th data-i18n="cats_dt_cat_col_other_cats_text">${i18next.t('cats_dt_cat_col_other_cats_text')}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -473,6 +477,7 @@ const postProcessCatDetailsTable = (table, cat) => {
     if(table) {
         addAdditionalCatButtons(table, cat);
         addCustomCatsToPages(table, cat);
+        doTranslateDateFields(); // just to be sure that date filed is translated
     }   
 }
 
@@ -640,7 +645,8 @@ const buildCatPagesListForCustomCat = (cat) => {
                         siteFunction="catPageItemLinkToDoc" 
                         class="btn btn-sm btn-info" 
                         href="${permalink}" 
-                        title="Read page ${title}" 
+                        title="${i18next.t('cats_cat_cat_details_actions_read_doc')}"
+                        data-i18n="[title]cats_cat_cat_details_actions_read_doc"
                         catForCatTableDetailsReference="${cat}" 
                         target="_blank"> 
                         <i class="bi bi-book" style="font-size:1.2rem"></i> 
@@ -651,7 +657,8 @@ const buildCatPagesListForCustomCat = (cat) => {
                         pageRefPermalink="${permalink}" 
                         pageRefTitle="${title}" 
                         class="btn btn-sm btn-success disabled" 
-                        title="Save page ${title} for later read" 
+                        title="${i18next.t('cats_cat_cat_details_actions_save_doc')}"
+                        data-i18n="[title]cats_cat_cat_details_actions_save_doc" 
                         catForCatTableDetailsReference="${cat}"> 
                         <i class="bi bi-bookmark-plus" style="font-size:1.2rem"></i> 
                     </button>
@@ -661,7 +668,8 @@ const buildCatPagesListForCustomCat = (cat) => {
                         pageRefPermalink="${permalink}" 
                         pageRefTitle="${title}" 
                         class="btn btn-sm btn-warning" 
-                        title="Remove page ${title} from saved documents" 
+                        title="${i18next.t('cats_cat_cat_details_actions_remove_from_saved_doc')}"
+                        data-i18n="[title]cats_cat_cat_details_actions_remove_from_saved_doc"
                         catForCatTableDetailsReference="${cat}"> 
                         <i class="bi bi-bookmark-x" style="font-size:1.2rem"></i> 
                     </button>
@@ -695,8 +703,9 @@ const buildCatPagesListForCustomCat = (cat) => {
                         catReference="${cat}" 
                         id="pageCat_${cat}" 
                         type="button" 
-                        class="focus-ring focus-ring-warning px-3 mr-2 my-1 btn btn-sm ${catBtnType} fw-medium border-0 shadow-none position-relative" 
-                        title="Details for category ${cat}"> 
+                        class="focus-ring focus-ring-warning px-3 mr-2 my-1 btn btn-sm ${catBtnType} fw-medium border-0 shadow-none position-relative"
+                        data-i18n="[title]cats_cat_cloud_cat_btn_title"
+                        title="${i18next.t('cats_cat_cloud_cat_btn_title')} ${cat}"> 
                         ${cat} 
                     </button>
                 `
@@ -779,7 +788,8 @@ const setPageOtherCustomCats = (pageInformation, crtCat = null) => {
                     id="pageCat_${cat}" 
                     type="button" 
                     class="align-self-center text-nowrap focus-ring focus-ring-warning px-3 mr-2 my-1 btn btn-sm text-success fw-medium border-0 shadow-none position-relative"
-                    title = "Details for category ${cat}">${cat}
+                    data-i18n="[title]cats_cat_cloud_cat_btn_title"
+                    title = "${i18next.t('cats_cat_cloud_cat_btn_title')} ${cat}">${cat}
                 </button>
             `
         )
@@ -823,7 +833,7 @@ const setCatCloudButtonsContextMenu = () => {
         header: '',
         menu:[
             {
-                html: getMenuItemHtml(`Remove the category from all pages`,'Remove category', 'bi-trash'),
+                html: getMenuItemHtml(`${i18next.t('cats_cat_cloud_btn_ctx_menu_remove_cat_title')}`,`${i18next.t('cats_cat_cloud_btn_ctx_menu_remove_cat_text')}`, 'bi-trash'),
                 handler: handleCatRemoval
             }
         ],
@@ -836,8 +846,9 @@ const setCatCloudButtonsContextMenu = () => {
                     catReference=""
                     id="catCloudEditCustomCat" 
                     type="button" 
-                    class="focus-ring focus-ring-warning btn btn-sm btn-warning my-2 position-relative d-none d-md-block">
-                    Update      
+                    class="focus-ring focus-ring-warning btn btn-sm btn-warning my-2 position-relative d-none d-md-block"
+                    data-i18n="cats_cat_cloud_btn_ctx_menu_update_cat_text">
+                    ${i18next.t('cats_cat_cloud_btn_ctx_menu_update_cat_text')}      
                 </button>
             ` :
             ``
@@ -936,7 +947,7 @@ const setPageCatButtonsContextMenu = () => {
         header: '',
         menu:[
             {
-                html: getMenuItemHtml(`Remove the cat from page`,'Remove category', 'bi-x-circle'),
+                html: getMenuItemHtml(`${i18next.t('cats_cat_table_btn_ctx_menu_remove_cat_title')}`,`${i18next.t('cats_cat_table_btn_ctx_menu_remove_cat_text')}`, 'bi-x-circle'),
                 handler: handlePageCatDelete
             }
         ],
@@ -951,8 +962,9 @@ const setPageCatButtonsContextMenu = () => {
                         catReference=""
                         id="pageCatEditCustomCat" 
                         type="button" 
-                        class="focus-ring focus-ring-warning btn btn-sm btn-warning mt-2 position-relative pageCatContextMenuFooterBtn">
-                        Update      
+                        class="focus-ring focus-ring-warning btn btn-sm btn-warning mt-2 position-relative pageCatContextMenuFooterBtn"
+                        data-i18n="cats_cat_cloud_btn_ctx_menu_update_cat_text">
+                        ${i18next.t('cats_cat_cloud_btn_ctx_menu_update_cat_text')}      
                     </button>
 
                     <button 
@@ -961,8 +973,9 @@ const setPageCatButtonsContextMenu = () => {
                         catReference=""
                         id="pageCatEditCustomCat" 
                         type="button" 
-                        class="focus-ring focus-ring-warning btn btn-sm btn-success mt-2 position-relative pageCatContextMenuFooterBtn">
-                        Add      
+                        class="focus-ring focus-ring-warning btn btn-sm btn-success mt-2 position-relative pageCatContextMenuFooterBtn"
+                        data-i18n="cats_cat_table_btn_ctx_menu_add_cat_text">
+                        ${i18next.t('cats_cat_table_btn_ctx_menu_add_cat_text')}       
                     </button>
                 </div>
             ` :

@@ -1,8 +1,15 @@
 // just to be consistent with styles and have rounded (not circle) buttons
-// adding 'rouded' class to Algolia docSearch button in site header
+// adding 'rounded' class to Algolia docSearch button in site header
 removeObservers('body (class=DocSearch DocSearch-Button)');
 setElementCreatedByClassObserver('DocSearch DocSearch-Button', () => {
     $('button.DocSearch.DocSearch-Button').addClass('rounded');
+});
+
+// removing suggested queries in case of no reults because there are no relevant suggestions
+removeObservers('body (class=DocSearch-NoResults)');
+setElementCreatedByClassObserver('DocSearch-NoResults', () => {
+    console.log('1')
+    $('.DocSearch-NoResults-Prefill-List').remove();
 });
 
 // removing additional docSearch features when click on clear query button
@@ -15,11 +22,13 @@ setElementReceiveAttributeObserver('.DocSearch-Reset', 'hidden', () => {
 
 // setup the search hit details box
 // we force results to be shown in the custom format defined in setDocSearchBox/refreshResults by force navigating to first page
+// we also translate the placehoder of the query input box because is missed in the docSearch.translations object
 // we create the search hit details container
 removeObservers('body class=DocSearch--active getClass=true');
 setElementChangeClassObserver ('body', 'DocSearch--active', true, () => {
     algolia.createSearchHitDetailsContainer();
     algolia.forceNavigationToPage(0);
+    $('#docsearch-input').attr('placeholder', i18next.t('algolia_doc_search_modal_placeholder'));
 }); 
 
 // setting some events to modify the default behaviour of DocSearch
@@ -296,7 +305,8 @@ algolia = {
     },
 
     // setting DocSearch with pagination
-    setDocSearchBox: () => {
+    setDocSearchBox: async () => {
+        await waitForI18Next();
         // Hide JTD search box
         $('.search').addClass('d-none');
         
@@ -309,11 +319,60 @@ algolia = {
             debug: algolia.debug,
             maxResultsPerGroup: algolia.maxResultsPerGroup,
             insights: algolia.insights,
+
+            // HEADS UP!!!
+            // see the comments in _plugins/generators/algolia-integration-gen.rb about how to handle url's
+            // that are not pointing to GitHub repo issues
             raiseIssueLink: algolia.algoliaRaiseIssueLink,
+            translations: {
+                button: {
+                    buttonText: i18next.t('algolia_doc_search_btn_text'),
+                    buttonArriaLabel: i18next.t('algolia_doc_search_btn_aria_label')
+                },
+                modal: {
+                    searchBox: {
+                        resetButtonTitle: i18next.t('algolia_doc_search_modal_reset_btn_title'),
+                        cancelButtonText: i18next.t('algolia_doc_search_modal_cancel_btn_text'),
+                    },
+                    startScreen: {
+                        recentSearchesTitle: i18next.t('algolia_doc_search_modal_recent_searches_title'),
+
+                        // HEADS UP!!!
+                        // algolia_doc_search_modal_no_recent_searches_text should be set to empty string
+                        // if personalization is not available for the docSearch instance
+                        // see Algolia dashboard/Search section/Index/Configuration/Personalization  
+                        noRecentSearchesText: i18next.t('algolia_doc_search_modal_no_recent_searches_text'),
+
+                        // the following are not relevant of personalization is not available (see previous comment)
+                        saveRecentSearchButtonTitle: i18next.t('algolia_doc_search_modal_save_this_search_title'),
+                        removeRecentSearchButtonTitle: i18next.t('algolia_doc_search_modal_remove_this_search_title'),
+                        favoriteSearchesTitle: i18next.t('algolia_doc_search_modal_fav_search_title'),
+                        removeFavoriteSearchButtonTitle: i18next.t('algolia_doc_search_modal_remove_from_fav_search_title')
+                    },
+                    noResultsScreen: {  
+                        noResultsText: i18next.t('algolia_doc_search_modal_no_results_text'),
+                        suggestedQueryText: i18next.t('algolia_doc_search_modal_try_another_query_text'),
+                        reportMissingResultsText: i18next.t('algolia_doc_search_modal_believe_should_have_results_text'),
+                        reportMissingResultsLinkText: i18next.t('algolia_doc_search_modal_raise_issue_text')
+                       
+                      },
+                    footer: {
+                        selectText: i18next.t('algolia_doc_search_modal_footer_select_text'),
+                        navigateText: i18next.t('algolia_doc_search_modal_footer_navigate_text'),
+                        closeText: i18next.t('algolia_doc_search_modal_footer_close_text'),
+                        searchByText: i18next.t('algolia_doc_search_modal_footer_search_by_text')
+                    },
+                    errorScreen: {
+                        titleText: i18next.t('algolia_doc_search_modal_error_no_results_text'),
+                        helpText: i18next.t('algolia_doc_search_modal_error_no_net_text')
+                    }
+                }
+            },
 
             // we use this DocSearch built-in callback to overwrite the default behaviour of the instant search
             // in order to display the search hits in the same format as defined in algolia/getResultItem function
             // otherwise the format will be different and the feature of search hit details box will not work if already open
+            // also removing the hit source which is always set to "Documentation", thus is not relevant
             // cannot use the normal behaviour of hitComponent since cannot return a proper JSX.Element in a regular (nonReact) app
             hitComponent: ({ hit, children }) => {
                 algolia.setEvents();
@@ -343,6 +402,8 @@ algolia = {
                 $('#docsearch-list li').filter(function() {
                     return $.trim($(this).html()) === '';
                 }).remove();
+
+                $('.DocSearch-Hit-source').remove();
                 
                 // HEADS UP!!!
                 // HERE WE SHOULD RETURN A VALID JSX.Element OBJECT WHICH WE CANNOT PROPERLY CREATE HERE
@@ -399,6 +460,7 @@ algolia = {
                 // HEADS UP!!! NEEDS TO BE INCLUDED IN index.search(....) TOO, SEE BELOW, FUNCTION refreshResults
                 hitsPerPage: algolia.hitsPerPage, 
             },
+
 
         });
 
@@ -540,7 +602,7 @@ algolia = {
         $(document).off('keydown');
     },
 
-    updateHitMoreInfo: ($newActiveItem) => {
+    updateHitMoreInfo: ($newActiveItem) => {     
         const nothingSelected = 
             `
                 <div>
@@ -592,8 +654,8 @@ algolia = {
                         <table class="table table-hover table-striped mb-0">
                             <thead>
                                 <tr>
-                                    <th scope="col" class="docSearchFontStd border-bottom border-secondary border-opacity-25 text-light bg-secondary bg-gradient fw-normal">Found in</th>
-                                    <th scope="col" class="docSearchFontStd border-bottom border-secondary border-opacity-25 text-light bg-secondary bg-gradient fw-normal">Hit</th>
+                                    <th data-i18n="algolia_doc_search_custom_panel_found_in_text" scope="col" class="docSearchFontStd border-bottom border-secondary border-opacity-25 text-light bg-secondary bg-gradient fw-normal">Found in</th>
+                                    <th data-i18n="algolia_doc_search_custom_panel_hit_text" scope="col" class="docSearchFontStd border-bottom border-secondary border-opacity-25 text-light bg-secondary bg-gradient fw-normal">Hit</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -601,7 +663,6 @@ algolia = {
                             </tbody>
                         </table>
                     `
-    
                 return container;
             }
 
@@ -662,8 +723,10 @@ algolia = {
                         <a href="${permalink}"
                             target=_blank 
                             class="btn btn-sm btn-primary"
-                            style="height: fit-content">
-                            Read <i class="ml-2 bi bi-box-arrow-up-right"></i>
+                            style="height: fit-content"
+                            data-i18n="algolia_doc_search_custom_panel_header_read_btn_text">
+                            Read 
+                            <i class="ml-2 bi bi-box-arrow-up-right"></i>
                         </a>
                     `
                 );
@@ -681,7 +744,7 @@ algolia = {
             return $(
                 `
                     <div class="fw-semibold text-primary">
-                        <button class="d-flex align-items-center btn btn-sm btn-outline-secondary border border-secondary border-opacity-25 shadow-none fw-medium mb-3">
+                        <button class="d-flex align-items-center btn btn-sm btn-outline-secondary border border-secondary border-opacity-25 shadow-none fw-medium mb-3" data-i18n="algolia_doc_search_custom_panel_summary_text">
                             Summary
                         </button>
                     </div>
@@ -698,7 +761,7 @@ algolia = {
             return $(
                 `
                     <div class="fw-semibold text-primary">
-                        <button class="d-flex align-items-center btn btn-sm btn-outline-secondary border border-secondary border-opacity-25 shadow-none fw-medium mb-3">
+                        <button class="d-flex align-items-center btn btn-sm btn-outline-secondary border border-secondary border-opacity-25 shadow-none fw-medium mb-3" data-i18n="algolia_doc_search_custom_panel_excerpt_text">
                             Excerpt
                         </button>
                     </div>
@@ -740,17 +803,17 @@ algolia = {
             };
             
             const dynamicContent = hit.pageHasDynamicContent
-                ? `${title} \u2192 has dynamic content!` 
-                : `${title} \u2192 doesn't have dynamic content!`;
+                ? `${title} \u2192 ${i18next.t('algolia_doc_search_custom_panel_heads_up_has_dynamic_content_text')}` 
+                : `${title} \u2192 ${i18next.t('algolia_doc_search_custom_panel_heads_up_not_has_dynamic_content_text')}`;
 
             const popoverText = 
                 `
-                    This ToC does not capture dynamic document headings. ${dynamicContent}
+                    ${i18next.t('algolia_doc_search_custom_panel_heads_up_warning_text')} ${dynamicContent}
                 `
 
             const popoverTitle = 
                 `
-                    <span class='text-dark'>Heads up!!!</span>
+                    <span class='text-dark'>${i18next.t('algolia_doc_search_custom_panel_heads_up_text')}</span>
                 `
             // we need to fetch the hit target page and extract headings
             // cannot use #toc_content of the hit target page because is dynamically generated
@@ -779,7 +842,7 @@ algolia = {
                                 data-bs-title="${popoverTitle}"
                                 data-bs-trigger="hover focus"
                                 data-bs-content="${popoverText}">
-                                Contents ${dynamicContentIndicator}
+                                <span data-i18n="algolia_doc_search_custom_panel_contents_text">Contents</span> ${dynamicContentIndicator}
                             </button>
                             <ul 
                                 class="pl-0 list-unstyled"
@@ -974,7 +1037,7 @@ algolia = {
 
                             <div siteFunction="docSearch_HitDetails_pageTags" class="d-none mb-2 card p-3 border-0 shadow-sm">
                                 <div siteFunction="docSearch_HitDetails_pageTags_title" class="text-primary fw-medium">
-                                    <button class="d-flex align-items-center btn btn-sm btn-outline-secondary border border-secondary border-opacity-25 shadow-none fw-medium">
+                                    <button class="d-flex align-items-center btn btn-sm btn-outline-secondary border border-secondary border-opacity-25 shadow-none fw-medium" data-i18n="algolia_doc_search_custom_panel_tags_text">
                                         Tags
                                      </button>
                                 </div>
@@ -983,7 +1046,7 @@ algolia = {
 
                             <div siteFunction="docSearch_HitDetails_pageCats" class="d-none mb-2 card p-3 border-0 shadow-sm">
                                 <div siteFunction="docSearch_HitDetails_pageCats_title" class="text-primary fw-medium">
-                                    <button class="d-flex align-items-center btn btn-sm btn-outline-secondary border border-secondary border-opacity-25 shadow-none fw-medium">
+                                    <button class="d-flex align-items-center btn btn-sm btn-outline-secondary border border-secondary border-opacity-25 shadow-none fw-medium" data-i18n="algolia_doc_search_custom_panel_cats_text">
                                         Categories
                                      </button>
                                 </div>
@@ -1036,14 +1099,21 @@ algolia = {
             $('div[siteFunction="docSearch_searchHitDetails_header_title"]').append(getPageTitle(hit));
             $('div[siteFunction="docSearch_searchHitDetails_header_title"]').append(getHitFullPath(hit));
             $('div[siteFunction="docSearch_searchHitDetails_header"]').append(getHitPageInfoBtn(hit));
+            $('a[data-i18n="algolia_doc_search_custom_panel_header_read_btn_text"]')
+                .text(`${i18next.t('algolia_doc_search_custom_panel_header_read_btn_text')}`)
+                .append('<i class="ml-2 bi bi-box-arrow-up-right"></i>');
 
             // found in ... table
             $('div[siteFunction="docSearch_HitDetails_searchHit"]').append(getSearchHit(hit));
             $('div[siteFunction="docSearch_searchHitDetails_header_nav"]')
                 .append($navBtn(
-                    'div[siteFunction="docSearch_HitDetails_searchHit"]', 
-                    'Found in'
+                    'div[siteFunction="docSearch_HitDetails_searchHit"]',
+                    i18next.t('algolia_doc_search_custom_panel_found_in_text') 
                 ));
+            $('th[data-i18n="algolia_doc_search_custom_panel_found_in_text"]')
+                .text(i18next.t('algolia_doc_search_custom_panel_found_in_text'));
+            $('th[data-i18n="algolia_doc_search_custom_panel_hit_text"]')
+                .text(i18next.t('algolia_doc_search_custom_panel_hit_text'));
 
             // hit target page summary and excerpt
             $('div[siteFunction="docSearch_HitDetails_pageSummary"]').append(getPageSummary(hit, hitPageInfo));
@@ -1051,16 +1121,20 @@ algolia = {
                 $('div[siteFunction="docSearch_searchHitDetails_header_nav"]')
                     .append($navBtn(
                         'div[siteFunction="docSearch_HitDetails_pageSummary"]', 
-                        'Summary'
+                        i18next.t('algolia_doc_search_custom_panel_summary_text')
                     ));
+                $('button[data-i18n="algolia_doc_search_custom_panel_summary_text"]')
+                    .text(i18next.t('algolia_doc_search_custom_panel_summary_text'));
 
             $('div[siteFunction="docSearch_HitDetails_pageExcerpt"]').append(getPageExcerpt(hit, hitPageInfo));
             if (hitPageInfo.siteInfo !== 'none')
                 $('div[siteFunction="docSearch_searchHitDetails_header_nav"]')
                     .append($navBtn(
                         'div[siteFunction="docSearch_HitDetails_pageExcerpt"]', 
-                        'Excerpt'
+                        i18next.t('algolia_doc_search_custom_panel_excerpt_text')
                     ));
+                $('button[data-i18n="algolia_doc_search_custom_panel_excerpt_text"]')
+                    .text(i18next.t('algolia_doc_search_custom_panel_excerpt_text'));
 
             // hit target page toc
             getPageToc(hit).then(toc  => {
@@ -1074,8 +1148,10 @@ algolia = {
                     $('div[siteFunction="docSearch_searchHitDetails_header_nav"]')
                         .append($navBtn(
                             'div[siteFunction="docSearch_HitDetails_pageToc"]', 
-                            'Contents'
+                            i18next.t('algolia_doc_search_custom_panel_contents_text')
                         ));
+                    $('span[data-i18n="algolia_doc_search_custom_panel_contents_text"]')
+                            .text(i18next.t('algolia_doc_search_custom_panel_contents_text'));
 
                     contentBtnPopover = new bootstrap.Popover('[data-bs-toggle="popover"]', {html:true, sanitize: true})
 
@@ -1100,8 +1176,10 @@ algolia = {
                 $('div[siteFunction="docSearch_searchHitDetails_header_nav"]')
                     .append($navBtn(
                         'div[siteFunction="docSearch_HitDetails_pageTags"]', 
-                        'Tags'
+                        i18next.t('algolia_doc_search_custom_panel_tags_text')
                     ));
+                $('button[data-i18n="algolia_doc_search_custom_panel_tags_text"]')
+                    .text(i18next.t('algolia_doc_search_custom_panel_tags_text'));
             }
 
             // hit target page cats
@@ -1113,8 +1191,10 @@ algolia = {
                 $('div[siteFunction="docSearch_searchHitDetails_header_nav"]')
                     .append($navBtn(
                         'div[siteFunction="docSearch_HitDetails_pageCats"]', 
-                        'Categories'
+                        i18next.t('algolia_doc_search_custom_panel_cats_text')
                     ));
+                $('button[data-i18n="algolia_doc_search_custom_panel_cats_text"]')
+                    .text(i18next.t('algolia_doc_search_custom_panel_cats_text'));
             }
         }
         else $('div[siteFunction="docSearchListItemDetails"]').empty();

@@ -5,12 +5,32 @@
     {% for catItem in site.data.categories_details %}
         <div catReference="{{ catItem[0] }}" siteFunction="catDetails" class="border border-secondary border-opacity-25 d-none card shadow bg-transparent">
             <div class="card-header d-flex justify-content-between border-bottom border-secondary border-opacity-25">
-                <span class="fs-6 fw-medium">Category:
-                    <button siteFunction="catForActiveCatDetailsDatatable" id="{{ catItem[0] }}" type="button" class="px-3 ml-1 btn btn-sm text-danger fw-medium border-0 shadow-none position-relative">
+                <span 
+                    class="fs-6 
+                    fw-medium">
+                    <span data-i18n="cats_cat_details_section_title">
+                        Category
+                    </span>
+                    <span>:</span>
+                    
+                    <button 
+                        siteFunction="catForActiveCatDetailsDatatable" 
+                        id="{{ catItem[0] }}" 
+                        type="button" 
+                        class="px-3 ml-1 btn btn-sm text-danger fw-medium border-0 shadow-none position-relative">
                         {{ catItem[0] }}       
                     </button>
+
                 </span>
-                <button siteFunction="btnClose" whatToClose='div[catReference="{{ catItem[0] }}"]' type="button" class="btn-close" aria-label="Close"></button>
+
+                <button 
+                    siteFunction="btnClose" 
+                    whatToClose='div[catReference="{{ catItem[0] }}"]' 
+                    type="button" 
+                    class="btn-close" 
+                    aria-label="Close">
+                </button>
+                
             </div>
             <div class="card-body">
 
@@ -18,11 +38,11 @@
                 <table siteFunction="catDetailsPageTable" class="table table-hover" catReference="{{ catItem[0] }}">
                     <thead>
                         <tr>
-                            <th>Title</th>
-                            <th siteFunction="tableDateField">Last Update</th>
-                            <th>Actions</th>
-                            <th>Excerpt</th>
-                            <th>Other Categories</th>
+                            <th data-i18n="cats_dt_cat_col_title_text">Title</th>
+                            <th data-i18n="cats_dt_cat_col_last_update_text" siteFunction="tableDateField">Last Update</th>
+                            <th data-i18n="cats_dt_cat_col_actions_text">Actions</th>
+                            <th data-i18n="cats_dt_cat_col_excerpt_text">Excerpt</th>
+                            <th data-i18n="cats_dt_cat_col_other_cats_text">Other Categories</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -59,6 +79,7 @@
                                                 class="btn btn-sm btn-info" 
                                                 href="{{ pageItem.permalink }}"
                                                 title="Read page {{ pageItem.title }}"
+                                                data-i18n="[title]cats_cat_cat_details_actions_read_doc"
                                                 catForCatTableDetailsReference="{{ catItem[0] }}"
                                                 target=_blank>
                                                 <i class="bi bi-book" style="font-size:1.2rem"></i>
@@ -70,6 +91,7 @@
                                                 pageRefTitle="{{ pageItem.title }}" 
                                                 class="btn btn-sm btn-success"
                                                 title="Save page {{ pageItem.title }} for later read"
+                                                data-i18n="[title]cats_cat_cat_details_actions_save_doc"
                                                 catForCatTableDetailsReference="{{ catItem[0] }}">
                                                 <i class="bi bi-bookmark-plus" style="font-size:1.2rem"></i>
                                             </button>
@@ -80,6 +102,7 @@
                                                 pageRefTitle="{{ pageItem.title }}" 
                                                 class="btn btn-sm btn-warning"
                                                 title="Remove page {{ pageItem.title }} from saved documents"
+                                                data-i18n="[title]cats_cat_cat_details_actions_remove_from_saved_doc"
                                                 catForCatTableDetailsReference="{{ catItem[0] }}">
                                                 <i class="bi bi-bookmark-x" style="font-size:1.2rem"></i>
                                             </button>
@@ -127,7 +150,8 @@
                                                     id="pageCat_{{ pageCat }}" 
                                                     type="button" 
                                                     class="align-self-center text-nowrap focus-ring focus-ring-warning px-2 mr-1 my-1 btn btn-sm text-danger fw-medium border-0 shadow-none position-relative"
-                                                    title = "Details for category {{ pageCat }}">
+                                                    title = "Details for category {{ pageCat }}"
+                                                    data-i18n="[title]cats_cat_cloud_cat_btn_title">
                                                     {{ pageCat }}
                                                 </button>
                                             {% endfor %}

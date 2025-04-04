@@ -3,7 +3,11 @@
     <div siteFunction="sitePagesSavedItems" class="border border-secondary border-opacity-25 card shadow bg-transparent">
         
         <div class="card-header d-flex justify-content-between border-bottom border-secondary border-opacity-25">
-            <span class="fs-6 fw-medium">Saved Documents</span>
+            <span 
+                class="fs-6 fw-medium"
+                data-i18n="pages_saved_docs_title_text">
+                Saved Documents
+            </span>
             <button 
                 siteFunction="btnClose" 
                 whatToClose='div[siteFunction="sitePagesSavedItems"]' 
@@ -26,7 +30,8 @@
                             id="saveSavedItemsToFile" 
                             type="button" 
                             class="btn btn-success savedDocsSectionButton h-auto my-2 mr-2 my-md-1 mr-md-0 text-nowrap"
-                            title= "Save to file">
+                            title= "Save to file"
+                            data-i18n="[title]pages_saved_docs_save_to_file_btn_title;pages_saved_docs_save_to_file_btn_text">
                             Save to file
                         </button>
 
@@ -36,7 +41,8 @@
                             id="showSavedItems" 
                             type="button" 
                             class="btn btn-primary savedDocsSectionButton h-auto my-2 mr-2 my-md-1 mr-md-0 text-nowrap"
-                            title= "Show saved items">
+                            title= "Show saved items"
+                            data-i18n="[title]pages_saved_docs_saved_docs_btn_title;pages_saved_docs_saved_docs_btn_text">
                             Saved docs
                         </button>
 
@@ -46,7 +52,8 @@
                             id="showNotSavedItems" 
                             type="button" 
                             class="btn btn-warning savedDocsSectionButton h-auto my-2 mr-2 my-md-1 mr-md-0 text-nowrap"
-                            title= "Show not saved items">
+                            title= "Show not saved items"
+                            data-i18n="[title]pages_saved_docs_not_saved_docs_btn_title;pages_saved_docs_not_saved_docs_btn_text">
                             Not saved docs
                         </button>
 
@@ -57,34 +64,84 @@
                         siteFunction="loadSavedItemsFromFile"
                         class="col-md-8 col-12 p-2 d-flex flex-column justify-content-between">
 
-                        <p class="text-primary savedDocsInfoText col-md-10 col-12">
-                            Choose configuration file to load saved documents configuration. <span class="text-primary savedDocsInfoTextDesktopOnly">You can also drop a file in the drop zone.</span> 
+                        <p class="col-md-10 col-12">
+                            <span 
+                                class="text-primary" 
+                                data-i18n="pages_saved_docs_explanation_1">
+                                Choose configuration file to load saved documents configuration.
+                            </span>
+                            <span> </span>
+                            <span 
+                                class="text-primary savedDocsInfoTextDesktopOnly" 
+                                data-i18n="pages_saved_docs_explanation_2">
+                                You can also drop a file in the drop zone.
+                            </span>
+                            <span> </span>
+
                             {% if site.data.siteConfig.savedItems.autoSaveBeforeLoad %}
-                                <span class="text-danger">Save before load is active</span> for this site. Your current saved documents configuration will be saved to a local file before loading the new one.
+                                <span 
+                                    class="text-danger"
+                                    data-i18n="pages_saved_docs_explanation_3">
+                                    Save before load
+                                </span>
+                                </span> </span>
+                                <span
+                                    class="text-primary"
+                                    data-i18n="pages_saved_docs_explanation_4"> 
+                                    is active for this site.
+                                </span>
+                                </span> </span>
+                                <span
+                                    class="text-primary"
+                                    data-i18n="pages_saved_docs_explanation_5">
+                                    Your current saved documents configuration will be saved to a local file before loading the new one.
+                                </span>
                             {% else %}
-                                <span class="text-danger">Save before load is not active</span> for this site. We recommend to save the current saved documents configuration before loading the new one.
+                                <span 
+                                    class="text-danger"
+                                    data-i18n="pages_saved_docs_explanation_3">
+                                    Save before load
+                                </span>
+                                </span> </span>
+                                <span
+                                    class="text-primary"
+                                    data-i18n="pages_saved_docs_explanation_6">
+                                    is not active for this site.
+                                </span>
+                                <span> </span>
+                                <span
+                                    class="text-primary"
+                                    data-i18n="pages_saved_docs_explanation_7">
+                                    We recommend to save the current saved documents configuration before loading the new one.
+                                </span>
                             {% endif %} 
+
                         </p>
                         
                         <div class="d-md-flex">
-                            <div class="col-md-10 cola-12">
+                            <div class="col-md-10 col-12">
                                 <div class="input-group">
+                                    <label 
+                                        class="text-center savedDocsSectionButton btn btn-danger input-group-text rounded alwaysCursorPointer" 
+                                        for="selectedSavedItemsFile"
+                                        data-i18n="pages_saved_docs_choose_file_btn_text">
+                                        Choose file
+                                    </label>
+                                    <div id="selectedSavedItemsFileLoading" class="ml-md-2 ml-0 d-none">
+                                        <div class="spinner-border  text-primary" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    </div>
                                     <input 
                                         type="file" 
-                                        class="form-control mb-4 mb-md-0" 
+                                        class="form-control mb-4 mb-md-0 d-none" 
                                         id="selectedSavedItemsFile" 
-                                        aria-label="Select"
-                                        accept=".json">
-                                </div>
+                                        accept=".json" 
+                                        aria-label="Select">
+                                </div>                        
                             </div>
 
-                            <div class="col-md-2 col-12 text-center"> 
-                                <div id="selectedSavedItemsFileLoading" class="ml-md-2 ml-0 d-none">
-                                    <div class="spinner-border text-primary" role="status">
-                                        <span class="visually-hidden">Loading...</span>
-                                    </div>
-                                </div>
-                            </div>
+                            
 
                         </div>
 
@@ -99,7 +156,11 @@
                 class="col-4 d-flex d-none d-md-flex align-items-center justify-content-center savedItemsFileDropZone border-secondary border-opacity-25">
                 <div class="text-center">
                     <i class="fs-1 bi bi-cloud-upload text-primary"></i>
-                    <div class="fs-5 fw-medium text-secondary">Drop file here</div>
+                    <div 
+                        class="fs-5 fw-medium text-secondary"
+                        data-i18n="pages_saved_docs_drop_file_here">
+                        Drop file here
+                    </div>
                     <p 
                         siteFunction="savedItemsFileDropZoneFileName"
                         class="d-none text-primary savedDocsInfoText">

@@ -1,7 +1,12 @@
 <!-- tags -->
 <div siteFunction="offcanvasPageFullInfoPageTagsCard" class="border border-secondary border-opacity-25 card shadow bg-transparent mb-5">
 <div class="card-header d-flex justify-content-between border-bottom border-secondary border-opacity-25">
-    <span siteFunction="offcanvasPageFullInfoPageTagsOpen" class="fs-6 fw-medium alwaysCursorPointer">Tags</span>
+    <span 
+        siteFunction="offcanvasPageFullInfoPageTagsOpen" 
+        class="fs-6 fw-medium alwaysCursorPointer"
+        data-i18n="page_full_info_tags_section_title">
+        Tags
+    </span>
     <button siteFunction="btnClose" whatToClose='div[siteFunction="offcanvasPageFullInfoPageTags"]' type="button" class="btn-close" aria-label="Close"></button>
 </div>
 <div siteFunction="offcanvasPageFullInfoPageTags" class="card-body">
@@ -24,7 +29,9 @@
         </div>
         <div 
             siteFunction="offcanvasPageFullInfoPageCustomTagsAlert" 
-            class="alert alert-warning mt-2 p-2" role="alert">
+            class="alert alert-warning mt-2 p-2 text-primary ghBtnLink" 
+            role="alert"
+            data-i18n="page_full_info_tags_short_explanation">
             Enter tags one by one and hit enter after each one. You can enter multiple tags in a single batch. When ready, hit enter again. Right click (or press long on mobile) on a tag to remove it.
         </div>
         <div 

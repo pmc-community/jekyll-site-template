@@ -27,7 +27,7 @@
                         class="btn btn-outline-secondary border border-secondary border-opacity-25 shadow-none text-light" 
                         data-bs-toggle="dropdown" 
                         aria-expanded="false">
-                        <span>More</span>
+                        <span data-i18n="main_menu_more">More</span>
                         <i class="bi bi-arrow-down"></i>
                     </button>
 
@@ -45,11 +45,43 @@
                             </li>
                         {% endfor %}
                         <li><hr class="dropdown-divider"></li>
-                        <li class="px-4"><a siteFunction="menuItemLevel2" class="px-0 dropdown-item fs-6 fw-medium text-primary" href="/site-pages">Documents</a></li>
-                        <li class="px-4"><a siteFunction="menuItemLevel2" class="px-0 dropdown-item fs-6 fw-medium text-primary" href="/cat-info">Categories</a></li>
-                        <li class="px-4"><a siteFunction="menuItemLevel2" class="px-0 dropdown-item fs-6 fw-medium text-primary" href="/tag-info">Tags</a></li>
+                        <li class="px-4">
+                            <a 
+                                siteFunction="menuItemLevel2" 
+                                class="px-0 dropdown-item fs-6 fw-medium text-primary" 
+                                href="/site-pages"
+                                data-i18n="main_menu_documents">
+                                Documents
+                            </a>
+                        </li>
+                        <li class="px-4">
+                            <a 
+                                siteFunction="menuItemLevel2" 
+                                class="px-0 dropdown-item fs-6 fw-medium text-primary" 
+                                href="/cat-info"
+                                data-i18n="main_menu_categories">
+                                Categories
+                            </a>
+                        </li>
+                        <li class="px-4">
+                            <a 
+                                siteFunction="menuItemLevel2" 
+                                class="px-0 dropdown-item fs-6 fw-medium text-primary" 
+                                href="/tag-info"
+                                data-i18n="main_menu_tags">
+                                Tags
+                            </a>
+                        </li>
                         <li><hr class="dropdown-divider"></li>
-                        <li class="px-4"><a siteFunction="menuItemLevel2" class="px-0 dropdown-item fs-6 fw-medium text-primary" href="/">Home</a></li>
+                        <li class="px-4">
+                            <a 
+                                siteFunction="menuItemLevel2" 
+                                class="px-0 dropdown-item fs-6 fw-medium text-primary" 
+                                href="/"
+                                data-i18n="main_menu_home">
+                                Home
+                            </a>
+                        </li>
                     </ul>
 
                 </div>
@@ -57,15 +89,54 @@
         {% else %}
             <li class="nav-item">
                 <div class="dropdown" id="category-menu-more" >
-                    <a siteFunction="menuItemLevel1" class="btn shadow-none dropdown-toggle fs-6 bg-transparent border-0" role="button" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="manual">
+                    <a 
+                        siteFunction="menuItemLevel1" 
+                        class="btn shadow-none dropdown-toggle fs-6 bg-transparent border-0" 
+                        role="button" 
+                        type="button" 
+                        data-bs-toggle="dropdown" 
+                        aria-expanded="false" 
+                        data-bs-auto-close="manual"
+                        data-i18n="main_menu_more">
                         More
                     </a>
                     <ul class="dropdown-menu px-4" id="category-menu-more-list">
-                        <li class="px-4"><a siteFunction="menuItemLevel2" class="px-0 dropdown-item fs-6 fw-medium text-primary" href="/site-pages"><i class="bi bi-file-text"></i> Documents</a></li>
-                        <li class="px-4"><a siteFunction="menuItemLevel2" class="px-0 dropdown-item fs-6 fw-medium text-primary" href="/cat-info">Categories</a></li>
-                        <li class="px-4"><a siteFunction="menuItemLevel2" class="px-0 dropdown-item fs-6 fw-medium text-primary" href="/tag-info">Tags</a></li>
+                        <li class="px-4">
+                            <a 
+                                siteFunction="menuItemLevel2" 
+                                class="px-0 dropdown-item fs-6 fw-medium text-primary" 
+                                href="/site-pages">
+                                    <i class="bi bi-file-text"></i>
+                                    <span data-i18n="main_menu_documents">Documents</span>
+                            </a>
+                        </li>
+                        <li class="px-4">
+                            <a 
+                                siteFunction="menuItemLevel2" 
+                                class="px-0 dropdown-item fs-6 fw-medium text-primary" 
+                                href="/cat-info"
+                                data-i18n="main_menu_categories">
+                                Categories
+                            </a>
+                        </li>
+                        <li class="px-4">
+                            <a 
+                                siteFunction="menuItemLevel2" 
+                                class="px-0 dropdown-item fs-6 fw-medium text-primary" 
+                                href="/tag-info"
+                                data-i18n="main_menu_tags">
+                                Tags
+                            </a>
+                        </li>
                         <li><hr class="dropdown-divider"></li>
-                        <li class="px-4"><a siteFunction="menuItemLevel2" class="px-0 dropdown-item fs-6 fw-medium text-primary" href="/">Home</a></li>
+                        <li class="px-4">
+                            <a siteFunction="menuItemLevel2" 
+                                class="px-0 dropdown-item fs-6 fw-medium text-primary" 
+                                href="/"
+                                data-i18n="main_menu_home">
+                                Home
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </li>

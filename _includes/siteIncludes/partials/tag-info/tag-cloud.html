@@ -3,7 +3,11 @@
 <div id="cloud_tag_container" class="">         
     <div class="border border-secondary border-opacity-25 card shadow bg-transparent overflow-y-auto">
         <div class="card-header d-flex justify-content-between border-bottom border-secondary border-opacity-25">
-            <span class="fs-6 fw-medium">Tags</span>
+            <span 
+                class="fs-6 fw-medium"
+                data-i18n="tags_tag_cloud_tag_section_title">
+                Tags
+            </span>
             <button siteFunction="btnClose" whatToClose="#cloud_tag_container" type="button" class="btn-close" aria-label="Close"></button>
         </div>
         <div siteFunction="tagCloudContainerBody" class="card-body overflow-y-auto">
@@ -13,7 +17,8 @@
                     tagType="siteTag" 
                     id="{{ tagItem[0] }}" type="button" 
                     class="focus-ring focus-ring-warning px-3 mr-5 my-2 btn btn-sm btn-primary position-relative"
-                    title = "Details for tag {{ tagItem[0] }}">
+                    title = "Details for tag {{ tagItem[0] }}"
+                    data-i18n="[title]tags_tag_cloud_tag_btn_title">
                     {{ tagItem[0] }}
                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg-warning">
                         {{ tagItem[1]["numPages"] }}

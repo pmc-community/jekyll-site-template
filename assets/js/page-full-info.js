@@ -20,12 +20,14 @@ REFRESH_PAGE_INFO_AFTER__removePageFromSavedItems = REFRESH_PAGE_INFO_AFTER(remo
 REFRESH_PAGE_INFO_AFTER__removeAllCustomNotes = REFRESH_PAGE_INFO_AFTER(removeAllCustomNotes);
 
 // ENTRY POINT
-const showPageFullInfoCanvas = (pageInfo) => {
+const showPageFullInfoCanvas = async (pageInfo) => {
     if (pageInfo) {
+        await waitForI18Next();
         initPageFullInfoCanvasBeforeShow(pageInfo);
         $('#offcanvasPageFullInformation').offcanvas('show');
         initPageFullInfoCanvasAfterShow(pageInfo);
         initPageFullInfoCanvasAfterDocReady(pageInfo);
+        doTranslateDateFields();
     }
 }
 
@@ -88,11 +90,11 @@ const setCustomTagContextMenu = (pageInfo) => {
         header: '',
         menu:[
             {
-                html: getMenuItemHtml(`Remove the tag from the doc ${pageInfo.siteInfo.title} only`,'Remove from doc', 'bi-x-circle'),
+                html: getMenuItemHtml(`${i18next.t('page_full_info_tags_context_menu_remove_from_doc_title')} ${pageInfo.siteInfo.title}`, `${i18next.t('page_full_info_tags_context_menu_remove_from_doc_text')}`, 'bi-x-circle'),
                 handler: removeTagFromPage
             },
             {
-                html: getMenuItemHtml('Remove the tag from all docs tagged with it','Remove from all docs', 'bi-trash'),
+                html: getMenuItemHtml(`${i18next.t('page_full_info_tags_context_menu_remove_from_all_doc_title')}`, `${i18next.t('page_full_info_tags_context_menu_remove_from_all_doc_text')}`, 'bi-trash'),
                 handler: removeTagFromAllPages
             },
         ],
@@ -133,11 +135,11 @@ const setCustomCatContextMenu = (pageInfo) => {
         header: '',
         menu:[
             {
-                html: getMenuItemHtml(`Remove the category from the doc ${pageInfo.siteInfo.title} only`,'Remove from doc', 'bi-x-circle'),
+                html: getMenuItemHtml(`${i18next.t('page_full_info_cats_context_menu_remove_from_doc_title')} ${pageInfo.siteInfo.title} only`,`${i18next.t('page_full_info_cats_context_menu_remove_from_doc_text')}`, 'bi-x-circle'),
                 handler: removeCatFromPage
             },
             {
-                html: getMenuItemHtml('Remove the category from all docs','Remove from all docs', 'bi-trash'),
+                html: getMenuItemHtml(`${i18next.t('page_full_info_cats_context_menu_remove_from_all_doc_title')}`, `${i18next.t('page_full_info_cats_context_menu_remove_from_all_doc_text')}`, 'bi-trash'),
                 handler: removeCatFromAllPages
             },
         ],
@@ -478,13 +480,16 @@ const setCanvasSectionsOpeners = () => {
 }
 
 const fillPageTitle = (pageInfo) => {
-    $('#offcanvasPageFullInformationTitle').text(`Doc information (${pageInfo.siteInfo.title})`);
+    $('#offcanvasPageFullInformationTitle').text(`${i18next.t('page_full_info_header_title')} (${pageInfo.siteInfo.title})`);
     $('a[siteFunction="offcanvasPageFullInfoPageGeneralDocLink"]').text(pageInfo.siteInfo.title);
     $('a[siteFunction="offcanvasPageFullInfoPageGeneralDocLink"]').attr('href',pageInfo.siteInfo.permalink);
 }
 
 const fillPageLastUpdate = (pageInfo) => {
-    $('span[siteFunction="offcanvasPageFullInfoPageGeneralLastUpdateDate"]').text(formatDate(pageInfo.siteInfo.lastUpdate));
+    $('span[siteFunction="offcanvasPageFullInfoPageGeneralLastUpdateDate"]')
+        .attr('data-original-date', formatDate(pageInfo.siteInfo.lastUpdate))
+        .addClass(settings.multilang.dateFieldClass)
+        .text(formatDate(pageInfo.siteInfo.lastUpdate));
 }
 
 const fillPageExcerpt = (pageInfo) => {
@@ -506,10 +511,10 @@ const fillPageRelatedPages = (pageInfo) => {
             
             html = html + 
                 `
-                    <div class="my-3">
+                    <div class="my-2">
                         <a 
                             title="${relatedPageExcerpt}" 
-                            class="text-nowrap m-3 m-md-1 py-1 px-2 bg-light-subtle rounded-pill" 
+                            class="text-nowrap m-3 m-md-1 py-1 px-2 bg-light-subtle rounded-pill ghBtnLink fw-semibold" 
                             href="${page.permalink.indexOf('/') === 0 ? page.permalink : '/'+page.permalink}">
                             ${page.title}
                         </a>
@@ -536,10 +541,10 @@ const fillPageSimilarPages = (pageInfo) => {
             
             html = html + 
                 `
-                    <div class="my-3">
+                    <div class="my-2">
                         <a 
                             title="${similarPageExcerpt}" 
-                            class="text-nowrap m-3 m-md-1 py-1 px-2 bg-light-subtle rounded-pill" 
+                            class="text-nowrap m-3 m-md-1 py-1 px-2 bg-light-subtle rounded-pill ghBtnLink fw-semibold" 
                             href="${page.permalink.indexOf('/') === 0 ? page.permalink : '/'+page.permalink}">
                             ${page.title}
                         </a>
@@ -575,7 +580,9 @@ const initCustomNotesTable = (pageInfo) => {
                 className: 'dt-left alwaysCursorPointer alwaysTextToLeft align-middle',
                 width:'100px',
                 createdCell: function(td, cellData, rowData, row, col) {
-                    $(td).addClass('border-bottom border-secondary border-opacity-25');
+                    $(td)
+                        .attr('data-original-date', cellData)
+                        .addClass(`border-bottom border-secondary border-opacity-25 ${settings.multilang.dateFieldClass}`);
                 }
             }, 
 
@@ -638,10 +645,10 @@ const postProcessCustomNotesTable = (table, pageInfo) => {
         deleteAllNotes = {
             attr: {
                 siteFunction: 'tablePageCustomNotesRemoveAllNotes',
-                title: `Remove all custom notes for page ${pageInfo.siteInfo.title}`
+                title: `${i18next.t('page_full_info_gen_notes_dt_delete_notes_btn_title')} ${pageInfo.siteInfo.title}`
             },
             className: 'btn-danger btn-sm text-light focus-ring focus-ring-warning mb-2',
-            text: 'Delete Notes',
+            text: i18next.t('page_full_info_gen_notes_dt_delete_notes_btn_text'),
             action: () => {
                 REFRESH_PAGE_INFO_AFTER__removeAllCustomNotes(pageInfo);
                 const notesData = getPageNotes(pageInfo);
@@ -655,7 +662,8 @@ const postProcessCustomNotesTable = (table, pageInfo) => {
         };
         const btnArray = [];
         btnArray.push(deleteAllNotes);
-        addAdditionalButtonsToTable(table, '#offcanvasPageFullInfoPageGeneralCustomNotesTable', 'bottom2', btnArray);      
+        addAdditionalButtonsToTable(table, '#offcanvasPageFullInfoPageGeneralCustomNotesTable', 'bottom2', btnArray);
+        doTranslateDateFields();    
     }   
 }
 

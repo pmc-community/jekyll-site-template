@@ -3,10 +3,20 @@
 <div id="cloud_tag_search_container" class="mt-4 mt-md-0 mb-5">
     <div class="border border-secondary border-opacity-25 card shadow bg-transparent">
         <div class="card-header d-flex justify-content-between border-bottom border-secondary border-opacity-25">
-            <span class="fs-6 fw-medium">Search tag</span>
+            <span 
+                class="fs-6 
+                fw-medium"
+                data-i18n="tags_search_tag_section_title">
+                Search tag
+            </span>
         </div>
         <div class="card-body d-md-flex justify-content-between">
-            <input type="text" autocomplete="off" class="form-control" id="tagSearchInput" placeholder="type, select, hit enter ...">
+            <input 
+                type="text" 
+                autocomplete="off" 
+                class="form-control" 
+                id="tagSearchInput" placeholder="type, select, hit enter ..."
+                data-i18n="[placeholder]tags_tag_search_tag_search_input_placeholder">
             <ul siteFunction="searchTagList" id="tagSearchResults">
                 {% for tagItem in tagsArray %}
                     <li 
@@ -22,7 +32,8 @@
                 id="openTagCloud" 
                 type="button" 
                 class="btn w-auto btn-success mt-md-0 mt-4"
-                title = "Open Tag Cloud">
+                title = "Open Tag Cloud"
+                data-i18n="[title]tags_search_tag_cloud_btn_title;tags_search_tag_cloud_btn_text">
                 Tags
             </button>
         </div>

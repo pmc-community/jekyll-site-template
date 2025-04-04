@@ -187,7 +187,8 @@ $visibleElements: (
     'hr[siteFunction="offcanvasPageFullInfoPageGeneralSeparator"]',
     'hr[siteFunction="pageAutoSummarySeparator"]',
     'hr[siteFunction="addPageToCatOrTag"]',
-    'hr[siteFunction="sitePagesDetailsLastFilterSeparator"]'
+    'hr[siteFunction="sitePagesDetailsLastFilterSeparator"]',
+    'hr[siteFunction="offCanvasPageCommentsSeparator"]'
 );
 @each $element in $visibleElements {
         #{$element} {

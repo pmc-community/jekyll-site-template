@@ -3,10 +3,20 @@
     <div id="page_search_container" class="mt-4 mt-md-0 mb-5">
         <div class="border border-secondary border-opacity-25 card shadow bg-transparent">
             <div class="card-header d-flex justify-content-between border-bottom border-secondary border-opacity-25">
-                <span class="fs-6 fw-medium">Search document</span>
+                <span 
+                    class="fs-6 fw-medium"
+                    data-i18n="pages_search_doc_title_text">
+                    Search document
+                </span>
             </div>
             <div class="card-body d-md-flex justify-content-between">
-                <input type="text" autocomplete="off" class="form-control" id="pageSearchInput" placeholder="type, select, hit enter ...">
+                <input 
+                    type="text" 
+                    autocomplete="off" 
+                    class="form-control" 
+                    id="pageSearchInput" 
+                    placeholder="type, select, hit enter ..."
+                    data-i18n="[placeholder]pages_search_doc_search_input_placeholder">
                 <ul siteFunction="searchPageList" id="pageSearchResults">
                     {% for pageItem in pageArray %}
                         <li siteFunction="searchPageListItem">{{pageItem["title"]}} ({{pageItem["permalink"]}})</li>
@@ -18,7 +28,8 @@
                         id="openSitePagesDetails" 
                         type="button" 
                         class="btn w-auto btn-primary searchDocsSectionButton mr-2"
-                        title= "Open documents list">
+                        title= "Open documents list"
+                        data-i18n="[title]pages_search_doc_documents_btn_title;pages_search_doc_documents_btn_text">              
                         Documents
                     </button>
                     <button 
@@ -26,7 +37,8 @@
                         id="openSitePagesSavedItems" 
                         type="button" 
                         class="btn w-auto btn-success searchDocsSectionButton"
-                        title= "Open Site Saved Items">
+                        title= "Open Site Saved Items"
+                        data-i18n="[title]pages_search_doc_saved_docs_btn_title;pages_search_doc_saved_docs_btn_text">
                         Saved Docs
                     </button>
                 </div>

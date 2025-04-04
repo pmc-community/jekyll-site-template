@@ -3,7 +3,11 @@
     <div id="cloud_cat_container" class="">         
         <div class="border border-secondary border-opacity-25 card shadow bg-transparent overflow-y-auto">
             <div class="card-header d-flex justify-content-between border-bottom border-secondary border-opacity-25">
-                <span class="fs-6 fw-medium">Categories</span>
+                <span 
+                    class="fs-6 fw-medium"
+                    data-i18n="cats_cat_cloud_cat_section_title">
+                    Categories
+                </span>
                 <button siteFunction="btnClose" whatToClose="#cloud_cat_container" type="button" class="btn-close" aria-label="Close"></button>
             </div>
             <div siteFunction="catCloudContainerBody" class="card-body overflow-y-auto">
@@ -14,7 +18,9 @@
                         id="{{ catItem[0] }}" 
                         type="button" 
                         class="btn btn-sm position-relative text-danger fw-medium border-0 shadow-none"
-                        title = "Details for category {{ catItem[0] }}">
+                        title = "Details for category {{ catItem[0] }}"
+                        data-i18n="[title]cats_cat_cloud_cat_btn_title"
+                        data-cat="{{ catItem[0] }}">
                         {{ catItem[0] }}
                         <span class="fw-normal border px-2 rounded bg-warning-subtle text-dark">
                             {{ catItem[1]["numPages"] }}

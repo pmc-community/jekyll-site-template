@@ -1,5 +1,5 @@
 // disable interactions while offcanvas is in transition
-// enable interation once offcanvas is fully loaded
+// enable interactions once offcanvas is fully loaded
 $(document).on('show.bs.offcanvas', '#offcanvasPageComments', function () {
     // Disable clicks on the entire page
     $('body').css('pointer-events', 'none');
@@ -847,47 +847,7 @@ const page__setSelectedTextContextMenu = () =>{
             // OPS IS USEFUL TO ADD A CUSTOM FOOTER TO THE CONTEXT MENU
             // BELOW IS A FOOTER TO ADD COMMENTS TO A SELECTED TEXT, BUT IS NOT ACTIVE,
             // ACTIVATE FROM siteConfig.selectedTextContextMenu.comments.enabled
-            ops: 
-                `
-                    <div 
-                        class="px-2 text-dark d-none" 
-                        siteFunction="pageAddCommentToSelectedText_container">
-
-                        <div 
-                            sitefunction="pageAddCommentToSelectedText_text"
-                            class="pageExcerptInListItems text-primary mb-2 pt-2 border-top border-secondary border-opacity-25">
-                            selected text
-                        </div>
-
-                        <textarea 
-                            class="form-control" 
-                            sitefunction="pageAddCommentToSelectedText_comment" 
-                            id="pageAddCommentToSelectedText_comment" 
-                            rows="2">
-                        </textarea>
-            
-                        <div class="mb-2 d-flex justify-content-between">
-                            <button 
-                                sitefunction="pageAddCommentToSelectedText_btn" 
-                                id="pageAddCommentToSelectedText_btn" 
-                                type="button" 
-                                class="focus-ring focus-ring-warning btn btn-sm btn-success mt-2 position-relative pageExcerptInListItems"
-                                data-i18n="page_content_context_menu_option_add_comment_button">
-                                ${i18next.t('page_content_context_menu_option_add_comment_button')}     
-                            </button>
-                            <div class="d-flex justify-content-end align-items-center mt-2"> 
-                                <span 
-                                    sitefunction="addCommentSelectedTextContextMenuWords" 
-                                    class="align-middle mr-2 pageExcerptInListItems text-dark">W: 0
-                                </span> 
-                                <span 
-                                    sitefunction="addCommentSelectedTextContextMenuChars" 
-                                    class="align-middle pageExcerptInListItems text-dark">C: 0
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                `
+            ops: pageComments_AddCommentContainer()
         };
 
         // context menu callbacks
@@ -930,7 +890,6 @@ const page__setSelectedTextContextMenu = () =>{
                 }
             };
 
-            
             const matches = getTextNodeInRect(rectangle);
             
             if (matches) {
@@ -1058,81 +1017,239 @@ const page__showPageCustomTags = () => {
 
 // INTERNAL FUNCTIONS, NOT CALLED FROM HTML TEMPLATES
 
-const showPageCommentsCanvas = (pageInfo, anchor, commentId = null) => {
-    if (pageInfo) {
-        REFRESH_PAGE_INFO_BEFORE__initPageCommentsCanvasBeforeShow(pageInfo, anchor, commentId);
-        $('#offcanvasPageComments').offcanvas('show');
-    }
-}
+const pageComments_AddCommentContainer = (context, comment = null) => {
+    return (
+        `
+            <div 
+                class="${!comment ? 'px-2' : 'px-4 py-2'} ${!comment ? 'text-dark' : ''} d-none" 
+                siteFunction=${!comment 
+                    ? 'pageAddCommentToSelectedText_container' 
+                    : `"pageAddCommentToSelectedText_container_${context}_${comment.id}"`}>
 
-const initPageCommentsCanvasBeforeShow = (pageInfo, anchor, commentId = null) => {
+                ${!comment 
+                    ? 
+                    `<div 
+                        sitefunction="pageAddCommentToSelectedText_text"
+                        class="pageExcerptInListItems text-primary mb-2 pt-2 border-top border-secondary border-opacity-25">
+                        selected text
+                    </div>`
+                    : ``
+                }
 
-    // first, we need to refresh the pageInfo global
-    // NOT USED WHEN USING REFRESH_PAGE_INFO_BEFORE__ wrapper
-    /*
-    pageInfo = {
-        siteInfo: getObjectFromArray ({permalink: pageInfo.savedInfo.permalink, title: pageInfo.savedInfo.title}, pageList),
-        savedInfo: getPageSavedInfo (pageInfo.savedInfo.permalink, pageInfo.savedInfo.title),
-    };
-    */
+                <textarea 
+                    class="form-control" 
+                    siteFunction=${!comment 
+                        ? 'pageAddCommentToSelectedText_comment' 
+                        : `"pageAddCommentToSelectedText_comment_${context}_${comment.id}"`} 
+                    id=${!comment 
+                        ? 'pageAddCommentToSelectedText_comment' 
+                        : `"pageAddCommentToSelectedText_comment_${context}_${comment.id}"`}
+                    rows="2"
+                    value="">
+                </textarea>
 
-    const commentItem = (comment) => {
-        return (
-            `
-                <div 
-                    class="card mt-4 bg-secondary bg-opacity-10 border-0 border-secondary border-opacity-10 shadow-none offcanvasPageComments_comment" 
-                    id="offcanvasPageComments_comment_${comment.id}">
-                    <div 
-                        class="card-body alwaysCursorPointer offcanvasPageComments_comment_body" 
-                        id="offcanvasPageComments_comment_body_${comment.id}">
-                        <div class="mb-2">
-                            <span 
-                                id="offcanvasPageCommentsBody_comment_date_${comment.id}"
-                                class="text-primary"
-                                data-i18n="[text]formatted_date"
-                                data-original-date="${comment.date}"
-                                data-month-name="short">
-                                ${comment.date}
-                            </span>
-                        </div>
+                <div class="mb-2 d-flex justify-content-between">
+                    <div>
+                        <button 
+                            siteFunction=${!comment 
+                                ? 'pageAddCommentToSelectedText_btn' 
+                                : `"pageAddCommentToSelectedText_btn_${context}_${comment.id}"`} 
+                            id=${!comment 
+                                ? 'pageAddCommentToSelectedText_btn' 
+                                : `"pageAddCommentToSelectedText_btn_${context}_${comment.id}"`} 
+                            type="button" 
+                            class="focus-ring focus-ring-warning btn btn-sm btn-success mt-2 position-relative pageExcerptInListItems"
+                            data-i18n="page_content_context_menu_option_add_comment_button">
+                            ${i18next.t('page_content_context_menu_option_add_comment_button')}     
+                        </button>
 
-                        <div>
-                            <span
-                                class="text-secondary"
-                                id="offcanvasPageCommentsBody_comment_comment_${comment.id}">
-                                ${comment.comment}
-                            </span>
-                        </div>
+                        ${!comment
+                            ? ''
+                            : 
+                                `
+                                    <button 
+                                        siteFunction=${`"pageCancelCommentToSelectedText_btn_${context}_${comment.id}"`} 
+                                        id=${`"pageCancelCommentToSelectedText_btn_${context}_${comment.id}"`} 
+                                        type="button" 
+                                        class="focus-ring focus-ring-warning btn btn-sm btn-warning mt-2 position-relative pageExcerptInListItems"
+                                        data-i18n="page_content_context_menu_option_cancel_comment_button">
+                                        ${i18next.t('page_content_context_menu_option_cancel_comment_button')}     
+                                    </button>
+                                `
+                        }
+                    </div>
+                    <div class="d-flex justify-content-end align-items-center mt-2"> 
+                        <span 
+                            siteFunction=${!comment 
+                                ? 'addCommentSelectedTextContextMenuWords' 
+                                : `"addCommentSelectedTextContextMenuWords_${context}_${comment.id}"`} 
+                            class="align-middle mr-2 pageExcerptInListItems ${!comment ? 'text-dark' : 'text-light'}">W: 0
+                        </span> 
+                        <span 
+                            siteFunction=${!comment 
+                                ? 'addCommentSelectedTextContextMenuChars' 
+                                : `"addCommentSelectedTextContextMenuChars_${context}_${comment.id}"`}
+                            class="align-middle pageExcerptInListItems ${!comment ? 'text-dark' : 'text-light'}">C: 0
+                        </span>
                     </div>
                 </div>
-            `
-        )
+            </div>
+        `
+    );
+}
+
+const showPageCommentsCanvas = async (pageInfo, anchor, commentId = null) => {
+    await waitForI18Next();
+
+    if (pageInfo) {
+        if (pageInfo.savedInfo.customComments.length > 0) {
+            REFRESH_PAGE_INFO_BEFORE__initPageCommentsCanvasBeforeShow(pageInfo, anchor, commentId);
+            $('#offcanvasPageComments').offcanvas('show');
+        }
     }
+}
+REFRESH_PAGE_INFO_BEFORE__showPageCommentsCanvas = REFRESH_PAGE_INFO_BEFORE(showPageCommentsCanvas);
 
-    // general info
-    $('#offcanvasPageCommentsBody_pageLink').text(pageInfo.savedInfo.title);
-    $('#offcanvasPageCommentsBody_pageLink').attr('href', pageInfo.savedInfo.permalink);
-    $('#offcanvasPageCommentsBody_anchor').text(anchor);
+const initPageCommentsCanvasBeforeShow = async (pageInfo, anchor, commentId = null) => {
+    if (pageInfo.savedInfo.customComments.length > 0 ) {
+        await waitForI18Next();
 
-    // comments
-    const pageComments = pageInfo.savedInfo.customComments || []; 
-    const filteredComments = _.chain(pageComments)
-        .filter({ anchor: anchor }) // Filter by anchor
-        .orderBy(item => new Date(item.date).getTime(), 'desc') // Order by Unix timestamp of date descending
-        .groupBy('refId') // Group by refId
-        .flatMap(group => group) // Flatten the grouped result into an array
-        .value();
-    
-    let commentsHTML = '';
-    filteredComments.forEach( com => {
-        commentsHTML += commentItem(com);
-    });
+        const commentActions = (comment) => {
 
-    $('#offcanvasPageComments_comments_list').html(commentsHTML);
+            //console.log(`${comment.comment}:  ${commentHasChildren(comment, pageInfo)}`)
+            if (commentHasChildren(comment, pageInfo)) return (
+                `
+                <div class="d-flex flex-column h-100">
+                    <div class="mt-auto">
+                        <button
+                            siteFunction="${`pageCommentsOffCanvas_commentCard_hideAddCommentBox_${comment.id}`}"
+                            id="${`pageCommentsOffCanvas_commentCard_hideAddCommentBox_${comment.id}`}" 
+                            class="mx-1 my-2 btn btn-sm rounded-circle text-light btn-danger">
+                            <i class="bi bi-dash-lg"></i>
+                        </button>
+                    </div>
+                </div>
+
+                `
+            );
+            return (
+                `
+                    <div class="d-flex flex-column h-100">
+                        <div class="my-2">
+                            <button
+                                siteFunction="${`pageCommentsOffCanvas_commentCard_showAddCommentBox_${comment.id}`}"
+                                id="${`pageCommentsOffCanvas_commentCard_showAddCommentBox_${comment.id}`}"
+                                class="mx-1 mt-2 btn btn-sm rounded-circle text-light btn-success">
+                                <i class="bi bi-plus-lg"></i>
+                            </button>
+                        </div>
+                        <div class="mt-auto">
+                            <button
+                                siteFunction="${`pageCommentsOffCanvas_commentCard_hideAddCommentBox_${comment.id}`}"
+                                id="${`pageCommentsOffCanvas_commentCard_hideAddCommentBox_${comment.id}`}" 
+                                class="mx-1 my-2 btn btn-sm rounded-circle text-light btn-danger">
+                                <i class="bi bi-dash-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                `
+            );
+        }
+
+        const commentItem = (comment) => {
+            return (
+                `
+                    <div 
+                        class="container p-2 rounded mt-2 bg-secondary bg-opacity-10 border-0 border-secondary border-opacity-10 shadow-none offcanvasPageComments_comment" 
+                        id="offcanvasPageComments_comment_${comment.id}">
+
+                        <div class="row">
+                            <div 
+                                class="col-10 d-flex pl-4 card-body alwaysCursorPointer offcanvasPageComments_comment_body align-items-center" 
+                                id="offcanvasPageComments_comment_body_${comment.id}">
+                                <div>
+                                    <div class="mb-2 text-start">
+                                        <span 
+                                            id="offcanvasPageCommentsBody_comment_date_${comment.id}"
+                                            class="text-primary text-start"
+                                            data-i18n="[text]formatted_date"
+                                            data-original-date="${comment.date}"
+                                            data-month-name="short">
+                                            ${comment.date}
+                                        </span>
+                                    </div>
+
+                                    <div class="text-start">
+                                        <span
+                                            class="text-secondary text-start"
+                                            id="offcanvasPageCommentsBody_comment_comment_${comment.id}">
+                                            ${comment.comment}
+                                        </span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-2 d-flex align-items-center justify-content-center">
+                                ${commentActions(comment)}
+                            </div>
+        
+                        </div>
+
+                        <div class="row"
+                            <div class="col-12 p-2">
+                                ${pageComments_AddCommentContainer('comOffCanvas',comment)}
+                            </div>
+                            </div>
+                        
+                    </div>
+
+                `
+            )
+        }
+
+        // general info
+        $('#offcanvasPageCommentsBody_pageLink').text(pageInfo.savedInfo.title);
+        $('#offcanvasPageCommentsBody_pageLink').attr('href', pageInfo.savedInfo.permalink);
+        $('#offcanvasPageCommentsBody_anchor').text(anchor);
+
+        // comments
+        const pageComments = pageInfo.savedInfo.customComments || []; 
+        const flatFilteredComments = pageComments.filter(item => item.anchor === anchor); // Filter by anchor
+        const commentsGroupByParents = groupByRootNodes(flatFilteredComments, 'id', 'refId', 'date', 'asc');
+
+        let commentsHTML = '';
+        Object.keys(commentsGroupByParents).forEach( (group, index) => {
+            let comments = _.uniqBy(commentsGroupByParents[group], 'id');
+            comments.forEach( com => {
+                commentsHTML += commentItem(com);
+            });
+            if (Object.keys(commentsGroupByParents).length > 1 && index !== Object.keys(commentsGroupByParents).length - 1)
+                commentsHTML += '<hr class="bg-primary" siteFunction="offCanvasPageCommentsSeparator">';
+        });
+
+        $('#offcanvasPageComments_comments_list').html(commentsHTML);
+    }
+    else {
+        // there is no comment to be shown, so we close the comments offCanvas and remove markers from the anchor
+
+        $('.customSelectionMarkup').each(function() {
+            if ($(this).text() === anchor) {
+                const nodeHtml = $(this).parent().prop('outerHTML');
+                const $nodeHtml = $(nodeHtml);
+                const $markerHtml = $nodeHtml.find('.customSelectionMarkup');
+                const markerHtml = $markerHtml.prop('outerHTML');
+                const newHtml = nodeHtml.replace(markerHtml, anchor);
+                $(this).parent().replaceWith($(newHtml));
+            }
+        });
+
+        $('button[sitefunction="offcanvasPageCommentsClose"]').click();
+
+    }
  
 }
 const REFRESH_PAGE_INFO_BEFORE__initPageCommentsCanvasBeforeShow = REFRESH_PAGE_INFO_BEFORE(initPageCommentsCanvasBeforeShow);
-
 
 const refreshPageDynamicInfo = () => {
     keepScrollFixed(() => {
@@ -1249,7 +1366,7 @@ window.setPageButtonsFunctions = () => {
                 if ($(this).text() === anchor) $(this).removeClass('bg-secondary').addClass('bg-danger');
             })
             
-            showPageCommentsCanvas(pageInfo, anchor, commentID);
+            REFRESH_PAGE_INFO_BEFORE__showPageCommentsCanvas(pageInfo, anchor, commentID);
         });
     
     // click on comment card body
@@ -1263,8 +1380,8 @@ window.setPageButtonsFunctions = () => {
                 savedInfo: getPageSavedInfo (pageInfo.savedInfo.permalink, pageInfo.savedInfo.title),
             };
 
-            $('.offcanvasPageComments_comment').removeClass('bg-success').addClass('bg-secondary');
-            $(this).parent().removeClass('bg-secondary').addClass('bg-success');
+            $('.offcanvasPageComments_comment').removeClass('bg-success').addClass('bg-secondary').removeClass('bg-opacity-25').addClass('bg-opacity-10');
+            $(this).parent().parent().removeClass('bg-secondary').addClass('bg-success');
 
             const pageComments = pageInfo.savedInfo.customComments || [];
             const commentID = $(this).attr('id').replace(/^offcanvasPageComments_comment_body_/, '').trim();
@@ -1272,9 +1389,12 @@ window.setPageButtonsFunctions = () => {
             
             // we use refId prop to navigate because we may want to group comments based on the anchor position in document
             target = `#customSelection_${comment.refId}`;
-            $('html, body').animate({
-                scrollTop: $(target).offset().top - $(settings.layouts.leftSideBar.header).outerHeight() - 40
-            }, 100);
+            
+            if ($(target).length) {
+                $('html, body').animate({
+                    scrollTop: $(target).offset().top - $(settings.layouts.leftSideBar.header).outerHeight() - 40
+                }, 100);
+            }
 
             $('span[id^="customSelection_"]').each(function() {
                 if ($(this).text() !== comment.anchor) $(this).removeClass('bg-success').addClass('bg-secondary');
@@ -1291,15 +1411,131 @@ window.setPageButtonsFunctions = () => {
      $(document)
         .off('mouseenter', 'div[id^="offcanvasPageComments_comment_body_"]')
         .on('mouseenter', 'div[id^="offcanvasPageComments_comment_body_"]', function() {
-            if ($(this).parent().hasClass('bg-secondary'))
-                $(this).parent().removeClass('bg-opacity-10').addClass('bg-opacity-25');
+            if ($(this).parent().parent().hasClass('bg-secondary'))
+                $(this).parent().parent().removeClass('bg-opacity-10').addClass('bg-opacity-25');
         })
         .off('mouseleave', 'div[id^="offcanvasPageComments_comment_body_"]')
         .on('mouseleave', 'div[id^="offcanvasPageComments_comment_body_"]', function() {
-            if ($(this).parent().hasClass('bg-secondary'))
-                $(this).parent().removeClass('bg-opacity-25').addClass('bg-opacity-10');
-        })
+            if ($(this).parent().parent().hasClass('bg-secondary'))
+                $(this).parent().parent().removeClass('bg-opacity-25').addClass('bg-opacity-10');
+        });
+
+    // click on comments offcanvas add comment (plus sign) on comments off canvas
+    $(document)
+        .off('click', 'button[siteFunction^="pageCommentsOffCanvas_commentCard_showAddCommentBox_"]')
+        .on('click', 'button[siteFunction^="pageCommentsOffCanvas_commentCard_showAddCommentBox_"]', function() {
+            REFRESH_PAGE_INFO_BEFORE_AND_AFTER__showAddCommentFromCommentsOffCanvas($(this));
+        });
+
+    // click on comments offcanvas delete comment (minus sign) on comments off canvas
+    // which, actually, removes the comment, so the add comment box will be removed by default
+    $(document)
+        .off('click', 'button[siteFunction^="pageCommentsOffCanvas_commentCard_hideAddCommentBox_"]')
+        .on('click', 'button[siteFunction^="pageCommentsOffCanvas_commentCard_hideAddCommentBox_"]', function() {
+            REFRESH_PAGE_INFO_BEFORE_AND_AFTER__deleteCommentFromCommentsOffCanvas($(this));
+        });
+    
+    // click on cancel in comments offcanvas add comment box
+    $(document)
+        .off('click', 'button[siteFunction^="pageCancelCommentToSelectedText_btn_comOffCanvas_"]')
+        .on('click', 'button[siteFunction^="pageCancelCommentToSelectedText_btn_comOffCanvas_"]', function() {
+            const commentId = $(this).attr('id').replace(/^pageCancelCommentToSelectedText_btn_comOffCanvas_/, '');
+            $(`div[siteFunction="pageAddCommentToSelectedText_container_comOffCanvas_${commentId}"]`).addClass('d-none');
+        });
+    
+    // click on add in comments offcanvas add comment box
+    $(document)
+        .off('click', 'button[siteFunction^="pageAddCommentToSelectedText_btn_comOffCanvas_"]')
+        .on('click', 'button[siteFunction^="pageAddCommentToSelectedText_btn_comOffCanvas_"]', function() {
+            REFRESH_PAGE_INFO_BEFORE_AND_AFTER__addCommentFromCommentsOffCanvas($(this));
+        });
 }
+
+const deleteCommentFromCommentsOffCanvas = ($btnClicked) => {
+    const commentId = $btnClicked.attr('id').replace(/^pageCommentsOffCanvas_commentCard_hideAddCommentBox_/, '');
+    const pageComments = pageInfo.savedInfo.customComments || [];
+    const comment = getObjectFromArray ({id: commentId}, pageComments) 
+
+    if (deleteComment(commentId, pageInfo)) {
+
+        highlightSavedSelection(comment.matches, null, comment.anchor);
+                   
+        markCustomComments(
+            {
+                savedInfo: getPageSavedInfo(pageInfo.siteInfo.permalink, pageInfo.siteInfo.title)
+            }
+        );
+        
+        initPageCommentsCanvasBeforeShow(
+            {
+                savedInfo: getPageSavedInfo(pageInfo.siteInfo.permalink, pageInfo.siteInfo.title)
+            }, 
+            comment.anchor
+        );
+    }
+}
+const REFRESH_PAGE_INFO_BEFORE_AND_AFTER__deleteCommentFromCommentsOffCanvas = REFRESH_PAGE_INFO_BEFORE_AND_AFTER(deleteCommentFromCommentsOffCanvas);
+
+const addCommentFromCommentsOffCanvas = ($btnClicked) => {
+
+    const commentId = $btnClicked.attr('id').replace(/^pageAddCommentToSelectedText_btn_comOffCanvas_/, '');
+    const commentText = $(`textarea[siteFunction = "pageAddCommentToSelectedText_comment_comOffCanvas_${commentId}"]`).val();
+    if (!commentText || commentText.trim() === '' || commentText === 'undefined') return;
+
+    const pageComments = pageInfo.savedInfo.customComments;
+    const crtComment = getObjectFromArray ({id: commentId}, pageComments) 
+    const comment = {
+        anchor: crtComment.anchor,
+        comm: commentText.trim(),
+        matches: crtComment.matches,
+        uuid: uuid(),
+        // here we add a comment as child comment to the anchor; comment.refId = comment.id of the parent
+        // see addComment(..) from savedItems.js
+        refUuid: commentId
+    };
+
+    if (addComment(comment, pageInfo)) {
+        highlightSavedSelection(comment.matches, comment.uuid, comment.anchor);
+                   
+        markCustomComments(
+            {
+                savedInfo: getPageSavedInfo(pageInfo.siteInfo.permalink, pageInfo.siteInfo.title)
+            }
+        );
+        
+        initPageCommentsCanvasBeforeShow(
+            {
+                savedInfo: getPageSavedInfo(pageInfo.siteInfo.permalink, pageInfo.siteInfo.title)
+            }, 
+            comment.anchor
+        );
+    }
+}
+const REFRESH_PAGE_INFO_BEFORE_AND_AFTER__addCommentFromCommentsOffCanvas = REFRESH_PAGE_INFO_BEFORE_AND_AFTER(addCommentFromCommentsOffCanvas);
+
+
+const showAddCommentFromCommentsOffCanvas = async ($btnClicked) => {
+    await waitForI18Next();
+    // context to be used in css selectors is comOffCanvas
+    // css selectors are in the form div[siteFunction="pageAddCommentToSelectedText_container_${context}_${comment.id}"]
+    // see pageComments_AddCommentContainer(..) above
+    const commentId = $btnClicked.attr('id').replace(/^pageCommentsOffCanvas_commentCard_showAddCommentBox_/, '');
+    $(`textarea[siteFunction = "pageAddCommentToSelectedText_comment_comOffCanvas_${commentId}"]`).val('');
+    $(`textarea[siteFunction = "pageAddCommentToSelectedText_comment_comOffCanvas_${commentId}"]`)[0].setSelectionRange(0, 0);
+    $(`textarea[siteFunction = "pageAddCommentToSelectedText_comment_comOffCanvas_${commentId}"]`).focus();
+
+    keepTextInputLimits(
+        `textarea[siteFunction = "pageAddCommentToSelectedText_comment_comOffCanvas_${commentId}"]`,
+        settings.selectedTextContextMenu.comments.maxWords,
+        settings.selectedTextContextMenu.comments.maxChars,
+        `span[sitefunction="addCommentSelectedTextContextMenuWords_comOffCanvas_${commentId}"]`,
+        `span[sitefunction="addCommentSelectedTextContextMenuChars_comOffCanvas_${commentId}"]`
+    );
+
+    $(`div[siteFunction="pageAddCommentToSelectedText_container_comOffCanvas_${commentId}"]`).removeClass('d-none');
+
+}
+const REFRESH_PAGE_INFO_BEFORE_AND_AFTER__showAddCommentFromCommentsOffCanvas = REFRESH_PAGE_INFO_BEFORE_AND_AFTER(showAddCommentFromCommentsOffCanvas);
 
 const refreshPageAfterOffCanvasClose = () => {
     removeObservers('.offcanvas class=hiding getClass=true');

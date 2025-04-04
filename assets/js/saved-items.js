@@ -155,7 +155,7 @@ window.addNote = (note, pageInfo) => {
 // if we need to intercept this function with the global interceptor (see utilities.js)
 // and we don't want to define it in the global scope like window.func = (...) => {}
 // we cannot use arrow function syntax and we need to stick to the classical function definition
-function deleteNote(noteId, pageInfo)  {
+const deleteNote = (noteId, pageInfo) => {
     const page = {
         permalink: pageInfo.siteInfo.permalink,
         title: pageInfo.siteInfo.title
@@ -219,7 +219,7 @@ const updateNote = (noteId, note, pageInfo) => {
     return true;
 }
 
-const addComment = (comment, pageInfo, commentRefId = null) => {
+const addComment = (comment, pageInfo) => {
     const page = {
         permalink: pageInfo.siteInfo.permalink,
         title: pageInfo.siteInfo.title
@@ -248,7 +248,7 @@ const addComment = (comment, pageInfo, commentRefId = null) => {
         anchor: DOMPurify.sanitize(comment.anchor.trim()).replace(/<[^>]*>/g, ''),
         comment: DOMPurify.sanitize(comment.comm.trim()).replace(/<[^>]*>/g, ''),
         id: comment.uuid,
-        refId: !commentRefId ? comment.refUuid : commentRefId, // if is parent comment, comment.id = comment.refId
+        refId: comment.refUuid, // if is parent comment for an anchor, comment.id = comment.refId
         matches: comment.matches
     }
     savedPageCustomComments.push(commentObj);
@@ -257,6 +257,115 @@ const addComment = (comment, pageInfo, commentRefId = null) => {
     localStorage.setItem('savedItems', JSON.stringify(savedItems));
     return true;
 
+}
+
+const commentHasChildren = (comment, pageInfo) => {
+    const page = {
+        permalink: pageInfo.savedInfo.permalink,
+        title: pageInfo.savedInfo.title
+    };
+
+    const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
+    if (savedItems.length === 0 ) return false;
+
+    const pageIndex = objectIndexInArray(page, savedItems);
+    if ( pageIndex === -1 ) return false;
+
+    const savedPage = savedItems[pageIndex];
+    const savedPageCustomComments = savedPage.customComments || [];
+
+    if (savedPageCustomComments.length === 0 ) return false;
+
+    const children = getObjectsFromArray({refId: comment.id}, savedPageCustomComments);
+    const selfIndex = objectIndexInArray({id: comment.id}, children);
+    _.pullAt(children, selfIndex); // removing itself from the list of its children
+    if (children.length === 0) return false;
+        
+    return true;
+}
+
+const deleteComment = (commentId, pageInfo) => {
+    const page = {
+        permalink: pageInfo.siteInfo.permalink,
+        title: pageInfo.siteInfo.title
+    };
+
+    const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
+    if (savedItems.length === 0 ) {
+        showToast('Can\'t delete comment! There is nothing in saved items...', 'bg-danger', 'text-light');
+        return false;
+    }
+
+    const pageIndex = objectIndexInArray(page, savedItems);
+    if ( pageIndex === -1 ) {
+        showToast('Can\'t delete comment! Page not found in saved items...', 'bg-danger', 'text-light');
+        return false;
+    }
+
+    const savedPage = savedItems[pageIndex];
+    const savedPageCustomComments = savedPage.customComments || [];
+
+    const commentIndex = objectIndexInArray({id: commentId}, savedPageCustomComments);
+
+    if (commentIndex === -1) {
+        showToast('Can\'t delete comment! Comment not found...', 'bg-danger', 'text-light');
+        return false;
+    }
+    
+    // check if is a parent comment
+    const commentToDelete = savedPageCustomComments[commentIndex];
+    
+    if (commentToDelete.id === commentToDelete.refId) {
+        // parent comment
+        // need to find the comment that is linked to it and to make it parent
+        const commentToBecomeParent = getObjectsFromArray({refId: commentToDelete.id}, savedPageCustomComments);
+
+        if (commentToBecomeParent.length > 1) { 
+            let i = 0;
+            commentToBecomeParent.forEach(comment => {
+                if (comment.id === commentToDelete.id) {
+                    _.pullAt(commentToBecomeParent, i);
+                }
+                i++;
+            });
+
+            const linkedCommentIndex = objectIndexInArray({refId: commentToDelete.id, id:commentToBecomeParent[0].id}, savedPageCustomComments);
+            if (linkedCommentIndex !== -1 ) {
+                // comment.id = comment.refId means that the comment is a parent comment
+                savedPageCustomComments[linkedCommentIndex].refId = savedPageCustomComments[linkedCommentIndex].id
+            }
+        }
+
+    } else {
+        // not parent comment 
+        // get his parent
+        let hisParentId;
+        const hisParentIndex = objectIndexInArray({id: commentToDelete.refId}, savedPageCustomComments);
+        if (hisParentIndex !== -1) {
+            hisParentId = savedPageCustomComments[hisParentIndex].id;
+        }
+
+        // get his child (if any)
+        const hisChildIndex = objectIndexInArray({refId: commentToDelete.id}, savedPageCustomComments);
+
+        // linking his parent with his child
+        if(hisChildIndex !== -1) {
+            savedPageCustomComments[hisChildIndex].refId = hisParentId;
+        }
+    }
+
+    // removing the comment after re-linking remaining comments
+    _.pullAt(savedPageCustomComments, commentIndex);
+
+    // handle the case when there is only one comment left and is not the parent
+    if (savedPageCustomComments.length === 1) {
+        savedPageCustomComments[0].refId = savedPageCustomComments[0].id;
+    }
+
+    savedPage.customComments = savedPageCustomComments;
+    savedItems[pageIndex] = savedPage;
+    localStorage.setItem('savedItems', JSON.stringify(savedItems));
+    return true;
 }
 
 const getPageNotes = (pageInfo) => {
@@ -665,7 +774,14 @@ const updateTagForPage = (oldTag, newTag, pageInfo={}) => {
         return false;
     }
 
-    savedPageCustomTags = _.uniq(replaceAllOccurrencesCaseInsensitive(savedPageCustomTags, oldTag, newTag));
+    //savedPageCustomTags = _.uniq(replaceAllOccurrencesCaseInsensitive(savedPageCustomTags, oldTag, newTag));
+
+    let index = 0;
+    savedPageCustomTags.forEach(tag => {
+        if (tag.toLowerCase() === oldTag.toLowerCase()) savedPageCustomTags[index] = newTag;
+        index++;
+    });
+
     savedPage.customTags = savedPageCustomTags;
     savedItems[pageIndex] = savedPage;
     localStorage.setItem('savedItems', JSON.stringify(savedItems));
@@ -703,7 +819,14 @@ const updateCatForPage = (oldCat, newCat, pageInfo={}) => {
         return false;
     }
 
-    savedPageCustomCats = _.uniq(replaceAllOccurrencesCaseInsensitive(savedPageCustomCats, oldCat, newCat));
+    //savedPageCustomCats = _.uniq(replaceAllOccurrencesCaseInsensitive(savedPageCustomCats, oldCat, newCat));
+
+    let index = 0;
+    savedPageCustomCats.forEach(cat => {
+        if (cat.toLowerCase() === oldCat.toLowerCase()) savedPageCustomCats[index] = newCat;
+        index++;
+    });
+
     savedPage.customCategories = savedPageCustomCats;
     savedItems[pageIndex] = savedPage;
     localStorage.setItem('savedItems', JSON.stringify(savedItems));
