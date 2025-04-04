@@ -55,7 +55,7 @@ gem 'rack-cors'
 
 # for related pages based on TF-IDF algorithm
 gem 'tf-idf-similarity'
-gem 'nokogiri'
+gem 'nokogiri', ">=1.18.4"
 gem 'matrix'
 
 # for page keywords generator

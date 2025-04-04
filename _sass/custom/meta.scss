@@ -273,6 +273,7 @@ $sidebarLogo, $sideBarFooter, $sideBarHeader, $sideBarDocLink,$sideBarCategoryBt
         z-index:$stickyElementZIndex;
         margin-left:$correctionMargin;
         justify-content: $elementsPositionInHeader;
+        background: $headerBackground;
 
         @include phone {
             top: $stickyElementTop_phone !important;
