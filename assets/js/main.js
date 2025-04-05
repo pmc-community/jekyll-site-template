@@ -62,6 +62,11 @@ window.customiseTheme = (pageObj = null) => {
         setAnonymousUserToken();
         if (gData.gtm.enabled) pushInfoToGTM(pageInfo);
 
+        // do some corrections of JTD search, scrolling is not working well
+        // do some translation of dynamic search elements
+        // do some styling for better view (mostly on mobile)
+        correctJTDSearch();
+
         // finally, translate what is needed to be translated
         // after translation add ids to iframes and show everything
         const translationCompleteEvent = new Event('translationComplete');
@@ -88,6 +93,32 @@ window.customiseTheme = (pageObj = null) => {
 
 /* HERE ARE THE FUNCTIONS */
 
+const correctJTDSearch = () => {
+    if (!algoliaSettings.algoliaEnabled) {
+        removeObservers('body (class=search-results-list)');
+        setElementCreatedByClassObserver('search-results-list', () => {
+            $('.search-results-list').addClass('fs-6');
+            $('.search-result-previews').addClass('fs-6');
+            $('.search-result-highlight').addClass('text-danger');
+            $('.search-overlay').remove();
+            $('.search-result').removeClass('active)');            
+            
+        });
+
+        removeObservers('body (class=search-no-result)');
+        setElementCreatedByClassObserver('search-no-result', () => {
+            $('.search-no-result').text(i18next.t('main_menu_jtd_search_box_no_result_text'));
+        });
+
+        removeObservers('.search-result class=active getClass=true');
+        setElementChangeClassObserver ('.search-result ', 'active', true, () => {
+            const activeItem = $('.search-results-list').find('.active');
+            if (activeItem.length) {
+                setTimeout(() => activeItem[0].scrollIntoView({ block: 'nearest', behavior: 'smooth' }), 100);
+            }
+        });
+    }
+}
 
 const adjustBodyHeight_mobile = () => {
     if (preFlight.envInfo.device.deviceType === 'mobile') {

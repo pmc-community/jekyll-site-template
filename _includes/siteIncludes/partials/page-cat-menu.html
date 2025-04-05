@@ -2,7 +2,7 @@
 
 {% if site.data.siteConfig.catMenu %}
     {% if catMenu.catNo > 0 %}
-        <ul id="category-menu" class="px-5 nav align-items-center mb-md-0 mb-4">
+        <ul id="category-menu" class="px-5 nav align-items-center mb-md-0 mb-4 justify-content-md-end">
         {% for cat in catMenu.firstLevelMenuItems %}
         <li class="nav-item">
             {% assign rawCatUrl = "/cat-info?cat=" | append: cat %}

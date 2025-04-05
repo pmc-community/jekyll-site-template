@@ -304,6 +304,8 @@
     "main_menu_tags": "Etichete",
     "main_menu_home": "Acasa",
     "main_menu_switch_theme_btn_title": "Schimba tema",
+    "main_menu_jtd_search_box_placeholder": "Cauta",
+    "main_menu_jtd_search_box_no_result_text": "Niciun rezultat",
 
     "page_full_info_header_title": "Informatii detaliate",
     "page_full_info_gen_section_title": "General & Note",

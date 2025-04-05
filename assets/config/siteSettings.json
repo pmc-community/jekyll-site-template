@@ -894,22 +894,7 @@
       "ID": "e166804c-61ea-4b51-801d-f4299cb5c06c"
     }
   },
-  "algoliaSettings": {
-    "algoliaEnabled": true,
-    "algoliaAppID": "LU8ABE5OK9",
-    "algoliaIndex": "figmares-innohub",
-    "algoliaPublicApiKey": "14d176209af92e3c8ccb64e9b5da3832",
-    "algoliaSearchBoxContainer": "#docsearch",
-    "algoliaDebug": false,
-    "algoliaMaxResultsPerGroup": 20,
-    "algoliaHitsPerPage": 10,
-    "algoliaSendInsights": true,
-    "algoliaTextHighlightPrefixTag": "<mark>",
-    "algoliaTextHighlightPostfixTag": "</mark>",
-    "algoliaRaiseIssueLink": "https://github.com/pmc-community/figma/issues/new?title=",
-    "algoliaDocSearchEnabled": true,
-    "algoliaCustomEnabled": false
-  },
+  "algoliaSettings": {},
   "pageSettings": {
     "/": {
       "sections": {
@@ -1204,6 +1189,8 @@
     "main_menu_tags": "Tags",
     "main_menu_home": "Home",
     "main_menu_switch_theme_btn_title": "Switch theme",
+    "main_menu_jtd_search_box_placeholder": "Search",
+    "main_menu_jtd_search_box_no_result_text": "No result",
     "page_full_info_header_title": "Doc information",
     "page_full_info_gen_section_title": "General & Notes",
     "page_full_info_gen_page_title": "Title",

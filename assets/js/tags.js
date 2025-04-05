@@ -444,7 +444,7 @@ const setPageOtherCustomTags = (pageInformation, crtTag = null) => {
                     tagReference="${tag}"
                     id="pageTag_${tag}" 
                     type="button" 
-                    class="align-self-center text-nowrap focus-ring focus-ring-warning px-3 mr-2 my-1 btn btn-sm btn-success position-relative"
+                    class="align-self-center text-nowrap focus-ring focus-ring-warning px-3 mr-2 my-1 btn btn-sm btn-success position-relative text-nowrap"
                     title = "${i18next.t('tags_tag_cloud_tag_btn_title')} ${tag}"
                     data-i18n="[title]tags_tag_cloud_tag_btn_title">
                     ${tag}
@@ -868,7 +868,7 @@ const buildTagPagesListForCustomTag = (tag) => {
                         tagReference="${tag}" 
                         id="pageTag_${tag}" 
                         type="button" 
-                        class="focus-ring focus-ring-warning px-3 mr-2 my-1 btn btn-sm ${tagBtnType} position-relative" 
+                        class="focus-ring focus-ring-warning px-3 mr-2 my-1 btn btn-sm ${tagBtnType} position-relative text-nowrap" 
                         title="${i18next.t('tags_tag_cloud_tag_btn_title')} ${tag}"
                         data-i18n="[title]tags_tag_cloud_tag_btn_title"> 
                         ${tag} 

@@ -10,7 +10,12 @@
   </script>
 {% elsif site.search_enabled %}
   <script>
-    $('#category-menu').addClass('justify-content-end');
-    $('.search').css('cssText', 'width: {{ site.data.buildConfig.JTDSearch.searchBoxWidth }} !important;');
+    if (preFlight.envInfo.device.deviceType !== 'desktop') {
+      $('.search').addClass('px-5');
+      $('#search-results').addClass('px-0 position-static');      
+    } else {
+      $('.search').css('cssText', 'width: {{ site.data.buildConfig.JTDSearch.searchBoxWidth }} !important;');
+    }
+    $('#search-input').attr('data-i18n','[placeholder]main_menu_jtd_search_box_placeholder');
   </script>
 {% endif %}

@@ -703,7 +703,7 @@ const buildCatPagesListForCustomCat = (cat) => {
                         catReference="${cat}" 
                         id="pageCat_${cat}" 
                         type="button" 
-                        class="focus-ring focus-ring-warning px-3 mr-2 my-1 btn btn-sm ${catBtnType} fw-medium border-0 shadow-none position-relative"
+                        class="focus-ring focus-ring-warning px-3 mr-2 my-1 btn btn-sm ${catBtnType} fw-medium border-0 shadow-none position-relative text-nowrap"
                         data-i18n="[title]cats_cat_cloud_cat_btn_title"
                         title="${i18next.t('cats_cat_cloud_cat_btn_title')} ${cat}"> 
                         ${cat} 
@@ -787,7 +787,7 @@ const setPageOtherCustomCats = (pageInformation, crtCat = null) => {
                     catReference="${cat}"
                     id="pageCat_${cat}" 
                     type="button" 
-                    class="align-self-center text-nowrap focus-ring focus-ring-warning px-3 mr-2 my-1 btn btn-sm text-success fw-medium border-0 shadow-none position-relative"
+                    class="align-self-center text-nowrap focus-ring focus-ring-warning px-3 mr-2 my-1 btn btn-sm text-success fw-medium border-0 shadow-none position-relative text-nowrap"
                     data-i18n="[title]cats_cat_cloud_cat_btn_title"
                     title = "${i18next.t('cats_cat_cloud_cat_btn_title')} ${cat}">${cat}
                 </button>

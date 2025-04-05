@@ -289,6 +289,8 @@
     "main_menu_tags": "Tags",
     "main_menu_home": "Home",
     "main_menu_switch_theme_btn_title": "Switch theme",
+    "main_menu_jtd_search_box_placeholder": "Search",
+    "main_menu_jtd_search_box_no_result_text": "No result",
 
     "page_full_info_header_title": "Doc information",
     "page_full_info_gen_section_title": "General & Notes",
