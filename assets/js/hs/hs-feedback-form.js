@@ -1,10 +1,17 @@
-const {settings, pageSettings, hsSettings} = window.parent.utilities;
+const {settings, pageSettings, hsSettings, i18next} = window.parent.utilities;
 const { showToast, doTranslation } = window.parent.utilities.func;
 
 hsFeedbackForm = {
     doTheWork: () => {
-        
-        if (mainJQuery) {
+        // mainJQuery is defined in iframe-global.js
+        if (!mainJQuery || mainJQuery === 'undefined') {
+            iframeDocument.body.innerHTML = '';
+            setTimeout(() => {
+                showToast(i18next.t('toast_hs_integrate_js_jquery_error'), 'bg-danger', 'text-light');
+                console.error(`jQuery is not available in this context (or iframe), although it should be! Check the iframes that loads HubSpot forms! Open browser console, select the related iframe console and run "console.log($)".`)
+            }, 200);
+            
+        } else {
             $(hsFeedbackForm.iframeDocument).ready(function() {
                 hsFeedbackForm.addMarkersForTranslation();
 
@@ -16,13 +23,6 @@ hsFeedbackForm = {
 
                 hsFeedbackForm.translateForm();
             });
-        } else {
-            iframeDocument.body.innerHTML = '';
-            setTimeout(() => {
-                hsFeedbackForm.notifyParentOnIFrameZeroHeight($(window.frameElement).attr('iframe-data-id'));
-                showToast(`Something went wrong, cannot execute functions! Details in console ...`, 'bg-danger', 'text-light');
-                console.error(`jQuery is not available in this context (or iframe), although it should be! Check <iframe iframe-data-id="${$(window.frameElement).attr('iframe-data-id')}" ... >`)
-            }, 200);
         }
     },
 

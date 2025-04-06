@@ -14,7 +14,6 @@ $(document).on('shown.bs.offcanvas', '#offcanvasPageComments', function () {
 // called from _includes/siteIncludes/partials/page-common/page-auto-summary.html
 
 const page__getAutoSummary = () => {
-
     // defined as window.func because we want to hook actions on it
     window.createAutoSummaryPageContainer = (page) => {
         const autoSummary = page.siteInfo.autoSummary || [];

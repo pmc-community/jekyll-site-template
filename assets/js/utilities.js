@@ -4,8 +4,9 @@
 // this has to be here, orherwise the hash will be removed before handling the fixed header
 
 // Override the default alert function to not show ugly message boxes
-window.alert = function(message) {
-    showToast('Something did not work as expected (details in console)! You may refresh page and try again. If the problem persists, contact support.', 'bg-warning', 'text-dark');
+window.alert = async function(message) {
+    await waitForI18Next();
+    showToast(i18next.t('toast_utilities_js_alert_override_warning'), 'bg-warning', 'text-dark');
     console.error(message);
 };
 
@@ -343,8 +344,9 @@ const arrayDuplicates = (arr) => {
 // DO NOT USE DYNAMIC CLIENT-SIDE CONTENT IF THIS CONTENT IS IMPORTANT AND MUST BE SEARCHABLE (BY JTD SEARCH OR BY ALGOLIA)
 // INSTEAD USE JEKYLL SPECIFIC LIQUID TAGS TO GENERATE THE CONTENT AT BUILD TIME
 // DYNAMIC CLIENT-SIDE CLIENT MAY BE USEFUL WHEN NEED TO SHOW CONTENT LIKE NEWS OR ANNOUNCEMENTS OR SIMILAR
-const getExternalContent = async (file, position, startMarker , endMarker, header, whereID, whoCalled) => {
-    $(window).on('load', () => {
+const getExternalContent = (file, position, startMarker , endMarker, header, whereID, whoCalled) => {
+    $(window).on('load', async () => {
+        await waitForI18Next();
         // prevent returning unwanted quantity of content
         if (typeof startMarker === 'undefined' ||  typeof endMarker === 'undefined' ) return;
         if (startMarker.trim() === '' && endMarker.trim() === '') return;
@@ -392,7 +394,7 @@ const getExternalContent = async (file, position, startMarker , endMarker, heade
 
             },
             error: async (xhr, status, error) => {
-                showToast(`Error loading external content! Details in console ...`, 'bg-danger', 'text-light');
+                showToast(i18next.t('toast_utilities_js_external_content_loading_error'), 'bg-danger', 'text-light');
                 const placeholder = position === 'before' || position === 'after' ? 'N/A for this position' : whereID;
                 console.error(`Error fetching file: ${file}\nStatus: ${status} / ${xhr.responseText}\nPosition: ${position}\nPlaceholder: ${placeholder}\nOrigin: ${whoCalled}`,error);
             }
@@ -1031,7 +1033,7 @@ const setDataTable = async (
                 try {
                     cD = table.settings().init().columns; // read cols definitions directly from table object
                 } catch (error) {
-                    showToast('Something went wrong when building the table! You may refresh page and try again. If the problem persists, contact support.', 'bg-danger', 'text-light');
+                    showToast(i18next.t('toast_utilities_js_dt_create_table_error'), 'bg-danger', 'text-light');
                     console.error('Docs table error:', error);
                 }
 
@@ -2420,18 +2422,15 @@ const iframe__addI18ToIFrames = ($elementInsideIFrame) => {
     const $iframeHead = $($iframeDocument).find('head');
     const $iframeBody = $($iframeDocument).find('body');
     
-    const i18next = `<script defer type="text/javascript" src="${settings.multilang.scripts.i18}"></script>`;
-    const i18HttpBackend = `<script defer type="text/javascript" src="${settings.multilang.scripts.i18Backend}"></script>`;
-    const i18JQuery = `<script defer type="text/javascript" src="${settings.multilang.scripts.i18JQuery}"></script>`;
-    const i18Jsprintf = `<script defer type="text/javascript" src="${settings.multilang.scripts.i18Sprintf}"></script>`;
+    const i18nextScript = `<script type="text/javascript" src="${settings.multilang.scripts.i18}"></script>`;
+    const i18HttpBackendScript = `<script type="text/javascript" src="${settings.multilang.scripts.i18Backend}"></script>`;
+    const i18JQueryScript = `<script type="text/javascript" src="${settings.multilang.scripts.i18JQuery}"></script>`;
+    const i18JsprintfScript = `<script type="text/javascript" src="${settings.multilang.scripts.i18Sprintf}"></script>`;
     $($iframeHead)
-        .append(i18next)
-        .append(i18HttpBackend)
-        .append(i18JQuery)
-        .append(i18Jsprintf);
-    
-    const check = '<script>console.log(i18next)</script>'
-    $($iframeBody).append(check)
+        .append(i18nextScript)
+        .append(i18HttpBackendScript)
+        .append(i18JQueryScript)
+        .append(i18JsprintfScript);    
 }
 
 const addCustomScriptsToIFrames = (cssScripts = [], jsScripts = []) => {
@@ -2472,16 +2471,16 @@ const iframe__addCustomScriptsToIFrames = ($elementInsideIFrame, cssScripts = []
     })
 }
 
-const iframe__utilities = () => {
+const iframe__utilities =  () => {
     return {
         settings: settings,
         pageSettings: pageSettings,
         hsSettings: hsSettings,
         anonymousUserToken: setAnonymousUserToken(),
+        i18next: i18next,
         func: {
             showToast: showToast,
             doTranslation: doTranslation,
-            waitForI18Next: waitForI18Next
         }
     }
 }

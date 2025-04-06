@@ -485,7 +485,7 @@ sitePagesFn = {
                 };
                 savePageToSavedItems(page);
                 // just to warn that will be removed from saved items if not adding some tags or cats or notes or comments
-                showToast(`Document ${title} is now saved!<br><strong>HEADS UP!!!</strong><br>Document will be removed automatically if you don't add some custom info (tags, categories, notes, comments)`, 'bg-warning', 'text-dark');
+                showToast(i18next.t('toast_site_pages_js_doc_saved_but_empty_data_warning', { postProcess: 'sprintf', sprintf: [title] }), 'bg-warning', 'text-dark');
                 sitePagesFn.setPagesSavedStatus();
             });
         
@@ -1370,7 +1370,7 @@ sitePagesFn = {
         const file = files[0];
         if (!file || file === undefined || file.name === '') return;
         if (file.name.split('.').pop() !== 'json') {
-            showToast(`Sorry! Only *.json files allowed this time.`, 'bg-danger', 'text-light');
+            showToast(i18next.t('toast_site_pages_js_file_loaded_only_json_error'), 'bg-danger', 'text-light');
             return;
         }
 

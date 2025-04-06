@@ -245,7 +245,7 @@ const catInfoAddPageToCat = (result) => {
     const activeCat = $('div[siteFunction="catDetails"]:not(.d-none)').attr('catReference') || '';
     if (activeCat.trim() !== '') {
         if (catList.includes(activeCat.trim()))
-            showToast('Cannot add a page to a site category', 'bg-danger', 'text-light');
+            showToast(i18next.t('toast_cats_js_add_doc_to_site_cat_error'), 'bg-danger', 'text-light');
         else {
             const page = transformStringFromPageSearchList(result);
             addCat(activeCat.trim(), {siteInfo: page});
@@ -254,7 +254,7 @@ const catInfoAddPageToCat = (result) => {
         }
     }
     else {
-        showToast('Select a custom category to use this feature!', 'bg-warning', 'text-dark');
+        showToast(i18next.t('toast_cats_js_add_doc_to_site_cat_warning'), 'bg-warning', 'text-dark');
     }
 }
 

@@ -163,7 +163,7 @@ algolia = {
                             results = results.concat(searchResults.hits);
                         })
                         .catch(function(error) {
-                            showToast('Something went wrong with this search!<br><br>You may try again later. If the problem persists, contact support.', 'bg-danger', 'text-light');
+                            showToast(i18next.t('toast_algolia_integrate_js_search_error'), 'bg-danger', 'text-light');
                             console.error('Search error:', error);
                         });
                 };
@@ -180,12 +180,12 @@ algolia = {
                         logResults();  // Ensure logging only after all promises resolve
                     })
                     .catch(function(error) {
-                        showToast('Something went wrong with retrieving all search result pages!<br><br>You may try again later. If the problem persists, contact support.', 'bg-danger', 'text-light');
+                        showToast(i18next.t('toast_algolia_integrate_js_retrieve_all_results_error'), 'bg-danger', 'text-light');
                         console.error('Error in fetching all pages:', error);
                     });
             })
             .catch(function(error) {
-                showToast('Something went wrong with the initial search (number of pages)!<br><br>You may try again later. If the problem persists, contact support.', 'bg-danger', 'text-light');
+                showToast(i18next.t('toast_algolia_integrate_js_retrieve_initial_search_error'), 'bg-danger', 'text-light');
                 console.error('Initial search error:', error);
             });
 
@@ -584,7 +584,7 @@ algolia = {
                 })
                 .catch(function(error) {
                     console.error('Error while fetching paginated results:', error);
-                    showToast('Error while fetching paginated results! Please try again.', 'bg-danger', 'text-light');
+                    showToast(i18next.t('toast_algolia_integrate_js_retrieve_pagination_error'), 'bg-danger', 'text-light');
                 });
         };
     },
@@ -1288,7 +1288,20 @@ algolia = {
                     window.location.href = url;
                 } else {
                     console.error('Invalid URL:', url);
-                    showToast(`Something is wrong with the hit target (${url})! Cannot go there ... `, 'bg-danger', 'text-light');
+                    showToast(
+                        i18next.t(
+                            'toast_algolia_integrate_js_hit_target_url_error', 
+                            {
+                                postProcess: 'sprintf', 
+                                sprintf: 
+                                    [
+                                        url, 
+                                    ]
+                            }
+                        ), 
+                        'bg-danger', 
+                        'text-light'
+                    );
                     console.error('Search error:', error);
                 }
             }

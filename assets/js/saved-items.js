@@ -111,18 +111,18 @@ window.addNote = (note, pageInfo) => {
     };
     const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
     if (savedItems.length === 0 ) {
-        showToast(`Can\'t add note! There is nothing in saved items...`, 'bg-danger', 'text-light');
+        showToast(i18next.t('toast_saved_items_js_empty_saved_items_error'), 'bg-danger', 'text-light');
         return false;
     }
 
     const pageIndex = objectIndexInArray(page, savedItems);
     if ( pageIndex === -1 ) {
-        showToast(`Can\'t add note! Page ${page.title} not found in saved items...`, 'bg-danger', 'text-light');
+        showToast(i18next.t('toast_saved_items_js_doc_not_in_saved_items_error', { postProcess: 'sprintf', sprintf: [page.title] } ), 'bg-danger', 'text-light');
         return false;
     }
 
     if (note.trim() === '') {
-        //showToast('Nothing to add, write something ...', 'bg-warning', 'text-dark');
+        showToast(i18next.t('toast_saved_items_js_empty_note_warning'), 'bg-warning', 'text-dark');
         return false;
     }
     
@@ -135,7 +135,7 @@ window.addNote = (note, pageInfo) => {
     
     const noteIndex = objectIndexInArray({note: note.trim().toLowerCase()}, rawSavedPageCustomNotes);
     if (noteIndex !== -1) {
-        showToast('Note already saved, no need to save it again!', 'bg-warning', 'text-dark');
+        showToast(i18next.t('toast_saved_items_js_note_already_saved_warning'), 'bg-warning', 'text-dark');
         return false;
     }
 
@@ -163,13 +163,13 @@ const deleteNote = (noteId, pageInfo) => {
 
     const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
     if (savedItems.length === 0 ) {
-        showToast('Can\'t delete note! There is nothing in saved items...', 'bg-danger', 'text-light');
+        showToast(i18next.t('toast_saved_items_js_note_del_empty_saved_items_error'), 'bg-danger', 'text-light');
         return false;
     }
 
     const pageIndex = objectIndexInArray(page, savedItems);
     if ( pageIndex === -1 ) {
-        showToast('Can\'t delete note! Page not found in saved items...', 'bg-danger', 'text-light');
+        showToast(i18next.t('toast_saved_items_js_note_del_doc_not_in_saved_items_error'), 'bg-danger', 'text-light');
         return false;
     }
 
@@ -193,13 +193,18 @@ const updateNote = (noteId, note, pageInfo) => {
 
     const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
     if (savedItems.length === 0 ) {
-        showToast('Can\'t update note! There is nothing in saved items...', 'bg-danger', 'text-light');
+        showToast(i18next.t('toast_saved_items_js_empty_saved_items_error'), 'bg-danger', 'text-light');
         return false;
     }
 
     const pageIndex = objectIndexInArray(page, savedItems);
     if ( pageIndex === -1 ) {
-        showToast('Can\'t update note! Page not found in saved items...', 'bg-danger', 'text-light');
+        showToast(i18next.t('toast_saved_items_js_doc_not_in_saved_items_error'), 'bg-danger', 'text-light');
+        return false;
+    }
+
+    if (note.trim() === '') {
+        showToast(i18next.t('toast_saved_items_js_empty_note_warning'), 'bg-warning', 'text-dark');
         return false;
     }
 
@@ -208,7 +213,7 @@ const updateNote = (noteId, note, pageInfo) => {
     
     const noteIndex = objectIndexInArray({id: noteId}, savedPageCustomNotes);
     if (noteIndex === -1) {
-        showToast('Can\'t update! Note not found', 'bg-danger', 'text-light');
+        showToast(i18next.t('toast_saved_items_js_note_not_found_error'), 'bg-danger', 'text-light');
         return false;
     }
 
@@ -226,13 +231,13 @@ const addComment = (comment, pageInfo) => {
     };
     const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
     if (savedItems.length === 0 ) {
-        showToast(`Can\'t add comment! There is nothing in saved items...`, 'bg-danger', 'text-light');
+        showToast(i18next.t('toast_saved_items_js_comm_empty_saved_items_error'), 'bg-danger', 'text-light');
         return false;
     }
 
     const pageIndex = objectIndexInArray(page, savedItems);
     if ( pageIndex === -1 ) {
-        showToast(`Can\'t add comment! Page ${page.title} not found in saved items...`, 'bg-danger', 'text-light');
+        showToast(i18next.t('toast_saved_items_js_comm_doc_not_in_saved_items_error', { postProcess: 'sprintf', sprintf: [page.title] } ), 'bg-danger', 'text-light');
         return false;
     }
 
@@ -292,13 +297,13 @@ const deleteComment = (commentId, pageInfo) => {
 
     const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
     if (savedItems.length === 0 ) {
-        showToast('Can\'t delete comment! There is nothing in saved items...', 'bg-danger', 'text-light');
+        showToast(i18next.t('toast_saved_items_js_del_comm_empty_saved_items_error'), 'bg-danger', 'text-light');
         return false;
     }
 
     const pageIndex = objectIndexInArray(page, savedItems);
     if ( pageIndex === -1 ) {
-        showToast('Can\'t delete comment! Page not found in saved items...', 'bg-danger', 'text-light');
+        showToast(i18next.t('toast_saved_items_js_del_comm_doc_not_in_saved_items_error'), 'bg-danger', 'text-light');
         return false;
     }
 
@@ -308,7 +313,7 @@ const deleteComment = (commentId, pageInfo) => {
     const commentIndex = objectIndexInArray({id: commentId}, savedPageCustomComments);
 
     if (commentIndex === -1) {
-        showToast('Can\'t delete comment! Comment not found...', 'bg-danger', 'text-light');
+        showToast(i18next.t('toast_saved_items_js_comm_not_found_error'), 'bg-danger', 'text-light');
         return false;
     }
     
@@ -496,13 +501,13 @@ window.addTag = (tag, pageInfo) => {
     };
     const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
     if (savedItems.length === 0 ) {
-        showToast(`Can\'t add tag! There is nothing in saved items...`, 'bg-danger', 'text-light');
+        showToast(i18next.t('toast_saved_items_js_tag_empty_saved_items_error'), 'bg-danger', 'text-light');
         return false;
     }
 
     const pageIndex = objectIndexInArray(page, savedItems);
     if ( pageIndex === -1 ) {
-        showToast(`Can\'t add tag! Page ${page.title} not found in saved items...`, 'bg-danger', 'text-light');
+        showToast(i18next.t('toast_saved_items_js_tag_doc_not_in_saved_items_error', { postProcess: 'sprintf', sprintf: [page.title] } ), 'bg-danger', 'text-light');
         return false;
     }
 
@@ -510,7 +515,6 @@ window.addTag = (tag, pageInfo) => {
     tag = tag.replace(/[^a-zA-Z0-9]/g, ' ');
     tag = DOMPurify.sanitize(tag);
     if (tag.trim() === '') {
-        //showToast('Nothing to add, write something ...', 'bg-warning', 'text-dark');
         return false;
     }
     
@@ -520,7 +524,7 @@ window.addTag = (tag, pageInfo) => {
     const tagIndex =  _.findIndex(savedPageCustomTags, item => item.toLowerCase() === tag.toLowerCase());
     const tagGlobIndex =  _.findIndex(tagList, item => item.toLowerCase() === tag.toLowerCase());
     if (tagGlobIndex !== -1) {
-        showToast(`Can\'t add tag ${tag} because this tag is already a site tag!`, 'bg-warning', 'text-dark');
+        showToast(i18next.t('toast_saved_items_js_tag_is_site_tag_warning', { postProcess: 'sprintf', sprintf: [tag] } ), 'bg-warning', 'text-dark');
         return false;
     }
     if (tagIndex === -1 && tagGlobIndex === -1) savedPageCustomTags.push(tag);
@@ -538,13 +542,13 @@ window.addCat = (cat, pageInfo) => {
     };
     const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
     if (savedItems.length === 0 ) {
-        showToast(`Can\'t add tag! There is nothing in saved items...`, 'bg-danger', 'text-light');
+        showToast(i18next.t('toast_saved_items_js_cat_empty_saved_items_error'), 'bg-danger', 'text-light');
         return false;
     }
 
     const pageIndex = objectIndexInArray(page, savedItems);
     if ( pageIndex === -1 ) {
-        showToast(`Can\'t add category! Page ${page.title} not found in saved items...`, 'bg-danger', 'text-light');
+        showToast(i18next.t('toast_saved_items_js_cat_doc_not_in_saved_items_error', { postProcess: 'sprintf', sprintf: [page.title] } ), 'bg-danger', 'text-light');
         return false;
     }
 
@@ -552,7 +556,6 @@ window.addCat = (cat, pageInfo) => {
     cat = cat.replace(/[^a-zA-Z0-9]/g, ' ');
     cat = DOMPurify.sanitize(cat);
     if (cat.trim() === '') {
-        //showToast('Nothing to add, write something ...', 'bg-warning', 'text-dark');
         return false;
     }
     
@@ -562,7 +565,7 @@ window.addCat = (cat, pageInfo) => {
     const catIndex =  _.findIndex(savedPageCustomCats, item => item.toLowerCase() === cat.toLowerCase());
     const catGlobIndex =  _.findIndex(catList, item => item.toLowerCase() === cat.toLowerCase());
     if (catGlobIndex !== -1) {
-        showToast(`Can\'t add category ${cat} because this category is already a site category!`, 'bg-warning', 'text-dark');
+        showToast(i18next.t('toast_saved_items_js_cat_is_site_cat_warning', { postProcess: 'sprintf', sprintf: [cat] } ), 'bg-warning', 'text-dark');
         return false;
     }
     if (catIndex === -1 && catGlobIndex === -1) savedPageCustomCats.push(cat);
@@ -581,13 +584,13 @@ const deleteTagFromPage = (tag, pageInfo) => {
 
     const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
     if (savedItems.length === 0 ) {
-        showToast('Can\'t delete tag! There is nothing in saved items...', 'bg-danger', 'text-light');
+        showToast(i18next.t('toast_saved_items_js_tag_empty_saved_items_error'), 'bg-danger', 'text-light');
         return false;
     }
 
     const pageIndex = objectIndexInArray(page, savedItems);
     if ( pageIndex === -1 ) {
-        showToast('Can\'t delete tag! Page not found in saved items...', 'bg-danger', 'text-light');
+        showToast(i18next.t('toast_saved_items_js_tag_doc_not_in_saved_items_error', { postProcess: 'sprintf', sprintf: [page.title] }), 'bg-danger', 'text-light');
         return false;
     }
 
@@ -611,13 +614,13 @@ const deleteCatFromPage = (cat, pageInfo) => {
 
     const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
     if (savedItems.length === 0 ) {
-        showToast('Can\'t delete category! There is nothing in saved items...', 'bg-danger', 'text-light');
+        showToast(i18next.t('toast_saved_items_jscat_empty_saved_items_error'), 'bg-danger', 'text-light');
         return false;
     }
 
     const pageIndex = objectIndexInArray(page, savedItems);
     if ( pageIndex === -1 ) {
-        showToast('Can\'t delete category! Page not found in saved items...', 'bg-danger', 'text-light');
+        showToast(i18next.t('toast_saved_items_js_cat_doc_not_in_saved_items_error', { postProcess: 'sprintf', sprintf: [page.title] }), 'bg-danger', 'text-light');
         return false;
     }
 
@@ -637,7 +640,7 @@ const deleteTagFromAllPages = (tag, pageInfo={}) => {
 
     const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
     if (savedItems.length === 0 ) {
-        showToast('Can\'t delete tag! There is nothing in saved items...', 'bg-danger', 'text-light');
+        showToast(i18next.t('toast_saved_items_js_tag_empty_saved_items_error'), 'bg-danger', 'text-light');
         return false;
     }
 
@@ -659,7 +662,7 @@ const deleteCatFromAllPages = (cat, pageInfo={}) => {
 
     const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
     if (savedItems.length === 0 ) {
-        showToast('Can\'t delete catgory! There is nothing in saved items...', 'bg-danger', 'text-light');
+        showToast(i18next.t('toast_saved_items_js_cat_empty_saved_items_error'), 'bg-danger', 'text-light');
         return false;
     }
 
@@ -684,13 +687,13 @@ const updateTagForAllPages = (oldTag, newTag) => {
 
     const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
     if (savedItems.length === 0 ) {
-        showToast('Can\'t update tag! There is nothing in saved items...', 'bg-danger', 'text-light');
+        showToast(i18next.t('toast_saved_items_js_tag_update_empty_saved_items_error'), 'bg-danger', 'text-light');
         return false;
     }
 
     const tagGlobIndex =  _.findIndex(tagList, item => item.toLowerCase() === newTag.toLowerCase());
     if (tagGlobIndex !== -1) {
-        showToast(`Can\'t update tag ${oldTag} with ${newTag} because ${newTag} is already a site tag!`, 'bg-warning', 'text-dark');
+        showToast(i18next.t('toast_saved_items_js_tag_update_is_site_tag_warning', { postProcess: 'sprintf', sprintf: [oldTag, newTag, newTag] }), 'bg-warning', 'text-dark');
         return false;
     }
 
@@ -717,13 +720,13 @@ const updateCatForAllPages = (oldCat, newCat) => {
 
     const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
     if (savedItems.length === 0 ) {
-        showToast('Can\'t update category! There is nothing in saved items...', 'bg-danger', 'text-light');
+        showToast(i18next.t('toast_saved_items_js_cat_update_empty_saved_items_error'), 'bg-danger', 'text-light');
         return false;
     }
 
     const catGlobIndex =  _.findIndex(catList, item => item.toLowerCase() === newCat.toLowerCase());
     if (catGlobIndex !== -1) {
-        showToast(`Can\'t update category ${oldCat} with ${newCat} because ${newCat} is already a site category!`, 'bg-warning', 'text-dark');
+        showToast(i18next.t('toast_saved_items_js_cat_update_is_site_cat_warning', { postProcess: 'sprintf', sprintf: [oldCat, newCat, newCat] }), 'bg-warning', 'text-dark');
         return false;
     }
 
@@ -750,7 +753,7 @@ const updateTagForPage = (oldTag, newTag, pageInfo={}) => {
 
     const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
     if (savedItems.length === 0 ) {
-        showToast('Can\'t update tag! There is nothing in saved items...', 'bg-danger', 'text-light');
+        showToast(i18next.t('toast_saved_items_js_tag_update_empty_saved_items_error'), 'bg-danger', 'text-light');
         return false;
     }
 
@@ -761,7 +764,7 @@ const updateTagForPage = (oldTag, newTag, pageInfo={}) => {
 
     const pageIndex = objectIndexInArray(page, savedItems);
     if ( pageIndex === -1 ) {
-        showToast('Can\'t update tag! Page not found in saved items...', 'bg-danger', 'text-light');
+        showToast(i18next.t('toast_saved_items_js_tag_doc_not_in_saved_items_error', { postProcess: 'sprintf', sprintf: [page.title] }), 'bg-danger', 'text-light');
         return false;
     }
 
@@ -770,7 +773,7 @@ const updateTagForPage = (oldTag, newTag, pageInfo={}) => {
     const tagGlobIndex =  _.findIndex(tagList, item => item.toLowerCase() === newTag.toLowerCase());
 
     if (tagGlobIndex !== -1) {
-        showToast(`Can\'t update tag ${oldTag} with ${newTag} because ${newTag} is already a site tag!`, 'bg-warning', 'text-dark');
+        showToast(i18next.t('toast_saved_items_js_tag_update_is_site_tag_warning', { postProcess: 'sprintf', sprintf: [oldTag, newTag, newTag] }), 'bg-warning', 'text-dark');
         return false;
     }
 
@@ -795,7 +798,7 @@ const updateCatForPage = (oldCat, newCat, pageInfo={}) => {
 
     const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
     if (savedItems.length === 0 ) {
-        showToast('Can\'t update category! There is nothing in saved items...', 'bg-danger', 'text-light');
+        showToast(i18next.t('toast_saved_items_js_cat_update_empty_saved_items_error'), 'bg-danger', 'text-light');
         return false;
     }
 
@@ -806,7 +809,7 @@ const updateCatForPage = (oldCat, newCat, pageInfo={}) => {
 
     const pageIndex = objectIndexInArray(page, savedItems);
     if ( pageIndex === -1 ) {
-        showToast('Can\'t update category! Page not found in saved items...', 'bg-danger', 'text-light');
+        showToast(i18next.t('toast_saved_items_js_cat_doc_not_in_saved_items_error', { postProcess: 'sprintf', sprintf: [page.title] }), 'bg-danger', 'text-light');
         return false;
     }
 
@@ -815,7 +818,7 @@ const updateCatForPage = (oldCat, newCat, pageInfo={}) => {
     const catGlobIndex =  _.findIndex(catList, item => item.toLowerCase() === newCat.toLowerCase());
 
     if (catGlobIndex !== -1) {
-        showToast(`Can\'t update category ${oldCat} with ${newCat} because ${newCat} is already a site category!`, 'bg-warning', 'text-dark');
+        showToast(i18next.t('toast_saved_items_js_cat_update_is_site_cat_warning', { postProcess: 'sprintf', sprintf: [oldCat, newCat, newCat] }), 'bg-warning', 'text-dark');
         return false;
     }
 
@@ -844,7 +847,7 @@ window.saveLocalStorageKeyAsJsonFile = (key, filename) => {
     try {
         jsonData = JSON.parse(data);
     } catch (error) {
-        showToast(`Can\'t save local storage key! Error parsing key ${key}`, 'bg-danger', 'text-light');
+        showToast(i18next.t('toast_saved_items_js_local_storage_key_json_parse_error', { postProcess: 'sprintf', sprintf: [key] }), 'bg-danger', 'text-light');
         return `error parsing local storage key ${key}`;
     }
 
@@ -856,7 +859,7 @@ window.saveLocalStorageKeyAsJsonFile = (key, filename) => {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    showToast(`Your saved data is now in downloads folder, ${filename}.json`, 'bg-success', 'text-light');
+    showToast(i18next.t('toast_saved_items_js_file_saved_success', { postProcess: 'sprintf', sprintf: [filename] }), 'bg-success', 'text-light');
     return filename;
 }
 
@@ -871,30 +874,30 @@ window.loadLocalStorageKeyFromJsonFile = (key, file, schema = null) => {
                 if (schema) validSchema = isValidArrayOfObjectsStructure(json, schema);
                 if (validSchema) {
                     localStorage.setItem(key, JSON.stringify(json));
-                    showToast(`Data from file ${file.name} has been loaded`, 'bg-success', 'text-light');
+                    showToast(i18next.t('toast_saved_items_js_file_loaded_success', { postProcess: 'sprintf', sprintf: [file.name] }), 'bg-success', 'text-light');
                     return file.name;
                 }
                 else {
-                    showToast(`Can\'t load ${file.name} because it has invalid schema`, 'bg-danger', 'text-light');
+                    showToast(i18next.t('toast_saved_items_js_file_loaded_schema_error', { postProcess: 'sprintf', sprintf: [file.name] }), 'bg-danger', 'text-light');
                     return `${file.name} has invalid schema`;
                 }
 
             } catch (error) {
-                showToast(`The file ${file.name} is not a valid JSON file and cannot be parsed`, 'bg-danger', 'text-light');
+                showToast(i18next.t('toast_saved_items_js_file_loaded_invalid_file_error', { postProcess: 'sprintf', sprintf: [file.name] }), 'bg-danger', 'text-light');
                 return `${file.name} is not a valid JSON file`
             }
         };
 
         reader.onerror = function() {
             console.error('Error reading file:', reader.error);
-            showToast(`Error reading file ${file.name}`, 'bg-danger', 'text-light');
+            showToast(i18next.t('toast_saved_items_js_file_read_error', { postProcess: 'sprintf', sprintf: [file.name] }), 'bg-danger', 'text-light');
             return `Error reading file ${file.name}`;
         };
 
         reader.readAsText(file);
         return file.name;
     } else {
-        showToast('No file selected', 'bg-warning', 'text-dark');
+        showToast(i18next.t('toast_saved_items_js_no_file_selected_warning'), 'bg-warning', 'text-dark');
         return `no file selected`
     }
 }

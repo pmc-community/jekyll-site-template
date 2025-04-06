@@ -1123,7 +1123,7 @@ const tagInfoAddPageToTag = (result) => {
     const activeTag = $('div[siteFunction="tagDetails"]:not(.d-none)').attr('tagReference') || '';
     if (activeTag.trim() !== '') {
         if (tagList.includes(activeTag.trim()))
-            showToast('Cannot add a page to a site tag', 'bg-danger', 'text-light');
+            showToast(i18next.t('toast_tags_js_add_doc_to_site_tag_error'), 'bg-danger', 'text-light');
         else {
             const page = transformStringFromPageSearchList(result);
             addTag(activeTag.trim(), {siteInfo: page});
@@ -1132,6 +1132,6 @@ const tagInfoAddPageToTag = (result) => {
         }
     }
     else {
-        showToast('Select a custom tag to use this feature!', 'bg-warning', 'text-dark');
+        showToast(i18next.t('toast_tags_js_add_doc_to_site_tag_warning'), 'bg-warning', 'text-dark');
     }
 }

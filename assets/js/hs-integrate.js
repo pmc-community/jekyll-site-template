@@ -172,7 +172,7 @@ hsIntegrate = {
     },
 
     loadScriptsAndStyles: ($form, cssScripts, jsScripts) => {
-        //iframe__addI18ToIFrames($form);
+        iframe__addI18ToIFrames($form);
         iframe__addBootstrapToIFrames($form);
         iframe__addCustomScriptsToIFrames($form, cssScripts, jsScripts);
     },
@@ -239,7 +239,7 @@ hsIntegrate = {
             const $iframeBody = $($iframeDocument).find('body');
             $iframeBody.find('.hs-error-msg').hide();
 
-            // we handle errors since default handling is altering the form iFrame hight and push the submit btn under bottom edge
+            // custom handle for errors since default handling is altering the form iFrame hight and push the submit btn under bottom edge
             //.css('font-family', $('body').css('font-family'))
             //.addClass('fieldValidationErrorMessage')
             //.text('REQUIRED OR WRONG FORMAT');
@@ -251,7 +251,7 @@ hsIntegrate = {
             const $iframeDocument = $form[0].ownerDocument;
             const $iframeBody = $($iframeDocument).find('body');
             $iframeBody.find('.hs_error_rollup').addClass('d-none');
-            showToast(`Please fill in the required information in the right format`, 'bg-danger', 'text-light');
+            showToast(i18next.t('toast_hs_integrate_js_wrong_format_error'), 'bg-danger', 'text-light');
         });
 
         // text after form is submitted
@@ -271,7 +271,7 @@ hsIntegrate = {
             const $iframeDocument = $form[0].ownerDocument;
             const $iframeBody = $($iframeDocument).find('body');
             $iframeBody.find('input[type="email"]').addClass('border border-secondary border-opacity-25 inputField');
-            showToast(`Please fill in the email in the right format`, 'bg-danger', 'text-light');
+            showToast(i18next.t('toast_hs_integrate_js_wrong_email_format_error'), 'bg-danger', 'text-light');
         });
 
         iframe__setElementChangeClassObserver($form,'input[type="email"]', 'invalid', false, () => {
@@ -282,3 +282,5 @@ hsIntegrate = {
     }
 
 }
+
+
