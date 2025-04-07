@@ -19,6 +19,7 @@ $tablet: 1024px; // may be also 1199px
 //generics
 $gen-inherit: inherit;
 $gen-none: none;
+$gen-unset: unset;
 
 // colors
 $c-neutral: #eaeaea;
@@ -66,6 +67,7 @@ $siteHeaderTextColor: $c-white; // HERE TO CHANGE SITE HEADER TEXT COLOR (ABOVE 
 
 // spaces
 $s-0: 0;
+$s-0-3:0.3rem;
 $s-20px: 20px;
 $s-8px: 8px;
 $s-10px: 10px;
@@ -123,6 +125,7 @@ $sz-160: 160px;
 $lh-1-5: 1.5;
 
 // paddings
+$p-0-3rem: $s-0-3;
 $p-4px: $s-4px;
 $p-5px:$s-5px;
 $p-8px: $s-8px;

@@ -14,6 +14,11 @@ $sideBarContainerMinWidth_phone: $sideBarContainerWidth_phone;
 
 $sideBarButtonMobileBgImage: $gen-inherit;
 
+$sideBarDocLinkLineHeight_phone: $gen-unset;
+$sideBarDocLinkMinHeight_phone: $gen-unset;
+$sideBarDocLinkPaddingTop_phone: $gen-unset;
+$sideBarDocLinkPaddingBottom_phone: $sideBarDocLinkPaddingTop_phone;
+
 @import 'meta.scss';
 
 // STYLE SIDEBAR

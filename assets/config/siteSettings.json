@@ -1286,7 +1286,7 @@
     "toast_cats_js_add_doc_to_site_cat_warning": "Select a custom category to use this feature!",
     "toast_tags_js_add_doc_to_site_tag_error": "Cannot add a page to a site tag",
     "toast_tags_js_add_doc_to_site_tag_warning": "Select a custom tag to use this feature!",
-    "toast_hs_integrate_js_jquery_error": "Something went wrong, cannot execute functions! Details in console ...",
+    "toast_hs_integrate_js_jquery_error": "Something went wrong, cannot execute functions!",
     "toast_hs_integrate_js_wrong_format_error": "Please fill in the required information in the right format",
     "toast_hs_integrate_js_wrong_email_format_error": "Please fill in the email in the right format",
     "toast_saved_items_js_empty_saved_items_error": "Can't add note! There is nothing in saved items...",
@@ -1320,8 +1320,8 @@
     "toast_saved_items_js_no_file_selected_warning": "No file selected",
     "toast_site_pages_js_file_loaded_only_json_error": "Sorry! Only *.json files allowed this time.",
     "toast_site_pages_js_doc_saved_but_empty_data_warning": "Document %s is now saved!<br><br><strong>HEADS UP!!!</strong><br>Document will be removed automatically if you don't add some custom info (tags, categories, notes, comments)",
-    "toast_utilities_js_alert_override_warning": "Something did not work as expected (details in console)! You may refresh page and try again. If the problem persists, contact support.",
-    "toast_utilities_js_external_content_loading_error": "Error loading external content! Details in console ...",
+    "toast_utilities_js_alert_override_warning": "Something did not work as expected! You may refresh page and try again. If the problem persists, contact support.",
+    "toast_utilities_js_external_content_loading_error": "Error loading external content!",
     "toast_utilities_js_dt_create_table_error": "Something went wrong when building the table! You may refresh page and try again. If the problem persists, contact support."
   }
 }

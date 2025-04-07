@@ -1448,8 +1448,13 @@ const applyColorSchemaCorrections = (theme=null) => {
     // apply color corrections on mobile
     if (preFlight.envInfo.device.deviceType === 'mobile') {
         textColor = $(settings.layouts.leftSideBar.siteTitle).css('color');
-        $(settings.layouts.leftSideBar.sideNav).css('background', $(settings.layouts.leftSideBar.header).css('background'));
-        $(settings.layouts.leftSideBar.link).css('cssText', `color: ${textColor} !important;`);
+        setTimeout(() => {
+            $(settings.layouts.leftSideBar.sideNav)
+                .css('background', '')
+                .css('cssText', `background: ${$(settings.layouts.leftSideBar.header).css('background')} !important`);
+            $(settings.layouts.leftSideBar.link).css('cssText', `color: ${textColor} !important;`);
+        }, 100); // small delay is needed here otherwise the backgtound is not set correctly (mostly on firefox mobile)
+        
         $(settings.layouts.leftSideBar.mobileMenuBtnIcon).css('cssText', `color: ${textColor} !important;`);
         $(settings.layouts.leftSideBar.mobileNavLinkExpander).css('cssText', `color: ${textColor} !important;`);
     }
@@ -1519,7 +1524,8 @@ const applyColorSchemaCorrectionsOnTD = () => {
     }
 }
 
-window.showToast = (message, type, textType) => {
+window.showToast = async (message, type, textType) => {
+    await waitForI18Next();
     toast = new bootstrap.Toast($('.toast'));
     $('.toast').removeClass('bg-warning').removeClass('bg-danger').removeClass('bg-success').removeClass('bg-info');
     $('.toast').addClass(type);

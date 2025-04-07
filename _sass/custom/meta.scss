@@ -211,6 +211,13 @@ $sidebarLogo, $sideBarFooter, $sideBarHeader, $sideBarDocLink,$sideBarCategoryBt
 
     #{$sideBarDocLink} {
         @extend .px-0 !optional;
+
+        @include phone {
+            line-height: $sideBarDocLinkLineHeight_phone !important;
+            min-height: $sideBarDocLinkMinHeight_phone !important;
+            padding-top: $sideBarDocLinkPaddingTop_phone !important;
+            padding-bottom: $sideBarDocLinkPaddingBottom_phone !important;
+        }
     }
     
     #{$sideBarDocLink}.active, #{$sideBarDocLink}:hover {

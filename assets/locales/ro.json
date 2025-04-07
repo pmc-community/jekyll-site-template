@@ -392,7 +392,7 @@
     "toast_tags_js_add_doc_to_site_tag_error": "Nu se poate adauga un document la o eticheta fixa",
     "toast_tags_js_add_doc_to_site_tag_warning": "Selecteaza o eticheta flexibila pentru a utiliza aceasta functionalitate!",
 
-    "toast_hs_integrate_js_jquery_error": "A aparut o eroare si nu se pot executa functiile necesare! Detalii in consola ...",
+    "toast_hs_integrate_js_jquery_error": "A aparut o eroare si nu se pot executa functiile necesare!",
     "toast_hs_integrate_js_wrong_format_error": "Te rog sa introduci informatia in formatul corect!",
     "toast_hs_integrate_js_wrong_email_format_error": "Te rog sa introduci emailul in formatul corect!",
 
@@ -433,8 +433,8 @@
     "toast_site_pages_js_file_loaded_only_json_error": "Imi pare rau! Doar fisiere *.json sunt permise aici.",
     "toast_site_pages_js_doc_saved_but_empty_data_warning": "Documentul %s este salvat local!<br><br><strong>ATENTIE!!!</strong><br>Documentul va fi sters automat daca nu ii adaugi informatii (etichete, categorii, note, comentarii)",
 
-    "toast_utilities_js_alert_override_warning": "Ceva nu a mers conform asteptarilor (detalii in consola)! Poti incerca sa incarci pagina din nou. Daca problema persista, te rugam sa raportezi problema.",
-    "toast_utilities_js_external_content_loading_error": "A aparut o eroare la incarcarea continutului extern. Detalii in consola ...",
+    "toast_utilities_js_alert_override_warning": "Ceva nu a mers conform asteptarilor! Poti incerca sa incarci pagina din nou. Daca problema persista, te rugam sa raportezi problema.",
+    "toast_utilities_js_external_content_loading_error": "A aparut o eroare la incarcarea continutului extern",
     "toast_utilities_js_dt_create_table_error": "A aparut o eroare la generarea unui tabel! Poti incerca sa reincarci pagina. Daca eroarea persista, te rugam sa o raportezi catre suport."
 
 }

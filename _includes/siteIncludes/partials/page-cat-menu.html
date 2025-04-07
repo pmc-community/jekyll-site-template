@@ -2,14 +2,14 @@
 
 {% if site.data.siteConfig.catMenu %}
     {% if catMenu.catNo > 0 %}
-        <ul id="category-menu" class="px-5 nav align-items-center mb-md-0 mb-4 justify-content-md-end">
+        <ul id="category-menu" class="px-5 nav align-items-center mb-md-0 mb-3 justify-content-md-start justify-content-center">
         {% for cat in catMenu.firstLevelMenuItems %}
         <li class="nav-item">
             {% assign rawCatUrl = "/cat-info?cat=" | append: cat %}
             {% assign sanitizedCatUrl = rawCatUrl | sanitize_url %}
             <a 
                 siteFunction="menuItemLevel1" 
-                class="fs-6 nav-link active" 
+                class="fs-6 nav-link" 
                 aria-current="page" 
                 href="{{ sanitizedCatUrl }}">
                 {{cat}}

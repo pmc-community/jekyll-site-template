@@ -1,20 +1,26 @@
 {% assign algolia = site.data.algolia_integration  | json_string_to_object %}
   
-<nav aria-label="Auxiliary" class="aux-nav w-100">
-  <ul class="aux-nav-list d-flex justify-content-between pr-0 pr-md-0">
+<nav aria-label="Auxiliary" class="px-3 px-md-5 d-flex justify-content-between aux-nav w-100">
+  <ul class="aux-nav-list d-flex justify-content-between px-0 px-md-0 w-100">
     {% if algolia.algoliaEnabled == 'true' %}
       <!-- set algolia docsearch container -->
-      <div id="docsearch" class="mr-1 mr-md-2"></div>
+      <li class="aux-nav-list-item align-items-center d-flex">
+        <div id="docsearch" class="mr-1 mr-md-2"></div>
+      </li>
     {% endif %}
 
     <!-- theme switcher -->
-    <div 
-        id="{{ site.data["siteConfig"]["themeSwitch"]["btnId"] }}" 
-        title="Switch theme"
-        data-i18n="[title]main_menu_switch_theme_btn_title" 
-        class="rounded mr-1 mr-md-2 d-flex justify-content-center align-items-center btn btn-sm btn-warning border-0 shadow-none text-dark">
-        <i class="bi bi-mask fs-5"></i>
-    </div>
+    <li class="aux-nav-list-item align-items-center d-flex">
+      <div class="d-flex justify-content-center">
+        <button 
+            id="{{ site.data["siteConfig"]["themeSwitch"]["btnId"] }}" 
+            title="Switch theme"
+            data-i18n="[title]main_menu_switch_theme_btn_title" 
+            class="rounded mr-1 mr-md-2 d-flex justify-content-center align-items-center btn btn-sm btn-warning border-0 shadow-none text-dark">
+            <i class="bi bi-mask fs-5"></i>
+        </button>
+      </div>
+    </li>
 
     <!-- aux buttons as in _config.yml -->
     {% for link in site.aux_links %}
