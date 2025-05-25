@@ -8,7 +8,6 @@ setElementCreatedByClassObserver('DocSearch DocSearch-Button', () => {
 // removing suggested queries in case of no reults because there are no relevant suggestions
 removeObservers('body (class=DocSearch-NoResults)');
 setElementCreatedByClassObserver('DocSearch-NoResults', () => {
-    console.log('1')
     $('.DocSearch-NoResults-Prefill-List').remove();
 });
 

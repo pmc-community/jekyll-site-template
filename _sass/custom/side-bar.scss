@@ -19,6 +19,8 @@ $sideBarDocLinkMinHeight_phone: $gen-unset;
 $sideBarDocLinkPaddingTop_phone: $gen-unset;
 $sideBarDocLinkPaddingBottom_phone: $sideBarDocLinkPaddingTop_phone;
 
+$sidebarDocListContainerBackgroundColor_phone: $siteHeaderBackground; // ensure same background as the header for doc list 
+
 @import 'meta.scss';
 
 // STYLE SIDEBAR

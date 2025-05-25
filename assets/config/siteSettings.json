@@ -68,6 +68,9 @@
       "offsetWhenScroll": 20
     },
     "layouts": {
+      "headerArea": {
+        "mobileMenuButton": "#menu-button"
+      },
       "contentArea": {
         "mainContainer": ".main-content-wrap",
         "contentContainer": ".main-content main",
@@ -219,10 +222,10 @@
         "tag2"
       ],
       "excerpt": "lorem ipsum, latin, sections, cicero, finibus bonorum, malorum, standard chunk, rackham, translation, form",
-      "lastUpdate": "2025-01-17 23:23:45 +0200",
-      "lastUpdateUTC": 1737149025,
-      "createTime": "2025-01-11 18:48:00 +0200",
-      "createTimeUTC": 1736614080,
+      "lastUpdate": "2025-04-28 20:47:32 +0300",
+      "lastUpdateUTC": 1745862452,
+      "createTime": "2025-04-28 20:47:32 +0300",
+      "createTimeUTC": 1745862452,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -266,10 +269,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "lorem ipsum, text, model, latin, tasks, word, encoder model, variety, encoder, length",
-      "lastUpdate": "2025-01-29 13:26:04 +0200",
-      "lastUpdateUTC": 1738149964,
-      "createTime": "2025-01-11 18:48:00 +0200",
-      "createTimeUTC": 1736614080,
+      "lastUpdate": "2025-04-28 20:47:32 +0300",
+      "lastUpdateUTC": 1745862452,
+      "createTime": "2025-04-28 20:47:32 +0300",
+      "createTimeUTC": 1745862452,
       "relatedPages": [
         {
           "title": "Intro Grand Child Page",
@@ -305,10 +308,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "lorem ipsum, text, model, encoder model, encoder, latin, tasks, word, variety, length",
-      "lastUpdate": "2025-01-11 18:48:00 +0200",
-      "lastUpdateUTC": 1736614080,
-      "createTime": "2025-01-11 18:48:00 +0200",
-      "createTimeUTC": 1736614080,
+      "lastUpdate": "2025-04-28 20:47:32 +0300",
+      "lastUpdateUTC": 1745862452,
+      "createTime": "2025-04-28 20:47:32 +0300",
+      "createTimeUTC": 1745862452,
       "relatedPages": [
         {
           "title": "Intro Child Page",
@@ -334,10 +337,10 @@
         "alfa"
       ],
       "excerpt": "file, lorem ipsum, site, markdown content, title, link, latin, cicero, malorum, sections",
-      "lastUpdate": "2025-01-11 18:48:00 +0200",
-      "lastUpdateUTC": 1736614080,
-      "createTime": "2025-01-11 18:48:00 +0200",
-      "createTimeUTC": 1736614080,
+      "lastUpdate": "2025-04-28 20:47:32 +0300",
+      "lastUpdateUTC": 1745862452,
+      "createTime": "2025-04-28 20:47:32 +0300",
+      "createTimeUTC": 1745862452,
       "relatedPages": [
         {
           "title": "Introduction",
@@ -388,10 +391,10 @@
         "tag3"
       ],
       "excerpt": "a very nice excerpt for a dynamically created file, having the content imported from an external private GitHub repo",
-      "lastUpdate": "2025-01-11 18:48:00 +0200",
-      "lastUpdateUTC": 1736614080,
-      "createTime": "2025-01-11 18:48:00 +0200",
-      "createTimeUTC": 1736614080,
+      "lastUpdate": "2025-04-28 20:47:32 +0300",
+      "lastUpdateUTC": 1745862452,
+      "createTime": "2025-04-28 20:47:32 +0300",
+      "createTimeUTC": 1745862452,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -412,10 +415,10 @@
         "legal"
       ],
       "excerpt": "services, space services, software, innohub, terms, service, website, content, user, property",
-      "lastUpdate": "2025-01-11 18:48:00 +0200",
-      "lastUpdateUTC": 1736614080,
-      "createTime": "2025-01-11 18:48:00 +0200",
-      "createTimeUTC": 1736614080,
+      "lastUpdate": "2025-04-28 20:47:32 +0300",
+      "lastUpdateUTC": 1745862452,
+      "createTime": "2025-04-28 20:47:32 +0300",
+      "createTimeUTC": 1745862452,
       "relatedPages": [
         {
           "title": "Subfolder/F1",
@@ -443,10 +446,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "content, services, lorem ipsum, innohub, registration, email, access, process, latin, ihsutilities",
-      "lastUpdate": "2025-01-11 18:48:00 +0200",
-      "lastUpdateUTC": 1736614080,
-      "createTime": "2025-01-11 18:48:00 +0200",
-      "createTimeUTC": 1736614080,
+      "lastUpdate": "2025-04-28 20:47:32 +0300",
+      "lastUpdateUTC": 1745862452,
+      "createTime": "2025-04-28 20:47:32 +0300",
+      "createTimeUTC": 1745862452,
       "relatedPages": [
         {
           "title": "Subfolder/F1",
@@ -497,10 +500,10 @@
         "exa"
       ],
       "excerpt": "this a sample excerpt for a file. this will be shown wherever exerpt is needed",
-      "lastUpdate": "2025-01-11 18:48:00 +0200",
-      "lastUpdateUTC": 1736614080,
-      "createTime": "2025-01-11 18:48:00 +0200",
-      "createTimeUTC": 1736614080,
+      "lastUpdate": "2025-04-28 20:47:32 +0300",
+      "lastUpdateUTC": 1745862452,
+      "createTime": "2025-04-28 20:47:32 +0300",
+      "createTimeUTC": 1745862452,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -509,7 +512,7 @@
       ],
       "autoSummary": "g11 how it works the accordion uses internally to make it collapsible. click the accordions below to expand/collapse accord ...",
       "similarByContent": [],
-      "readingTime": 3,
+      "readingTime": 1,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -519,10 +522,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "lorem ipsum, latin, latin literature, line, file, extremes, evil, malorum, cicero, book",
-      "lastUpdate": "2025-01-17 22:52:56 +0200",
-      "lastUpdateUTC": 1737147176,
-      "createTime": "2025-01-11 18:48:00 +0200",
-      "createTimeUTC": 1736614080,
+      "lastUpdate": "2025-04-28 20:47:32 +0300",
+      "lastUpdateUTC": 1745862452,
+      "createTime": "2025-04-28 20:47:32 +0300",
+      "createTimeUTC": 1745862452,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -569,10 +572,10 @@
       ],
       "tags": [],
       "excerpt": "file, file loads, inline, place, repo, content, link, collection, folder",
-      "lastUpdate": "2025-01-11 18:48:00 +0200",
-      "lastUpdateUTC": 1736614080,
-      "createTime": "2025-01-11 18:48:00 +0200",
-      "createTimeUTC": 1736614080,
+      "lastUpdate": "2025-04-28 20:47:32 +0300",
+      "lastUpdateUTC": 1745862452,
+      "createTime": "2025-04-28 20:47:32 +0300",
+      "createTimeUTC": 1745862452,
       "relatedPages": [
         {
           "title": "Collection-2/X",
@@ -602,10 +605,10 @@
         "tag1"
       ],
       "excerpt": "file, content, source file, markdown content, inline, link, collection-2, folder, classes head1, head",
-      "lastUpdate": "2025-01-11 18:48:00 +0200",
-      "lastUpdateUTC": 1736614080,
-      "createTime": "2025-01-11 18:48:00 +0200",
-      "createTimeUTC": 1736614080,
+      "lastUpdate": "2025-04-28 20:47:32 +0300",
+      "lastUpdateUTC": 1745862452,
+      "createTime": "2025-04-28 20:47:32 +0300",
+      "createTimeUTC": 1745862452,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -637,10 +640,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "services, lorem ipsum, products, latin, user, user content, content, sites, website, updates",
-      "lastUpdate": "2025-01-11 18:48:00 +0200",
-      "lastUpdateUTC": 1736614080,
-      "createTime": "2025-01-11 18:48:00 +0200",
-      "createTimeUTC": 1736614080,
+      "lastUpdate": "2025-04-28 20:47:32 +0300",
+      "lastUpdateUTC": 1745862452,
+      "createTime": "2025-04-28 20:47:32 +0300",
+      "createTimeUTC": 1745862452,
       "relatedPages": [
         {
           "title": "Terms",
@@ -696,7 +699,7 @@
         {
           "title": "Play with content",
           "permalink": "/pwc/",
-          "lastUpdate": "11-Jan-2025"
+          "lastUpdate": "28-Apr-2025"
         }
       ],
       "numPages": 1
@@ -706,7 +709,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "11-Jan-2025"
+          "lastUpdate": "28-Apr-2025"
         }
       ],
       "numPages": 1
@@ -716,7 +719,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "11-Jan-2025"
+          "lastUpdate": "28-Apr-2025"
         }
       ],
       "numPages": 1
@@ -726,7 +729,7 @@
         {
           "title": "Terms",
           "permalink": "/terms/",
-          "lastUpdate": "11-Jan-2025"
+          "lastUpdate": "28-Apr-2025"
         }
       ],
       "numPages": 1
@@ -736,7 +739,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "17-Jan-2025"
+          "lastUpdate": "28-Apr-2025"
         }
       ],
       "numPages": 1
@@ -746,22 +749,22 @@
         {
           "title": "Play with content",
           "permalink": "/pwc/",
-          "lastUpdate": "11-Jan-2025"
+          "lastUpdate": "28-Apr-2025"
         },
         {
           "title": "External content",
           "permalink": "/ec/",
-          "lastUpdate": "11-Jan-2025"
+          "lastUpdate": "28-Apr-2025"
         },
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "11-Jan-2025"
+          "lastUpdate": "28-Apr-2025"
         },
         {
           "title": "Collection-2/X",
           "permalink": "collection-2/X/x/",
-          "lastUpdate": "11-Jan-2025"
+          "lastUpdate": "28-Apr-2025"
         }
       ],
       "numPages": 4
@@ -771,7 +774,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "17-Jan-2025"
+          "lastUpdate": "28-Apr-2025"
         }
       ],
       "numPages": 1
@@ -781,12 +784,12 @@
         {
           "title": "Play with content",
           "permalink": "/pwc/",
-          "lastUpdate": "11-Jan-2025"
+          "lastUpdate": "28-Apr-2025"
         },
         {
           "title": "External content",
           "permalink": "/ec/",
-          "lastUpdate": "11-Jan-2025"
+          "lastUpdate": "28-Apr-2025"
         }
       ],
       "numPages": 2
@@ -796,7 +799,7 @@
         {
           "title": "External content",
           "permalink": "/ec/",
-          "lastUpdate": "11-Jan-2025"
+          "lastUpdate": "28-Apr-2025"
         }
       ],
       "numPages": 1
@@ -815,7 +818,7 @@
         {
           "title": "External content",
           "permalink": "/ec/",
-          "lastUpdate": "11-Jan-2025"
+          "lastUpdate": "28-Apr-2025"
         }
       ],
       "numPages": 1
@@ -825,7 +828,7 @@
         {
           "title": "External content",
           "permalink": "/ec/",
-          "lastUpdate": "11-Jan-2025"
+          "lastUpdate": "28-Apr-2025"
         }
       ],
       "numPages": 1
@@ -835,12 +838,12 @@
         {
           "title": "Play with content",
           "permalink": "/pwc/",
-          "lastUpdate": "11-Jan-2025"
+          "lastUpdate": "28-Apr-2025"
         },
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "11-Jan-2025"
+          "lastUpdate": "28-Apr-2025"
         }
       ],
       "numPages": 2
@@ -850,22 +853,22 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "17-Jan-2025"
+          "lastUpdate": "28-Apr-2025"
         },
         {
           "title": "Play with content",
           "permalink": "/pwc/",
-          "lastUpdate": "11-Jan-2025"
+          "lastUpdate": "28-Apr-2025"
         },
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "11-Jan-2025"
+          "lastUpdate": "28-Apr-2025"
         },
         {
           "title": "Collection-2/Z",
           "permalink": "/collection-2/Z/z/",
-          "lastUpdate": "11-Jan-2025"
+          "lastUpdate": "28-Apr-2025"
         }
       ],
       "numPages": 4
@@ -875,12 +878,12 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "17-Jan-2025"
+          "lastUpdate": "28-Apr-2025"
         },
         {
           "title": "Collection-2/Z",
           "permalink": "/collection-2/Z/z/",
-          "lastUpdate": "11-Jan-2025"
+          "lastUpdate": "28-Apr-2025"
         }
       ],
       "numPages": 2

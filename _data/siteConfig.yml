@@ -54,11 +54,13 @@ headerAboveContent:
   headerID: "#main-header"
   offsetWhenScroll: 20
 layouts:
-    contentArea:
-      mainContainer: ".main-content-wrap"
-      contentContainer: ".main-content main"
-      contentWrapper: ".main-content"
-    leftSideBar:
+  headerArea:
+    mobileMenuButton: "#menu-button"
+  contentArea:
+    mainContainer: ".main-content-wrap"
+    contentContainer: ".main-content main"
+    contentWrapper: ".main-content"
+  leftSideBar:
       container: ".side-bar"
       sideNav: "#site-nav"
       header: ".site-header"

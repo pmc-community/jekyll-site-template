@@ -1447,16 +1447,28 @@ const applyColorSchemaCorrections = (theme=null) => {
 
     // apply color corrections on mobile
     if (preFlight.envInfo.device.deviceType === 'mobile') {
-        textColor = $(settings.layouts.leftSideBar.siteTitle).css('color');
-        setTimeout(() => {
-            $(settings.layouts.leftSideBar.sideNav)
-                .css('background', '')
-                .css('cssText', `background: ${$(settings.layouts.leftSideBar.header).css('background')} !important`);
-            $(settings.layouts.leftSideBar.link).css('cssText', `color: ${textColor} !important;`);
-        }, 100); // small delay is needed here otherwise the backgtound is not set correctly (mostly on firefox mobile)
+        textColor = $('.nav-link').css('color');
         
         $(settings.layouts.leftSideBar.mobileMenuBtnIcon).css('cssText', `color: ${textColor} !important;`);
         $(settings.layouts.leftSideBar.mobileNavLinkExpander).css('cssText', `color: ${textColor} !important;`);
+
+        $(`${settings.layouts.headerArea.mobileMenuButton}`).find('svg')
+            .css('color', '')
+            .css('cssText', `color: ${textColor} !important;`);
+
+        // safer to set the background and text color of the doc list nav on a mutation observer
+        // because JTD sets them using js and this may cause situations when the color is not set right on mobile dark theme
+        // (seen on Firefox mobile) 
+        removeObservers(`${settings.layouts.leftSideBar.sideNav} class=nav-open getClass=true`);
+        setElementChangeClassObserver(settings.layouts.leftSideBar.sideNav, 'nav-open', true, () => {
+            $(settings.layouts.leftSideBar.sideNav)
+                .css('background', '')
+                .css('cssText', `background: ${$(settings.layouts.leftSideBar.header).css('background')} !important`);
+            $(settings.layouts.leftSideBar.link)
+                .css('color', '')
+                .css('cssText', `color: ${$('.nav-link').css('color')} !important;`);
+        });
+
     }
 }
 

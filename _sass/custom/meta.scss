@@ -209,6 +209,12 @@ $sidebarLogo, $sideBarFooter, $sideBarHeader, $sideBarDocLink,$sideBarCategoryBt
         }
     }
 
+    #{$sidebarDocListContainer} {
+        @include phone {
+            background: $sidebarDocListContainerBackgroundColor_phone !important;
+        }
+    }
+
     #{$sideBarDocLink} {
         @extend .px-0 !optional;
 
