@@ -1,6 +1,6 @@
 # Site settings
 
-title: Figma Resources
+title: Docaroo
 
 # we don't use url from here because all pages will cause problms when deploying in different environments (GHP, Netlify ...). 
 # we use it from environment varibles ENV["DEPLOY_PROD_BASE_URL"]. this is still here just to be aware of the way we use it

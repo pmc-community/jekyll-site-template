@@ -36,6 +36,14 @@ fi
 echo ""
 
 print_color_enclosed "$PURPLE" "Time to build the site. Sit back and relax ... "
+
+# just to maintain some compatibility between py and tensorflow
+# i.e. on macOS 15 which comes with py 3.13, tensorflow does not work well, so py 3.9.2 must be used
+# and a virtual environment is created (named py-dev-env-392)
+# comment this line if you use a tensotflow compatible Python version
+source ~/py-dev-env-392/bin/activate
+
+# BUILDING THE SITE
 bundle exec jekyll clean
 
 # serving on localhost:4000 with the possibility to be accessed from other devices in the same network
