@@ -221,12 +221,16 @@
         "t a g 1",
         "tag2"
       ],
-      "excerpt": "lorem ipsum, latin, cicero, sections, malorum, finibus bonorum, latin literature, chunk, rackham, form",
-      "lastUpdate": "2025-05-25 14:11:17 +0300",
-      "lastUpdateUTC": 1748171477,
-      "createTime": "2025-05-25 10:11:17 +0300",
-      "createTimeUTC": 1748157077,
+      "excerpt": "lorem ipsum, latin, cicero, malorum, sections, finibus bonorum, latin literature, rackham, chunk, form",
+      "lastUpdate": "2025-05-27 17:57:10 +0300",
+      "lastUpdateUTC": 1748357830,
+      "createTime": "2025-05-27 17:57:10 +0300",
+      "createTimeUTC": 1748357830,
       "relatedPages": [
+        {
+          "title": "Play with content",
+          "permalink": "/pwc/"
+        },
         {
           "title": "Intro Child Page",
           "permalink": "/intro/introChild/"
@@ -234,13 +238,9 @@
         {
           "title": "Collection-2/Y",
           "permalink": "/collection-2/y/y/"
-        },
-        {
-          "title": "Play with content",
-          "permalink": "/pwc/"
         }
       ],
-      "autoSummary": "lorem ipsum dolor sit amet., comes from sections 1.10.32 and 1.10.33 of “de finibus bon ...",
+      "autoSummary": "lorem ipsum is not simply random text. it has roots in a piece of classical latin literature from 45 bc. ...",
       "similarByContent": [
         {
           "permalink": "/intro/introChild/",
@@ -339,7 +339,7 @@
         "tag3",
         "alfa"
       ],
-      "excerpt": "file, lorem ipsum, site, markdown content, title, link, latin, cicero, malorum, bonorum",
+      "excerpt": "file, lorem ipsum, site, markdown content, title, link, latin, cicero, sections, malorum",
       "lastUpdate": "2025-05-25 10:11:17 +0300",
       "lastUpdateUTC": 1748157077,
       "createTime": "2025-05-25 10:11:17 +0300",
@@ -350,12 +350,12 @@
           "permalink": "/intro/"
         },
         {
-          "title": "Collection-2/Y",
-          "permalink": "/collection-2/y/y/"
-        },
-        {
           "title": "Collection-2/X",
           "permalink": "collection-2/X/x/"
+        },
+        {
+          "title": "Collection-2/Y",
+          "permalink": "/collection-2/y/y/"
         }
       ],
       "autoSummary": "markdown content direct included in the page. heads up!!!links to other site docs must be given using the permalinks, not the ...",
@@ -498,10 +498,10 @@
         "exa"
       ],
       "excerpt": "innohub support, support center, support forms, functionalities, center, functionality, information, service, issues, product",
-      "lastUpdate": "2025-05-27 15:51:24 +0300",
-      "lastUpdateUTC": 1748350284,
-      "createTime": "2025-05-25 10:11:17 +0300",
-      "createTimeUTC": 1748157077,
+      "lastUpdate": "2025-05-27 16:32:37 +0300",
+      "lastUpdateUTC": 1748352757,
+      "createTime": "2025-05-27 16:32:37 +0300",
+      "createTimeUTC": 1748352757,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -706,7 +706,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "25-May-2025"
+          "lastUpdate": "27-May-2025"
         }
       ],
       "numPages": 1
@@ -741,7 +741,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "25-May-2025"
+          "lastUpdate": "27-May-2025"
         }
       ],
       "numPages": 1
@@ -820,7 +820,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "25-May-2025"
+          "lastUpdate": "27-May-2025"
         },
         {
           "title": "Play with content",
@@ -845,7 +845,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "25-May-2025"
+          "lastUpdate": "27-May-2025"
         },
         {
           "title": "Collection-2/Z",

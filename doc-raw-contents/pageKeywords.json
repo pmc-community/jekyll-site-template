@@ -70,8 +70,8 @@
         "link",
         "latin",
         "cicero",
-        "malorum",
-        "bonorum"
+        "sections",
+        "malorum"
       ]
     },
     {
@@ -116,12 +116,12 @@
         "lorem ipsum",
         "latin",
         "cicero",
-        "sections",
         "malorum",
+        "sections",
         "finibus bonorum",
         "latin literature",
-        "chunk",
         "rackham",
+        "chunk",
         "form"
       ]
     },
