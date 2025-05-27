@@ -71,11 +71,14 @@ jobs:
           NR_BROWSER_APP_LICENSE_KEY: ${{ secrets.NR_BROWSER_APP_LICENSE_KEY }}
           NR_BROWSER_BEACON: ${{ secrets.NR_BROWSER_BEACON }}
 
-      - name: Build multilingual sites (based on hardcoded list)
+      - name: Build multilingual sites (from repo variable)
+        env:
+          MULTILINGUAL_BRANCHES: ${{ vars.MULTILINGUAL_BRANCHES }}
         run: |
-          LANGUAGES=("en" "ro")  # Add more language branches here
-          
+          IFS=',' read -ra LANGUAGES <<< "$MULTILINGUAL_BRANCHES"
+
           for lang in "${LANGUAGES[@]}"; do
+            lang="$(echo "$lang" | xargs)"  # trim whitespace
             if git ls-remote --exit-code origin "$lang"; then
               echo "Building $lang site..."
               git clone --depth=1 --branch="$lang" "https://github.com/${{ github.repository }}" "temp-$lang"
