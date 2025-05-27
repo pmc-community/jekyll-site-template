@@ -1,61 +1,49 @@
-name: Deploy Jekyll site to Pages
-
+name: Deploy Multilingual Jekyll site to Pages
 on:
   push:
     branches: ["gh-pages"]
   workflow_dispatch:
-
 permissions:
   contents: read
   pages: write
   id-token: write
-
 concurrency:
   group: "pages"
   cancel-in-progress: false
-
 jobs:
   build:
     runs-on: ubuntu-22.04
     steps:
-      - name: Checkout
+      - name: Checkout default (main) site
         uses: actions/checkout@v4
-
       - name: Set local variables
         id: set-vars
         run: |
-          pyEnable=$(grep -Po 'pyEnable:\s*\K(true|false)' _data/buildConfig.yml) 
+          pyEnable=$(grep -Po 'pyEnable:\s*\K(true|false)' _data/buildConfig.yml)
           echo "pyEnable=$pyEnable" >> $GITHUB_OUTPUT
-      
       - name: Setup Ruby
-        uses: ruby/setup-ruby@8575951200e472d5f2d95c625da0c7bec8217c42
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1'
           bundler-cache: true
-          cache-version: 0
-              
       - name: Setup Python (if pyEnable is set)
         if: steps.set-vars.outputs.pyEnable == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: '3.9'
-        
       - name: Install Python dependencies (if pyEnable is set)
         if: steps.set-vars.outputs.pyEnable == 'true'
         run: |
           python -m pip install --upgrade pip
           pip install tensorflow tensorflow-hub numpy pandas markdown transformers langdetect
-
       - name: Run Python pre-build scripts (if pyEnable is set)
         if: steps.set-vars.outputs.pyEnable == 'true'
         run: |
           ./tools_py/preBuild-pyScripts
-
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
-
-      - name: Build with Jekyll
+      - name: Build default language site
         run: bundle exec jekyll build --incremental --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
@@ -74,10 +62,34 @@ jobs:
           NR_ACCOUNT_ID: ${{ secrets.NR_ACCOUNT_ID }}
           NR_BROWSER_APP_LICENSE_KEY: ${{ secrets.NR_BROWSER_APP_LICENSE_KEY }}
           NR_BROWSER_BEACON: ${{ secrets.NR_BROWSER_BEACON }}
-
-      - name: Upload artifact
+      - name: Check for `en` branch
+        id: check-en
+        run: |
+          git ls-remote --exit-code origin en && echo "exists=true" || echo "exists=false"
+        continue-on-error: true
+      - name: Build English site if branch exists
+        if: steps.check-en.outputs.exists == 'true'
+        run: |
+          git clone --depth=1 --branch=en https://github.com/${{ github.repository }} temp-en
+          cd temp-en
+          bundle install
+          bundle exec jekyll build --baseurl "/en" --destination ../_site/en
+      - name: Check for `ro` branch
+        id: check-ro
+        run: |
+          git ls-remote --exit-code origin ro && echo "exists=true" || echo "exists=false"
+        continue-on-error: true
+      - name: Build Romanian site if branch exists
+        if: steps.check-ro.outputs.exists == 'true'
+        run: |
+          git clone --depth=1 --branch=ro https://github.com/${{ github.repository }} temp-ro
+          cd temp-ro
+          bundle install
+          bundle exec jekyll build --baseurl "/ro" --destination ../_site/ro
+      - name: Upload final multilingual site (default + optional en/ro)
         uses: actions/upload-pages-artifact@v3
-
+        with:
+          path: _site
   deploy:
     environment:
       name: github-pages

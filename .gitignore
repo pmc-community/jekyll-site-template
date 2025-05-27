@@ -11,3 +11,4 @@ sitemap.xml
 tools_py/modules/__pycache__/*
 *.pyc
 .bundle
+unused
