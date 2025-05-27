@@ -1,4 +1,4 @@
-name: Deploy Multilingual Jekyll site to Pages
+name: Manual Deploy Multilingual Jekyll site to Pages
 
 on:
   workflow_dispatch:
