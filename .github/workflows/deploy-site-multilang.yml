@@ -88,6 +88,22 @@ jobs:
           git clone --depth=1 --branch=en https://github.com/${{ github.repository }} temp-en
           cd temp-en
           bundle install
+          JEKYLL_ENV=production \
+          JEKYLL_ACCESS_TOKEN=${{ secrets.JEKYLL_ACCESS_TOKEN }} \
+          JEKYLL_GIT_USER=${{ secrets.JEKYLL_GIT_USER }} \
+          CONSOLE_BLANK_SPINNER_CHARS=${{ secrets.CONSOLE_BLANK_SPINNER_CHARS }} \
+          ALGOLIA_WRITE_API_KEY=${{ secrets.ALGOLIA_WRITE_API_KEY }} \
+          ALGOLIA_INDEX=${{ secrets.ALGOLIA_INDEX }} \
+          ALGOLIA_APP_ID=${{ secrets.ALGOLIA_APP_ID }} \
+          ALGOLIA_PUBLIC_API_KEY=${{ secrets.ALGOLIA_PUBLIC_API_KEY }} \
+          ALGOLIA_SEARCH_ENABLED=${{ secrets.ALGOLIA_SEARCH_ENABLED }} \
+          DEPLOY_PROD_BASE_URL=${{ secrets.DEPLOY_PROD_BASE_URL }} \
+          NR_ENABLED=${{ secrets.NR_ENABLED }} \
+          NR_BROWSER_ENABLED=${{ secrets.NR_BROWSER_ENABLED }} \
+          NR_BROWSER_APP_ID=${{ secrets.NR_BROWSER_APP_ID }} \
+          NR_ACCOUNT_ID=${{ secrets.NR_ACCOUNT_ID }} \
+          NR_BROWSER_APP_LICENSE_KEY=${{ secrets.NR_BROWSER_APP_LICENSE_KEY }} \
+          NR_BROWSER_BEACON=${{ secrets.NR_BROWSER_BEACON }} \
           bundle exec jekyll build --baseurl "/en" --destination ../_site/en
 
       - name: Check for `ro` branch
@@ -105,6 +121,22 @@ jobs:
           git clone --depth=1 --branch=ro https://github.com/${{ github.repository }} temp-ro
           cd temp-ro
           bundle install
+          JEKYLL_ENV=production \
+          JEKYLL_ACCESS_TOKEN=${{ secrets.JEKYLL_ACCESS_TOKEN }} \
+          JEKYLL_GIT_USER=${{ secrets.JEKYLL_GIT_USER }} \
+          CONSOLE_BLANK_SPINNER_CHARS=${{ secrets.CONSOLE_BLANK_SPINNER_CHARS }} \
+          ALGOLIA_WRITE_API_KEY=${{ secrets.ALGOLIA_WRITE_API_KEY }} \
+          ALGOLIA_INDEX=${{ secrets.ALGOLIA_INDEX }} \
+          ALGOLIA_APP_ID=${{ secrets.ALGOLIA_APP_ID }} \
+          ALGOLIA_PUBLIC_API_KEY=${{ secrets.ALGOLIA_PUBLIC_API_KEY }} \
+          ALGOLIA_SEARCH_ENABLED=${{ secrets.ALGOLIA_SEARCH_ENABLED }} \
+          DEPLOY_PROD_BASE_URL=${{ secrets.DEPLOY_PROD_BASE_URL }} \
+          NR_ENABLED=${{ secrets.NR_ENABLED }} \
+          NR_BROWSER_ENABLED=${{ secrets.NR_BROWSER_ENABLED }} \
+          NR_BROWSER_APP_ID=${{ secrets.NR_BROWSER_APP_ID }} \
+          NR_ACCOUNT_ID=${{ secrets.NR_ACCOUNT_ID }} \
+          NR_BROWSER_APP_LICENSE_KEY=${{ secrets.NR_BROWSER_APP_LICENSE_KEY }} \
+          NR_BROWSER_BEACON=${{ secrets.NR_BROWSER_BEACON }} \
           bundle exec jekyll build --baseurl "/ro" --destination ../_site/ro
 
       - name: Upload final multilingual site (default + optional en/ro)
