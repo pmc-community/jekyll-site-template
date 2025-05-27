@@ -36,7 +36,7 @@ Jekyll::Hooks.register :site, :after_init do |site|
             permalink = front_matter["permalink"]
             permalink = permalink.start_with?('/') ? permalink : "/#{permalink}"
             sitemap << {
-                'url' => ENV["DEPLOY_PROD_BASE_URL"] + permalink,
+                'url' => "https://docaroo.innohub.space/ro" + permalink,
                 'lastmod' => front_matter['lastmod'] || File.mtime(file_path).strftime('%Y-%m-%d'),
                 'changefreq' => front_matter['changefreq'] || 'weekly',
                 'priority' => front_matter['priority'] || '0.5'
