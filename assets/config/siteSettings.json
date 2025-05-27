@@ -221,11 +221,11 @@
         "t a g 1",
         "tag2"
       ],
-      "excerpt": "lorem ipsum, latin, cicero, malorum, sections, finibus bonorum, latin literature, rackham, chunk, form",
-      "lastUpdate": "2025-05-27 17:57:10 +0300",
-      "lastUpdateUTC": 1748357830,
-      "createTime": "2025-05-27 17:57:10 +0300",
-      "createTimeUTC": 1748357830,
+      "excerpt": "lorem ipsum, latin, sections, cicero, finibus bonorum, malorum, latin literature, standard chunk, rackham, translation",
+      "lastUpdate": "2025-05-27 20:19:03 +0300",
+      "lastUpdateUTC": 1748366343,
+      "createTime": "2025-05-27 20:18:48 +0300",
+      "createTimeUTC": 1748366328,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -240,7 +240,7 @@
           "permalink": "/collection-2/y/y/"
         }
       ],
-      "autoSummary": "lorem ipsum is not simply random text. it has roots in a piece of classical latin literature from 45 bc. ...",
+      "autoSummary": "lorem ipsum, lorem ipsum dolor sit amet., comes from a line of lorem ...",
       "similarByContent": [
         {
           "permalink": "/intro/introChild/",
@@ -350,12 +350,12 @@
           "permalink": "/intro/"
         },
         {
-          "title": "Collection-2/X",
-          "permalink": "collection-2/X/x/"
-        },
-        {
           "title": "Collection-2/Y",
           "permalink": "/collection-2/y/y/"
+        },
+        {
+          "title": "Collection-2/X",
+          "permalink": "collection-2/X/x/"
         }
       ],
       "autoSummary": "markdown content direct included in the page. heads up!!!links to other site docs must be given using the permalinks, not the ...",
@@ -443,7 +443,7 @@
       "permalink": "/collection-1/g1/",
       "categories": [],
       "tags": [],
-      "excerpt": "content, lorem ipsum, services, innohub, registration, email, access, process, latin, ihsutilities",
+      "excerpt": "content, services, lorem ipsum, innohub, registration, email, process, access, latin, ihsutilities",
       "lastUpdate": "2025-05-25 10:11:17 +0300",
       "lastUpdateUTC": 1748157077,
       "createTime": "2025-05-25 10:11:17 +0300",
