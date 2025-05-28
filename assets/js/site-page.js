@@ -181,7 +181,7 @@ const page__getPageFeedbackAndSupport = () => {
         if (page === 'none' && window.location.pathname !== '/' ) return;
 
         // modify some styles on home page
-        if (window.location.pathname === '/') {
+        if (window.location.pathname === '/' || window.location.pathname === `/${siteLanguageCode}` ||  window.location.pathname === `/${siteLanguageCode}/`) {
             $('div[siteFunction="pageFeedbackAndSupport_Support"]').removeClass('col-3').addClass('col-4');
             $('div[siteFunction="pageFeedbackAndSupport_Involve"]').removeClass('col-3').addClass('col-4');
             $('div[siteFunction="pageFeedbackAndSupport_Feedback"]').removeClass('col-6').addClass('col-4');
