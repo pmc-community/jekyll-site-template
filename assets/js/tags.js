@@ -657,7 +657,7 @@ const showTagDetails = (tag) => {
             exceptWhenRowSelect: true,
             width: '400px',
             createdCell: function(td, cellData, rowData, row, col) {
-                const permalink = $(rowData.pageActions).find('[siteFunction="tagPageItemLinkToDoc"]').attr('href');
+                const permalink = $(rowData.pageActions).find('[siteFunction="tagPageItemLinkToDoc"]').attr('hrefBase');
                 $(td)
                     .attr('tagReference', `${tag}`)
                     .attr('colFunction', 'tagInfoTagTablePageOtherTags')
@@ -680,7 +680,7 @@ const showTagDetails = (tag) => {
         },
 
         "createdRow": function(row, data, dataIndex) {
-            const permalink = $(data.pageActions).find('[siteFunction="tagPageItemLinkToDoc"]').attr('href');
+            const permalink = $(data.pageActions).find('[siteFunction="tagPageItemLinkToDoc"]').attr('hrefBase');
             $(row)
                 .attr('siteFunction', 'tagInfoTagTablePageRow')
                 .attr('tagReference', `${tag}`)
@@ -802,6 +802,7 @@ const buildTagPagesListForCustomTag = (tag) => {
     }
     
     const colPageActions = (tag, permalink, title) => {
+        const langPrefix = !isProd ? '' : siteLanguageCode === '' ? '' : `/${siteLanguageCode}`;
 
         return (
             `
@@ -809,7 +810,8 @@ const buildTagPagesListForCustomTag = (tag) => {
                     <a 
                         siteFunction="tagPageItemLinkToDoc" 
                         class="btn btn-sm btn-info" 
-                        href="${permalink}" 
+                        href="${langPrefix}${permalink}"
+                        hrefBase="${permalink}" 
                         title="${i18next.t('tags_tag_tag_details_actions_read_doc')}" 
                         tagForTagTableDetailsReference="${tag}" 
                         target="_blank"
@@ -936,7 +938,7 @@ const processTagDetailsTableRowClick = (rowData, tableSelector, tag) => {
         const tempElement = document.createElement('div');
         tempElement.innerHTML = `${actionsHtml}`;
         const linkToDoc = tempElement.querySelector('a[siteFunction="tagPageItemLinkToDoc"]');
-        return linkToDoc.getAttribute('href');
+        return linkToDoc.getAttribute('hrefBase');
     }
 
     const stripHtml = (html) => {
@@ -988,7 +990,7 @@ const addCustomTagsToPages = (table = null, tag = null) => {
 }
 
 const addAdditionalButtons = (table, tag) => {
-
+    const langPrefix = !isProd ? '' : siteLanguageCode === '' ? '' : `/${siteLanguageCode}`;
     waitForI18Next().then(() => {
         // post processing table: adding 2 buttons in the bottom2 zone
         gotToCatBtn = {
@@ -1000,7 +1002,7 @@ const addAdditionalButtons = (table, tag) => {
             className: 'btn-warning btn-sm text-light focus-ring focus-ring-warning mb-2',
             text: i18next.t('dt_custom_buttons_go_to_cats_btn_text'),
             action: () => {
-                window.location.href = '/cat-info'
+                window.location.href = `${langPrefix}/cat-info`
             }
         }
 
@@ -1013,7 +1015,7 @@ const addAdditionalButtons = (table, tag) => {
             className: 'btn-success btn-sm text-light focus-ring focus-ring-warning mb-2',
             text: i18next.t('dt_custom_buttons_go_to_docs_btn_text'),
             action: () => {
-                window.location.href = '/site-pages?showPages=1'
+                window.location.href = `${langPrefix}/site-pages?showPages=1`
             }
         }
         const btnArray = [];
