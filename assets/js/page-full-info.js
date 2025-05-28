@@ -561,6 +561,8 @@ const fillPageSimilarPages = (pageInfo) => {
         return html;
     }
     
+    console.log(pageInfo);
+    
     pageSimilarPages = pageInfo.siteInfo.similarByContent.length === 0 
         ? [] 
         : pageInfo.siteInfo.similarByContent.slice(0, settings.similarByContent.maxPages) || [];
