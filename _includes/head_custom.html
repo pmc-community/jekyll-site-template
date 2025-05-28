@@ -31,13 +31,13 @@
     {% SiteLanguage %}
 {% endcapture %}
 
-{% assign lang_path = siteLanguage | strip %}
+{% assign lang_path = siteLanguage %}
 {% assign lang_prefix = '' %}
 {% unless lang_path == '' %}
   {% assign lang_prefix = '/' | append: lang_path %}
 {% endunless %}
 
-<pre>lang: {{lang_path}}</pre>
+<pre>lang: {{lang_path}} ... {{lang_prefix}} </pre>
 <pre> {{site.data.siteConfig.multilang}}
 
 {% assign configuredSiteLang = site.data.siteConfig.multilang.siteLanguage %}
