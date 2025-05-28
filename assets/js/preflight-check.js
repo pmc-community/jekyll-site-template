@@ -273,6 +273,7 @@ const dtSettings =  settings.dataTables;
 const siteLanguageCode = settings.multilang.siteLanguage === 0 
     ? ''
     : settings.multilang.availableLang[settings.multilang.siteLanguage].lang;
+const isProd = allSettings.isProd;
 
 // we use a function to get permalink options
 // as permalink extraction from url returns always /permalink/
