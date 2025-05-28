@@ -560,7 +560,7 @@ const fillPageSimilarPages = (pageInfo) => {
         });
         return html;
     }
-        
+    
     pageSimilarPages =  pageInfo.siteInfo.similarByContent.slice(0, settings.similarByContent.maxPages) || [];
     $('div[siteFunction="offcanvasPageFullInfoPageGeneralSimilarPagesText"]').html(similarPagesHtml(pageSimilarPages));
 }
