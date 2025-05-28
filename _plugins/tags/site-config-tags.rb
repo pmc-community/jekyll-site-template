@@ -16,7 +16,7 @@ module Jekyll
             def render(context)
                 langSettings = context.registers[:site].data["siteConfig"]["multilang"]
                 siteLang = ""
-                if (ENV["JEKYLL_ENV"] != "production"  )
+                if (ENV["JEKYLL_ENV"] != "production" ) # JEKYLL_ENV is set by the GitHub deployment action (deploy-site-multilang.yml from gh-pages branch). On local is not set
                     siteLang = ""                     
                 else
                     if (langSettings["siteLanguage"] == 0)

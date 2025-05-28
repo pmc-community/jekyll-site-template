@@ -31,7 +31,7 @@
     {% SiteLanguage %}
 {% endcapture %}
 
-{% assign lang_path = siteLanguage %}
+{% assign lang_path = siteLanguage | strip %}
 {% assign lang_prefix = '' %}
 {% unless lang_path == '' %}
   {% assign lang_prefix = '/' | append: lang_path %}
@@ -50,8 +50,8 @@
 
 <pre>lang1: {{path}}</pre>
 
-<link href="/ro/assets/config/siteSettings.js" rel="preload" as="script">
-<script src="/ro/assets/config/siteSettings.js"></script>
+<link href="{{lang_prefix}}/assets/config/siteSettings.js" rel="preload" as="script">
+<script src="{{lang_prefix}}/assets/config/siteSettings.js"></script>
 
 <link rel="icon" type="image/png" href="{{ '/favicon.png' | relative_url }}">
 <script siteAttr="init_not_needed_anymore">const pagePermalink = "{{page.permalink}}"</script>
