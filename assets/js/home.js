@@ -32,6 +32,7 @@ const home__statsSection = () => {
 }
 
 homePage = {
+    langPrefix: siteLanguageCode === '' ? '' : `/${siteLanguageCode}`,
 
     hoverListItems: (itemSelector) => {
         $(itemSelector).each(function() {
@@ -98,7 +99,7 @@ homePage = {
             catItemClass = cat.type === 'siteCat' ? 'text-danger' : 'text-success';
             return (
                 `   
-                    <a href="/cat-info?cat=${cat.name}">
+                    <a href="${homePage.langPrefix}/cat-info?cat=${cat.name}">
                         <li 
                             siteFunction="homeRecentAndPopular_popular_categories_cat"
                             class="list-group-item d-flex align-items-center justify-content-between align-items-start py-2 pr-md-2 pr-0 my-0 bg-transparent border-top border-secondary border-opacity-25">
@@ -131,7 +132,7 @@ homePage = {
             tagItemClass = tag.type === 'siteTag' ? 'text-primary' : 'text-success';
             return (
                 `   
-                    <a href="/tag-info?tag=${tag.name}">
+                    <a href="${homePage.langPrefix}/tag-info?tag=${tag.name}">
                         <li 
                             siteFunction="homeRecentAndPopular_popular_tags_tag"
                             class="list-group-item d-flex align-items-center justify-content-between align-items-start py-2 pr-md-2 pr-0 my-0 bg-transparent border-top border-secondary border-opacity-25">
@@ -217,7 +218,7 @@ homePage = {
     showDocumentsSavedDocsListItem: () => {
         savedPagesNo = getSavedItemsSize();
         if (savedPagesNo === 0 ) return;
-        $('a[siteFunction="homeStats_pages_savedPages_BtnLink"]').attr('href', `/site-pages?showPages=1&showSaved=1&nocache=${new Date().getTime()}`);
+        $('a[siteFunction="homeStats_pages_savedPages_BtnLink"]').attr('href', `${homePage.langPrefix}/site-pages?showPages=1&showSaved=1&nocache=${new Date().getTime()}`);
         $('span[siteFunction="homeStats_pages_savedPages_no"]').text(savedPagesNo);
         $('div[siteFunction="homeStats_pages_savedPages"]').removeClass('d-none');
     },
