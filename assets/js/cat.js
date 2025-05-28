@@ -356,7 +356,7 @@ const showCatDetails = (cat) => {
             type: 'string',
             exceptWhenRowSelect: true,
             createdCell: function(td, cellData, rowData, row, col) {
-                const permalink = $(rowData.pageActions).find('[siteFunction="catPageItemLinkToDoc"]').attr('href');
+                const permalink = $(rowData.pageActions).find('[siteFunction="catPageItemLinkToDoc"]').attr('hrefBase');
                 $(td)
                     .attr('catReference', `${cat}`)
                     .attr('colFunction', 'catInfoCatTablePageOtherCats')
@@ -379,7 +379,7 @@ const showCatDetails = (cat) => {
             "left": 1
         },
         "createdRow": function(row, data, dataIndex) {
-            const permalink = $(data.pageActions).find('[siteFunction="catPageItemLinkToDoc"]').attr('href');
+            const permalink = $(data.pageActions).find('[siteFunction="catPageItemLinkToDoc"]').attr('hrefBase');
             $(row)
                 .attr('siteFunction', 'catInfoCatTablePageRow')
                 .attr('catReference', `${cat}`)
