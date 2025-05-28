@@ -199,7 +199,9 @@ const page__getPageFeedbackForm = () => {
         if (settings.hsIntegration.enabled) {            
             const permalink = $('main').attr('pagePermalinkRef');
             const title = $('main').attr('pageTitleRef');
-            if (!findObjectInArray({permalink:permalink, title:title}, pageList) && window.location.pathname !== '/') return;
+            const isHome = window.location.pathname === '/' || window.location.pathname === `/${siteLanguageCode}` ||  window.location.pathname === `/${siteLanguageCode}/`;
+
+            if (!findObjectInArray({permalink:permalink, title:title}, pageList) && !isHome) return;
 
             fedbackFormContainer__ASYNC('pageFeedbackForm')
                 .then( (formContainerSelector) => {
