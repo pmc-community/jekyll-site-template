@@ -32,7 +32,24 @@ module Jekyll
             end
         end
 
+
+        class SiteLanguageForSearch < Liquid::Tag
+  
+            def initialize(tag_name, input, context)
+                super
+                @input = input
+            end
+
+            def render(context)
+                langSettings = context.registers[:site].data["siteConfig"]["multilang"]
+                siteLang = langSettings["availableLang"][langSettings["siteLanguage"]]["lang"]
+                puts "sl: #{siteLang}"
+                siteLang
+            end
+        end
+
     end
 end
   
 Liquid::Template.register_tag('SiteLanguage', Jekyll::SiteConfigSettings::SiteLanguage)
+Liquid::Template.register_tag('SiteLanguageForSearch', Jekyll::SiteConfigSettings::SiteLanguageForSearch)
