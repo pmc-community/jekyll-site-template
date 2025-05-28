@@ -27,7 +27,8 @@ module Jekyll
                 end
                 env = ENV["JEKYLL_ENV"]
                 sl = langSettings["siteLanguage"]
-                "l: #{siteLang} / e: #{env}/ lc: #{sl}"
+                #"l: #{siteLang} / e: #{env}/ lc: #{sl}"
+                siteLang
             end
         end
 
