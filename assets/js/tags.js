@@ -657,7 +657,7 @@ const showTagDetails = (tag) => {
             exceptWhenRowSelect: true,
             width: '400px',
             createdCell: function(td, cellData, rowData, row, col) {
-                const permalink = $(rowData.pageActions).find('[siteFunction="tagPageItemLinkToDoc"]').attr('hrefBase');
+                const permalink = $(rowData.pageActions).find('[siteFunction="tagPageItemLinkToDoc"]').attr('href');
                 $(td)
                     .attr('tagReference', `${tag}`)
                     .attr('colFunction', 'tagInfoTagTablePageOtherTags')
@@ -680,7 +680,7 @@ const showTagDetails = (tag) => {
         },
 
         "createdRow": function(row, data, dataIndex) {
-            const permalink = $(data.pageActions).find('[siteFunction="tagPageItemLinkToDoc"]').attr('hrefBase');
+            const permalink = $(data.pageActions).find('[siteFunction="tagPageItemLinkToDoc"]').attr('href');
             $(row)
                 .attr('siteFunction', 'tagInfoTagTablePageRow')
                 .attr('tagReference', `${tag}`)
@@ -938,7 +938,7 @@ const processTagDetailsTableRowClick = (rowData, tableSelector, tag) => {
         const tempElement = document.createElement('div');
         tempElement.innerHTML = `${actionsHtml}`;
         const linkToDoc = tempElement.querySelector('a[siteFunction="tagPageItemLinkToDoc"]');
-        return linkToDoc.getAttribute('hrefBase');
+        return linkToDoc.getAttribute('href');
     }
 
     const stripHtml = (html) => {
