@@ -32,7 +32,7 @@ const home__statsSection = () => {
 }
 
 homePage = {
-    langPrefix: siteLanguageCode === '' ? '' : `/${siteLanguageCode}`,
+    langPrefix: !isProd ? '' : siteLanguageCode === '' ? '' : `/${siteLanguageCode}`,
 
     hoverListItems: (itemSelector) => {
         $(itemSelector).each(function() {
