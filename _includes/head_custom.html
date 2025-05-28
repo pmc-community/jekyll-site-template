@@ -37,19 +37,6 @@
   {% assign lang_prefix = '/' | append: lang_path %}
 {% endunless %}
 
-<pre>lang: {{lang_path}} ... {{lang_prefix}} </pre>
-<pre> {{site.data.siteConfig.multilang}}
-
-{% assign configuredSiteLang = site.data.siteConfig.multilang.siteLanguage %}
-{% assign avaliableLanguages = site.data.siteConfig.multilang.availableLang %}
-{% if configuredSiteLang == 0 %}
-    {% assign path = "" %}
-{% else %}
-    {% assign path = avaliableLanguages[configuredSiteLang].lang %}
-{% endif %}
-
-<pre>lang1: {{path}}</pre>
-
 <link href="{{lang_prefix}}/assets/config/siteSettings.js" rel="preload" as="script">
 <script src="{{lang_prefix}}/assets/config/siteSettings.js"></script>
 
@@ -145,9 +132,9 @@
 
 {% if page.permalink != "/" %}
 
-    <link href="/assets/js/bootstrap-toc.min.js" rel="preload" as="script">
-    <script src="/assets/js/bootstrap-toc.min.js"></script>
-    <link rel="stylesheet" href="/assets/css/bootstrap-toc.min.css" async defer>
+    <link href="{{lang_prefix}}/assets/js/bootstrap-toc.min.js" rel="preload" as="script">
+    <script src="{{lang_prefix}}/assets/js/bootstrap-toc.min.js"></script>
+    <link rel="stylesheet" href="{{lang_prefix}}/assets/css/bootstrap-toc.min.css" async defer>
 
     <!-- md to html converter -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js" rel="preload" as="script">
@@ -297,65 +284,65 @@
     
 <!-- site js assets -->
 
-<link href="/ro/assets/js/preflight-check.js" rel="preload" as="script">
-<script src="/ro/assets/js/preflight-check.js"></script>
+<link href="{{lang_prefix}}/assets/js/preflight-check.js" rel="preload" as="script">
+<script src="{{lang_prefix}}/assets/js/preflight-check.js"></script>
 
-<link href="/assets/js/utilities.js" rel="preload" as="script">
-<script src="/assets/js/utilities.js"></script>
+<link href="{{lang_prefix}}/assets/js/utilities.js" rel="preload" as="script">
+<script src="{{lang_prefix}}/assets/js/utilities.js"></script>
 
 <!-- pre-hooks to functions executed until page loaded -->
-<link href="/assets/js/pre-hooks.js" rel="preload" as="script">
-<script src="/assets/js/pre-hooks.js"></script>
+<link href="{{lang_prefix}}/assets/js/pre-hooks.js" rel="preload" as="script">
+<script src="{{lang_prefix}}/assets/js/pre-hooks.js"></script>
 
-<link href="/assets/js/main.js" rel="preload" as="script">
+<link href="{{lang_prefix}}/assets/js/main.js" rel="preload" as="script">
 <script src="/assets/js/main.js"></script>
 
-<link href="/assets/js/saved-items.js" rel="preload" as="script">
-<script src="/assets/js/saved-items.js"></script>
+<link href="{{lang_prefix}}/assets/js/saved-items.js" rel="preload" as="script">
+<script src="{{lang_prefix}}/assets/js/saved-items.js"></script>
 
 {% if page.permalink != "/" %}
 
-    <link href="/assets/js/tags.js" rel="preload" as="script">
-    <script src="/assets/js/tags.js"></script>
+    <link href="{{lang_prefix}}/assets/js/tags.js" rel="preload" as="script">
+    <script src="{{lang_prefix}}/assets/js/tags.js"></script>
 
-    <link href="/assets/js/cat.js" rel="preload" as="script">
+    <link href="{{lang_prefix}}/assets/js/cat.js" rel="preload" as="script">
     <script src="/assets/js/cat.js"></script>
 
 
-    <link href="/assets/js/page-full-info.js" rel="preload" as="script">
+    <link href="{{lang_prefix}}/assets/js/page-full-info.js" rel="preload" as="script">
     <script src="/assets/js/page-full-info.js"></script>
 
-    <link href="/assets/js/site-pages.js" rel="preload" as="script">
-    <script src="/assets/js/site-pages.js"></script>
+    <link href="{{lang_prefix}}/assets/js/site-pages.js" rel="preload" as="script">
+    <script src="{{lang_prefix}}/assets/js/site-pages.js"></script>
 
 {% endif %}
 
-<link href="/assets/js/site-page.js" rel="preload" as="script">
-<script src="/assets/js/site-page.js"></script>
+<link href="{{lang_prefix}}/assets/js/site-page.js" rel="preload" as="script">
+<script src="{{lang_prefix}}/assets/js/site-page.js"></script>
 
-<link href="/assets/js/home.js" rel="preload" as="script">
-<script src="/assets/js/home.js"></script>
+<link href="{{lang_prefix}}/assets/js/home.js" rel="preload" as="script">
+<script src="{{lang_prefix}}/assets/js/home.js"></script>
 
 {% if site.data.siteConfig.hsIntegration.enabled %}
-    <link href="/assets/js/hs-integrate.js" rel="preload" as="script">
-    <script src="/assets/js/hs-integrate.js"></script>
+    <link href="{{lang_prefix}}/assets/js/hs-integrate.js" rel="preload" as="script">
+    <script src="{{lang_prefix}}/assets/js/hs-integrate.js"></script>
 {% endif %}
 
 {% assign algolia = site.data.algolia_integration | json_string_to_object %}
 {% if algolia.algoliaEnabled %}
-    <link href="/assets/js/algolia-integrate.js" rel="preload" as="script">
-    <script src="/assets/js/algolia-integrate.js" async defer></script>
+    <link href="{{lang_prefix}}/assets/js/algolia-integrate.js" rel="preload" as="script">
+    <script src="{{lang_prefix}}/assets/js/algolia-integrate.js" async defer></script>
 {% endif %}
 
 <!-- preloading heavy assets -->
-<link rel="preload" as="image" href="/assets/img/logo.png" type="image/png">
+<link rel="preload" as="image" href="{{lang_prefix}}/assets/img/logo.png" type="image/png">
 {% if page.permalink == "/" %}
-    <link rel="preload" as="image" href="/assets/img/home.png" type="image/webp">
+    <link rel="preload" as="image" href="{{lang_prefix}}/assets/img/home.png" type="image/webp">
 {% endif %}
 
 <!-- post-hooks are last to allow hooking everywhere -->
-<link href="/assets/js/post-hooks.js" rel="preload" as="script">
-<script src="/assets/js/post-hooks.js"></script>
+<link href="{{lang_prefix}}/assets/js/post-hooks.js" rel="preload" as="script">
+<script src="{{lang_prefix}}/assets/js/post-hooks.js"></script>
 
 <!-- end site js assets -->
 
