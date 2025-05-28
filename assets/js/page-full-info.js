@@ -482,9 +482,10 @@ const setCanvasSectionsOpeners = () => {
 }
 
 const fillPageTitle = (pageInfo) => {
+    const langPrefix = !isProd ? '' : siteLanguageCode === '' ? '' : `/${siteLanguageCode}`;
     $('#offcanvasPageFullInformationTitle').text(`${i18next.t('page_full_info_header_title')} (${pageInfo.siteInfo.title})`);
     $('a[siteFunction="offcanvasPageFullInfoPageGeneralDocLink"]').text(pageInfo.siteInfo.title);
-    $('a[siteFunction="offcanvasPageFullInfoPageGeneralDocLink"]').attr('href',pageInfo.siteInfo.permalink);
+    $('a[siteFunction="offcanvasPageFullInfoPageGeneralDocLink"]').attr('href', langPrefix + pageInfo.siteInfo.permalink);
 }
 
 const fillPageLastUpdate = (pageInfo) => {
