@@ -28,8 +28,18 @@
 
 <!-- make settings available asap -->
 <!--get the site language here because settings will be loaded from <lang>/assets/config/siteSettings.js-->
-<link href="/assets/config/siteSettings.js" rel="preload" as="script">
-<script src="/assets/config/siteSettings.js"></script>
+{% capture siteLanguage %}
+    {% SiteLanguage %}
+{% endcapture %}
+
+{% assign lang_path = siteLanguage | strip %}
+{% assign lang_prefix = '' %}
+{% unless lang_path == '' %}
+  {% assign lang_prefix = '/' | append: lang_path %}
+{% endunless %}
+
+<link href="{{lang_path}}/assets/config/siteSettings.js" rel="preload" as="script">
+<script src="{{lang_path}}/assets/config/siteSettings.js"></script>
 
 
 <link rel="icon" type="image/png" href="{{ '/favicon.png' | relative_url }}">
