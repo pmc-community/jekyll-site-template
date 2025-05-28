@@ -39,6 +39,17 @@
 
 <pre>lang: {{lang_path}}</pre>
 <pre> {{site.data.siteConfig.multilang}}
+
+{% assign configuredSiteLang = site.data.siteConfig.multilang.siteLanguage %}
+{% assign avaliableLanguages = site.data.siteConfig.multilang.availableLang %}
+{% if configuredSiteLang == 0 %}
+    {% assign path = "" %}
+{% else %}
+    {% assign path = avaliableLanguages[configuredSiteLang].lang%}
+{% endif %}
+
+<pre>lang1: {{lang_path}}</pre>
+
 <link href="/ro/assets/config/siteSettings.js" rel="preload" as="script">
 <script src="/ro/assets/config/siteSettings.js"></script>
 
