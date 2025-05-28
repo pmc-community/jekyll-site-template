@@ -357,7 +357,6 @@ const showCatDetails = (cat) => {
             exceptWhenRowSelect: true,
             createdCell: function(td, cellData, rowData, row, col) {
                 const permalink = $(rowData.pageActions).find('[siteFunction="catPageItemLinkToDoc"]').attr('href');
-                console.log(permalink)
                 $(td)
                     .attr('catReference', `${cat}`)
                     .attr('colFunction', 'catInfoCatTablePageOtherCats')
