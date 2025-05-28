@@ -43,7 +43,6 @@ module Jekyll
             def render(context)
                 langSettings = context.registers[:site].data["siteConfig"]["multilang"]
                 siteLang = langSettings["availableLang"][langSettings["siteLanguage"]]["lang"]
-                puts "sl: #{siteLang}"
                 siteLang
             end
         end
