@@ -15,8 +15,9 @@
         <ul id="category-menu" class="px-md-5 px-0 nav mb-md-0 mb-3 pt-2 pt-md-0 justify-content-md-start justify-content-around align-items-center">
         {% for cat in catMenu.firstLevelMenuItems %}
         <li class="nav-item">
-            {% assign rawCatUrl = "{{lang_prefix}}/cat-info?cat=" | append: cat %}
-            {% assign sanitizedCatUrl = rawCatUrl | sanitize_url %}
+            {% assign rawCatUrl = "/cat-info?cat=" | append: cat %}
+            {% assign fullRawCatUrl = lang_prefix | append: rawCatUrl %}
+            {% assign sanitizedCatUrl = fullRawCatUrl | sanitize_url %}
             <a 
                 siteFunction="menuItemLevel1" 
                 class="fs-6 nav-link" 
