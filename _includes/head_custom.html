@@ -45,10 +45,10 @@
 {% if configuredSiteLang == 0 %}
     {% assign path = "" %}
 {% else %}
-    {% assign path = avaliableLanguages[configuredSiteLang].lang%}
+    {% assign path = avaliableLanguages[configuredSiteLang].lang %}
 {% endif %}
 
-<pre>lang1: {{lang_path}}</pre>
+<pre>lang1: {{path}}</pre>
 
 <link href="/ro/assets/config/siteSettings.js" rel="preload" as="script">
 <script src="/ro/assets/config/siteSettings.js"></script>
