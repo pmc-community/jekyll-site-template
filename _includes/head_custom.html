@@ -37,7 +37,8 @@
   {% assign lang_prefix = '/' | append: lang_path %}
 {% endunless %}
 
-<pre>{{lang_path}}</pre>
+<pre>lang: {{lang_path}}</pre>
+<pre> {{site.data.siteConfig.multilang}}
 <link href="/ro/assets/config/siteSettings.js" rel="preload" as="script">
 <script src="/ro/assets/config/siteSettings.js"></script>
 
