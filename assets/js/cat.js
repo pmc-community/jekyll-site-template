@@ -520,6 +520,7 @@ const processCatDetailsTableRowClick = (rowData, tableSelector, cat) => {
 }
 
 const addAdditionalCatButtons = (table, cat) => {
+    const langPrefix = !isProd ? '' : siteLanguageCode === '' ? '' : `/${siteLanguageCode}`;
     waitForI18Next().then(() => {
         // post processing table: adding 2 buttons in the bottom2 zone
         gotToTagBtn = {
@@ -531,7 +532,7 @@ const addAdditionalCatButtons = (table, cat) => {
             className: 'btn-warning btn-sm text-light focus-ring focus-ring-warning mb-2',
             text: i18next.t('dt_custom_buttons_go_to_tags_btn_text'),
             action: () => {
-                window.location.href = '/tag-info'
+                window.location.href = `${langPrefix}/tag-info`
             }
         }
     
@@ -544,7 +545,7 @@ const addAdditionalCatButtons = (table, cat) => {
             className: 'btn-success btn-sm text-light focus-ring focus-ring-warning mb-2',
             text: i18next.t('dt_custom_buttons_go_to_docs_btn_text'),
             action: () => {
-                window.location.href = '/site-pages?showPages=1'
+                window.location.href = `${langPrefix}/site-pages?showPages=1`
             }
         }
         const btnArray = [];
@@ -637,6 +638,7 @@ const buildCatPagesListForCustomCat = (cat) => {
     }
     
     const colPageActions = (cat, permalink, title) => {
+        const langPrefix = !isProd ? '' : siteLanguageCode === '' ? '' : `/${siteLanguageCode}`;
 
         return (
             `
@@ -644,7 +646,7 @@ const buildCatPagesListForCustomCat = (cat) => {
                     <a 
                         siteFunction="catPageItemLinkToDoc" 
                         class="btn btn-sm btn-info" 
-                        href="${permalink}" 
+                        href="${langPrefix}${permalink}" 
                         title="${i18next.t('cats_cat_cat_details_actions_read_doc')}"
                         data-i18n="[title]cats_cat_cat_details_actions_read_doc"
                         catForCatTableDetailsReference="${cat}" 
