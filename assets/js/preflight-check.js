@@ -268,11 +268,14 @@ const siteLanguageCode = settings.multilang.siteLanguage === 0
     ? ''
     : settings.multilang.availableLang[settings.multilang.siteLanguage].lang;
 
+console.log('lc: ', siteLanguageCode)
+
 // we use a function to get permalink options
 // as permalink extraction from url returns always /permalink/
 // and we don't know how permalink are defined in the page front matter
 const path = preflight.removeLangCodeFromPath(window.location.pathname,siteLanguageCode);
 const permalinkOptions = preFlight.formatPath(path);
+console.log(permalinkOptions)
 const pageSettings = preFlight.getPageSettings(permalinkOptions, allPageSettings);
 
 // init globals
