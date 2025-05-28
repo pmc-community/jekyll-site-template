@@ -47,6 +47,10 @@
         {
             "permalink": "/pwc/",
             "summary": "markdown content direct included in the page. heads up!!!links to other site docs must be given using the permalinks, not the ..."
+        },
+        {
+            "permalink": "/collection-2/X/x/",
+            "summary": "own markdown content. this the content directly typed in collection-2/x. this is one good inline external link to https://pmc ..."
         }
     ]
 }
