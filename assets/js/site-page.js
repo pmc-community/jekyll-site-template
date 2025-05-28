@@ -45,10 +45,11 @@ const page__getRelatedPages = () => {
     const relatedPageItem = (relatedPage) => {
 
         const relatedPageLinkWidth = preFlight.deviceInfo.deviceType !=='desktop' ? 'col-12' : 'col-4';
+        const langPrefix = !isProd ? '' : siteLanguageCode === '' ? '' : `/${siteLanguageCode}`
 
         return (
             `
-                <a siteFunction="pageRelatedPageLink" href="${relatedPage.permalink.indexOf('/') === 0 ? relatedPage.permalink : '/'+relatedPage.permalink}" class="${relatedPageLinkWidth} p-2">
+                <a siteFunction="pageRelatedPageLink" href="${relatedPage.permalink.indexOf('/') === 0 ? langPrefix + relatedPage.permalink : langPrefix + '/'+relatedPage.permalink}" class="${relatedPageLinkWidth} p-2">
                     <div siteFunction="pageRelatedPage" class="border-0 border-top rounded-0 border-secondary border-opacity-25 my-2 card h-100 py-3 px-0 bg-body rounded bg-transparent shadow-none">
                         <div class="h-100 align-top mb-2">
                             <span siteFunction="pageRelatedPageLinkPageTitle" class="fw-medium text-primary">${relatedPage.title}</span>
@@ -177,10 +178,11 @@ const page__getPageFeedbackAndSupport = () => {
         const permalink = $('main').attr('pagePermalinkRef') || '';
         const title = $('main').attr('pageTitleRef') || '';
         const page = getObjectFromArray( {permalink: permalink, title: title}, pageList);
-        if (page === 'none' && window.location.pathname !== '/' ) return;
+        const isHome = window.location.pathname === '/' || window.location.pathname === `/${siteLanguageCode}` ||  window.location.pathname === `/${siteLanguageCode}/`;
+        if (page === 'none' && !isHome ) return;
 
         // modify some styles on home page
-        if (window.location.pathname === '/') {
+        if (window.location.pathname === '/' || window.location.pathname === `/${siteLanguageCode}` ||  window.location.pathname === `/${siteLanguageCode}/`) {
             $('div[siteFunction="pageFeedbackAndSupport_Support"]').removeClass('col-3').addClass('col-4');
             $('div[siteFunction="pageFeedbackAndSupport_Involve"]').removeClass('col-3').addClass('col-4');
             $('div[siteFunction="pageFeedbackAndSupport_Feedback"]').removeClass('col-6').addClass('col-4');
@@ -197,7 +199,9 @@ const page__getPageFeedbackForm = () => {
         if (settings.hsIntegration.enabled) {            
             const permalink = $('main').attr('pagePermalinkRef');
             const title = $('main').attr('pageTitleRef');
-            if (!findObjectInArray({permalink:permalink, title:title}, pageList) && window.location.pathname !== '/') return;
+            const isHome = window.location.pathname === '/' || window.location.pathname === `/${siteLanguageCode}` ||  window.location.pathname === `/${siteLanguageCode}/`;
+
+            if (!findObjectInArray({permalink:permalink, title:title}, pageList) && !isHome) return;
 
             fedbackFormContainer__ASYNC('pageFeedbackForm')
                 .then( (formContainerSelector) => {
@@ -402,11 +406,13 @@ const page__getPageInfo = () => {
                 catDetails[cat].numPages:
                 getCatPages(cat);
             
+            const langPrefix = !isProd ? '' : siteLanguageCode === '' ? '' : `/${siteLanguageCode}`;
+
             return (
                 `
                     <div >
                         <a
-                            href="/cat-info?cat=${cat}"
+                            href="${langPrefix}/cat-info?cat=${cat}"
                             class="${catColor} fw-medium btn btn-sm border-0 shadow-none px-0 my-1 mr-3 text-nowrap"
                             title="Click for details for category ${cat}\nPages in category: ${numPages}">
                             ${cat}
@@ -437,6 +443,7 @@ const page__getPageInfo = () => {
         pageSimilarPages = page.siteInfo.similarByContent.slice(0, settings.similarByContent.maxPages) || [];
 
         const similarPagesHtml = (similarPages) => {
+            const langPrefix = !isProd ? '' : siteLanguageCode === '' ? '' : `/${siteLanguageCode}`;
             let html = ''
             similarPages.forEach(page => {
                 const similarPageExcerpt = getObjectFromArray(
@@ -452,7 +459,7 @@ const page__getPageInfo = () => {
                         <a 
                             title="${similarPageExcerpt}" 
                             class="fw-medium text-primary badge py-2 px-3 m-1 bg-body-secondary rounded-pill" 
-                            href="${page.permalink.indexOf('/') === 0 ? page.permalink : '/'+page.permalink}">
+                            href="${page.permalink.indexOf('/') === 0 ? langPrefix + page.permalink : langPrefix + '/'+page.permalink}">
                             ${page.title}
                         </a>
                     `
@@ -965,11 +972,12 @@ const page__showPageCustomTags = () => {
     }
 
     const tagElement = (tag, numPages) => {
+        const langPrefix = !isProd ? '' : siteLanguageCode === '' ? '' : `/${siteLanguageCode}`;
         return (
             `
                 <div siteFunction="pageCustomTagButton" class="d-inline-flex align-items-center">
                     <a 
-                        href="/tag-info?tag=${tag}" 
+                        href="${langPrefix}/tag-info?tag=${tag}" 
                         sitefunction="pageTagButton" 
                         type="button" 
                         class="text-nowrap focus-ring focus-ring-warning px-3 my-2 mr-md-5 btn btn-sm btn-success position-relative">

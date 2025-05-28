@@ -1,3 +1,13 @@
+{% capture siteLanguage %}
+    {% SiteLanguage %}
+{% endcapture %}
+
+{% assign lang_path = siteLanguage | strip %}
+{% assign lang_prefix = '' %}
+{% unless lang_path == '' %}
+  {% assign lang_prefix = '/' | append: lang_path %}
+{% endunless %}
+
 {% assign tags= site.data.tags_details %}
 
 <!-- tags stats -->
@@ -57,7 +67,7 @@
                     </div>
                 </div>
                 <a 
-                    href="/tag-info"
+                    href="{{lang_prefix}}/tag-info"
                     class="btn btn-sm rounded-circle {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsTextClass}} {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsClass}}">
                     <i class="bi {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsIcon}}"></i>
                 </a>  
@@ -86,7 +96,7 @@
                 </div>
                 {% assign unix_timestamp = 'now' | date: '%s' %}
                 <a 
-                    href="/site-pages?showPages=1&showCustomTags=1&nocache={{ unix_timestamp }}"
+                    href="{{lang_prefix}}/site-pages?showPages=1&showCustomTags=1&nocache={{ unix_timestamp }}"
                     class="btn btn-sm rounded-circle {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsTextClass}} {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsClass}}">
                     <i class="bi {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsIcon}}"></i>
                 </a> 

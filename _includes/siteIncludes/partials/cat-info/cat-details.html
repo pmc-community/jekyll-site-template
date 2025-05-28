@@ -1,3 +1,13 @@
+{% capture siteLanguage %}
+    {% SiteLanguage %}
+{% endcapture %}
+
+{% assign lang_path = siteLanguage | strip %}
+{% assign lang_prefix = '' %}
+{% unless lang_path == '' %}
+  {% assign lang_prefix = '/' | append: lang_path %}
+{% endunless %}
+
 {% assign catsArray= site.data.category_list  | json_string_to_object %}
 {% assign pageArray= site.data.page_list  | json_string_to_object %}
 
@@ -77,7 +87,8 @@
                                             <a 
                                                 siteFunction="catPageItemLinkToDoc" 
                                                 class="btn btn-sm btn-info" 
-                                                href="{{ pageItem.permalink }}"
+                                                href="{{lang_prefix}}{{ pageItem.permalink }}"
+                                                hrefBase="{{ pageItem.permalink }}"
                                                 title="Read page {{ pageItem.title }}"
                                                 data-i18n="[title]cats_cat_cat_details_actions_read_doc"
                                                 catForCatTableDetailsReference="{{ catItem[0] }}"

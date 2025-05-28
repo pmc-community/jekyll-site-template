@@ -1,3 +1,13 @@
+{% capture siteLanguage %}
+    {% SiteLanguage %}
+{% endcapture %}
+
+{% assign lang_path = siteLanguage | strip %}
+{% assign lang_prefix = '' %}
+{% unless lang_path == '' %}
+  {% assign lang_prefix = '/' | append: lang_path %}
+{% endunless %}
+
 {% assign catMenu = site.data.ordered_categories | cat_main_menu %}
 
 {% if site.data.siteConfig.catMenu %}
@@ -6,7 +16,8 @@
         {% for cat in catMenu.firstLevelMenuItems %}
         <li class="nav-item">
             {% assign rawCatUrl = "/cat-info?cat=" | append: cat %}
-            {% assign sanitizedCatUrl = rawCatUrl | sanitize_url %}
+            {% assign fullRawCatUrl = lang_prefix | append: rawCatUrl %}
+            {% assign sanitizedCatUrl = fullRawCatUrl | sanitize_url %}
             <a 
                 siteFunction="menuItemLevel1" 
                 class="fs-6 nav-link" 
@@ -34,7 +45,8 @@
                     <ul class="dropdown-menu" id="category-menu-more-list">
                         {% for cat in catMenu.secondLevelMenuItems %}
                             {% assign rawCatUrl = "/cat-info?cat=" | append: cat %}
-                            {% assign sanitizedCatUrl = rawCatUrl | sanitize_url %}
+                            {% assign fullRawCatUrl = lang_prefix | append: rawCatUrl %}
+                            {% assign sanitizedCatUrl = fullRawCatUrl | sanitize_url %}
                             <li class="px-4">
                                 <a 
                                     siteFunction="menuItemLevel2" 
@@ -49,7 +61,7 @@
                             <a 
                                 siteFunction="menuItemLevel2" 
                                 class="px-0 dropdown-item fs-6 fw-medium text-primary" 
-                                href="/site-pages"
+                                href="{{lang_prefix}}/site-pages"
                                 data-i18n="main_menu_documents">
                                 Documents
                             </a>
@@ -58,7 +70,7 @@
                             <a 
                                 siteFunction="menuItemLevel2" 
                                 class="px-0 dropdown-item fs-6 fw-medium text-primary" 
-                                href="/cat-info"
+                                href="{{lang_prefix}}/cat-info"
                                 data-i18n="main_menu_categories">
                                 Categories
                             </a>
@@ -67,7 +79,7 @@
                             <a 
                                 siteFunction="menuItemLevel2" 
                                 class="px-0 dropdown-item fs-6 fw-medium text-primary" 
-                                href="/tag-info"
+                                href="{{lang_prefix}}/tag-info"
                                 data-i18n="main_menu_tags">
                                 Tags
                             </a>
@@ -77,7 +89,7 @@
                             <a 
                                 siteFunction="menuItemLevel2" 
                                 class="px-0 dropdown-item fs-6 fw-medium text-primary" 
-                                href="/"
+                                href="{{lang_prefix}}/"
                                 data-i18n="main_menu_home">
                                 Home
                             </a>
@@ -105,7 +117,7 @@
                             <a 
                                 siteFunction="menuItemLevel2" 
                                 class="px-0 dropdown-item fs-6 fw-medium text-primary" 
-                                href="/site-pages">
+                                href="{{lang_prefix}}/site-pages">
                                     <i class="bi bi-file-text"></i>
                                     <span data-i18n="main_menu_documents">Documents</span>
                             </a>
@@ -114,7 +126,7 @@
                             <a 
                                 siteFunction="menuItemLevel2" 
                                 class="px-0 dropdown-item fs-6 fw-medium text-primary" 
-                                href="/cat-info"
+                                href="{{lang_prefix}}/cat-info"
                                 data-i18n="main_menu_categories">
                                 Categories
                             </a>
@@ -123,7 +135,7 @@
                             <a 
                                 siteFunction="menuItemLevel2" 
                                 class="px-0 dropdown-item fs-6 fw-medium text-primary" 
-                                href="/tag-info"
+                                href="{{lang_prefix}}/tag-info"
                                 data-i18n="main_menu_tags">
                                 Tags
                             </a>
@@ -132,7 +144,7 @@
                         <li class="px-4">
                             <a siteFunction="menuItemLevel2" 
                                 class="px-0 dropdown-item fs-6 fw-medium text-primary" 
-                                href="/"
+                                href="{{lang_prefix}}/"
                                 data-i18n="main_menu_home">
                                 Home
                             </a>

@@ -247,11 +247,12 @@ const fillTagList = (pageInfo) => {
 
     siteTags = pageInfo.siteInfo.tags || [];
     customTags = pageInfo.savedInfo.customTags || [];
+    const langPrefix = !isProd ? '' : siteLanguageCode === '' ? '' : `/${siteLanguageCode}`;
 
     siteTags.sort().forEach( tag => {
         const $el = $(html);
         $el.text(tag);
-        $el.attr('href',`/tag-info?tag=${tag}`);
+        $el.attr('href',`${langPrefix}/tag-info?tag=${tag}`);
         $el.removeClass('btn-primary').removeClass('btn-success').addClass('btn-primary');
         $el.appendTo( $tagItemsContainer);
     });
@@ -259,7 +260,7 @@ const fillTagList = (pageInfo) => {
     customTags.sort().forEach( tag => {
         const $el = $(html);
         $el.text(tag);
-        $el.attr('href',`/tag-info?tag=${tag}`);
+        $el.attr('href',`${langPrefix}/tag-info?tag=${tag}`);
         $el.attr('customTagRef', tag);
         $el.attr('pageTagType', 'customTag');
         $el.removeClass('btn-primary').removeClass('btn-primary').addClass('btn-success');
@@ -285,11 +286,12 @@ const fillCatList = (pageInfo) => {
 
     siteCats = pageInfo.siteInfo.categories || [];
     customCats = pageInfo.savedInfo.customCategories || [];
+    const langPrefix = !isProd ? '' : siteLanguageCode === '' ? '' : `/${siteLanguageCode}`;
 
     siteCats.sort().forEach( cat => {
         const $el = $(html);
         $el.text(cat);
-        $el.attr('href',`/cat-info?cat=${cat}`);
+        $el.attr('href',`${langPrefix}/cat-info?cat=${cat}`);
         $el.removeClass('text-danger').removeClass('text-success').addClass('text-danger');
         $el.appendTo( $catItemsContainer);
     });
@@ -297,7 +299,7 @@ const fillCatList = (pageInfo) => {
     customCats.sort().forEach( cat => {
         const $el = $(html);
         $el.text(cat);
-        $el.attr('href',`/cat-info?cat=${cat}`);
+        $el.attr('href',`${langPrefix}/cat-info?cat=${cat}`);
         $el.attr('customTagRef', cat);
         $el.attr('pageCatType', 'customCat');
         $el.removeClass('text-danger').removeClass('text-success').addClass('text-success');
@@ -480,9 +482,10 @@ const setCanvasSectionsOpeners = () => {
 }
 
 const fillPageTitle = (pageInfo) => {
+    const langPrefix = !isProd ? '' : siteLanguageCode === '' ? '' : `/${siteLanguageCode}`;
     $('#offcanvasPageFullInformationTitle').text(`${i18next.t('page_full_info_header_title')} (${pageInfo.siteInfo.title})`);
     $('a[siteFunction="offcanvasPageFullInfoPageGeneralDocLink"]').text(pageInfo.siteInfo.title);
-    $('a[siteFunction="offcanvasPageFullInfoPageGeneralDocLink"]').attr('href',pageInfo.siteInfo.permalink);
+    $('a[siteFunction="offcanvasPageFullInfoPageGeneralDocLink"]').attr('href', langPrefix + pageInfo.siteInfo.permalink);
 }
 
 const fillPageLastUpdate = (pageInfo) => {
@@ -509,13 +512,15 @@ const fillPageRelatedPages = (pageInfo) => {
                 pageList
             ).excerpt || '';
             
+            const langPrefix = !isProd ? '' : siteLanguageCode === '' ? '' : `/${siteLanguageCode}`;
+
             html = html + 
                 `
                     <div class="my-2">
                         <a 
                             title="${relatedPageExcerpt}" 
                             class="text-nowrap m-3 m-md-1 py-1 px-2 bg-light-subtle rounded-pill ghBtnLink fw-semibold" 
-                            href="${page.permalink.indexOf('/') === 0 ? page.permalink : '/'+page.permalink}">
+                            href="${page.permalink.indexOf('/') === 0 ? langPrefix + page.permalink : langPrefix + '/'+page.permalink}">
                             ${page.title}
                         </a>
                     </div>
@@ -539,13 +544,15 @@ const fillPageSimilarPages = (pageInfo) => {
                 pageList
             ).excerpt || '';
             
+            const langPrefix = !isProd ? '' : siteLanguageCode === '' ? '' : `/${siteLanguageCode}`;
+
             html = html + 
                 `
                     <div class="my-2">
                         <a 
                             title="${similarPageExcerpt}" 
                             class="text-nowrap m-3 m-md-1 py-1 px-2 bg-light-subtle rounded-pill ghBtnLink fw-semibold" 
-                            href="${page.permalink.indexOf('/') === 0 ? page.permalink : '/'+page.permalink}">
+                            href="${page.permalink.indexOf('/') === 0 ? langPrefix + page.permalink : langPrefix + '/'+page.permalink}">
                             ${page.title}
                         </a>
                     </div>
@@ -553,7 +560,8 @@ const fillPageSimilarPages = (pageInfo) => {
         });
         return html;
     }
-    pageSimilarPages = pageInfo.siteInfo.similarByContent.slice(0, settings.similarByContent.maxPages) || [];
+    
+    pageSimilarPages =  pageInfo.siteInfo.similarByContent.slice(0, settings.similarByContent.maxPages) || [];
     $('div[siteFunction="offcanvasPageFullInfoPageGeneralSimilarPagesText"]').html(similarPagesHtml(pageSimilarPages));
 }
 
