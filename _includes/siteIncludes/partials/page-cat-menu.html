@@ -43,8 +43,9 @@
 
                     <ul class="dropdown-menu" id="category-menu-more-list">
                         {% for cat in catMenu.secondLevelMenuItems %}
-                            {% assign rawCatUrl = "{{lang_prefix}}/cat-info?cat=" | append: cat %}
-                            {% assign sanitizedCatUrl = rawCatUrl | sanitize_url %}
+                            {% assign rawCatUrl = "/cat-info?cat=" | append: cat %}
+                            {% assign fullRawCatUrl = lang_prefix | append: rawCatUrl %}
+                            {% assign sanitizedCatUrl = fullRawCatUrl | sanitize_url %}
                             <li class="px-4">
                                 <a 
                                     siteFunction="menuItemLevel2" 
