@@ -8,7 +8,13 @@ preFlight = {
         else {
             const segments = path.split('/').filter(Boolean);
             const lastSegment = segments.length > 0 ? `${segments[segments.length - 1]}` : '/';
-            return lastSegment;
+            if (
+                lastSegment === langCode ||
+                lastSegment === `/${langCode}` ||
+                lastSegment === `/${langCode}/` ||
+                lastSegment === `${langCode}/`
+            ) return '/';
+            else return lastSegment;
         }
     },
 
