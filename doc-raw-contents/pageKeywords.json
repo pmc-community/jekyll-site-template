@@ -1,50 +1,6 @@
 {
   "keywords": [
     {
-      "permalink": "/collection-2/Z/z/",
-      "keywords": [
-        "file",
-        "file loads",
-        "inline",
-        "place",
-        "repo",
-        "content",
-        "link",
-        "collection",
-        "folder"
-      ]
-    },
-    {
-      "permalink": "/collection-1/g1/",
-      "keywords": [
-        "content",
-        "services",
-        "lorem ipsum",
-        "innohub",
-        "registration",
-        "email",
-        "process",
-        "access",
-        "latin",
-        "ihsutilities"
-      ]
-    },
-    {
-      "permalink": "/collection-2/y/y/",
-      "keywords": [
-        "lorem ipsum",
-        "latin",
-        "latin literature",
-        "line",
-        "file",
-        "extremes",
-        "evil",
-        "malorum",
-        "cicero",
-        "book"
-      ]
-    },
-    {
       "permalink": "/intro/introChild/",
       "keywords": [
         "lorem ipsum",
@@ -60,54 +16,9 @@
       ]
     },
     {
-      "permalink": "/pwc/",
-      "keywords": [
-        "file",
-        "lorem ipsum",
-        "site",
-        "markdown content",
-        "title",
-        "link",
-        "latin",
-        "cicero",
-        "sections",
-        "malorum"
-      ]
-    },
-    {
-      "permalink": "collection-2/X/x/",
-      "keywords": [
-        "file",
-        "content",
-        "source file",
-        "markdown content",
-        "inline",
-        "link",
-        "collection-2",
-        "folder",
-        "classes head1",
-        "head"
-      ]
-    },
-    {
       "permalink": "/intro/introChild/introGrandChild/",
       "keywords": [
         "child page"
-      ]
-    },
-    {
-      "permalink": "/sf/f1/",
-      "keywords": [
-        "services",
-        "lorem ipsum",
-        "products",
-        "latin",
-        "user",
-        "user content",
-        "content",
-        "sites",
-        "website",
-        "updates"
       ]
     },
     {
@@ -126,18 +37,77 @@
       ]
     },
     {
-      "permalink": "/terms/",
+      "permalink": "/pwc/",
+      "keywords": [
+        "file",
+        "lorem ipsum",
+        "site",
+        "markdown content",
+        "title",
+        "link",
+        "latin",
+        "cicero",
+        "sections",
+        "malorum"
+      ]
+    },
+    {
+      "permalink": "/sf/f1/",
       "keywords": [
         "services",
-        "space services",
-        "software",
-        "innohub",
-        "terms",
-        "service",
-        "website",
-        "content",
+        "lorem ipsum",
+        "products",
+        "latin",
         "user",
-        "property"
+        "user content",
+        "content",
+        "sites",
+        "website",
+        "resources"
+      ]
+    },
+    {
+      "permalink": "/collection-2/X/x/",
+      "keywords": [
+        "file",
+        "content",
+        "source file",
+        "markdown content",
+        "inline",
+        "link",
+        "collection-2",
+        "folder",
+        "classes head1",
+        "head"
+      ]
+    },
+    {
+      "permalink": "/collection-2/Z/z/",
+      "keywords": [
+        "file",
+        "file loads",
+        "inline",
+        "place",
+        "repo",
+        "content",
+        "link",
+        "collection",
+        "folder"
+      ]
+    },
+    {
+      "permalink": "/collection-2/y/y/",
+      "keywords": [
+        "lorem ipsum",
+        "latin",
+        "latin literature",
+        "line",
+        "file",
+        "extremes",
+        "evil",
+        "malorum",
+        "cicero",
+        "book"
       ]
     },
     {
@@ -156,18 +126,33 @@
       ]
     },
     {
-      "permalink": "/collection-2/X/x/",
+      "permalink": "/terms/",
       "keywords": [
-        "file",
+        "services",
+        "space services",
+        "software",
+        "innohub",
+        "terms",
+        "service",
         "content",
-        "source file",
-        "markdown content",
-        "inline",
-        "link",
-        "collection-2",
-        "folder",
-        "classes head1",
-        "head"
+        "website",
+        "user",
+        "property"
+      ]
+    },
+    {
+      "permalink": "/collection-1/g1/",
+      "keywords": [
+        "content",
+        "services",
+        "lorem ipsum",
+        "innohub",
+        "registration",
+        "email",
+        "process",
+        "access",
+        "latin",
+        "ihsutilities"
       ]
     }
   ]

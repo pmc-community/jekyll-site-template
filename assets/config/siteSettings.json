@@ -222,10 +222,10 @@
         "tag2"
       ],
       "excerpt": "lorem ipsum, latin, sections, cicero, finibus bonorum, malorum, latin literature, standard chunk, rackham, translation",
-      "lastUpdate": "2025-05-27 20:19:03 +0300",
-      "lastUpdateUTC": 1748366343,
-      "createTime": "2025-05-27 20:18:48 +0300",
-      "createTimeUTC": 1748366328,
+      "lastUpdate": "2025-05-28 18:01:12 +0300",
+      "lastUpdateUTC": 1748444472,
+      "createTime": "2025-05-28 18:01:12 +0300",
+      "createTimeUTC": 1748444472,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -257,6 +257,10 @@
         {
           "permalink": "/collection-1/g1/",
           "title": "Collection-1/G1"
+        },
+        {
+          "permalink": "/sf/f1/",
+          "title": "Subfolder/F1"
         }
       ],
       "readingTime": 6,
@@ -300,6 +304,10 @@
         {
           "permalink": "/collection-1/g1/",
           "title": "Collection-1/G1"
+        },
+        {
+          "permalink": "/sf/f1/",
+          "title": "Subfolder/F1"
         },
         {
           "permalink": "/pwc/",
@@ -355,7 +363,7 @@
         },
         {
           "title": "Collection-2/X",
-          "permalink": "collection-2/X/x/"
+          "permalink": "/collection-2/X/x/"
         }
       ],
       "autoSummary": "markdown content direct included in the page. heads up!!!links to other site docs must be given using the permalinks, not the ...",
@@ -371,6 +379,10 @@
         {
           "permalink": "/collection-1/g1/",
           "title": "Collection-1/G1"
+        },
+        {
+          "permalink": "/collection-2/X/x/",
+          "title": "Collection-2/X"
         },
         {
           "permalink": "/intro/introChild/",
@@ -417,7 +429,7 @@
       "tags": [
         "legal"
       ],
-      "excerpt": "services, space services, software, innohub, terms, service, website, content, user, property",
+      "excerpt": "services, space services, software, innohub, terms, service, content, website, user, property",
       "lastUpdate": "2025-05-25 10:11:17 +0300",
       "lastUpdateUTC": 1748157077,
       "createTime": "2025-05-25 10:11:17 +0300",
@@ -433,7 +445,12 @@
         }
       ],
       "autoSummary": "these terms of service are applicable from the date shown on this page. these terms of service are applicable from the date shown on this page. these ...",
-      "similarByContent": [],
+      "similarByContent": [
+        {
+          "permalink": "/sf/f1/",
+          "title": "Subfolder/F1"
+        }
+      ],
       "readingTime": 13,
       "hasDynamicContent": false,
       "parent": ""
@@ -467,6 +484,10 @@
         {
           "permalink": "/collection-2/y/y/",
           "title": "Collection-2/Y"
+        },
+        {
+          "permalink": "/sf/f1/",
+          "title": "Subfolder/F1"
         },
         {
           "permalink": "/intro/introChild/",
@@ -555,6 +576,10 @@
         {
           "permalink": "/pwc/",
           "title": "Play with content"
+        },
+        {
+          "permalink": "/sf/f1/",
+          "title": "Subfolder/F1"
         }
       ],
       "readingTime": 1,
@@ -577,7 +602,7 @@
       "relatedPages": [
         {
           "title": "Collection-2/X",
-          "permalink": "collection-2/X/x/"
+          "permalink": "/collection-2/X/x/"
         },
         {
           "title": "Play with content",
@@ -585,21 +610,26 @@
         }
       ],
       "autoSummary": "this is a file from a collection. this file loads some external content from another repo and place it inline. link to file in different folder",
-      "similarByContent": [],
+      "similarByContent": [
+        {
+          "permalink": "/collection-2/X/x/",
+          "title": "Collection-2/X"
+        }
+      ],
       "readingTime": 1,
       "hasDynamicContent": true,
       "parent": "Collection-2/X"
     },
     {
       "title": "Collection-2/X",
-      "permalink": "collection-2/X/x/",
+      "permalink": "/collection-2/X/x/",
       "categories": [],
       "tags": [
         "tag1"
       ],
       "excerpt": "file, content, source file, markdown content, inline, link, collection-2, folder, classes head1, head",
-      "lastUpdate": "2025-05-25 10:11:17 +0300",
-      "lastUpdateUTC": 1748157077,
+      "lastUpdate": "2025-05-28 18:03:57 +0300",
+      "lastUpdateUTC": 1748444637,
       "createTime": "2025-05-25 10:11:17 +0300",
       "createTimeUTC": 1748157077,
       "relatedPages": [
@@ -613,7 +643,16 @@
         }
       ],
       "autoSummary": "own markdown content. this the content directly typed in collection-2/x. this is one good inline external link to https://pmc ...",
-      "similarByContent": [],
+      "similarByContent": [
+        {
+          "permalink": "/pwc/",
+          "title": "Play with content"
+        },
+        {
+          "permalink": "/collection-2/Z/z/",
+          "title": "Collection-2/Z"
+        }
+      ],
       "readingTime": 1,
       "hasDynamicContent": true,
       "parent": ""
@@ -623,7 +662,7 @@
       "permalink": "/sf/f1/",
       "categories": [],
       "tags": [],
-      "excerpt": "services, lorem ipsum, products, latin, user, user content, content, sites, website, updates",
+      "excerpt": "services, lorem ipsum, products, latin, user, user content, content, sites, website, resources",
       "lastUpdate": "2025-05-25 10:11:17 +0300",
       "lastUpdateUTC": 1748157077,
       "createTime": "2025-05-25 10:11:17 +0300",
@@ -643,7 +682,28 @@
         }
       ],
       "autoSummary": "goods or services made available on or through such third party sites or resources. either pmc or any third parties may provide links to other websites and/or ...",
-      "similarByContent": [],
+      "similarByContent": [
+        {
+          "permalink": "/collection-1/g1/",
+          "title": "Collection-1/G1"
+        },
+        {
+          "permalink": "/collection-2/y/y/",
+          "title": "Collection-2/Y"
+        },
+        {
+          "permalink": "/intro/introChild/",
+          "title": "Intro Child Page"
+        },
+        {
+          "permalink": "/terms/",
+          "title": "Terms"
+        },
+        {
+          "permalink": "/intro/",
+          "title": "Introduction"
+        }
+      ],
       "readingTime": 3,
       "hasDynamicContent": false,
       "parent": ""
@@ -706,7 +766,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "27-May-2025"
+          "lastUpdate": "28-May-2025"
         }
       ],
       "numPages": 1
@@ -730,8 +790,8 @@
         },
         {
           "title": "Collection-2/X",
-          "permalink": "collection-2/X/x/",
-          "lastUpdate": "25-May-2025"
+          "permalink": "/collection-2/X/x/",
+          "lastUpdate": "28-May-2025"
         }
       ],
       "numPages": 4
@@ -741,7 +801,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "27-May-2025"
+          "lastUpdate": "28-May-2025"
         }
       ],
       "numPages": 1
@@ -820,7 +880,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "27-May-2025"
+          "lastUpdate": "28-May-2025"
         },
         {
           "title": "Play with content",
@@ -845,7 +905,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "27-May-2025"
+          "lastUpdate": "28-May-2025"
         },
         {
           "title": "Collection-2/Z",
