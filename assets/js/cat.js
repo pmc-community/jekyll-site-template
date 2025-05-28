@@ -356,7 +356,7 @@ const showCatDetails = (cat) => {
             type: 'string',
             exceptWhenRowSelect: true,
             createdCell: function(td, cellData, rowData, row, col) {
-                const permalink = $(rowData.pageActions).find('[siteFunction="catPageItemLinkToDoc"]').attr('href');
+                const permalink = $(rowData.pageActions).find('[siteFunction="catPageItemLinkToDoc"]').attr('hrefBase');
                 $(td)
                     .attr('catReference', `${cat}`)
                     .attr('colFunction', 'catInfoCatTablePageOtherCats')
@@ -379,7 +379,7 @@ const showCatDetails = (cat) => {
             "left": 1
         },
         "createdRow": function(row, data, dataIndex) {
-            const permalink = $(data.pageActions).find('[siteFunction="catPageItemLinkToDoc"]').attr('href');
+            const permalink = $(data.pageActions).find('[siteFunction="catPageItemLinkToDoc"]').attr('hrefBase');
             $(row)
                 .attr('siteFunction', 'catInfoCatTablePageRow')
                 .attr('catReference', `${cat}`)
@@ -498,7 +498,7 @@ const processCatDetailsTableRowClick = (rowData, tableSelector, cat) => {
         const tempElement = document.createElement('div');
         tempElement.innerHTML = `${actionsHtml}`;
         const linkToDoc = tempElement.querySelector('a[siteFunction="catPageItemLinkToDoc"]');
-        return linkToDoc.getAttribute('href');
+        return linkToDoc.getAttribute('hrefBase');
     }
 
     const stripHtml = (html) => {
@@ -646,7 +646,8 @@ const buildCatPagesListForCustomCat = (cat) => {
                     <a 
                         siteFunction="catPageItemLinkToDoc" 
                         class="btn btn-sm btn-info" 
-                        href="${langPrefix}${permalink}" 
+                        href="${langPrefix}${permalink}"
+                        hrefBase="${permalink}"
                         title="${i18next.t('cats_cat_cat_details_actions_read_doc')}"
                         data-i18n="[title]cats_cat_cat_details_actions_read_doc"
                         catForCatTableDetailsReference="${cat}" 
