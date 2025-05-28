@@ -183,7 +183,7 @@ homePage = {
 
         allCats = _.unionWith(topSiteCats, topCustomCats, _.isEqual);
         sortedTopCats = _.orderBy(allCats, ['numPages'], ['desc']);
-        return _.take(sortedTopCats, allSettings.pageSettings.sections.mostRecentAndPopular_section.popularCatsToShow);
+        return _.take(sortedTopCats, pageSettings.sections.mostRecentAndPopular_section.popularCatsToShow);
     },
 
     createTopTagsList: () => {
@@ -210,7 +210,7 @@ homePage = {
 
         allTags = _.unionWith(topSiteTags, topCustomTags, _.isEqual);
         sortedTopTags = _.orderBy(allTags, ['numPages'], ['desc']);
-        return _.take(sortedTopTags, allSettings.pageSettings.sections.mostRecentAndPopular_section.popularTagsToShow);
+        return _.take(sortedTopTags, pageSettings.sections.mostRecentAndPopular_section.popularTagsToShow);
     },
 
     // stats section

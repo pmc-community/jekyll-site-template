@@ -3,6 +3,15 @@
 
 preFlight = {
 
+    removeLangCodeFromPath: (path, langCode) => {
+        if (langCode === '') return path;
+        else {
+            const segments = path.split('/').filter(Boolean);
+            const lastSegment = segments.length > 0 ? `${segments[segments.length - 1]}` : '/';
+            return lastSegment;
+        }
+    },
+
     formatPath: (path) => {
         const basePath = path.replace(/^\/|\/$/g, '');
 
@@ -255,11 +264,15 @@ const gData = allSettings.gData;
 const nrSettings = allSettings.newRelicSettings;
 const engLanguage = allSettings.engLanguage;
 const dtSettings =  settings.dataTables;
+const siteLanguageCode = settings.multilang.siteLanguage === 0 
+    ? ''
+    : settings.multilang.availableLang[settings.multilang.siteLanguage].lang;
 
 // we use a function to get permalink options
 // as permalink extraction from url returns always /permalink/
 // and we don't know how permalink are defined in the page front matter
-const permalinkOptions = preFlight.formatPath(window.location.pathname);
+const path = preflight.removeLangCodeFromPath(window.location.pathname,siteLanguageCode);
+const permalinkOptions = preFlight.formatPath(path);
 const pageSettings = preFlight.getPageSettings(permalinkOptions, allPageSettings);
 
 // init globals
