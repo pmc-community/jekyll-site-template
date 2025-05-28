@@ -16,7 +16,7 @@ module Jekyll
             def render(context)
                 langSettings = context.registers[:site].data["siteConfig"]["multilang"]
                 siteLang = ""
-                if (ENV["DEPLOY_ENV"] != "production"  )
+                if (ENV["JEKYLL_ENV"] != "production"  )
                     siteLang = ""                     
                 else
                     if (langSettings["siteLanguage"] == 0)
@@ -25,7 +25,7 @@ module Jekyll
                         siteLang = langSettings["availableLang"][langSettings["siteLanguage"]]["lang"]
                     end      
                 end
-                env = ENV["DEPLOY_ENV"]
+                env = ENV["JEKYLL_ENV"]
                 sl = langSettings["siteLanguage"]
                 "l: #{siteLang} / e: #{env}/ lc: #{sl}"
             end
