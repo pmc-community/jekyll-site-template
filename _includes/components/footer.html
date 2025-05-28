@@ -1,8 +1,3 @@
-{% capture siteLanguage %}
-    {% SiteLanguageForSearch %}
-{% endcapture %}
-
-
 {% capture footer_custom %}
     {%- include footer_custom.html -%}
 {% endcapture %}
@@ -29,11 +24,16 @@
 
         {% if algolia.algoliaEnabled %}
             {% assign permalink = page.permalink %}
+            
+            {% capture siteLanguage %}
+                {% SiteLanguageForSearch %}
+            {% endcapture %}
+
             {% if permalink %}
                 <page-general-data class="d-none">
                     <page-data-title>{{page.title}}</page-data-title>
                     <page-data-permalink>{{page.permalink}}</page-data-permalink>
-                    <page-data-language>{{siteLanguage}}</page-data-language>
+                    <page-data-language>{{siteLanguage | strip}}</page-data-language>
                 </page-general-data>
                 {% assign pages = site.data.page_list | replace: "=>", ":"  | json_string_to_object %}
                 {% assign pg = pages | where: "permalink", permalink %}
