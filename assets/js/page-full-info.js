@@ -561,9 +561,7 @@ const fillPageSimilarPages = (pageInfo) => {
         return html;
     }
         
-    pageSimilarPages = pageInfo.siteInfo.similarByContent.length === 0 
-        ? [] 
-        : pageInfo.siteInfo.similarByContent.slice(0, settings.similarByContent.maxPages) || [];
+    pageSimilarPages =  pageInfo.siteInfo.similarByContent.slice(0, settings.similarByContent.maxPages) || [];
     $('div[siteFunction="offcanvasPageFullInfoPageGeneralSimilarPagesText"]').html(similarPagesHtml(pageSimilarPages));
 }
 
