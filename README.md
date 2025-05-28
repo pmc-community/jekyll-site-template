@@ -14,6 +14,9 @@ Other integrations that can be configured (or disabled):
 # Extensions
 We provide a hooking mechanism (normally used for logging or for custom GTM tags). In any moment, for any executed function, you can extend the functionality as needed. Just hook to the function you want, add extra args to it (if applicable) and extend the functionality.
 
+# Multilanguage
+Multilanguage support is fully ensured for GitHub pages deployment and is accessibel in the form `https://your.domain/language_code`. Each language version is (must) stay in a separate branch named with the language ISO code. For this reason, other types of deployment (such as Netlify) does not support multilanguage by default and you need to handle it depending on the specifics of your desired deployment. 
+
 
 # Deployment
 - from main: deployed with Netlify on [dst.innohub.space](https://dst.innohub.space). 
