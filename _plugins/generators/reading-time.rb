@@ -32,7 +32,6 @@ module Jekyll
           word_count = content.split.size
           reading_time = (word_count / reading_speed.to_f).ceil
 
-          puts file_path
           content = File.read(FileUtilities.get_real_file_from_raw_content_file(file_path))
           content.force_encoding('UTF-8').encode!('UTF-8', invalid: :replace, undef: :replace)
           front_matter, _ = FileUtilities.parse_front_matter(File.read(FileUtilities.get_real_file_from_raw_content_file(file_path)))
