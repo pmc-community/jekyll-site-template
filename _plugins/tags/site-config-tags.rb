@@ -25,7 +25,7 @@ module Jekyll
                         siteLang = langSettings["availableLang"][langSettings["siteLanguage"]]["lang"]
                     end      
                 end
-                siteLang
+                "#{siteLang} / #{ENV["DEPLOY_ENV"]}"
             end
         end
 
