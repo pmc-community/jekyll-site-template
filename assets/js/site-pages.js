@@ -1155,7 +1155,7 @@ sitePagesFn = {
                         class="text-nowrap focus-ring focus-ring-warning px-3 mr-5 my-2 btn btn-sm ${tagBtnColor} position-relative"
                         title="${tagBtnTitle}"
                         data-i18n="[title]dt_pages_col_tags_title_static"
-                        href="${sitePagesFn.langPrefix}tag-info?tag=${tag}"
+                        href="${sitePagesFn.langPrefix}/tag-info?tag=${tag}"
                         data-raw="${JSON.stringify(allTags).replace(/"/g, '&quot;')}">
                         ${tag}
                     </a>
@@ -1213,7 +1213,7 @@ sitePagesFn = {
                         class="text-nowrap focus-ring focus-ring-warning px-3 mr-5 my-2 btn btn-sm ${catBtnColor} position-relative border-0 shadow-none"
                         title = "Details for category ${cat}"
                         data-i18n="[title]dt_pages_col_cats_title_static"
-                        href="${sitePagesFn.langPrefix}cat-info?cat=${cat}"
+                        href="${sitePagesFn.langPrefix}/cat-info?cat=${cat}"
                         data-raw="${JSON.stringify(allCats).replace(/"/g, '&quot;')}">
                         ${cat}
                     </a>
