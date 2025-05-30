@@ -60,7 +60,7 @@ exclude:
 
 aux_links:
   "GitHub":
-    - "//github.com/pmc-community/figma"
+    - "//github.com/pmc-community/jekyll-site-template"
   "About":
     - "//pmc-expert.com"
 
