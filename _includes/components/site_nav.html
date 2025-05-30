@@ -34,17 +34,21 @@
       {% capture defaultLang %}
         {% SiteDefaultLanguageCode %}
       {% endcapture %}
-
       {% assign dl = defaultLang | strip %}
+      
+      {% capture baseUrl %}
+        {% SiteBaseUrl %}
+      {% endcapture %}
+      {% assign bUrl = baseUrl | strip %}
+      
       <ul class="dropdown-menu">
         {% for language in sLObj %}
           {% if language["lang"] == dl %}
-            <li><a class="dropdown-item text-dark fw-medium" href=" {{page.permalink}}">{{language["name"]}}</a></li>
+            <li><a class="dropdown-item text-dark fw-medium" href="{{bUrl}}{{page.permalink}}">{{language["name"]}}</a></li>
           {% else %}
             {% assign langCode = language["lang"] %}
-            <li><a class="dropdown-item text-dark fw-medium" href="{{langCode}}{{page.permalink}}">{{language["name"]}}</a></li>
+            <li><a class="dropdown-item text-dark fw-medium" href="{{bUrl}}/{{langCode}}{{page.permalink}}">{{language["name"]}}</a></li>
           {% endif %}
-
         
         {% endfor %}
       </ul>
