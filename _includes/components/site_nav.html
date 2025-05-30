@@ -11,6 +11,45 @@
   {%- endcomment -%}
   
   <nav aria-label="Main" id="site-nav" class="site-nav px-5 pt-4">
+
+    <div id="language-selector" class="dropdown mb-3">
+      <a 
+        class="btn dropdown-toggle btn-sm btn-outline-scondary border border-secondary border-opacity-25 shadow-none text-primary fw-medium" 
+        role="button" 
+        data-bs-toggle="dropdown" 
+        aria-expanded="false"
+        data-i18n="side_bar_language_selector_text">
+        Change language
+      </a>
+
+      {% capture siteLanguages %}
+        {% SiteLanguagesExceptActiveLanguage %}
+      {% endcapture %}
+
+      {% assign step1 = siteLanguages | replace: "=>", ":" %}
+      {% assign step2 = step1 | replace: "}{", "},{" %}
+      {% assign siteLanguages_json = "[" | append: step2 | append: "]" %}
+      {% assign sLObj = siteLanguages_json | json_string_to_object %}
+
+      {% capture defaultLang %}
+        {% SiteDefaultLanguageCode %}
+      {% endcapture %}
+
+      {% assign dl = defaultLang | strip %}
+      <ul class="dropdown-menu">
+        {% for language in sLObj %}
+          {% if language["lang"] == dl %}
+            <li><a class="dropdown-item text-dark fw-medium" href=" {{page.permalink}}">{{language["name"]}}</a></li>
+          {% else %}
+            {% assign langCode = language["lang"] %}
+            <li><a class="dropdown-item text-dark fw-medium" href="{{langCode}}{{page.permalink}}">{{language["name"]}}</a></li>
+          {% endif %}
+
+        
+        {% endfor %}
+      </ul>
+    </div>
+
     {% assign pages_top_size = site.html_pages
           | where_exp:"item", "item.title != nil"
           | where_exp:"item", "item.parent == nil"
