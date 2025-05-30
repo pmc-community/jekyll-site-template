@@ -4,11 +4,12 @@
 
 require 'yaml'
 require_relative "../../tools/modules/globals"
+require_relative "../../tools/modules/file-utilities"
 require 'dotenv'
 
 Dotenv.load
 
-Jekyll::Hooks.register :site, :after_init do |site|
+Jekyll::Hooks.register :site, :post_read  do |site|
     Globals.putsColText(Globals::PURPLE,"Generating sitemap.xml ...")
     numPages = 0
     doc_contents_dir = File.join(site.source, Globals::DOCS_ROOT)
@@ -36,11 +37,26 @@ Jekyll::Hooks.register :site, :after_init do |site|
             permalink = front_matter["permalink"]
             permalink = permalink.start_with?('/') ? permalink : "/#{permalink}"
             sitemap << {
-                'url' => "https://docaroo.innohub.space/ro" + permalink,
+                'url' => ENV["DEPLOY_PROD_BASE_URL"] + permalink,
                 'lastmod' => front_matter['lastmod'] || File.mtime(file_path).strftime('%Y-%m-%d'),
                 'changefreq' => front_matter['changefreq'] || 'weekly',
                 'priority' => front_matter['priority'] || '0.5'
             }
+
+            # add language pages to sitemap
+            languages = site.data["siteConfig"]["multilang"]["availableLang"]
+            languages.each do |language|
+                #puts language["lang"]
+                if (FileUtilities.file_exists?("assets/locales/#{language["lang"]}.json", Globals::ROOT_DIR))
+                    sitemap << {
+                        'url' => ENV["DEPLOY_PROD_BASE_URL"] + "/#{language["lang"]}" + permalink,
+                        'lastmod' => front_matter['lastmod'] || File.mtime(file_path).strftime('%Y-%m-%d'),
+                        'changefreq' => front_matter['changefreq'] || 'weekly',
+                        'priority' => front_matter['priority'] || '0.5'
+                    }
+                end
+            end
+            
         end
 
     end
