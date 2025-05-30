@@ -1,9 +1,9 @@
 "/":
   enabled: true
-  startPermalink: "/intro/"
+  startPermalink: "/intro/" 
   sections:
     header_section:
-      title: "Model site de documentație"
+      title: "Model de site pentru documentație"
       text: "Creează-ți propriul site de documentație fără niciun stres! Lasă-ți utilizatorii să preia controlul și să organizeze informațiile cum vor ei — ordonat, haotic sau undeva la mijloc. Cu instrumente de căutare ultra-rapide, vor găsi ce le trebuie mai repede decât poți zice „Unde era documentul ăla?” Documentație ușor de creat, usor de folosit și incredibil de puternică — totul într-un singur pachet bine pus la punct."
       startBtnText: "Overview"
       featuredMedia: "<img width=\"600\" height=\"auto\" src=\"assets/img/home.png\" alt=\"Docaroo by PMC\">"
