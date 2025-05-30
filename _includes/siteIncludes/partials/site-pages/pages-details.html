@@ -1,3 +1,13 @@
+{% capture siteLanguage %}
+    {% SiteLanguage %}
+{% endcapture %}
+
+{% assign lang_path = siteLanguage | strip %}
+{% assign lang_prefix = '' %}
+{% unless lang_path == '' %}
+  {% assign lang_prefix = '/' | append: lang_path %}
+{% endunless %}
+
 {% assign pageArray= site.data.page_list  | json_string_to_object %}
 
     <div id="site_pages_details" class="my-5 d-none">
@@ -65,7 +75,7 @@
                                             siteFunction="sitePagesPagesTableTitleColButtons"
                                             class="d-flex align-items-center">
                                             <a 
-                                                href="{{ page.permalink }}" 
+                                                href="{{lang_prefix}}{{ page.permalink }}" 
                                                 target=_blank
                                                 class="mx-2 mx-md-2"
                                                 title="Read document {{ page.title }}"
