@@ -9,7 +9,7 @@ require 'dotenv'
 
 Dotenv.load
 
-Jekyll::Hooks.register :site, :post_read  do |site|
+Jekyll::Hooks.register :site, :after_init do |site|
     Globals.putsColText(Globals::PURPLE,"Generating sitemap.xml ...")
     numPages = 0
     doc_contents_dir = File.join(site.source, Globals::DOCS_ROOT)
@@ -44,9 +44,13 @@ Jekyll::Hooks.register :site, :post_read  do |site|
             }
 
             # add language pages to sitemap
-            languages = site.data["siteConfig"]["multilang"]["availableLang"]
+            # need to read the siteConfig.yml because at the moment of :after_init the site var is not known yet
+            # :after_init cannot be changed with something that ensures site var to be known because may lead to an endless loop for generating sitemap.xml
+            content = File.open("_data/siteConfig.yml","" "rb", &:read).encode('UTF-8', invalid: :replace, undef: :replace)
+            siteConfig = YAML.load(content);
+            languages = siteConfig["multilang"]["availableLang"]
             languages.each do |language|
-                #puts language["lang"]
+                puts language["lang"]
                 if (FileUtilities.file_exists?("assets/locales/#{language["lang"]}.json", Globals::ROOT_DIR))
                     sitemap << {
                         'url' => ENV["DEPLOY_PROD_BASE_URL"] + "/#{language["lang"]}" + permalink,
