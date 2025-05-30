@@ -36,6 +36,10 @@ Jekyll::Hooks.register :site, :after_init do |site|
             url = url.chomp('index') if url.end_with?('index')
             permalink = front_matter["permalink"]
             permalink = permalink.start_with?('/') ? permalink : "/#{permalink}"
+
+            # adding default language pages to sitemap.xml
+            # these are without language code in the url
+            # default language is the fallbackLang in _data/siteConfig.yml, multilang section
             sitemap << {
                 'url' => ENV["DEPLOY_PROD_BASE_URL"] + permalink,
                 'lastmod' => front_matter['lastmod'] || File.mtime(file_path).strftime('%Y-%m-%d'),
@@ -49,15 +53,21 @@ Jekyll::Hooks.register :site, :after_init do |site|
             content = File.open("_data/siteConfig.yml","" "rb", &:read).encode('UTF-8', invalid: :replace, undef: :replace)
             siteConfig = YAML.load(content);
             languages = siteConfig["multilang"]["availableLang"]
+            siteLang = siteConfig["multilang"]["siteLanguage"]
+            defaultLanguage = siteConfig["multilang"]["fallbackLang"]
+            siteLangCode = languages[defaultLanguage]["lang"]
             languages.each do |language|
-                puts language["lang"]
                 if (FileUtilities.file_exists?("assets/locales/#{language["lang"]}.json", Globals::ROOT_DIR))
-                    sitemap << {
-                        'url' => ENV["DEPLOY_PROD_BASE_URL"] + "/#{language["lang"]}" + permalink,
-                        'lastmod' => front_matter['lastmod'] || File.mtime(file_path).strftime('%Y-%m-%d'),
-                        'changefreq' => front_matter['changefreq'] || 'weekly',
-                        'priority' => front_matter['priority'] || '0.5'
-                    }
+                    # we don't add the default language pages to sitemap.xml
+                    # because those pages were already added before
+                    if (language["lang"] != siteLangCode)
+                        sitemap << {
+                            'url' => ENV["DEPLOY_PROD_BASE_URL"] + "/#{language["lang"]}" + permalink,
+                            'lastmod' => front_matter['lastmod'] || File.mtime(file_path).strftime('%Y-%m-%d'),
+                            'changefreq' => front_matter['changefreq'] || 'weekly',
+                            'priority' => front_matter['priority'] || '0.5'
+                        }
+                    end
                 end
             end
             
