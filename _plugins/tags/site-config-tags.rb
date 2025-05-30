@@ -94,6 +94,20 @@ module Jekyll
 
         end
 
+        class SiteBaseUrl < Liquid::Tag
+
+            def initialize(tag_name, input, context)
+                super
+                @input = input
+            end
+
+            def render(context)
+                baseUrl = ENV["DEPLOY_PROD_BASE_URL"]
+                baseUrl
+            end
+
+        end
+
     end
 end
   
@@ -101,3 +115,4 @@ Liquid::Template.register_tag('SiteLanguage', Jekyll::SiteConfigSettings::SiteLa
 Liquid::Template.register_tag('SiteLanguageForSearch', Jekyll::SiteConfigSettings::SiteLanguageForSearch)
 Liquid::Template.register_tag('SiteLanguagesExceptActiveLanguage', Jekyll::SiteConfigSettings::SiteLanguagesExceptActiveLanguage)
 Liquid::Template.register_tag('SiteDefaultLanguageCode', Jekyll::SiteConfigSettings::SiteDefaultLanguageCode)
+Liquid::Template.register_tag('SiteBaseUrl', Jekyll::SiteConfigSettings::SiteBaseUrl)
