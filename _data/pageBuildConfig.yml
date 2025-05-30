@@ -3,8 +3,8 @@
   startPermalink: "/intro/"
   sections:
     header_section:
-      title: "Documentation site framework"
-      text: "Build your own documentation site without breaking a sweat! Let your users play boss and organize info however they want — neat, messy, or somewhere in between. And with lightning-fast search tools, finding what they need is quicker than you can say “Where’s that doc again?” Making docs easy, fun, and seriously powerful — all wrapped up in one neat package."
+      title: "Model site de documentație"
+      text: "Creează-ți propriul site de documentație fără niciun stres! Lasă-ți utilizatorii să preia controlul și să organizeze informațiile cum vor ei — ordonat, haotic sau undeva la mijloc. Cu instrumente de căutare ultra-rapide, vor găsi ce le trebuie mai repede decât poți zice „Unde era documentul ăla?” Documentație ușor de creat, usor de folosit și incredibil de puternică — totul într-un singur pachet bine pus la punct."
       startBtnText: "Overview"
       featuredMedia: "<img width=\"600\" height=\"auto\" src=\"assets/img/home.png\" alt=\"Docaroo by PMC\">"
     collections_section:
