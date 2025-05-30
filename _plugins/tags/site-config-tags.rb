@@ -108,6 +108,52 @@ module Jekyll
 
         end
 
+        class LanguageSwitchEnabled < Liquid::Tag
+            # test if we need to show the language switcher
+            # normally, the switcher should't be shown on local environment
+            # but we show it only for testing purposes, so we do not return false if is not production
+            def initialize(tag_name, input, context)
+                super
+                @input = input
+            end
+
+            def render(context)
+                langSettings = context.registers[:site].data["siteConfig"]["multilang"]
+                langSwEnabled = false
+                isMultilang = langSettings["enabled"]
+
+                if (!isMultilang)
+                    langSwEnabled = false
+                else
+                    allLanguages = langSettings["availableLang"]
+                    siteLang = langSettings["availableLang"][langSettings["siteLanguage"]]["lang"]
+                    if (allLanguages.length == 1)
+                        langSwEnabled = false
+                    else
+                        filtered = allLanguages.reject { |item| item["lang"] == siteLang }
+                        noTranslation = []
+                
+                        filtered.each do |language|
+                            if (FileUtilities.file_exists?("assets/locales/#{language["lang"]}.json", Globals::ROOT_DIR))
+                                noTranslation << language["lang"]
+                            end
+                        end
+
+                        result = filtered.reject { |item| !noTranslation.include?(item["lang"]) }
+
+                        if (result.length < 1)
+                            langSwEnabled = false
+                        else
+                            langSwEnabled = true
+                        end
+                    end
+                end
+
+                langSwEnabled
+            end
+
+        end
+
     end
 end
   
@@ -116,3 +162,4 @@ Liquid::Template.register_tag('SiteLanguageForSearch', Jekyll::SiteConfigSetting
 Liquid::Template.register_tag('SiteLanguagesExceptActiveLanguage', Jekyll::SiteConfigSettings::SiteLanguagesExceptActiveLanguage)
 Liquid::Template.register_tag('SiteDefaultLanguageCode', Jekyll::SiteConfigSettings::SiteDefaultLanguageCode)
 Liquid::Template.register_tag('SiteBaseUrl', Jekyll::SiteConfigSettings::SiteBaseUrl)
+Liquid::Template.register_tag('LanguageSwitchEnabled', Jekyll::SiteConfigSettings::LanguageSwitchEnabled)
