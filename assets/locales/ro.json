@@ -62,6 +62,8 @@
         "type_and_search_input_field_placeholder": "scrie, selecteaza, apasa enter ..."
     },
 
+    "side_bar_language_selector_text": "Schimba limba",
+
     "home_page_intro_section_buttons_sections": "Sectiuni",
     "home_page_intro_section_buttons_quickstart": "Start",
     "home_page_intro_section_buttons_statistics": "Statistici",
