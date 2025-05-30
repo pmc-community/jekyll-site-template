@@ -164,6 +164,8 @@ const sitePages__savedItems = () => {
 // using a 'namespace' to avoid fn name duplicates
 sitePagesFn = {
 
+    langPrefix: !isProd ? '' : siteLanguageCode === '' ? '' : `/${siteLanguageCode}`,
+
     // general
     handleDropdownClassOverlap: () => {
         // bootstrap class dropdown-menu overlaps with the search panes class which is also dropdown-menu 
@@ -1086,7 +1088,7 @@ sitePagesFn = {
                 className: 'btn-warning btn-sm text-dark mb-2',
                 text: i18next.t('dt_custom_buttons_go_to_tags_btn_text'),
                 action: () => {
-                    window.location.href = `/tag-info`
+                    window.location.href = `${sitePagesFn.langPrefix}/tag-info`
                 }
              }
          
@@ -1099,7 +1101,7 @@ sitePagesFn = {
                  className: 'btn-success btn-sm text-light mb-2',
                  text: i18next.t('dt_custom_buttons_go_to_cats_btn_text'),
                  action: () => {
-                     window.location.href = `/cat-info`
+                     window.location.href = `${sitePagesFn.langPrefix}/cat-info`
                  }
              }
              
@@ -1153,7 +1155,7 @@ sitePagesFn = {
                         class="text-nowrap focus-ring focus-ring-warning px-3 mr-5 my-2 btn btn-sm ${tagBtnColor} position-relative"
                         title="${tagBtnTitle}"
                         data-i18n="[title]dt_pages_col_tags_title_static"
-                        href="tag-info?tag=${tag}"
+                        href="${sitePagesFn.langPrefix}/tag-info?tag=${tag}"
                         data-raw="${JSON.stringify(allTags).replace(/"/g, '&quot;')}">
                         ${tag}
                     </a>
@@ -1211,7 +1213,7 @@ sitePagesFn = {
                         class="text-nowrap focus-ring focus-ring-warning px-3 mr-5 my-2 btn btn-sm ${catBtnColor} position-relative border-0 shadow-none"
                         title = "Details for category ${cat}"
                         data-i18n="[title]dt_pages_col_cats_title_static"
-                        href="cat-info?cat=${cat}"
+                        href="${sitePagesFn.langPrefix}/cat-info?cat=${cat}"
                         data-raw="${JSON.stringify(allCats).replace(/"/g, '&quot;')}">
                         ${cat}
                     </a>
