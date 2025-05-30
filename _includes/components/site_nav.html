@@ -11,6 +11,57 @@
   {%- endcomment -%}
   
   <nav aria-label="Main" id="site-nav" class="site-nav px-5 pt-4">
+
+    {% capture langSw %}
+      {% LanguageSwitchEnabled %}
+    {% endcapture %}
+
+    {% assign lsw = langSw | strip %}
+
+    {%if lsw == 'true' %}
+      <div id="language-selector" class="dropdown mb-3 pb-3 border-bottom border-secondary border-opacity-25 shadow-none">
+        <a 
+          class="btn dropdown-toggle btn-sm btn-outline-scondary border border-secondary border-opacity-25 shadow-none text-primary fw-medium" 
+          role="button" 
+          data-bs-toggle="dropdown" 
+          aria-expanded="false"
+          data-i18n="side_bar_language_selector_text">
+          Change language
+        </a>
+
+        {% capture siteLanguages %}
+          {% SiteLanguagesExceptActiveLanguage %}
+        {% endcapture %}
+
+        {% assign step1 = siteLanguages | replace: "=>", ":" %}
+        {% assign step2 = step1 | replace: "}{", "},{" %}
+        {% assign siteLanguages_json = "[" | append: step2 | append: "]" %}
+        {% assign sLObj = siteLanguages_json | json_string_to_object %}
+
+        {% capture defaultLang %}
+          {% SiteDefaultLanguageCode %}
+        {% endcapture %}
+        {% assign dl = defaultLang | strip %}
+        
+        {% capture baseUrl %}
+          {% SiteBaseUrl %}
+        {% endcapture %}
+        {% assign bUrl = baseUrl | strip %}
+        
+        <ul class="dropdown-menu">
+          {% for language in sLObj %}
+            {% if language["lang"] == dl %}
+              <li><a class="dropdown-item text-dark fw-medium" href="{{bUrl}}{{page.permalink}}">{{language["name"]}}</a></li>
+            {% else %}
+              {% assign langCode = language["lang"] %}
+              <li><a class="dropdown-item text-dark fw-medium" href="{{bUrl}}/{{langCode}}{{page.permalink}}">{{language["name"]}}</a></li>
+            {% endif %}
+          
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
     {% assign pages_top_size = site.html_pages
           | where_exp:"item", "item.title != nil"
           | where_exp:"item", "item.parent == nil"
@@ -51,7 +102,7 @@
                     <svg class="page-with-children-expander" viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
                   </button>
                   {%- endif -%}
-                  <div class="nav-category fs-6 fw-normal text-primary border-bottom border-secondary border-opacity-25">{{ collection_value.name }}</div>
+                  <div class="nav-category fs-6 fw-normal text-primary border-bottom border-secondary border-opacity-25 mb-2">{{ collection_value.name }}</div>
                   {% include components/nav/pages.html pages=collection all=include.all %}
                 </li>
               </ul>

@@ -1,5 +1,5 @@
 # Create a documentation website
-This repo contains the code needed to publish your great documentation. There are two deployment examples in this repo, with Netlify which allow you to add some backoffice if needed and with GitHub pages if a static site is enough for you. This documentation site template allows including its own content developed under `doc-contents` folder or external content from public, or private GitHub Repositories generated at build time, or content added at runtime, or any combination of these.
+This repo contains the code needed to publish your great documentation. There are two deployment examples in this repo, with Netlify which allow you to add some backend if needed and with GitHub pages if a static site is enough for you. This documentation site template allows including its own content developed under `doc-contents` folder or external content from public, or private GitHub Repositories generated at build time, or content added at runtime, or any combination of these.
 
 `Related pages` and `Excerpt kewords` information can be manually added to each document or can be generated automatically at build time and the `sensitivity` of the generation process can be tuned from the settings, depending on the specifics of your content.
 
