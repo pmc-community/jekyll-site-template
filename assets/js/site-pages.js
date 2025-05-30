@@ -1088,7 +1088,7 @@ sitePagesFn = {
                 className: 'btn-warning btn-sm text-dark mb-2',
                 text: i18next.t('dt_custom_buttons_go_to_tags_btn_text'),
                 action: () => {
-                    window.location.href = `${sitePagesFn.langPrefix}/tag-info`
+                    window.location.href = `${sitePagesFn.langPrefix}/tag-info`;
                 }
              }
          
