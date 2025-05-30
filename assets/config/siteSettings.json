@@ -1010,6 +1010,7 @@
       },
       "type_and_search_input_field_placeholder": "type, select, hit enter ..."
     },
+    "side_bar_language_selector_text": "Change language",
     "home_page_intro_section_buttons_sections": "Sections",
     "home_page_intro_section_buttons_quickstart": "Quickstart",
     "home_page_intro_section_buttons_statistics": "Docs info",
