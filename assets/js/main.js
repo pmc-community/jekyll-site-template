@@ -1,3 +1,33 @@
+// redirect if there is a preferred language
+(function () {
+
+    if (!isProd) return;
+
+    const availableLanguages = settings.multilang.availableLang;
+    const supportedLangs = _.map(availableLanguages, 'lang');
+
+    console.log(supportedLangs)
+  
+    const currentPath = window.location.pathname;
+    // Match path starting with /en/, /fr/, /de/, etc.
+    const langPrefixMatch = currentPath.match(/^\/([a-z]{2,3})(\/|$)/); // covering 2 and 3 letters language codes
+    const alreadyLocalized = langPrefixMatch && supportedLangs.includes(langPrefixMatch[1]);
+    if (alreadyLocalized) return; // Language already in the URL prefix — do nothing
+
+    // Get preferred language from cookie
+    let lang = Cookies.get(settings.multilang.langCookie);
+
+    // Fallback to default language
+    if (!lang) return;
+    if (lang === undefined) return;
+    if (lang === '') return;
+
+    const newPath = `/${lang}${currentPath}`;
+    const newUrl = `${newPath}${window.location.search}${window.location.hash}`;
+    window.location.replace(newUrl);
+    
+})();
+
 /* LET'S DO SOME WORK */
 
 window.customiseTheme = (pageObj = null) => {
@@ -6,6 +36,10 @@ window.customiseTheme = (pageObj = null) => {
     // first things, first
     cleanSavedItems(); //removes page without any custom data from saved items
     createGlobalLists();
+
+    // now, set the function to save prefLang when changing the language from the selector
+    // the cookie is usual PrefLanguage but can be defined in siteConfig.yml, multilang section 
+    setSavePrefLang();
 
     // clean local storage, remove orphan datatables such as site-pages searchPanes tables
     getOrphanDataTables('').forEach( table => { localStorage.removeItem(table); });
@@ -91,6 +125,13 @@ window.customiseTheme = (pageObj = null) => {
 }
 
 /* HERE ARE THE FUNCTIONS */
+
+const setSavePrefLang = () => {
+    $(document).on('click', '#language-selector .dropdown-item', function() {
+        const isSecure = location.protocol === 'https:';
+        Cookies.set(settings.multilang.langCookie, siteLanguageCode, { expires:365 , secure: isSecure, sameSite: 'strict' });
+    });
+}
 
 const correctJTDSearch = () => {
     if (!algoliaSettings.algoliaEnabled) {
