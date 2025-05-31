@@ -1,4 +1,5 @@
 // redirect if there is a preferred language
+/*
 (function () {
 
     if (!isProd) return;
@@ -27,6 +28,7 @@
     window.location.replace(newUrl);
     
 })();
+*/
 
 /* LET'S DO SOME WORK */
 
