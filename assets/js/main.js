@@ -1,34 +1,3 @@
-// redirect if there is a preferred language
-/*
-(function () {
-
-    if (!isProd) return;
-
-    const availableLanguages = settings.multilang.availableLang;
-    const supportedLangs = _.map(availableLanguages, 'lang');
-
-    console.log(supportedLangs)
-  
-    const currentPath = window.location.pathname;
-    // Match path starting with /en/, /fr/, /de/, etc.
-    const langPrefixMatch = currentPath.match(/^\/([a-z]{2,3})(\/|$)/); // covering 2 and 3 letters language codes
-    const alreadyLocalized = langPrefixMatch && supportedLangs.includes(langPrefixMatch[1]);
-    if (alreadyLocalized) return; // Language already in the URL prefix — do nothing
-
-    // Get preferred language from cookie
-    let lang = Cookies.get(settings.multilang.langCookie);
-
-    // Fallback to default language
-    if (!lang) return;
-    if (lang === undefined) return;
-    if (lang === '') return;
-
-    const newPath = `/${lang}${currentPath}`;
-    const newUrl = `${newPath}${window.location.search}${window.location.hash}`;
-    window.location.replace(newUrl);
-    
-})();
-*/
 
 /* LET'S DO SOME WORK */
 
