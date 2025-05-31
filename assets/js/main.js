@@ -41,7 +41,7 @@ window.customiseTheme = (pageObj = null) => {
 
     // now, set the function to save prefLang when changing the language from the selector
     // the cookie is usual PrefLanguage but can be defined in siteConfig.yml, multilang section 
-    //setSavePrefLang();
+    setSavePrefLang();
 
     // clean local storage, remove orphan datatables such as site-pages searchPanes tables
     getOrphanDataTables('').forEach( table => { localStorage.removeItem(table); });
