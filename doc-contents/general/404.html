@@ -9,7 +9,7 @@ nav_exclude: true
 
 <script>
   $(document).ready(function () {
-    const siteLang = siteLanguageCode;
+    const siteLang = siteLanguageCode || '';
 
     if (!siteLang) return;
 
@@ -19,7 +19,11 @@ nav_exclude: true
 
     if (!isInLocalizedPath && !alreadyRedirected) {
       sessionStorage.setItem('redirectedToLocalized404', 'true');
-      const lang404 = `/${siteLang}/404.html`;
+
+      let lang404 = `/${siteLang}/404.html`;
+      lang404 = lang404.replace(/\/{2,}/g, '/');
+
+      console.log('Redirecting to:', lang404);
       window.location.replace(lang404);
     }
   });
