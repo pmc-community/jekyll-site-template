@@ -16,6 +16,7 @@
     if (!supportedLangs.includes(prefLang)) return;
 
     if (prefLang !== '') {
+        console.log('here')
         const currentPath = window.location.pathname;
         const newPath = `/${lang}${currentPath}`;
         const newUrl = `${newPath}${window.location.search}${window.location.hash}`;
