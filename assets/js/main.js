@@ -133,8 +133,9 @@ const setPrefLang = () => {
     $(document)
         .off('click', '#language-selector .dropdown-item ')
         .on('click', '#language-selector .dropdown-item ', function() {
+        const lang = $(this).data('lang');
         const isSecure = location.protocol === 'https:';
-        Cookies.set(settings.multilang.langCookie, siteLanguageCode, { expires:365 , secure: isSecure, sameSite: 'strict' });
+        Cookies.set(settings.multilang.langCookie, lang, { expires:365 , secure: isSecure, sameSite: 'strict' });
     });
 }
 
