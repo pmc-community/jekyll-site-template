@@ -25,6 +25,10 @@ nav_exclude: true
     const isInLocalizedPath = currentLang && currentPath.startsWith(`/${currentLang}/`);
     const alreadyRedirected = sessionStorage.getItem('redirectedToLocalized404');
 
+    console.log('isInLocalizedPath: ', isInLocalizedPath);
+    console.log('alreadyRedirected: ', alreadyRedirected);
+    console.log('currentLang: ', currentLang);
+
     if (!isInLocalizedPath && !alreadyRedirected && currentLang) {
       sessionStorage.setItem('redirectedToLocalized404', 'true');
 
