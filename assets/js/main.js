@@ -3,23 +3,34 @@
 
     if (!isProd) return;
     
-    const isSecure = location.protocol === 'https:';
-    Cookies.set(settings.multilang.langCookie, siteLanguageCode, { expires:365 , secure: isSecure, sameSite: 'strict' });
-
+    const currentPath = window.location.pathname;
     const availableLanguages = settings.multilang.availableLang;
     const supportedLangs = _.map(availableLanguages, 'lang');
     let prefLang = Cookies.get(settings.multilang.langCookie);
-  
+
+    const langPrefixMatch = currentPath.match(/^\/([a-z]{2,3})(\/|$)/);
+    const alreadyLocalised = langPrefixMatch && supportedLangs.includes(langPrefixMatch[1]);
+    if (alreadyLocalised) return;
+
+    const isSecure = location.protocol === 'https:';
+    Cookies.set(settings.multilang.langCookie, siteLanguageCode, { expires:365 , secure: isSecure, sameSite: 'strict' });
+
     // Fallback to default language
     if (!prefLang) return;
     if (prefLang === undefined) return;
     if (!supportedLangs.includes(prefLang)) return;
 
     if (prefLang !== '') {
-        const currentPath = window.location.pathname;
-        const newPath = `/${prefLang}${currentPath}`;
-        const newUrl = `${newPath}${window.location.search}${window.location.hash}`;
-        window.location.replace(newUrl);
+        try {
+            const newPath = `/${prefLang}${currentPath}`;
+            const newUrl = `${newPath}${window.location.search}${window.location.hash}`;
+            window.location.replace(newUrl);
+        } catch(err) {
+            showToast('There was a problem setting the preferred language, switching to default.', 'bg-danger', 'text-light');
+            const newPath = '';
+            const newUrl = `${newPath}${window.location.search}${window.location.hash}`;
+            window.location.replace(newUrl);
+        }
     }
     
 })();
