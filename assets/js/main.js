@@ -34,10 +34,6 @@ window.customiseTheme = (pageObj = null) => {
     cleanSavedItems(); //removes page without any custom data from saved items
     createGlobalLists();
 
-    // now, set the function to save prefLang when changing the language from the selector
-    // the cookie is usual PrefLanguage but can be defined in siteConfig.yml, multilang section 
-    //setSavePrefLang();
-
     // clean local storage, remove orphan datatables such as site-pages searchPanes tables
     getOrphanDataTables('').forEach( table => { localStorage.removeItem(table); });
     
@@ -122,13 +118,6 @@ window.customiseTheme = (pageObj = null) => {
 }
 
 /* HERE ARE THE FUNCTIONS */
-
-const setSavePrefLang = () => {
-    $(document).on('click', '#language-selector .dropdown-item', function() {
-        const isSecure = location.protocol === 'https:';
-        Cookies.set(settings.multilang.langCookie, siteLanguageCode, { expires:365 , secure: isSecure, sameSite: 'strict' });
-    });
-}
 
 const correctJTDSearch = () => {
     if (!algoliaSettings.algoliaEnabled) {
