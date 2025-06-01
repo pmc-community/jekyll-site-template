@@ -1,38 +1,38 @@
 // redirect if there is a preferred language
-/*
 (function () {
-
     if (!isProd) return;
-    
+
     const currentPath = window.location.pathname;
     const availableLanguages = settings.multilang.availableLang;
     const supportedLangs = _.map(availableLanguages, 'lang');
+
     let prefLang = Cookies.get(settings.multilang.langCookie);
+    if (!prefLang || !supportedLangs.includes(prefLang)) return;
 
+    // Check if URL already has a supported lang prefix and matches preferred
     const langPrefixMatch = currentPath.match(/^\/([a-z]{2,3})(\/|$)/);
-    const alreadyLocalised = langPrefixMatch && supportedLangs.includes(langPrefixMatch[1]) && langPrefixMatch[1] !== prefLang;
+    const alreadyLocalised = langPrefixMatch && supportedLangs.includes(langPrefixMatch[1]) && langPrefixMatch[1] === prefLang;
     if (alreadyLocalised) return;
-  
-    // Fallback to default language
-    if (!prefLang) return;
-    if (prefLang === undefined) return;
-    if (!supportedLangs.includes(prefLang)) return;
 
-    if (prefLang !== '') {
-        try {
-            const newPath = `/${prefLang}${currentPath}`;
-            const newUrl = `${newPath}${window.location.search}${window.location.hash}`;
-            window.location.replace(newUrl);
-        } catch(err) {
-            showToast('There was a problem setting the preferred language, switching to default.', 'bg-danger', 'text-light');
-            const newPath = '';
-            const newUrl = `${newPath}${window.location.search}${window.location.hash}`;
-            window.location.replace(newUrl);
+    try {
+        let pathWithoutLang = currentPath;
+
+        // If a language code is present, strip it
+        if (langPrefixMatch && supportedLangs.includes(langPrefixMatch[1])) {
+            pathWithoutLang = currentPath.replace(/^\/[a-z]{2,3}(?=\/|$)/, '');
         }
+
+        // Ensure single slash and clean path
+        const newPath = `/${prefLang}${pathWithoutLang}`.replace(/\/{2,}/g, '/');
+        const newUrl = `${newPath}${window.location.search}${window.location.hash}`;
+        window.location.replace(newUrl);
+    } catch (err) {
+        showToast('There was a problem setting the preferred language, switching to default.', 'bg-danger', 'text-light');
+        const fallbackUrl = `${window.location.search}${window.location.hash}` || '/';
+        window.location.replace(fallbackUrl);
     }
-    
 })();
-*/
+
 
 /* LET'S DO SOME WORK */
 
