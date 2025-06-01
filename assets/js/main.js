@@ -14,6 +14,9 @@
     if (!supportedLangs.includes(siteLanguageCode)) return;
     if (prefLang === siteLanguageCode) return;
 
+    const isSecure = location.protocol === 'https:';
+    Cookies.set(settings.multilang.langCookie, siteLanguageCode, { expires:365 , secure: isSecure, sameSite: 'strict' });
+
     const defaultLang = availableLanguages[settings.multilang.fallbackLang].lang;
     if (prefLang !== defaultLang) {
         const newPath = `/${lang}${currentPath}`;
