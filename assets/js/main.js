@@ -9,12 +9,8 @@
     let prefLang = Cookies.get(settings.multilang.langCookie);
 
     const langPrefixMatch = currentPath.match(/^\/([a-z]{2,3})(\/|$)/);
-    const alreadyLocalised = langPrefixMatch && supportedLangs.includes(langPrefixMatch[1]);
+    const alreadyLocalised = langPrefixMatch && supportedLangs.includes(langPrefixMatch[1]) && langPrefixMatch[1] !== prefLang;
     if (alreadyLocalised) return;
-
-    const isSecure = location.protocol === 'https:';
-    Cookies.set(settings.multilang.langCookie, siteLanguageCode, { expires:365 , secure: isSecure, sameSite: 'strict' });
-
   
     // Fallback to default language
     if (!prefLang) return;
@@ -129,6 +125,13 @@ window.customiseTheme = (pageObj = null) => {
 }
 
 /* HERE ARE THE FUNCTIONS */
+
+const setPrefLang = () => {
+    $(document).on('click', '#language-selector .dropdown-item ', function() {
+        const isSecure = location.protocol === 'https:';
+        Cookies.set(settings.multilang.langCookie, siteLanguageCode, { expires:365 , secure: isSecure, sameSite: 'strict' });
+    });
+}
 
 const correctJTDSearch = () => {
     if (!algoliaSettings.algoliaEnabled) {
