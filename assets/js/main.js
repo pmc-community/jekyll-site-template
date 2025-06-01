@@ -18,7 +18,7 @@
     if (prefLang !== '') {
         console.log('here')
         const currentPath = window.location.pathname;
-        const newPath = `/${lang}${currentPath}`;
+        const newPath = `/${prefLang}${currentPath}`;
         const newUrl = `${newPath}${window.location.search}${window.location.hash}`;
         window.location.replace(newUrl);
     }
