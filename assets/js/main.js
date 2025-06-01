@@ -13,11 +13,11 @@
     // Fallback to default language
     if (!prefLang) return;
     if (prefLang === undefined) return;
-    if (!supportedLangs.includes(siteLanguageCode)) return;
-    if (prefLang === siteLanguageCode) return;
+    if (!supportedLangs.includes(prefLang)) return;
 
-    const defaultLang = availableLanguages[settings.multilang.fallbackLang].lang;
-    if (prefLang !== defaultLang && prefLang !== '') {
+    if (prefLang !== '') {
+        console.log('here')
+        const currentPath = window.location.pathname;
         const newPath = `/${lang}${currentPath}`;
         const newUrl = `${newPath}${window.location.search}${window.location.hash}`;
         window.location.replace(newUrl);
