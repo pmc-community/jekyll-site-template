@@ -2,6 +2,9 @@
 (function () {
 
     if (!isProd) return;
+    
+    const isSecure = location.protocol === 'https:';
+    Cookies.set(settings.multilang.langCookie, siteLanguageCode, { expires:365 , secure: isSecure, sameSite: 'strict' });
 
     const availableLanguages = settings.multilang.availableLang;
     const supportedLangs = _.map(availableLanguages, 'lang');
@@ -12,9 +15,6 @@
     if (prefLang === undefined) return;
     if (!supportedLangs.includes(siteLanguageCode)) return;
     if (prefLang === siteLanguageCode) return;
-
-    const isSecure = location.protocol === 'https:';
-    Cookies.set(settings.multilang.langCookie, siteLanguageCode, { expires:365 , secure: isSecure, sameSite: 'strict' });
 
     const defaultLang = availableLanguages[settings.multilang.fallbackLang].lang;
     if (prefLang !== defaultLang && prefLang !== '') {
