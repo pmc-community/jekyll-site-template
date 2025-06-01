@@ -51,10 +51,24 @@
         <ul class="dropdown-menu">
           {% for language in sLObj %}
             {% if language["lang"] == dl %}
-              <li><a class="dropdown-item text-dark fw-medium" href="{{bUrl}}{{page.permalink}}">{{language["name"]}}</a></li>
+              <li>
+                <a 
+                  class="dropdown-item text-dark fw-medium" 
+                  href="{{bUrl}}{{page.permalink}}"
+                  data-lang="{{language["lang"]}}">
+                  {{language["name"]}}
+                </a>
+              </li>
             {% else %}
               {% assign langCode = language["lang"] %}
-              <li><a class="dropdown-item text-dark fw-medium" href="{{bUrl}}/{{langCode}}{{page.permalink}}">{{language["name"]}}</a></li>
+              <li>
+                <a 
+                  class="dropdown-item text-dark fw-medium" 
+                  href="{{bUrl}}/{{langCode}}{{page.permalink}}"
+                  data-lang="{{language["lang"]}}">
+                  {{language["name"]}}
+                </a>
+              </li>
             {% endif %}
           {% endfor %}
         </ul>
