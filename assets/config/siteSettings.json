@@ -163,6 +163,7 @@
     },
     "multilang": {
       "enabled": true,
+      "langCookie": "PrefLanguage",
       "timeout": 1000,
       "scripts": {
         "i18": "https://cdn.jsdelivr.net/npm/i18next@24.2.1/i18next.min.js",
