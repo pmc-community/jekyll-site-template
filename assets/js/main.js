@@ -10,7 +10,6 @@
     // Fallback to default language
     if (!prefLang) return;
     if (prefLang === undefined) return;
-    if (prefLang === '') return;
     if (!supportedLangs.includes(siteLanguageCode)) return;
     if (prefLang === siteLanguageCode) return;
 
@@ -18,7 +17,7 @@
     Cookies.set(settings.multilang.langCookie, siteLanguageCode, { expires:365 , secure: isSecure, sameSite: 'strict' });
 
     const defaultLang = availableLanguages[settings.multilang.fallbackLang].lang;
-    if (prefLang !== defaultLang) {
+    if (prefLang !== defaultLang && prefLang !== '') {
         const newPath = `/${lang}${currentPath}`;
         const newUrl = `${newPath}${window.location.search}${window.location.hash}`;
         window.location.replace(newUrl);
@@ -37,7 +36,7 @@ window.customiseTheme = (pageObj = null) => {
 
     // now, set the function to save prefLang when changing the language from the selector
     // the cookie is usual PrefLanguage but can be defined in siteConfig.yml, multilang section 
-    setSavePrefLang();
+    //setSavePrefLang();
 
     // clean local storage, remove orphan datatables such as site-pages searchPanes tables
     getOrphanDataTables('').forEach( table => { localStorage.removeItem(table); });
