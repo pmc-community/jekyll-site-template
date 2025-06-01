@@ -17,7 +17,7 @@ nav_exclude: true
     const isAlreadyLocalized404 = path === `/${siteLang}/404.html` || path.endsWith(`/${siteLang}/404.html`);
 
     if (!isAlreadyLocalized404) {
-      const lang404 = `/${siteLang}/404.html`;
+      const lang404 = siteLang === '' ? '/404.html' : `/${siteLang}/404.html`;
       window.location.replace(lang404);
     }
   });
