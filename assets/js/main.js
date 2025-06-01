@@ -1,4 +1,5 @@
 // redirect if there is a preferred language
+/*
 (function () {
 
     if (!isProd) return;
@@ -31,6 +32,7 @@
     }
     
 })();
+*/
 
 /* LET'S DO SOME WORK */
 
