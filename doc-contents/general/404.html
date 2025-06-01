@@ -9,27 +9,26 @@ nav_exclude: true
 
 <script>
   $(document).ready(function () {
-    const siteLang = siteLanguageCode || '';
-    console.log('siteLang:', siteLang);
 
-    if (!siteLang) {
-      console.log('Exiting: no siteLang set.');
-      return;
-    }
+    if (!isProd) return;
+
+    const availableLanguages = settings.multilang.availableLang;
+    const supportedLangs = _.map(availableLanguages, 'lang');
 
     const currentPath = window.location.pathname;
     console.log('currentPath:', currentPath);
 
-    const isInLocalizedPath = currentPath.startsWith(`/${siteLang}/`);
-    console.log('isInLocalizedPath:', isInLocalizedPath);
+    const langMatch = currentPath.match(/^\/([a-z]{2,3})(\/|$)/);
+    const currentLang = langMatch && supportedLangs.includes(langMatch[1]) ? langMatch[1] : '';
+    console.log('Detected language from URL:', currentLang || '(default)');
 
+    const isInLocalizedPath = currentLang && currentPath.startsWith(`/${currentLang}/`);
     const alreadyRedirected = sessionStorage.getItem('redirectedToLocalized404');
-    console.log('alreadyRedirected:', alreadyRedirected);
 
-    if (!isInLocalizedPath && !alreadyRedirected) {
+    if (!isInLocalizedPath && !alreadyRedirected && currentLang) {
       sessionStorage.setItem('redirectedToLocalized404', 'true');
 
-      let lang404 = `/${siteLang}/404.html`;
+      let lang404 = `/${currentLang}/404.html`;
       lang404 = lang404.replace(/\/{2,}/g, '/');
 
       console.log('Redirecting to:', lang404);
