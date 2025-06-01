@@ -9,6 +9,8 @@ nav_exclude: true
 
 <script>
   $(document).ready(function() {
+    if (!isProd) return;
+    
     const path = window.location.pathname;
     const siteLang = siteLanguageCode;
 
