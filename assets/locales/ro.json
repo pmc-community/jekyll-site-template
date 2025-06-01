@@ -64,6 +64,10 @@
 
     "side_bar_language_selector_text": "Schimba limba",
 
+    "404_row_1": "Nu am gasit documentul pe care il vrei.",
+    "404_row_2": "Ne poti contacta in cazul in care crezi ca documentul ar trebui sa fie aici.",
+    "404_support_btn_text": "Suport",
+
     "home_page_intro_section_buttons_sections": "Sectiuni",
     "home_page_intro_section_buttons_quickstart": "Start",
     "home_page_intro_section_buttons_statistics": "Statistici",

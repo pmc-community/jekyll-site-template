@@ -163,6 +163,7 @@
     },
     "multilang": {
       "enabled": true,
+      "langCookie": "PrefLanguage",
       "timeout": 1000,
       "scripts": {
         "i18": "https://cdn.jsdelivr.net/npm/i18next@24.2.1/i18next.min.js",
@@ -1011,6 +1012,9 @@
       "type_and_search_input_field_placeholder": "type, select, hit enter ..."
     },
     "side_bar_language_selector_text": "Change language",
+    "404_row_1": "The requested document could not be found.",
+    "404_row_2": "Contact support if you believe that the document should be here.",
+    "404_support_btn_text": "Support",
     "home_page_intro_section_buttons_sections": "Sections",
     "home_page_intro_section_buttons_quickstart": "Quickstart",
     "home_page_intro_section_buttons_statistics": "Docs info",

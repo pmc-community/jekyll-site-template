@@ -1,3 +1,39 @@
+// redirect if there is a preferred language
+(function () {
+    if (!isProd) return;
+
+    const currentPath = window.location.pathname;
+    const availableLanguages = settings.multilang.availableLang;
+    const supportedLangs = _.map(availableLanguages, 'lang');
+
+    let prefLang = Cookies.get(settings.multilang.langCookie);
+    if (!prefLang || !supportedLangs.includes(prefLang)) return;
+
+    // Check if URL already has a supported lang prefix and matches preferred
+    const langPrefixMatch = currentPath.match(/^\/([a-z]{2,3})(\/|$)/);
+    const alreadyLocalised = langPrefixMatch && supportedLangs.includes(langPrefixMatch[1]) && langPrefixMatch[1] === prefLang;
+    if (alreadyLocalised) return;
+
+    try {
+        let pathWithoutLang = currentPath;
+
+        // If a language code is present, strip it
+        if (langPrefixMatch && supportedLangs.includes(langPrefixMatch[1])) {
+            pathWithoutLang = currentPath.replace(/^\/[a-z]{2,3}(?=\/|$)/, '');
+        }
+
+        // Ensure single slash and clean path
+        const newPath = `/${prefLang}${pathWithoutLang}`.replace(/\/{2,}/g, '/');
+        const newUrl = `${newPath}${window.location.search}${window.location.hash}`;
+        window.location.replace(newUrl);
+    } catch (err) {
+        showToast('There was a problem setting the preferred language, switching to default.', 'bg-danger', 'text-light');
+        const fallbackUrl = `${window.location.search}${window.location.hash}` || '/';
+        window.location.replace(fallbackUrl);
+    }
+})();
+
+
 /* LET'S DO SOME WORK */
 
 window.customiseTheme = (pageObj = null) => {
@@ -6,6 +42,7 @@ window.customiseTheme = (pageObj = null) => {
     // first things, first
     cleanSavedItems(); //removes page without any custom data from saved items
     createGlobalLists();
+    setPrefLang();
 
     // clean local storage, remove orphan datatables such as site-pages searchPanes tables
     getOrphanDataTables('').forEach( table => { localStorage.removeItem(table); });
@@ -91,6 +128,16 @@ window.customiseTheme = (pageObj = null) => {
 }
 
 /* HERE ARE THE FUNCTIONS */
+
+const setPrefLang = () => {
+    $(document)
+        .off('click', '#language-selector .dropdown-item ')
+        .on('click', '#language-selector .dropdown-item ', function() {
+        const lang = $(this).data('lang');
+        const isSecure = location.protocol === 'https:';
+        Cookies.set(settings.multilang.langCookie, lang, { expires:365 , secure: isSecure, sameSite: 'strict' });
+    });
+}
 
 const correctJTDSearch = () => {
     if (!algoliaSettings.algoliaEnabled) {
