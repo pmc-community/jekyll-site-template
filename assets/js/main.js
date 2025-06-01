@@ -10,7 +10,6 @@
     // Fallback to default language
     if (!prefLang) return;
     if (prefLang === undefined) return;
-    if (prefLang === '') return;
     if (!supportedLangs.includes(siteLanguageCode)) return;
     if (prefLang === siteLanguageCode) return;
 
@@ -18,7 +17,7 @@
     Cookies.set(settings.multilang.langCookie, siteLanguageCode, { expires:365 , secure: isSecure, sameSite: 'strict' });
 
     const defaultLang = availableLanguages[settings.multilang.fallbackLang].lang;
-    if (prefLang !== defaultLang) {
+    if (prefLang !== defaultLang && prefLang !== '') {
         const newPath = `/${lang}${currentPath}`;
         const newUrl = `${newPath}${window.location.search}${window.location.hash}`;
         window.location.replace(newUrl);
