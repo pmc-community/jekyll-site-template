@@ -1,10 +1,32 @@
 ---
 permalink: /404.html
 layout: default
+title: Not found
 
 #nav_exclude is for not having the page in the navigation bar
 nav_exclude: true
 ---
+
+<script>
+  (function() {
+    console.log('sl: ', siteLanguageCode);
+
+    const path = window.location.pathname;
+    const langMatch = path.match(/^\/([a-z]{2,3})(\/|$)/);
+    if (langMatch) {
+      const lang = langMatch[1];
+      const lang404 = `/${lang}/404.html`;
+      fetch(lang404, { method: 'HEAD' })
+        .then(response => {
+          if (response.ok) {
+            window.location.replace(lang404);
+          }
+        });
+    }
+
+  })();
+
+</script>
 
 <div class="container position-relative" style="height: 40vh">
   <div class="w-100 position-absolute start-50 translate-middle-x top-50">
