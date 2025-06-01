@@ -12,7 +12,6 @@ nav_exclude: true
     const siteLang = siteLanguageCode;
 
     if (!siteLang) return;
-    if (siteLang === '') return;
 
     const currentPath = window.location.pathname;
     const isInLocalizedPath = currentPath.startsWith(`/${siteLang}/`);
