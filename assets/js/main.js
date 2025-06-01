@@ -130,7 +130,9 @@ window.customiseTheme = (pageObj = null) => {
 /* HERE ARE THE FUNCTIONS */
 
 const setPrefLang = () => {
-    $(document).on('click', '#language-selector .dropdown-item ', function() {
+    $(document)
+        .off('click', '#language-selector .dropdown-item ')
+        .on('click', '#language-selector .dropdown-item ', function() {
         const isSecure = location.protocol === 'https:';
         Cookies.set(settings.multilang.langCookie, siteLanguageCode, { expires:365 , secure: isSecure, sameSite: 'strict' });
     });
