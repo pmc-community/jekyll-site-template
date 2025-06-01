@@ -9,12 +9,18 @@ nav_exclude: true
 
 <script>
   $(document).ready(function() {
-    if (siteLanguageCode !== '') {
-      const lang404 = `/${siteLanguageCode}/404.html`;
-      console.log(lang404);
+    const path = window.location.pathname;
+    const siteLang = window.siteLanguageCode;
+
+    if (!siteLang) return;
+
+    const isAlreadyLocalized404 = path === `/${siteLang}/404.html` || path.endsWith(`/${siteLang}/404.html`);
+
+    if (!isAlreadyLocalized404) {
+      const lang404 = `/${siteLang}/404.html`;
       window.location.replace(lang404);
     }
-  }
+  });
 </script>
 
 <div class="container position-relative" style="height: 40vh">
