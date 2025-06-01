@@ -29,7 +29,7 @@ nav_exclude: true
     console.log('alreadyRedirected: ', alreadyRedirected);
     console.log('currentLang: ', currentLang);
 
-    if (!alreadyRedirected && currentLang) {
+    if (!isInLocalizedPath && !alreadyRedirected && currentLang) {
       sessionStorage.setItem('redirectedToLocalized404', 'true');
 
       let lang404 = `/${currentLang}/404.html`;
