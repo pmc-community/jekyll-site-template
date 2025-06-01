@@ -40,6 +40,7 @@ window.customiseTheme = (pageObj = null) => {
     // first things, first
     cleanSavedItems(); //removes page without any custom data from saved items
     createGlobalLists();
+    setPrefLang();
 
     // clean local storage, remove orphan datatables such as site-pages searchPanes tables
     getOrphanDataTables('').forEach( table => { localStorage.removeItem(table); });
