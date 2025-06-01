@@ -10,12 +10,21 @@ nav_exclude: true
 <script>
   $(document).ready(function () {
     const siteLang = siteLanguageCode || '';
+    console.log('siteLang:', siteLang);
 
-    if (!siteLang) return;
+    if (!siteLang) {
+      console.log('Exiting: no siteLang set.');
+      return;
+    }
 
     const currentPath = window.location.pathname;
+    console.log('currentPath:', currentPath);
+
     const isInLocalizedPath = currentPath.startsWith(`/${siteLang}/`);
+    console.log('isInLocalizedPath:', isInLocalizedPath);
+
     const alreadyRedirected = sessionStorage.getItem('redirectedToLocalized404');
+    console.log('alreadyRedirected:', alreadyRedirected);
 
     if (!isInLocalizedPath && !alreadyRedirected) {
       sessionStorage.setItem('redirectedToLocalized404', 'true');
@@ -25,6 +34,8 @@ nav_exclude: true
 
       console.log('Redirecting to:', lang404);
       window.location.replace(lang404);
+    } else {
+      console.log('No redirect needed.');
     }
   });
 
@@ -32,6 +43,7 @@ nav_exclude: true
     sessionStorage.removeItem('redirectedToLocalized404');
   });
 </script>
+
 
 <div class="container position-relative" style="height: 40vh">
   <div class="w-100 position-absolute start-50 translate-middle-x top-50">
