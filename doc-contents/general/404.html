@@ -9,17 +9,18 @@ nav_exclude: true
 
 <script>
   $(document).ready(function() {
-    if (!isProd) return;
-    
-    const path = window.location.pathname;
-    const siteLang = siteLanguageCode;
+    const siteLang = window.siteLanguageCode;
+    const currentPath = window.location.pathname;
 
     if (!siteLang) return;
+    if (siteLang === '') return;
 
-    const isAlreadyLocalized404 = path === `/${siteLang}/404.html` || path.endsWith(`/${siteLang}/404.html`);
+    const isInLocalizedPath = currentPath.startsWith(`/${siteLang}/`);
 
-    if (!isAlreadyLocalized404) {
-      const lang404 = siteLang === '' ? '/404.html' : `/${siteLang}/404.html`;
+    const cameFromRoot404 = document.referrer.includes('/404.html') || document.referrer === window.location.href;
+
+    if (!isInLocalizedPath && !cameFromRoot404) {
+      const lang404 = `/${siteLang}/404.html`;
       window.location.replace(lang404);
     }
   });
