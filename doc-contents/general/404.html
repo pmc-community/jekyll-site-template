@@ -31,9 +31,17 @@ nav_exclude: true
       let lang404 = currentLang === '' ? '/404.html' : `/${currentLang}/404.html`;
       lang404 = lang404.replace(/\/{2,}/g, '/');
       window.location.replace(lang404);
-      $('#404_trigger_doc')text.(document.referrer);
       return;
     }
+  });
+</script>
+
+<script>
+  $(document).ready(function () {
+    setTimeout(()=>{
+      const ref = document.referrer || 'unknown';
+      $('#404_trigger_doc')text.(ref);
+    },200);
   });
 </script>
 
