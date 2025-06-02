@@ -60,12 +60,13 @@
     {% assign permalink_with_slash = permalink %}
 {% endif %}
 
-{% assign canonicalPath = baseUrl | append: permalink_with_slash %}
+{% assign canonicalPath = baseUrl | append: lang_prefix | append: permalink_with_slash %}
 {% assign canonicalPath_with_placeholder = canonicalPath | replace: '://', 'PLACEHOLDER' %}
 {% assign canonicalPath_replaced_string = canonicalPath_with_placeholder | replace: '//', '/' %}
 {% assign canonicalPath_final_string = canonicalPath_replaced_string | replace: 'PLACEHOLDER', '://' %}
 
 <link rel="canonical" href="{{canonicalPath_final_string}}">    
+<pre>{{canonicalPath_final_string}}</pre>
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.5/js.cookie.min.js" rel="preload" as="script">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.5/js.cookie.min.js" 
