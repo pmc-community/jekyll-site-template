@@ -16,28 +16,20 @@ nav_exclude: true
     const supportedLangs = _.map(availableLanguages, 'lang');
 
     const currentPath = window.location.pathname;
-    console.log('currentPath:', currentPath);
 
     const langMatch = currentPath.match(/^\/([a-z]{2,3})(\/|$)/);
     const currentLang = langMatch && supportedLangs.includes(langMatch[1]) ? langMatch[1] : '';
-    console.log('Detected language from URL:', currentLang || '(default)');
 
     const isInLocalizedPath = currentLang && currentPath.startsWith(`/${currentLang}/`);
     const alreadyRedirected = sessionStorage.getItem('redirectedToLocalized404');
 
-    console.log('isInLocalizedPath: ', isInLocalizedPath);
-    console.log('alreadyRedirected: ', alreadyRedirected);
-    console.log('currentLang: ', currentLang);
-
     if (alreadyRedirected) {
-      console.log('No redirect needed.');
       sessionStorage.removeItem('redirectedToLocalized404');
       return;
     } else {
       sessionStorage.setItem('redirectedToLocalized404', 'true');
       let lang404 = currentLang === '' ? '/404.html' : `/${currentLang}/404.html`;
       lang404 = lang404.replace(/\/{2,}/g, '/');
-      console.log('Redirecting to:', lang404);
       window.location.replace(lang404);
       return;
     }
