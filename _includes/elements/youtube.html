@@ -1,0 +1,61 @@
+{% assign video_id = include.id %}
+{% assign video_width = include.width | default: "560" %}
+{% assign video_height = include.height | default: "315" %}
+
+{% capture uuid %}
+    {% UUID %}
+{% endcapture %}
+
+{% assign vid = uuid | strip %}
+
+<div class="youtube-placeholder-{{vid}}"
+     data-id="{{ video_id }}"
+     data-width="{{ video_width }}"
+     data-height="{{ video_height }}"
+     style="max-width: {{ video_width }}px;">
+  <img src="https://img.youtube.com/vi/{{ video_id }}/hqdefault.jpg" alt="YouTube Thumbnail">
+  <div class="play-button"><i class="bi bi-play-fill"></i></div>
+</div>
+
+<script>
+  $(function () {
+    $('.youtube-placeholder-{{vid}}').on('click', function () {
+      const videoId = $(this).data('id');
+      const width = $(this).data('width');
+      const height = $(this).data('height');
+      const iframe = $('<iframe>', {
+        width: width,
+        height: height,
+        src: `https://www.youtube.com/embed/${videoId}?autoplay=1`,
+        frameborder: 0,
+        allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
+        allowfullscreen: true
+      });
+      $(this).replaceWith(iframe);
+    });
+  });
+</script>
+
+<style>
+    .youtube-placeholder-{{vid}} {
+        position: relative;
+        width: 100%;
+        cursor: pointer;
+        margin: 1em 0;
+    }
+    .youtube-placeholder-{{vid}} img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .youtube-placeholder-{{vid}} .play-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 48px;
+        color: white;
+        padding: 10px 16px;
+        pointer-events: none;
+    }
+</style>
