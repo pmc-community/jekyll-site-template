@@ -41,8 +41,6 @@ nav_exclude: true
     setTimeout(()=>{
       const ref = document.referrer || 'unknown';
       $('#404_trigger_doc').text(ref);
-      const url = window.location.href;
-      const newPath = url.replace(/\/404\.html$/, '/');
       window.history.replaceState({}, document.title, ref);
     },200);
   });
