@@ -1,0 +1,93 @@
+{% assign video_id = include.id %}
+{% assign video_width = include.width | default: "640" %}
+{% assign video_height = include.height | default: "360" %}
+
+{% capture uuid %}
+  {% UUID %}
+{% endcapture %}
+{% assign vid = uuid | strip %}
+{% assign aspect_ratio = video_height | times: 100 | divided_by: video_width %}
+
+<div class="vimeo-container vimeo-{{ vid }}"
+     data-id="{{ video_id }}"
+     data-width="{{ video_width }}"
+     data-height="{{ video_height }}"
+     style="--aspect-ratio: {{ aspect_ratio }}%;">
+  <img src="https://vumbnail.com/{{ video_id }}.jpg" alt="Vimeo Thumbnail">
+  <div class="play-button"><i class="bi bi-play-fill"></i></div>
+</div>
+
+<script>
+  $(function () {
+    $('.vimeo-{{ vid }}').on('click', function () {
+      const videoId = $(this).data('id');
+      const width = $(this).data('width');
+      const height = $(this).data('height');
+      const aspectRatio = height / width;
+
+      const wrapper = $('<div>', {
+        class: 'vimeo-wrapper',
+        css: {
+          position: 'relative',
+          width: '100%',
+          'padding-top': (aspectRatio * 100) + '%',
+          'max-width': width + 'px'
+        }
+      });
+
+      const iframe = $('<iframe>', {
+        src: `https://player.vimeo.com/video/${videoId}?autoplay=1`,
+        frameborder: 0,
+        allow: 'autoplay; fullscreen; picture-in-picture',
+        allowfullscreen: true,
+        css: {
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%'
+        }
+      });
+
+      wrapper.append(iframe);
+      $(this).replaceWith(wrapper);
+    });
+  });
+</script>
+
+<style>
+.vimeo-container.vimeo-{{ vid }} {
+  position: relative;
+  width: 100%;
+  max-width: {{ video_width }}px;
+  padding-top: var(--aspect-ratio);
+  cursor: pointer;
+  background-color: black;
+}
+
+.vimeo-container.vimeo-{{ vid }} img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.vimeo-container.vimeo-{{ vid }} .play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  color: #ff6200;
+  padding: 10px 16px;
+  pointer-events: none;
+}
+
+.vimeo-wrapper {
+  position: relative;
+  width: 100%;
+}
+</style>
