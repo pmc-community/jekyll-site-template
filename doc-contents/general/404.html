@@ -31,6 +31,7 @@ nav_exclude: true
       let lang404 = currentLang === '' ? '/404.html' : `/${currentLang}/404.html`;
       lang404 = lang404.replace(/\/{2,}/g, '/');
       window.location.replace(lang404);
+      $('#404_trigger_doc')text.(document.referrer);
       return;
     }
   });
@@ -41,6 +42,7 @@ nav_exclude: true
   <div class="w-100 position-absolute start-50 translate-middle-x top-50">
     <div> 
       <img class="mb-4" src="/assets/img/404-250.png" />
+      <p id="404_trigger_doc">referrer</p>
       <p data-i18n="404_row_1">The requested document could not be found.</p>
       <p data-i18n="404_row_2">Contact support if you believe that the document should be here.</p>
       <a 
