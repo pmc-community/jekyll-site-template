@@ -29,21 +29,18 @@ nav_exclude: true
     console.log('alreadyRedirected: ', alreadyRedirected);
     console.log('currentLang: ', currentLang);
 
-    if (!isInLocalizedPath && !alreadyRedirected && currentLang) {
+    if (alreadyRedirected) {
+      console.log('No redirect needed.');
+      sessionStorage.removeItem('redirectedToLocalized404');
+      return;
+    } else {
       sessionStorage.setItem('redirectedToLocalized404', 'true');
-
-      let lang404 = `/${currentLang}/404.html`;
+      let lang404 = currentLang === '' ? '/404.html' : `/${currentLang}/404.html`;
       lang404 = lang404.replace(/\/{2,}/g, '/');
-
       console.log('Redirecting to:', lang404);
       window.location.replace(lang404);
-    } else {
-      console.log('No redirect needed.');
+      return;
     }
-  });
-
-  $(window).on('beforeunload', function () {
-    sessionStorage.removeItem('redirectedToLocalized404');
   });
 </script>
 
