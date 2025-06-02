@@ -928,9 +928,9 @@
   },
   "algoliaSettings": {
     "algoliaEnabled": true,
-    "algoliaAppID": "LU8ABE5OK9",
-    "algoliaIndex": "figmares-innohub",
-    "algoliaPublicApiKey": "14d176209af92e3c8ccb64e9b5da3832",
+    "algoliaAppID": "5VXQ8BSD61",
+    "algoliaIndex": "aroo-innohub",
+    "algoliaPublicApiKey": "e0e2b8690ed863aee6926330aa979904",
     "algoliaSearchBoxContainer": "#docsearch",
     "algoliaDebug": false,
     "algoliaMaxResultsPerGroup": 20,
