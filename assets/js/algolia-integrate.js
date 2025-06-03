@@ -60,7 +60,7 @@ algolia = {
         ? null 
         : siteLanguageCode !== '' 
             ? siteLanguageCode 
-            : settings.multilang.availabelLang[settings.multilang.fallbackLang].lang,
+            : settings.multilang.availableLang[settings.multilang.fallbackLang].lang,
 
     resetSearch: () => {
         $('div[siteFunction="showMoreShowLessButtons"]').remove();
