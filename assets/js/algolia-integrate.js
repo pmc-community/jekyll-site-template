@@ -56,6 +56,11 @@ algolia = {
     highlightTextPrefixTag: algoliaSettings.algoliaTextHighlightPrefixTag,
     highlightTextPostfixTag: algoliaSettings.algoliaTextHighlightPostfixTag,
     hitItemDetailsBoxGutter: 5,
+    langCode: !settings.multilang.enabled 
+        ? null 
+        : siteLanguageCode !== '' 
+            ? siteLanguageCode 
+            : settings.multilang.availabelLang[settings.multilang.fallbackLang].lang,
 
     resetSearch: () => {
         $('div[siteFunction="showMoreShowLessButtons"]').remove();
@@ -145,7 +150,7 @@ algolia = {
     silentSearchInSite: (query, searchResultsCallback) => {
         const client = algoliasearch(algolia.appId, algolia.apiKey);
         const index = client.initIndex(algolia.indexName);
-        index.search(query)
+        index.search(query, {facetFilters: ['lang:ro']})
             .then(function(initialSearchResults) {
                 const resultsPages = initialSearchResults.nbPages;
                 let results = [];
@@ -374,6 +379,7 @@ algolia = {
             // also removing the hit source which is always set to "Documentation", thus is not relevant
             // cannot use the normal behaviour of hitComponent since cannot return a proper JSX.Element in a regular (nonReact) app
             hitComponent: ({ hit, children }) => {
+
                 algolia.setEvents();
                 resultItemContent = algolia.getResultItem(hit);
             
@@ -457,7 +463,8 @@ algolia = {
 
             searchParameters: {
                 // HEADS UP!!! NEEDS TO BE INCLUDED IN index.search(....) TOO, SEE BELOW, FUNCTION refreshResults
-                hitsPerPage: algolia.hitsPerPage, 
+                hitsPerPage: algolia.hitsPerPage,
+                facetFilters: [`lang:${algolia.langCode}`]
             },
 
 
@@ -545,8 +552,9 @@ algolia = {
 
             const index = client.initIndex(algolia.indexName);
     
-            index.search(query, { page: page,  hitsPerPage: algolia.hitsPerPage })
-                .then(function(searchResults) {    
+            index.search(query, { page: page, hitsPerPage: algolia.hitsPerPage, facetFilters: [`lang:${algolia.langCode}`] })
+                .then(function(searchResults) { 
+                    
                     // Clear existing results and append new ones
                     $('#docsearch-list').empty();
                     
