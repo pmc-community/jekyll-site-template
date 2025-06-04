@@ -34,8 +34,8 @@ QUESTION_MAX_WORDS = 15
 MIN_ANSWER_WORDS = 10
 MAX_FAQ = 50
 FINAL_FAQ_COUNT = 50
-MAX_REFORMULATIONS = 5
-MIN_CHUNKS = 50
+MAX_REFORMULATIONS = 10
+MIN_CHUNKS = 20
 MAX_WORKERS = 8
 DELAY_BETWEEN_REQUESTS = 1.0
 MAX_RETRIES = 3
@@ -344,14 +344,14 @@ def generate_faq_from_text(text, filename, qg_pipeline, qa_pipeline, tokenizer):
     for idx, chunk in enumerate(chunks):
         try:
             prompt_qg = (
-                "Generate as many relevant and concise questions as possible based on the following text. "
-                "List each question on a new line.\n\n"
-                "Questions must be logical sentences. Reformulate questions no more than 5 times if not logical.\n"
-                "Questions must not be based or inspired from this prompt.\n"
-                "Questions must not contain combinations of 3 or more words from this prompt.\n"
-                "The questions must be strictly based on the following text.\n"
-                "The questions must not end with punctuation before the final question mark.\n"
-                "Do not add the final question mark if it makes no sense to have it.\n\n"
+                f"Generate as many relevant and concise questions as possible based on the following text. "
+                f"List each question on a new line."
+                f"Questions must be logical sentences. Reformulate questions no more than {MAX_REFORMULATIONS} times if not logical."
+                f"Questions must not be based or inspired from this prompt."
+                f"Questions must not contain combinations of 3 or more words from this prompt."
+                f"The questions must be strictly based on the following text."
+                f"The questions must not end with punctuation before the final question mark."
+                f"Do not add the final question mark if it makes no sense to have it."
                 f"Text:\n{chunk}"
             )
 
