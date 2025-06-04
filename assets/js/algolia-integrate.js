@@ -61,6 +61,22 @@ algolia = {
         : siteLanguageCode !== '' 
             ? siteLanguageCode 
             : settings.multilang.availableLang[settings.multilang.fallbackLang].lang,
+    idProd: isProd,
+
+    getPageFullUrl: (permalink) => {
+        const u = new URL(window.location.href);
+        if (!permalink) return `${u.protocol}//${u.hostname}`;
+        else {
+            const pl = !algolia.isProd 
+                ? `${permalink}`
+                : !algolia.langCode
+                    ? `${u.protocol}//${u.hostname}${permalink}`
+                    : algolia.langCode === ''
+                        ? `${u.protocol}//${u.hostname}${permalink}`
+                        : `${u.protocol}//${u.hostname}/${algolia.langCode}${permalink}`;
+            return pl;
+        }
+    },
 
     resetSearch: () => {
         $('div[siteFunction="showMoreShowLessButtons"]').remove();
@@ -724,10 +740,12 @@ algolia = {
         const getHitPageInfoBtn = (hit) => {
             const container = (hit) => {
                 let permalink = hit.pagePermalink;
+                
                 if (permalink.charAt(0) !== '/') permalink = '/' + permalink;
+                const fullUrl = algolia.getPageFullUrl(permalink);
                 return (
                     `
-                        <a href="${permalink}"
+                        <a href="${fullUrl}"
                             target=_blank 
                             class="btn btn-sm btn-primary"
                             style="height: fit-content"
@@ -859,16 +877,13 @@ algolia = {
 
                     if (headings.length === 0) output = '';
                     else {
-                        headings.each(function () {
-                            const href = algolia.langCode 
-                                ? algolia.langCode === '' 
-                                    ? `${url}#${$(this).attr('id')}` 
-                                    : `${algolia.langCode}${url}#${$(this).attr('id')}` 
-                                : `${url}#${$(this).attr('id')}`;
+                        headings.each(function () {                            
+                            const fullUrl = `${algolia.getPageFullUrl(url)}#${$(this).attr('id')}`;
+
                             output += 
                                 `
                                     <a 
-                                        href="${url}#${$(this).attr('id')}"
+                                        href="${fullUrl}"
                                         target="_blank"
                                         anchorRef="${$(this).attr('id')}"
                                         siteFunction="docSearch_searchHitDetails_hitPage_Toc_Item">
@@ -915,11 +930,12 @@ algolia = {
                 } else {
                     numPages = tagDetails[tag].numPages;
                 }
+                const fullUrl = `${algolia.getPageFullUrl(null)}/tag-info?tag=${tag}`;
                 return (
                     `
                         <div siteFunction="docSearch_searchHitDetails_tags_tagBtn_container" class="d-inline-flex align-items-center">
                             <a 
-                                href="/tag-info?tag=${tag}"
+                                href="${fullUrl}"
                                 target=_blank
                                 sitefunction="docSearch_searchHitDetails_tags_tagBtn" 
                                 type="button" 
@@ -971,11 +987,14 @@ algolia = {
                 } else {
                     numPages = catDetails[cat].numPages;
                 }
+                
+                const fullUrl = `${algolia.getPageFullUrl(null)}/cat-info?cat=${cat}`;
+
                 return (
                     `
                         <div siteFunction="docSearch_searchHitDetails_cats_catsBtn_container" class="mr-3 d-inline-flex align-items-center">
                             <a 
-                                href="/cat-info?cat=${cat}"
+                                href="${fullUrl}"
                                 target=_blank
                                 sitefunction="docSearch_searchHitDetails_cats_catBtn" 
                                 type="button" 
