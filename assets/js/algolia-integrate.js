@@ -61,7 +61,7 @@ algolia = {
         : siteLanguageCode !== '' 
             ? siteLanguageCode 
             : settings.multilang.availableLang[settings.multilang.fallbackLang].lang,
-    idProd: isProd,
+    isProd: isProd,
 
     getPageFullUrl: (permalink) => {
         const u = new URL(window.location.href);
