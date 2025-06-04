@@ -136,7 +136,7 @@ multilang:
       name: "Româna"
     - lang: "sr"
       name: "Serbian"
-  siteLanguage: 1
+  siteLanguage: 0
   fallbackLang: 0
   needsTranslation:
     - "body"
