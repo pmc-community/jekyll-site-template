@@ -44,6 +44,7 @@ $c-not-set: initial;
 $c-metal-grey: #f5f6fa;
 $c-searchHit-container: #010033;
 $c-inherit: $gen-inherit;
+$c-bootstrap-sec-opacity-25: rgba(108, 117, 125, 0.25);
 
 // typography
 $siteFontFamily: 'Poppins';
@@ -170,6 +171,7 @@ $b-Sol2pxWhite: $b-2px $b-solid $c-white;
 $b-SolThinGrey: $b-thin $b-solid $c-grey;
 $b-none:none;
 $b-selected-text-context-menu: $b-thin $b-solid $c-grey-alt-3;
+$b-bootstrap-sec-opacity-25: $b-thin $b-solid $c-bootstrap-sec-opacity-25;
 
 // border radius
 $brad-10px: 10px;
