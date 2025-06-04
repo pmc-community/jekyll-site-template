@@ -36,11 +36,11 @@ colSchemaCorrections:
   elementsWithBorderTopAffected: ".site-footer"
   borderTopOnElementsAffected:
     light: "1px solid #eeebee"
-    dark: "1px solid #44434d"
+    dark: "1px solid rgba(108, 117, 125, 0.25)"
   elementsWithBorderLeftAffected: ".main-header"
   borderLeftOnElementsAffected:
-    light: "1px solid #44434d"
-    dark: "1px solid #44434d"
+    light: "1px solid rgba(108, 117, 125, 0.25)"
+    dark: "1px solid rgba(108, 117, 125, 0.25)"
   hideBodyUntilLoadTimeout: 0
 goToTopBtn:
   topOfPageId: "#ihs_top_of_page"
