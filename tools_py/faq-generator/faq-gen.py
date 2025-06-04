@@ -312,9 +312,9 @@ def reformulate_question(q, qg_pipeline, attempt=1):
         return None
 
     prompt = (
-        "The following question is not a logical sentence. "
-        "Reformulate it by adding or removing words as needed to make it clear, grammatically correct, "
-        "and under 10 words. Remove the question mark if it makes no sense.\n\n"
+        f"The following question is not a logical sentence. "
+        f"Reformulate it by adding or removing words as needed to make it clear, grammatically correct, and under {QUESTION_MAX_WORDS} words." 
+        f"Remove the question mark if it makes no sense."
         f"Original: {q}"
     )
     try:
@@ -429,4 +429,5 @@ def main(content_dir, output_dir):
 
 if __name__ == "__main__":
     main("../../doc-raw-contents/", "")
+
 

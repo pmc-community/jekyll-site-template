@@ -5,13 +5,13 @@
     "f": "_terms_.txt"
   },
   {
-    "q": "What are the general terms of service for innohub.space?",
-    "a": "These terms of service are applicable from the date shown on this page. These are the general terms of service for using innohub.space operated by pmc. Specific terms of services may apply for each service we provide to you. Please read these terms of service (\u201cterms\u201d, \u201cterms of service\u201d, \u201ctos\u201d) carefully before using innohub.space website (the \u201cservice\u201d, the \u201cwebsite\u201d, the \u201csite\u201d) operated by pmc (\u201cus\u201d, \u201cwe\u201d, \u201cour\u201d).",
+    "q": "What are the terms of service applicable for each service we provide to you?",
+    "a": "These are the general terms of service for using innohub.space operated by pmc. Specific terms of service may apply for each service we provide to you.",
     "f": "_terms_.txt"
   },
   {
-    "q": "What are the general terms of service applicable for innohub.space?",
-    "a": "These terms of service are applicable from the date shown on this page. These are the general terms of service for using innohub.space operated by pmc. Specific terms of services may apply for each service we provide to you. Please read these terms of service (\u201cterms\u201d, \u201cterms of service\u201d, \u201ctos\u201d) carefully before using innohub.space website.",
+    "q": "What are the general terms of service for innohub.space?",
+    "a": "These terms of service are applicable from the date shown on this page. These are the general terms of service for using innohub.space operated by pmc. Specific terms of services may apply for each service we provide to you. Please read these terms of service (\u201cterms\u201d, \u201cterms of service\u201d, \u201ctos\u201d) carefully before using innohub.space website (the \u201cservice\u201d, the \u201cwebsite\u201d, the \u201csite\u201d) operated by pmc (\u201cus\u201d, \u201cwe\u201d, \u201cour\u201d).",
     "f": "_terms_.txt"
   },
   {
@@ -20,23 +20,13 @@
     "f": "_intro_.txt"
   },
   {
-    "q": "What are sections 1.10.32 and 1.10.33 of lorem ipsum?",
-    "a": "Lorem ipsum comes from sections 1.10.32 and 1.10.33 of \u201cde finibus bonorum et malorum\u201d by cicero.",
-    "f": "_pwc_.txt"
-  },
-  {
-    "q": "The first line of lorem ipsum, \u201cde finibus bonorum et malorum\u201d by cicero, is reproduced below for those interested?",
-    "a": "Lorem ipsum comes from sections 1.10.32 and 1.10.33 of \u201cde finibus bonorum et malorum\u201d by Cicero.",
-    "f": "_intro_.txt"
-  },
-  {
     "q": "The first line of lorem ipsum comes from a line in section 1.10.32",
     "a": "The first line of lorem ipsum comes from a line in section 1.10.32.",
     "f": "_collection-2_y_y_.txt"
   },
   {
-    "q": "The first line of lorem ipsum, lorem ipsum dolor sit amet, comes from a line in section 1.10.32 ",
-    "a": "1.10.32 and 1.10.33 of \u201cde finibus bonorum et malorum\u201d by cicero, written in 45 bc.",
+    "q": "What are sections 1.10.32 and 1.10.33 of lorem ipsum?",
+    "a": "Lorem ipsum comes from sections 1.10.32 and 1.10.33 of \u201cde finibus bonorum et malorum\u201d.",
     "f": "_intro_.txt"
   },
   {
@@ -45,9 +35,9 @@
     "f": "_intro_introChild_.txt"
   },
   {
-    "q": "You acknowledge and agree that pmc shall not be held liable for any changes, modifications, suspensions or discontinuance of any of our services and/or products unless otherwise stipulated",
-    "a": "Your continued use of the services provided, after such posting of any updates, changes, and/or modifications shall constitute your acceptance of such updates, changes, and/or modifications.",
-    "f": "_sf_f1_.txt"
+    "q": "What is the standard chunk of lorem ipsum used since the 1500s?",
+    "a": "The standard chunk of lorem ipsum used since the 1500s is reproduced below for those interested.",
+    "f": "_pwc_.txt"
   },
   {
     "q": "You acknowledge and agree that pmc shall not be held liable for any updates, modifications, suspensions or discontinuance of any of our services and/or products unless otherwise stipulated",
@@ -55,19 +45,9 @@
     "f": "_sf_f1_.txt"
   },
   {
-    "q": "What is the standard chunk of lorem ipsum used since the 1500s?",
-    "a": "The standard chunk of lorem ipsum used since the 1500s is reproduced below for those interested.",
-    "f": "_pwc_.txt"
-  },
-  {
-    "q": "What do you need to know about innohub.space?",
-    "a": "We strongly advise you to read our privacy policy and our terms of service.",
-    "f": "_ec_.txt"
-  },
-  {
-    "q": "What is a treatise on the theory of ethics?",
-    "a": "A treatise on the theory of ethics, very popular during the renaissance.",
-    "f": "_collection-1_g1_.txt"
+    "q": "You acknowledge and agree that pmc shall not be held liable for any changes, modifications, suspensions or discontinuance of any of our services and/or products unless otherwise stipulated",
+    "a": "Your continued use of the services provided, after such posting of any updates, changes, and/or modifications shall constitute your acceptance of such updates, changes, and/or modifications.",
+    "f": "_sf_f1_.txt"
   },
   {
     "q": "What are the general functionalities of innohub support center?",
@@ -80,6 +60,16 @@
     "f": "_collection-1_g11_.txt"
   },
   {
+    "q": "How are the general functionalities of innohub support center divided?",
+    "a": "General functionalities are for general issues related to the innohub.space platform. The general functionalities are the search form and the innohub issues support form.",
+    "f": "_collection-1_g11_.txt"
+  },
+  {
+    "q": "What do you need to know about innohub.space?",
+    "a": "We strongly advise you to read our privacy policy and our terms of service.",
+    "f": "_ec_.txt"
+  },
+  {
     "q": "What is the original version of lorem ipsum?",
     "a": "Lorem ipsum comes from sections 1.10.32 and 1.10.33 of \u201cde finibus bonorum et malorum\u201d by cicero.",
     "f": "_pwc_.txt"
@@ -90,6 +80,11 @@
     "f": "_ec_.txt"
   },
   {
+    "q": "What is a file from a collection that loads some external content from another repo?",
+    "a": "This file loads some external content from another repo and place it inline.",
+    "f": "_collection-2_Z_z_.txt"
+  },
+  {
     "q": "How can innohub.space be used?",
     "a": "Content from an exernal private repository can be used both in anonymous and registered ways.",
     "f": "_ec_.txt"
@@ -98,6 +93,16 @@
     "q": "What is a file from a collection that loads external content from another repo?",
     "a": "This file loads some external content from another repo and place it inline. Link to file in different folder.",
     "f": "_collection-2_Z_z_.txt"
+  },
+  {
+    "q": "Questions must not contain combinations of 3 or more words from this prompt based on the following text",
+    "a": "Good oreos.",
+    "f": "_collection-2_X_x_.txt"
+  },
+  {
+    "q": "What does lorem ipsum have roots in?",
+    "a": "Lorem ipsum has roots in a piece of classical latin literature from 45 bc.",
+    "f": "_intro_.txt"
   },
   {
     "q": "Questions must not contain combinations of 3 or more words from this prompt",
@@ -113,20 +118,5 @@
     "q": "Questions must be logical sentences based on the following text",
     "a": "The grand child is on the page. Which of the following is true?.",
     "f": "_intro_introChild_introGrandChild_.txt"
-  },
-  {
-    "q": "Questions must not contain combinations of 3 or more words from this prompt if not logical?",
-    "a": "Good swedish fish.",
-    "f": "_collection-2_X_x_.txt"
-  },
-  {
-    "q": "What does lorem ipsum have roots in?",
-    "a": "A treatise on the theory of ethics, very popular during the renaissance.",
-    "f": "_collection-1_g1_.txt"
-  },
-  {
-    "q": "What does innohub support center offer?",
-    "a": "Information about the issues that you experience when using our services.",
-    "f": "_collection-1_g11_.txt"
   }
 ]
