@@ -5,14 +5,22 @@ import json
 import time
 from pathlib import Path
 from langdetect import detect, DetectorFactory
-from transformers import pipeline, AutoTokenizer, AutoModelForSeq2SeqLM
+from transformers.pipelines import pipeline
+from transformers.models.auto.tokenization_auto import AutoTokenizer
+from transformers.models.auto.modeling_auto import AutoModelForSeq2SeqLM
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-from transformers.utils import cached_file
+from transformers.utils.hub import cached_file
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import torch
 from requests.exceptions import HTTPError
 import re
+from sentence_transformers import SentenceTransformer
+from sklearn.cluster import KMeans
+
+import nltk
+nltk.download('punkt')
+from nltk.tokenize import PunktSentenceTokenizer
 
 # Suppress warnings
 os.environ["TRANSFORMERS_NO_ADVISORY_WARNINGS"] = "true"
@@ -22,16 +30,21 @@ DetectorFactory.seed = 0
 
 MAX_INPUT_TOKENS = 512
 CHUNK_TOKEN_SIZE = 256
-QUESTION_MAX_WORDS = 10
+QUESTION_MAX_WORDS = 15
 MIN_ANSWER_WORDS = 10
 MAX_FAQ = 50
-FINAL_FAQ_COUNT = 25
+FINAL_FAQ_COUNT = 50
 MAX_REFORMULATIONS = 5
 MIN_CHUNKS = 50
 MAX_WORKERS = 8
 DELAY_BETWEEN_REQUESTS = 1.0
 MAX_RETRIES = 3
 RETRY_DELAY = 3.0
+
+# Suppress "Device set to use mps:0" logs from transformers / torch
+logging.getLogger("transformers").setLevel(logging.ERROR)
+logging.getLogger("torch").setLevel(logging.ERROR)
+
 
 def get_device():
     if torch.cuda.is_available():
@@ -44,7 +57,9 @@ def get_device():
         print("💻 Using CPU")
         return torch.device("cpu")
 
+
 DEVICE = get_device()
+
 
 def remove_xla_device_from_config(model_name_or_path):
     try:
@@ -58,50 +73,64 @@ def remove_xla_device_from_config(model_name_or_path):
     except Exception as e:
         logging.warning(f"Failed to clean xla_device from config: {e}")
 
-def load_markdown_text(content_dir) -> str:
+
+def load_markdown_text(content_dir):
     content_dir = Path(content_dir)
-    texts = []
+    text_by_file = []
     for ext in ("*.md", "*.txt"):
         for file in content_dir.rglob(ext):
             with open(file, "r", encoding="utf-8") as f:
-                texts.append(f.read())
-    return "\n\n".join(texts)
+                content = f.read()
+                text_by_file.append((str(file), content))
+    return text_by_file
+
 
 def get_token_count(text, tokenizer):
     return len(tokenizer.encode(text, truncation=False))
+
 
 def truncate_text(text, tokenizer, max_tokens):
     tokens = tokenizer.encode(text, truncation=True, max_length=max_tokens)
     return tokenizer.decode(tokens, skip_special_tokens=True)
 
-def split_into_n_chunks(text, tokenizer, chunk_token_limit, n):
-    paragraphs = text.split("\n\n")
-    current_chunk = []
+
+def split_into_chunks_sensitive(text, tokenizer, chunk_token_limit, n):
+    tokenizer_sent = PunktSentenceTokenizer()
+    sentences = tokenizer_sent.tokenize(text)
+    
+    if len(sentences) < n:
+        return [truncate_text(text, tokenizer, MAX_INPUT_TOKENS)]
+    
+    model = SentenceTransformer("all-MiniLM-L6-v2")
+    embeddings = model.encode(sentences)
+    kmeans = KMeans(n_clusters=min(n, len(sentences)), random_state=0, n_init="auto")
+    labels = kmeans.fit_predict(embeddings)
+    
+    clusters = [[] for _ in range(max(labels) + 1)]
+    for idx, label in enumerate(labels):
+        clusters[label].append(sentences[idx])
+    
     chunks = []
-    token_count = 0
+    for cluster in clusters:
+        chunk = []
+        token_count = 0
+        for sentence in cluster:
+            tokens = get_token_count(sentence, tokenizer)
+            if token_count + tokens <= chunk_token_limit:
+                chunk.append(sentence)
+                token_count += tokens
+            else:
+                if chunk:
+                    combined = " ".join(chunk)
+                    chunks.append(truncate_text(combined, tokenizer, chunk_token_limit))
+                chunk = [sentence]
+                token_count = tokens
+        if chunk:
+            combined = " ".join(chunk)
+            chunks.append(truncate_text(combined, tokenizer, chunk_token_limit))
+    
+    return chunks
 
-    for para in paragraphs:
-        para = truncate_text(para, tokenizer, chunk_token_limit)
-        tokens = get_token_count(para, tokenizer)
-        if tokens > chunk_token_limit:
-            continue
-        if token_count + tokens > chunk_token_limit:
-            chunks.append(" ".join(current_chunk))
-            current_chunk = [para]
-            token_count = tokens
-        else:
-            current_chunk.append(para)
-            token_count += tokens
-        if len(chunks) >= n:
-            break
-
-    if current_chunk and len(chunks) < n:
-        chunks.append(" ".join(current_chunk))
-
-    while len(chunks) < n:
-        chunks.append("")
-
-    return chunks[:n]
 
 def deduplicate_faq(faq_list):
     seen = set()
@@ -113,11 +142,22 @@ def deduplicate_faq(faq_list):
             unique.append(item)
     return unique
 
+
 def save_faq_markdown(faq_list, output_path):
     with open(output_path, "w", encoding="utf-8") as f:
         f.write("---\nlayout: page\ntitle: Frequently Asked Questions\n---\n\n")
         for item in faq_list:
             f.write(f"### {item['question']}\n\n{item['answer']}\n\n")
+
+
+def save_faq_json(faq_list, output_path):
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(
+            [{"q": i["question"], "a": i["answer"], "f": Path(i["file"]).name} for i in faq_list],
+            f,
+            indent=2
+        )
+
 
 def get_models_for_language(lang_code):
     model_map = {
@@ -132,6 +172,7 @@ def get_models_for_language(lang_code):
     }
     return model_map.get(lang_code, model_map["default"])
 
+
 def clean_question(q: str, qg_pipeline=None):
     if not q or not isinstance(q, str):
         return None
@@ -144,15 +185,17 @@ def clean_question(q: str, qg_pipeline=None):
     if len(words) > QUESTION_MAX_WORDS:
         q = " ".join(words[:QUESTION_MAX_WORDS])
 
-    # Capitalize first letter and add question mark
     q = q[0].upper() + q[1:] + "?"
 
-    # Check for malformed patterns
     if not q.endswith("?") or len(words) < 3 or q.lower().endswith(("the?", "a?", "an?", "and?", "of?", "to?", "is?", "each?")):
         if qg_pipeline:
             try:
                 reformulate_prompt = (
-                    "The following question is incomplete or malformed. Rewrite it as a clear, concise, and grammatically correct question under 10 words:\n\n"
+                    f"The following question is incomplete or malformed."
+                    f"Rewrite it as a clear, concise, and grammatically correct question under {QUESTION_MAX_WORDS} words."
+                    f"Rewrite it to be a logical sentence."
+                    f"Remove the final question mark is it does not makes sense."
+                    f"Ensure that the question does not have any punctuation sign before the final question mark."
                     f"Original question: {q}"
                 )
                 response = qg_pipeline(
@@ -162,7 +205,6 @@ def clean_question(q: str, qg_pipeline=None):
                     do_sample=False,
                     early_stopping=True,
                 )[0]["generated_text"].strip()
-                # Clean again after reformulation
                 return response[0].upper() + response[1:].rstrip(".") + "?"
             except Exception as e:
                 logging.warning(f"Failed to reformulate question: {e}")
@@ -170,11 +212,11 @@ def clean_question(q: str, qg_pipeline=None):
 
     return q
 
+
 def clean_answer(answer: str) -> str:
     if not answer or not isinstance(answer, str):
         return ""
 
-    # Split by sentence-ending punctuation (., !, ?)
     raw_sentences = re.split(r'(?<=[.!?])\s+', answer.strip())
     cleaned_sentences = []
 
@@ -182,21 +224,18 @@ def clean_answer(answer: str) -> str:
         sentence = sentence.strip()
         if not sentence:
             continue
-
-        # Capitalize first letter
         sentence = sentence[0].upper() + sentence[1:] if sentence else ""
-
-        # Ensure it ends with a period
         if not sentence.endswith("."):
             sentence += "."
-
         cleaned_sentences.append(sentence)
 
     return " ".join(cleaned_sentences)
 
+
 def reformulate_short_answer(answer, question, context, qa_pipeline):
     prompt = (
-        f"The previous answer was too short or unclear. Rewrite this answer to be complete, logical, and longer than 10 words.\n\n"
+        f"The previous answer was too short or unclear. Rewrite this answer to be complete, logical, and longer than {MIN_ANSWER_WORDS} words."
+        f"If the answer is shorter than {MIN_ANSWER_WORDS} words, create a logical sentence around it."
         f"Question: {question}\nShort answer: {answer}\nContext: {context}"
     )
     for _ in range(MAX_RETRIES):
@@ -210,6 +249,7 @@ def reformulate_short_answer(answer, question, context, qa_pipeline):
             else:
                 raise
 
+
 def rank_questions_by_relevance(questions, context):
     if not questions:
         return []
@@ -220,154 +260,173 @@ def rank_questions_by_relevance(questions, context):
     scored.sort(reverse=True, key=lambda x: x[0])
     return [item[1] for item in scored[:FINAL_FAQ_COUNT]]
 
+
 def load_models(lang_code):
     models = get_models_for_language(lang_code)
-
     remove_xla_device_from_config(models["qg"])
     remove_xla_device_from_config(models["qa"])
 
     tokenizer_qg = AutoTokenizer.from_pretrained(models["qg"], legacy=False)
     model_qg = AutoModelForSeq2SeqLM.from_pretrained(models["qg"]).to(DEVICE)
-    qg = pipeline("text2text-generation", model=model_qg, tokenizer=tokenizer_qg, device=0 if DEVICE.type != "cpu" else -1)
+    qg_pipeline = pipeline("text2text-generation", model=model_qg, tokenizer=tokenizer_qg, device=DEVICE.index if DEVICE.type == "cuda" else -1)
 
     tokenizer_qa = AutoTokenizer.from_pretrained(models["qa"], legacy=False)
     model_qa = AutoModelForSeq2SeqLM.from_pretrained(models["qa"]).to(DEVICE)
-    qa = pipeline("text2text-generation", model=model_qa, tokenizer=tokenizer_qa, device=0 if DEVICE.type != "cpu" else -1)
+    qa_pipeline = pipeline("text2text-generation", model=model_qa, tokenizer=tokenizer_qa, device=DEVICE.index if DEVICE.type == "cuda" else -1)
 
-    return {"qg": qg, "qa": qa}
+    return qg_pipeline, qa_pipeline, tokenizer_qg
 
-def question_relevance_filter(question, context, min_overlap=0.1):  # lowered threshold
-    context_words = set(re.findall(r'\w+', context.lower()))
-    question_words = set(re.findall(r'\w+', question.lower()))
-    if not question_words:
+
+def is_logical_question(q: str) -> bool:
+    """
+    Checks if the question is a logical sentence.
+    Basic heuristic: at least 3 words, starts with capital, no double punctuation, no odd endings.
+    """
+    if not q or len(q.split()) < 3:
         return False
-    overlap = len(question_words.intersection(context_words)) / len(question_words)
-    return overlap >= min_overlap
-
-def is_valid_question(q):
-    invalid_phrases = [
-        "generate clear",
-        "best title",
-        "passage",
-        "question",
-        "unknown"
-    ]
-    q_lower = q.lower()
-    if any(phrase in q_lower for phrase in invalid_phrases):
+    if re.search(r"[!.,;:]\?$", q):  # ends in punctuation before ?
         return False
-    if len(q.split()) == 0:
+    if not q[0].isupper():
         return False
     return True
 
-def process_chunk(chunk, lang_code, qg_pipeline, qa_pipeline, qg_params, qa_params, index):
-    logging.info(f"Processing chunk {index + 1}")
+
+def format_question(q: str) -> str:
+    """
+    Remove trailing punctuation before ?, remove redundant symbols.
+    """
+    q = q.strip()
+    q = re.sub(r"[!.,;:]+(\?)", r"\1", q)  # Remove punctuation before ?
+    q = q.rstrip(".")
+    if q.endswith("??"):
+        q = q.rstrip("?") + "?"
+    return q
+
+
+def reformulate_question(q, qg_pipeline, attempt=1):
+    """
+    Reformulate a question if it's malformed or illogical.
+    Remove the question mark if needed during reformulation.
+    """
+    if attempt > MAX_REFORMULATIONS:
+        return None
+
+    prompt = (
+        "The following question is not a logical sentence. "
+        "Reformulate it by adding or removing words as needed to make it clear, grammatically correct, "
+        "and under 10 words. Remove the question mark if it makes no sense.\n\n"
+        f"Original: {q}"
+    )
     try:
-        prompt = (
-            f"Read the following passage carefully and generate clear, concise, "
-            f"and relevant questions (max 10 words) about this text:\n\n"
-            f"{truncate_text(chunk, qg_pipeline.tokenizer, MAX_INPUT_TOKENS)}"
-            f"Formulate the questions to be fully inline with the language spelling and grammarn\n\n"
-            f"If needed, reformulate the answers to be logical sentences\n\n"
-            f"Do not allow questions to end with punctuation signs before the question mark, reformulate and remove the ending punctuation sign\n\n"
-            f"Where applicable, format the answer so that each sentence starts with a capital letter. Preserve the original meaning, punctuation, and grammar.\n\n"
-            f"If needed, reformulate the questions to have meaning and the right order of wording."
-        )
         result = qg_pipeline(
             prompt,
-            max_new_tokens=qg_params["max_new_tokens"],
-            num_beams=qg_params["num_beams"],
+            max_new_tokens=32,
+            num_beams=5,
             do_sample=False,
-        )[0]["generated_text"]
+            early_stopping=True,
+        )[0]["generated_text"].strip()
 
-        # Debug print all raw questions before filtering
-        raw_questions = [clean_question(q) for q in re.split(r'\?|\n', result) if q.strip()]
-        logging.info(f"Raw questions (chunk {index + 1}): {raw_questions}")
-
-        questions = [
-            q for q in raw_questions
-            if q
-            and question_relevance_filter(q, chunk)
-            and is_valid_question(q)
-        ]
+        result = format_question(result)
+        if is_logical_question(result):
+            return result
+        return reformulate_question(result, qg_pipeline, attempt + 1)
 
     except Exception as e:
-        logging.warning(f"QG failed in chunk {index + 1}: {e}")
-        return []
+        logging.warning(f"Failed to reformulate question '{q}': {e}")
+        return None
 
-    faq_items = []
-    for question in questions:
-        reformulation_attempts = 0
-        cleaned_answer = ""
-        while reformulation_attempts < MAX_REFORMULATIONS:
-            try:
-                prompt = (
-                    f"Answer the question using the context. Be logical, clear, and answer in more than 10 words.\n\n"
-                    f"Question: {question}\n\nContext: {truncate_text(chunk, qa_pipeline.tokenizer, MAX_INPUT_TOKENS)}"
-                )
-                answer = qa_pipeline(prompt, max_new_tokens=qa_params["max_new_tokens"], num_beams=qa_params["num_beams"], do_sample=False)[0]["generated_text"].strip()
-                cleaned_answer = clean_answer(answer)
-                if len(cleaned_answer.split()) >= MIN_ANSWER_WORDS:
-                    break
-                else:
-                    cleaned_answer = reformulate_short_answer(cleaned_answer, question, chunk, qa_pipeline)
-                reformulation_attempts += 1
-            except Exception as e:
-                logging.warning(f"QA failed in chunk {index + 1}: {e}")
-                reformulation_attempts += 1
 
-        if cleaned_answer:
-            faq_items.append({"question": question, "answer": cleaned_answer})
+def generate_faq_from_text(text, filename, qg_pipeline, qa_pipeline, tokenizer):
+    n_chunks = max(MIN_CHUNKS, MAX_FAQ * 2)
+    chunks = split_into_chunks_sensitive(text, tokenizer, CHUNK_TOKEN_SIZE, n_chunks)
 
-    return faq_items
+    faqs = []
+    for idx, chunk in enumerate(chunks):
+        try:
+            prompt_qg = (
+                "Generate as many relevant and concise questions as possible based on the following text. "
+                "List each question on a new line.\n\n"
+                "Questions must be logical sentences. Reformulate questions no more than 5 times if not logical.\n"
+                "Questions must not be based or inspired from this prompt.\n"
+                "Questions must not contain combinations of 3 or more words from this prompt.\n"
+                "The questions must be strictly based on the following text.\n"
+                "The questions must not end with punctuation before the final question mark.\n"
+                "Do not add the final question mark if it makes no sense to have it.\n\n"
+                f"Text:\n{chunk}"
+            )
 
-def main():
-    logging.basicConfig(level=logging.INFO)
-    content_dir = "../../doc-raw-contents/"
-    output_file = Path("faq.md")
+            qg_outputs = qg_pipeline(
+                prompt_qg,
+                max_new_tokens=128,
+                num_beams=10,
+                num_return_sequences=3,
+                do_sample=True,
+                top_p=0.9,
+                temperature=0.7,
+                early_stopping=True,
+            )
 
-    print("🔍 Loading content...")
-    site_text = load_markdown_text(content_dir)
+            questions = []
+            for output in qg_outputs:
+                for q_raw in output["generated_text"].strip().split("\n"):
+                    q_cleaned = format_question(q_raw.strip())
+                    if not is_logical_question(q_cleaned):
+                        q_cleaned = reformulate_question(q_cleaned, qg_pipeline)
+                    if q_cleaned and q_cleaned not in questions:
+                        questions.append(q_cleaned)
 
-    print("🤖 Loading tokenizer...")
-    tokenizer = AutoTokenizer.from_pretrained("google/flan-t5-base", legacy=False)
+            for question in questions:
+                qa_input = f"Question: {question}\nContext: {chunk}"
+                qa_output = qa_pipeline(
+                    qa_input,
+                    max_new_tokens=128,
+                    num_beams=5,
+                    do_sample=False,
+                    early_stopping=True,
+                )[0]["generated_text"]
+                answer = clean_answer(qa_output)
 
-    print("📖 Splitting into chunks...")
-    chunks = split_into_n_chunks(site_text, tokenizer, CHUNK_TOKEN_SIZE, MIN_CHUNKS)
-    print(f"🔢 {len(chunks)} chunks created.")
+                if len(answer.split()) < MIN_ANSWER_WORDS:
+                    answer = reformulate_short_answer(answer, question, chunk, qa_pipeline)
 
-    qg_params = {"num_beams": random.choice([3, 4, 5]), "max_new_tokens": random.choice([100, 128])}
-    qa_params = {"num_beams": random.choice([4, 5]), "max_new_tokens": random.choice([200, 256])}
+                faqs.append({"question": question, "answer": answer, "file": filename})
 
-    print("🌐 Detecting language and loading models...")
-    try:
-        lang = detect(site_text)
-    except Exception:
-        lang = "default"
-    models = load_models(lang)  # Preload models once
-
-    all_questions = []
-    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        futures = []
-        for idx, chunk in enumerate(chunks):
-            futures.append(executor.submit(
-                process_chunk, chunk, lang, models["qg"], models["qa"], qg_params, qa_params, idx
-            ))
             time.sleep(DELAY_BETWEEN_REQUESTS)
 
-        for future in as_completed(futures):
-            try:
-                faq_items = future.result()
-                all_questions.extend(faq_items)
-            except Exception as e:
-                logging.error(f"Exception in chunk processing: {e}")
+        except Exception as e:
+            logging.warning(f"Failed to generate QA for chunk {idx} in {filename}: {e}")
 
-    all_questions = deduplicate_faq(all_questions)
-    top_questions = rank_questions_by_relevance(all_questions, site_text)
+    faqs = deduplicate_faq(faqs)
+    faqs = rank_questions_by_relevance(faqs, text)
+    return faqs[:FINAL_FAQ_COUNT]
 
-    print(f"📀 Saving {len(top_questions)} top FAQs to {output_file}")
-    output_file.parent.mkdir(parents=True, exist_ok=True)
-    save_faq_markdown(top_questions, output_file)
-    print("✅ Done.")
+def main(content_dir, output_dir):
+    content_dir = Path(content_dir)
+    output_dir = Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    files_texts = load_markdown_text(content_dir)
+
+    all_faqs = []
+    for filename, text in files_texts:
+        print(f"Processing file: {filename}")
+        try:
+            lang = detect(text)
+        except Exception:
+            lang = "en"
+        qg_pipeline, qa_pipeline, tokenizer = load_models(lang)
+        faqs = generate_faq_from_text(text, filename, qg_pipeline, qa_pipeline, tokenizer)
+        all_faqs.extend(faqs)
+
+    all_faqs = deduplicate_faq(all_faqs)
+    all_faqs = rank_questions_by_relevance(all_faqs, " ".join([f["answer"] for f in all_faqs]))
+
+    save_faq_markdown(all_faqs, output_dir / "faq.md")
+    save_faq_json(all_faqs, output_dir / "faq.json")
+
+    print(f"Generated {len(all_faqs)} FAQs")
+
 
 if __name__ == "__main__":
-    main()
+    main("../../doc-raw-contents/", "")
+

@@ -29,7 +29,6 @@
             "/collection-2/y/y/",
             "/intro/",
             "/collection-1/g1/",
-            "/collection-2/X/x/",
             "/intro/introChild/"
         ]
     },
@@ -61,8 +60,8 @@
         "permalink": "/collection-2/y/y/",
         "similarFiles": [
             "/intro/introChild/",
-            "/intro/",
             "/collection-1/g1/",
+            "/intro/",
             "/pwc/",
             "/sf/f1/"
         ]
@@ -86,7 +85,6 @@
             "/collection-1/g1/",
             "/collection-2/y/y/",
             "/intro/introChild/",
-            "/terms/",
             "/intro/"
         ]
     }

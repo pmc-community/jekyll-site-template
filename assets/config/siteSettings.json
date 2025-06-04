@@ -281,12 +281,12 @@
       "createTimeUTC": 1748157077,
       "relatedPages": [
         {
-          "title": "Collection-2/Y",
-          "permalink": "/collection-2/y/y/"
-        },
-        {
           "title": "Introduction",
           "permalink": "/intro/"
+        },
+        {
+          "title": "Collection-2/Y",
+          "permalink": "/collection-2/y/y/"
         },
         {
           "title": "Play with content",
@@ -360,12 +360,12 @@
           "permalink": "/intro/"
         },
         {
-          "title": "Collection-2/Y",
-          "permalink": "/collection-2/y/y/"
-        },
-        {
           "title": "Collection-2/X",
           "permalink": "/collection-2/X/x/"
+        },
+        {
+          "title": "Intro Child Page",
+          "permalink": "/intro/introChild/"
         }
       ],
       "autoSummary": "markdown content direct included in the page. heads up!!!links to other site docs must be given using the permalinks, not the ...",
@@ -381,10 +381,6 @@
         {
           "permalink": "/collection-1/g1/",
           "title": "Collection-1/G1"
-        },
-        {
-          "permalink": "/collection-2/X/x/",
-          "title": "Collection-2/X"
         },
         {
           "permalink": "/intro/introChild/",
@@ -462,7 +458,7 @@
       "permalink": "/collection-1/g1/",
       "categories": [],
       "tags": [],
-      "excerpt": "content, services, lorem ipsum, innohub, registration, email, process, access, latin, ihsutilities",
+      "excerpt": "content, services, lorem ipsum, innohub, registration, email, access, process, latin, ihsutilities",
       "lastUpdate": "2025-05-25 10:11:17 +0300",
       "lastUpdateUTC": 1748157077,
       "createTime": "2025-05-25 10:11:17 +0300",
@@ -473,15 +469,15 @@
           "permalink": "/sf/f1/"
         },
         {
-          "title": "Terms",
-          "permalink": "/terms/"
+          "title": "Collection-2/Y",
+          "permalink": "/collection-2/y/y/"
         },
         {
-          "title": "Introduction",
-          "permalink": "/intro/"
+          "title": "Terms",
+          "permalink": "/terms/"
         }
       ],
-      "autoSummary": "lorem ipsum is a piece of classical latin literature from 45 bc. lorem ipsum comes from sections ...",
+      "autoSummary": "lorem ipsum is a piece of classical latin literature from 45 bc. lorem ipsum comes from ...",
       "similarByContent": [
         {
           "permalink": "/collection-2/y/y/",
@@ -542,9 +538,9 @@
       "permalink": "/collection-2/y/y/",
       "categories": [],
       "tags": [],
-      "excerpt": "lorem ipsum, latin, latin literature, line, file, extremes, evil, malorum, cicero, book",
-      "lastUpdate": "2025-05-25 10:11:17 +0300",
-      "lastUpdateUTC": 1748157077,
+      "excerpt": "lorem ipsum, latin, latin literature, content, file, line, collapse component, panel, default, user",
+      "lastUpdate": "2025-06-04 10:43:27 +0300",
+      "lastUpdateUTC": 1749023007,
       "createTime": "2025-05-25 10:11:17 +0300",
       "createTimeUTC": 1748157077,
       "relatedPages": [
@@ -553,27 +549,27 @@
           "permalink": "/intro/introChild/"
         },
         {
-          "title": "Introduction",
-          "permalink": "/intro/"
+          "title": "Subfolder/F1",
+          "permalink": "/sf/f1/"
         },
         {
-          "title": "Play with content",
-          "permalink": "/pwc/"
+          "title": "Introduction",
+          "permalink": "/intro/"
         }
       ],
-      "autoSummary": "lorem ipsum is a piece of classical latin literature from 45 bc. lorem ipsum comes from sections ...",
+      "autoSummary": "lorem ipsum is a piece of classical latin literature from 45 bc. lorem ipsum comes from ...",
       "similarByContent": [
         {
           "permalink": "/intro/introChild/",
           "title": "Intro Child Page"
         },
         {
-          "permalink": "/intro/",
-          "title": "Introduction"
-        },
-        {
           "permalink": "/collection-1/g1/",
           "title": "Collection-1/G1"
+        },
+        {
+          "permalink": "/intro/",
+          "title": "Introduction"
         },
         {
           "permalink": "/pwc/",
@@ -675,12 +671,12 @@
           "permalink": "/terms/"
         },
         {
-          "title": "Collection-1/G1",
-          "permalink": "/collection-1/g1/"
+          "title": "Collection-2/Y",
+          "permalink": "/collection-2/y/y/"
         },
         {
-          "title": "Intro Child Page",
-          "permalink": "/intro/introChild/"
+          "title": "Collection-1/G1",
+          "permalink": "/collection-1/g1/"
         }
       ],
       "autoSummary": "goods or services made available on or through such third party sites or resources. either pmc or any third parties may provide links to other websites and/or ...",
@@ -696,10 +692,6 @@
         {
           "permalink": "/intro/introChild/",
           "title": "Intro Child Page"
-        },
-        {
-          "permalink": "/terms/",
-          "title": "Terms"
         },
         {
           "permalink": "/intro/",

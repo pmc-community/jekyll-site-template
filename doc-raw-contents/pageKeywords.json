@@ -101,13 +101,13 @@
         "lorem ipsum",
         "latin",
         "latin literature",
-        "line",
+        "content",
         "file",
-        "extremes",
-        "evil",
-        "malorum",
-        "cicero",
-        "book"
+        "line",
+        "collapse component",
+        "panel",
+        "default",
+        "user"
       ]
     },
     {
@@ -149,8 +149,8 @@
         "innohub",
         "registration",
         "email",
-        "process",
         "access",
+        "process",
         "latin",
         "ihsutilities"
       ]
