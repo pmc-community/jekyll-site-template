@@ -101,13 +101,13 @@
         "lorem ipsum",
         "latin",
         "latin literature",
-        "content",
-        "file",
         "line",
-        "collapse component",
-        "panel",
-        "default",
-        "user"
+        "file",
+        "extremes",
+        "evil",
+        "malorum",
+        "cicero",
+        "book"
       ]
     },
     {
@@ -144,8 +144,8 @@
       "permalink": "/collection-1/g1/",
       "keywords": [
         "content",
-        "services",
         "lorem ipsum",
+        "services",
         "innohub",
         "registration",
         "email",

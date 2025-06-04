@@ -1,12 +1,39 @@
+{% capture uuid %}
+  {% UUID %}
+{% endcapture %}
+{% assign fid = uuid | strip %}
 
+{% assign question = include.q %}
+{% assign answer = include.a "315" %}
 
-<p class="d-inline-flex gap-1">
-  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    Button with data-bs-target
-  </button>
-</p>
-<div class="collapse" id="collapseExample">
-  <div class="card card-body">
-    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+<div class="mb-3">
+  <a class="d-flex justify-content-between align-items-center text-primary fw-medium text-decoration-none border-top border-bottom border-start border-end border-secondary border-opacity-25 shadow-none rounded-top rounded-bottom p-2"
+     data-bs-toggle="collapse"
+     href="#faq-{{fid}}"
+     role="button"
+     aria-expanded="false"
+     aria-controls="faq-{{fid}}"
+     id="faqToggle-{{fid}}">
+    <span class="text-primary">{{question}}</span>
+    <i class="bi bi-caret-right-fill" id="faqIcon-{{fid}}"></i>
+  </a>
+  <div class="collapse" id="faq-{{fid}}">
+    <div class="p-2 border-top border-bottom border-start border-end border-secondary border-opacity-25 shadow-none rounded-bottom text-secondary">
+      {{answer}}
+    </div>
   </div>
 </div>
+
+<script>
+  $(function () {
+    $('#faq-{{fid}}').on('show.bs.collapse', function () {
+      $('#faqIcon-{{fid}}').removeClass('bi-caret-right-fill').addClass('bi-caret-down-fill');
+      $('#faqToggle-{{fid}}').removeClass('border-bottom').removeClass('rounded-bottom')
+    });
+
+    $('#faq-{{fid}}').on('hide.bs.collapse', function () {
+      $('#faqIcon-{{fid}}').removeClass('bi-caret-down-fill').addClass('bi-caret-right-fill');
+      $('#faqToggle-{{fid}}').addClass('border-bottom ').addClass('rounded-bottom');
+    });
+  });
+</script>
