@@ -61,7 +61,7 @@ algolia = {
         : siteLanguageCode !== '' 
             ? siteLanguageCode 
             : settings.multilang.availableLang[settings.multilang.fallbackLang].lang,
-    idProd: isProd,
+    isProd: isProd,
 
     getPageFullUrl: (permalink) => {
         const u = new URL(window.location.href);
@@ -743,7 +743,6 @@ algolia = {
                 
                 if (permalink.charAt(0) !== '/') permalink = '/' + permalink;
                 const fullUrl = algolia.getPageFullUrl(permalink);
-                console.log(fullUrl)
                 return (
                     `
                         <a href="${fullUrl}"
