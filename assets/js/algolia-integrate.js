@@ -743,7 +743,6 @@ algolia = {
                 
                 if (permalink.charAt(0) !== '/') permalink = '/' + permalink;
                 const fullUrl = algolia.getPageFullUrl(permalink);
-                console.log(fullUrl)
                 return (
                     `
                         <a href="${fullUrl}"
