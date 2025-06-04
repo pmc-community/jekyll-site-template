@@ -727,7 +727,7 @@ algolia = {
                 if (permalink.charAt(0) !== '/') permalink = '/' + permalink;
                 return (
                     `
-                        <a href="${algolia.langCode ? algolia.langCode === '' ? permalink : algolia.langCode + permalink : permalink}"
+                        <a href="${permalink}"
                             target=_blank 
                             class="btn btn-sm btn-primary"
                             style="height: fit-content"
@@ -868,7 +868,7 @@ algolia = {
                             output += 
                                 `
                                     <a 
-                                        href="${href}"
+                                        href="${url}#${$(this).attr('id')}"
                                         target="_blank"
                                         anchorRef="${$(this).attr('id')}"
                                         siteFunction="docSearch_searchHitDetails_hitPage_Toc_Item">
@@ -919,7 +919,7 @@ algolia = {
                     `
                         <div siteFunction="docSearch_searchHitDetails_tags_tagBtn_container" class="d-inline-flex align-items-center">
                             <a 
-                                href="${algolia.langCode ? algolia.langCode : ''}/tag-info?tag=${tag}"
+                                href="/tag-info?tag=${tag}"
                                 target=_blank
                                 sitefunction="docSearch_searchHitDetails_tags_tagBtn" 
                                 type="button" 
@@ -975,7 +975,7 @@ algolia = {
                     `
                         <div siteFunction="docSearch_searchHitDetails_cats_catsBtn_container" class="mr-3 d-inline-flex align-items-center">
                             <a 
-                                href="${algolia.langCode ? algolia.langCode : ''}/cat-info?cat=${cat}"
+                                href="/cat-info?cat=${cat}"
                                 target=_blank
                                 sitefunction="docSearch_searchHitDetails_cats_catBtn" 
                                 type="button" 
