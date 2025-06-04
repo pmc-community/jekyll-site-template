@@ -197,6 +197,7 @@ $sidebarLogo, $sideBarFooter, $sideBarHeader, $sideBarDocLink,$sideBarCategoryBt
     #{$sidebarContainer} {
         width: $sidebarWidth;
         min-width: $sidebarMinWidth;
+        border-right: $sideBarContainerBorder !important;
 
         @include phone {
             width: $sideBarContainerWidth_phone;

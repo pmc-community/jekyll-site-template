@@ -44,12 +44,12 @@
       "elementsWithBorderTopAffected": ".site-footer",
       "borderTopOnElementsAffected": {
         "light": "1px solid #eeebee",
-        "dark": "1px solid #44434d"
+        "dark": "1px solid rgba(108, 117, 125, 0.25)"
       },
       "elementsWithBorderLeftAffected": ".main-header",
       "borderLeftOnElementsAffected": {
-        "light": "1px solid #44434d",
-        "dark": "1px solid #44434d"
+        "light": "1px solid rgba(108, 117, 125, 0.25)",
+        "dark": "1px solid rgba(108, 117, 125, 0.25)"
       },
       "hideBodyUntilLoadTimeout": 0
     },
@@ -224,10 +224,10 @@
         "tag2"
       ],
       "excerpt": "lorem ipsum, latin, cicero, malorum, sections, finibus bonorum, rackham, versions, standard, english",
-      "lastUpdate": "2025-05-28 18:10:21 +0300",
-      "lastUpdateUTC": 1748445021,
-      "createTime": "2025-05-28 18:10:21 +0300",
-      "createTimeUTC": 1748445021,
+      "lastUpdate": "2025-06-04 18:47:25 +0300",
+      "lastUpdateUTC": 1749052045,
+      "createTime": "2025-06-04 18:47:25 +0300",
+      "createTimeUTC": 1749052045,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -326,10 +326,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "child page",
-      "lastUpdate": "2025-05-25 10:11:17 +0300",
-      "lastUpdateUTC": 1748157077,
-      "createTime": "2025-05-25 10:11:17 +0300",
-      "createTimeUTC": 1748157077,
+      "lastUpdate": "2025-06-04 18:47:25 +0300",
+      "lastUpdateUTC": 1749052045,
+      "createTime": "2025-06-04 18:47:25 +0300",
+      "createTimeUTC": 1749052045,
       "relatedPages": [],
       "autoSummary": "grand child page",
       "similarByContent": [],
@@ -381,10 +381,6 @@
         {
           "permalink": "/collection-1/g1/",
           "title": "Collection-1/G1"
-        },
-        {
-          "permalink": "/collection-2/X/x/",
-          "title": "Collection-2/X"
         },
         {
           "permalink": "/intro/introChild/",
@@ -463,10 +459,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "content, lorem ipsum, services, innohub, registration, email, access, process, latin, ihsutilities",
-      "lastUpdate": "2025-05-25 10:11:17 +0300",
-      "lastUpdateUTC": 1748157077,
-      "createTime": "2025-05-25 10:11:17 +0300",
-      "createTimeUTC": 1748157077,
+      "lastUpdate": "2025-06-04 18:47:32 +0300",
+      "lastUpdateUTC": 1749052052,
+      "createTime": "2025-06-04 18:47:25 +0300",
+      "createTimeUTC": 1749052045,
       "relatedPages": [
         {
           "title": "Subfolder/F1",
@@ -481,7 +477,7 @@
           "permalink": "/terms/"
         }
       ],
-      "autoSummary": "lorem ipsum is a piece of classical latin literature from 45 bc. lorem ipsum comes from sections ...",
+      "autoSummary": "this is a question. this is the answer to this is a question. can you show a video?. external site content. this file ...",
       "similarByContent": [
         {
           "permalink": "/collection-2/y/y/",
@@ -521,10 +517,10 @@
         "exa"
       ],
       "excerpt": "innohub support, support center, support forms, functionalities, center, functionality, information, service, issues, product",
-      "lastUpdate": "2025-05-27 16:32:37 +0300",
-      "lastUpdateUTC": 1748352757,
-      "createTime": "2025-05-27 16:32:37 +0300",
-      "createTimeUTC": 1748352757,
+      "lastUpdate": "2025-06-04 18:47:25 +0300",
+      "lastUpdateUTC": 1749052045,
+      "createTime": "2025-06-04 18:47:25 +0300",
+      "createTimeUTC": 1749052045,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -543,10 +539,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "lorem ipsum, latin, latin literature, line, file, extremes, evil, malorum, cicero, book",
-      "lastUpdate": "2025-05-25 10:11:17 +0300",
-      "lastUpdateUTC": 1748157077,
-      "createTime": "2025-05-25 10:11:17 +0300",
-      "createTimeUTC": 1748157077,
+      "lastUpdate": "2025-06-04 18:47:25 +0300",
+      "lastUpdateUTC": 1749052045,
+      "createTime": "2025-06-04 18:47:25 +0300",
+      "createTimeUTC": 1749052045,
       "relatedPages": [
         {
           "title": "Intro Child Page",
@@ -630,10 +626,10 @@
         "tag1"
       ],
       "excerpt": "file, content, source file, markdown content, inline, link, collection-2, folder, classes head1, head",
-      "lastUpdate": "2025-05-28 18:11:31 +0300",
-      "lastUpdateUTC": 1748445091,
-      "createTime": "2025-05-28 18:10:21 +0300",
-      "createTimeUTC": 1748445021,
+      "lastUpdate": "2025-05-29 01:53:54 +0300",
+      "lastUpdateUTC": 1748472834,
+      "createTime": "2025-05-29 01:53:54 +0300",
+      "createTimeUTC": 1748472834,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -698,10 +694,6 @@
           "title": "Intro Child Page"
         },
         {
-          "permalink": "/terms/",
-          "title": "Terms"
-        },
-        {
           "permalink": "/intro/",
           "title": "Introduction"
         }
@@ -738,7 +730,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "27-May-2025"
+          "lastUpdate": "04-Jun-2025"
         }
       ],
       "numPages": 1
@@ -748,7 +740,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "27-May-2025"
+          "lastUpdate": "04-Jun-2025"
         }
       ],
       "numPages": 1
@@ -768,7 +760,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "28-May-2025"
+          "lastUpdate": "04-Jun-2025"
         }
       ],
       "numPages": 1
@@ -788,12 +780,12 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "27-May-2025"
+          "lastUpdate": "04-Jun-2025"
         },
         {
           "title": "Collection-2/X",
           "permalink": "/collection-2/X/x/",
-          "lastUpdate": "28-May-2025"
+          "lastUpdate": "29-May-2025"
         }
       ],
       "numPages": 4
@@ -803,7 +795,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "28-May-2025"
+          "lastUpdate": "04-Jun-2025"
         }
       ],
       "numPages": 1
@@ -872,7 +864,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "27-May-2025"
+          "lastUpdate": "04-Jun-2025"
         }
       ],
       "numPages": 2
@@ -882,7 +874,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "28-May-2025"
+          "lastUpdate": "04-Jun-2025"
         },
         {
           "title": "Play with content",
@@ -892,7 +884,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "27-May-2025"
+          "lastUpdate": "04-Jun-2025"
         },
         {
           "title": "Collection-2/Z",
@@ -907,7 +899,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "28-May-2025"
+          "lastUpdate": "04-Jun-2025"
         },
         {
           "title": "Collection-2/Z",
@@ -928,9 +920,9 @@
   },
   "algoliaSettings": {
     "algoliaEnabled": true,
-    "algoliaAppID": "LU8ABE5OK9",
-    "algoliaIndex": "figmares-innohub",
-    "algoliaPublicApiKey": "14d176209af92e3c8ccb64e9b5da3832",
+    "algoliaAppID": "5VXQ8BSD61",
+    "algoliaIndex": "aroo-innohub",
+    "algoliaPublicApiKey": "e0e2b8690ed863aee6926330aa979904",
     "algoliaSearchBoxContainer": "#docsearch",
     "algoliaDebug": false,
     "algoliaMaxResultsPerGroup": 20,

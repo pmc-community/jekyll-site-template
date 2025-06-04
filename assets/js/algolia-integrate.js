@@ -56,6 +56,25 @@ algolia = {
     highlightTextPrefixTag: algoliaSettings.algoliaTextHighlightPrefixTag,
     highlightTextPostfixTag: algoliaSettings.algoliaTextHighlightPostfixTag,
     hitItemDetailsBoxGutter: 5,
+    langCode: !settings.multilang.enabled 
+        ? null 
+        : siteLanguageCode !== '' 
+            ? siteLanguageCode 
+            : settings.multilang.availableLang[settings.multilang.fallbackLang].lang,
+    isProd: isProd,
+
+    getPageFullUrl: (permalink) => {
+        const u = new URL(window.location.href);
+        if (!permalink) permalink = '';
+        const pl = !algolia.isProd 
+            ? `${permalink}`
+            : !algolia.langCode
+                ? `${u.protocol}//${u.hostname}${permalink}`
+                : algolia.langCode === ''
+                    ? `${u.protocol}//${u.hostname}${permalink}`
+                    : `${u.protocol}//${u.hostname}/${algolia.langCode}${permalink}`;
+        return pl;
+    },
 
     resetSearch: () => {
         $('div[siteFunction="showMoreShowLessButtons"]').remove();
@@ -145,7 +164,7 @@ algolia = {
     silentSearchInSite: (query, searchResultsCallback) => {
         const client = algoliasearch(algolia.appId, algolia.apiKey);
         const index = client.initIndex(algolia.indexName);
-        index.search(query)
+        index.search(query, {facetFilters: ['lang:ro']})
             .then(function(initialSearchResults) {
                 const resultsPages = initialSearchResults.nbPages;
                 let results = [];
@@ -374,6 +393,7 @@ algolia = {
             // also removing the hit source which is always set to "Documentation", thus is not relevant
             // cannot use the normal behaviour of hitComponent since cannot return a proper JSX.Element in a regular (nonReact) app
             hitComponent: ({ hit, children }) => {
+
                 algolia.setEvents();
                 resultItemContent = algolia.getResultItem(hit);
             
@@ -457,7 +477,8 @@ algolia = {
 
             searchParameters: {
                 // HEADS UP!!! NEEDS TO BE INCLUDED IN index.search(....) TOO, SEE BELOW, FUNCTION refreshResults
-                hitsPerPage: algolia.hitsPerPage, 
+                hitsPerPage: algolia.hitsPerPage,
+                facetFilters: [`lang:${algolia.langCode}`]
             },
 
 
@@ -545,8 +566,9 @@ algolia = {
 
             const index = client.initIndex(algolia.indexName);
     
-            index.search(query, { page: page,  hitsPerPage: algolia.hitsPerPage })
-                .then(function(searchResults) {    
+            index.search(query, { page: page, hitsPerPage: algolia.hitsPerPage, facetFilters: [`lang:${algolia.langCode}`] })
+                .then(function(searchResults) { 
+                    
                     // Clear existing results and append new ones
                     $('#docsearch-list').empty();
                     
@@ -716,10 +738,12 @@ algolia = {
         const getHitPageInfoBtn = (hit) => {
             const container = (hit) => {
                 let permalink = hit.pagePermalink;
+                
                 if (permalink.charAt(0) !== '/') permalink = '/' + permalink;
+                const fullUrl = algolia.getPageFullUrl(permalink);
                 return (
                     `
-                        <a href="${permalink}"
+                        <a href="${fullUrl}"
                             target=_blank 
                             class="btn btn-sm btn-primary"
                             style="height: fit-content"
@@ -851,11 +875,13 @@ algolia = {
 
                     if (headings.length === 0) output = '';
                     else {
-                        headings.each(function () {
+                        headings.each(function () {                            
+                            const fullUrl = `${algolia.getPageFullUrl(url)}#${$(this).attr('id')}`;
+
                             output += 
                                 `
                                     <a 
-                                        href="${url}#${$(this).attr('id')}"
+                                        href="${fullUrl}"
                                         target="_blank"
                                         anchorRef="${$(this).attr('id')}"
                                         siteFunction="docSearch_searchHitDetails_hitPage_Toc_Item">
@@ -902,11 +928,12 @@ algolia = {
                 } else {
                     numPages = tagDetails[tag].numPages;
                 }
+                const fullUrl = `${algolia.getPageFullUrl(null)}/tag-info?tag=${tag}`;
                 return (
                     `
                         <div siteFunction="docSearch_searchHitDetails_tags_tagBtn_container" class="d-inline-flex align-items-center">
                             <a 
-                                href="/tag-info?tag=${tag}"
+                                href="${fullUrl}"
                                 target=_blank
                                 sitefunction="docSearch_searchHitDetails_tags_tagBtn" 
                                 type="button" 
@@ -958,11 +985,14 @@ algolia = {
                 } else {
                     numPages = catDetails[cat].numPages;
                 }
+                
+                const fullUrl = `${algolia.getPageFullUrl(null)}/cat-info?cat=${cat}`;
+
                 return (
                     `
                         <div siteFunction="docSearch_searchHitDetails_cats_catsBtn_container" class="mr-3 d-inline-flex align-items-center">
                             <a 
-                                href="/cat-info?cat=${cat}"
+                                href="${fullUrl}"
                                 target=_blank
                                 sitefunction="docSearch_searchHitDetails_cats_catBtn" 
                                 type="button" 

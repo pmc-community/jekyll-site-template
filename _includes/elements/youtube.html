@@ -1,0 +1,75 @@
+{% assign video_id = include.id %}
+{% assign video_width = include.width | default: "560" %}
+{% assign video_height = include.height | default: "315" %}
+
+{% capture uuid %}
+  {% UUID %}
+{% endcapture %}
+{% assign vid = uuid | strip %}
+
+{% assign aspect_ratio = video_height | times: 100 | divided_by: video_width %}
+
+<div class="youtube-container youtube-{{ vid }}"
+     data-id="{{ video_id }}"
+     data-width="{{ video_width }}"
+     data-height="{{ video_height }}"
+     style="--aspect-ratio: {{ aspect_ratio }}%;">
+  <img src="https://img.youtube.com/vi/{{ video_id }}/hqdefault.jpg" alt="YouTube Thumbnail">
+  <div class="play-button"><i class="bi bi-play-fill"></i></div>
+</div>
+
+<script>
+  $(function () {
+    $('.youtube-{{ vid }}').on('click', function () {
+      const videoId = $(this).data('id');
+      const width = $(this).data('width');
+      const height = $(this).data('height');
+      const containerWidth = $(this).width();
+      const aspectRatio = height / width;
+      const iframeHeight = Math.round(containerWidth * aspectRatio);
+
+      const iframe = $('<iframe>', {
+        width: '100%',
+        height: iframeHeight,
+        src: `https://www.youtube.com/embed/${videoId}?autoplay=1`,
+        frameborder: 0,
+        allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
+        allowfullscreen: true
+      });
+      $(this).replaceWith(iframe);
+    });
+  });
+</script>
+
+<style>
+.youtube-container.youtube-{{ vid }} {
+  position: relative;
+  width: 100%;
+  max-width: {{ video_width }}px;
+  padding-top: var(--aspect-ratio);
+  margin: 1em 0;
+  cursor: pointer;
+  background-color: black;
+}
+
+.youtube-container.youtube-{{ vid }} img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.youtube-container.youtube-{{ vid }} .play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  color: white;
+  padding: 10px 16px;
+  pointer-events: none;
+}
+</style>
