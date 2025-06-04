@@ -65,17 +65,15 @@ algolia = {
 
     getPageFullUrl: (permalink) => {
         const u = new URL(window.location.href);
-        if (!permalink) return `${u.protocol}//${u.hostname}`;
-        else {
-            const pl = !algolia.isProd 
-                ? `${permalink}`
-                : !algolia.langCode
+        if (!permalink) permalink = '';
+        const pl = !algolia.isProd 
+            ? `${permalink}`
+            : !algolia.langCode
+                ? `${u.protocol}//${u.hostname}${permalink}`
+                : algolia.langCode === ''
                     ? `${u.protocol}//${u.hostname}${permalink}`
-                    : algolia.langCode === ''
-                        ? `${u.protocol}//${u.hostname}${permalink}`
-                        : `${u.protocol}//${u.hostname}/${algolia.langCode}${permalink}`;
-            return pl;
-        }
+                    : `${u.protocol}//${u.hostname}/${algolia.langCode}${permalink}`;
+        return pl;
     },
 
     resetSearch: () => {
