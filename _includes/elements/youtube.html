@@ -31,11 +31,12 @@
       const iframe = $('<iframe>', {
         width: '100%',
         height: iframeHeight,
-        src: `https://www.youtube.com/embed/${videoId}?autoplay=1`,
+        src: `https://www.youtube.com/embed/${videoId}?rel=0&showinfo=0&modestbranding=1`,
         frameborder: 0,
         allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
         allowfullscreen: true
       });
+
       $(this).replaceWith(iframe);
     });
   });
@@ -50,6 +51,8 @@
   margin: 1em 0;
   cursor: pointer;
   background-color: black;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .youtube-container.youtube-{{ vid }} img {
@@ -60,6 +63,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: opacity 0.3s ease;
 }
 
 .youtube-container.youtube-{{ vid }} .play-button {
