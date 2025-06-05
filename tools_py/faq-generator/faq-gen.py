@@ -1,5 +1,4 @@
 import logging
-import random
 import os
 import json
 import time
@@ -11,16 +10,18 @@ from transformers.models.auto.modeling_auto import AutoModelForSeq2SeqLM
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from transformers.utils.hub import cached_file
-from concurrent.futures import ThreadPoolExecutor, as_completed
 import torch
 from requests.exceptions import HTTPError
 import re
 from sentence_transformers import SentenceTransformer
-from sklearn.cluster import KMeans
+import numpy as np
+from transformers import AutoModel
+
 
 import nltk
 nltk.download('punkt')
-from nltk.tokenize import PunktSentenceTokenizer
+#from nltk.tokenize import PunktSentenceTokenizer
+from nltk.tokenize.punkt import PunktSentenceTokenizer
 
 # Suppress warnings
 os.environ["TRANSFORMERS_NO_ADVISORY_WARNINGS"] = "true"
@@ -30,21 +31,21 @@ DetectorFactory.seed = 0
 
 MAX_INPUT_TOKENS = 512
 CHUNK_TOKEN_SIZE = 256
-QUESTION_MAX_WORDS = 15
+QUESTION_MAX_WORDS = 10
 MIN_ANSWER_WORDS = 10
-MAX_FAQ = 50
-FINAL_FAQ_COUNT = 50
-MAX_REFORMULATIONS = 10
+MAX_FAQ = 100
+FINAL_FAQ_COUNT = 100
+MAX_REFORMULATIONS = 3
 MIN_CHUNKS = 20
 MAX_WORKERS = 8
 DELAY_BETWEEN_REQUESTS = 1.0
 MAX_RETRIES = 3
 RETRY_DELAY = 3.0
+SCRIPT_START_TS = int(time.time() * 1000)  # milliseconds
 
 # Suppress "Device set to use mps:0" logs from transformers / torch
 logging.getLogger("transformers").setLevel(logging.ERROR)
 logging.getLogger("torch").setLevel(logging.ERROR)
-
 
 def get_device():
     if torch.cuda.is_available():
@@ -57,9 +58,14 @@ def get_device():
         print("💻 Using CPU")
         return torch.device("cpu")
 
-
 DEVICE = get_device()
 
+# === Load E5 model/tokenizer globally ===
+E5_MODEL_NAME = "intfloat/e5-base-v2"
+DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+E5_TOKENIZER = AutoTokenizer.from_pretrained(E5_MODEL_NAME)
+E5_MODEL = AutoModel.from_pretrained(E5_MODEL_NAME).to(DEVICE)
+E5_MODEL.eval()
 
 def remove_xla_device_from_config(model_name_or_path):
     try:
@@ -73,64 +79,107 @@ def remove_xla_device_from_config(model_name_or_path):
     except Exception as e:
         logging.warning(f"Failed to clean xla_device from config: {e}")
 
-
 def load_markdown_text(content_dir):
     content_dir = Path(content_dir)
     text_by_file = []
-    for ext in ("*.md", "*.txt"):
+    for ext in ("*.txt"):
         for file in content_dir.rglob(ext):
             with open(file, "r", encoding="utf-8") as f:
                 content = f.read()
                 text_by_file.append((str(file), content))
     return text_by_file
 
-
 def get_token_count(text, tokenizer):
     return len(tokenizer.encode(text, truncation=False))
-
 
 def truncate_text(text, tokenizer, max_tokens):
     tokens = tokenizer.encode(text, truncation=True, max_length=max_tokens)
     return tokenizer.decode(tokens, skip_special_tokens=True)
 
+# CREATING SEMANTIC CHUNKS
+# ==============================================================
+
+def mean_pooling(model_output, attention_mask):
+    token_embeddings = model_output[0]  # First element is the last hidden state
+    input_mask_expanded = attention_mask.unsqueeze(-1).expand(token_embeddings.size())
+    return (token_embeddings * input_mask_expanded).sum(1) / input_mask_expanded.sum(1)
+
+def get_embeddings_e5(sentences, model, tokenizer, device):
+    encoded_input = tokenizer(sentences, padding=True, truncation=True, return_tensors='pt', max_length=512)
+    encoded_input = {k: v.to(device) for k, v in encoded_input.items()}
+    with torch.no_grad():
+        model_output = model(**encoded_input)
+    return mean_pooling(model_output, encoded_input['attention_mask']).cpu().numpy()
 
 def split_into_chunks_sensitive(text, tokenizer, chunk_token_limit, n):
+    # Sentence segmentation
     tokenizer_sent = PunktSentenceTokenizer()
     sentences = tokenizer_sent.tokenize(text)
-    
-    if len(sentences) < n:
-        return [truncate_text(text, tokenizer, MAX_INPUT_TOKENS)]
-    
-    model = SentenceTransformer("all-MiniLM-L6-v2")
-    embeddings = model.encode(sentences)
-    kmeans = KMeans(n_clusters=min(n, len(sentences)), random_state=0, n_init="auto")
-    labels = kmeans.fit_predict(embeddings)
-    
-    clusters = [[] for _ in range(max(labels) + 1)]
-    for idx, label in enumerate(labels):
-        clusters[label].append(sentences[idx])
-    
+    print(f"Total sentences: {len(sentences)}, requested chunks n: {n}")
+
+    # Use globally loaded E5 tokenizer/model/device
+    hf_tokenizer = E5_TOKENIZER
+    hf_model = E5_MODEL
+    device = DEVICE
+
+    # Create semantic blocks of k sentences
+    block_size = 5
+    blocks = []
+    block_indices = []
+    for i in range(0, len(sentences), block_size):
+        block = " ".join(sentences[i:i + block_size])
+        blocks.append(block)
+        block_indices.append((i, min(i + block_size, len(sentences))))
+    print(f"Total blocks: {len(blocks)}")
+
+    # Embed blocks
+    block_embeddings = get_embeddings_e5(blocks, hf_model, hf_tokenizer, device)
+
+    # Compare block embeddings to find topic shifts
+    similarities = []
+    for i in range(1, len(block_embeddings)):
+        sim = cosine_similarity([block_embeddings[i]], [block_embeddings[i - 1]])[0][0]
+        similarities.append(sim)
+
+    sim_array = np.array(similarities)
+    threshold = np.mean(sim_array) - 1.5 * np.std(sim_array)  # more sensitive
+    print(f"Threshold for topic boundary: {threshold}")
+
+    topic_boundaries = [0]
+    for i, sim in enumerate(similarities):
+        if sim < threshold:
+            boundary_idx = block_indices[i + 1][0]  # start index of next block
+            topic_boundaries.append(boundary_idx)
+    topic_boundaries.append(len(sentences))
+    print(f"Topic boundaries at sentence indices: {topic_boundaries}")
+
+    # Group into token-constrained chunks
     chunks = []
-    for cluster in clusters:
+    for i in range(len(topic_boundaries) - 1):
+        topic_sentences = sentences[topic_boundaries[i]:topic_boundaries[i + 1]]
         chunk = []
         token_count = 0
-        for sentence in cluster:
+
+        for sentence in topic_sentences:
             tokens = get_token_count(sentence, tokenizer)
+
             if token_count + tokens <= chunk_token_limit:
                 chunk.append(sentence)
                 token_count += tokens
             else:
                 if chunk:
-                    combined = " ".join(chunk)
-                    chunks.append(truncate_text(combined, tokenizer, chunk_token_limit))
+                    chunks.append(truncate_text(" ".join(chunk), tokenizer, chunk_token_limit))
                 chunk = [sentence]
                 token_count = tokens
+
         if chunk:
-            combined = " ".join(chunk)
-            chunks.append(truncate_text(combined, tokenizer, chunk_token_limit))
-    
+            chunks.append(truncate_text(" ".join(chunk), tokenizer, chunk_token_limit))
+
+    print(f"Total chunks created: {len(chunks)}")
     return chunks
 
+# ==============================================================
+# END SEMANTIC CHUNKS
 
 def deduplicate_faq(faq_list):
     seen = set()
@@ -142,22 +191,21 @@ def deduplicate_faq(faq_list):
             unique.append(item)
     return unique
 
-
-def save_faq_markdown(faq_list, output_path):
-    with open(output_path, "w", encoding="utf-8") as f:
-        f.write("---\nlayout: page\ntitle: Frequently Asked Questions\n---\n\n")
-        for item in faq_list:
-            f.write(f"### {item['question']}\n\n{item['answer']}\n\n")
-
-
 def save_faq_json(faq_list, output_path):
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(
-            [{"q": i["question"], "a": i["answer"], "f": Path(i["file"]).name} for i in faq_list],
+            [
+                {
+                    "q": i["question"],
+                    "a": i["answer"],
+                    "f": Path(i["file"]).stem.replace("_", "/"),
+                    "t": SCRIPT_START_TS
+                }
+                for i in faq_list
+            ],
             f,
             indent=2
         )
-
 
 def get_models_for_language(lang_code):
     model_map = {
@@ -171,7 +219,6 @@ def get_models_for_language(lang_code):
         }
     }
     return model_map.get(lang_code, model_map["default"])
-
 
 def clean_question(q: str, qg_pipeline=None):
     if not q or not isinstance(q, str):
@@ -212,7 +259,6 @@ def clean_question(q: str, qg_pipeline=None):
 
     return q
 
-
 def clean_answer(answer: str) -> str:
     if not answer or not isinstance(answer, str):
         return ""
@@ -231,11 +277,11 @@ def clean_answer(answer: str) -> str:
 
     return " ".join(cleaned_sentences)
 
-
 def reformulate_short_answer(answer, question, context, qa_pipeline):
     prompt = (
         f"The previous answer was too short or unclear. Rewrite this answer to be complete, logical, and longer than {MIN_ANSWER_WORDS} words."
         f"If the answer is shorter than {MIN_ANSWER_WORDS} words, create a logical sentence around it."
+        f"The answer can be splitted in more than one sentence when applicable."
         f"Question: {question}\nShort answer: {answer}\nContext: {context}"
     )
     for _ in range(MAX_RETRIES):
@@ -249,7 +295,6 @@ def reformulate_short_answer(answer, question, context, qa_pipeline):
             else:
                 raise
 
-
 def rank_questions_by_relevance(questions, context):
     if not questions:
         return []
@@ -259,7 +304,6 @@ def rank_questions_by_relevance(questions, context):
     scored = list(zip(similarities, questions))
     scored.sort(reverse=True, key=lambda x: x[0])
     return [item[1] for item in scored[:FINAL_FAQ_COUNT]]
-
 
 def load_models(lang_code):
     models = get_models_for_language(lang_code)
@@ -276,7 +320,6 @@ def load_models(lang_code):
 
     return qg_pipeline, qa_pipeline, tokenizer_qg
 
-
 def is_logical_question(q: str) -> bool:
     """
     Checks if the question is a logical sentence.
@@ -290,7 +333,6 @@ def is_logical_question(q: str) -> bool:
         return False
     return True
 
-
 def format_question(q: str) -> str:
     """
     Remove trailing punctuation before ?, remove redundant symbols.
@@ -302,6 +344,17 @@ def format_question(q: str) -> str:
         q = q.rstrip("?") + "?"
     return q
 
+def is_valid_question(result):
+    # Check length
+    word_count = len(result.strip().split())
+    if word_count > 10:
+        return False
+
+    # Check for enumerated patterns like word1, w2, item3, etc.
+    if re.search(r'\b\w+\d+\b', result):
+        return False
+
+    return is_logical_question(result)
 
 def reformulate_question(q, qg_pipeline, attempt=1):
     """
@@ -312,9 +365,13 @@ def reformulate_question(q, qg_pipeline, attempt=1):
         return None
 
     prompt = (
-        f"The following question is not a logical sentence. "
+        f"The following question is not a logical sentence."
         f"Reformulate it by adding or removing words as needed to make it clear, grammatically correct, and under {QUESTION_MAX_WORDS} words." 
         f"Remove the question mark if it makes no sense."
+        f"If the question has more than {QUESTION_MAX_WORDS} reformulate it for maximum {MAX_REFORMULATIONS} times."
+        f"Wording can be changed or removed during reformulations, but the sense and meaning of the question must be kept."
+        f"Do not allow enumerations in the question text. Remove enumerations and replace them with short meaningful text. If replacement did not succeed, remove enumerations."
+        f"Exit reformulations when the number of words is less or equal to {QUESTION_MAX_WORDS} or when {MAX_REFORMULATIONS} reformulation attempts were reached."
         f"Original: {q}"
     )
     try:
@@ -327,7 +384,7 @@ def reformulate_question(q, qg_pipeline, attempt=1):
         )[0]["generated_text"].strip()
 
         result = format_question(result)
-        if is_logical_question(result):
+        if is_valid_question(result):
             return result
         return reformulate_question(result, qg_pipeline, attempt + 1)
 
@@ -335,18 +392,25 @@ def reformulate_question(q, qg_pipeline, attempt=1):
         logging.warning(f"Failed to reformulate question '{q}': {e}")
         return None
 
-
 def generate_faq_from_text(text, filename, qg_pipeline, qa_pipeline, tokenizer):
     n_chunks = max(MIN_CHUNKS, MAX_FAQ * 2)
     chunks = split_into_chunks_sensitive(text, tokenizer, CHUNK_TOKEN_SIZE, n_chunks)
 
     faqs = []
+    total_chunks = len(chunks)
+
+    bar_length = 40  # width of progress bar
+
     for idx, chunk in enumerate(chunks):
         try:
+            progress = (idx + 1) / total_chunks
+            filled_length = int(bar_length * progress)
+            bar = "=" * filled_length + " " * (bar_length - filled_length)
+            print(f"\r  → Progress: [{bar}] {int(progress * 100)}% ({idx + 1}/{total_chunks})", end="", flush=True)
+
             prompt_qg = (
-                f"Generate as many relevant and concise questions as possible based on the following text. "
+                f"Generate as many relevant and concise questions as possible strictly based on the following text. "
                 f"List each question on a new line."
-                f"Questions must be logical sentences. Reformulate questions no more than {MAX_REFORMULATIONS} times if not logical."
                 f"Questions must not be based or inspired from this prompt."
                 f"Questions must not contain combinations of 3 or more words from this prompt."
                 f"The questions must be strictly based on the following text."
@@ -370,6 +434,7 @@ def generate_faq_from_text(text, filename, qg_pipeline, qa_pipeline, tokenizer):
             for output in qg_outputs:
                 for q_raw in output["generated_text"].strip().split("\n"):
                     q_cleaned = format_question(q_raw.strip())
+                    q_cleaned = reformulate_question(q_cleaned, qg_pipeline)
                     if not is_logical_question(q_cleaned):
                         q_cleaned = reformulate_question(q_cleaned, qg_pipeline)
                     if q_cleaned and q_cleaned not in questions:
@@ -396,9 +461,12 @@ def generate_faq_from_text(text, filename, qg_pipeline, qa_pipeline, tokenizer):
         except Exception as e:
             logging.warning(f"Failed to generate QA for chunk {idx} in {filename}: {e}")
 
+    print()  # newline after progress bar finishes
+
     faqs = deduplicate_faq(faqs)
     faqs = rank_questions_by_relevance(faqs, text)
     return faqs[:FINAL_FAQ_COUNT]
+
 
 def main(content_dir, output_dir):
     content_dir = Path(content_dir)
@@ -421,13 +489,9 @@ def main(content_dir, output_dir):
     all_faqs = deduplicate_faq(all_faqs)
     all_faqs = rank_questions_by_relevance(all_faqs, " ".join([f["answer"] for f in all_faqs]))
 
-    save_faq_markdown(all_faqs, output_dir / "faq.md")
     save_faq_json(all_faqs, output_dir / "faq.json")
 
     print(f"Generated {len(all_faqs)} FAQs")
 
-
 if __name__ == "__main__":
     main("../../doc-raw-contents/", "")
-
-
