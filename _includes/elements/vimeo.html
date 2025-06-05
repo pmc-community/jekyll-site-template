@@ -1,12 +1,19 @@
 {% assign video_id = include.id %}
 {% assign video_width = include.width | default: "640" %}
 {% assign video_height = include.height | default: "360" %}
+{% assign video_centered = include.center | default: "false"%}
 
 {% capture uuid %}
   {% UUID %}
 {% endcapture %}
 {% assign vid = uuid | strip %}
 {% assign aspect_ratio = video_height | times: 100 | divided_by: video_width %}
+
+{% if video_centered == "false" %}
+  {% assign vidMargin = 0 %}
+{% else %}
+  {% assign vidMargin = "auto" %}
+{% endif %}
 
 <div class="vimeo-container vimeo-{{ vid }}"
      data-id="{{ video_id }}"
@@ -63,6 +70,7 @@
   padding-top: var(--aspect-ratio);
   cursor: pointer;
   background-color: black;
+  margin: 1em {{vidMargin}};
 }
 
 .vimeo-container.vimeo-{{ vid }} img {
