@@ -1,10 +1,8 @@
 ---
-
 layout: page
 title: Collection-2/Y
 permalink: /collection-2/y/y/
 start: true
-
 ---
 
 ```
