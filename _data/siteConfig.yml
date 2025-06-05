@@ -24,7 +24,6 @@ pageToc:
     - tag-info
     - cat-info
     - site-pages
-    - faq
 colSchemaCorrections:
   elementsWithBackgroundAffected: "body, #category-menu-more-list, table, tbody, thead, tr, td, th, td[class=\"child\"], .offcanvas, .ck-editor__main, .side-bar, #hs-eu-cookie-confirmation, #toc_mobile, .accordion-item, .accordion-header, .accordion-button"
   backgroundColorOnElementsAffected:
