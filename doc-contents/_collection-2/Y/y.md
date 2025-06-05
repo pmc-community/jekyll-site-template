@@ -7,8 +7,6 @@ start: true
 
 ---
 
-{% include elements/faq-item.html %}
-
 ```
 Content for this file
 ```
