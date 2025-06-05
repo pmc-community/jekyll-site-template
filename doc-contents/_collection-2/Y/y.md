@@ -25,6 +25,6 @@ adding some img to the file ...
 - http:// ... IS NOT ALLOWED
 - THIS IS APPLICABLE EVEN WHEN IMAGES ARE TAKEN FROM THE CURRENT JEKYLL SITE, RELATIVE PATHS CANNOT BE USED
 -->
-![Some Img](https://figmares.innohub.space/assets/img/home-600.webp){:width="200px"}
+![Some Img](https://figmares.innohub.space/assets/img/home-600.webp)
 
 attibutes of the img tag are provided inside {...}
