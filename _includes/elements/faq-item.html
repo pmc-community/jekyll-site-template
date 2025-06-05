@@ -6,8 +6,8 @@
 {% assign question = include.q %}
 {% assign answer = include.a "315" %}
 
-<div class="mb-3">
-  <a class="d-flex justify-content-between align-items-center text-primary fw-medium text-decoration-none border-top border-bottom border-start border-end border-secondary border-opacity-25 shadow-none rounded-top rounded-bottom p-2"
+<div class="mb-3 border-bottom border-secondary border-opacity-25 shadow-none">
+  <a class="d-flex justify-content-between align-items-center text-primary fw-medium text-decoration-none p-2 fs-6"
      data-bs-toggle="collapse"
      href="#faq-{{fid}}"
      role="button"
@@ -15,25 +15,44 @@
      aria-controls="faq-{{fid}}"
      id="faqToggle-{{fid}}">
     <span class="text-primary">{{question}}</span>
-    <i class="bi bi-caret-right-fill" id="faqIcon-{{fid}}"></i>
+    <i class="bi bi-plus fw-bold fs-3 transition-icon" id="faqIcon-{{fid}}"></i>
   </a>
   <div class="collapse" id="faq-{{fid}}">
-    <div class="p-2 border-top border-bottom border-start border-end border-secondary border-opacity-25 shadow-none rounded-bottom text-secondary">
+    <div class="p-2 text-secondary">
       {{answer}}
     </div>
   </div>
 </div>
 
+<style>
+  .spin {
+    animation: spin 0.5s linear infinite;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+</style>
+
 <script>
   $(function () {
+    const icon = $('#faqIcon-{{fid}}');
+
     $('#faq-{{fid}}').on('show.bs.collapse', function () {
-      $('#faqIcon-{{fid}}').removeClass('bi-caret-right-fill').addClass('bi-caret-down-fill');
-      $('#faqToggle-{{fid}}').removeClass('border-bottom').removeClass('rounded-bottom')
+      icon.addClass('spin');
+    });
+
+    $('#faq-{{fid}}').on('shown.bs.collapse', function () {
+      icon.removeClass('spin').removeClass('bi-plus').addClass('bi-dash');
     });
 
     $('#faq-{{fid}}').on('hide.bs.collapse', function () {
-      $('#faqIcon-{{fid}}').removeClass('bi-caret-down-fill').addClass('bi-caret-right-fill');
-      $('#faqToggle-{{fid}}').addClass('border-bottom ').addClass('rounded-bottom');
+      icon.addClass('spin');
+    });
+
+    $('#faq-{{fid}}').on('hidden.bs.collapse', function () {
+      icon.removeClass('spin').removeClass('bi-dash').addClass('bi-plus');
     });
   });
 </script>
