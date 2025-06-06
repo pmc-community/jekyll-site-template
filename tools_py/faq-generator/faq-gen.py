@@ -9,7 +9,6 @@ from transformers.utils.hub import cached_file
 import torch
 from requests.exceptions import HTTPError
 import re
-import numpy as np
 import sys
 import multiprocessing
 import psutil
