@@ -222,7 +222,7 @@ def save_faq_json(faq_list, output_path):
         )
 
 def get_models_for_language(lang_code):
-    # t5-small-qg-prepend for faster (but less accurate) results
+    # t5-small-qg-prepend for faster (but less accurate) results (recommended)
     # t5-base-qg-hl for slower (but a bit more accurate) results
     model_map = {
         "en": {
