@@ -504,7 +504,7 @@ def main(content_dir, output_dir, device_obj):
 
     num_processes = int(target_memory_bytes / estimated_memory_per_process_bytes)
     num_processes = max(1, min(num_processes, os.cpu_count() or 1))
-    print(f"🛠️ Calculated {num_processes} processes based on memory availability.")
+    print(f"🧠 Calculated {num_processes} processes based on memory availability.")
 
     all_faqs = []
     with multiprocessing.Pool(processes=num_processes, maxtasksperchild=1) as pool:
