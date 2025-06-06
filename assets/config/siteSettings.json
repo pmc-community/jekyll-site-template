@@ -38,8 +38,8 @@
       },
       "elementsWithTextAffected": "body, p, ul li, ol li, li a, h1, h2, span, .dt-info, label[for^=\"dt-length-\"], label[for^=\"dt-search-\"], #category-menu-more-list li a, .offcanvas-title, td, div[siteFunction=\"labelForPageSearchList\"], label[for=\"offcanvasPageFullInfoPageGeneralCustomNotesEdit\"], #toc_mobile, .accordion-item, .accordion-header, .accordion-button",
       "textColorOnElementsAffected": {
-        "light": "#000",
-        "dark": "#dee2e6"
+        "light": "#212529",
+        "dark": "rgb(108, 117, 125)"
       },
       "elementsWithBorderTopAffected": ".site-footer",
       "borderTopOnElementsAffected": {
