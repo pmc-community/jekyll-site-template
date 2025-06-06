@@ -16,6 +16,7 @@ import re
 from sentence_transformers import SentenceTransformer
 import numpy as np
 from transformers import AutoModel
+import sys
 
 
 import nltk
@@ -82,11 +83,11 @@ def remove_xla_device_from_config(model_name_or_path):
 def load_markdown_text(content_dir):
     content_dir = Path(content_dir)
     text_by_file = []
-    for ext in ("*.txt"):
-        for file in content_dir.rglob(ext):
-            with open(file, "r", encoding="utf-8") as f:
-                content = f.read()
-                text_by_file.append((str(file), content))
+    ext = "*.txt"
+    for file in content_dir.rglob(ext):
+        with open(file, "r", encoding="utf-8") as f:
+            content = f.read()
+            text_by_file.append((str(file), content))
     return text_by_file
 
 def get_token_count(text, tokenizer):
@@ -112,10 +113,14 @@ def get_embeddings_e5(sentences, model, tokenizer, device):
     return mean_pooling(model_output, encoded_input['attention_mask']).cpu().numpy()
 
 def split_into_chunks_sensitive(text, tokenizer, chunk_token_limit, n):
+    from nltk.tokenize.punkt import PunktSentenceTokenizer
+    import numpy as np
+    from sklearn.metrics.pairwise import cosine_similarity
+
     # Sentence segmentation
     tokenizer_sent = PunktSentenceTokenizer()
     sentences = tokenizer_sent.tokenize(text)
-    print(f"Total sentences: {len(sentences)}, requested chunks n: {n}")
+    # print(f"Total sentences: {len(sentences)}, requested chunks n: {n}")
 
     # Use globally loaded E5 tokenizer/model/device
     hf_tokenizer = E5_TOKENIZER
@@ -130,28 +135,37 @@ def split_into_chunks_sensitive(text, tokenizer, chunk_token_limit, n):
         block = " ".join(sentences[i:i + block_size])
         blocks.append(block)
         block_indices.append((i, min(i + block_size, len(sentences))))
-    print(f"Total blocks: {len(blocks)}")
+    # print(f"Total blocks: {len(blocks)}")
 
-    # Embed blocks
-    block_embeddings = get_embeddings_e5(blocks, hf_model, hf_tokenizer, device)
+    # If there's only one block, no point in doing similarity comparisons
+    if len(blocks) <= 1:
+        print("Only one block found — skipping topic boundary detection.")
+        topic_boundaries = [0, len(sentences)]
+    else:
+        # Embed blocks
+        block_embeddings = get_embeddings_e5(blocks, hf_model, hf_tokenizer, device)
 
-    # Compare block embeddings to find topic shifts
-    similarities = []
-    for i in range(1, len(block_embeddings)):
-        sim = cosine_similarity([block_embeddings[i]], [block_embeddings[i - 1]])[0][0]
-        similarities.append(sim)
+        # Compare block embeddings to find topic shifts
+        similarities = []
+        for i in range(1, len(block_embeddings)):
+            sim = cosine_similarity([block_embeddings[i]], [block_embeddings[i - 1]])[0][0]
+            similarities.append(sim)
 
-    sim_array = np.array(similarities)
-    threshold = np.mean(sim_array) - 1.5 * np.std(sim_array)  # more sensitive
-    print(f"Threshold for topic boundary: {threshold}")
+        # Safe threshold calculation
+        sim_array = np.array(similarities)
+        mean = np.mean(sim_array) if len(sim_array) > 0 else 0
+        std = np.std(sim_array) if len(sim_array) > 0 else 0
+        threshold = mean - 1.5 * std
+        # print(f"Threshold for topic boundary: {threshold}")
 
-    topic_boundaries = [0]
-    for i, sim in enumerate(similarities):
-        if sim < threshold:
-            boundary_idx = block_indices[i + 1][0]  # start index of next block
-            topic_boundaries.append(boundary_idx)
-    topic_boundaries.append(len(sentences))
-    print(f"Topic boundaries at sentence indices: {topic_boundaries}")
+        # Identify boundaries
+        topic_boundaries = [0]
+        for i, sim in enumerate(similarities):
+            if sim < threshold:
+                boundary_idx = block_indices[i + 1][0]  # start index of next block
+                topic_boundaries.append(boundary_idx)
+        topic_boundaries.append(len(sentences))
+        # print(f"Topic boundaries at sentence indices: {topic_boundaries}")
 
     # Group into token-constrained chunks
     chunks = []
@@ -175,7 +189,7 @@ def split_into_chunks_sensitive(text, tokenizer, chunk_token_limit, n):
         if chunk:
             chunks.append(truncate_text(" ".join(chunk), tokenizer, chunk_token_limit))
 
-    print(f"Total chunks created: {len(chunks)}")
+    # print(f"Total chunks created: {len(chunks)}")
     return chunks
 
 # ==============================================================
@@ -208,6 +222,8 @@ def save_faq_json(faq_list, output_path):
         )
 
 def get_models_for_language(lang_code):
+    # t5-small-qg-prepend for faster (but less accurate) results
+    # t5-base-qg-hl for slower (but a bit more accurate) results
     model_map = {
         "en": {
             "qg": "valhalla/t5-small-qg-prepend",
@@ -406,7 +422,8 @@ def generate_faq_from_text(text, filename, qg_pipeline, qa_pipeline, tokenizer):
             progress = (idx + 1) / total_chunks
             filled_length = int(bar_length * progress)
             bar = "=" * filled_length + " " * (bar_length - filled_length)
-            print(f"\r  → Progress: [{bar}] {int(progress * 100)}% ({idx + 1}/{total_chunks})", end="", flush=True)
+            #print(f"\r  → Progress: [{bar}] {int(progress * 100)}% ({idx + 1}/{total_chunks})", end="", flush=True)
+            print(f"\r[{bar}] {int(progress * 100)}% ({idx + 1}/{total_chunks})", end="", flush=True)
 
             prompt_qg = (
                 f"Generate as many relevant and concise questions as possible strictly based on the following text. "
