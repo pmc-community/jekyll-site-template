@@ -3,8 +3,21 @@
 {% endcapture %}
 {% assign fid = uuid | strip %}
 
+{% assign pageArray= site.data.page_list  | json_string_to_object %}
+
+{% capture siteLanguage %}
+    {% SiteLanguage %}
+{% endcapture %}
+
+{% assign lang_path = siteLanguage | strip %}
+{% assign lang_prefix = '' %}
+{% unless lang_path == '' %}
+  {% assign lang_prefix = '/' | append: lang_path %}
+{% endunless %}
+
 {% assign question = include.q %}
-{% assign answer = include.a "315" %}
+{% assign answer = include.a %}
+{% assign ref = include.ref || default: "" %}
 
 <div id="faq-container-{{fid}}" class="mb-3 border-bottom border-secondary border-opacity-50 shadow-none">
   <a class="d-flex text-body justify-content-between align-items-center fw-medium text-decoration-none p-2"
@@ -14,13 +27,30 @@
      aria-expanded="false"
      aria-controls="faq-{{fid}}"
      id="faqToggle-{{fid}}">
-    <h1 class="m-0 fs-6 fw-semibold">{{question}}</h1>
+    <h1 class="m-0 fs-6 fw-medium text-primary">{{question}}</h1>
     <i class="bi bi-plus fs-3 transition-icon text-success" id="faqIcon-{{fid}}"></i>
   </a>
   <div class="collapse" id="faq-{{fid}}">
     <div class="p-2 text-secondary">
       {{answer}}
     </div>
+
+   {% if ref %}
+      <div id="faqRef-{{fid}}" class="p-2">
+        {% assign ref_list = q.ref | split: "," %}
+        {% for r in ref_list %}
+          {% assign rs = r | strip %}
+          {% if rs != nil and rs != "" %}
+            {% for doc in pageArray %}
+                {% if doc.permalink == rs %}
+                    <a class="mt-2 btn btn-sm shadow-none btn-outline-secondary" href="{{lang_prefix}}{{rs}}" target=_blank>{{doc.title}}</a>
+                {% endif %}
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
   </div>
 </div>
 
