@@ -3,264 +3,270 @@
     "q": "What does innohub.space services or software do?",
     "a": "PMC and our subsidiaries, officers, employees, agents, partners and licensors make no warranty that (i) innohub.space services or software will meet your requirements; (ii) innohub.space services or software shall be uninterrupted, timely, secure or error-free; (iii) that such results which may be obtained from the use of the innohub.space services or software will be accurate or reliable; (iv) that any such errors contained in the software shall be corrected.",
     "f": "/terms/",
-    "t": 1749285873369
+    "t": 1749626574154
   },
   {
     "q": "What are the general functionalities of the innohub support center?",
     "a": "The general functionalities of innohub support center are the search form and the innohub issues support form.",
     "f": "/collection-1/g11/",
-    "t": 1749285873369
+    "t": 1749626574154
   },
   {
     "q": "What are the general terms of service for innohub.space?",
     "a": "These terms of service are applicable from the date shown on this page.",
     "f": "/terms/",
-    "t": 1749285873369
+    "t": 1749626574154
   },
   {
     "q": "What are the general terms of service for using innohub.space?",
     "a": "These terms of service are applicable from the date shown on this page.",
     "f": "/terms/",
-    "t": 1749285873369
+    "t": 1749626574154
   },
   {
     "q": "What are the general functionalities of innohub support center?",
     "a": "The general functionalities of innohub support center are the search form and the innohub issues support form.",
     "f": "/collection-1/g11/",
-    "t": 1749285873369
+    "t": 1749626574154
+  },
+  {
+    "q": "What do you agree not to access services through?",
+    "a": "You agree not to access or attempt to access our services through any means other than the interface provided by innohub.space for use in accessing our services.",
+    "f": "/terms/",
+    "t": 1749626574154
   },
   {
     "q": "What do you agree to be bound by?",
     "a": "By accessing or using our sites and our services, you agree to be bound by the terms and all terms incorporated herein by reference.",
     "f": "/terms/",
-    "t": 1749285873369
+    "t": 1749626574154
   },
   {
     "q": "What is the name of a file from a collection?",
     "a": "This file loads some external content from another repo and place it inline.",
     "f": "/collection-2/Z/z/",
-    "t": 1749285873369
-  },
-  {
-    "q": "What is the first line of lorem ipsum?",
-    "a": "The first line of lorem ipsum is lorem dolor sit amet.",
-    "f": "/collection-2/y/y/",
-    "t": 1749285873369
-  },
-  {
-    "q": "What is the meaning of lorem ipsum?",
-    "a": "Lorem ipsum has roots in a piece of classical latin literature from 45 bc, making it over 2000 years old.",
-    "f": "/collection-2/y/y/",
-    "t": 1749285873369
-  },
-  {
-    "q": "What does innohub.space services mean?",
-    "a": "PMc and our subsidiaries, officers, employees, agents, partners and licensors make no such warranties that (i) innohub.space services or software will meet your requirements; (ii) innohub.space services or software shall be uninterrupted, timely, secure or error-free; (iii) that such results which may be obtained from the use of the innohub.space services or software will be accurate or reliable; (iv) that any such errors contained in the software shall be corrected.",
-    "f": "/terms/",
-    "t": 1749285873369
-  },
-  {
-    "q": "What does innohub.space services contain?",
-    "a": "PMC and our subsidiaries, officers, employees, agents, partners and licensors make no such warranties that (i) innohub.space services or software will meet your requirements; (ii) innohub.space services or software shall be uninterrupted, timely, secure or error-free; (iii) that such results which may be obtained from the use of the innohub.space services or software will be accurate or reliable; (iv) that any such errors contained in the software shall be corrected.",
-    "f": "/terms/",
-    "t": 1749285873369
-  },
-  {
-    "q": "What do you agree not to access?",
-    "a": "You agree not to access or attempt to access our services through any means other than through the interface provided by innohub.space.",
-    "f": "/terms/",
-    "t": 1749285873369
+    "t": 1749626574154
   },
   {
     "q": "How can innohub.space be used?",
     "a": "Innohub.space can be used both in anonymous and registered ways.",
     "f": "/ec/",
-    "t": 1749285873369
+    "t": 1749626574154
   },
   {
-    "q": "What is the original format of lorem ipsum?",
-    "a": "The standard chunk of lorem ipsum used since the 1500s is reproduced below for those interested.",
-    "f": "/intro/",
-    "t": 1749285873369
-  },
-  {
-    "q": "What can you use the chat functionality?",
-    "a": "You cannot expect us to respond on a different email address and we will not do that.",
-    "f": "/collection-1/g11/",
-    "t": 1749285873369
-  },
-  {
-    "q": "Do not allow enumerations in the question text?",
-    "a": "In case of conflicts between the terms in different languages, english will prevail; furthermore, the user understands, acknowledges and agrees that:.",
+    "q": "What does innohub.space services mean?",
+    "a": "PMc and our subsidiaries, officers, employees, agents, partners and licensors make no such warranties that (i) innohub.space services or software will meet your requirements; (ii) innohub.space services or software shall be uninterrupted, timely, secure or error-free; (iii) that such results which may be obtained from the use of the innohub.space services or software will be accurate or reliable; (iv) that any such errors contained in the software shall be corrected.",
     "f": "/terms/",
-    "t": 1749285873369
+    "t": 1749626574154
+  },
+  {
+    "q": "What does innohub.space services contain?",
+    "a": "PMC and our subsidiaries, officers, employees, agents, partners and licensors make no such warranties that (i) innohub.space services or software will meet your requirements; (ii) innohub.space services or software shall be uninterrupted, timely, secure or error-free; (iii) that such results which may be obtained from the use of the innohub.space services or software will be accurate or reliable; (iv) that any such errors contained in the software shall be corrected.",
+    "f": "/terms/",
+    "t": 1749626574154
+  },
+  {
+    "q": "What is the name of lorem ipsum?",
+    "a": "Lorem ipsum comes from sections 1.10.32 and 1.10.33 of \u201cde finibus bonorum et malorum\u201d by cicero.",
+    "f": "/intro/",
+    "t": 1749626574154
+  },
+  {
+    "q": "What is the meaning of lorem ipsum?",
+    "a": "Lorem ipsum has roots in a piece of classical latin literature from 45 bc, making it over 2000 years old.",
+    "f": "/collection-2/y/y/",
+    "t": 1749626574154
+  },
+  {
+    "q": "What is the origin of lorem ipsum?",
+    "a": "It has roots in a piece of classical latin literature from 45 bc.",
+    "f": "/intro/",
+    "t": 1749626574154
+  },
+  {
+    "q": "What is the first line of lorem ipsum?",
+    "a": "The first line of lorem ipsum is lorem dolor sit amet.",
+    "f": "/collection-2/y/y/",
+    "t": 1749626574154
   },
   {
     "q": "How can you use innohub.space?",
     "a": "As an anonymous user you can browse for free all sections of innohub.space although some services are free to be used.",
     "f": "/ec/",
-    "t": 1749285873369
+    "t": 1749626574154
   },
   {
-    "q": "What should not be based on the following text?",
-    "a": "Ihsutilities.broadcastmessage(3, process.env.react_app_app_name); can not connect to the store. . Export default _listener;.",
-    "f": "/collection-1/g1/",
-    "t": 1749285873369
+    "q": "What do you agree not to access?",
+    "a": "You agree not to access or attempt to access our services through any means other than through the interface provided by innohub.space.",
+    "f": "/terms/",
+    "t": 1749626574154
+  },
+  {
+    "q": "What is the original format of lorem ipsum?",
+    "a": "The standard chunk of lorem ipsum used since the 1500s is reproduced below for those interested.",
+    "f": "/intro/",
+    "t": 1749626574154
+  },
+  {
+    "q": "What can you use the chat functionality?",
+    "a": "You cannot expect us to respond on a different email address and we will not do that.",
+    "f": "/collection-1/g11/",
+    "t": 1749626574154
+  },
+  {
+    "q": "Do not allow enumerations in the question text?",
+    "a": "We will provide the services to you, which are subject to the terms and conditions.",
+    "f": "/terms/",
+    "t": 1749626574154
   },
   {
     "q": "How can you register to innohub?",
     "a": "The initial registration to innohub does not require more than your email address.",
     "f": "/collection-1/g1/",
-    "t": 1749285873369
-  },
-  {
-    "q": "How can you use the chat function?",
-    "a": "By clicking the chat bubble shown on the right-bottom corner.",
-    "f": "/collection-1/g11/",
-    "t": 1749285873369
-  },
-  {
-    "q": "How do questions be based on the following text?",
-    "a": "The reference for the information and functionalities shall always be the desktop version of the site or of any sub-site.",
-    "f": "/terms/",
-    "t": 1749285873369
-  },
-  {
-    "q": "What type of text does lorem ipsum come from?",
-    "a": "Lorem ipsum comes from sections 1.10.32 and 1.10.33 of \u201cde finibus bonorum et malorum\u201d by cicero.",
-    "f": "/intro/",
-    "t": 1749285873369
-  },
-  {
-    "q": "What must be strictly based on the following text?",
-    "a": "Foreach(component) => reactcomponentloader(components, ihsbestore, ihsutilities); );.",
-    "f": "/collection-1/g1/",
-    "t": 1749285873369
-  },
-  {
-    "q": "What do you need to know about innohub?",
-    "a": "We strongly advise you to read our privacy policy and our terms of service.",
-    "f": "/ec/",
-    "t": 1749285873369
-  },
-  {
-    "q": "What can be changed or removed during reformulations?",
-    "a": "You agree not to access or attempt to access our services through any means other than through the interface provided by innohub.space for use in accessing our services.",
-    "f": "/terms/",
-    "t": 1749285873369
-  },
-  {
-    "q": "What do you agree to protect from copyrights, trademarks, patents?",
-    "a": "Content published on this website (included but not limited to digital downloads, texts, graphics, logos, applications) is the property of pmc and/or its content creators and protected by international copyright laws. You do hereby acknowledge and agree that innohub.space services and any essential software that may be used in connection with our services (\u201csoftware\u201d) shall contain proprietary and confidential material that is protected by applicable intellectual property rights and other laws.",
-    "f": "/terms/",
-    "t": 1749285873369
-  },
-  {
-    "q": "What type of text is lorem ipsum?",
-    "a": "It has roots in a piece of classical latin literature from 45 bc.",
-    "f": "/pwc/",
-    "t": 1749285873369
+    "t": 1749626574154
   },
   {
     "q": "What does a file load external content from another repo?",
     "a": "This file loads some external content from another repo.",
     "f": "/collection-1/g1/",
-    "t": 1749285873369
+    "t": 1749626574154
+  },
+  {
+    "q": "What is the answer to a question?",
+    "a": "This file loads some external content from another repo.",
+    "f": "/collection-1/g1/",
+    "t": 1749626574154
+  },
+  {
+    "q": "What type of text does lorem ipsum come from?",
+    "a": "Lorem ipsum comes from sections 1.10.32 and 1.10.33 of \u201cde finibus bonorum et malorum\u201d by cicero.",
+    "f": "/intro/",
+    "t": 1749626574154
+  },
+  {
+    "q": "What should be based on the following text?",
+    "a": "_listener = (e) =>. Let who = e.detail.who;. If (who === process.env.react_app_app_name); const ihsbestore = e.detail.content;. Const ihsutilities = e.detail.utilities;. If (ihsbestore). Ihsutilities.broadcastmessage(1, process.env.react_app_app_name); got the store and connected to it. Inject.",
+    "f": "/collection-1/g1/",
+    "t": 1749626574154
+  },
+  {
+    "q": "How do questions be based on the following text?",
+    "a": "Are the services that are provided to you through the sub-sites do not have their own technical support functionalities.",
+    "f": "/collection-1/g11/",
+    "t": 1749626574154
+  },
+  {
+    "q": "What do you agree to protect from copyrights, trademarks, patents?",
+    "a": "Content published on this website (included but not limited to digital downloads, texts, graphics, logos, applications) is the property of pmc and/or its content creators and protected by international copyright laws. You do hereby acknowledge and agree that innohub.space services and any essential software that may be used in connection with our services (\u201csoftware\u201d) shall contain proprietary and confidential material that is protected by applicable intellectual property rights and other laws.",
+    "f": "/terms/",
+    "t": 1749626574154
+  },
+  {
+    "q": "How can you access innohub?",
+    "a": "Sections 1.10.32 and 1.10.33 from \u201cde finibus bonorum et malorum\u201d by cicero are also reproduced in their exact original form.",
+    "f": "/collection-1/g1/",
+    "t": 1749626574154
   },
   {
     "q": "What does lorem ipsum come from?",
     "a": "Lorem ipsum comes from sections 1.10.32 and 1.10.33 of \u201cde finibus bonorum et malorum\u201d by Cicero.",
-    "f": "/intro/",
-    "t": 1749285873369
+    "f": "/sf/f1/",
+    "t": 1749626574154
   },
   {
     "q": "What is a file from a collection?",
     "a": "This file loads some external content from another repo and place it inline.",
     "f": "/collection-2/Z/z/",
-    "t": 1749285873369
+    "t": 1749626574154
   },
   {
-    "q": "What type of question is not a logical sentence?",
-    "a": "The grandchild's name is the grandchild's name.",
-    "f": "/intro/introChild/introGrandChild/",
-    "t": 1749285873369
+    "q": "What does innohub.space mean?",
+    "a": "Innohub.space can be used both in anonymous and registered ways. As anonymous user you can browse for free all sections of innohub.space although some services are free to be used.",
+    "f": "/ec/",
+    "t": 1749626574154
+  },
+  {
+    "q": "What must be strictly based on the following text?",
+    "a": "Import multipleloader from './helpers/multipleloader'.",
+    "f": "/collection-1/g1/",
+    "t": 1749626574154
+  },
+  {
+    "q": "What type of text is lorem ipsum?",
+    "a": "It has roots in a piece of classical latin literature from 45 bc.",
+    "f": "/pwc/",
+    "t": 1749626574154
   },
   {
     "q": "How can you register with innohub?",
     "a": "The initial registration to innohub does not require more than your email address.",
     "f": "/collection-1/g1/",
-    "t": 1749285873369
-  },
-  {
-    "q": "What is lorem ipsum?",
-    "a": "It has roots in a piece of classical latin literature from 45 bc.",
-    "f": "/sf/f1/",
-    "t": 1749285873369
-  },
-  {
-    "q": "What does innohub support center mean?",
-    "a": "Innohub support center is the single point of contact for notifying us about the issues that you experience when using our services.",
-    "f": "/collection-1/g11/",
-    "t": 1749285873369
-  },
-  {
-    "q": "How can you use chat functionality?",
-    "a": "You can always use the direct chat functionality by clicking the chat bubble shown on the right-bottom corner of the page.",
-    "f": "/collection-1/g11/",
-    "t": 1749285873369
-  },
-  {
-    "q": "How do questions be based on a new line?",
-    "a": "This is one good inline external link to https://pmc-expert.com and one good inline internal link to /collection-2/z/z/.",
-    "f": "/collection-2/X/x/",
-    "t": 1749285873369
+    "t": 1749626574154
   },
   {
     "q": "What does innohub support center have?",
     "a": "Information about the issues that you experience when using our services.",
     "f": "/collection-1/g11/",
-    "t": 1749285873369
+    "t": 1749626574154
+  },
+  {
+    "q": "What does innohub support center mean?",
+    "a": "Innohub support center is the single point of contact for notifying us about the issues that you experience when using our services.",
+    "f": "/collection-1/g11/",
+    "t": 1749626574154
+  },
+  {
+    "q": "How can you use chat functionality?",
+    "a": "You can always use the direct chat functionality by clicking the chat bubble shown on the right-bottom corner of the page.",
+    "f": "/collection-1/g11/",
+    "t": 1749626574154
   },
   {
     "q": "What does innohub support center offer?",
     "a": "A number of functionalities that will allow you to find a solution to your issue.",
     "f": "/collection-1/g11/",
-    "t": 1749285873369
+    "t": 1749626574154
+  },
+  {
+    "q": "What is lorem ipsum?",
+    "a": "It has roots in a piece of classical latin literature from 45 bc.",
+    "f": "/sf/f1/",
+    "t": 1749626574154
+  },
+  {
+    "q": "How do questions be based on a new line?",
+    "a": "This is one good inline external link to https://pmc-expert.com and one good inline internal link to /collection-2/z/z/.",
+    "f": "/collection-2/X/x/",
+    "t": 1749626574154
+  },
+  {
+    "q": "What can you do with a chat session?",
+    "a": "The information that we collect through the chat session will automatically raise a support ticket.",
+    "f": "/collection-1/g11/",
+    "t": 1749626574154
   },
   {
     "q": "What does lorem ipsum dolor sit amet?",
-    "a": "The first line of lorem ipsum comes from a line in section 1.10.32.",
+    "a": "\u201clorem ipsum dolor sit amet.\u201d, comes from a line in section 1.10.32.",
     "f": "/collection-2/y/y/",
-    "t": 1749285873369
-  },
-  {
-    "q": "What does lorem ipsum mean?",
-    "a": "It has roots in a piece of classical latin literature from 45 bc.",
-    "f": "/sf/f1/",
-    "t": 1749285873369
+    "t": 1749626574154
   },
   {
     "q": "What does lorem ipsum dolor sit amet mean?",
     "a": "Lorem ipsum comes from sections 1.10.32 and 1.10.33 of \u201cde finibus bonorum et malorum\u201d by cicero.",
     "f": "/sf/f1/",
-    "t": 1749285873369
+    "t": 1749626574154
   },
   {
-    "q": "What is a logical sentence for a question?",
-    "a": "Content has to be free of software viruses, political campaign, and commercial solicitation.",
-    "f": "/terms/",
-    "t": 1749285873369
+    "q": "What does lorem ipsum mean?",
+    "a": "It has roots in a piece of classical latin literature from 45 bc.",
+    "f": "/sf/f1/",
+    "t": 1749626574154
   },
   {
     "q": "What is a logical sentence for enumerations?",
     "a": "We will be in contact with you on the email you are providing through the support forms.",
     "f": "/collection-1/g11/",
-    "t": 1749285873369
-  },
-  {
-    "q": "What is a logical sentence?",
-    "a": "You also agree not to access or attempt to access our services through any means other than through the interface which is provided by innohub.space.",
-    "f": "/terms/",
-    "t": 1749285873369
+    "t": 1749626574154
   }
 ]
