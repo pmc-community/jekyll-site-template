@@ -1,5 +1,5 @@
 {
-    "s": "Link to external site content in a markdown document that is not part of a site page, such as a file from a collection. Lorem ipsum comes from sections and of de finibus bonorum et malorum the extremes of good and evil by cicero. Contrary to popular belief, lorem ippom is not simply random text. It has roots in an piece of classical latin literature from bc. The persistence of the root reducer will be applied for all sub reducers this the parameter of myreducers class new . true,. True,lorem = list(input()) print('n'.join([str(x) for x in input()]))",
+    "s": "Link to external site content in a markdown document that is not part of a site page, such as a file from a collection. Contrary to popular belief, lorem ipsum is not simply random text. it has roots in an piece of classical latin literature from bc. It comes from sections and of de finibus bonorum et malorum the extremes of good and evil by cicero. The Extremes of Good and Evil by Cicero's Lorem Ipsum Comes From Sections And Of De FINIBUS BONORUM ET MALORUM THE EXTREMES OF GOOD AND EVIL",
     "t": [
         {
             "topic": "classical literature discovered, word classical literature",
@@ -219,5 +219,5 @@
             ]
         }
     ],
-    "d": 1749485822082
+    "d": 1749627325773
 }
