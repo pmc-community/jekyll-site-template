@@ -32,6 +32,8 @@ from contextlib import redirect_stdout
 import sys
 import io
 
+from nltk.tokenize import sent_tokenize
+
 nltk_data_path = os.path.join(os.path.expanduser("~"), "nltk_data")
 nltk.data.path.append(nltk_data_path)
 
@@ -41,6 +43,7 @@ with redirect_stdout(output_capture):
         nltk.download("punkt", download_dir=nltk_data_path, raise_on_error=True, quiet=True)
         nltk.download("punkt_tab", download_dir=nltk_data_path, raise_on_error=True, quiet=True)
         nltk.download("stopwords", download_dir=nltk_data_path, raise_on_error=True, quiet=True)
+        nltk.download("averaged_perceptron_tagger", download_dir=nltk_data_path, raise_on_error=True, quiet=True)
     except Exception as e:
         print(f"Error downloading NLTK data: {e}", file=sys.stderr)
         sys.exit(1)
@@ -72,14 +75,18 @@ def detect_language(text):
     except Exception:
         return "en"
 
-DEVICE = torch.device("cpu")
-MAX_INPUT_TOKENS = 512
+DEVICE = torch.device("cpu") # force cpu for efficient multi proc. currently transformers cannot use gpu in multi-proc
+
+# 512 is the max accepted, but should be set significantly below to leave room for some tokens that may be added automatically
+# lower value force larger number of chunks which may be better for condensed texts with multiple contexts described in shorter sentences
+MAX_INPUT_TOKENS = 256
+MAX_INPUT_TOKENS_LIMITATION = 512
 
 NUM_TOPICS = 10
 SENTENCE_CHUNK_SIZE = 10
-TOPIC_KEYWORDS_PER_TOPIC = 3
+TOPIC_KEYWORDS_PER_TOPIC = 2
 TOP_KEYWORDS_GLOBAL = 10
-MAX_TOPIC_SENTENCE_WORDS = 10
+MAX_TOPIC_SENTENCE_WORDS = 5
 
 TQDM_NCOLS = 80
 TQDM_COLORS = [
@@ -126,11 +133,12 @@ def load_text_files_parallel(folder_path):
 
 # --- Multiprocess Embedding ---
 _sentence_transformer_model = None
+SENTENCE_TRANSFORMER_MODEL = "sentence-transformers/LaBSE"
 
 def get_sentence_transformer_model():
     global _sentence_transformer_model
     if _sentence_transformer_model is None:
-        _sentence_transformer_model = SentenceTransformer("sentence-transformers/LaBSE", device="cpu")
+        _sentence_transformer_model = SentenceTransformer(SENTENCE_TRANSFORMER_MODEL, device="cpu")
     return _sentence_transformer_model
 
 def embed_batch_worker(batch):
@@ -183,98 +191,185 @@ def clean_text_for_summarization(text):
 def semantic_chunk_text(text, tokenizer, embedding_model_name, max_tokens=MAX_INPUT_TOKENS, sentence_group_size=5):
     if not text:
         return []
+
     cleaned_text = clean_text_for_summarization(text)
     if not cleaned_text:
         return []
+
     all_sentences = sent_tokenize(cleaned_text)
     if not all_sentences:
         return []
+
     grouped_sentences = [" ".join(all_sentences[i:i + sentence_group_size]) for i in range(0, len(all_sentences), sentence_group_size)]
     if not grouped_sentences:
         return chunk_text(cleaned_text, tokenizer, max_tokens)
+
     num_clusters = min(len(grouped_sentences), max(1, len(grouped_sentences) // 2))
-    if num_clusters < 1:
-        num_clusters = 1
+
     embedding_model = SentenceTransformer(embedding_model_name, device="cpu")
     try:
         grouped_sentence_embeddings = embedding_model.encode(grouped_sentences, convert_to_tensor=False)
+
         if len(np.unique(grouped_sentence_embeddings, axis=0)) == 1:
-            print("Info: All sentence group embeddings are identical. Semantic chunking will fall back to simple chunking.", file=sys.stderr)
+            print("Info: All sentence group embeddings are identical. Falling back to simple chunking.", file=sys.stderr)
             return chunk_text(cleaned_text, tokenizer, max_tokens)
+
         with warnings.catch_warnings():
             warnings.simplefilter("ignore", RuntimeWarning)
             kmeans = MiniBatchKMeans(n_clusters=num_clusters, random_state=0, n_init=10, batch_size=256)
             kmeans.fit(grouped_sentence_embeddings)
             labels = kmeans.labels_
+
+        # Group sentence groups into clusters
         clustered_chunks_text = {i: [] for i in range(num_clusters)}
-        for i, group_idx in enumerate(labels):
-            if group_idx in clustered_chunks_text:
-                clustered_chunks_text[group_idx].append(grouped_sentences[i])
-        semantic_chunks = [" ".join(clustered_chunks_text[i]) for i in range(num_clusters) if clustered_chunks_text[i]]
+        for i, label in enumerate(labels):
+            clustered_chunks_text[label].append(grouped_sentences[i])
+
+        # Merge sentence groups per cluster
+        semantic_chunks = [
+            " ".join(clustered_chunks_text[i]).strip()
+            for i in range(num_clusters)
+            if clustered_chunks_text[i]
+        ]
+
+        # Refined token-based chunking: sentence-level accumulation under max_tokens
         final_chunks = []
         for s_chunk in semantic_chunks:
-            sub_chunks = chunk_text(s_chunk, tokenizer, max_tokens)
-            final_chunks.extend(sub_chunks)
+            sentences = sent_tokenize(s_chunk)
+            current_chunk = []
+            current_tokens = 0
+            for sent in sentences:
+                sent_tokens = len(tokenizer.encode(sent, add_special_tokens=False))
+                if current_tokens + sent_tokens > max_tokens:
+                    if current_chunk:
+                        final_chunks.append(" ".join(current_chunk))
+                    current_chunk = [sent]
+                    current_tokens = sent_tokens
+                else:
+                    current_chunk.append(sent)
+                    current_tokens += sent_tokens
+            if current_chunk:
+                final_chunks.append(" ".join(current_chunk))
+
         return final_chunks
+
     except Exception as e:
-        print(f"⚠️ Semantic chunking failed ({e}). Falling back to simple chunking.", file=sys.stderr)
+        print(f"⚠️ Semantic chunking failed: {e}. Falling back to simple chunking.", file=sys.stderr)
         return chunk_text(cleaned_text, tokenizer, max_tokens)
 
 def chunk_text(text, tokenizer, max_tokens=MAX_INPUT_TOKENS):
     if not text:
         return []
+
     sentences = sent_tokenize(text)
-    chunks, current_chunk_sentences = [], []
+    chunks, current_chunk = [], []
+
     for sent in sentences:
-        test_chunk_text = " ".join(current_chunk_sentences + [sent]).strip()
-        if len(tokenizer.encode(test_chunk_text, add_special_tokens=True)) <= max_tokens:
-            current_chunk_sentences.append(sent)
+        test_chunk = " ".join(current_chunk + [sent])
+        token_count = len(tokenizer.encode(test_chunk, add_special_tokens=True))
+
+        if token_count <= max_tokens:
+            current_chunk.append(sent)
         else:
-            if current_chunk_sentences:
-                chunks.append(" ".join(current_chunk_sentences).strip())
-            # If the sentence itself is too long, split by tokens
-            if len(tokenizer.encode(sent, add_special_tokens=True)) > max_tokens:
-                tokens = tokenizer.encode(sent, add_special_tokens=True)
-                for i in range(0, len(tokens), max_tokens):
-                    sub_tokens = tokens[i:i+max_tokens]
-                    sub_text = tokenizer.decode(sub_tokens, skip_special_tokens=True)
-                    chunks.append(sub_text.strip())
-                current_chunk_sentences = []
+            if current_chunk:
+                chunks.append(" ".join(current_chunk).strip())
+                current_chunk = []
+
+            # Handle long single sentence
+            sent_tokens = tokenizer.encode(sent, add_special_tokens=True)
+            if len(sent_tokens) > max_tokens:
+                for i in range(0, len(sent_tokens), max_tokens):
+                    sub_tokens = sent_tokens[i:i + max_tokens]
+                    chunks.append(sub_tokens)  # <-- store as token IDs, not decoded text
             else:
-                current_chunk_sentences = [sent]
-    if current_chunk_sentences:
-        chunks.append(" ".join(current_chunk_sentences).strip())
-    return chunks
+                current_chunk = [sent]
+
+    if current_chunk:
+        chunks.append(" ".join(current_chunk).strip())
+
+    # Post-process: Convert token chunks back to text safely
+    final_chunks = []
+    for chunk in chunks:
+        if isinstance(chunk, list):  # token IDs
+            text_chunk = tokenizer.decode(chunk, skip_special_tokens=True)
+        else:
+            text_chunk = chunk
+        final_chunks.append(text_chunk.strip())
+
+    return final_chunks
 
 def truncate_text_to_max_tokens(text, tokenizer, max_tokens):
     """
-    Truncate text so that its tokenized length does not exceed max_tokens.
-    Uses add_special_tokens=True to align with model's expected input length including special tokens.
+    Aggressively truncate text so that final tokenized length is guaranteed to be ≤ max_tokens,
+    even after decoding and re-tokenizing.
     """
-    tokens = tokenizer.encode(text, add_special_tokens=True) # Crucial to use True here
-    if len(tokens) <= max_tokens:
+    encoded = tokenizer.encode(text, add_special_tokens=True)
+    if len(encoded) <= max_tokens:
         return text
-    truncated_tokens = tokens[:max_tokens]
-    return tokenizer.decode(truncated_tokens, skip_special_tokens=True)
 
+    # Truncate and decode
+    truncated_tokens = encoded[:max_tokens]
+    truncated_text = tokenizer.decode(truncated_tokens, skip_special_tokens=True)
+
+    # Re-encode to confirm token length
+    reencoded = tokenizer.encode(truncated_text, add_special_tokens=True)
+    while len(reencoded) > max_tokens:
+        # Remove ~10 tokens per retry (backoff step)
+        truncated_tokens = truncated_tokens[:-10]
+        truncated_text = tokenizer.decode(truncated_tokens, skip_special_tokens=True)
+        reencoded = tokenizer.encode(truncated_text, add_special_tokens=True)
+
+    return truncated_text
 
 def format_sentences(text):
-    sentences = re.split(r'([.!?])', text)
+    # Regex: Split on sentence-ending punctuation only if not part of a URL or abbreviation
+    sentence_fragments = re.split(r'(?<=[.!?])\s+(?=[A-Z])', text)
+
     formatted = []
-    for i in range(0, len(sentences)-1, 2):
-        sentence = sentences[i].strip()
-        punct = sentences[i+1]
+    buffer = ""
+
+    for frag in sentence_fragments:
+        frag = frag.strip()
+        if not frag:
+            continue
+
+        # Skip if it's likely a URL
+        if re.match(r'^https?://\S+$', frag):
+            if buffer:
+                formatted.append(buffer.strip())
+                buffer = ""
+            formatted.append(frag)
+            continue
+
+        # Capitalize the start
+        frag = frag[0].upper() + frag[1:]
+
+        word_count = len(frag.split())
+
+        if word_count <= 1:
+            # Append short sentence to buffer
+            buffer += " " + frag
+        else:
+            if buffer:
+                frag = buffer.strip() + " " + frag
+                buffer = ""
+            formatted.append(frag.strip())
+
+    # Add any leftover buffer
+    if buffer:
+        formatted.append(buffer.strip())
+
+    # Ensure each ends with proper punctuation
+    final = []
+    for sentence in formatted:
+        sentence = sentence.strip()
         if not sentence:
             continue
-        sentence = sentence[0].upper() + sentence[1:]
-        if punct not in ".!?":
-            punct = "."
-        formatted.append(sentence + punct)
-    if len(sentences) % 2 == 1 and sentences[-1].strip():
-        trailing = sentences[-1].strip()
-        trailing = trailing[0].upper() + trailing[1:]
-        formatted.append(trailing + ".")
-    return " ".join(formatted)
+        if not sentence.endswith((".", "!", "?")):
+            sentence += "."
+        final.append(sentence)
+
+    return " ".join(final)
 
 def format_file_display_name(file_display_name):
     name = file_display_name
@@ -294,14 +389,35 @@ def get_summarizer_model_and_tokenizer(model_name):
     return _summarizer_tokenizer_cache[model_name], _summarizer_model_cache[model_name]
 
 def summarize_chunk_worker(args):
+    import os
+    import torch
     os.environ["CUDA_VISIBLE_DEVICES"] = ""
+
     chunk, summarizer_model_name, max_input_tokens = args
+
     tokenizer, model = get_summarizer_model_and_tokenizer(summarizer_model_name)
-    # --- FIX: Truncate chunk to max_input_tokens ---
-    chunk = truncate_text_to_max_tokens(chunk, tokenizer, max_input_tokens)
-    inputs = tokenizer(chunk, return_tensors="pt", max_length=max_input_tokens, truncation=True).to("cpu")
+
+    # --- Truncate properly using tokenizer.encode to count tokens ---
+    input_ids = tokenizer.encode(
+        chunk,
+        add_special_tokens=True,
+        truncation=True,
+        max_length=max_input_tokens
+    )
+
+    # Double-check and truncate if still too long
+    if len(input_ids) > max_input_tokens:
+        input_ids = input_ids[:max_input_tokens]
+
+    input_tensor = torch.tensor([input_ids]).to("cpu")
+
+    # Optional: create attention mask (not always necessary)
+    attention_mask = torch.ones_like(input_tensor)
+
+    # Generate summary
     summary_ids = model.generate(
-        inputs["input_ids"],
+        input_tensor,
+        attention_mask=attention_mask,
         max_length=200,
         min_length=30,
         num_beams=4,
@@ -310,6 +426,7 @@ def summarize_chunk_worker(args):
         early_stopping=True,
         no_repeat_ngram_size=3
     )
+
     summary = tokenizer.decode(summary_ids[0], skip_special_tokens=True)
     return summary
 
@@ -336,14 +453,19 @@ def get_elaboration_model_and_tokenizer(model_name):
     return _elaboration_tokenizer_cache[model_name], _elaboration_model_cache[model_name]
 
 def elaborate_story_summary_worker(args):
-    os.environ["CUDA_VISIBLE_DEVICES"] = "" # Prevents CUDA from being visible to subprocesses
+
+    os.environ["CUDA_VISIBLE_DEVICES"] = ""  # Prevent CUDA in subprocess
+
     draft_summary_text, elaboration_model_name, max_input_tokens, device = args
-    elaboration_tokenizer, elaboration_model = get_elaboration_model_and_tokenizer(elaboration_model_name)
+    elaboration_tokenizer = AutoTokenizer.from_pretrained(elaboration_model_name)
+    elaboration_model = AutoModelForSeq2SeqLM.from_pretrained(elaboration_model_name).to(device)
+
+    # ✅ Correct check for T5/Seq2Seq models
+    max_input_tokens = min(max_input_tokens, elaboration_tokenizer.model_max_length)
 
     if not draft_summary_text.strip():
         return ""
 
-    # Define the prompt parts
     preamble = (
         "Rewrite the following text into a cohesive, well-structured, and logically flowing narrative or story. "
         "The output should read like a natural-language document, not a list of facts or fragmented sentences. "
@@ -353,61 +475,64 @@ def elaborate_story_summary_worker(args):
     )
     postamble = "\n\nOutput:"
 
-    # Calculate tokens for preamble + postamble *including special tokens*
-    # This is crucial because the final tokenizer call will add special tokens
-    preamble_postamble_tokens = elaboration_tokenizer(preamble + postamble, add_special_tokens=True)['input_ids']
-    reserved_tokens_length = len(preamble_postamble_tokens)
-
-    # Determine how many tokens are available for the draft_summary_text
-    # Subtract 2 to leave a small buffer for potential new special tokens or edge cases,
-    # though with truncation=True, it's mostly a safety measure.
-    # The tokenizer's 'max_length' will handle the final constraint.
-    available_tokens_for_text = max_input_tokens - reserved_tokens_length
+    overhead_ids = elaboration_tokenizer.encode(preamble + postamble, add_special_tokens=True)
+    reserved_tokens_length = len(overhead_ids)
+    available_tokens_for_text = max_input_tokens - reserved_tokens_length - 2  # buffer
 
     if available_tokens_for_text <= 0:
-        # If no tokens are available for text, return empty or handle gracefully
-        # This scenario should be rare if max_input_tokens is reasonable
         return "Elaboration prompt too long, no space for text."
 
+    # Truncate input text using tokenizer
+    def truncate_text_to_max_tokens(text, tokenizer, max_tokens):
+        tokens = tokenizer.encode(text, add_special_tokens=False)
+        if len(tokens) > max_tokens:
+            tokens = tokens[:max_tokens]
+        return tokenizer.decode(tokens, skip_special_tokens=True)
 
-    # Construct the full prompt string.
-    # The crucial part: rely on the tokenizer's `max_length` and `truncation=True`
-    # in the final tokenization step to manage the total sequence length.
-    # We pre-truncate the draft_summary_text here to avoid an extremely long
-    # string that might be inefficient for the tokenizer to process initially,
-    # but the tokenizer's built-in truncation is the ultimate guardian.
-    # We use add_special_tokens=False for this pre-truncation because we are only
-    # concerned about the length of the *text content* before the final prompt assembly.
-    truncated_draft_summary_text_content = elaboration_tokenizer.decode(
-        elaboration_tokenizer.encode(draft_summary_text, add_special_tokens=False)[:available_tokens_for_text],
-        skip_special_tokens=True
+    truncated_text = truncate_text_to_max_tokens(
+        draft_summary_text, elaboration_tokenizer, available_tokens_for_text
     )
 
-    prompt = f"{preamble}{truncated_draft_summary_text_content}{postamble}"
+    prompt = f"{preamble}{truncated_text}{postamble}"
+    encoded_prompt = elaboration_tokenizer.encode(prompt, add_special_tokens=True)
 
-    # The tokenizer handles the final truncation to max_input_tokens, including special tokens.
+    # Final cutoff to enforce tokenizer max length
+    if len(encoded_prompt) > max_input_tokens:
+        encoded_prompt = encoded_prompt[:max_input_tokens]
+        prompt = elaboration_tokenizer.decode(encoded_prompt, skip_special_tokens=True)
+
     inputs = elaboration_tokenizer(
-        prompt,
-        return_tensors="pt",
-        max_length=max_input_tokens, # This is the hard limit for the *final* tokenized sequence
-        truncation=True,             # This ensures truncation occurs if needed
-        padding='max_length'         # Ensure consistent input size if batching (though not used here)
-    ).to(device)
+    prompt,
+    return_tensors="pt",
+    max_length=max_input_tokens,
+    truncation=True,
+    padding="max_length"
+)
 
-    elaborated_ids = elaboration_model.generate(
-        inputs["input_ids"],
-        attention_mask=inputs["attention_mask"], # Pass attention_mask
-        max_length=700,
-        min_length=150,
-        num_beams=6,
-        repetition_penalty=3.0,
-        length_penalty=1.8,
-        early_stopping=True,
-        no_repeat_ngram_size=3,
-        do_sample=True,
-        top_k=50,
-        top_p=0.95
-    )
+    # Ensure input IDs and attention mask are both clipped to 512 tokens
+    inputs["input_ids"] = inputs["input_ids"][:, :MAX_INPUT_TOKENS_LIMITATION]
+    if "attention_mask" in inputs:
+        inputs["attention_mask"] = inputs["attention_mask"][:, :MAX_INPUT_TOKENS_LIMITATION]
+
+    # Move to device (e.g., CPU or GPU)
+    inputs = {k: v.to(device) for k, v in inputs.items()}
+
+    # Generation
+    with torch.no_grad():
+        elaborated_ids = elaboration_model.generate(
+            input_ids=inputs["input_ids"],
+            attention_mask=inputs["attention_mask"],
+            max_length=700,
+            min_length=150,
+            num_beams=6,
+            repetition_penalty=3.0,
+            length_penalty=1.8,
+            early_stopping=True,
+            no_repeat_ngram_size=3,
+            do_sample=True,
+            top_k=50,
+            top_p=0.95
+        )
 
     elaborated_summary = elaboration_tokenizer.decode(
         elaborated_ids[0],
@@ -423,9 +548,12 @@ def elaborate_story_summary_worker(args):
         elaborated_summary = re.sub(r'\b' + re.escape(phrase) + r'\b', '', elaborated_summary, flags=re.IGNORECASE).strip()
 
     elaborated_summary = re.sub(r'\s+', ' ', elaborated_summary).strip()
-    elaborated_summary = format_sentences(elaborated_summary)
-    return elaborated_summary
 
+    # Optional formatting
+    def format_sentences(text):
+        return text.strip()
+
+    return format_sentences(elaborated_summary)
 
 def elaborate_story_summary(draft_summary_text, elaboration_model_name, elaboration_tokenizer, elaboration_model):
     args = (draft_summary_text, elaboration_model_name, MAX_INPUT_TOKENS, DEVICE)
@@ -514,65 +642,94 @@ def extract_keywords_from_text(text, embedding_model_name, top_n=5, min_ngram=1,
         print(f"Warning: Could not extract keywords using embeddings for the text: {e}. Falling back to TF-IDF top terms.", file=sys.stderr)
         return [f for f in filtered_candidates if re.search(r'[a-z]', f) and len(f) > 2 and not re.fullmatch(r'\W+', f)][:top_n]
 
+def contains_verb(phrase):
+    tokens = nltk.word_tokenize(phrase)
+    tags = nltk.pos_tag(tokens)
+    return any(tag.startswith('VB') for word, tag in tags)
+
+def filter_keywords(keywords):
+    """Remove repetitive or nonsensical keywords."""
+    filtered_keywords = []
+    seen = set()
+    for keyword in keywords:
+        # Remove duplicates
+        if keyword.lower() in seen:
+            continue
+        seen.add(keyword.lower())
+        # Remove keywords with excessive repetition
+        if contains_excessive_repetition(keyword, min_word_repeats=2, min_ngram_repeats=2, ngram_size=2):
+            continue
+        # Remove overly generic keywords
+        if keyword.lower() in ["general", "concept", "miscellaneous"]:
+            continue
+        filtered_keywords.append(keyword)
+    return filtered_keywords
+
+from collections import Counter
+def contains_excessive_repetition(phrase, min_word_repeats=2, min_ngram_repeats=2, ngram_size=2):
+    """
+    Checks for excessive word or ngram repetition within a phrase.
+    - min_word_repeats: If a single word repeats this many times, it's excessive.
+    - min_ngram_repeats: If an ngram repeats this many times, it's excessive.
+    - ngram_size: The size of ngrams to check (e.g., 2 for bigrams).
+    """
+    words = phrase.lower().split()
+    if not words:
+        return False
+
+    # Check for single word repetition
+    word_counts = Counter(words)
+    if any(count >= min_word_repeats for word, count in word_counts.items()):
+        return True
+
+    # Check for ngram repetition
+    ngrams = [tuple(words[i:i + ngram_size]) for i in range(len(words) - ngram_size + 1)]
+    ngram_counts = Counter(ngrams)
+    if any(count >= min_ngram_repeats for ngram, count in ngram_counts.items()):
+        return True
+
+    return False
+
+    """Heuristic check for a clean, brief noun-phrase-like output."""
+    if not phrase:
+        return False
+
+    # 1. Truncate to ensure length
+    phrase = " ".join(phrase.split()[:max_words]).strip()
+    if not phrase:
+        return False
+
+    # 2. Reject if phrase contains disallowed filler words or patterns
+    disallowed_patterns = r"\b(nevertheless|however|believe|this|the|topic|concept|shall|may|violates|provided|includes|products|modifications|revised|changes|updates|language services|services services)\b"
+    if re.search(disallowed_patterns, phrase, re.IGNORECASE):
+        return False
+
+    # 3. Reject if phrase contains excessive repetition
+    if contains_excessive_repetition(phrase, min_word_repeats=2, min_ngram_repeats=2, ngram_size=2):
+        return False
+
+    # 4. Reject if phrase contains verbs
+    if contains_verb(phrase):
+        return False
+
+    # 5. Reject if phrase is overly generic
+    generic_phrases = ["general concept", "uncategorized", "miscellaneous"]
+    if phrase.lower() in generic_phrases:
+        return False
+
+    return True
+
 def reformulate_topic_sentence_worker(args):
-    os.environ["CUDA_VISIBLE_DEVICES"] = ""
+    os.environ["CUDA_VISIBLE_DEVICES"] = ""  # Force CPU in subprocess
+
     keywords, cluster_text_sample, elaboration_model_name, max_words = args
-    elaboration_tokenizer, elaboration_model = get_elaboration_model_and_tokenizer(elaboration_model_name)
+
     if not keywords and not cluster_text_sample:
-        return "General information"
-    context_sentences = sent_tokenize(cluster_text_sample)
-    context_sample_words = " ".join(context_sentences[:min(3, len(context_sentences))]).split()[:100]
-    context_sample = " ".join(context_sample_words)
-    keyword_list_str = ", ".join(keywords)
-    prompt = (
-        f"Based on these keywords and context, summarize the core topic, no more than {max_words} words. "
-        f"Avoid generic phrases like 'essence of the topic' or 'this topic is about'. Focus directly on the content. "
-        f"Keywords: {keyword_list_str}\n"
-        f"Context: {context_sample}\n\n"
-        "Topic:"
-    )
-    prompt = truncate_text_to_max_tokens(prompt, elaboration_tokenizer, MAX_INPUT_TOKENS)
-    inputs = elaboration_tokenizer(
-        prompt,
-        return_tensors="pt",
-        max_length=MAX_INPUT_TOKENS,
-        truncation=True
-    ).to("cpu")
-    generated_ids = elaboration_model.generate(
-        inputs["input_ids"],
-        max_length=max_words * 2,
-        min_length=min(5, max_words),
-        num_beams=8,
-        repetition_penalty=2.5,
-        length_penalty=1.2,
-        early_stopping=True,
-        no_repeat_ngram_size=2
-    )
-    sentence = elaboration_tokenizer.decode(generated_ids[0], skip_special_tokens=True).strip()
-    sentence = re.sub(r"<extra_id_\d+>", "", sentence).strip()
-    undesired_phrases = [
-        "the essence of the topic", "a link to file in different folder", "this topic is about",
-        "this document discusses", "the main point is", "in this section", "this describes",
-        "this explains", "this highlights", "this covers", "the topic is", "topic:",
-        "main topic:", "summary of this topic:", "the text discusses", "the document focuses on",
-        "the main focus of this topic is", "the following provides an overview of",
-        ",. ihsbestore"
-    ]
-    for phrase in undesired_phrases:
-        sentence = re.sub(r'\b' + re.escape(phrase) + r'\b', '', sentence, flags=re.IGNORECASE).strip()
-    sentence = re.sub(r'\s+', ' ', sentence).strip()
-    sentence = sentence.lstrip(".,;!?-—")
-    sentence = sentence.rstrip(".,;!?-—")
-    words = sentence.split()
-    if len(words) > max_words:
-        sentence = " ".join(words[:max_words]).strip()
-        if not sentence.endswith((".", "!", "?", "...")):
-            sentence += "..."
-    elif not sentence.endswith((".", "!", "?")):
-        sentence += "."
-    if len(words) < 3 or not any(word.isalpha() for word in words):
-        return f"Key aspects of {keyword_list_str.split(',')[0].strip()}" if keywords else "Uncategorized topic"
-    return sentence.capitalize()
+        return "General concept"
+
+    # Filter keywords
+    keywords = filter_keywords(keywords)
+    return ", ".join(keywords)
 
 def reformulate_topic_sentence_mp(topic_args_list, workers=DEFAULT_PROC_WORKERS):
     results = [None] * len(topic_args_list)
@@ -595,7 +752,7 @@ def summarize_documentation(folder_path):
     if not docs:
         raise RuntimeError(f"No valid documents found in '{folder_path}'. Please check the path and file contents.")
     print("🔎 Detecting main content...")
-    global_embedding_model = SentenceTransformer("sentence-transformers/LaBSE", device="cpu")
+    global_embedding_model = SentenceTransformer(SENTENCE_TRANSFORMER_MODEL, device="cpu")
     combined_text = detect_main_content(docs)
     if not combined_text:
         raise RuntimeError("Could not detect main content from documents. This might indicate empty documents or an issue with content detection.")
@@ -612,7 +769,7 @@ def summarize_documentation(folder_path):
             self.name_or_path = name_or_path
     elaboration_model_dummy = DummyModel(elaboration_model_name)
     print("🪓 Chunking content (semantically)...")
-    chunks = semantic_chunk_text(combined_text, summarizer_tokenizer, "sentence-transformers/LaBSE", MAX_INPUT_TOKENS, SENTENCE_CHUNK_SIZE)
+    chunks = semantic_chunk_text(combined_text, summarizer_tokenizer, SENTENCE_TRANSFORMER_MODEL, MAX_INPUT_TOKENS, SENTENCE_CHUNK_SIZE)
     if not chunks:
         raise RuntimeError("Could not chunk the content. The combined text might be too short or the chunking logic encountered an issue.")
     print("⚙️ Running initial summarizer (multi-process)...")
@@ -630,7 +787,7 @@ def summarize_documentation(folder_path):
     if not partial_summaries:
         raise RuntimeError("No partial summaries were generated. This might indicate an issue with the summarizer model or input chunks.")
     draft_summary = " ".join(partial_summaries)
-    print("✨ Elaborating story summary for better flow...")
+    print("✨ Elaborating story summary...")
     final_story_summary = elaborate_story_summary(
         draft_summary,
         elaboration_model_name,
@@ -645,8 +802,8 @@ def summarize_documentation(folder_path):
         print("Warning: Elaboration produced an empty summary or prompt. Falling back to the raw combined summary.", file=sys.stderr)
         final_story_summary = re.sub(r"<extra_id_\d+>", "", draft_summary).strip()
     print("🔑 Extracting top global keywords...")
-    global_keywords = extract_keywords_from_text(combined_text, "sentence-transformers/LaBSE", top_n=TOP_KEYWORDS_GLOBAL)
-    print("🎯 Detecting top topics and reformulating as sentences...")
+    global_keywords = extract_keywords_from_text(combined_text, SENTENCE_TRANSFORMER_MODEL, top_n=TOP_KEYWORDS_GLOBAL)
+    print("🎯 Detecting top topics and reformulating...")
     topics = []
     topic_sources = []
     keyword_sources = {k: set() for k in global_keywords}
@@ -656,7 +813,7 @@ def summarize_documentation(folder_path):
         detected_topics = []
         detected_topic_sources = []
     elif len(np.unique(all_chunk_embeddings, axis=0)) == 1:
-        first_chunk_keywords = extract_keywords_from_text(chunks[0], "sentence-transformers/LaBSE", top_n=TOPIC_KEYWORDS_PER_TOPIC)
+        first_chunk_keywords = extract_keywords_from_text(chunks[0], SENTENCE_TRANSFORMER_MODEL, top_n=TOPIC_KEYWORDS_PER_TOPIC)
         if first_chunk_keywords:
             topic_sentence = reformulate_topic_sentence(
                 first_chunk_keywords, chunks[0], elaboration_model_dummy, elaboration_tokenizer, MAX_TOPIC_SENTENCE_WORDS
@@ -686,7 +843,7 @@ def summarize_documentation(folder_path):
             if not cluster_chunks:
                 continue
             cluster_text = " ".join(cluster_chunks)
-            topic_keywords = extract_keywords_from_text(cluster_text, "sentence-transformers/LaBSE", top_n=TOPIC_KEYWORDS_PER_TOPIC)
+            topic_keywords = extract_keywords_from_text(cluster_text, SENTENCE_TRANSFORMER_MODEL, top_n=TOPIC_KEYWORDS_PER_TOPIC)
             topic_args_list.append((topic_keywords, cluster_text, elaboration_model_dummy.name_or_path, MAX_TOPIC_SENTENCE_WORDS))
             files = set()
             for idx in cluster_chunk_idxs:
@@ -710,10 +867,23 @@ def summarize_documentation(folder_path):
     timestamp_ms = int(time.time() * 1000)
     summary_data = {
         "s": final_story_summary,
-        "t": [{"topic": t, "files": topic_sources[i] if i < len(topic_sources) else []} for i, t in enumerate(topics)],
-        "k": [{"keyword": k, "files": keyword_sources.get(k, [])} for k in global_keywords],
+        "t": [
+            {
+                "topic": t,
+                "files": [format_file_display_name(item) for item in (topic_sources[i] if i < len(topic_sources) else [])]
+            }
+            for i, t in enumerate(topics)
+        ],
+        "k": [
+            {
+                "keyword": k,
+                "files": [format_file_display_name(item) for item in keyword_sources.get(k, [])]
+            }
+            for k in global_keywords
+        ],
         "d": timestamp_ms
     }
+
     return summary_data
 
 def save_summary(content_data):
@@ -734,3 +904,4 @@ if __name__ == "__main__":
         print(f"\n🚫 An error occurred during summarization: {re}")
     except Exception as e:
         print(f"\nFatal error: {e}")
+

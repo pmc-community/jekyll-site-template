@@ -1,33 +1,89 @@
 {
-    "s": "Innohub. Space reserves the right to terminate your account for violating these terms and conditions if you fail to comply with any of them. PMC and our subsidiaries, affiliates, officers, employees, agents, partners and licensors expressly disclaim any and all warranties of any kind whether expressed or implied. The user understands, acknowledges and agrees that the mobile version of the site or any of the sub sites may not be compatible with all the information and functionalities available in the desktop version. Lorem ipsum comes from sections and of de finibus bonorum et malorum the extremes of good and evil by cicero, written in bc. This book is a treatise on the theory of ethics, very popular during the renaissance.",
+    "s": "Link to external site content in a markdown document that is not part of a site page, such as a file from a collection. Lorem ipsum comes from sections and of de finibus bonorum et malorum the extremes of good and evil by cicero. Contrary to popular belief, lorem ippom is not simply random text. It has roots in an piece of classical latin literature from bc. The persistence of the root reducer will be applied for all sub reducers this the parameter of myreducers class new . true,. True,lorem = list(input()) print('n'.join([str(x) for x in input()]))",
     "t": [
         {
-            "topic": "Software, technology and other technical data may be subject to...",
+            "topic": "classical literature discovered, word classical literature",
             "files": [
+                "/collection-1/g1/",
+                "/collection-2/X/x/",
+                "/collection-2/Z/z/",
+                "/collection-2/y/y/",
+                "/intro/",
+                "/intro/introChild/",
+                "/pwc/",
+                "/sf/f1/",
+                "/collection-1/g11/",
+                "/collection-1/g1/",
+                "/collection-2/X/x/",
+                "/collection-2/Z/z/",
+                "/collection-2/y/y/",
+                "/ec/",
+                "/intro/",
+                "/intro/introChild/",
+                "/intro/introChild/introGrandChild/",
+                "/pwc/",
+                "/sf/f1/",
                 "/terms/"
             ]
         },
         {
-            "topic": "Rights and license to use object code or our software.",
+            "topic": "generate related pages, page",
             "files": [
-                "/sf/f1/",
-                "/terms/",
-                "_collection-1_g11_.txt",
-                "_collection-1_g1_.txt",
-                "_collection-2_X_x_.txt",
-                "_collection-2_Z_z_.txt",
-                "_collection-2_y_y_.txt",
-                "_ec_.txt",
-                "_intro_.txt",
-                "_intro_introChild_.txt",
-                "_intro_introChild_introGrandChild_.txt",
-                "_pwc_.txt",
-                "_sf_f1_.txt",
-                "_terms_.txt"
+                "/collection-1/g1/",
+                "/collection-2/X/x/",
+                "/collection-2/Z/z/",
+                "/pwc/"
             ]
         },
         {
-            "topic": "The user understands, acknowledges and agrees that the services offered...",
+            "topic": "access additional services, innohub access subscribing",
+            "files": [
+                "/collection-1/g1/",
+                "/collection-1/g11/",
+                "/collection-1/g1/",
+                "/collection-2/X/x/",
+                "/collection-2/Z/z/",
+                "/collection-2/y/y/",
+                "/ec/",
+                "/intro/",
+                "/intro/introChild/",
+                "/intro/introChild/introGrandChild/",
+                "/pwc/",
+                "/sf/f1/",
+                "/terms/"
+            ]
+        },
+        {
+            "topic": "classical literature discovered, discovered undoubtable source",
+            "files": [
+                "/collection-1/g11/",
+                "/collection-1/g1/",
+                "/collection-2/X/x/",
+                "/collection-2/Z/z/",
+                "/collection-2/y/y/",
+                "/ec/",
+                "/intro/",
+                "/intro/introChild/",
+                "/intro/introChild/introGrandChild/",
+                "/pwc/",
+                "/sf/f1/",
+                "/terms/"
+            ]
+        },
+        {
+            "topic": "code import myreducers",
+            "files": [
+                "/collection-1/g1/"
+            ]
+        },
+        {
+            "topic": "use email login, email login process",
+            "files": [
+                "/collection-1/g1/"
+            ]
+        },
+        {
+            "topic": "accompanied english versions, versions translation rackham",
             "files": [
                 "/collection-1/g1/",
                 "/collection-2/y/y/",
@@ -35,23 +91,87 @@
                 "/intro/introChild/",
                 "/pwc/",
                 "/sf/f1/",
-                "/terms/",
-                "_collection-1_g11_.txt",
-                "_collection-1_g1_.txt",
-                "_collection-2_X_x_.txt",
-                "_collection-2_Z_z_.txt",
-                "_collection-2_y_y_.txt",
-                "_ec_.txt",
-                "_intro_.txt",
-                "_intro_introChild_.txt",
-                "_intro_introChild_introGrandChild_.txt",
-                "_pwc_.txt",
-                "_sf_f1_.txt",
-                "_terms_.txt"
+                "/collection-1/g11/",
+                "/collection-1/g1/",
+                "/collection-2/X/x/",
+                "/collection-2/Z/z/",
+                "/collection-2/y/y/",
+                "/ec/",
+                "/intro/",
+                "/intro/introChild/",
+                "/intro/introChild/introGrandChild/",
+                "/pwc/",
+                "/sf/f1/",
+                "/terms/"
             ]
         },
         {
-            "topic": "Lorem ipsum comes from sections and of de finibus bonorum.",
+            "topic": "reactcomponentloader components ihsbestore, reducers parameter myreducers",
+            "files": [
+                "/collection-1/g1/"
+            ]
+        },
+        {
+            "topic": "finibus bonorum et, de finibus bonorum",
+            "files": [
+                "/collection-1/g11/",
+                "/collection-1/g1/",
+                "/collection-2/X/x/",
+                "/collection-2/Z/z/",
+                "/collection-2/y/y/",
+                "/ec/",
+                "/intro/",
+                "/intro/introChild/",
+                "/intro/introChild/introGrandChild/",
+                "/pwc/",
+                "/sf/f1/",
+                "/terms/"
+            ]
+        },
+        {
+            "topic": "latin literature bc, adding img file",
+            "files": [
+                "/collection-1/g1/"
+            ]
+        }
+    ],
+    "k": [
+        {
+            "keyword": "used since 1500s",
+            "files": []
+        },
+        {
+            "keyword": "since 1500s reproduced",
+            "files": []
+        },
+        {
+            "keyword": "since 1500s",
+            "files": []
+        },
+        {
+            "keyword": "old",
+            "files": [
+                "/collection-1/g1/",
+                "/collection-2/X/x/",
+                "/collection-2/Z/z/",
+                "/collection-2/y/y/",
+                "/intro/",
+                "/intro/introChild/",
+                "/pwc/",
+                "/sf/f1/",
+                "/terms/"
+            ]
+        },
+        {
+            "keyword": "since",
+            "files": [
+                "/collection-1/g1/",
+                "/intro/",
+                "/pwc/"
+            ]
+        },
+        {
+            "keyword": "cicero",
             "files": [
                 "/collection-1/g1/",
                 "/collection-2/y/y/",
@@ -62,111 +182,42 @@
             ]
         },
         {
-            "topic": "You acknowledge and agree that we are not responsible for...",
+            "keyword": "one",
             "files": [
+                "/collection-1/g11/",
+                "/collection-1/g1/",
+                "/collection-2/X/x/",
+                "/collection-2/y/y/",
+                "/intro/",
+                "/intro/introChild/",
+                "/pwc/",
                 "/sf/f1/",
                 "/terms/"
             ]
         },
         {
-            "topic": "Pmc and our subsidiaries, officers, employees, agents, partners and licensors.",
+            "keyword": "rackham",
             "files": [
-                "/terms/"
+                "/collection-1/g1/",
+                "/intro/",
+                "/pwc/"
             ]
         },
         {
-            "topic": "You explicitly acknowledge, understand and agree that pmc and our...",
-            "files": [
-                "/terms/"
-            ]
-        },
-        {
-            "topic": "You herein acknowledge, understand and agree that all of the...",
-            "files": [
-                "/terms/"
-            ]
-        },
-        {
-            "topic": "By visiting this website, you agree that the laws of...",
-            "files": [
-                "/terms/"
-            ]
-        }
-    ],
-    "k": [
-        {
-            "keyword": "services products",
+            "keyword": "old richard",
             "files": []
         },
         {
-            "keyword": "services provided",
+            "keyword": "classical",
             "files": [
-                "_sf_f1_.txt",
-                "_terms_.txt"
-            ]
-        },
-        {
-            "keyword": "sites",
-            "files": [
-                "_collection-1_g11_.txt",
-                "_collection-1_g1_.txt",
-                "_sf_f1_.txt",
-                "_terms_.txt"
-            ]
-        },
-        {
-            "keyword": "website",
-            "files": [
-                "_collection-1_g1_.txt",
-                "_sf_f1_.txt",
-                "_terms_.txt"
-            ]
-        },
-        {
-            "keyword": "site",
-            "files": [
-                "_collection-1_g11_.txt",
-                "_collection-1_g1_.txt",
-                "_pwc_.txt",
-                "_sf_f1_.txt",
-                "_terms_.txt"
-            ]
-        },
-        {
-            "keyword": "products",
-            "files": [
-                "_sf_f1_.txt",
-                "_terms_.txt"
-            ]
-        },
-        {
-            "keyword": "liable",
-            "files": [
-                "_sf_f1_.txt",
-                "_terms_.txt"
-            ]
-        },
-        {
-            "keyword": "third party",
-            "files": [
-                "_sf_f1_.txt",
-                "_terms_.txt"
-            ]
-        },
-        {
-            "keyword": "services software",
-            "files": []
-        },
-        {
-            "keyword": "services",
-            "files": [
-                "_collection-1_g11_.txt",
-                "_collection-1_g1_.txt",
-                "_ec_.txt",
-                "_sf_f1_.txt",
-                "_terms_.txt"
+                "/collection-1/g1/",
+                "/collection-2/y/y/",
+                "/intro/",
+                "/intro/introChild/",
+                "/pwc/",
+                "/sf/f1/"
             ]
         }
     ],
-    "d": 1749417847848
+    "d": 1749485822082
 }
