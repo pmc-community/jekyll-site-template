@@ -82,26 +82,38 @@ collections_dir: doc-contents
 
 # MARKER COLLECTIONS START
 collections:
+
+  # custom collections
   collection-1:
     permalink: "/:collection/:path"
     output: true
   collection-2:
     permalink: "/:collection/:path"
     output: true
+
+  # default collections (last position(s))
   tools:
     permalink: "/:collection/:path"
     output: true
+  faq: # no output for faq collection
+    permalink: "/:collection/:path"
+    output: false
+
 
 # see https://just-the-docs.com/docs/configuration/#document-collections
 just_the_docs:
   collections:
+    # custom collections
     collection-1:
       name: Collection One
       nav_fold: true
     collection-2:
       name: Collection Two
       nav_fold: true
+
+    # default collections (last position(s))
     tools:
-      name: Tools
+      name: Utile
       nav_fold: true
+
 # MARKER COLLECTIONS END
