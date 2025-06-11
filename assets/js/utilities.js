@@ -91,7 +91,6 @@ $.fn.sizeChanged = function (handleFunction) {
 // add also some datatables enhancements if not home page
 // such as ordering by datetime cols
 if (pagePermalink !== '/') {
-
     // init page toc
     $(function () {
         var navSelector = settings.pageToc.toc;
