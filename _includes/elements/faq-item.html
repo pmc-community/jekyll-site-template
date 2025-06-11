@@ -43,7 +43,7 @@
           {% if rs != nil and rs != "" %}
             {% for doc in pageArray %}
                 {% if doc.permalink == rs %}
-                    <a class="mt-2 btn btn-sm shadow-none btn-outline-secondary" href="{{lang_prefix}}{{rs}}" target=_blank>{{doc.title}}</a>
+                    <a class="mt-2 mx-1 btn btn-sm shadow-none btn-outline-secondary" href="{{lang_prefix}}{{rs}}" target=_blank>{{doc.title}}</a>
                 {% endif %}
             {% endfor %}
           {% endif %}
