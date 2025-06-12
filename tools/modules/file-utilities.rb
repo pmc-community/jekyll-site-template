@@ -122,6 +122,21 @@ module FileUtilities
         page.render(site.layouts, site.site_payload)
         extract_main_content(site, page.output)
     end
+
+    def self.render_liquid_string(site, liquid_string, additional_context = {})
+    # Build the context similar to what Jekyll would provide
+    registers = { site: site, page: {} }
+
+    context = Liquid::Context.new(
+        [site.site_payload, additional_context],
+        {}, # assigns
+        registers
+    )
+
+    template = Liquid::Template.parse(liquid_string)
+    template.render!(context)
+    end
+
   
     # Method to find a layout (including from themes)
     def self.find_layout(site, layout_name)
