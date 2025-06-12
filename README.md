@@ -6,7 +6,7 @@ This repo contains the code needed to publish your great documentation. There ar
 # Taxonomies
 Apart from the taxonomies provided by default (tags and categories), each user can organise the documentation using its own defined taxonomies (custom tags, custom categories, document comments, document annotations). Multiple ways of organising the docs can be used, **but only one can be active at a moment**. Users can also share the documentation organisation templates.
 
-# Search fearures
+# Search features
 Advanced search features are provided either through native search or through Algolia DocSearch (free for use with documentations). We strongly recommend to use Algolia since the search features included in this code are really good. 
 
 Other integrations that can be configured (or disabled):
