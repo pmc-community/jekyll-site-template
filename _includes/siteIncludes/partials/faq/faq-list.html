@@ -1,0 +1,6 @@
+{% for q in site.faq %}
+    {% assign question = q.q  %}
+    {% assign answer = q.content %}
+    {% assign ref = q.ref %}
+    {% include elements/faq-item.html q = question a = answer ref = ref %}
+{% endfor %}

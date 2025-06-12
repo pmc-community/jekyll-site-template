@@ -1,0 +1,62 @@
+---
+layout: default
+---
+
+<div class="py-3">
+    <!-- content from the page using this template -->
+    <div class = "mb-3">
+        {{ content }}
+    </div>
+
+    <p 
+        class="fs-3 py-2 fw-medium d-md-none"
+        data-i18n="faq_title">Docaroo Frequent Asked Questions
+    </p>
+
+    <!-- Page Toc -->
+    <!-- Mobile Toc -->
+    <div 
+        class="accordion d-md-none d-block accordion-flush border border-warning border-opacity-25 mb-3"
+        id="toc_mobile">
+        <div class="accordion-item">
+            <div 
+                siteFunction="mobile_toc_header"
+                id="mobile_toc_header"
+                class="accordion-header border-0">
+                <button 
+                    class="accordion-button fw-medium text-primary d-flex justify-content-between align-items-center" 
+                    type="button" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#mobile_toc_content" 
+                    aria-expanded="true" 
+                    aria-controls="#mobile_toc_content">
+                    <span data-i18n="faq_toc_toc_title_mobile">
+                        On this page
+                    </span>
+                    <i
+                        siteFunction="togglePageTocOnMobile" 
+                        class="bg-success py-1 px-2 rounded bi bi-arrow-down text-light">
+                    </i>
+                </button>
+            </div>
+            <div id="mobile_toc_content" 
+                class="accordion-collapse collapse" 
+                data-bs-parent="#toc_mobile">
+                <div class="accordion-body border-0 border-top border-secondary border-opacity-25"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="faq_content" class="d-block d-md-flex">
+    <!-- faq list-->
+        <div id="faq_list_container" class="col-md-7 col-12">
+            {% include siteIncludes/partials/faq/faq-list.html %}
+        </div>
+        <!-- Desktop Toc -->
+         <div class="col-1 d-none d-md-block" siteFunction="contentAreaConten2TocSeparator"></div>
+        <div id="toc_container" class="p-0">
+            <nav id="toc" data-toggle="toc"></nav>
+        </div>
+    </div>
+
+</div>

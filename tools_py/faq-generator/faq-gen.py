@@ -1,28 +1,41 @@
 import logging
-import random
 import os
 import json
 import time
 from pathlib import Path
 from langdetect import detect, DetectorFactory
 from transformers.pipelines import pipeline
-from transformers.models.auto.tokenization_auto import AutoTokenizer
-from transformers.models.auto.modeling_auto import AutoModelForSeq2SeqLM
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
 from transformers.utils.hub import cached_file
-from concurrent.futures import ThreadPoolExecutor, as_completed
 import torch
 from requests.exceptions import HTTPError
 import re
-from sentence_transformers import SentenceTransformer
-from sklearn.cluster import KMeans
+import sys
+import multiprocessing
+import psutil
+from functools import partial
+import io
+from contextlib import redirect_stdout
+from sklearn.metrics.pairwise import cosine_similarity
 
+# NLTK import and download
 import nltk
-nltk.download('punkt')
-from nltk.tokenize import PunktSentenceTokenizer
+try:
+    with redirect_stdout(io.StringIO()):
+        nltk.download('punkt', quiet=True)
+except Exception as e:
+    print(f"Error downloading NLTK Punkt tokenizer: {e}", file=sys.stderr)
 
-# Suppress warnings
+# --- Core Modifications Start Here ---
+
+# Suppress all logging from transformers and other libraries
+logging.getLogger("transformers").setLevel(logging.CRITICAL)
+logging.getLogger("torch").setLevel(logging.CRITICAL)
+logging.getLogger("nltk").setLevel(logging.CRITICAL)
+
+# Disable the root logger as well to prevent any default messages
+logging.disable(logging.CRITICAL)
+
+# Suppress warnings from environment variables
 os.environ["TRANSFORMERS_NO_ADVISORY_WARNINGS"] = "true"
 os.environ["TOKENIZERS_PARALLELISM"] = "true"
 
@@ -30,36 +43,27 @@ DetectorFactory.seed = 0
 
 MAX_INPUT_TOKENS = 512
 CHUNK_TOKEN_SIZE = 256
-QUESTION_MAX_WORDS = 15
+QUESTION_MAX_WORDS = 10
 MIN_ANSWER_WORDS = 10
-MAX_FAQ = 50
-FINAL_FAQ_COUNT = 50
-MAX_REFORMULATIONS = 10
+MAX_FAQ = 100
+FINAL_FAQ_COUNT = 100
+MAX_REFORMULATIONS = 3
 MIN_CHUNKS = 20
-MAX_WORKERS = 8
 DELAY_BETWEEN_REQUESTS = 1.0
 MAX_RETRIES = 3
 RETRY_DELAY = 3.0
+SCRIPT_START_TS = int(time.time() * 1000)
+ESTIMATED_MEMORY_PER_PROCESS_GB = 1.5
 
-# Suppress "Device set to use mps:0" logs from transformers / torch
-logging.getLogger("transformers").setLevel(logging.ERROR)
-logging.getLogger("torch").setLevel(logging.ERROR)
-
-
-def get_device():
+def get_device_info():
     if torch.cuda.is_available():
-        print("🔥 CUDA GPU detected")
-        return torch.device("cuda")
+        return "🔥 CUDA GPU detected", torch.device("cuda")
     elif torch.backends.mps.is_available() and torch.backends.mps.is_built():
-        print("🍏 Apple Silicon MPS detected")
-        return torch.device("mps")
+        return "🍏 Apple Silicon MPS detected", torch.device("mps")
     else:
-        print("💻 Using CPU")
-        return torch.device("cpu")
+        return "💻 Using CPU", torch.device("cpu")
 
-
-DEVICE = get_device()
-
+E5_MODEL_NAME = "intfloat/e5-base-v2"
 
 def remove_xla_device_from_config(model_name_or_path):
     try:
@@ -70,67 +74,115 @@ def remove_xla_device_from_config(model_name_or_path):
             if "xla_device" in config:
                 del config["xla_device"]
                 config_file.write_text(json.dumps(config, indent=2))
-    except Exception as e:
-        logging.warning(f"Failed to clean xla_device from config: {e}")
-
+    except Exception:
+        pass
 
 def load_markdown_text(content_dir):
     content_dir = Path(content_dir)
     text_by_file = []
-    for ext in ("*.md", "*.txt"):
-        for file in content_dir.rglob(ext):
-            with open(file, "r", encoding="utf-8") as f:
-                content = f.read()
-                text_by_file.append((str(file), content))
+    ext = "*.txt"
+    for file in content_dir.rglob(ext):
+        with open(file, "r", encoding="utf-8") as f:
+            content = f.read()
+            text_by_file.append((str(file), content))
     return text_by_file
-
 
 def get_token_count(text, tokenizer):
     return len(tokenizer.encode(text, truncation=False))
-
 
 def truncate_text(text, tokenizer, max_tokens):
     tokens = tokenizer.encode(text, truncation=True, max_length=max_tokens)
     return tokenizer.decode(tokens, skip_special_tokens=True)
 
+def format_file_display_name(file_display_name):
+    """Remove .txt extension and replace underscores with slashes."""
+    name = file_display_name
+    if name.endswith('.txt'):
+        name = name[:-4]
+    return name.replace('_', '/')
 
-def split_into_chunks_sensitive(text, tokenizer, chunk_token_limit, n):
+# CREATING SEMANTIC CHUNKS
+# ==============================================================
+
+def mean_pooling(model_output, attention_mask):
+    token_embeddings = model_output[0]
+    input_mask_expanded = attention_mask.unsqueeze(-1).expand(token_embeddings.size())
+    return (token_embeddings * input_mask_expanded).sum(1) / input_mask_expanded.sum(1)
+
+def get_embeddings_e5(sentences, model, tokenizer, device):
+    encoded_input = tokenizer(sentences, padding=True, truncation=True, return_tensors='pt', max_length=512)
+    encoded_input = {k: v.to(device) for k, v in encoded_input.items()}
+    with torch.no_grad():
+        model_output = model(**encoded_input)
+    return mean_pooling(model_output, encoded_input['attention_mask']).cpu().numpy()
+
+def split_into_chunks_sensitive(text, tokenizer, chunk_token_limit, n, device):
+    from nltk.tokenize.punkt import PunktSentenceTokenizer
+    import numpy as np
+    from sklearn.metrics.pairwise import cosine_similarity
+    from transformers import AutoModel, AutoTokenizer
+
     tokenizer_sent = PunktSentenceTokenizer()
     sentences = tokenizer_sent.tokenize(text)
-    
-    if len(sentences) < n:
-        return [truncate_text(text, tokenizer, MAX_INPUT_TOKENS)]
-    
-    model = SentenceTransformer("all-MiniLM-L6-v2")
-    embeddings = model.encode(sentences)
-    kmeans = KMeans(n_clusters=min(n, len(sentences)), random_state=0, n_init="auto")
-    labels = kmeans.fit_predict(embeddings)
-    
-    clusters = [[] for _ in range(max(labels) + 1)]
-    for idx, label in enumerate(labels):
-        clusters[label].append(sentences[idx])
-    
+
+    hf_tokenizer = AutoTokenizer.from_pretrained(E5_MODEL_NAME)
+    hf_model = AutoModel.from_pretrained(E5_MODEL_NAME).to(device)
+    hf_model.eval()
+
+    block_size = 5
+    blocks = []
+    block_indices = []
+    for i in range(0, len(sentences), block_size):
+        block = " ".join(sentences[i:i + block_size])
+        blocks.append(block)
+        block_indices.append((i, min(i + block_size, len(sentences))))
+
+    if len(blocks) <= 1:
+        topic_boundaries = [0, len(sentences)]
+    else:
+        block_embeddings = get_embeddings_e5(blocks, hf_model, hf_tokenizer, device)
+
+        similarities = []
+        for i in range(1, len(block_embeddings)):
+            sim = cosine_similarity([block_embeddings[i]], [block_embeddings[i - 1]])[0][0]
+            similarities.append(sim)
+
+        sim_array = np.array(similarities)
+        mean = np.mean(sim_array) if len(sim_array) > 0 else 0
+        std = np.std(sim_array) if len(sim_array) > 0 else 0
+        threshold = mean - 1.5 * std
+
+        topic_boundaries = [0]
+        for i, sim in enumerate(similarities):
+            if sim < threshold:
+                boundary_idx = block_indices[i + 1][0]
+                topic_boundaries.append(boundary_idx)
+        topic_boundaries.append(len(sentences))
+
     chunks = []
-    for cluster in clusters:
+    for i in range(len(topic_boundaries) - 1):
+        topic_sentences = sentences[topic_boundaries[i]:topic_boundaries[i + 1]]
         chunk = []
         token_count = 0
-        for sentence in cluster:
+
+        for sentence in topic_sentences:
             tokens = get_token_count(sentence, tokenizer)
+
             if token_count + tokens <= chunk_token_limit:
                 chunk.append(sentence)
                 token_count += tokens
             else:
                 if chunk:
-                    combined = " ".join(chunk)
-                    chunks.append(truncate_text(combined, tokenizer, chunk_token_limit))
+                    chunks.append(truncate_text(" ".join(chunk), tokenizer, chunk_token_limit))
                 chunk = [sentence]
                 token_count = tokens
+
         if chunk:
-            combined = " ".join(chunk)
-            chunks.append(truncate_text(combined, tokenizer, chunk_token_limit))
-    
+            chunks.append(truncate_text(" ".join(chunk), tokenizer, chunk_token_limit))
     return chunks
 
+# ==============================================================
+# END SEMANTIC CHUNKS
 
 def deduplicate_faq(faq_list):
     seen = set()
@@ -142,24 +194,25 @@ def deduplicate_faq(faq_list):
             unique.append(item)
     return unique
 
-
-def save_faq_markdown(faq_list, output_path):
-    with open(output_path, "w", encoding="utf-8") as f:
-        f.write("---\nlayout: page\ntitle: Frequently Asked Questions\n---\n\n")
-        for item in faq_list:
-            f.write(f"### {item['question']}\n\n{item['answer']}\n\n")
-
-
 def save_faq_json(faq_list, output_path):
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(
-            [{"q": i["question"], "a": i["answer"], "f": Path(i["file"]).name} for i in faq_list],
+            [
+                {
+                    "q": i["question"],
+                    "a": i["answer"],
+                    "f": Path(i["file"]).stem.replace("_", "/"),
+                    "t": SCRIPT_START_TS
+                }
+                for i in faq_list
+            ],
             f,
             indent=2
         )
 
-
 def get_models_for_language(lang_code):
+    # valhalla/t5-small-qg-prepend is faster but less accurate
+    # valhalla/t5-base-qg-hl is slower but can be more accurate
     model_map = {
         "en": {
             "qg": "valhalla/t5-small-qg-prepend",
@@ -171,7 +224,6 @@ def get_models_for_language(lang_code):
         }
     }
     return model_map.get(lang_code, model_map["default"])
-
 
 def clean_question(q: str, qg_pipeline=None):
     if not q or not isinstance(q, str):
@@ -206,12 +258,10 @@ def clean_question(q: str, qg_pipeline=None):
                     early_stopping=True,
                 )[0]["generated_text"].strip()
                 return response[0].upper() + response[1:].rstrip(".") + "?"
-            except Exception as e:
-                logging.warning(f"Failed to reformulate question: {e}")
-                return None
+            except Exception:
+                pass
 
     return q
-
 
 def clean_answer(answer: str) -> str:
     if not answer or not isinstance(answer, str):
@@ -231,11 +281,11 @@ def clean_answer(answer: str) -> str:
 
     return " ".join(cleaned_sentences)
 
-
 def reformulate_short_answer(answer, question, context, qa_pipeline):
     prompt = (
         f"The previous answer was too short or unclear. Rewrite this answer to be complete, logical, and longer than {MIN_ANSWER_WORDS} words."
-        f"If the answer is shorter than {MIN_ANSWER_WORDS} words, create a logical sentence around it."
+        f"If the answer is shorter than {MIN_ANSWER_WORDS}, create a logical sentence around it."
+        f"The answer can be splitted in more than one sentence when applicable."
         f"Question: {question}\nShort answer: {answer}\nContext: {context}"
     )
     for _ in range(MAX_RETRIES):
@@ -249,8 +299,10 @@ def reformulate_short_answer(answer, question, context, qa_pipeline):
             else:
                 raise
 
-
 def rank_questions_by_relevance(questions, context):
+    # LOCAL IMPORT: Ensure TfidfVectorizer is defined in this context
+    from sklearn.feature_extraction.text import TfidfVectorizer
+
     if not questions:
         return []
     vectorizer = TfidfVectorizer().fit([context] + [q["question"] for q in questions])
@@ -260,61 +312,60 @@ def rank_questions_by_relevance(questions, context):
     scored.sort(reverse=True, key=lambda x: x[0])
     return [item[1] for item in scored[:FINAL_FAQ_COUNT]]
 
+def load_models(lang_code, device):
+    from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, AutoModel
 
-def load_models(lang_code):
     models = get_models_for_language(lang_code)
     remove_xla_device_from_config(models["qg"])
     remove_xla_device_from_config(models["qa"])
 
     tokenizer_qg = AutoTokenizer.from_pretrained(models["qg"], legacy=False)
-    model_qg = AutoModelForSeq2SeqLM.from_pretrained(models["qg"]).to(DEVICE)
-    qg_pipeline = pipeline("text2text-generation", model=model_qg, tokenizer=tokenizer_qg, device=DEVICE.index if DEVICE.type == "cuda" else -1)
+    model_qg = AutoModelForSeq2SeqLM.from_pretrained(models["qg"]).to(device)
+    qg_pipeline = pipeline("text2text-generation", model=model_qg, tokenizer=tokenizer_qg, device=device.index if device.type == "cuda" else -1)
 
     tokenizer_qa = AutoTokenizer.from_pretrained(models["qa"], legacy=False)
-    model_qa = AutoModelForSeq2SeqLM.from_pretrained(models["qa"]).to(DEVICE)
-    qa_pipeline = pipeline("text2text-generation", model=model_qa, tokenizer=tokenizer_qa, device=DEVICE.index if DEVICE.type == "cuda" else -1)
+    model_qa = AutoModelForSeq2SeqLM.from_pretrained(models["qa"]).to(device)
+    qa_pipeline = pipeline("text2text-generation", model=model_qa, tokenizer=tokenizer_qa, device=device.index if device.type == "cuda" else -1)
 
     return qg_pipeline, qa_pipeline, tokenizer_qg
 
-
 def is_logical_question(q: str) -> bool:
-    """
-    Checks if the question is a logical sentence.
-    Basic heuristic: at least 3 words, starts with capital, no double punctuation, no odd endings.
-    """
     if not q or len(q.split()) < 3:
         return False
-    if re.search(r"[!.,;:]\?$", q):  # ends in punctuation before ?
+    if re.search(r"[!.,;:]\?$", q):
         return False
     if not q[0].isupper():
         return False
     return True
 
-
 def format_question(q: str) -> str:
-    """
-    Remove trailing punctuation before ?, remove redundant symbols.
-    """
     q = q.strip()
-    q = re.sub(r"[!.,;:]+(\?)", r"\1", q)  # Remove punctuation before ?
+    q = re.sub(r"[!.,;:]+(\?)", r"\1", q)
     q = q.rstrip(".")
     if q.endswith("??"):
         q = q.rstrip("?") + "?"
     return q
 
+def is_valid_question(result):
+    word_count = len(result.strip().split())
+    if word_count > 10:
+        return False
+    if re.search(r'\b\w+\d+\b', result):
+        return False
+    return is_logical_question(result)
 
 def reformulate_question(q, qg_pipeline, attempt=1):
-    """
-    Reformulate a question if it's malformed or illogical.
-    Remove the question mark if needed during reformulation.
-    """
     if attempt > MAX_REFORMULATIONS:
         return None
 
     prompt = (
-        f"The following question is not a logical sentence. "
-        f"Reformulate it by adding or removing words as needed to make it clear, grammatically correct, and under {QUESTION_MAX_WORDS} words." 
+        f"The following question is not a logical sentence."
+        f"Reformulate it by adding or removing words as needed to make it clear, grammatically correct, and under {QUESTION_MAX_WORDS} words."
         f"Remove the question mark if it makes no sense."
+        f"If the question has more than {QUESTION_MAX_WORDS} reformulate it for maximum {MAX_REFORMULATIONS} times."
+        f"Wording can be changed or removed during reformulations, but the sense and meaning of the question must be kept."
+        f"Do not allow enumerations in the question text. Remove enumerations and replace them with short meaningful text. If replacement did not succeed, remove enumerations."
+        f"Exit reformulations when the number of words is less or equal to {QUESTION_MAX_WORDS} or when {MAX_REFORMULATIONS} reformulation attempts were reached."
         f"Original: {q}"
     )
     try:
@@ -327,26 +378,44 @@ def reformulate_question(q, qg_pipeline, attempt=1):
         )[0]["generated_text"].strip()
 
         result = format_question(result)
-        if is_logical_question(result):
+        if is_valid_question(result):
             return result
         return reformulate_question(result, qg_pipeline, attempt + 1)
 
-    except Exception as e:
-        logging.warning(f"Failed to reformulate question '{q}': {e}")
+    except Exception:
+        pass
         return None
 
-
-def generate_faq_from_text(text, filename, qg_pipeline, qa_pipeline, tokenizer):
+def generate_faq_from_text(text, filename, qg_pipeline, qa_pipeline, tokenizer, device):
     n_chunks = max(MIN_CHUNKS, MAX_FAQ * 2)
-    chunks = split_into_chunks_sensitive(text, tokenizer, CHUNK_TOKEN_SIZE, n_chunks)
+    chunks = split_into_chunks_sensitive(text, tokenizer, CHUNK_TOKEN_SIZE, n_chunks, device)
 
     faqs = []
+    total_chunks = len(chunks)
+    bar_length = 40
+
+    file_display_name = Path(filename).name
+
+    sys.stdout.write('\r\033[K')  # \r = return, \033[K = clear to end of line
+    sys.stdout.flush()
+    sys.stdout.write(f" [{'-' * bar_length}] 0%   {format_file_display_name(file_display_name)}\r")
+    sys.stdout.flush()
+
     for idx, chunk in enumerate(chunks):
         try:
+            progress = (idx + 1) / total_chunks
+            filled_length = int(bar_length * progress)
+            bar = "=" * filled_length + " " * (bar_length - filled_length)
+            sys.stdout.write('\r\033[K')  # \r = return, \033[K = clear to end of line
+            sys.stdout.flush()
+            percent = int(progress * 100)
+            padding = "   " if percent < 10 else "  " if percent < 100 else " "
+            sys.stdout.write(f" [{bar}] {percent}%{padding}{format_file_display_name(file_display_name)}\r")
+            sys.stdout.flush()
+
             prompt_qg = (
-                f"Generate as many relevant and concise questions as possible based on the following text. "
+                f"Generate as many relevant and concise questions as possible strictly based on the following text. "
                 f"List each question on a new line."
-                f"Questions must be logical sentences. Reformulate questions no more than {MAX_REFORMULATIONS} times if not logical."
                 f"Questions must not be based or inspired from this prompt."
                 f"Questions must not contain combinations of 3 or more words from this prompt."
                 f"The questions must be strictly based on the following text."
@@ -370,8 +439,7 @@ def generate_faq_from_text(text, filename, qg_pipeline, qa_pipeline, tokenizer):
             for output in qg_outputs:
                 for q_raw in output["generated_text"].strip().split("\n"):
                     q_cleaned = format_question(q_raw.strip())
-                    if not is_logical_question(q_cleaned):
-                        q_cleaned = reformulate_question(q_cleaned, qg_pipeline)
+                    q_cleaned = reformulate_question(q_cleaned, qg_pipeline)
                     if q_cleaned and q_cleaned not in questions:
                         questions.append(q_cleaned)
 
@@ -393,41 +461,67 @@ def generate_faq_from_text(text, filename, qg_pipeline, qa_pipeline, tokenizer):
 
             time.sleep(DELAY_BETWEEN_REQUESTS)
 
-        except Exception as e:
-            logging.warning(f"Failed to generate QA for chunk {idx} in {filename}: {e}")
+        except Exception:
+            pass
+
+    sys.stdout.write('\r\033[K')  # \r = return, \033[K = clear to end of line
+    sys.stdout.flush()
+
+    sys.stdout.write(f" [{'=' * bar_length}] 100% {format_file_display_name(file_display_name)}\n")
+    sys.stdout.flush()
 
     faqs = deduplicate_faq(faqs)
-    faqs = rank_questions_by_relevance(faqs, text)
+    faqs = rank_questions_by_relevance(faqs, text) # This call runs in the worker process
     return faqs[:FINAL_FAQ_COUNT]
 
-def main(content_dir, output_dir):
+# --- Multiprocessing additions ---
+
+def worker_generate_faq(file_info, device):
+    filename, text = file_info
+    try:
+        lang = detect(text)
+    except Exception:
+        lang = "en"
+
+    qg_pipeline, qa_pipeline, tokenizer = load_models(lang, device)
+    
+    faqs = generate_faq_from_text(text, filename, qg_pipeline, qa_pipeline, tokenizer, device)
+    return faqs
+
+def main(content_dir, output_dir, device_obj):
     content_dir = Path(content_dir)
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
     files_texts = load_markdown_text(content_dir)
 
+    available_memory_bytes = psutil.virtual_memory().available
+    target_memory_bytes = available_memory_bytes * 0.60
+
+    estimated_memory_per_process_gb = ESTIMATED_MEMORY_PER_PROCESS_GB
+    estimated_memory_per_process_bytes = estimated_memory_per_process_gb * (1024 ** 3)
+
+    num_processes = int(target_memory_bytes / estimated_memory_per_process_bytes)
+    num_processes = max(1, min(num_processes, os.cpu_count() or 1))
+    print(f"🧠 Calculated {num_processes} processes based on memory availability.")
+
     all_faqs = []
-    for filename, text in files_texts:
-        print(f"Processing file: {filename}")
-        try:
-            lang = detect(text)
-        except Exception:
-            lang = "en"
-        qg_pipeline, qa_pipeline, tokenizer = load_models(lang)
-        faqs = generate_faq_from_text(text, filename, qg_pipeline, qa_pipeline, tokenizer)
-        all_faqs.extend(faqs)
+    with multiprocessing.Pool(processes=num_processes, maxtasksperchild=1) as pool:
+        worker_func_with_device = partial(worker_generate_faq, device=device_obj)
+        results = pool.map(worker_func_with_device, files_texts)
+        for faqs_from_file in results:
+            all_faqs.extend(faqs_from_file)
 
     all_faqs = deduplicate_faq(all_faqs)
-    all_faqs = rank_questions_by_relevance(all_faqs, " ".join([f["answer"] for f in all_faqs]))
+    combined_answers_context = " ".join([f["answer"] for f in all_faqs])
+    all_faqs = rank_questions_by_relevance(all_faqs, combined_answers_context) # This call runs in the main process
 
-    save_faq_markdown(all_faqs, output_dir / "faq.md")
     save_faq_json(all_faqs, output_dir / "faq.json")
 
     print(f"Generated {len(all_faqs)} FAQs")
 
-
 if __name__ == "__main__":
-    main("../../doc-raw-contents/", "")
+    device_log_str, detected_device = get_device_info()
+    print(device_log_str)
 
-
+    main("../../doc-raw-contents/", "", detected_device)

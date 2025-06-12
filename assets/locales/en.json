@@ -156,6 +156,8 @@
 
     "page_toc_toc_title": "On this page",
     "page_toc_toc_title_mobile": "{{page_toc_toc_title}}",
+    "faq_toc_toc_title_mobile": "Questions",
+    "faq_title":"Docaroo's Frequent Asked Questions",
     "page_tags_section_title": "Tags",
     "page_notes_section_title": "Notes",
     "page_related_section_title": "Related",

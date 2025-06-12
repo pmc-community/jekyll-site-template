@@ -88,3 +88,5 @@ hubspot:
   region: "na1"
   feedbackFormID: 
     ID: "e166804c-61ea-4b51-801d-f4299cb5c06c"
+faq:
+  enabled: true

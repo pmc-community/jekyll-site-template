@@ -1,6 +1,7 @@
 {% assign video_id = include.id %}
 {% assign video_width = include.width | default: "560" %}
 {% assign video_height = include.height | default: "315" %}
+{% assign video_centered = include.center | default: "false"%}
 
 {% capture uuid %}
   {% UUID %}
@@ -8,6 +9,12 @@
 {% assign vid = uuid | strip %}
 
 {% assign aspect_ratio = video_height | times: 100 | divided_by: video_width %}
+
+{% if video_centered == "false" %}
+  {% assign vidMargin = 0 %}
+{% else %}
+  {% assign vidMargin = "auto" %}
+{% endif %}
 
 <div class="youtube-container youtube-{{ vid }}"
      data-id="{{ video_id }}"
@@ -31,11 +38,12 @@
       const iframe = $('<iframe>', {
         width: '100%',
         height: iframeHeight,
-        src: `https://www.youtube.com/embed/${videoId}?autoplay=1`,
+        src: `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&showinfo=0&modestbranding=1`,
         frameborder: 0,
         allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
         allowfullscreen: true
       });
+
       $(this).replaceWith(iframe);
     });
   });
@@ -47,9 +55,10 @@
   width: 100%;
   max-width: {{ video_width }}px;
   padding-top: var(--aspect-ratio);
-  margin: 1em 0;
+  margin: 1em {{vidMargin}};
   cursor: pointer;
-  background-color: black;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .youtube-container.youtube-{{ vid }} img {
@@ -60,6 +69,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: opacity 0.3s ease;
 }
 
 .youtube-container.youtube-{{ vid }} .play-button {
