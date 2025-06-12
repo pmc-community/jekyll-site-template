@@ -39,7 +39,7 @@
     </div>
 
    {% if ref %}
-      <div id="faqRef-{{fid}}" class="p-2">
+      <div id="faqRef-{{fid}}" class="p-2 mb-2">
         {% assign ref_list = q.ref | split: "," %}
         {% for r in ref_list %}
           {% assign rs = r | strip %}
