@@ -155,6 +155,7 @@ DEPENDENCIES
   jekyll (~> 4.3.3)
   jekyll-sass-converter (= 2.0.0)
   just-the-docs
+  liquid (~> 4.0)
   matrix
   nokogiri (>= 1.18.8)
   rack (~> 2.2.9)

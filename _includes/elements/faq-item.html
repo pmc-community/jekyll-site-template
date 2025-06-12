@@ -32,7 +32,10 @@
   </a>
   <div class="collapse" id="faq-{{fid}}">
     <div class="p-2 text-secondary">
-      {{answer}}
+      {% capture rendered_answer %}
+        {% DryRenderPage answer %}
+      {% endcapture %}
+      {{rendered_answer | markdonify}}
     </div>
 
    {% if ref %}
