@@ -1,0 +1,25 @@
+<!-- Search Input -->
+<input 
+    type="text" 
+    id="faqSearch" 
+    placeholder="Search FAQs..." 
+    class="form-control my-3"
+    data-i18n="[placeholder]faq_search_placeholder">
+
+<script>
+  $('#faqSearch').on('input', function () {
+    const searchText = $(this).val().toLowerCase().trim();
+
+    $('div[id^="faq-container-"]').each(function () {
+      const $container = $(this);
+      const $contentDiv = $container.find('div[id^="faq-"]');
+      const contentText = $contentDiv.text().toLowerCase();
+
+      if (searchText === "" || contentText.includes(searchText)) {
+        $container.show();
+      } else {
+        $container.hide();
+      }
+    });
+  });
+</script>
