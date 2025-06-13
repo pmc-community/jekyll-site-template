@@ -1,0 +1,63 @@
+<!-- Search Input -->
+
+<div class="input-group mb-3">
+  <button 
+    id="faqSearchClear" 
+    class="btn btn-sm btn-primary" 
+    type="button"
+    data-i18n="faq_search_clear_btn_text">Clear</button>
+
+  <input 
+    type="text" 
+    id="faqSearch"
+    class="form-control"
+    placeholder="Search FAQs..." 
+    class="form-control my-3"
+    aria-describedby="faqSearchClear"
+    data-i18n="[placeholder]faq_search_placeholder">
+
+</div>
+
+<script>
+    const toggleFAQContainers = () => {
+        const searchText = $('#faqSearch').val().toLowerCase().trim();
+        $('div[id^="faq-container-"]').each(function () {
+            const $container = $(this);
+            const $contentDiv = $container.find('div[id^="faq-"]');
+            const contentText = $contentDiv.text().toLowerCase();
+
+            const $questionDiv = $container.find('h1');
+            const question = $questionDiv.text().trim();
+
+            if (searchText === "" || contentText.includes(searchText)) {
+                $container.show();
+                $('nav#toc a.nav-link').each(function() {
+                    if ($(this).text().trim() === question) {
+                        $(this).parent().show();
+                    }
+                });
+            } else {
+                $container.hide();
+                $('nav#toc a.nav-link').each(function() {
+                    if ($(this).text().trim() === question) {
+                        $(this).parent().hide();
+                    }
+                });
+            }
+        });
+    }
+
+</script>
+<script>
+  $('#faqSearch').on('input', function () {
+    toggleFAQContainers();
+  });
+
+  $('#faqSearchClear').on('click', function() {
+    $('#faqSearch').val('');
+    toggleFAQContainers();
+    $('nav#toc a.nav-link').each(function() {
+        $(this).parent().show();
+    });
+  });
+</script>
