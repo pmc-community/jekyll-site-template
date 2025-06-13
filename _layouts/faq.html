@@ -49,8 +49,13 @@ layout: default
 
     <div id="faq_content" class="d-block d-md-flex">
     <!-- faq list-->
-        <div id="faq_list_container" class="col-md-7 col-12">
-            {% include siteIncludes/partials/faq/faq-list.html %}
+        <div id="faq_container" class="col-md-7 col-12">
+            <div id="faq_search">
+                {% include siteIncludes/partials/faq/faq-search.html %}
+            </div>
+            <div id="faq_list">
+                {% include siteIncludes/partials/faq/faq-list.html %}
+            </div>
         </div>
         <!-- Desktop Toc -->
          <div class="col-1 d-none d-md-block" siteFunction="contentAreaConten2TocSeparator"></div>
