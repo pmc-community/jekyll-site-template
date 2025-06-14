@@ -113,7 +113,7 @@ just_the_docs:
 
     # default collections (last position(s))
     tools:
-      name: Utile
+      name: Tools
       nav_fold: true
 
 # MARKER COLLECTIONS END
