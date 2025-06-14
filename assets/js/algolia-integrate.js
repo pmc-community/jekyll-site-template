@@ -164,7 +164,7 @@ algolia = {
     silentSearchInSite: (query, searchResultsCallback) => {
         const client = algoliasearch(algolia.appId, algolia.apiKey);
         const index = client.initIndex(algolia.indexName);
-        index.search(query, {facetFilters: ['lang:ro']})
+        index.search(query, {facetFilters: [`lang:${algolia.langCode}`]})
             .then(function(initialSearchResults) {
                 const resultsPages = initialSearchResults.nbPages;
                 let results = [];
