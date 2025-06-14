@@ -3,6 +3,7 @@
 # otherwise may lead to a endless loop when building/serving the site
 
 require 'yaml'
+require "json"
 require_relative "../../tools/modules/globals"
 require_relative "../../tools/modules/file-utilities"
 require 'dotenv'
@@ -36,7 +37,22 @@ Jekyll::Hooks.register :site, :after_init do |site|
             end
 
             if (numFaq > 0 )
-                faqPageContent = "---\nlayout: faq\npermalink: /faq\ntitle: FAQ\nnav_order: 1\nexcerpt: Frequently asked questions\n---"
+                content = File.open("_data/siteConfig.yml","" "rb", &:read).encode('UTF-8', invalid: :replace, undef: :replace)
+                siteConfig = YAML.load(content);
+                siteLanguageId = siteConfig["multilang"]["siteLanguage"]
+                siteLanguageCode = siteConfig["multilang"]["availableLang"][siteLanguageId]["lang"]
+                faqTitle = "FAQ"
+                langFilePath = "assets/locales/#{siteLanguageCode}.json"
+                if (File.exist?(langFilePath))
+                    translations = File.read(langFilePath)
+                    begin
+                        translationsObj = JSON.parse(translations)
+                        faqTitle = translationsObj["faq_menu_item_text"]
+                    rescue
+                        faqTitle = "FAQ"
+                    end
+                end
+                faqPageContent = "---\nlayout: faq\npermalink: /faq\ntitle: #{faqTitle}\nnav_order: 1\nexcerpt: Frequently asked questions\n---"
                 faqPageFilePath = "#{Globals::DOCS_DIR}/_tools/faq.md"
                 FileUtilities.overwrite_file(faqPageFilePath, faqPageContent)
                 Globals.moveUpOneLine

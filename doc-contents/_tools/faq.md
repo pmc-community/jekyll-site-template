@@ -1,7 +1,7 @@
 ---
 layout: faq
 permalink: /faq
-title: FAQ
+title: Intrebari
 nav_order: 1
 excerpt: Frequently asked questions
 ---
