@@ -1061,7 +1061,7 @@
     "page_content_context_menu_tag_to_all_documents_toast_crtPageInfo_message_part": "This document was not found in saved items, so the tag was not applied to it.",
     "page_content_context_menu_tag_to_all_documents_toast_outOf_message_part": "out of",
     "page_content_context_menu_tag_to_all_documents_toast_docs_not_in_saved_items_message_part": "document(s) not found in saved items.",
-    "page_content_context_menu_tag_to_all_documents_toast_message": "Tag %s was applied to %d %s document(s)! %d %s",
+    "page_content_context_menu_tag_to_all_documents_toast_message": "Tag %s was applied to %d %s document(s)! %s %s",
     "page_content_context_menu_tag_to_all_documents_noSense_toast_message": "All documents should be tagged with tag %s and this doesn't make sense! We skip ... You can manually apply the tag on the docs you want.",
     "page_content_custom_comment_anchor_offcanvas_title": "Comments",
     "page_content_custom_comment_anchor_offcanvas_doc_title_text": "Title",

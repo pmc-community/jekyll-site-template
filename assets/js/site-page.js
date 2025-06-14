@@ -807,7 +807,6 @@ const page__setSelectedTextContextMenu = () =>{
                     showToast(toastMessage, 'bg-warning', 'text-dark');
                 }
             });
-            
             $('#selected-text-context-menu').hide();
             $('body').css('overflow', '');
         }
