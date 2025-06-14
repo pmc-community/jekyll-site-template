@@ -42,17 +42,20 @@ Jekyll::Hooks.register :site, :after_init do |site|
                 siteLanguageId = siteConfig["multilang"]["siteLanguage"]
                 siteLanguageCode = siteConfig["multilang"]["availableLang"][siteLanguageId]["lang"]
                 faqTitle = "FAQ"
+                faqExcerpt = "Frequently asked questions"
                 langFilePath = "assets/locales/#{siteLanguageCode}.json"
                 if (File.exist?(langFilePath))
                     translations = File.read(langFilePath)
                     begin
                         translationsObj = JSON.parse(translations)
                         faqTitle = translationsObj["faq_menu_item_text"]
+                        faqExcerpt = translationsObj["faq_page_excerpt"]
                     rescue
                         faqTitle = "FAQ"
+                        faqExcerpt = "Frequently asked questions"
                     end
                 end
-                faqPageContent = "---\nlayout: faq\npermalink: /faq\ntitle: #{faqTitle}\nnav_order: 1\nexcerpt: Frequently asked questions\n---"
+                faqPageContent = "---\nlayout: faq\npermalink: /faq\ntitle: #{faqTitle}\nnav_order: 1\nexcerpt: #{faqExcerpt}\n---"
                 faqPageFilePath = "#{Globals::DOCS_DIR}/_tools/faq.md"
                 FileUtilities.overwrite_file(faqPageFilePath, faqPageContent)
                 Globals.moveUpOneLine

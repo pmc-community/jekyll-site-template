@@ -3,5 +3,5 @@ layout: faq
 permalink: /faq
 title: Intrebari
 nav_order: 1
-excerpt: Frequently asked questions
+excerpt: Intrebari frecvente
 ---
