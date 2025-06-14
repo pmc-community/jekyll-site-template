@@ -175,7 +175,7 @@ algolia = {
                 };
 
                 const fetchPage = (i) => {
-                    return index.search(query, { page: i })
+                    return index.search(query, { page: i, facetFilters: [`lang:${algolia.langCode}`] })
                         .then(function(searchResults) {
                             // Correctly concatenate results, ensuring no overwriting
                             results = results.concat(searchResults.hits);
