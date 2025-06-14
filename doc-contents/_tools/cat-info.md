@@ -1,7 +1,7 @@
 ---
 layout: cat
 permalink: /cat-info
-title: Categories
+title: Categorii
 nav_order: 2
-excerpt: "Explore site categories and your own custom categories. Organise as you want by using custom categories."
+excerpt: "Explorează categoriile site-ului și categoriile personalizate proprii. Organizeaza documentele asa cum doresti folosind categorii personalizate."
 ---
