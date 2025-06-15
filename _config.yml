@@ -45,6 +45,7 @@ exclude:
   - LICENSE
   - README.md
   - serve
+  - build
   - serve-rack
   - config.ru
   - .github/
