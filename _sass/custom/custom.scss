@@ -85,11 +85,13 @@ $alwaysWhiteTextElements: (
     'button[siteFunction="sitePagesDetailsShowSearchPanes"] span',
     'button[siteFunction="sitePagesDetailsClearFilter"] span',
     'button[siteFunction="btnMenuMoreToggle"] span',
-    'li.dt-paging-button.page-item.active a'
+    'li.dt-paging-button.page-item.active a',
+    'button[sitefunction^="tableNavigateToSavedItems_"] span',
+    'button[sitefunction^="tableNavigateToSavedItems_"] span'
 );
 @each $element in $alwaysWhiteTextElements {
     #{$element}, #{$element}:hover {
-        color: $siteHeaderTextColor !important; 
+        color: $c-white !important; 
     }
 }
 
@@ -119,8 +121,8 @@ $alwaysBlackTextElements: (
     '.DocSearch-Hit-title'
 );
 @each $element in $alwaysBlackTextElements {
-    #{$element} {
-        color: $textColor !important;
+    #{$element}, #{$element}:hover {
+        color: $c-black !important;
     }
 }
 
