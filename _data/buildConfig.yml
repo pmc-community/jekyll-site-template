@@ -90,6 +90,7 @@ hubspot:
     ID: "e166804c-61ea-4b51-801d-f4299cb5c06c"
 faq:
   enabled: true
+  pagination: true
   displayedPagesDesktop: 10
   displayedPagesMobile: 7
   perPage: 10
