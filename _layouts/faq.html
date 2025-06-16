@@ -1,6 +1,11 @@
 ---
 layout: default
 ---
+{% assign buildConfig = site.data["buildConfig"] %}
+{% assign buildConfigJson = buildConfig | replace: "=>", ":" %}
+
+{% assign buildConfigObj= buildConfigJson | json_string_to_object %}
+{% assign faqConfig = buildConfigObj["faq"] %}
 
 <div class="py-3">
     <!-- content from the page using this template -->
@@ -47,21 +52,82 @@ layout: default
         </div>
     </div>
 
-    <div id="faq_content" class="d-block d-md-flex">
+    {% if faqConfig["faqToc"] %}
+        {% assign tocOnPageClasses = "col-md-7 col-12" %}
+        {% assign tocOnPageClasses_faqContent = "d-block d-md-flex" %}        
+    {% else %}
+        {% assign tocOnPageClasses = "" %}
+        {% assign tocOnPageClasses_faqContent = "d-block" %} 
+    {% endif %}
+
+    <div id="faq_search" class="px-2 {{tocOnPageClasses}}">
+        {% include siteIncludes/partials/faq/faq-search.html %}
+    </div>
+
+    <div id="faq_content" class="{{tocOnPageClasses_faqContent}}">
     <!-- faq list-->
-        <div id="faq_container" class="col-md-7 col-12">
-            <div id="faq_search" class="px-2">
-                {% include siteIncludes/partials/faq/faq-search.html %}
-            </div>
+        <div id="faq_container" class="{{tocOnPageClasses}}">
             <div id="faq_list">
                 {% include siteIncludes/partials/faq/faq-list.html %}
             </div>
         </div>
-        <!-- Desktop Toc -->
-         <div class="col-1 d-none d-md-block" siteFunction="contentAreaConten2TocSeparator"></div>
-        <div id="toc_container" class="p-0">
-            <nav id="toc" data-toggle="toc"></nav>
-        </div>
+
+        {% if faqConfig["faqToc"] %}
+            <!-- Desktop Toc -->
+            <div class="col-1 d-none d-md-block" siteFunction="contentAreaConten2TocSeparator"></div>
+            <div id="toc_container" class="p-0">
+                <nav id="toc" data-toggle="toc"></nav>
+            </div>
+        {% endif %}
     </div>
 
+    {% if faqConfig["pagination"] %} 
+        {% include siteIncludes/partials/faq/faq-pagination.html %}
+    {% endif %}
+
 </div>
+
+<script>
+    const FAQPaginate = () => {
+
+        if ({{faqConfig["pagination"]}}) {
+            const items = $('.faq-container:visible');
+            const numItems = items.length;
+
+            if (numItems > {{faqConfig["perPage"]}}) {
+                $('#faq-pagination-container').removeClass('d-none');
+                const displayedPages = preFlight.envInfo.device.deviceType === 'mobile' 
+                    ? {{faqConfig["displayedPagesMobile"]}} 
+                    : {{faqConfig["displayedPagesDesktop"]}};
+                
+                const perPage = {{faqConfig["perPage"]}};
+
+                items.slice(perPage).hide();
+
+                $('#faq-pagination-container').pagination({
+                    items: numItems,
+                    itemsOnPage: perPage,
+                    displayedPages: displayedPages,
+                    cssStyle: 'light-theme',
+                    prevText: '<<',
+                    nextText: '>>',
+
+                    onPageClick: function (pageNumber) {
+                        const showFrom = (pageNumber - 1) * perPage;
+                        const showTo = showFrom + perPage;
+                        items.hide().slice(showFrom, showTo).show();
+                        setTimeout(()=>history.replaceState({}, document.title, location.pathname + location.search), 0);
+                    }
+                });
+            } else {
+                $('#faq-pagination-container').addClass('d-none');
+            }
+        }
+    }
+</script>
+
+<script>
+    $('#toc').on('click', '.nav-link', function() {
+        setTimeout(()=>history.replaceState({}, document.title, location.pathname + location.search), 0);
+    });
+</script>

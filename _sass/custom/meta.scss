@@ -288,6 +288,7 @@ $sidebarLogo, $sideBarFooter, $sideBarHeader, $sideBarDocLink,$sideBarCategoryBt
         margin-left:$correctionMargin;
         justify-content: $elementsPositionInHeader;
         background: $headerBackground;
+        border-left: $stickyElementLeftBorder !important;
 
         @include phone {
             top: $stickyElementTop_phone !important;

@@ -4,6 +4,7 @@ $headerBackground: $siteHeaderBackground;
 $stickyElementPosition: $pos-sticky;
 $stickyElementTopOffset: $m-top0px;
 $stickyElementZIndex: $z-max;
+$stickyElementLeftBorder: $b-none;
 $stickyElementTop_phone: $m-corr-1px; // mask 1px gap of the element on mobile 
 $correctionMargin: $m-corr-1px; // to mask the 1px border between the content area and left sidebar
 $elementsPositionInHeader: $al-h-left; // if algolia is active, otherwise should be removed
