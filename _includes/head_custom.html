@@ -284,6 +284,25 @@
     
 <!-- site js assets -->
 
+{% capture faq %}
+    {% FAQExists %}
+{% endcapture %}
+{% assign faqExists = faq | strip %}
+
+{%if faqExists == 'true' %}
+    <link href="{{lang_prefix}}/assets/js/jquery.simplePagination.js" rel="preload" as="script">
+    <script src="{{lang_prefix}}/assets/js/jquery.simplePagination.js"></script>
+    <link rel="preload" 
+            href="{{lang_prefix}}/assets/css/simplePagination.css" 
+            as="style" 
+            onload="this.rel='stylesheet'">
+    <noscript>
+        <link 
+            rel="stylesheet" 
+            href="{{lang_prefix}}/assets/css/simplePagination.css">
+    </noscript>
+{% endif %}
+
 <link href="{{lang_prefix}}/assets/js/preflight-check.js" rel="preload" as="script">
 <script src="{{lang_prefix}}/assets/js/preflight-check.js"></script>
 
