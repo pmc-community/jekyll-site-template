@@ -1,0 +1,30 @@
+<div id="faq-pagination-container" class="px-2"></div>
+<script>
+  $(function () {
+    FAQPaginate();
+  });
+</script>
+
+<style>
+    #faq-pagination-container .current, #faq-pagination-container .prev, #faq-pagination-container .active, #faq-pagination-container li a {
+        box-shadow: none !important
+    }
+
+    #faq-pagination-container .active span, #faq-pagination-container .current span {
+        background: var(--bs-primary) !important;
+        color: var(--bs-white) !important
+    }
+
+    #faq-pagination-container .disabled span {
+        background: var(--bs-secondary) !important;
+        color: var(--bs-white) !important;
+    }
+
+    #faq-pagination-container span, #faq-pagination-container a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 26px !important;
+        min-width: 26px !important;
+    }
+</style>
