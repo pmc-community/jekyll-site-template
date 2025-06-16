@@ -81,42 +81,47 @@ layout: default
         {% endif %}
     </div>
 
-    {% include siteIncludes/partials/faq/faq-pagination.html %}
+    {% if faqConfig["pagination"] %} 
+        {% include siteIncludes/partials/faq/faq-pagination.html %}
+    {% endif %}
 
 </div>
 
 <script>
     const FAQPaginate = () => {
-        const items = $('.faq-container:visible');
-        const numItems = items.length;
 
-        if (numItems > {{faqConfig["perPage"]}}) {
-            $('#faq-pagination-container').removeClass('d-none');
-            const displayedPages = preFlight.envInfo.device.deviceType === 'mobile' 
-                ? {{faqConfig["displayedPagesMobile"]}} 
-                : {{faqConfig["displayedPagesDesktop"]}};
-            
-            const perPage = {{faqConfig["perPage"]}};
+        if ({{faqConfig["pagination"]}}) {
+            const items = $('.faq-container:visible');
+            const numItems = items.length;
 
-            items.slice(perPage).hide();
+            if (numItems > {{faqConfig["perPage"]}}) {
+                $('#faq-pagination-container').removeClass('d-none');
+                const displayedPages = preFlight.envInfo.device.deviceType === 'mobile' 
+                    ? {{faqConfig["displayedPagesMobile"]}} 
+                    : {{faqConfig["displayedPagesDesktop"]}};
+                
+                const perPage = {{faqConfig["perPage"]}};
 
-            $('#faq-pagination-container').pagination({
-                items: numItems,
-                itemsOnPage: perPage,
-                displayedPages: displayedPages,
-                cssStyle: 'light-theme',
-                prevText: '<<',
-                nextText: '>>',
+                items.slice(perPage).hide();
 
-                onPageClick: function (pageNumber) {
-                    const showFrom = (pageNumber - 1) * perPage;
-                    const showTo = showFrom + perPage;
-                    items.hide().slice(showFrom, showTo).show();
-                    setTimeout(()=>history.replaceState({}, document.title, location.pathname + location.search), 0);
-                }
-            });
-        } else {
-            $('#faq-pagination-container').addClass('d-none');
+                $('#faq-pagination-container').pagination({
+                    items: numItems,
+                    itemsOnPage: perPage,
+                    displayedPages: displayedPages,
+                    cssStyle: 'light-theme',
+                    prevText: '<<',
+                    nextText: '>>',
+
+                    onPageClick: function (pageNumber) {
+                        const showFrom = (pageNumber - 1) * perPage;
+                        const showTo = showFrom + perPage;
+                        items.hide().slice(showFrom, showTo).show();
+                        setTimeout(()=>history.replaceState({}, document.title, location.pathname + location.search), 0);
+                    }
+                });
+            } else {
+                $('#faq-pagination-container').addClass('d-none');
+            }
         }
     }
 </script>
