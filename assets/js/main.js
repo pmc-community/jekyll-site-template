@@ -464,7 +464,7 @@ const setGoToTopBtn = () => {
 window.clearTheUrl = () => {
     $(window).on('scroll', function() {
         hash = window.location.hash;
-        if(hash) {
+        if(hash && $(hash).length ) {
             // remove the hash and keep everything else
             history.replaceState({}, document.title, location.pathname + location.search);
             setTimeout (() =>
@@ -478,7 +478,7 @@ window.clearTheUrl = () => {
 
     $(window).on('load', function() {
         hash = window.location.hash;
-        if(hash) {
+        if(hash && $(hash).length ) {
             history.replaceState({}, document.title, location.pathname + location.search);
 
             setTimeout (() =>

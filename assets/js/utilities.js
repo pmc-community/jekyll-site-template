@@ -14,7 +14,7 @@ $(window).on('scroll', () => {
 
     // handle fixed header scroll
     const hash = window.location.hash;
-    if (hash) {
+    if (hash && $(hash).length ) {
         // if the header is not fixed, 
         // -$(settings.headerAboveContent.headerID).height() - settings.headerAboveContent.offsetWhenScroll 
         // can be removed
@@ -225,7 +225,7 @@ const buildHierarchy = (items, groupByProp, linkProp, orderByInResultProp, order
 };
 
 // groupByRootNodes consolidates the lists under each root node
-// rodt node has pkProp = linkedProp; any other node has linkedProp = parent.pkProp 
+// root node has pkProp = linkedProp; any other node has linkedProp = parent.pkProp 
 const groupByRootNodes = (data, pkProp, linkedProp, orderProp, sortOrder) => {
     // Map elements by id for quick lookup
     const elementsById = _.keyBy(data, pkProp, orderProp);
@@ -420,7 +420,6 @@ const getObjectsFromArray = (searchCriteria, objectArray) => {
     const found = _.filter(objectArray, searchCriteria);
     return found.length === 0 ? [] : found;
 }
-
 
 const objectIndexInArray = (searchCriteria, objectArray) => {
     return _.findIndex(objectArray, (obj) => {
