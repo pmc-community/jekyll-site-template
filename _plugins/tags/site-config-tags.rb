@@ -154,6 +154,26 @@ module Jekyll
 
         end
 
+        class FAQExists < Liquid::Tag
+           
+            def initialize(tag_name, input, context)
+                super
+                @input = input
+            end
+
+            def render(context)
+                faqExists = false
+                file_path = "#{Globals::DOCS_DIR}/_tools/faq.md"
+                if (File.exist?(file_path))
+                    faqExists = true
+                end
+
+                faqExists
+
+            end
+
+        end
+
     end
 end
   
@@ -163,3 +183,4 @@ Liquid::Template.register_tag('SiteLanguagesExceptActiveLanguage', Jekyll::SiteC
 Liquid::Template.register_tag('SiteDefaultLanguageCode', Jekyll::SiteConfigSettings::SiteDefaultLanguageCode)
 Liquid::Template.register_tag('SiteBaseUrl', Jekyll::SiteConfigSettings::SiteBaseUrl)
 Liquid::Template.register_tag('LanguageSwitchEnabled', Jekyll::SiteConfigSettings::LanguageSwitchEnabled)
+Liquid::Template.register_tag('FAQExists', Jekyll::SiteConfigSettings::FAQExists)
