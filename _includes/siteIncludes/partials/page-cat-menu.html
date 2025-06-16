@@ -10,6 +10,12 @@
 
 {% assign catMenu = site.data.ordered_categories | cat_main_menu %}
 
+{% assign buildConfig = site.data["buildConfig"] %}
+{% assign buildConfigJson = buildConfig | replace: "=>", ":" %}
+
+{% assign buildConfigObj= buildConfigJson | json_string_to_object %}
+{% assign faqConfig = buildConfigObj["faq"] %}
+
 {% if site.data.siteConfig.catMenu %}
     {% if catMenu.catNo > 0 %}
         <ul id="category-menu" class="px-md-5 px-0 nav mb-md-0 mb-3 pt-2 pt-md-0 justify-content-md-start justify-content-around align-items-center">
@@ -84,15 +90,17 @@
                                 Tags
                             </a>
                         </li>
-                        <li class="px-4">
-                            <a 
-                                siteFunction="menuItemLevel2" 
-                                class="px-0 dropdown-item fs-6 fw-medium text-primary" 
-                                href="{{lang_prefix}}/faq"
-                                data-i18n="faq_menu_item_text">
-                                Tags
-                            </a>
-                        </li>
+                        {% if faqConfig["enabled"] %}
+                            <li class="px-4">
+                                <a 
+                                    siteFunction="menuItemLevel2" 
+                                    class="px-0 dropdown-item fs-6 fw-medium text-primary" 
+                                    href="{{lang_prefix}}/faq"
+                                    data-i18n="faq_menu_item_text">
+                                    Tags
+                                </a>
+                            </li>
+                        {% endif %}
                         <li><hr class="dropdown-divider"></li>
                         <li class="px-4">
                             <a 
@@ -149,15 +157,17 @@
                                 Tags
                             </a>
                         </li>
-                         <li class="px-4">
-                            <a 
-                                siteFunction="menuItemLevel2" 
-                                class="px-0 dropdown-item fs-6 fw-medium text-primary" 
-                                href="{{lang_prefix}}/faq"
-                                data-i18n="faq_menu_item_text">
-                                Tags
-                            </a>
-                        </li>
+                        {% if faqConfig["enabled"] %}
+                            <li class="px-4">
+                                <a 
+                                    siteFunction="menuItemLevel2" 
+                                    class="px-0 dropdown-item fs-6 fw-medium text-primary" 
+                                    href="{{lang_prefix}}/faq"
+                                    data-i18n="faq_menu_item_text">
+                                    Tags
+                                </a>
+                            </li>
+                        {% endif %}
                         <li><hr class="dropdown-divider"></li>
                         <li class="px-4">
                             <a siteFunction="menuItemLevel2" 
