@@ -19,34 +19,91 @@
 </div>
 
 <script>
+    const unmarkText = ($element) => {
+        $element.find('mark.faq-highlight').each(function () {
+            const $mark = $(this);
+            $mark.replaceWith(document.createTextNode($mark.text()));
+        });
+        $element[0].normalize();
+    };
+
+    const markText = ($element, searchText) => {
+        if (!searchText) return;
+
+        const escaped = searchText.replace(/[-[\]/{}()*+?.\\^$|]/g, '\\$&');
+        const regex = new RegExp(`(${escaped})`, 'gi');
+
+        $element.contents().each(function () {
+            const node = this;
+
+            if (node.nodeType === Node.TEXT_NODE) {
+                const text = node.nodeValue;
+                if (regex.test(text)) {
+                    const parts = text.split(regex);
+                    const fragment = document.createDocumentFragment();
+
+                    parts.forEach((part, i) => {
+                        if (regex.test(part)) {
+                            const mark = document.createElement('mark');
+                            mark.className = 'faq-highlight';
+                            mark.textContent = part;
+                            fragment.appendChild(mark);
+                        } else {
+                            fragment.appendChild(document.createTextNode(part));
+                        }
+                    });
+
+                    $(node).replaceWith(fragment);
+                }
+            } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName !== 'MARK') {
+                markText($(node), searchText);
+            }
+        });
+    };
+
     const toggleFAQContainers = () => {
         const searchText = $('#faqSearch').val().toLowerCase().trim();
+
         $('div[id^="faq-container-"]').each(function () {
             const $container = $(this);
             const $contentDiv = $container.find('div[id^="faq-"]');
-            const contentText = $contentDiv.text().toLowerCase();
-
             const $questionDiv = $container.find('h1');
             const question = $questionDiv.text().trim();
 
-            if (searchText === "" || contentText.includes(searchText)) {
+            unmarkText($contentDiv);
+
+            const contentText = $contentDiv.text().toLowerCase();
+            const matched = searchText !== "" && contentText.includes(searchText);
+
+            if (searchText === "" || matched) {
+                if (searchText !== "") {
+                    markText($contentDiv, searchText);
+                }
                 $container.show();
-                $('nav#toc a.nav-link').each(function() {
+                $('nav#toc a.nav-link').each(function () {
                     if ($(this).text().trim() === question) {
                         $(this).parent().show();
                     }
                 });
             } else {
                 $container.hide();
-                $('nav#toc a.nav-link').each(function() {
+                $('nav#toc a.nav-link').each(function () {
                     if ($(this).text().trim() === question) {
                         $(this).parent().hide();
                     }
                 });
             }
         });
-    }
+    };
+
 </script>
+
+<style>
+mark.faq-highlight {
+    background-color: var(--bs-warning) !important;
+    border-radius: 3px;
+}
+</style>
 
 <script>
   $('#faqSearch').on('input', function () {
