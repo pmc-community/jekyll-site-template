@@ -36,30 +36,34 @@
         $element.contents().each(function () {
             const node = this;
 
-            if (node.nodeType === Node.TEXT_NODE) {
-                const text = node.nodeValue;
-                if (regex.test(text)) {
-                    const parts = text.split(regex);
-                    const fragment = document.createDocumentFragment();
+            if (node.nodeType === Node.TEXT_NODE && node.nodeValue.trim()) {
+                const parent = node.parentNode;
+                if (!$(parent).is('script, style, mark')) {
+                    const text = node.nodeValue;
+                    if (regex.test(text)) {
+                        const parts = text.split(regex);
+                        const fragment = document.createDocumentFragment();
 
-                    parts.forEach((part, i) => {
-                        if (regex.test(part)) {
-                            const mark = document.createElement('mark');
-                            mark.className = 'faq-highlight';
-                            mark.textContent = part;
-                            fragment.appendChild(mark);
-                        } else {
-                            fragment.appendChild(document.createTextNode(part));
-                        }
-                    });
+                        parts.forEach(part => {
+                            if (regex.test(part)) {
+                                const mark = document.createElement('mark');
+                                mark.className = 'faq-highlight';
+                                mark.textContent = part;
+                                fragment.appendChild(mark);
+                            } else {
+                                fragment.appendChild(document.createTextNode(part));
+                            }
+                        });
 
-                    $(node).replaceWith(fragment);
+                        $(node).replaceWith(fragment);
+                    }
                 }
             } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName !== 'MARK') {
                 markText($(node), searchText);
             }
         });
     };
+
 
     const toggleFAQContainers = () => {
         const searchText = $('#faqSearch').val().toLowerCase().trim();
