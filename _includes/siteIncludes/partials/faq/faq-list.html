@@ -1,6 +1,13 @@
+{% assign seen_questions = "" %}
+
 {% for q in site.faq %}
-    {% assign question = q.q  %}
-    {% assign answer = q.content %}
-    {% assign ref = q.ref %}
+  {% assign question = q.q %}
+  {% assign question_key = question | strip | downcase %}
+  {% assign answer = q.content %}
+  {% assign ref = q.ref %}
+
+  {% unless seen_questions contains question_key %}
+    {% capture seen_questions %}{{ seen_questions }}|{{ question_key }}{% endcapture %}
     {% include elements/faq-item.html q = question a = answer ref = ref %}
+  {% endunless %}
 {% endfor %}
