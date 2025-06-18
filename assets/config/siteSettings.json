@@ -224,10 +224,10 @@
         "tag2"
       ],
       "excerpt": "lorem ipsum, latin, cicero, malorum, sections, finibus bonorum, rackham, versions, standard, english",
-      "lastUpdate": "2025-06-18 17:33:33 +0300",
-      "lastUpdateUTC": 1750257213,
-      "createTime": "2025-06-18 17:33:33 +0300",
-      "createTimeUTC": 1750257213,
+      "lastUpdate": "2025-06-19 01:07:33 +0300",
+      "lastUpdateUTC": 1750284453,
+      "createTime": "2025-06-19 01:07:33 +0300",
+      "createTimeUTC": 1750284453,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -326,10 +326,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "child page",
-      "lastUpdate": "2025-06-18 17:33:33 +0300",
-      "lastUpdateUTC": 1750257213,
-      "createTime": "2025-06-18 17:33:33 +0300",
-      "createTimeUTC": 1750257213,
+      "lastUpdate": "2025-06-19 01:07:33 +0300",
+      "lastUpdateUTC": 1750284453,
+      "createTime": "2025-06-19 01:07:33 +0300",
+      "createTimeUTC": 1750284453,
       "relatedPages": [],
       "autoSummary": "grand child page",
       "similarByContent": [],
@@ -521,10 +521,10 @@
         "exa"
       ],
       "excerpt": "innohub support, support center, support forms, functionalities, center, functionality, information, service, issues, product",
-      "lastUpdate": "2025-06-18 17:33:33 +0300",
-      "lastUpdateUTC": 1750257213,
-      "createTime": "2025-06-18 17:33:33 +0300",
-      "createTimeUTC": 1750257213,
+      "lastUpdate": "2025-06-19 01:07:33 +0300",
+      "lastUpdateUTC": 1750284453,
+      "createTime": "2025-06-19 01:07:33 +0300",
+      "createTimeUTC": 1750284453,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -649,14 +649,6 @@
         {
           "permalink": "/alerts/",
           "title": "Alerts"
-        },
-        {
-          "permalink": "/pwc/",
-          "title": "Play with content"
-        },
-        {
-          "permalink": "/collection-2/Z/z/",
-          "title": "Collection-2/Z"
         }
       ],
       "readingTime": 1,
@@ -669,12 +661,12 @@
       "categories": [],
       "tags": [],
       "excerpt": "file, content, alert content, h1 title, h2 title, alert title, folder title, markers, result, captures",
-      "lastUpdate": "2025-06-18 17:33:11 +0300",
-      "lastUpdateUTC": 1750257191,
-      "createTime": "2025-06-18 17:33:07 +0300",
-      "createTimeUTC": 1750257187,
+      "lastUpdate": "2025-06-18 22:19:11 +0300",
+      "lastUpdateUTC": 1750274351,
+      "createTime": "2025-06-18 22:19:11 +0300",
+      "createTimeUTC": 1750274351,
       "relatedPages": [],
-      "autoSummary": "This is a summary of the content taken from partial md files. This document describes how it can be captured when it comes to the titles of another file. ...",
+      "autoSummary": "This is a summary of the content taken from partial md files. This document describes how it can be captured when it comes to publishing images. ...",
       "similarByContent": [
         {
           "permalink": "/collection-2/X/x/",
@@ -764,7 +756,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "18-Jun-2025"
+          "lastUpdate": "19-Jun-2025"
         }
       ],
       "numPages": 1
@@ -774,7 +766,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "18-Jun-2025"
+          "lastUpdate": "19-Jun-2025"
         }
       ],
       "numPages": 1
@@ -794,7 +786,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "18-Jun-2025"
+          "lastUpdate": "19-Jun-2025"
         }
       ],
       "numPages": 1
@@ -814,7 +806,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "18-Jun-2025"
+          "lastUpdate": "19-Jun-2025"
         },
         {
           "title": "Collection-2/X",
@@ -829,7 +821,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "18-Jun-2025"
+          "lastUpdate": "19-Jun-2025"
         }
       ],
       "numPages": 1
@@ -898,7 +890,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "18-Jun-2025"
+          "lastUpdate": "19-Jun-2025"
         }
       ],
       "numPages": 2
@@ -908,7 +900,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "18-Jun-2025"
+          "lastUpdate": "19-Jun-2025"
         },
         {
           "title": "Play with content",
@@ -918,7 +910,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "18-Jun-2025"
+          "lastUpdate": "19-Jun-2025"
         },
         {
           "title": "Collection-2/Z",
@@ -933,7 +925,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "18-Jun-2025"
+          "lastUpdate": "19-Jun-2025"
         },
         {
           "title": "Collection-2/Z",
