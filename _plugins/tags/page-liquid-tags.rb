@@ -284,9 +284,9 @@ module Jekyll
                     # to not mess around with the FAQ ToC
                     replacements = {
                         'h1' => 'p class="fw-demibold fs-2"',
-                        'h2' => 'p class="fw-demibold fs-3"',
-                        'h3' => 'p class="fw-demibold fs-4"',
-                        'h4' => 'p class="fw-demibold fs-5"',
+                        'h2' => 'p class="fw-demibold fs-4"',
+                        'h3' => 'p class="fw-demibold fs-5"',
+                        'h4' => 'p class="fw-demibold fs-6"',
                         'h5' => 'p class="fw-demibold fs-6"',
                         'h6' => 'p class="fw-demibold fs-6"'
                     }

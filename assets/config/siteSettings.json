@@ -224,33 +224,37 @@
         "tag2"
       ],
       "excerpt": "lorem ipsum, latin, sections, cicero, finibus bonorum, malorum, latin literature, standard chunk, rackham, translation",
-      "lastUpdate": "2025-06-17 18:39:22 +0300",
-      "lastUpdateUTC": 1750174762,
-      "createTime": "2025-06-17 18:39:22 +0300",
-      "createTimeUTC": 1750174762,
+      "lastUpdate": "2025-06-18 14:23:55 +0300",
+      "lastUpdateUTC": 1750245835,
+      "createTime": "2025-06-18 14:23:55 +0300",
+      "createTimeUTC": 1750245835,
       "relatedPages": [
         {
           "title": "Play with content",
           "permalink": "/pwc/"
         },
         {
-          "title": "Collection-2/Y",
-          "permalink": "/collection-2/y/y/"
-        },
-        {
           "title": "Intro Child Page",
           "permalink": "/intro/introChild/"
+        },
+        {
+          "title": "Collection-2/Y",
+          "permalink": "/collection-2/y/y/"
         }
       ],
       "autoSummary": "lorem ipsum, lorem ipsum dolor sit amet., comes from a line of lorem ...",
       "similarByContent": [
         {
+          "permalink": "/intro/introChild/",
+          "title": "Intro Child Page"
+        },
+        {
           "permalink": "/collection-2/y/y/",
           "title": "Collection-2/Y"
         },
         {
-          "permalink": "/intro/introChild/",
-          "title": "Intro Child Page"
+          "permalink": "/pwc/",
+          "title": "Play with content"
         },
         {
           "permalink": "/collection-1/g1/",
@@ -270,11 +274,11 @@
       "permalink": "/intro/introChild/",
       "categories": [],
       "tags": [],
-      "excerpt": "lorem ipsum, alert title, latin, latin literature, file, line, content, evil, extremes, malorum",
-      "lastUpdate": "2025-06-18 13:47:35 +0300",
-      "lastUpdateUTC": 1750243655,
-      "createTime": "2025-05-25 10:11:17 +0300",
-      "createTimeUTC": 1748157077,
+      "excerpt": "lorem ipsum, latin, latin literature, line, evil, extremes, malorum, cicero, book, treatise",
+      "lastUpdate": "2025-06-18 16:47:30 +0300",
+      "lastUpdateUTC": 1750254450,
+      "createTime": "2025-06-18 14:23:55 +0300",
+      "createTimeUTC": 1750245835,
       "relatedPages": [
         {
           "title": "Collection-2/Y",
@@ -289,7 +293,7 @@
           "permalink": "/pwc/"
         }
       ],
-      "autoSummary": "lorem ipsum is a piece of classical latin literature from 45 bc. lorem ipsum comes from ...",
+      "autoSummary": "lorem ipsum dolor sit amet., comes from sections 1.10.32 and 1.10.33 of “de finibus bon ...",
       "similarByContent": [
         {
           "permalink": "/collection-2/y/y/",
@@ -306,6 +310,10 @@
         {
           "permalink": "/sf/f1/",
           "title": "Subfolder/F1"
+        },
+        {
+          "permalink": "/pwc/",
+          "title": "Play with content"
         }
       ],
       "readingTime": 1,
@@ -318,10 +326,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "child page",
-      "lastUpdate": "2025-06-17 18:39:22 +0300",
-      "lastUpdateUTC": 1750174762,
-      "createTime": "2025-06-17 18:39:22 +0300",
-      "createTimeUTC": 1750174762,
+      "lastUpdate": "2025-06-18 14:23:55 +0300",
+      "lastUpdateUTC": 1750245835,
+      "createTime": "2025-06-18 14:23:55 +0300",
+      "createTimeUTC": 1750245835,
       "relatedPages": [],
       "autoSummary": "grand child page",
       "similarByContent": [],
@@ -373,6 +381,10 @@
         {
           "permalink": "/collection-1/g1/",
           "title": "Collection-1/G1"
+        },
+        {
+          "permalink": "/intro/introChild/",
+          "title": "Intro Child Page"
         }
       ],
       "readingTime": 2,
@@ -457,12 +469,12 @@
           "permalink": "/sf/f1/"
         },
         {
-          "title": "Intro Child Page",
-          "permalink": "/intro/introChild/"
-        },
-        {
           "title": "Introduction",
           "permalink": "/intro/"
+        },
+        {
+          "title": "Terms",
+          "permalink": "/terms/"
         }
       ],
       "autoSummary": "lorem ipsum is a piece of classical latin literature from 45 bc. lorem ipsum comes from ...",
@@ -472,16 +484,20 @@
           "title": "Collection-2/Y"
         },
         {
-          "permalink": "/intro/introChild/",
-          "title": "Intro Child Page"
-        },
-        {
           "permalink": "/sf/f1/",
           "title": "Subfolder/F1"
         },
         {
+          "permalink": "/intro/introChild/",
+          "title": "Intro Child Page"
+        },
+        {
           "permalink": "/intro/",
           "title": "Introduction"
+        },
+        {
+          "permalink": "/pwc/",
+          "title": "Play with content"
         }
       ],
       "readingTime": 5,
@@ -501,10 +517,10 @@
         "exa"
       ],
       "excerpt": "innohub support, support center, support forms, functionalities, center, functionality, information, service, issues, product",
-      "lastUpdate": "2025-06-17 18:39:22 +0300",
-      "lastUpdateUTC": 1750174762,
-      "createTime": "2025-06-17 18:39:22 +0300",
-      "createTimeUTC": 1750174762,
+      "lastUpdate": "2025-06-18 14:23:55 +0300",
+      "lastUpdateUTC": 1750245835,
+      "createTime": "2025-06-18 14:23:55 +0300",
+      "createTimeUTC": 1750245835,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -554,6 +570,10 @@
         {
           "permalink": "/collection-1/g1/",
           "title": "Collection-1/G1"
+        },
+        {
+          "permalink": "/pwc/",
+          "title": "Play with content"
         },
         {
           "permalink": "/sf/f1/",
@@ -636,6 +656,23 @@
       "parent": ""
     },
     {
+      "title": "Alerts",
+      "permalink": "/alerts/",
+      "categories": [],
+      "tags": [],
+      "excerpt": "file, content, title, alert content, h1 title, h2 title, alert title, markers, text, result",
+      "lastUpdate": "2025-06-18 17:28:08 +0300",
+      "lastUpdateUTC": 1750256888,
+      "createTime": "2025-06-18 16:47:12 +0300",
+      "createTimeUTC": 1750254432,
+      "relatedPages": [],
+      "autoSummary": "content is taken from another file from the doc-contents folder. content is taken from another file from the doc-contents folder. content is ...",
+      "similarByContent": [],
+      "readingTime": 2,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
       "title": "Subfolder/F1",
       "permalink": "/sf/f1/",
       "categories": [],
@@ -710,7 +747,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "17-Jun-2025"
+          "lastUpdate": "18-Jun-2025"
         }
       ],
       "numPages": 1
@@ -720,7 +757,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "17-Jun-2025"
+          "lastUpdate": "18-Jun-2025"
         }
       ],
       "numPages": 1
@@ -740,7 +777,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "17-Jun-2025"
+          "lastUpdate": "18-Jun-2025"
         }
       ],
       "numPages": 1
@@ -760,7 +797,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "17-Jun-2025"
+          "lastUpdate": "18-Jun-2025"
         },
         {
           "title": "Collection-2/X",
@@ -775,7 +812,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "17-Jun-2025"
+          "lastUpdate": "18-Jun-2025"
         }
       ],
       "numPages": 1
@@ -844,7 +881,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "17-Jun-2025"
+          "lastUpdate": "18-Jun-2025"
         }
       ],
       "numPages": 2
@@ -854,7 +891,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "17-Jun-2025"
+          "lastUpdate": "18-Jun-2025"
         },
         {
           "title": "Play with content",
@@ -864,7 +901,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "17-Jun-2025"
+          "lastUpdate": "18-Jun-2025"
         },
         {
           "title": "Collection-2/Z",
@@ -879,7 +916,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "17-Jun-2025"
+          "lastUpdate": "18-Jun-2025"
         },
         {
           "title": "Collection-2/Z",

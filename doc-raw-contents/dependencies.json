@@ -1,18 +1,19 @@
 [
   {
-    "permalink": "/collection-2/Z/z/",
-    "imported_by": [
-      "/intro/introChild/",
-      "/pwc/",
-      "/collection-1/g1/",
-      "/collection-2/X/x/"
-    ]
-  },
-  {
     "permalink": "/intro/",
     "imported_by": [
       "/pwc/",
-      "/collection-1/g1/"
+      "/collection-1/g1/",
+      "/alerts/"
+    ]
+  },
+  {
+    "permalink": "/collection-2/Z/z/",
+    "imported_by": [
+      "/pwc/",
+      "/collection-1/g1/",
+      "/collection-2/X/x/",
+      "/alerts/"
     ]
   },
   {

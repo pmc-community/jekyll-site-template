@@ -1,27 +1,6 @@
 {
   "keywords": [
     {
-      "permalink": "/intro/introChild/",
-      "keywords": [
-        "lorem ipsum",
-        "alert title",
-        "latin",
-        "latin literature",
-        "file",
-        "line",
-        "content",
-        "evil",
-        "extremes",
-        "malorum"
-      ]
-    },
-    {
-      "permalink": "/intro/introChild/introGrandChild/",
-      "keywords": [
-        "child page"
-      ]
-    },
-    {
       "permalink": "/intro/",
       "keywords": [
         "lorem ipsum",
@@ -52,18 +31,9 @@
       ]
     },
     {
-      "permalink": "/sf/f1/",
+      "permalink": "/intro/introChild/introGrandChild/",
       "keywords": [
-        "services",
-        "lorem ipsum",
-        "products",
-        "latin",
-        "user",
-        "user content",
-        "content",
-        "sites",
-        "website",
-        "resources"
+        "child page"
       ]
     },
     {
@@ -82,17 +52,33 @@
       ]
     },
     {
-      "permalink": "/collection-2/Z/z/",
+      "permalink": "/intro/introChild/",
+      "keywords": [
+        "lorem ipsum",
+        "latin",
+        "latin literature",
+        "line",
+        "evil",
+        "extremes",
+        "malorum",
+        "cicero",
+        "book",
+        "treatise"
+      ]
+    },
+    {
+      "permalink": "/alerts/",
       "keywords": [
         "file",
-        "file loads",
-        "inline",
-        "place",
-        "repo",
         "content",
-        "link",
-        "collection",
-        "folder"
+        "title",
+        "alert content",
+        "h1 title",
+        "h2 title",
+        "alert title",
+        "markers",
+        "text",
+        "result"
       ]
     },
     {
@@ -108,6 +94,35 @@
         "malorum",
         "cicero",
         "book"
+      ]
+    },
+    {
+      "permalink": "/collection-2/Z/z/",
+      "keywords": [
+        "file",
+        "file loads",
+        "inline",
+        "place",
+        "repo",
+        "content",
+        "link",
+        "collection",
+        "folder"
+      ]
+    },
+    {
+      "permalink": "/sf/f1/",
+      "keywords": [
+        "services",
+        "lorem ipsum",
+        "products",
+        "latin",
+        "user",
+        "user content",
+        "content",
+        "sites",
+        "website",
+        "resources"
       ]
     },
     {
