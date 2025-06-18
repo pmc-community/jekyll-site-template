@@ -1,5 +1,17 @@
 {
   "files": [
-    "doc-raw-contents/_intro_introChild_.txt"
+    "doc-raw-contents/_intro_.txt",
+    "doc-raw-contents/_intro_introChild_.txt",
+    "doc-raw-contents/_intro_introChild_introGrandChild_.txt",
+    "doc-raw-contents/_pwc_.txt",
+    "doc-raw-contents/_ec_.txt",
+    "doc-raw-contents/_terms_.txt",
+    "doc-raw-contents/_collection-1_g1_.txt",
+    "doc-raw-contents/_collection-1_g11_.txt",
+    "doc-raw-contents/_collection-2_y_y_.txt",
+    "doc-raw-contents/_collection-2_Z_z_.txt",
+    "doc-raw-contents/_collection-2_X_x_.txt",
+    "doc-raw-contents/_alerts_.txt",
+    "doc-raw-contents/_sf_f1_.txt"
   ]
 }

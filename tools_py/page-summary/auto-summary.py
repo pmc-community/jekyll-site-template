@@ -47,7 +47,8 @@ model_early_stopping =  get_key_value_from_yml(build_settings_path, 'pyPageSumma
 modified_files = get_the_modified_files()
 if ( len(modified_files) > 0 ):
     model_name = model
-    model = TFAutoModelForSeq2SeqLM.from_pretrained(model_name)
+    model = TFAutoModelForSeq2SeqLM.from_pretrained(model_name, from_pt=True)
+    tokenizer = AutoTokenizer.from_pretrained(model_name) # tokenizer to be loaded here to avoid inter-processes issues
 
 # Function to preprocess the content
 def preprocess_text(text):
@@ -60,7 +61,7 @@ def summarize_text(text):
     if len(text.split()) <= summaryLength:
         return clean_up_text(text)
     
-    tokenizer = AutoTokenizer.from_pretrained(model_name) # tokenizer to be loaded here to avoid inter-processes issues
+    
     
     inputs = tokenizer.encode(
         f'{prompt}: ' + text, 
@@ -153,3 +154,4 @@ if __name__ == "__main__":
         pageList = json_data['pageList'] if json_data is not None else None
         modified_files = get_the_modified_files()
         process_files(modified_files, pageList)
+

@@ -1,47 +1,18 @@
 {
   "keywords": [
     {
-      "permalink": "/intro/introChild/",
+      "permalink": "/collection-2/y/y/",
       "keywords": [
         "lorem ipsum",
         "latin",
-        "alert title",
         "latin literature",
         "line",
-        "evil",
+        "file",
         "extremes",
+        "evil",
         "malorum",
         "cicero",
         "book"
-      ]
-    },
-    {
-      "permalink": "/collection-2/Z/z/",
-      "keywords": [
-        "file",
-        "file loads",
-        "inline",
-        "place",
-        "repo",
-        "content",
-        "link",
-        "collection",
-        "folder"
-      ]
-    },
-    {
-      "permalink": "/intro/",
-      "keywords": [
-        "lorem ipsum",
-        "latin",
-        "cicero",
-        "malorum",
-        "sections",
-        "finibus bonorum",
-        "rackham",
-        "versions",
-        "standard",
-        "english"
       ]
     },
     {
@@ -60,18 +31,18 @@
       ]
     },
     {
-      "permalink": "/collection-2/y/y/",
+      "permalink": "/sf/f1/",
       "keywords": [
+        "services",
         "lorem ipsum",
+        "products",
         "latin",
-        "latin literature",
-        "line",
-        "file",
-        "extremes",
-        "evil",
-        "malorum",
-        "cicero",
-        "book"
+        "user",
+        "user content",
+        "content",
+        "sites",
+        "website",
+        "resources"
       ]
     },
     {
@@ -90,39 +61,68 @@
       ]
     },
     {
+      "permalink": "/collection-2/Z/z/",
+      "keywords": [
+        "file",
+        "file loads",
+        "inline",
+        "place",
+        "repo",
+        "content",
+        "link",
+        "collection",
+        "folder"
+      ]
+    },
+    {
       "permalink": "/intro/introChild/introGrandChild/",
       "keywords": [
         "child page"
       ]
     },
     {
-      "permalink": "/sf/f1/",
+      "permalink": "/intro/introChild/",
       "keywords": [
-        "services",
         "lorem ipsum",
-        "products",
         "latin",
-        "user",
-        "user content",
-        "content",
-        "sites",
-        "website",
-        "resources"
+        "latin literature",
+        "line",
+        "evil",
+        "extremes",
+        "malorum",
+        "cicero",
+        "book",
+        "treatise"
       ]
     },
     {
-      "permalink": "/collection-1/g11/",
+      "permalink": "/alerts/",
       "keywords": [
-        "innohub support",
-        "support center",
-        "support forms",
-        "functionalities",
-        "center",
-        "functionality",
-        "information",
-        "service",
-        "issues",
-        "product"
+        "file",
+        "content",
+        "alert content",
+        "h1 title",
+        "h2 title",
+        "alert title",
+        "folder title",
+        "markers",
+        "result",
+        "captures"
+      ]
+    },
+    {
+      "permalink": "/intro/",
+      "keywords": [
+        "lorem ipsum",
+        "latin",
+        "cicero",
+        "malorum",
+        "sections",
+        "finibus bonorum",
+        "rackham",
+        "versions",
+        "standard",
+        "english"
       ]
     },
     {
@@ -141,6 +141,21 @@
       ]
     },
     {
+      "permalink": "/collection-1/g11/",
+      "keywords": [
+        "innohub support",
+        "support center",
+        "support forms",
+        "functionalities",
+        "center",
+        "functionality",
+        "information",
+        "service",
+        "issues",
+        "product"
+      ]
+    },
+    {
       "permalink": "/collection-1/g1/",
       "keywords": [
         "content",
@@ -148,8 +163,8 @@
         "services",
         "innohub",
         "registration",
-        "access",
         "email",
+        "access",
         "process",
         "latin",
         "ihsutilities"
