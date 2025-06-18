@@ -20,7 +20,7 @@ const page__getAutoSummary = () => {
         
         return (
             `   
-                <div id="pageAutoSummary" class="mt-4">
+                <div id="pageAutoSummary" class="mt-4 col-12 col-md-7">
                     <span class="fw-medium text-secondary">
                         ${autoSummary}
                     </span>
@@ -473,7 +473,7 @@ const page__getPageInfo = () => {
                 `
                     <div 
                         sitefunction="pageFullInfoPageGeneralSimilarPages" 
-                        class="mt-2 mb-4 d-md-flex">
+                        class="mt-2 mb-4 d-md-flex col-12 col-md-7">
                         <span 
                             data-i18n="[title]page_info_similar_pages_title;page_info_similar_pages_text"
                             class="fw-medium align-self-center mr-md-2"" 
@@ -509,9 +509,12 @@ const page__getPageInfo = () => {
             `
                 <div id="pageLastUpdateAndPageInfo" class="my-4 p-0 container-xl">
                     ${catsHtml}
-                    <div class="d-md-flex align-items-center justify-content-between mb-2 mb-md-0">
-                        <div class="fw-medium fs-2 mb-2 mt-2">${page.siteInfo.title}</div>
-                        <div class="badge fs-6 fw-light text-secondary border border-secondary border-opacity-25 shadow-none">
+                    <div class="d-md-flex align-items-center justify-content-start mb-2 mb-md-0">
+                        <div class="col-12 col-md-7">
+                            <div class="fw-medium fs-2 mb-2 mt-2">${page.siteInfo.title}</div>
+                        </div>
+                        <div class="col-1 d-none d-md-block" sitefunction="contentAreaConten2TocSeparator"></div>
+                        <div class="ml-0 ml-md-4 badge fs-6 fw-light text-secondary border border-secondary border-opacity-25 shadow-none">
                             ${page.siteInfo.readingTime} 
                             <span 
                                 class="fw-light text-secondary"
@@ -520,9 +523,9 @@ const page__getPageInfo = () => {
                             </span>    
                         </div>
                     </div>
-                    <div class="mb-4">${page.siteInfo.excerpt}</div>
-                    <div class="d-md-flex justify-content-between align-items-center">
-                        <div>
+                    <div class="mb-4 col-12 col-md-7">${page.siteInfo.excerpt}</div>
+                    <div class="d-md-flex justify-content-start align-items-center">
+                        <div class="col-12 col-md-7">
                             <div class="d-md-flex align-items-center">
                                 <div class="badge rounded-pill text-bg-secondary px-3 py-2 fw-medium mb-2 mb-md-0">
                                     <span
@@ -545,7 +548,8 @@ const page__getPageInfo = () => {
                             </div>
                             
                         </div>
-                        <div class="my-4 d-md-flex align-content-center">
+                        <div class="col-1 d-none d-md-block" sitefunction="contentAreaConten2TocSeparator"></div>
+                        <div class="my-4 d-md-flex align-content-center ml-0 ml-md-4">
                             <button 
                                 sitefunction="pageShowPageFullInfo" 
                                 type="button" 
