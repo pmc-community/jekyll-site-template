@@ -1,18 +1,18 @@
 {
   "keywords": [
     {
-      "permalink": "/collection-2/y/y/",
+      "permalink": "/intro/",
       "keywords": [
         "lorem ipsum",
         "latin",
-        "latin literature",
-        "line",
-        "file",
-        "extremes",
-        "evil",
-        "malorum",
         "cicero",
-        "book"
+        "malorum",
+        "sections",
+        "finibus bonorum",
+        "rackham",
+        "versions",
+        "standard",
+        "english"
       ]
     },
     {
@@ -31,18 +31,18 @@
       ]
     },
     {
-      "permalink": "/sf/f1/",
+      "permalink": "/intro/introChild/",
       "keywords": [
-        "services",
         "lorem ipsum",
-        "products",
         "latin",
-        "user",
-        "user content",
-        "content",
-        "sites",
-        "website",
-        "resources"
+        "latin literature",
+        "line",
+        "evil",
+        "extremes",
+        "malorum",
+        "cicero",
+        "book",
+        "treatise"
       ]
     },
     {
@@ -81,18 +81,18 @@
       ]
     },
     {
-      "permalink": "/intro/introChild/",
+      "permalink": "/collection-2/y/y/",
       "keywords": [
         "lorem ipsum",
         "latin",
         "latin literature",
         "line",
-        "evil",
+        "file",
         "extremes",
+        "evil",
         "malorum",
         "cicero",
-        "book",
-        "treatise"
+        "book"
       ]
     },
     {
@@ -111,33 +111,18 @@
       ]
     },
     {
-      "permalink": "/intro/",
-      "keywords": [
-        "lorem ipsum",
-        "latin",
-        "cicero",
-        "malorum",
-        "sections",
-        "finibus bonorum",
-        "rackham",
-        "versions",
-        "standard",
-        "english"
-      ]
-    },
-    {
-      "permalink": "/terms/",
+      "permalink": "/sf/f1/",
       "keywords": [
         "services",
-        "space services",
-        "software",
-        "innohub",
-        "terms",
-        "service",
-        "content",
-        "website",
+        "lorem ipsum",
+        "products",
+        "latin",
         "user",
-        "property"
+        "user content",
+        "content",
+        "sites",
+        "website",
+        "resources"
       ]
     },
     {
@@ -153,6 +138,21 @@
         "service",
         "issues",
         "product"
+      ]
+    },
+    {
+      "permalink": "/terms/",
+      "keywords": [
+        "services",
+        "space services",
+        "software",
+        "innohub",
+        "terms",
+        "service",
+        "content",
+        "website",
+        "user",
+        "property"
       ]
     },
     {
