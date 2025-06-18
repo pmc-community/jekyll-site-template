@@ -4,7 +4,7 @@
 {% assign aid = uuid | strip %}
 
 {% assign class = include.class || default: "alert-primary" %}
-{% assign content = include.content %}
+{% assign content = include.content || default: "" %}
 {% assign title = include.title || default: "" %}
 
 {% assign valid_types = "primary,success,danger,warning,info" | split: "," %}
