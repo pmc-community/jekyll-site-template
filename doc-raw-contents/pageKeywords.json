@@ -1,35 +1,6 @@
 {
   "keywords": [
     {
-      "permalink": "/intro/introChild/",
-      "keywords": [
-        "lorem ipsum",
-        "latin",
-        "latin literature",
-        "line",
-        "evil",
-        "extremes",
-        "malorum",
-        "cicero",
-        "book",
-        "treatise"
-      ]
-    },
-    {
-      "permalink": "/collection-2/Z/z/",
-      "keywords": [
-        "file",
-        "file loads",
-        "inline",
-        "place",
-        "repo",
-        "content",
-        "link",
-        "collection",
-        "folder"
-      ]
-    },
-    {
       "permalink": "/intro/",
       "keywords": [
         "lorem ipsum",
@@ -60,18 +31,18 @@
       ]
     },
     {
-      "permalink": "/collection-2/y/y/",
+      "permalink": "/intro/introChild/",
       "keywords": [
         "lorem ipsum",
         "latin",
         "latin literature",
         "line",
-        "file",
-        "extremes",
         "evil",
+        "extremes",
         "malorum",
         "cicero",
-        "book"
+        "book",
+        "treatise"
       ]
     },
     {
@@ -90,9 +61,53 @@
       ]
     },
     {
+      "permalink": "/collection-2/Z/z/",
+      "keywords": [
+        "file",
+        "file loads",
+        "inline",
+        "place",
+        "repo",
+        "content",
+        "link",
+        "collection",
+        "folder"
+      ]
+    },
+    {
       "permalink": "/intro/introChild/introGrandChild/",
       "keywords": [
         "child page"
+      ]
+    },
+    {
+      "permalink": "/collection-2/y/y/",
+      "keywords": [
+        "lorem ipsum",
+        "latin",
+        "latin literature",
+        "line",
+        "file",
+        "extremes",
+        "evil",
+        "malorum",
+        "cicero",
+        "book"
+      ]
+    },
+    {
+      "permalink": "/alerts/",
+      "keywords": [
+        "file",
+        "content",
+        "alert content",
+        "h1 title",
+        "h2 title",
+        "alert title",
+        "folder title",
+        "markers",
+        "result",
+        "captures"
       ]
     },
     {
@@ -148,8 +163,8 @@
         "services",
         "innohub",
         "registration",
-        "access",
         "email",
+        "access",
         "process",
         "latin",
         "ihsutilities"

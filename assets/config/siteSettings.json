@@ -224,10 +224,10 @@
         "tag2"
       ],
       "excerpt": "lorem ipsum, latin, cicero, malorum, sections, finibus bonorum, rackham, versions, standard, english",
-      "lastUpdate": "2025-06-05 16:49:41 +0300",
-      "lastUpdateUTC": 1749131381,
-      "createTime": "2025-06-05 16:49:41 +0300",
-      "createTimeUTC": 1749131381,
+      "lastUpdate": "2025-06-18 17:33:33 +0300",
+      "lastUpdateUTC": 1750257213,
+      "createTime": "2025-06-18 17:33:33 +0300",
+      "createTimeUTC": 1750257213,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -242,7 +242,7 @@
           "permalink": "/collection-2/y/y/"
         }
       ],
-      "autoSummary": "lorem ipsum, lorem ipsum dolor sit amet., comes from a line in 45 bc ...",
+      "autoSummary": "lorem ipsum is a relatively obscure text, making it very popular during the renaissance. But what is it and why does it exist? ...",
       "similarByContent": [
         {
           "permalink": "/intro/introChild/",
@@ -275,10 +275,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "lorem ipsum, latin, latin literature, line, evil, extremes, malorum, cicero, book, treatise",
-      "lastUpdate": "2025-05-25 10:11:17 +0300",
-      "lastUpdateUTC": 1748157077,
-      "createTime": "2025-05-25 10:11:17 +0300",
-      "createTimeUTC": 1748157077,
+      "lastUpdate": "2025-06-18 17:32:32 +0300",
+      "lastUpdateUTC": 1750257152,
+      "createTime": "2025-06-18 17:32:27 +0300",
+      "createTimeUTC": 1750257147,
       "relatedPages": [
         {
           "title": "Collection-2/Y",
@@ -293,7 +293,7 @@
           "permalink": "/pwc/"
         }
       ],
-      "autoSummary": "lorem ipsum dolor sit amet., comes from sections 1.10.32 and 1.10.33 of “de finibus bon ...",
+      "autoSummary": "lorem ipsum, a commonly known Latin word, has roots in classical literature from 45 bc. But what is it and why do we know it? ...",
       "similarByContent": [
         {
           "permalink": "/collection-2/y/y/",
@@ -326,10 +326,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "child page",
-      "lastUpdate": "2025-06-05 16:49:41 +0300",
-      "lastUpdateUTC": 1749131381,
-      "createTime": "2025-06-05 16:49:41 +0300",
-      "createTimeUTC": 1749131381,
+      "lastUpdate": "2025-06-18 17:33:33 +0300",
+      "lastUpdateUTC": 1750257213,
+      "createTime": "2025-06-18 17:33:33 +0300",
+      "createTimeUTC": 1750257213,
       "relatedPages": [],
       "autoSummary": "grand child page",
       "similarByContent": [],
@@ -368,7 +368,7 @@
           "permalink": "/collection-2/X/x/"
         }
       ],
-      "autoSummary": "markdown content direct included in the page. heads up!!!links to other site docs must be given using the permalinks, not the ...",
+      "autoSummary": "Welcome to lorem ipsum. Here is a guide to how to generate content generated from one part of another site page. This ...",
       "similarByContent": [
         {
           "permalink": "/collection-2/y/y/",
@@ -381,6 +381,10 @@
         {
           "permalink": "/collection-1/g1/",
           "title": "Collection-1/G1"
+        },
+        {
+          "permalink": "/collection-2/X/x/",
+          "title": "Collection-2/X"
         },
         {
           "permalink": "/intro/introChild/",
@@ -414,7 +418,7 @@
           "permalink": "/pwc/"
         }
       ],
-      "autoSummary": "innohub.space can be used both anonymous and registered ways. as anonymous user you can browse for free all sections of innohub.space ...",
+      "autoSummary": "Welcome to innohub.space, a website which allows users to access content from anonymous and registered ways. Here is the full text of the service. ...",
       "similarByContent": [],
       "readingTime": 1,
       "hasDynamicContent": false,
@@ -442,7 +446,7 @@
           "permalink": "/collection-1/g1/"
         }
       ],
-      "autoSummary": "these terms of service are applicable from the date shown on this page. these terms of service are applicable from the date shown on this page. these ...",
+      "autoSummary": "The terms and conditions of using innohub.space have been published by the British High Court. Here is a full summary of the terms of service provided by us. ...",
       "similarByContent": [
         {
           "permalink": "/sf/f1/",
@@ -458,11 +462,11 @@
       "permalink": "/collection-1/g1/",
       "categories": [],
       "tags": [],
-      "excerpt": "content, lorem ipsum, services, innohub, registration, access, email, process, latin, ihsutilities",
-      "lastUpdate": "2025-06-05 14:10:17 +0300",
-      "lastUpdateUTC": 1749121817,
-      "createTime": "2025-06-05 14:10:06 +0300",
-      "createTimeUTC": 1749121806,
+      "excerpt": "content, lorem ipsum, services, innohub, registration, email, access, process, latin, ihsutilities",
+      "lastUpdate": "2025-06-12 15:21:37 +0300",
+      "lastUpdateUTC": 1749730897,
+      "createTime": "2025-06-12 15:21:37 +0300",
+      "createTimeUTC": 1749730897,
       "relatedPages": [
         {
           "title": "Subfolder/F1",
@@ -477,7 +481,7 @@
           "permalink": "/terms/"
         }
       ],
-      "autoSummary": "lorem ipsum is a piece of classical latin literature from 45 bc. lorem ipsum comes from ...",
+      "autoSummary": "This is a summary of lorem ipsum, which contains some of the earliest examples of ethics written in Latin literature. Here is the answer to this question. ...",
       "similarByContent": [
         {
           "permalink": "/collection-2/y/y/",
@@ -517,17 +521,17 @@
         "exa"
       ],
       "excerpt": "innohub support, support center, support forms, functionalities, center, functionality, information, service, issues, product",
-      "lastUpdate": "2025-06-05 16:49:41 +0300",
-      "lastUpdateUTC": 1749131381,
-      "createTime": "2025-06-05 16:49:41 +0300",
-      "createTimeUTC": 1749131381,
+      "lastUpdate": "2025-06-18 17:33:33 +0300",
+      "lastUpdateUTC": 1750257213,
+      "createTime": "2025-06-18 17:33:33 +0300",
+      "createTimeUTC": 1750257213,
       "relatedPages": [
         {
           "title": "Play with content",
           "permalink": "/pwc/"
         }
       ],
-      "autoSummary": "support center is accessible from the main innohub.space site (from the main menu select the “support center” option) or from each sub-site ...",
+      "autoSummary": "Welcome to innohub support centre. Here is a guide to the technical support service provided to us through the ...",
       "similarByContent": [],
       "readingTime": 4,
       "hasDynamicContent": false,
@@ -539,10 +543,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "lorem ipsum, latin, latin literature, line, file, extremes, evil, malorum, cicero, book",
-      "lastUpdate": "2025-06-05 14:08:25 +0300",
-      "lastUpdateUTC": 1749121705,
-      "createTime": "2025-06-05 14:08:18 +0300",
-      "createTimeUTC": 1749121698,
+      "lastUpdate": "2025-06-12 15:21:37 +0300",
+      "lastUpdateUTC": 1749730897,
+      "createTime": "2025-06-12 15:21:37 +0300",
+      "createTimeUTC": 1749730897,
       "relatedPages": [
         {
           "title": "Intro Child Page",
@@ -557,7 +561,7 @@
           "permalink": "/intro/"
         }
       ],
-      "autoSummary": "lorem ipsum is a piece of classical latin literature from 45 bc. lorem ipsum comes from sections ...",
+      "autoSummary": "This is a full transcript of lorem ipsum. This contains images from the earliest published versions of the book. Please help us find out more about the text. ...",
       "similarByContent": [
         {
           "permalink": "/intro/introChild/",
@@ -640,8 +644,12 @@
           "permalink": "/collection-2/Z/z/"
         }
       ],
-      "autoSummary": "own markdown content. this the content directly typed in collection-2/x. this is one good inline external link to https://pmc ...",
+      "autoSummary": "This is a full transcript of markdown content loaded from another md file from the same collection. Here is the full text of the summary of these sections. ...",
       "similarByContent": [
+        {
+          "permalink": "/alerts/",
+          "title": "Alerts"
+        },
         {
           "permalink": "/pwc/",
           "title": "Play with content"
@@ -653,6 +661,28 @@
       ],
       "readingTime": 1,
       "hasDynamicContent": true,
+      "parent": ""
+    },
+    {
+      "title": "Alerts",
+      "permalink": "/alerts/",
+      "categories": [],
+      "tags": [],
+      "excerpt": "file, content, alert content, h1 title, h2 title, alert title, folder title, markers, result, captures",
+      "lastUpdate": "2025-06-18 17:33:11 +0300",
+      "lastUpdateUTC": 1750257191,
+      "createTime": "2025-06-18 17:33:07 +0300",
+      "createTimeUTC": 1750257187,
+      "relatedPages": [],
+      "autoSummary": "This is a summary of the content taken from partial md files. This document describes how it can be captured when it comes to the titles of another file. ...",
+      "similarByContent": [
+        {
+          "permalink": "/collection-2/X/x/",
+          "title": "Collection-2/X"
+        }
+      ],
+      "readingTime": 1,
+      "hasDynamicContent": false,
       "parent": ""
     },
     {
@@ -679,7 +709,7 @@
           "permalink": "/intro/introChild/"
         }
       ],
-      "autoSummary": "goods or services made available on or through such third party sites or resources. either pmc or any third parties may provide links to other websites and/or ...",
+      "autoSummary": "This is a full transcript of the terms and conditions published by the Public Prosecution and Crime Commission (PMc). Here is the full text of this agreement. ...",
       "similarByContent": [
         {
           "permalink": "/collection-1/g1/",
@@ -692,6 +722,10 @@
         {
           "permalink": "/intro/introChild/",
           "title": "Intro Child Page"
+        },
+        {
+          "permalink": "/terms/",
+          "title": "Terms"
         },
         {
           "permalink": "/intro/",
@@ -730,7 +764,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "05-Jun-2025"
+          "lastUpdate": "18-Jun-2025"
         }
       ],
       "numPages": 1
@@ -740,7 +774,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "05-Jun-2025"
+          "lastUpdate": "18-Jun-2025"
         }
       ],
       "numPages": 1
@@ -760,7 +794,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "05-Jun-2025"
+          "lastUpdate": "18-Jun-2025"
         }
       ],
       "numPages": 1
@@ -780,7 +814,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "05-Jun-2025"
+          "lastUpdate": "18-Jun-2025"
         },
         {
           "title": "Collection-2/X",
@@ -795,7 +829,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "05-Jun-2025"
+          "lastUpdate": "18-Jun-2025"
         }
       ],
       "numPages": 1
@@ -864,7 +898,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "05-Jun-2025"
+          "lastUpdate": "18-Jun-2025"
         }
       ],
       "numPages": 2
@@ -874,7 +908,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "05-Jun-2025"
+          "lastUpdate": "18-Jun-2025"
         },
         {
           "title": "Play with content",
@@ -884,7 +918,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "05-Jun-2025"
+          "lastUpdate": "18-Jun-2025"
         },
         {
           "title": "Collection-2/Z",
@@ -899,7 +933,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "05-Jun-2025"
+          "lastUpdate": "18-Jun-2025"
         },
         {
           "title": "Collection-2/Z",
@@ -1099,7 +1133,7 @@
     "page_toc_toc_title": "On this page",
     "page_toc_toc_title_mobile": "{{page_toc_toc_title}}",
     "faq_toc_toc_title_mobile": "Questions",
-    "faq_search_placeholder": "Search FAQs...",
+    "faq_search_placeholder": "Search in answers...",
     "faq_search_clear_btn_text": "Clear",
     "faq_menu_item_text": "FAQ",
     "faq_page_excerpt": "Frequently asked questions",

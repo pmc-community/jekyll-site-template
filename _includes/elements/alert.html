@@ -1,0 +1,49 @@
+{% capture uuid %}
+  {% UUID %}
+{% endcapture %}
+{% assign aid = uuid | strip %}
+
+{% assign class = include.class || default: "alert-primary" %}
+{% assign content = include.content %}
+{% assign title = include.title || default: "" %}
+
+{% assign valid_types = "primary,success,danger,warning,info" | split: "," %}
+{% assign input_type = class | downcase %}
+
+{% if valid_types contains input_type %}
+    {% assign alertClass = "alert-" | append: input_type %}
+    {% assign borderLeftClass = "border-" | append: input_type %}
+    {% assign titleClass = "text-" | append: input_type %}
+    {% assign bgBaseColor = "var(--bs-" | append: input_type | append: ")" %}
+{% else %}
+    {% assign alertClass = "alert-primary" %}
+    {% assign borderLeftClass = "border-primary" %}
+    {% assign titleClass = "text-primary" %}
+    {% assign bgBaseColor = "var(--bs-primary)" %}
+{% endif %}
+
+<div id="alert-{{aid}}" class="alert {{alertClass}} border-5 border-start border-top-0 border-end-0 border-bottom-0 {{borderLeftClass}} alert-{{aid}}-opacity" role="alert">
+    {% if title != "" %}
+        <div class="fs-5 fw-medium {{titleClass}}">{{title}}</div>
+    {% endif %}
+    {% capture rendered_content %}
+        {% DryRenderPage content %}
+    {% endcapture %}
+    {{rendered_content | markdonify}}
+</div>
+
+<style>
+  .alert-{{aid}}-opacity {
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+  }
+  .alert-{{aid}}-opacity::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: {{bgBaseColor}};
+    opacity: 0.1;
+    z-index: -1;
+  }
+</style>
