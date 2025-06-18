@@ -768,13 +768,13 @@ const page__setSelectedTextContextMenu = () =>{
 
                     if (numPages > 0) {
 
-                        const numPagesDiff = numPages === cleanMatchingPages.length ? 
-                        '' : 
-                        `(${i18next.t('page_content_context_menu_tag_to_all_documents_toast_outOf_message_part')} ${cleanMatchingPages.length})`;
+                        const numPagesDiff = numPages === cleanMatchingPages.length 
+                            ? '' 
+                            : `(${i18next.t('page_content_context_menu_tag_to_all_documents_toast_outOf_message_part')} ${cleanMatchingPages.length})`;
 
-                        const toastEnd = numPages === cleanMatchingPages.length ? 
-                        '' : 
-                        `${cleanMatchingPages.length - numPages} ${i18next.t('page_content_context_menu_tag_to_all_documents_toast_docs_not_in_saved_items_message_part')} `;
+                        const toastEnd = numPages === cleanMatchingPages.length 
+                            ? '' 
+                            : `${cleanMatchingPages.length - numPages} ${i18next.t('page_content_context_menu_tag_to_all_documents_toast_docs_not_in_saved_items_message_part')} `;
 
                         const formattedTag = `<span class="badge mx-1 text-bg-primary fw-normal">${tag}</span>`;
                         const toastMessage = i18next.t(
@@ -807,7 +807,6 @@ const page__setSelectedTextContextMenu = () =>{
                     showToast(toastMessage, 'bg-warning', 'text-dark');
                 }
             });
-            
             $('#selected-text-context-menu').hide();
             $('body').css('overflow', '');
         }
