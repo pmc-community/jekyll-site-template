@@ -47,7 +47,7 @@ pageKeywords:
 github:
   enabled: true
   user: "pmc-community"
-  repo: "figma"
+  repo: "jekyll-site-template"
   discussionOrg: "pmc-community"
   discussionsRepo: "discussions"
 readingTime:
