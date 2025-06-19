@@ -24,7 +24,7 @@
 
 <div id="alert-{{aid}}" class="alert {{alertClass}} border-5 border-start border-top-0 border-end-0 border-bottom-0 {{borderLeftClass}} alert-{{aid}}-opacity" role="alert">
     {% if title != "" %}
-        <div class="fs-5 fw-medium {{titleClass}}">{{title}}</div>
+        <div id="alert-title-{{aid}}" class="d-flex align-items-center fs-5 fw-medium {{titleClass}}">{{title}}</div>
     {% endif %}
     {% capture rendered_content %}
         {% DryRenderPage content %}
