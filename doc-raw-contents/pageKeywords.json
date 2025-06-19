@@ -98,16 +98,16 @@
     {
       "permalink": "/alerts/",
       "keywords": [
-        "file",
         "content",
-        "alert content",
-        "h1 title",
-        "h2 title",
-        "alert title",
-        "folder title",
+        "title",
+        "alert",
+        "file",
+        "elements",
+        "html class",
         "markers",
         "result",
-        "captures"
+        "repositories",
+        "repo"
       ]
     },
     {

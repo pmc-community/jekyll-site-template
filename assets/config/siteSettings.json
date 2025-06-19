@@ -224,10 +224,10 @@
         "tag2"
       ],
       "excerpt": "lorem ipsum, latin, cicero, malorum, sections, finibus bonorum, rackham, versions, standard, english",
-      "lastUpdate": "2025-06-19 01:07:33 +0300",
-      "lastUpdateUTC": 1750284453,
-      "createTime": "2025-06-19 01:07:33 +0300",
-      "createTimeUTC": 1750284453,
+      "lastUpdate": "2025-06-19 18:38:13 +0300",
+      "lastUpdateUTC": 1750347493,
+      "createTime": "2025-06-19 18:38:13 +0300",
+      "createTimeUTC": 1750347493,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -326,10 +326,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "child page",
-      "lastUpdate": "2025-06-19 01:07:33 +0300",
-      "lastUpdateUTC": 1750284453,
-      "createTime": "2025-06-19 01:07:33 +0300",
-      "createTimeUTC": 1750284453,
+      "lastUpdate": "2025-06-19 18:38:13 +0300",
+      "lastUpdateUTC": 1750347493,
+      "createTime": "2025-06-19 18:38:13 +0300",
+      "createTimeUTC": 1750347493,
       "relatedPages": [],
       "autoSummary": "grand child page",
       "similarByContent": [],
@@ -521,10 +521,10 @@
         "exa"
       ],
       "excerpt": "innohub support, support center, support forms, functionalities, center, functionality, information, service, issues, product",
-      "lastUpdate": "2025-06-19 01:07:33 +0300",
-      "lastUpdateUTC": 1750284453,
-      "createTime": "2025-06-19 01:07:33 +0300",
-      "createTimeUTC": 1750284453,
+      "lastUpdate": "2025-06-19 18:38:13 +0300",
+      "lastUpdateUTC": 1750347493,
+      "createTime": "2025-06-19 18:38:13 +0300",
+      "createTimeUTC": 1750347493,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -609,6 +609,10 @@
         {
           "title": "Play with content",
           "permalink": "/pwc/"
+        },
+        {
+          "title": "Alerts",
+          "permalink": "/alerts/"
         }
       ],
       "autoSummary": "this is a file from a collection. this file loads some external content from another repo and place it inline. link to file in different folder",
@@ -645,12 +649,7 @@
         }
       ],
       "autoSummary": "This is a full transcript of markdown content loaded from another md file from the same collection. Here is the full text of the summary of these sections. ...",
-      "similarByContent": [
-        {
-          "permalink": "/alerts/",
-          "title": "Alerts"
-        }
-      ],
+      "similarByContent": [],
       "readingTime": 1,
       "hasDynamicContent": true,
       "parent": ""
@@ -660,20 +659,20 @@
       "permalink": "/alerts/",
       "categories": [],
       "tags": [],
-      "excerpt": "file, content, alert content, h1 title, h2 title, alert title, folder title, markers, result, captures",
-      "lastUpdate": "2025-06-18 22:19:11 +0300",
-      "lastUpdateUTC": 1750274351,
-      "createTime": "2025-06-18 22:19:11 +0300",
-      "createTimeUTC": 1750274351,
-      "relatedPages": [],
-      "autoSummary": "This is a summary of the content taken from partial md files. This document describes how it can be captured when it comes to publishing images. ...",
-      "similarByContent": [
+      "excerpt": "content, title, alert, file, elements, html class, markers, result, repositories, repo",
+      "lastUpdate": "2025-06-19 18:36:31 +0300",
+      "lastUpdateUTC": 1750347391,
+      "createTime": "2025-06-19 18:36:25 +0300",
+      "createTimeUTC": 1750347385,
+      "relatedPages": [
         {
-          "permalink": "/collection-2/X/x/",
-          "title": "Collection-2/X"
+          "title": "Collection-2/Z",
+          "permalink": "/collection-2/Z/z/"
         }
       ],
-      "readingTime": 1,
+      "autoSummary": "Welcome to a guide to how to add alert blocks to your content. Here's what you need to know about these rules and how they can be used. ...",
+      "similarByContent": [],
+      "readingTime": 3,
       "hasDynamicContent": false,
       "parent": ""
     },

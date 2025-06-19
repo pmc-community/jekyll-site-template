@@ -75,15 +75,11 @@
     },
     {
         "permalink": "/collection-2/X/x/",
-        "similarFiles": [
-            "/alerts/"
-        ]
+        "similarFiles": []
     },
     {
         "permalink": "/alerts/",
-        "similarFiles": [
-            "/collection-2/X/x/"
-        ]
+        "similarFiles": []
     },
     {
         "permalink": "/sf/f1/",
