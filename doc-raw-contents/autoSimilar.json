@@ -75,17 +75,11 @@
     },
     {
         "permalink": "/collection-2/X/x/",
-        "similarFiles": [
-            "/alerts/",
-            "/pwc/",
-            "/collection-2/Z/z/"
-        ]
+        "similarFiles": []
     },
     {
         "permalink": "/alerts/",
-        "similarFiles": [
-            "/collection-2/X/x/"
-        ]
+        "similarFiles": []
     },
     {
         "permalink": "/sf/f1/",

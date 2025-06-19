@@ -2,6 +2,7 @@ require 'thread'
 require 'yaml'
 require 'dotenv'
 require 'securerandom'
+require 'shellwords'
 Dotenv.load
 
 module Globals
@@ -155,24 +156,24 @@ module Globals
     end
 
     def self.run_python_script(site, python_script, script_parameter, callback)
-        python_script_with_param = "#{site.data["buildConfig"]["pyLaunch"]} #{python_script} '#{script_parameter.to_json}'"
+        json_arg = Shellwords.escape(script_parameter.to_json)
+        python_script_with_param = "#{site.data["buildConfig"]["pyLaunch"]} #{python_script} #{json_arg}"
+
         outputNo = 0
         Open3.popen3(python_script_with_param) do |stdin, stdout, stderr, wait_thr|
             stdout.each do |line|
                 begin
                     response = JSON.parse(line)
                     outputNo += 1
-                    callback.call(
-                        {
-                            "outputNo" => outputNo,
-                            "payload" => response
-                        }
-                    )
+                    callback.call({
+                        "outputNo" => outputNo,
+                        "payload" => response
+                    })
                 rescue JSON::ParserError => e
                     puts "Failed to parse JSON returned by #{python_script}: #{e.message}"
                 end
             end
-    
+
             exit_status = wait_thr.value
             unless exit_status.success?
                 puts "Error running #{python_script}: #{stderr.read}"
