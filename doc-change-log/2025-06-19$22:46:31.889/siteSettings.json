@@ -1,0 +1,1395 @@
+{
+  "isProd": false,
+  "settings": {
+    "extContentMarkers": {
+      "startExposedSection": "<!-- START_EXPOSED_SECTION -->",
+      "endExposedSection": "<!-- END_EXPOSED_SECTION -->"
+    },
+    "pageToc": {
+      "tocContainer": "#toc_container",
+      "toc": "#toc",
+      "tocLoadedEvent": "page_toc_loaded",
+      "scrollSpyBase": "body",
+      "tocItemLink": "#toc li a",
+      "tocItemLinkClass": {
+        "light": "pageTocActiveLight",
+        "dark": "pageTocActiveDark"
+      },
+      "desktop": {
+        "referenceContainer": ".main-content",
+        "offsetFromHeader": 35,
+        "offsetFromReferenceContainer": 100,
+        "leftSideBar": ".side-bar"
+      },
+      "mobile": {
+        "height": 300
+      },
+      "pagesWithoutToc": [
+        "tag-info",
+        "cat-info",
+        "site-pages"
+      ]
+    },
+    "colSchemaCorrections": {
+      "elementsWithBackgroundAffected": "body, #category-menu-more-list, table, tbody, thead, tr, td, th, td[class=\"child\"], .offcanvas, .ck-editor__main, .side-bar, #hs-eu-cookie-confirmation, #toc_mobile, .accordion-item, .accordion-header, .accordion-button",
+      "backgroundColorOnElementsAffected": {
+        "light": "#fff",
+        "dark": "#0d1117"
+      },
+      "elementsWithTextAffected": "body, p, ul li, ol li, li a, h1, h2, span, .dt-info, label[for^=\"dt-length-\"], label[for^=\"dt-search-\"], #category-menu-more-list li a, .offcanvas-title, td, div[siteFunction=\"labelForPageSearchList\"], label[for=\"offcanvasPageFullInfoPageGeneralCustomNotesEdit\"], #toc_mobile, .accordion-item, .accordion-header, .accordion-button",
+      "textColorOnElementsAffected": {
+        "light": "#212529",
+        "dark": "rgb(108, 117, 125)"
+      },
+      "elementsWithBorderTopAffected": ".site-footer",
+      "borderTopOnElementsAffected": {
+        "light": "1px solid #eeebee",
+        "dark": "1px solid rgba(108, 117, 125, 0.25)"
+      },
+      "elementsWithBorderLeftAffected": ".main-header",
+      "borderLeftOnElementsAffected": {
+        "light": "1px solid rgba(108, 117, 125, 0.25)",
+        "dark": "1px solid rgba(108, 117, 125, 0.25)"
+      },
+      "hideBodyUntilLoadTimeout": 0
+    },
+    "goToTopBtn": {
+      "topOfPageId": "#ihs_top_of_page",
+      "btnId": "#ihs_go_to_top_btn"
+    },
+    "externalContent": {
+      "containerToIncludeExternalContent": ".main-content main"
+    },
+    "themeSwitch": {
+      "cookie": "JTDThemeCookie",
+      "btnId": "themeSwitcher"
+    },
+    "headerAboveContent": {
+      "headerID": "#main-header",
+      "offsetWhenScroll": 20
+    },
+    "layouts": {
+      "headerArea": {
+        "mobileMenuButton": "#menu-button"
+      },
+      "contentArea": {
+        "mainContainer": ".main-content-wrap",
+        "contentContainer": ".main-content main",
+        "contentWrapper": ".main-content"
+      },
+      "leftSideBar": {
+        "container": ".side-bar",
+        "sideNav": "#site-nav",
+        "header": ".site-header",
+        "link": ".nav-list-link",
+        "siteTitle": ".site-title",
+        "mobileMenuBtnIcon": ".site-button-icon",
+        "mobileNavLinkExpander": ".page-with-children-expander"
+      }
+    },
+    "toBeRemovedAfterLoad": [
+      {
+        "script": [
+          "externalContent",
+          "init_not_needed_anymore",
+          "page_var_init_script"
+        ]
+      },
+      {
+        "h1": [
+          "testAttr",
+          "testAttr_1"
+        ]
+      }
+    ],
+    "catMenu": true,
+    "catMenuMoreBtn": "category-menu-more",
+    "siteVars": {
+      "siteTestBadge": "xxx"
+    },
+    "similarByContent": {
+      "maxPages": 4
+    },
+    "hsIntegration": {
+      "enabled": true,
+      "bootstrapCSS": "https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css",
+      "bootstrapJS": "https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js",
+      "bootstrapIconsCSS": "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css",
+      "forms": {
+        "elements": {
+          "fieldValidationErrorMessagesGroup": ".hs-error-msgs",
+          "formErrorMesage": ".hs_error_rollup",
+          "submittedMessage": ".submitted-message"
+        },
+        "submisionSource": {
+          "propName": "source",
+          "propValue": "figmares_doc_site"
+        },
+        "prefLang": {
+          "propName": "hs_language"
+        },
+        "userToken": {
+          "propName": "subject"
+        }
+      }
+    },
+    "scripts": {
+      "jQuery": "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js",
+      "fontFamily": "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    },
+    "links": {
+      "privacyLink": "https://innohub.space/eng/privacy",
+      "supportLink": "https://innohub.space/eng/mypmc/technical-support/"
+    },
+    "selectedTextContextMenu": {
+      "enabled": true,
+      "minWords": 1,
+      "maxWords": 10,
+      "comments": {
+        "enabled": true,
+        "maxChars": 250,
+        "maxWords": 50
+      },
+      "tags": {
+        "maxWords": 3,
+        "maxChars": 20
+      }
+    },
+    "user": {
+      "userTokenCookie": "userToken"
+    },
+    "savedItems": {
+      "autoSaveBeforeLoad": true
+    },
+    "multilang": {
+      "enabled": true,
+      "langCookie": "PrefLanguage",
+      "timeout": 1000,
+      "scripts": {
+        "i18": "https://cdn.jsdelivr.net/npm/i18next@24.2.1/i18next.min.js",
+        "i18Backend": "https://cdn.jsdelivr.net/npm/i18next-http-backend@3.0.1/i18nextHttpBackend.min.js",
+        "i18JQuery": "https://cdn.jsdelivr.net/npm/jquery-i18next@1.2.1/jquery-i18next.min.js",
+        "i18Sprintf": "https://cdn.jsdelivr.net/npm/i18next-sprintf-postprocessor@0.2.2/dist/umd/i18nextSprintfPostProcessor.min.js"
+      },
+      "availableLang": [
+        {
+          "lang": "en",
+          "name": "English"
+        },
+        {
+          "lang": "ro",
+          "name": "Româna"
+        },
+        {
+          "lang": "sr",
+          "name": "Serbian"
+        }
+      ],
+      "siteLanguage": 1,
+      "fallbackLang": 0,
+      "needsTranslation": [
+        "body"
+      ],
+      "dateFieldClass": "DSTcustomDateField",
+      "dateFieldSeparator": "-"
+    },
+    "dataTables": {
+      "TO_rebuildTableAfterUIInteration": 200,
+      "TO_afterAutoApplySearchPanesCurrentFilter": 500,
+      "TO_resolveAutoApplySearchPanesCurrentFilter": 500,
+      "TO_doStuffAfterInitComplete": 100,
+      "TO_forceSearchPanesToLoseFocus": 200,
+      "TO_doStuffAfterSearchPanesContainerOpen": 100,
+      "TO_doStuffAfterSearchPanesContainerClosed": 100,
+      "TO_resolvePromiseIncreateTable_ASYNC": 0,
+      "TO_showLengthSearchInfoPagination": 0,
+      "tableContainerFixedHeightWhenLoading": "200px",
+      "possibleDataTableParents": [
+        ".table-wrapper",
+        ".card-body"
+      ]
+    },
+    "siteTitle": "Docaroo"
+  },
+  "pageList": [
+    {
+      "title": "Introduction",
+      "permalink": "/intro/",
+      "categories": [
+        "general",
+        "intro"
+      ],
+      "tags": [
+        "t a g 1",
+        "tag2"
+      ],
+      "excerpt": "lorem ipsum, latin, sections, cicero, finibus bonorum, malorum, latin literature, standard chunk, rackham, translation",
+      "lastUpdate": "2025-06-19 01:08:52 +0300",
+      "lastUpdateUTC": 1750284532,
+      "createTime": "2025-06-19 01:08:52 +0300",
+      "createTimeUTC": 1750284532,
+      "relatedPages": [
+        {
+          "title": "Play with content",
+          "permalink": "/pwc/"
+        },
+        {
+          "title": "Intro Child Page",
+          "permalink": "/intro/introChild/"
+        },
+        {
+          "title": "Collection-2/Y",
+          "permalink": "/collection-2/y/y/"
+        }
+      ],
+      "autoSummary": "lorem ipsum is a relatively obscure text, making it over 2000 years old. But what is it and why has it roots in classical literature, asks Tom Stafford. ...",
+      "similarByContent": [
+        {
+          "permalink": "/intro/introChild/",
+          "title": "Intro Child Page"
+        },
+        {
+          "permalink": "/collection-2/y/y/",
+          "title": "Collection-2/Y"
+        },
+        {
+          "permalink": "/pwc/",
+          "title": "Play with content"
+        },
+        {
+          "permalink": "/collection-1/g1/",
+          "title": "Collection-1/G1"
+        },
+        {
+          "permalink": "/sf/f1/",
+          "title": "Subfolder/F1"
+        }
+      ],
+      "readingTime": 6,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
+      "title": "Intro Child Page",
+      "permalink": "/intro/introChild/",
+      "categories": [],
+      "tags": [],
+      "excerpt": "lorem ipsum, latin, latin literature, line, evil, extremes, malorum, cicero, book, treatise",
+      "lastUpdate": "2025-06-18 17:32:32 +0300",
+      "lastUpdateUTC": 1750257152,
+      "createTime": "2025-06-18 17:32:27 +0300",
+      "createTimeUTC": 1750257147,
+      "relatedPages": [
+        {
+          "title": "Collection-2/Y",
+          "permalink": "/collection-2/y/y/"
+        },
+        {
+          "title": "Introduction",
+          "permalink": "/intro/"
+        },
+        {
+          "title": "Play with content",
+          "permalink": "/pwc/"
+        }
+      ],
+      "autoSummary": "lorem ipsum, a commonly known Latin word, has roots in classical literature from 45 bc. But what is it and why do we know it? ...",
+      "similarByContent": [
+        {
+          "permalink": "/collection-2/y/y/",
+          "title": "Collection-2/Y"
+        },
+        {
+          "permalink": "/intro/",
+          "title": "Introduction"
+        },
+        {
+          "permalink": "/collection-1/g1/",
+          "title": "Collection-1/G1"
+        },
+        {
+          "permalink": "/sf/f1/",
+          "title": "Subfolder/F1"
+        },
+        {
+          "permalink": "/pwc/",
+          "title": "Play with content"
+        }
+      ],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": "Introduction"
+    },
+    {
+      "title": "Intro Grand Child Page",
+      "permalink": "/intro/introChild/introGrandChild/",
+      "categories": [],
+      "tags": [],
+      "excerpt": "child page",
+      "lastUpdate": "2025-06-19 01:08:52 +0300",
+      "lastUpdateUTC": 1750284532,
+      "createTime": "2025-06-19 01:08:52 +0300",
+      "createTimeUTC": 1750284532,
+      "relatedPages": [],
+      "autoSummary": "grand child page",
+      "similarByContent": [],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": "Intro Child Page"
+    },
+    {
+      "title": "Play with content",
+      "permalink": "/pwc/",
+      "categories": [
+        "general",
+        "content"
+      ],
+      "tags": [
+        "tag1",
+        "tag3",
+        "alfa"
+      ],
+      "excerpt": "file, lorem ipsum, site, markdown content, title, link, latin, cicero, sections, malorum",
+      "lastUpdate": "2025-05-25 10:11:17 +0300",
+      "lastUpdateUTC": 1748157077,
+      "createTime": "2025-05-25 10:11:17 +0300",
+      "createTimeUTC": 1748157077,
+      "relatedPages": [
+        {
+          "title": "Introduction",
+          "permalink": "/intro/"
+        },
+        {
+          "title": "Collection-2/Y",
+          "permalink": "/collection-2/y/y/"
+        },
+        {
+          "title": "Collection-2/X",
+          "permalink": "/collection-2/X/x/"
+        }
+      ],
+      "autoSummary": "Welcome to lorem ipsum. Here is a guide to how to generate content generated from one part of another site page, which contains certain types of markdown. ...",
+      "similarByContent": [
+        {
+          "permalink": "/collection-2/y/y/",
+          "title": "Collection-2/Y"
+        },
+        {
+          "permalink": "/intro/",
+          "title": "Introduction"
+        },
+        {
+          "permalink": "/collection-1/g1/",
+          "title": "Collection-1/G1"
+        },
+        {
+          "permalink": "/collection-2/X/x/",
+          "title": "Collection-2/X"
+        },
+        {
+          "permalink": "/intro/introChild/",
+          "title": "Intro Child Page"
+        }
+      ],
+      "readingTime": 2,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
+      "title": "External content",
+      "permalink": "/ec/",
+      "categories": [
+        "c10",
+        "c12"
+      ],
+      "tags": [
+        "tag1",
+        "tag4",
+        "tag3"
+      ],
+      "excerpt": "a very nice excerpt for a dynamically created file, having the content imported from an external private GitHub repo",
+      "lastUpdate": "2025-05-25 10:11:17 +0300",
+      "lastUpdateUTC": 1748157077,
+      "createTime": "2025-05-25 10:11:17 +0300",
+      "createTimeUTC": 1748157077,
+      "relatedPages": [
+        {
+          "title": "Play with content",
+          "permalink": "/pwc/"
+        }
+      ],
+      "autoSummary": "Welcome to innohub.space, a website which allows users to access content from anonymous and registered ways. Here is the full text of the service. ...",
+      "similarByContent": [],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
+      "title": "Terms",
+      "permalink": "/terms/",
+      "categories": [],
+      "tags": [
+        "legal"
+      ],
+      "excerpt": "services, space services, software, innohub, terms, service, content, website, user, property",
+      "lastUpdate": "2025-05-25 10:11:17 +0300",
+      "lastUpdateUTC": 1748157077,
+      "createTime": "2025-05-25 10:11:17 +0300",
+      "createTimeUTC": 1748157077,
+      "relatedPages": [
+        {
+          "title": "Subfolder/F1",
+          "permalink": "/sf/f1/"
+        },
+        {
+          "title": "Collection-1/G1",
+          "permalink": "/collection-1/g1/"
+        }
+      ],
+      "autoSummary": "The terms and conditions of using innohub.space have been published by the British High Court. Here is a full summary of the terms of service provided by us. ...",
+      "similarByContent": [
+        {
+          "permalink": "/sf/f1/",
+          "title": "Subfolder/F1"
+        }
+      ],
+      "readingTime": 13,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
+      "title": "Collection-1/G1",
+      "permalink": "/collection-1/g1/",
+      "categories": [],
+      "tags": [],
+      "excerpt": "content, lorem ipsum, services, innohub, registration, access, email, process, latin, ihsutilities",
+      "lastUpdate": "2025-06-12 15:21:37 +0300",
+      "lastUpdateUTC": 1749730897,
+      "createTime": "2025-06-12 15:21:37 +0300",
+      "createTimeUTC": 1749730897,
+      "relatedPages": [
+        {
+          "title": "Subfolder/F1",
+          "permalink": "/sf/f1/"
+        },
+        {
+          "title": "Introduction",
+          "permalink": "/intro/"
+        },
+        {
+          "title": "Terms",
+          "permalink": "/terms/"
+        }
+      ],
+      "autoSummary": "This is a summary of lorem ipsum, which contains some of the earliest examples of ethics written in Latin literature. Here is the answer to this question. ...",
+      "similarByContent": [
+        {
+          "permalink": "/collection-2/y/y/",
+          "title": "Collection-2/Y"
+        },
+        {
+          "permalink": "/sf/f1/",
+          "title": "Subfolder/F1"
+        },
+        {
+          "permalink": "/intro/introChild/",
+          "title": "Intro Child Page"
+        },
+        {
+          "permalink": "/intro/",
+          "title": "Introduction"
+        },
+        {
+          "permalink": "/pwc/",
+          "title": "Play with content"
+        }
+      ],
+      "readingTime": 5,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
+      "title": "Collection-1/G11",
+      "permalink": "/collection-1/g11/",
+      "categories": [
+        "general",
+        "content"
+      ],
+      "tags": [
+        "bootstrap",
+        "tag1",
+        "exa"
+      ],
+      "excerpt": "innohub support, support center, support forms, functionalities, center, functionality, information, service, issues, product",
+      "lastUpdate": "2025-06-19 01:08:52 +0300",
+      "lastUpdateUTC": 1750284532,
+      "createTime": "2025-06-19 01:08:52 +0300",
+      "createTimeUTC": 1750284532,
+      "relatedPages": [
+        {
+          "title": "Play with content",
+          "permalink": "/pwc/"
+        }
+      ],
+      "autoSummary": "Welcome to innohub support centre. Here is a guide to the technical support service provided to us through the ...",
+      "similarByContent": [],
+      "readingTime": 4,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
+      "title": "Collection-2/Y",
+      "permalink": "/collection-2/y/y/",
+      "categories": [],
+      "tags": [],
+      "excerpt": "lorem ipsum, latin, latin literature, line, file, extremes, evil, malorum, cicero, book",
+      "lastUpdate": "2025-06-12 15:21:37 +0300",
+      "lastUpdateUTC": 1749730897,
+      "createTime": "2025-06-12 15:21:37 +0300",
+      "createTimeUTC": 1749730897,
+      "relatedPages": [
+        {
+          "title": "Intro Child Page",
+          "permalink": "/intro/introChild/"
+        },
+        {
+          "title": "Introduction",
+          "permalink": "/intro/"
+        },
+        {
+          "title": "Play with content",
+          "permalink": "/pwc/"
+        }
+      ],
+      "autoSummary": "This is a full transcript of lorem ipsum. This contains images from the earliest published versions of the book. Please help us find out more about the text. ...",
+      "similarByContent": [
+        {
+          "permalink": "/intro/introChild/",
+          "title": "Intro Child Page"
+        },
+        {
+          "permalink": "/intro/",
+          "title": "Introduction"
+        },
+        {
+          "permalink": "/collection-1/g1/",
+          "title": "Collection-1/G1"
+        },
+        {
+          "permalink": "/pwc/",
+          "title": "Play with content"
+        },
+        {
+          "permalink": "/sf/f1/",
+          "title": "Subfolder/F1"
+        }
+      ],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
+      "title": "Collection-2/Z",
+      "permalink": "/collection-2/Z/z/",
+      "categories": [
+        "general",
+        "intro"
+      ],
+      "tags": [],
+      "excerpt": "file, file loads, inline, place, repo, content, link, collection, folder",
+      "lastUpdate": "2025-05-25 10:11:17 +0300",
+      "lastUpdateUTC": 1748157077,
+      "createTime": "2025-05-25 10:11:17 +0300",
+      "createTimeUTC": 1748157077,
+      "relatedPages": [
+        {
+          "title": "Collection-2/X",
+          "permalink": "/collection-2/X/x/"
+        },
+        {
+          "title": "Play with content",
+          "permalink": "/pwc/"
+        },
+        {
+          "title": "Alerts",
+          "permalink": "/alerts/"
+        }
+      ],
+      "autoSummary": "this is a file from a collection. this file loads some external content from another repo and place it inline. link to file in different folder",
+      "similarByContent": [
+        {
+          "permalink": "/collection-2/X/x/",
+          "title": "Collection-2/X"
+        }
+      ],
+      "readingTime": 1,
+      "hasDynamicContent": true,
+      "parent": "Collection-2/X"
+    },
+    {
+      "title": "Collection-2/X",
+      "permalink": "/collection-2/X/x/",
+      "categories": [],
+      "tags": [
+        "tag1"
+      ],
+      "excerpt": "file, content, source file, markdown content, inline, link, collection-2, folder, classes head1, head",
+      "lastUpdate": "2025-05-29 01:53:54 +0300",
+      "lastUpdateUTC": 1748472834,
+      "createTime": "2025-05-29 01:53:54 +0300",
+      "createTimeUTC": 1748472834,
+      "relatedPages": [
+        {
+          "title": "Play with content",
+          "permalink": "/pwc/"
+        },
+        {
+          "title": "Collection-2/Z",
+          "permalink": "/collection-2/Z/z/"
+        }
+      ],
+      "autoSummary": "This is a full transcript of markdown content loaded from another md file from the same collection. Here is the full text of the summary of these sections. ...",
+      "similarByContent": [
+        {
+          "permalink": "/pwc/",
+          "title": "Play with content"
+        },
+        {
+          "permalink": "/collection-2/Z/z/",
+          "title": "Collection-2/Z"
+        }
+      ],
+      "readingTime": 1,
+      "hasDynamicContent": true,
+      "parent": ""
+    },
+    {
+      "title": "Alerts",
+      "permalink": "/alerts/",
+      "categories": [],
+      "tags": [],
+      "excerpt": "content, title, alert, file, elements, html class, result, markers, repositories, repo",
+      "lastUpdate": "2025-06-19 18:32:56 +0300",
+      "lastUpdateUTC": 1750347176,
+      "createTime": "2025-06-18 22:19:11 +0300",
+      "createTimeUTC": 1750274351,
+      "relatedPages": [
+        {
+          "title": "Collection-2/Z",
+          "permalink": "/collection-2/Z/z/"
+        }
+      ],
+      "autoSummary": "Welcome to a guide to how to add alert blocks to your content. Here's what you need to know about these rules and how they can be used. ...",
+      "similarByContent": [],
+      "readingTime": 3,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
+      "title": "Subfolder/F1",
+      "permalink": "/sf/f1/",
+      "categories": [],
+      "tags": [],
+      "excerpt": "services, lorem ipsum, products, latin, user, user content, content, sites, website, resources",
+      "lastUpdate": "2025-05-25 10:11:17 +0300",
+      "lastUpdateUTC": 1748157077,
+      "createTime": "2025-05-25 10:11:17 +0300",
+      "createTimeUTC": 1748157077,
+      "relatedPages": [
+        {
+          "title": "Terms",
+          "permalink": "/terms/"
+        },
+        {
+          "title": "Collection-1/G1",
+          "permalink": "/collection-1/g1/"
+        },
+        {
+          "title": "Intro Child Page",
+          "permalink": "/intro/introChild/"
+        }
+      ],
+      "autoSummary": "This is a full transcript of the terms and conditions published by the Public Prosecution and Crime Commission (PMc). Here is the full text of this agreement. ...",
+      "similarByContent": [
+        {
+          "permalink": "/collection-1/g1/",
+          "title": "Collection-1/G1"
+        },
+        {
+          "permalink": "/collection-2/y/y/",
+          "title": "Collection-2/Y"
+        },
+        {
+          "permalink": "/intro/introChild/",
+          "title": "Intro Child Page"
+        },
+        {
+          "permalink": "/terms/",
+          "title": "Terms"
+        },
+        {
+          "permalink": "/intro/",
+          "title": "Introduction"
+        }
+      ],
+      "readingTime": 3,
+      "hasDynamicContent": false,
+      "parent": ""
+    }
+  ],
+  "tagList": [
+    "alfa",
+    "bootstrap",
+    "exa",
+    "legal",
+    "t a g 1",
+    "tag1",
+    "tag2",
+    "tag3",
+    "tag4"
+  ],
+  "tagDetails": {
+    "alfa": {
+      "pages": [
+        {
+          "title": "Play with content",
+          "permalink": "/pwc/",
+          "lastUpdate": "25-May-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "bootstrap": {
+      "pages": [
+        {
+          "title": "Collection-1/G11",
+          "permalink": "/collection-1/g11/",
+          "lastUpdate": "19-Jun-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "exa": {
+      "pages": [
+        {
+          "title": "Collection-1/G11",
+          "permalink": "/collection-1/g11/",
+          "lastUpdate": "19-Jun-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "legal": {
+      "pages": [
+        {
+          "title": "Terms",
+          "permalink": "/terms/",
+          "lastUpdate": "25-May-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "t a g 1": {
+      "pages": [
+        {
+          "title": "Introduction",
+          "permalink": "/intro/",
+          "lastUpdate": "19-Jun-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "tag1": {
+      "pages": [
+        {
+          "title": "Play with content",
+          "permalink": "/pwc/",
+          "lastUpdate": "25-May-2025"
+        },
+        {
+          "title": "External content",
+          "permalink": "/ec/",
+          "lastUpdate": "25-May-2025"
+        },
+        {
+          "title": "Collection-1/G11",
+          "permalink": "/collection-1/g11/",
+          "lastUpdate": "19-Jun-2025"
+        },
+        {
+          "title": "Collection-2/X",
+          "permalink": "/collection-2/X/x/",
+          "lastUpdate": "29-May-2025"
+        }
+      ],
+      "numPages": 4
+    },
+    "tag2": {
+      "pages": [
+        {
+          "title": "Introduction",
+          "permalink": "/intro/",
+          "lastUpdate": "19-Jun-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "tag3": {
+      "pages": [
+        {
+          "title": "Play with content",
+          "permalink": "/pwc/",
+          "lastUpdate": "25-May-2025"
+        },
+        {
+          "title": "External content",
+          "permalink": "/ec/",
+          "lastUpdate": "25-May-2025"
+        }
+      ],
+      "numPages": 2
+    },
+    "tag4": {
+      "pages": [
+        {
+          "title": "External content",
+          "permalink": "/ec/",
+          "lastUpdate": "25-May-2025"
+        }
+      ],
+      "numPages": 1
+    }
+  },
+  "catList": [
+    "c10",
+    "c12",
+    "content",
+    "general",
+    "intro"
+  ],
+  "catDetails": {
+    "c10": {
+      "pages": [
+        {
+          "title": "External content",
+          "permalink": "/ec/",
+          "lastUpdate": "25-May-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "c12": {
+      "pages": [
+        {
+          "title": "External content",
+          "permalink": "/ec/",
+          "lastUpdate": "25-May-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "content": {
+      "pages": [
+        {
+          "title": "Play with content",
+          "permalink": "/pwc/",
+          "lastUpdate": "25-May-2025"
+        },
+        {
+          "title": "Collection-1/G11",
+          "permalink": "/collection-1/g11/",
+          "lastUpdate": "19-Jun-2025"
+        }
+      ],
+      "numPages": 2
+    },
+    "general": {
+      "pages": [
+        {
+          "title": "Introduction",
+          "permalink": "/intro/",
+          "lastUpdate": "19-Jun-2025"
+        },
+        {
+          "title": "Play with content",
+          "permalink": "/pwc/",
+          "lastUpdate": "25-May-2025"
+        },
+        {
+          "title": "Collection-1/G11",
+          "permalink": "/collection-1/g11/",
+          "lastUpdate": "19-Jun-2025"
+        },
+        {
+          "title": "Collection-2/Z",
+          "permalink": "/collection-2/Z/z/",
+          "lastUpdate": "25-May-2025"
+        }
+      ],
+      "numPages": 4
+    },
+    "intro": {
+      "pages": [
+        {
+          "title": "Introduction",
+          "permalink": "/intro/",
+          "lastUpdate": "19-Jun-2025"
+        },
+        {
+          "title": "Collection-2/Z",
+          "permalink": "/collection-2/Z/z/",
+          "lastUpdate": "25-May-2025"
+        }
+      ],
+      "numPages": 2
+    }
+  },
+  "hsSettings": {
+    "region": "na1",
+    "portalID": "7598952",
+    "feedbackFormID": "e166804c-61ea-4b51-801d-f4299cb5c06c",
+    "feedbackForm": {
+      "ID": "e166804c-61ea-4b51-801d-f4299cb5c06c"
+    }
+  },
+  "algoliaSettings": {
+    "algoliaEnabled": true,
+    "algoliaAppID": "5VXQ8BSD61",
+    "algoliaIndex": "aroo-innohub",
+    "algoliaPublicApiKey": "e0e2b8690ed863aee6926330aa979904",
+    "algoliaSearchBoxContainer": "#docsearch",
+    "algoliaDebug": false,
+    "algoliaMaxResultsPerGroup": 20,
+    "algoliaHitsPerPage": 10,
+    "algoliaSendInsights": true,
+    "algoliaTextHighlightPrefixTag": "<mark>",
+    "algoliaTextHighlightPostfixTag": "</mark>",
+    "algoliaRaiseIssueLink": "https://github.com/pmc-community/jekyll-site-template/issues/new?title=",
+    "algoliaDocSearchEnabled": true,
+    "algoliaCustomEnabled": false
+  },
+  "pageSettings": {
+    "/": {
+      "sections": {
+        "mostRecentAndPopular_section": {
+          "popularCatsToShow": 8,
+          "popularTagsToShow": 8
+        }
+      }
+    }
+  },
+  "gData": {
+    "ga": {
+      "enabled": true,
+      "ga": "G-T86D5YQ5WF"
+    },
+    "gtm": {
+      "enabled": true,
+      "gtm": "GTM-KCLM93S"
+    }
+  },
+  "newRelicSettings": {
+    "newRelicEnabled": "true"
+  },
+  "engLanguage": {
+    "common": {
+      "yes": "Yes",
+      "no": "No",
+      "months": {
+        "Jan": "Jan",
+        "Feb": "Feb",
+        "Mar": "Mar",
+        "Apr": "Apr",
+        "May": "May",
+        "Jun": "Jun",
+        "Jul": "Jul",
+        "Aug": "Aug",
+        "Sep": "Sep",
+        "Oct": "Oct",
+        "Nov": "Nov",
+        "Dec": "Dec"
+      },
+      "months_l": {
+        "January": "January",
+        "February": "February",
+        "March": "March",
+        "April": "April",
+        "May": "May",
+        "June": "June",
+        "July": "July",
+        "August": "August",
+        "September": "September",
+        "October": "October",
+        "November": "November",
+        "December": "December"
+      },
+      "active_filter": {
+        "label_prefix": "sitePagesDetailsLastFilterDetailsPage",
+        "has_auto_summary": "Has Auto Summary",
+        "has_custom_categories": "Has Custom Categories",
+        "has_custom_notes": "Has Custom Notes",
+        "has_custom_tags": "Has Custom Tags",
+        "has_excerpt": "Has Excerpt",
+        "has_site_categories": "Has Site Categories",
+        "has_site_tags": "Has Site Tags",
+        "is_saved": "Is Saved",
+        "is_not_saved": "Is Not Saved"
+      },
+      "type_and_search_input_field_placeholder": "type, select, hit enter ..."
+    },
+    "side_bar_language_selector_text": "Change language",
+    "404_row_1": "The requested document could not be found.",
+    "404_row_2": "Contact support if you believe that the document should be here.",
+    "404_support_btn_text": "Support",
+    "home_page_intro_section_buttons_sections": "Sections",
+    "home_page_intro_section_buttons_quickstart": "Quickstart",
+    "home_page_intro_section_buttons_statistics": "Docs info",
+    "home_page_intro_section_buttons_support": "Support",
+    "home_page_intro_section_buttons_overview": "Overview",
+    "home_page_collections_section_start_here_btn": "Start here",
+    "home_page_recent_and_popular_section_most_recent_col_header": "Most recent",
+    "home_page_recent_and_popular_section_most_recent_col_go_to_docs_btn": "Documents",
+    "home_page_recent_and_popular_section_popular_cats_col_header": "Popular categories",
+    "home_page_recent_and_popular_section_popular_cats_col_go_to_cats_btn": "Categories",
+    "home_page_recent_and_popular_section_popular_tags_col_header": "Popular tags",
+    "home_page_recent_and_popular_section_popular_tags_col_go_to_tags_btn": "Tags",
+    "home_page_stats_section_cats_col_title": "Categories",
+    "home_page_stats_section_cats_col_total_cats": "Total categories:",
+    "home_page_stats_section_cats_col_site_cats": "Site categories:",
+    "home_page_stats_section_cats_col_custom_cats": "Custom categories:",
+    "home_page_stats_section_cats_col_docs_with_custom_cats": "Docs with custom categories:",
+    "home_page_stats_section_tags_col_title": "Tags",
+    "home_page_stats_section_tags_col_total_tags": "Total tags:",
+    "home_page_stats_section_tags_col_site_tags": "Site tags:",
+    "home_page_stats_section_tags_col_custom_tags": "Custom tags:",
+    "home_page_stats_section_tags_col_docs_with_custom_tags": "Docs with custom tags:",
+    "home_page_stats_section_docs_col_title": "Documents",
+    "home_page_stats_section_docs_col_total_docs": "Total docs:",
+    "home_page_stats_section_docs_col_saved_docs": "Saved docs:",
+    "home_page_stats_section_docs_col_avg_read_time": "Avg. reading time:",
+    "home_page_stats_section_docs_col_max_read_time": "Max. reading time:",
+    "home_page_stats_section_docs_col_min_read_time": "Min. reading time:",
+    "page_footer_feedback_and_support_title": "Feedback and Support",
+    "page_footer_help_needed_col_title": "Need help?",
+    "page_footer_help_needed_contact_support": "Contact support",
+    "page_footer_help_needed_ask_community": "Ask community",
+    "page_footer_help_needed_report_issue": "Report issue",
+    "page_footer_download_text": "Get your own copy",
+    "page_footer_download": "Download",
+    "page_footer_get_involved_col_title": "Get involved!",
+    "page_footer_get_involved_follow_us": "Follow us",
+    "page_footer_get_involved_subscribe": "Subscribe",
+    "page_footer_get_involved_star": "Like us",
+    "page_footer_get_involved_contribute": "Contribute",
+    "page_footer_help_us_improve_col_title": "Help us improve!",
+    "page_footer_help_us_improve_privacy_policy": "Privacy policy",
+    "page_content_context_menu_option_search_in_site": "Search in site",
+    "page_content_context_menu_option_tag_all_documents": "Tag all documents",
+    "page_content_context_menu_option_tag_document": "Tag document",
+    "page_content_context_menu_option_see_selected": "See selected",
+    "page_content_context_menu_option_add_comment": "Add comment",
+    "page_content_context_menu_option_add_comment_button": "Add",
+    "page_content_context_menu_option_cancel_comment_button": "Cancel",
+    "page_content_context_menu_tag_limitation_toast_message": "Tags are limited to %d words (W) and %d characters (C)",
+    "page_content_context_menu_tag_to_document_toast_message": "Tag %s was applied to document",
+    "page_content_context_menu_tag_to_all_documents_toast_crtPageInfo_message_part": "This document was not found in saved items, so the tag was not applied to it.",
+    "page_content_context_menu_tag_to_all_documents_toast_outOf_message_part": "out of",
+    "page_content_context_menu_tag_to_all_documents_toast_docs_not_in_saved_items_message_part": "document(s) not found in saved items.",
+    "page_content_context_menu_tag_to_all_documents_toast_message": "Tag %s was applied to %d %s document(s)! %s %s",
+    "page_content_context_menu_tag_to_all_documents_noSense_toast_message": "All documents should be tagged with tag %s and this doesn't make sense! We skip ... You can manually apply the tag on the docs you want.",
+    "page_content_custom_comment_anchor_offcanvas_title": "Comments",
+    "page_content_custom_comment_anchor_offcanvas_doc_title_text": "Title",
+    "page_content_custom_comment_anchor_offcanvas_anchor_text": "Reference",
+    "page_content_context_menu_comment_in_comment_toast_message": "Comment inside comment is not allowed!",
+    "hs_feedback_form_was_this_useful_text": "Was this useful:",
+    "hs_feedback_form_submit_btn_text": "Submit your rating!",
+    "hs_feedback_form_email_placeholder_text": "Leave your email if we can contact you (optional)",
+    "hs_feedback_form_message_placeholder_text": "Can you tell us more about your rating? (optional)",
+    "hs_feedback_form_yes_label": "{{common.yes}}",
+    "hs_feedback_form_no_label": "{{common.no}}",
+    "hs_feedback_form_message_was_this_useful_radio_btn_label": "Was this useful?",
+    "hs_feedback_form_was_this_useful_confirmation_text_yes": "{{common.yes}}",
+    "hs_feedback_form_was_this_useful_confirmation_text_no": "{{common.no}}",
+    "hs_feedback_form_message_after_submission": "Thanks for the feedback! 👍",
+    "page_page_info_tags": "Tags",
+    "page_page_info_badge_has_custom_tags_title": "Document has custom tags",
+    "page_page_info_badge_has_site_tags_title": "Document {{title}}has site tags",
+    "page_page_info_badge_has_related_title": "Document has related documents",
+    "page_page_info_related": "Related",
+    "page_page_info_badge_has_summary_title": "Document has auto generated summary",
+    "page_page_info_summary": "Summary",
+    "page_page_info_badge_has_custom_cats_title": "Document has custom categories",
+    "page_page_info_cats": "Categories",
+    "page_page_info_badge_has_custom_notes_title": "Document has custom notes",
+    "page_page_info_notes": "Notes",
+    "page_page_info_read_time_text": "min. read",
+    "page_page_info_last_update_badge_text": "Last update",
+    "page_page_info_doc_info_btn": "Doc Info",
+    "page_page_info_support_btn": "Support",
+    "page_page_info_support_btn_title": "Go to Feedback&Support section for this document",
+    "page_page_info_doc_info_btn_title": "See document detailed information",
+    "page_info_similar_pages_title": "Similar documents based on content",
+    "page_info_similar_pages_text": "Similar",
+    "page_toc_toc_title": "On this page",
+    "page_toc_toc_title_mobile": "{{page_toc_toc_title}}",
+    "faq_toc_toc_title_mobile": "Questions",
+    "faq_search_placeholder": "Search in answers...",
+    "faq_search_clear_btn_text": "Clear",
+    "faq_menu_item_text": "FAQ",
+    "faq_page_excerpt": "Frequently asked questions",
+    "faq_title": "Docaroo's Frequent Asked Questions",
+    "page_tags_section_title": "Tags",
+    "page_notes_section_title": "Notes",
+    "page_related_section_title": "Related",
+    "dt_custom_buttons_go_to_tags_btn_title": "Go to tags info",
+    "dt_custom_buttons_go_to_tags_btn_text": "Tags info",
+    "dt_custom_buttons_go_to_cats_btn_title": "Go to categories info",
+    "dt_custom_buttons_go_to_cats_btn_text": "Categories",
+    "dt_search_panes_button_title": "Advanced filers",
+    "dt_custom_buttons_go_to_docs_btn_title": "Go to documents",
+    "dt_custom_buttons_go_to_docs_btn_text": "Documents",
+    "dt_colvis_button_title": "Show/Hide columns",
+    "dt_pages_col_actions_save_to_local_btn_title": "Save document to saved items",
+    "dt_pages_col_actions_remove_from_local_btn_title": "Remove document form saved items",
+    "dt_pages_col_actions_read_doc_btn_title": "Read document",
+    "dt_pages_col_title_title": "Detailed information about the document",
+    "dt_pages_col_related_title": "Click on document title for detailed information.\nClick on link symbol to open the document.",
+    "dt_pages_col_similar_title": "Click on document title for detailed information.\nClick on link symbol to open the document.",
+    "dt_pages_col_tags_title": "Details for tag %s",
+    "dt_pages_col_tags_title_static": "Details for the tag",
+    "dt_pages_col_cats_title_static": "Details for the category",
+    "dt_pages_col_title_text": "Title",
+    "dt_pages_col_last_update_text": "Last update",
+    "dt_pages_col_cats_text": "Categories",
+    "dt_pages_col_tags_text": "Tags",
+    "dt_pages_col_summary_text": "Summary",
+    "dt_pages_col_excerpt_text": "Excerpt",
+    "dt_pages_col_similar_text": "Similar",
+    "dt_pages_col_related_text": "Related",
+    "dt_pages_col_details_text": "Details",
+    "dt_pages_col_details_custom_tags_badge_text": "Tags",
+    "dt_pages_col_details_custom_tags_badge_title": "The document has custom tags",
+    "dt_pages_col_details_custom_cats_badge_text": "Categories",
+    "dt_pages_col_details_custom_cats_badge_title": "The document has custom categories",
+    "dt_pages_col_details_notes_badge_text": "Notes",
+    "dt_pages_col_details_notes_badge_title": "The document has custom notes",
+    "dt_pages_col_details_site_tags_badge_text": "Tags",
+    "dt_pages_col_details_site_tags_badge_title": "The document has site tags",
+    "dt_pages_col_details_site_cats_badge_text": "Categories",
+    "dt_pages_col_details_site_cats_badge_title": "The document has site categories",
+    "dt_pages_col_details_summary_badge_text": "Summary",
+    "dt_pages_col_details_summary_badge_title": "The document has auto-generated summary",
+    "dt_pages_col_details_excerpt_badge_text": "Excerpt",
+    "dt_pages_col_details_excerpt_badge_title": "The document has auto-generated or manually-generated excerpt",
+    "dt_pages_active_filter_details_container_label": "{{common.active_filter.label_prefix}}{{dt_pages_col_details_text}}_container",
+    "dt_pages_active_filter_details_label": "{{common.active_filter.label_prefix}}{{dt_pages_col_details_text}}",
+    "dt_pages_active_filter_related_container_label": "{{common.active_filter.label_prefix}}{{dt_pages_col_related_text}}_container",
+    "dt_pages_active_filter_related_label": "{{common.active_filter.label_prefix}}{{dt_pages_col_related_text}}",
+    "dt_pages_active_filter_similar_container_label": "{{common.active_filter.label_prefix}}{{dt_pages_col_similar_text}}_container",
+    "dt_pages_active_filter_similar_label": "{{common.active_filter.label_prefix}}{{dt_pages_col_similar_text}}",
+    "dt_pages_active_filter_tags_container_label": "{{common.active_filter.label_prefix}}{{dt_pages_col_tags_text}}_container",
+    "dt_pages_active_filter_tags_label": "{{common.active_filter.label_prefix}}{{dt_pages_col_tags_text}}",
+    "dt_pages_active_filter_cats_container_label": "{{common.active_filter.label_prefix}}{{dt_pages_col_cats_text}}_container",
+    "dt_pages_active_filter_cats_label": "{{common.active_filter.label_prefix}}{{dt_pages_col_cats_text}}",
+    "dt_pages_active_filter_box_title_last_filter": "Last filter",
+    "dt_pages_active_filter_box_title_active_filter": "Active filter",
+    "dt_pages_active_filter_box_open_filter_btn_text": "Open",
+    "dt_pages_active_filter_box_clear_filter_btn_text": "Clear",
+    "pages_search_doc_documents_btn_text": "Documents",
+    "pages_search_doc_saved_docs_btn_text": "Saved Docs",
+    "pages_search_doc_title_text": "Search document",
+    "pages_search_doc_documents_btn_title": "Open documents list",
+    "pages_search_doc_saved_docs_btn_title": "Saved documents details",
+    "pages_search_doc_search_input_placeholder": "{{common.type_and_search_input_field_placeholder}}",
+    "pages_docs_title_text": "Documents",
+    "pages_saved_docs_title_text": "Saved Documents",
+    "pages_saved_docs_save_to_file_btn_text": "Save to file",
+    "pages_saved_docs_save_to_file_btn_title": "Save the configuration to file",
+    "pages_saved_docs_saved_docs_btn_text": "Saved docs",
+    "pages_saved_docs_saved_docs_btn_title": "Show all local saved documents",
+    "pages_saved_docs_not_saved_docs_btn_text": "Not saved docs",
+    "pages_saved_docs_not_saved_docs_btn_title": "Show all documents that are not saved locally",
+    "pages_saved_docs_explanation_1": "Choose configuration file to load saved documents configuration.",
+    "pages_saved_docs_explanation_2": "You can also drop a file in the drop zone.",
+    "pages_saved_docs_explanation_3": "Save before load",
+    "pages_saved_docs_explanation_4": "is active for this site.",
+    "pages_saved_docs_explanation_5": "Your current saved documents configuration will be saved to a local file before loading the new one.",
+    "pages_saved_docs_explanation_6": "is not active for this site.",
+    "pages_saved_docs_explanation_7": "We recommend to save the current saved documents configuration before loading the new one.",
+    "pages_saved_docs_drop_file_here": "Drop file here",
+    "pages_saved_docs_choose_file_btn_text": "Choose file",
+    "cats_cat_search_cat_search_input_placeholder": "{{common.type_and_search_input_field_placeholder}}",
+    "cats_cat_table_page_search_input_placeholder": "{{common.type_and_search_input_field_placeholder}}",
+    "cats_search_cat_section_title": "Search category",
+    "cats_search_cat_cloud_btn_title": "Show categories cloud",
+    "cats_search_cat_cloud_btn_text": "Categories",
+    "cats_cat_details_section_title": "Category",
+    "cats_cat_cloud_cat_section_title": "Categories",
+    "cats_cat_cloud_cat_btn_title": "Details for selected category",
+    "cats_dt_cat_col_title_text": "Title",
+    "cats_dt_cat_col_last_update_text": "Last Update",
+    "cats_dt_cat_col_actions_text": "Actions",
+    "cats_dt_cat_col_excerpt_text": "Excerpt",
+    "cats_dt_cat_col_other_cats_text": "Other Categories",
+    "cats_dt_cat_col_title_title": "Show full information about",
+    "cats_cat_cat_details_actions_read_doc": "Read document",
+    "cats_cat_cat_details_actions_save_doc": "Save document's information",
+    "cats_cat_cat_details_actions_remove_from_saved_doc": "Remove document's information from saved configuration",
+    "cats_cat_details_add_doc_to_cat": "Add document to category",
+    "cats_cat_cloud_btn_ctx_menu_remove_cat_title": "Remove the category from all documents",
+    "cats_cat_cloud_btn_ctx_menu_remove_cat_text": "Remove category",
+    "cats_cat_cloud_btn_ctx_menu_update_cat_text": "Update",
+    "cats_cat_table_btn_ctx_menu_add_cat_text": "Add",
+    "cats_cat_table_btn_ctx_menu_remove_cat_title": "Remove the category from the selected document",
+    "cats_cat_table_btn_ctx_menu_remove_cat_text": "Remove category",
+    "tags_tag_search_tag_search_input_placeholder": "{{common.type_and_search_input_field_placeholder}}",
+    "tags_tag_table_page_search_input_placeholder": "{{common.type_and_search_input_field_placeholder}}",
+    "tags_search_tag_section_title": "Search tag",
+    "tags_search_tag_cloud_btn_title": "Show tag cloud",
+    "tags_tag_cloud_tag_section_title": "Tags",
+    "tags_search_tag_cloud_btn_text": "Tags",
+    "tags_tag_details_section_title": "Tag",
+    "tags_tag_cloud_tag_btn_title": "Details for selected tag",
+    "tags_dt_tag_col_title_text": "Title",
+    "tags_dt_tag_col_last_update_text": "Last Update",
+    "tags_dt_tag_col_actions_text": "Actions",
+    "tags_dt_tag_col_excerpt_text": "Excerpt",
+    "tags_dt_tag_col_other_tags_text": "Other Tags",
+    "tags_dt_tag_col_title_title": "Show full information about",
+    "tags_tag_tag_details_actions_read_doc": "Read document",
+    "tags_tag_tag_details_actions_save_doc": "Save document's information",
+    "tags_tag_tag_details_actions_remove_from_saved_doc": "Remove document's information from saved configuration",
+    "tags_tag_details_add_doc_to_tag": "Add document to tag",
+    "tags_tag_cloud_btn_ctx_menu_remove_tag_title": "Remove the tag from all documents",
+    "tags_tag_cloud_btn_ctx_menu_remove_tag_text": "Remove tag",
+    "tags_tag_cloud_btn_ctx_menu_update_tag_text": "Update",
+    "tags_tag_table_btn_ctx_menu_add_tag_text": "Add",
+    "tags_tag_table_btn_ctx_menu_remove_tag_title": "Remove the tag from the selected document",
+    "tags_tag_table_btn_ctx_menu_remove_tag_text": "Remove tag",
+    "main_menu_more": "More",
+    "main_menu_documents": "Documents",
+    "main_menu_categories": "Categories",
+    "main_menu_tags": "Tags",
+    "main_menu_home": "Home",
+    "main_menu_switch_theme_btn_title": "Switch theme",
+    "main_menu_jtd_search_box_placeholder": "Search",
+    "main_menu_jtd_search_box_no_result_text": "No result",
+    "page_full_info_header_title": "Doc information",
+    "page_full_info_gen_section_title": "General & Notes",
+    "page_full_info_gen_page_title": "Title",
+    "page_full_info_gen_page_last_update": "Last update",
+    "page_full_info_gen_page_excerpt": "Excerpt",
+    "page_full_info_gen_page_summary": "Summary",
+    "page_full_info_gen_page_related": "Related",
+    "page_full_info_gen_page_related_title": "Related pages based on tags, categories, keywords and content",
+    "page_full_info_gen_page_similar": "Similar",
+    "page_full_info_gen_page_similar_title": "Similar documents based on content",
+    "page_full_info_gen_page_notes": "Notes",
+    "page_full_info_gen_page_notes_limits": "Notes are limited to 50 words (W) or 250 characters (C).",
+    "page_full_info_gen_page_notes_page_save_warning": "Save page in saved items to be able to add custom notes.",
+    "page_full_info_gen_page_summary_div_title": "Generated summary (if feature is available)",
+    "page_full_info_gen_page_excerpt_div_title": "Page excerpt or generated keywords",
+    "page_full_info_gen_notes_dt_col_date": "Date",
+    "page_full_info_gen_notes_dt_col_note": "Note",
+    "page_full_info_gen_notes_dt_col_id": "ID",
+    "page_full_info_gen_notes_dt_delete_notes_btn_text": "Delete Notes",
+    "page_full_info_gen_notes_dt_delete_notes_btn_title": "Delete all notes for the document",
+    "page_full_info_gen_notes_handling_label": "Add/Update/Delete Custom Note",
+    "page_full_info_gen_notes_handling_add_btn_text": "Add",
+    "page_full_info_gen_notes_handling_update_btn_text": "Update",
+    "page_full_info_gen_notes_handling_delete_btn_text": "Delete",
+    "page_full_info_gen_save_to_saved_items_btn_title": "Save document data to saved items in order to \nadd tags, categories, notes and comments",
+    "page_full_info_gen_remove_from_saved_items_btn_title": "Remove document data from saved items",
+    "page_full_info_tags_section_title": "Tags",
+    "page_full_info_tags_short_explanation": "Enter tags one by one and hit enter after each one. You can enter multiple tags in a single batch. When ready, hit enter again. Right click (or press long on mobile) on a tag to remove it. System tags (blue) cannot be deleted.",
+    "page_full_info_tags_context_menu_remove_from_doc_title": "Remove the tag only from the document",
+    "page_full_info_tags_context_menu_remove_from_doc_text": "Remove from doc",
+    "page_full_info_tags_context_menu_remove_from_all_doc_title": "Remove the tag from all documents",
+    "page_full_info_tags_context_menu_remove_from_all_doc_text": "Remove from all docs",
+    "page_full_info_cats_section_title": "Categories",
+    "page_full_info_cats_short_explanation": "Enter categories one by one and hit enter after each one. You can enter multiple categories in a single batch. When ready, hit enter again. Right click (or press long on mobile) on a category to remove it. System categories (red) cannot be deleted",
+    "page_full_info_cats_context_menu_remove_from_doc_title": "Remove the category only from the document",
+    "page_full_info_cats_context_menu_remove_from_doc_text": "Remove from doc",
+    "page_full_info_cats_context_menu_remove_from_all_doc_title": "Remove the category from all documents",
+    "page_full_info_cats_context_menu_remove_from_all_doc_text": "Remove from all docs",
+    "algolia_doc_search_custom_panel_header_read_btn_text": "Read",
+    "algolia_doc_search_custom_panel_found_in_text": "Found in",
+    "algolia_doc_search_custom_panel_summary_text": "Summary",
+    "algolia_doc_search_custom_panel_excerpt_text": "Excerpt",
+    "algolia_doc_search_custom_panel_contents_text": "ToC",
+    "algolia_doc_search_custom_panel_tags_text": "Tags",
+    "algolia_doc_search_custom_panel_cats_text": "Categories",
+    "algolia_doc_search_custom_panel_hit_text": "Hit",
+    "algolia_doc_search_custom_panel_heads_up_text": "Heads up!!!",
+    "algolia_doc_search_custom_panel_heads_up_warning_text": "This ToC does not capture dynamic document headings.",
+    "algolia_doc_search_custom_panel_heads_up_has_dynamic_content_text": "has dynamic content!",
+    "algolia_doc_search_custom_panel_heads_up_not_has_dynamic_content_text": "doesn't have dynamic content!",
+    "algolia_doc_search_btn_text": "Search",
+    "algolia_doc_search_btn_aria_label": "Open search",
+    "algolia_doc_search_modal_reset_btn_title": "Clear query",
+    "algolia_doc_search_modal_cancel_btn_text": "Cancel",
+    "algolia_doc_search_modal_placeholder": "Search in docs ...",
+    "algolia_doc_search_modal_footer_select_text": "to select",
+    "algolia_doc_search_modal_footer_navigate_text": "to navigate",
+    "algolia_doc_search_modal_footer_close_text": "to close",
+    "algolia_doc_search_modal_recent_searches_title": "Recent searches",
+    "algolia_doc_search_modal_no_recent_searches_text": "",
+    "algolia_doc_search_modal_save_this_search_title": "Save this search",
+    "algolia_doc_search_modal_remove_this_search_title": "Remove this search",
+    "algolia_doc_search_modal_fav_search_title": "Favourite searches",
+    "algolia_doc_search_modal_remove_from_fav_search_title": "Remove from favourites",
+    "algolia_doc_search_modal_no_results_text": "No results for",
+    "algolia_doc_search_modal_try_another_query_text": "Try another query",
+    "algolia_doc_search_modal_believe_should_have_results_text": "Believe that should be a result?",
+    "algolia_doc_search_modal_raise_issue_text": "Report",
+    "algolia_doc_search_modal_footer_search_by_text": "Search by",
+    "algolia_doc_search_modal_error_no_results_text": "Unable to fetch results",
+    "algolia_doc_search_modal_error_no_net_text": "You might want to check your network connection.",
+    "toast_algolia_integrate_js_search_error": "Something went wrong with this search!<br><br>You may try again later. If the problem persists, contact support.",
+    "toast_algolia_integrate_js_retrieve_all_results_error": "Something went wrong with retrieving all search result pages!<br><br>You may try again later. If the problem persists, contact support.",
+    "toast_algolia_integrate_js_retrieve_initial_search_error": "Something went wrong with the initial search (number of pages)!<br><br>You may try again later. If the problem persists, contact support.",
+    "toast_algolia_integrate_js_retrieve_pagination_error": "Error while fetching paginated results! Please try again.",
+    "toast_algolia_integrate_js_hit_target_url_error": "Something is wrong with the hit target %s! Cannot go there ... ",
+    "toast_cats_js_add_doc_to_site_cat_error": "Cannot add a page to a site category",
+    "toast_cats_js_add_doc_to_site_cat_warning": "Select a custom category to use this feature!",
+    "toast_tags_js_add_doc_to_site_tag_error": "Cannot add a page to a site tag",
+    "toast_tags_js_add_doc_to_site_tag_warning": "Select a custom tag to use this feature!",
+    "toast_hs_integrate_js_jquery_error": "Something went wrong, cannot execute functions!",
+    "toast_hs_integrate_js_wrong_format_error": "Please fill in the required information in the right format",
+    "toast_hs_integrate_js_wrong_email_format_error": "Please fill in the email in the right format",
+    "toast_saved_items_js_empty_saved_items_error": "Can't add note! There is nothing in saved items...",
+    "toast_saved_items_js_note_del_empty_saved_items_error": "Can't delete note! There is nothing in saved items...",
+    "toast_saved_items_js_doc_not_in_saved_items_error": "Can't add note! The document %s is not found in saved items...",
+    "toast_saved_items_js_note_del_doc_not_in_saved_items_error": "Can't delete note! The document is not found in saved items...",
+    "toast_saved_items_js_empty_note_warning": "Nothing to add/update, note is empty ...",
+    "toast_saved_items_js_note_already_saved_warning": "Note already saved, no need to save it again!",
+    "toast_saved_items_js_note_not_found_error": "Can't update! Note not found",
+    "toast_saved_items_js_comm_empty_saved_items_error": "Can't add comment! There is nothing in saved items...",
+    "toast_saved_items_js_del_comm_empty_saved_items_error": "Can't delete comment! There is nothing in saved items...",
+    "toast_saved_items_js_del_comm_doc_not_in_saved_items_error": "Can't delete comment! The document is not found in saved items...",
+    "toast_saved_items_js_comm_doc_not_in_saved_items_error": "Can't add comment! The document %s is not found in saved items...",
+    "toast_saved_items_js_comm_not_found_error": "Can't update! Note not found",
+    "toast_saved_items_js_tag_empty_saved_items_error": "Can't add tag! There is nothing in saved items...",
+    "toast_saved_items_js_tag_update_empty_saved_items_error": "Can't modify tag! There is nothing in saved items...",
+    "toast_saved_items_js_tag_doc_not_in_saved_items_error": "Can't add tag! The document %s is not found in saved items...",
+    "toast_saved_items_js_tag_is_site_tag_warning": "Can't add tag! The tag %s is a site tag...",
+    "toast_saved_items_js_tag_update_is_site_tag_warning": "Can't update tag %s with %s because %s is already a site tag!",
+    "toast_saved_items_js_cat_empty_saved_items_error": "Can't add category! There is nothing in saved items...",
+    "toast_saved_items_js_cat_update_empty_saved_items_error": "Can't modify category! There is nothing in saved items...",
+    "toast_saved_items_js_cat_doc_not_in_saved_items_error": "Can't add category! The document %s is not found in saved items...",
+    "toast_saved_items_js_cat_is_site_cat_warning": "Can't add category! The category %s is a site tag...",
+    "toast_saved_items_js_cat_update_is_site_cat_warning": "Can't update category %s with %s because %s is already a site category!",
+    "toast_saved_items_js_local_storage_key_json_parse_error": "Can't save local storage key! Error parsing key %s",
+    "toast_saved_items_js_file_saved_success": "Your saved data is now in downloads folder, %s.json",
+    "toast_saved_items_js_file_loaded_success": "Data from file %s has been loaded",
+    "toast_saved_items_js_file_loaded_schema_error": "Can't load %s because it has invalid schema",
+    "toast_saved_items_js_file_loaded_invalid_file_error": "The file %s is not a valid JSON file and cannot be parsed",
+    "toast_saved_items_js_file_read_error": "Error reading file %s",
+    "toast_saved_items_js_no_file_selected_warning": "No file selected",
+    "toast_site_pages_js_file_loaded_only_json_error": "Sorry! Only *.json files allowed this time.",
+    "toast_site_pages_js_doc_saved_but_empty_data_warning": "Document %s is now saved!<br><br><strong>HEADS UP!!!</strong><br>Document will be removed automatically if you don't add some custom info (tags, categories, notes, comments)",
+    "toast_utilities_js_alert_override_warning": "Something did not work as expected! You may refresh page and try again. If the problem persists, contact support.",
+    "toast_utilities_js_external_content_loading_error": "Error loading external content!",
+    "toast_utilities_js_dt_create_table_error": "Something went wrong when building the table! You may refresh page and try again. If the problem persists, contact support."
+  }
+}
