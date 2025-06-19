@@ -1,0 +1,42 @@
+{% capture uuid %}
+  {% UUID %}
+{% endcapture %}
+{% assign lid = uuid | strip %}
+
+{% assign animationId = include.id || default: '' %}
+    {% assign h = include.h || default: 50 %}
+    {% assign w = include.w || default: 50 %}
+    {% assign pad = include.pad || default: 0 %}
+
+<div id="crop-container-{{lid}}" style="display: inline-block; overflow: hidden;">
+  <canvas id="canvas-{{lid}}" style="display: block;"  width="{{w}}" height="{{h}}"></canvas>
+</div>
+
+<script type="module">
+  {% if animationId != '' %}
+    import { DotLottie } from 'https://cdn.jsdelivr.net/npm/@lottiefiles/dotlottie-web/+esm';
+
+    const canvas = document.getElementById('canvas-{{lid}}');
+    const container = document.getElementById('crop-container-{{lid}}');
+
+    const lottiePlayer = new DotLottie({
+        autoplay: true,
+        loop: true,
+        background: 'transparent',
+        speed: '1',
+        canvas: canvas,
+        src: 'https://lottie.host/{{animationId}}.lottie',
+    });
+
+    lottiePlayer.addEventListener('load', () => {
+        requestAnimationFrame(() => {
+            const rect = canvas.getBoundingClientRect();
+            const padding = {{pad}};
+
+            container.style.width = (rect.width + padding * 2) + 'px';
+            container.style.height = (rect.height + padding * 2) + 'px';
+            container.style.padding = padding + 'px';
+        });
+    });
+  {% endif %}
+</script>

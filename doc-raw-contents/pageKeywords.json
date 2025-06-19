@@ -1,18 +1,18 @@
 {
   "keywords": [
     {
-      "permalink": "/intro/introChild/",
+      "permalink": "/sf/f1/",
       "keywords": [
+        "services",
         "lorem ipsum",
+        "products",
         "latin",
-        "latin literature",
-        "line",
-        "evil",
-        "extremes",
-        "malorum",
-        "cicero",
-        "book",
-        "treatise"
+        "user",
+        "user content",
+        "content",
+        "sites",
+        "website",
+        "resources"
       ]
     },
     {
@@ -31,17 +31,18 @@
       ]
     },
     {
-      "permalink": "/collection-2/Z/z/",
+      "permalink": "/collection-2/y/y/",
       "keywords": [
+        "lorem ipsum",
+        "latin",
+        "latin literature",
+        "line",
         "file",
-        "file loads",
-        "inline",
-        "place",
-        "repo",
-        "content",
-        "link",
-        "collection",
-        "folder"
+        "extremes",
+        "evil",
+        "malorum",
+        "cicero",
+        "book"
       ]
     },
     {
@@ -60,39 +61,9 @@
       ]
     },
     {
-      "permalink": "/sf/f1/",
-      "keywords": [
-        "services",
-        "lorem ipsum",
-        "products",
-        "latin",
-        "user",
-        "user content",
-        "content",
-        "sites",
-        "website",
-        "resources"
-      ]
-    },
-    {
       "permalink": "/intro/introChild/introGrandChild/",
       "keywords": [
         "child page"
-      ]
-    },
-    {
-      "permalink": "/alerts/",
-      "keywords": [
-        "file",
-        "content",
-        "title",
-        "alert content",
-        "h1 title",
-        "h2 title",
-        "alert title",
-        "markers",
-        "text",
-        "result"
       ]
     },
     {
@@ -111,18 +82,47 @@
       ]
     },
     {
-      "permalink": "/collection-2/y/y/",
+      "permalink": "/collection-2/Z/z/",
+      "keywords": [
+        "file",
+        "file loads",
+        "inline",
+        "place",
+        "repo",
+        "content",
+        "link",
+        "collection",
+        "folder"
+      ]
+    },
+    {
+      "permalink": "/intro/introChild/",
       "keywords": [
         "lorem ipsum",
         "latin",
         "latin literature",
         "line",
-        "file",
-        "extremes",
         "evil",
+        "extremes",
         "malorum",
         "cicero",
-        "book"
+        "book",
+        "treatise"
+      ]
+    },
+    {
+      "permalink": "/alerts/",
+      "keywords": [
+        "content",
+        "title",
+        "alert",
+        "file",
+        "elements",
+        "html class",
+        "result",
+        "markers",
+        "repositories",
+        "repo"
       ]
     },
     {

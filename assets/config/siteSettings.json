@@ -224,10 +224,10 @@
         "tag2"
       ],
       "excerpt": "lorem ipsum, latin, sections, cicero, finibus bonorum, malorum, latin literature, standard chunk, rackham, translation",
-      "lastUpdate": "2025-06-18 22:15:12 +0300",
-      "lastUpdateUTC": 1750274112,
-      "createTime": "2025-06-18 22:15:12 +0300",
-      "createTimeUTC": 1750274112,
+      "lastUpdate": "2025-06-19 01:08:52 +0300",
+      "lastUpdateUTC": 1750284532,
+      "createTime": "2025-06-19 01:08:52 +0300",
+      "createTimeUTC": 1750284532,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -326,10 +326,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "child page",
-      "lastUpdate": "2025-06-18 22:15:12 +0300",
-      "lastUpdateUTC": 1750274112,
-      "createTime": "2025-06-18 22:15:12 +0300",
-      "createTimeUTC": 1750274112,
+      "lastUpdate": "2025-06-19 01:08:52 +0300",
+      "lastUpdateUTC": 1750284532,
+      "createTime": "2025-06-19 01:08:52 +0300",
+      "createTimeUTC": 1750284532,
       "relatedPages": [],
       "autoSummary": "grand child page",
       "similarByContent": [],
@@ -381,10 +381,6 @@
         {
           "permalink": "/collection-1/g1/",
           "title": "Collection-1/G1"
-        },
-        {
-          "permalink": "/alerts/",
-          "title": "Alerts"
         },
         {
           "permalink": "/collection-2/X/x/",
@@ -525,10 +521,10 @@
         "exa"
       ],
       "excerpt": "innohub support, support center, support forms, functionalities, center, functionality, information, service, issues, product",
-      "lastUpdate": "2025-06-18 22:15:12 +0300",
-      "lastUpdateUTC": 1750274112,
-      "createTime": "2025-06-18 22:15:12 +0300",
-      "createTimeUTC": 1750274112,
+      "lastUpdate": "2025-06-19 01:08:52 +0300",
+      "lastUpdateUTC": 1750284532,
+      "createTime": "2025-06-19 01:08:52 +0300",
+      "createTimeUTC": 1750284532,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -613,6 +609,10 @@
         {
           "title": "Play with content",
           "permalink": "/pwc/"
+        },
+        {
+          "title": "Alerts",
+          "permalink": "/alerts/"
         }
       ],
       "autoSummary": "this is a file from a collection. this file loads some external content from another repo and place it inline. link to file in different folder",
@@ -651,10 +651,6 @@
       "autoSummary": "This is a full transcript of markdown content loaded from another md file from the same collection. Here is the full text of the summary of these sections. ...",
       "similarByContent": [
         {
-          "permalink": "/alerts/",
-          "title": "Alerts"
-        },
-        {
           "permalink": "/pwc/",
           "title": "Play with content"
         },
@@ -672,24 +668,20 @@
       "permalink": "/alerts/",
       "categories": [],
       "tags": [],
-      "excerpt": "file, content, title, alert content, h1 title, h2 title, alert title, markers, text, result",
-      "lastUpdate": "2025-06-18 17:33:11 +0300",
-      "lastUpdateUTC": 1750257191,
-      "createTime": "2025-06-18 17:33:07 +0300",
-      "createTimeUTC": 1750257187,
-      "relatedPages": [],
-      "autoSummary": "This is a summary of the content taken from another file from the Docs. This document describes how it can be captured when it comes to title. ...",
-      "similarByContent": [
+      "excerpt": "content, title, alert, file, elements, html class, result, markers, repositories, repo",
+      "lastUpdate": "2025-06-19 18:32:56 +0300",
+      "lastUpdateUTC": 1750347176,
+      "createTime": "2025-06-18 22:19:11 +0300",
+      "createTimeUTC": 1750274351,
+      "relatedPages": [
         {
-          "permalink": "/collection-2/X/x/",
-          "title": "Collection-2/X"
-        },
-        {
-          "permalink": "/pwc/",
-          "title": "Play with content"
+          "title": "Collection-2/Z",
+          "permalink": "/collection-2/Z/z/"
         }
       ],
-      "readingTime": 2,
+      "autoSummary": "Welcome to a guide to how to add alert blocks to your content. Here's what you need to know about these rules and how they can be used. ...",
+      "similarByContent": [],
+      "readingTime": 3,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -772,7 +764,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "18-Jun-2025"
+          "lastUpdate": "19-Jun-2025"
         }
       ],
       "numPages": 1
@@ -782,7 +774,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "18-Jun-2025"
+          "lastUpdate": "19-Jun-2025"
         }
       ],
       "numPages": 1
@@ -802,7 +794,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "18-Jun-2025"
+          "lastUpdate": "19-Jun-2025"
         }
       ],
       "numPages": 1
@@ -822,7 +814,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "18-Jun-2025"
+          "lastUpdate": "19-Jun-2025"
         },
         {
           "title": "Collection-2/X",
@@ -837,7 +829,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "18-Jun-2025"
+          "lastUpdate": "19-Jun-2025"
         }
       ],
       "numPages": 1
@@ -906,7 +898,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "18-Jun-2025"
+          "lastUpdate": "19-Jun-2025"
         }
       ],
       "numPages": 2
@@ -916,7 +908,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "18-Jun-2025"
+          "lastUpdate": "19-Jun-2025"
         },
         {
           "title": "Play with content",
@@ -926,7 +918,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "18-Jun-2025"
+          "lastUpdate": "19-Jun-2025"
         },
         {
           "title": "Collection-2/Z",
@@ -941,7 +933,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "18-Jun-2025"
+          "lastUpdate": "19-Jun-2025"
         },
         {
           "title": "Collection-2/Z",

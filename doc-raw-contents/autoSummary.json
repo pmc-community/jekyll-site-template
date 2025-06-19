@@ -1,12 +1,12 @@
 {
     "summaries": [
         {
-            "permalink": "/collection-2/Z/z/",
-            "summary": "this is a file from a collection. this file loads some external content from another repo and place it inline. link to file in different folder"
-        },
-        {
             "permalink": "/intro/introChild/introGrandChild/",
             "summary": "grand child page"
+        },
+        {
+            "permalink": "/collection-2/Z/z/",
+            "summary": "this is a file from a collection. this file loads some external content from another repo and place it inline. link to file in different folder"
         },
         {
             "permalink": "/collection-2/X/x/",
@@ -21,16 +21,16 @@
             "summary": "The terms and conditions of using innohub.space have been published by the British High Court. Here is a full summary of the terms of service provided by us. ..."
         },
         {
+            "permalink": "/alerts/",
+            "summary": "Welcome to a guide to how to add alert blocks to your content. Here's what you need to know about these rules and how they can be used. ..."
+        },
+        {
             "permalink": "/ec/",
             "summary": "Welcome to innohub.space, a website which allows users to access content from anonymous and registered ways. Here is the full text of the service. ..."
         },
         {
             "permalink": "/intro/",
             "summary": "lorem ipsum is a relatively obscure text, making it over 2000 years old. But what is it and why has it roots in classical literature, asks Tom Stafford. ..."
-        },
-        {
-            "permalink": "/alerts/",
-            "summary": "This is a summary of the content taken from another file from the Docs. This document describes how it can be captured when it comes to title. ..."
         },
         {
             "permalink": "/collection-1/g1/",

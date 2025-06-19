@@ -70,7 +70,6 @@ def summarize_text(text):
         truncation = truncation
     )
 
-    
     # Generate the interpretation with an appropriate token limit
     outputs = model.generate(
         inputs, 
