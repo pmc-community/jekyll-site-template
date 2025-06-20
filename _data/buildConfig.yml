@@ -69,7 +69,7 @@ JTDSearch:
   searchBoxWidth: "fit-content"
 changeLog:
   enabled: false
-  history: 5
+  history: 10
 siteFooter:
   container: ".site-footer"
   rows:
