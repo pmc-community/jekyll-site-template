@@ -26,6 +26,7 @@
             <div siteFunction="homeRecentAndPopular_most_recent_list_container">
                 <ul 
                     siteFunction="homeRecentAndPopular_most_recent_list"
+                    list-type = "none"
                     class="pl-0">
                     {% assign sortedPageList = pages | sort: 'lastUpdateUTC' %}
                     {% assign sortedPageList_desc = sortedPageList | reverse %}
