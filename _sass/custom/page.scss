@@ -5,12 +5,14 @@ $breadcrumbItemSeparatorContent: '>';
 $breadcrumbVisibility_phone: $d-hidden;
 $customBreadcrumbItemSeparatorContentVisibility: $d-hidden;
 $customBreadcrumbItemFontSize: $fs-0-75;
+$contentContainerUnsortedListStyle: $lstyle-bullet;
 
 $singlePageElements: (
     pageInfoButtons: 'button[sitefunction="pageShowPageFullInfo"], button[sitefunction="pageNavigateToFeedbackAndSupport"]',
     breadcrumbItem: '.breadcrumb-nav-list-item',
     breadcrumb: '.breadcrumb-nav',
-    customBreadcrumbItem: '.breadcrumb-item'
+    customBreadcrumbItem: '.breadcrumb-item',
+    contentContainerUnsortedList: 'main ul'
 );
 
 @import 'meta.scss';

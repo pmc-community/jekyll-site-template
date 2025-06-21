@@ -47,7 +47,7 @@ pageKeywords:
 github:
   enabled: true
   user: "pmc-community"
-  repo: "figma"
+  repo: "jekyll-site-template"
   discussionOrg: "pmc-community"
   discussionsRepo: "discussions"
 readingTime:
@@ -69,7 +69,7 @@ JTDSearch:
   searchBoxWidth: "fit-content"
 changeLog:
   enabled: false
-  history: 5
+  history: 10
 siteFooter:
   container: ".site-footer"
   rows:
@@ -95,3 +95,6 @@ faq:
   displayedPagesMobile: 7
   perPage: 10
   faqToc: true
+elements:
+  figma:
+    loadMessage: "INITIAL_LOAD"

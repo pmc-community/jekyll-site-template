@@ -147,6 +147,18 @@ module Jekyll
             end
             threads.each(&:join) # Wait for all threads to finish
           end
+          pageList = JSON.parse(site.data['page_list'])
+          autoRelated_path = "#{site.data["buildConfig"]["rawContentFolder"]}/autoRelated.json"
+          related = []
+          pageRelatedObj = {}
+          pageList.each do |page|
+            pageRelatedObj = {
+              "permalink" => page["permalink"],
+              "related" => page["relatedPages"]
+            }
+            related << pageRelatedObj
+          end
+          FileUtilities.overwrite_file(autoRelated_path, JSON.pretty_generate(related))
         end
         Globals.moveUpOneLine
         Globals.clearLine

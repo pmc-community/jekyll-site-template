@@ -224,10 +224,10 @@
         "tag2"
       ],
       "excerpt": "lorem ipsum, latin, cicero, malorum, sections, finibus bonorum, rackham, versions, standard, english",
-      "lastUpdate": "2025-06-19 18:38:13 +0300",
-      "lastUpdateUTC": 1750347493,
-      "createTime": "2025-06-19 18:38:13 +0300",
-      "createTimeUTC": 1750347493,
+      "lastUpdate": "2025-06-21 18:13:40 +0300",
+      "lastUpdateUTC": 1750518820,
+      "createTime": "2025-06-21 18:13:40 +0300",
+      "createTimeUTC": 1750518820,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -325,13 +325,13 @@
       "permalink": "/intro/introChild/introGrandChild/",
       "categories": [],
       "tags": [],
-      "excerpt": "child page",
-      "lastUpdate": "2025-06-19 18:38:13 +0300",
-      "lastUpdateUTC": 1750347493,
-      "createTime": "2025-06-19 18:38:13 +0300",
-      "createTimeUTC": 1750347493,
+      "excerpt": "figma, design, html, files, elements, media files, media, embed, view embed, node",
+      "lastUpdate": "2025-06-21 18:12:32 +0300",
+      "lastUpdateUTC": 1750518752,
+      "createTime": "2025-06-21 18:12:29 +0300",
+      "createTimeUTC": 1750518749,
       "relatedPages": [],
-      "autoSummary": "grand child page",
+      "autoSummary": "This is a detailed guide to how to embed rich media into your content. Here are some of the key steps in which you can access these files without permission. ...",
       "similarByContent": [],
       "readingTime": 1,
       "hasDynamicContent": false,
@@ -477,8 +477,8 @@
           "permalink": "/intro/"
         },
         {
-          "title": "Terms",
-          "permalink": "/terms/"
+          "title": "Collection-2/Y",
+          "permalink": "/collection-2/y/y/"
         }
       ],
       "autoSummary": "This is a summary of lorem ipsum, which contains some of the earliest examples of ethics written in Latin literature. Here is the answer to this question. ...",
@@ -521,10 +521,10 @@
         "exa"
       ],
       "excerpt": "innohub support, support center, support forms, functionalities, center, functionality, information, service, issues, product",
-      "lastUpdate": "2025-06-19 18:38:13 +0300",
-      "lastUpdateUTC": 1750347493,
-      "createTime": "2025-06-19 18:38:13 +0300",
-      "createTimeUTC": 1750347493,
+      "lastUpdate": "2025-06-21 18:13:40 +0300",
+      "lastUpdateUTC": 1750518820,
+      "createTime": "2025-06-21 18:13:40 +0300",
+      "createTimeUTC": 1750518820,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -660,10 +660,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "content, title, alert, file, elements, html class, markers, result, repositories, repo",
-      "lastUpdate": "2025-06-19 18:36:31 +0300",
-      "lastUpdateUTC": 1750347391,
-      "createTime": "2025-06-19 18:36:25 +0300",
-      "createTimeUTC": 1750347385,
+      "lastUpdate": "2025-06-19 18:41:45 +0300",
+      "lastUpdateUTC": 1750347705,
+      "createTime": "2025-06-19 18:41:45 +0300",
+      "createTimeUTC": 1750347705,
       "relatedPages": [
         {
           "title": "Collection-2/Z",
@@ -755,7 +755,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "19-Jun-2025"
+          "lastUpdate": "21-Jun-2025"
         }
       ],
       "numPages": 1
@@ -765,7 +765,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "19-Jun-2025"
+          "lastUpdate": "21-Jun-2025"
         }
       ],
       "numPages": 1
@@ -785,7 +785,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "19-Jun-2025"
+          "lastUpdate": "21-Jun-2025"
         }
       ],
       "numPages": 1
@@ -805,7 +805,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "19-Jun-2025"
+          "lastUpdate": "21-Jun-2025"
         },
         {
           "title": "Collection-2/X",
@@ -820,7 +820,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "19-Jun-2025"
+          "lastUpdate": "21-Jun-2025"
         }
       ],
       "numPages": 1
@@ -889,7 +889,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "19-Jun-2025"
+          "lastUpdate": "21-Jun-2025"
         }
       ],
       "numPages": 2
@@ -899,7 +899,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "19-Jun-2025"
+          "lastUpdate": "21-Jun-2025"
         },
         {
           "title": "Play with content",
@@ -909,7 +909,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "19-Jun-2025"
+          "lastUpdate": "21-Jun-2025"
         },
         {
           "title": "Collection-2/Z",
@@ -924,7 +924,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "19-Jun-2025"
+          "lastUpdate": "21-Jun-2025"
         },
         {
           "title": "Collection-2/Z",
@@ -955,7 +955,7 @@
     "algoliaSendInsights": true,
     "algoliaTextHighlightPrefixTag": "<mark>",
     "algoliaTextHighlightPostfixTag": "</mark>",
-    "algoliaRaiseIssueLink": "https://github.com/pmc-community/figma/issues/new?title=",
+    "algoliaRaiseIssueLink": "https://github.com/pmc-community/jekyll-site-template/issues/new?title=",
     "algoliaDocSearchEnabled": true,
     "algoliaCustomEnabled": false
   },
@@ -1381,6 +1381,7 @@
     "toast_site_pages_js_doc_saved_but_empty_data_warning": "Document %s is now saved!<br><br><strong>HEADS UP!!!</strong><br>Document will be removed automatically if you don't add some custom info (tags, categories, notes, comments)",
     "toast_utilities_js_alert_override_warning": "Something did not work as expected! You may refresh page and try again. If the problem persists, contact support.",
     "toast_utilities_js_external_content_loading_error": "Error loading external content!",
-    "toast_utilities_js_dt_create_table_error": "Something went wrong when building the table! You may refresh page and try again. If the problem persists, contact support."
+    "toast_utilities_js_dt_create_table_error": "Something went wrong when building the table! You may refresh page and try again. If the problem persists, contact support.",
+    "elements_figma_reset_view_btn_text": "Reset view"
   }
 }
