@@ -56,7 +56,14 @@
 
    <script>
         $(window).on('message', function(event) {
-            const originalEvent = event.originalEvent;
+        const originalEvent = event.originalEvent;
+        const allowedOrigins = [
+            'https://www.figma.com',
+            'https://embed.figma.com',
+            'https://figma.com'
+        ];
+        
+        if (!allowedOrigins.includes(originalEvent.origin)) return;
             if (!originalEvent.origin.includes('figma.com')) return;
             if ( originalEvent.data === '{{figmaLoadMessage}}')
                 $('#btn-reset-figma-view-{{fid}}').removeClass('d-none');
