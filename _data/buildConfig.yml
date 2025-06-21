@@ -95,3 +95,6 @@ faq:
   displayedPagesMobile: 7
   perPage: 10
   faqToc: true
+elements:
+  figma:
+    loadMessage: "INITIAL_LOAD"

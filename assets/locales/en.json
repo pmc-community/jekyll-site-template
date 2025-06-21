@@ -433,6 +433,7 @@
 
     "toast_utilities_js_alert_override_warning": "Something did not work as expected! You may refresh page and try again. If the problem persists, contact support.",
     "toast_utilities_js_external_content_loading_error": "Error loading external content!",
-    "toast_utilities_js_dt_create_table_error": "Something went wrong when building the table! You may refresh page and try again. If the problem persists, contact support."
+    "toast_utilities_js_dt_create_table_error": "Something went wrong when building the table! You may refresh page and try again. If the problem persists, contact support.",
 
+    "elements_figma_reset_view_btn_text": "Reset view"
 }

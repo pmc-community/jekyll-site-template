@@ -29,7 +29,6 @@
             "/collection-2/y/y/",
             "/intro/",
             "/collection-1/g1/",
-            "/collection-2/X/x/",
             "/intro/introChild/"
         ]
     },
@@ -90,7 +89,6 @@
             "/collection-1/g1/",
             "/collection-2/y/y/",
             "/intro/introChild/",
-            "/terms/",
             "/intro/"
         ]
     }
