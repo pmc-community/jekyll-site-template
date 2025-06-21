@@ -917,8 +917,12 @@ $sidebarLogo, $sideBarFooter, $sideBarHeader, $sideBarDocLink,$sideBarCategoryBt
 // single page
 @mixin singlePage($singlePageElements) {
 
-     #{map-get($singlePageElements, contentContainerUnsortedList)} {
+    #{map-get($singlePageElements, contentContainerUnsortedList)} {
         list-style: $contentContainerUnsortedListStyle !important;
+    }
+
+    #{map-get($singlePageElements, unsortedListsWithoutMarker)} {
+        list-style: $unsortedListsWithoutMarkerListStyle !important;
     }
     
     #{map-get($singlePageElements, pageInfoButtons)} {
