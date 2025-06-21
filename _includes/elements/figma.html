@@ -12,6 +12,7 @@
 {% assign border = include.border || default: "false" %}
 {% assign resetBtn = include.resetBtn || default: "true" %}
 {% assign figmaLoadMessage = site.data["buildConfig"]["elements"]["figma"]["loadMessage"] %}
+{% assign figmaUrl = site.data.buildConfig.elements.figma.allowedUrl | jsonify %}
 
 {%if what == "slides" %}
     {% assign pageSelector = "page-selector=true" %}
@@ -57,11 +58,7 @@
    <script>
         $(window).on('message', function(event) {
         const originalEvent = event.originalEvent;
-        const allowedOrigins = [
-            'https://www.figma.com',
-            'https://embed.figma.com',
-            'https://figma.com'
-        ];
+        const allowedOrigins = {{figmaUrl}};
         
         if (!allowedOrigins.includes(originalEvent.origin)) return;
             if (!originalEvent.origin.includes('figma.com')) return;
