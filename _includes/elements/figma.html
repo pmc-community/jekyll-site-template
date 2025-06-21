@@ -1,0 +1,80 @@
+{% capture uuid %}
+  {% UUID %}
+{% endcapture %}
+{% assign fid = uuid | strip %}
+
+{% assign what = include.what || default: "design" %}
+{% assign file = include.file %}
+{% assign node = include.node %}
+{% assign st = site.title | url_encode  %}
+{% assign w = include.w || default: "100%" %}
+{% assign h = include.h || default: "300px" %}
+{% assign border = include.border || default: "false" %}
+{% assign resetBtn = include.resetBtn || default: "true" %}
+{% assign figmaLoadMessage = site.data["buildConfig"]["elements"]["figma"]["loadMessage"] %}
+
+{%if what == "slides" %}
+    {% assign pageSelector = "page-selector=true" %}
+{% else %}
+    {% assign pageSelector = "page-selector=false" %}
+{% endif %}
+
+{% if border == "false" %}
+    {% assign borderClass = "border-0" %}
+{% else %}
+    {% assign borderClass = "border border-secondary border-opacity-25 rounded shadow-none" %}
+{% endif %}
+
+<div id="figma-container-{{fid}}">
+    <div 
+        id="figma-loader-{{fid}}"
+        class="d-flex justify-content-center align-items-center {{borderClass}}"
+        style="width: {{w}}; height: {{h}};">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <iframe
+        id="figma-{{fid}}"
+        class="d-none {{borderClass}}"
+        width="{{w}}"
+        height="{{h}}"
+        src="https://embed.figma.com/{{what}}/{{file}}?node-id={{node}}&embed-host={{st}}&footer=false&{{pageSelector}}"
+        allowfullscreen>
+    </iframe>
+</div>
+
+{% if resetBtn == "true" %}
+
+   <button 
+        class="btn btn-sm btn-primary d-none" 
+        id="btn-reset-figma-view-{{fid}}"
+        data-i18n="elements_figma_reset_view_btn_text">
+        Reset View
+   </button>
+
+   <script>
+        $(window).on('message', function(event) {
+            const originalEvent = event.originalEvent;
+            if (!originalEvent.origin.includes('figma.com')) return;
+            if ( originalEvent.data === '{{figmaLoadMessage}}')
+                $('#btn-reset-figma-view-{{fid}}').removeClass('d-none');
+        });
+
+        $(document).on('click', '#btn-reset-figma-view-{{fid}}', function() {
+            $('#figma-{{fid}}').addClass('d-none');
+            $('#figma-loader-{{fid}}').removeClass('d-none');
+            const iframe = $('#figma-{{fid}}');
+            iframe[0].src = `https://embed.figma.com/{{what}}/{{file}}?node-id={{node}}&embed-host={{st}}&footer=false&{{pageSelector}}`;
+            $('#btn-reset-figma-view-{{fid}}').addClass('d-none');
+        });
+
+        $('#figma-{{fid}}').on('load', function () {
+            $('#figma-loader-{{fid}}').addClass('d-none');
+            $('#figma-{{fid}}').removeClass('d-none');
+        });
+
+   </script>
+
+{% endif %}
