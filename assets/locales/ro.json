@@ -449,5 +449,6 @@
     "toast_utilities_js_external_content_loading_error": "A aparut o eroare la incarcarea continutului extern",
     "toast_utilities_js_dt_create_table_error": "A aparut o eroare la generarea unui tabel! Poti incerca sa reincarci pagina. Daca eroarea persista, te rugam sa o raportezi catre suport.",
 
-    "elements_figma_reset_view_btn_text": "Reset"
+    "elements_figma_reset_view_btn_text": "Reset",
+    "elements_figma_link_to_file_text": "Deschide in Figma"
 }
