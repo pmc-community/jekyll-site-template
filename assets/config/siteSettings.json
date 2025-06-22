@@ -224,10 +224,10 @@
         "tag2"
       ],
       "excerpt": "lorem ipsum, latin, sections, cicero, finibus bonorum, malorum, latin literature, standard chunk, rackham, translation",
-      "lastUpdate": "2025-06-21 19:19:58 +0300",
-      "lastUpdateUTC": 1750522798,
-      "createTime": "2025-06-21 19:19:58 +0300",
-      "createTimeUTC": 1750522798,
+      "lastUpdate": "2025-06-22 03:06:16 +0300",
+      "lastUpdateUTC": 1750550776,
+      "createTime": "2025-06-22 03:06:16 +0300",
+      "createTimeUTC": 1750550776,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -325,13 +325,13 @@
       "permalink": "/intro/introChild/introGrandChild/",
       "categories": [],
       "tags": [],
-      "excerpt": "figma, files, embed figma, file, html, elements, reset view, design, embed, border",
-      "lastUpdate": "2025-06-22 01:56:40 +0300",
-      "lastUpdateUTC": 1750546600,
-      "createTime": "2025-06-21 18:19:37 +0300",
-      "createTimeUTC": 1750519177,
+      "excerpt": "figma, figma files, files, view, deck files, file, html, elements, design, embed deck",
+      "lastUpdate": "2025-06-22 03:08:56 +0300",
+      "lastUpdateUTC": 1750550936,
+      "createTime": "2025-06-22 03:04:15 +0300",
+      "createTimeUTC": 1750550655,
       "relatedPages": [],
-      "autoSummary": "This is a detailed guide to how to embed rich media into your content. Here are some of the key points being sought by the BBC's Docaroo. ...",
+      "autoSummary": "This is a detailed guide to how to embed rich media into your content. Here are some of the steps we need to do to make ...",
       "similarByContent": [],
       "readingTime": 2,
       "hasDynamicContent": false,
@@ -517,10 +517,10 @@
         "exa"
       ],
       "excerpt": "innohub support, support center, support forms, functionalities, center, functionality, information, service, issues, product",
-      "lastUpdate": "2025-06-21 19:19:58 +0300",
-      "lastUpdateUTC": 1750522798,
-      "createTime": "2025-06-21 19:19:58 +0300",
-      "createTimeUTC": 1750522798,
+      "lastUpdate": "2025-06-22 03:06:16 +0300",
+      "lastUpdateUTC": 1750550776,
+      "createTime": "2025-06-22 03:06:16 +0300",
+      "createTimeUTC": 1750550776,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -756,7 +756,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "21-Jun-2025"
+          "lastUpdate": "22-Jun-2025"
         }
       ],
       "numPages": 1
@@ -766,7 +766,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "21-Jun-2025"
+          "lastUpdate": "22-Jun-2025"
         }
       ],
       "numPages": 1
@@ -786,7 +786,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "21-Jun-2025"
+          "lastUpdate": "22-Jun-2025"
         }
       ],
       "numPages": 1
@@ -806,7 +806,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "21-Jun-2025"
+          "lastUpdate": "22-Jun-2025"
         },
         {
           "title": "Collection-2/X",
@@ -821,7 +821,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "21-Jun-2025"
+          "lastUpdate": "22-Jun-2025"
         }
       ],
       "numPages": 1
@@ -890,7 +890,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "21-Jun-2025"
+          "lastUpdate": "22-Jun-2025"
         }
       ],
       "numPages": 2
@@ -900,7 +900,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "21-Jun-2025"
+          "lastUpdate": "22-Jun-2025"
         },
         {
           "title": "Play with content",
@@ -910,7 +910,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "21-Jun-2025"
+          "lastUpdate": "22-Jun-2025"
         },
         {
           "title": "Collection-2/Z",
@@ -925,7 +925,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "21-Jun-2025"
+          "lastUpdate": "22-Jun-2025"
         },
         {
           "title": "Collection-2/Z",
