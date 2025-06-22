@@ -99,6 +99,7 @@ elements:
   figma:
     loadMessage: "INITIAL_LOAD"
     embedSourceUrl: "https://embed.figma.com"
+    figmaBaseUrl: "https://www.figma.com"
     allowedUrl:
       - "https://www.figma.com"
       - "https://embed.figma.com"
