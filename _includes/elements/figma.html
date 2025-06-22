@@ -13,6 +13,8 @@
 {% assign resetBtn = include.resetBtn || default: "true" %}
 {% assign figmaLoadMessage = site.data["buildConfig"]["elements"]["figma"]["loadMessage"] %}
 {% assign figmaUrl = site.data.buildConfig.elements.figma.allowedUrl | jsonify %}
+{% assign embedSourceUrl = site.data["buildConfig"]["elements"]["figma"]["embedSourceUrl"] %}
+{% assign footer = include.footer || default: "false" %}
 
 {% if what == "slides" %}
     {% assign pageSelector = "&page-selector=true" %}
@@ -32,6 +34,34 @@
     {% assign borderClass = "border border-secondary border-opacity-25 rounded shadow-none" %}
 {% endif %}
 
+{% if what == "design" %}
+    {% assign afterFile = "design" %}
+{% endif %}
+
+{% if what == "board" %}
+    {% assign afterFile = "fig" %}
+{% endif %}
+
+{% if what == "slides" %}
+    {% assign afterFile = "slides" %}
+{% endif %}
+
+{% if what == "deck" %}
+    {% assign afterFile = "slides" %}
+{% endif %}
+
+{% assign embedUrl = 
+    embedSourceUrl | append: "/" 
+    | append: what | append: "/" 
+    | append: file | append: "/"
+    | append: afterFile
+    | append: "?embed-host=" 
+    | append: st 
+    | append: "&footer=" | append: footer 
+    | append: pageSelector 
+    | append: nodeParam 
+%}
+
 <div id="figma-container-{{fid}}">
     <div 
         id="figma-loader-{{fid}}"
@@ -47,7 +77,7 @@
         class="d-none {{borderClass}} rounded"
         width="{{w}}"
         height="{{h}}"
-        src="https://embed.figma.com/{{what}}/{{file}}?embed-host={{st}}&footer=false{{pageSelector}}{{nodeParam}}"
+        src="{{embedUrl}}"
         allowfullscreen>
     </iframe>
 </div>
@@ -62,12 +92,12 @@
    </button>
 
    <script>
+        console.log(preFlight.envInfo.device.deviceType);
         $(window).on('message', function(event) {
             const originalEvent = event.originalEvent;
             const allowedOrigins = {{figmaUrl}};
             
             if (!allowedOrigins.includes(originalEvent.origin)) return;
-            console.log(originalEvent.data);
             if ( originalEvent.data === '{{figmaLoadMessage}}')
                 setTimeout(()=>$('#btn-reset-figma-view-{{fid}}').removeClass('d-none'), 100);
         });
@@ -77,7 +107,7 @@
             $('#figma-{{fid}}').addClass('d-none');
             $('#figma-loader-{{fid}}').removeClass('d-none');
             const iframe = $('#figma-{{fid}}');
-            iframe[0].src = `https://embed.figma.com/{{what}}/{{file}}?embed-host={{st}}&footer=false{{pageSelector}}{{nodeParam}}`;
+            iframe[0].src = '{{embedUrl}}';
         });
 
         $('#figma-{{fid}}').on('load', function () {
@@ -93,3 +123,4 @@
    </script>
 
 {% endif %}
+
