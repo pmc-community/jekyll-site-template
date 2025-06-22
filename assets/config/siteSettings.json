@@ -224,10 +224,10 @@
         "tag2"
       ],
       "excerpt": "lorem ipsum, latin, sections, cicero, finibus bonorum, malorum, latin literature, standard chunk, rackham, translation",
-      "lastUpdate": "2025-06-22 12:48:34 +0300",
-      "lastUpdateUTC": 1750585714,
-      "createTime": "2025-06-22 12:48:34 +0300",
-      "createTimeUTC": 1750585714,
+      "lastUpdate": "2025-06-22 15:46:58 +0300",
+      "lastUpdateUTC": 1750596418,
+      "createTime": "2025-06-22 15:46:58 +0300",
+      "createTimeUTC": 1750596418,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -325,11 +325,11 @@
       "permalink": "/intro/introChild/introGrandChild/",
       "categories": [],
       "tags": [],
-      "excerpt": "figma, files, deck files, slides, file, design, view, embed, embed deck, html",
-      "lastUpdate": "2025-06-22 15:40:34 +0300",
-      "lastUpdateUTC": 1750596034,
-      "createTime": "2025-06-22 12:37:04 +0300",
-      "createTimeUTC": 1750585024,
+      "excerpt": "figma, files, file, deck files, slides, design, html, elements, embed deck, view",
+      "lastUpdate": "2025-06-22 18:37:43 +0300",
+      "lastUpdateUTC": 1750606663,
+      "createTime": "2025-06-22 15:46:46 +0300",
+      "createTimeUTC": 1750596406,
       "relatedPages": [],
       "autoSummary": "Welcome to the Docaroo website. Here is a guide to how to embed rich media into your content, including slides, decks and prototypes. This is what we learned about. ...",
       "similarByContent": [],
@@ -517,10 +517,10 @@
         "exa"
       ],
       "excerpt": "innohub support, support center, support forms, functionalities, center, functionality, information, service, issues, product",
-      "lastUpdate": "2025-06-22 12:48:34 +0300",
-      "lastUpdateUTC": 1750585714,
-      "createTime": "2025-06-22 12:48:34 +0300",
-      "createTimeUTC": 1750585714,
+      "lastUpdate": "2025-06-22 15:46:58 +0300",
+      "lastUpdateUTC": 1750596418,
+      "createTime": "2025-06-22 15:46:58 +0300",
+      "createTimeUTC": 1750596418,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -718,6 +718,10 @@
         {
           "permalink": "/intro/introChild/",
           "title": "Intro Child Page"
+        },
+        {
+          "permalink": "/terms/",
+          "title": "Terms"
         },
         {
           "permalink": "/intro/",
@@ -1384,6 +1388,9 @@
     "toast_utilities_js_external_content_loading_error": "Error loading external content!",
     "toast_utilities_js_dt_create_table_error": "Something went wrong when building the table! You may refresh page and try again. If the problem persists, contact support.",
     "elements_figma_reset_view_btn_text": "Reset view",
-    "elements_figma_link_to_file_text": "Open in Figma"
+    "elements_figma_link_to_file_text": "Open in Figma",
+    "elements_figma_wrong_file_type_alert_title": "Wrong file type",
+    "elements_figma_wrong_file_type_alert_file_type_text": "File type",
+    "elements_figma_wrong_file_type_alert_file_type_not_accepted_text": "is not accepted by elements/figma.html component"
   }
 }
