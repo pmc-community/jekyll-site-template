@@ -224,10 +224,10 @@
         "tag2"
       ],
       "excerpt": "lorem ipsum, latin, cicero, malorum, sections, finibus bonorum, rackham, versions, standard, english",
-      "lastUpdate": "2025-06-22 12:37:31 +0300",
-      "lastUpdateUTC": 1750585051,
-      "createTime": "2025-06-22 12:37:31 +0300",
-      "createTimeUTC": 1750585051,
+      "lastUpdate": "2025-06-22 15:44:15 +0300",
+      "lastUpdateUTC": 1750596255,
+      "createTime": "2025-06-22 15:44:15 +0300",
+      "createTimeUTC": 1750596255,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -325,15 +325,15 @@
       "permalink": "/intro/introChild/introGrandChild/",
       "categories": [],
       "tags": [],
-      "excerpt": "figma, figma files, files, view, deck files, file, html, elements, design, embed deck",
-      "lastUpdate": "2025-06-22 12:37:36 +0300",
-      "lastUpdateUTC": 1750585056,
-      "createTime": "2025-06-22 12:37:04 +0300",
-      "createTimeUTC": 1750585024,
+      "excerpt": "figma, files, deck files, slides, file, design, view, embed, embed deck, html",
+      "lastUpdate": "2025-06-22 15:44:19 +0300",
+      "lastUpdateUTC": 1750596259,
+      "createTime": "2025-06-22 15:44:15 +0300",
+      "createTimeUTC": 1750596255,
       "relatedPages": [],
-      "autoSummary": "This is a detailed guide to how to embed rich media into your content. Here are some of the steps we need to do to make ...",
+      "autoSummary": "Welcome to the Docaroo website. Here is a guide to how to embed rich media into your content, including slides, decks and prototypes. This is what we learned about. ...",
       "similarByContent": [],
-      "readingTime": 2,
+      "readingTime": 3,
       "hasDynamicContent": false,
       "parent": "Intro Child Page"
     },
@@ -521,10 +521,10 @@
         "exa"
       ],
       "excerpt": "innohub support, support center, support forms, functionalities, center, functionality, information, service, issues, product",
-      "lastUpdate": "2025-06-22 12:37:31 +0300",
-      "lastUpdateUTC": 1750585051,
-      "createTime": "2025-06-22 12:37:31 +0300",
-      "createTimeUTC": 1750585051,
+      "lastUpdate": "2025-06-22 15:44:15 +0300",
+      "lastUpdateUTC": 1750596255,
+      "createTime": "2025-06-22 15:44:15 +0300",
+      "createTimeUTC": 1750596255,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -1382,6 +1382,7 @@
     "toast_utilities_js_alert_override_warning": "Something did not work as expected! You may refresh page and try again. If the problem persists, contact support.",
     "toast_utilities_js_external_content_loading_error": "Error loading external content!",
     "toast_utilities_js_dt_create_table_error": "Something went wrong when building the table! You may refresh page and try again. If the problem persists, contact support.",
-    "elements_figma_reset_view_btn_text": "Reset view"
+    "elements_figma_reset_view_btn_text": "Reset view",
+    "elements_figma_link_to_file_text": "Open in Figma"
   }
 }
