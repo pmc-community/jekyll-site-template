@@ -14,7 +14,9 @@
 {% assign figmaLoadMessage = site.data["buildConfig"]["elements"]["figma"]["loadMessage"] %}
 {% assign figmaUrl = site.data.buildConfig.elements.figma.allowedUrl | jsonify %}
 {% assign embedSourceUrl = site.data["buildConfig"]["elements"]["figma"]["embedSourceUrl"] %}
+{% assign figmaBaseUrl = site.data["buildConfig"]["elements"]["figma"]["figmaBaseUrl"] %}
 {% assign footer = include.footer || default: "false" %}
+{% assign testSlides = include.testSlides || default: "false" %}
 
 {% if what == "slides" %}
     {% assign pageSelector = "&page-selector=true" %}
@@ -62,6 +64,17 @@
     | append: nodeParam 
 %}
 
+{% assign fileLinkNodeParam = nodeParam | slice: 1 %}
+{% assign fileLinkNodeParam = "?" | append: fileLinkNodeParam %} 
+
+{% assign fileUrl = 
+    figmaBaseUrl | append: "/" 
+    | append: what | append: "/" 
+    | append: file | append: "/"
+    | append: afterFile
+    | append: fileLinkNodeParam 
+%}
+
 <div id="figma-container-{{fid}}">
     <div 
         id="figma-loader-{{fid}}"
@@ -82,7 +95,7 @@
     </iframe>
 </div>
 
-{% if resetBtn == "true" %}
+{% if resetBtn == "true" and what != "deck" %}
 
    <button 
         class="btn btn-sm btn-primary d-none" 
@@ -91,36 +104,54 @@
         Reset View
    </button>
 
+   <a 
+        class="btn btn-sm btn-success d-none" 
+        id="link-to-file-{{fid}}"
+        data-i18n="elements_figma_link_to_file_text"
+        href="{{fileUrl}}"
+        target=_blank>
+        Open in Figma
+   </a>
+
    <script>
-        console.log(preFlight.envInfo.device.deviceType);
-        $(window).on('message', function(event) {
-            const originalEvent = event.originalEvent;
-            const allowedOrigins = {{figmaUrl}};
-            
-            if (!allowedOrigins.includes(originalEvent.origin)) return;
-            if ( originalEvent.data === '{{figmaLoadMessage}}')
-                setTimeout(()=>$('#btn-reset-figma-view-{{fid}}').removeClass('d-none'), 100);
-        });
+        const what_{{fid}} = '{{what}}';
+        const device_{{fid}} = preFlight.envInfo.device.deviceType;
+        const testSlides_{{fid}} = '{{testSlides}}';
+        if (what_{{fid}} === 'slides' && device_{{fid}} === 'mobile' && testSlides_{{fid}} === 'false') {
+            $('#figma-container-{{fid}}').remove();
+            $('#btn-reset-figma-view-{{fid}}').remove();
+            $('#link-to-file-{{fid}}').removeClass('d-none');
 
-        $(document).off('click', '#btn-reset-figma-view-{{fid}}').on('click', '#btn-reset-figma-view-{{fid}}', function() {
-            $('#btn-reset-figma-view-{{fid}}').addClass('d-none');
-            $('#figma-{{fid}}').addClass('d-none');
-            $('#figma-loader-{{fid}}').removeClass('d-none');
-            const iframe = $('#figma-{{fid}}');
-            iframe[0].src = '{{embedUrl}}';
-        });
+        }
+        else {
+            $('#link-to-file-{{fid}}').remove();
+            $(window).on('message', function(event) {
+                const originalEvent_{{fid}} = event.originalEvent;
+                const allowedOrigins_{{fid}} = {{figmaUrl}};
+                
+                if (!allowedOrigins_{{fid}}.includes(originalEvent_{{fid}}.origin)) return;
+                if ( originalEvent_{{fid}}.data === '{{figmaLoadMessage}}')
+                    setTimeout(()=>$('#btn-reset-figma-view-{{fid}}').removeClass('d-none'), 100);
+            });
 
-        $('#figma-{{fid}}').on('load', function () {
-            $('#figma-loader-{{fid}}').addClass('d-none');
-            $('#figma-{{fid}}').removeClass('d-none');
-        });
+            $(document).off('click', '#btn-reset-figma-view-{{fid}}').on('click', '#btn-reset-figma-view-{{fid}}', function() {
+                $('#btn-reset-figma-view-{{fid}}').addClass('d-none');
+                $('#figma-{{fid}}').addClass('d-none');
+                $('#figma-loader-{{fid}}').removeClass('d-none');
+                const iframe_{{fid}} = $('#figma-{{fid}}');
+                iframe_{{fid}}[0].src = '{{embedUrl}}';
+            });
 
+            $('#figma-{{fid}}').on('load', function () {
+                $('#figma-loader-{{fid}}').addClass('d-none');
+                $('#figma-{{fid}}').removeClass('d-none');
+            });
+        }
    </script>
 {% else %}
    <script>
         $('#figma-loader-{{fid}}').addClass('d-none');
         $('#figma-{{fid}}').removeClass('d-none');
    </script>
-
 {% endif %}
 
