@@ -91,7 +91,7 @@ Add selected content from another file from your doc-contents folder using the f
 {%endraw%}
 
 {% capture included_content %}
-    {% include_relative 00-intro.md %}
+    {% include_relative intro.md %}
 {% endcapture %}
 {% include siteIncludes/modules/utilities.liquid fileContent=included_content %}
 {% include siteIncludes/modules/utilities.liquid baseString=file_content_result markerStart="(RO)" markerEnd="It has" %}

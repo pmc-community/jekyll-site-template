@@ -26,11 +26,11 @@
         },
         {
             "permalink": "/intro/",
-            "summary": "lorem ipsum is a relatively obscure text, making it very popular during the renaissance. But what is it and why does it exist? ..."
+            "summary": "This is a guide for developers who want to build high-quality documentation sites for any kind of project, product, or ..."
         },
         {
             "permalink": "/collection-1/g1/",
-            "summary": "This is a summary of lorem ipsum, which contains some of the earliest examples of ethics written in Latin literature. Here is the answer to this question. ..."
+            "summary": "Welcome to innohub, a service that provides access to content and services provided by the operator. Here is the full text of the latest steps to register. ..."
         },
         {
             "permalink": "/collection-1/g11/",
@@ -50,7 +50,7 @@
         },
         {
             "permalink": "/pwc/",
-            "summary": "Welcome to lorem ipsum. Here is a guide to how to generate content generated from one part of another site page. This ..."
+            "summary": "Welcome to the documentation site builder guide. This guide explains how to build a complete, maintainable, and ..."
         }
     ]
 }

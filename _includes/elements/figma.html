@@ -4,6 +4,10 @@
 {% assign fid = uuid | strip %}
 
 {% assign what = include.what || default: "design" %}
+{% assign allowedEmbeds = "design,board,slides,deck" | split: "," %}
+
+{% if allowedEmbeds contains what %}    
+
 {% assign file = include.file %}
 {% assign node = include.node || default: "" %}
 {% assign st = site.title | url_encode  %}
@@ -155,3 +159,37 @@
    </script>
 {% endif %}
 
+{% else %}
+   <div 
+        id="figma-wrong-embed-alert-{{fid}}" 
+        class="alert alert-danger border-5 border-start border-top-0 border-end-0 border-bottom-0 border-danger figma-wrong-embed-alert-{{fid}}-opacity" 
+        role="alert">
+    
+        <div 
+            id="figma-wrong-embed-alert-title-{{fid}}" 
+            class="d-flex align-items-center fs-5 fw-medium text-danger"
+            data-i18n="elements_figma_wrong_file_type_alert_title">Wrong file type</div>
+        <div id="figma-wrong-embed-alert-text-{{fid}}">
+            <span data-i18n="elements_figma_wrong_file_type_alert_file_type_text">File type </span>
+            <span class="text-danger fw-medium">{{what}} </span>
+            <span data-i18n="elements_figma_wrong_file_type_alert_file_type_not_accepted_text">is not accepted by elements/figma.html component</span>
+        </div>
+   </div>
+
+   <style>
+        .figma-wrong-embed-alert-{{fid}} {
+            position: relative;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .figma-wrong-embed-alert-{{fid}}::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: var(--bs-danger);
+            opacity: 0.1;
+            z-index: -1;
+        }
+   </style>
+{% endif %}

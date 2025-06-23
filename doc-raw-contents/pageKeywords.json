@@ -3,31 +3,31 @@
     {
       "permalink": "/intro/",
       "keywords": [
-        "lorem ipsum",
-        "latin",
-        "cicero",
-        "malorum",
-        "sections",
-        "finibus bonorum",
-        "rackham",
-        "versions",
-        "standard",
-        "english"
+        "documentation",
+        "documentation site",
+        "site",
+        "content",
+        "guide",
+        "docs",
+        "product",
+        "deployment",
+        "knowledge",
+        "branding"
       ]
     },
     {
       "permalink": "/pwc/",
       "keywords": [
-        "file",
-        "lorem ipsum",
         "site",
+        "documentation site",
+        "documentation",
+        "content",
         "markdown content",
-        "title",
-        "link",
-        "latin",
-        "cicero",
-        "malorum",
-        "sections"
+        "file",
+        "docs",
+        "guide",
+        "product",
+        "title"
       ]
     },
     {
@@ -79,14 +79,14 @@
       "keywords": [
         "figma",
         "files",
+        "file",
         "deck files",
         "slides",
-        "file",
         "design",
-        "view",
-        "embed",
+        "html",
+        "elements",
         "embed deck",
-        "html"
+        "view"
       ]
     },
     {
@@ -168,15 +168,15 @@
       "permalink": "/collection-1/g1/",
       "keywords": [
         "content",
-        "lorem ipsum",
         "services",
         "innohub",
         "registration",
-        "email",
         "access",
+        "email",
+        "lorem ipsum",
         "process",
-        "latin",
-        "ihsutilities"
+        "ihsutilities",
+        "components"
       ]
     }
   ]

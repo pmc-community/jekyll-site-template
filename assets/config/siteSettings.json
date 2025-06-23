@@ -213,63 +213,6 @@
   },
   "pageList": [
     {
-      "title": "Introduction",
-      "permalink": "/intro/",
-      "categories": [
-        "general",
-        "intro"
-      ],
-      "tags": [
-        "t a g 1",
-        "tag2"
-      ],
-      "excerpt": "lorem ipsum, latin, cicero, malorum, sections, finibus bonorum, rackham, versions, standard, english",
-      "lastUpdate": "2025-06-22 15:44:15 +0300",
-      "lastUpdateUTC": 1750596255,
-      "createTime": "2025-06-22 15:44:15 +0300",
-      "createTimeUTC": 1750596255,
-      "relatedPages": [
-        {
-          "title": "Play with content",
-          "permalink": "/pwc/"
-        },
-        {
-          "title": "Intro Child Page",
-          "permalink": "/intro/introChild/"
-        },
-        {
-          "title": "Collection-2/Y",
-          "permalink": "/collection-2/y/y/"
-        }
-      ],
-      "autoSummary": "lorem ipsum is a relatively obscure text, making it very popular during the renaissance. But what is it and why does it exist? ...",
-      "similarByContent": [
-        {
-          "permalink": "/intro/introChild/",
-          "title": "Intro Child Page"
-        },
-        {
-          "permalink": "/collection-2/y/y/",
-          "title": "Collection-2/Y"
-        },
-        {
-          "permalink": "/pwc/",
-          "title": "Play with content"
-        },
-        {
-          "permalink": "/collection-1/g1/",
-          "title": "Collection-1/G1"
-        },
-        {
-          "permalink": "/sf/f1/",
-          "title": "Subfolder/F1"
-        }
-      ],
-      "readingTime": 6,
-      "hasDynamicContent": false,
-      "parent": ""
-    },
-    {
       "title": "Intro Child Page",
       "permalink": "/intro/introChild/",
       "categories": [],
@@ -285,12 +228,8 @@
           "permalink": "/collection-2/y/y/"
         },
         {
-          "title": "Introduction",
-          "permalink": "/intro/"
-        },
-        {
-          "title": "Play with content",
-          "permalink": "/pwc/"
+          "title": "Subfolder/F1",
+          "permalink": "/sf/f1/"
         }
       ],
       "autoSummary": "lorem ipsum, a commonly known Latin word, has roots in classical literature from 45 bc. But what is it and why do we know it? ...",
@@ -300,20 +239,8 @@
           "title": "Collection-2/Y"
         },
         {
-          "permalink": "/intro/",
-          "title": "Introduction"
-        },
-        {
-          "permalink": "/collection-1/g1/",
-          "title": "Collection-1/G1"
-        },
-        {
           "permalink": "/sf/f1/",
           "title": "Subfolder/F1"
-        },
-        {
-          "permalink": "/pwc/",
-          "title": "Play with content"
         }
       ],
       "readingTime": 1,
@@ -325,11 +252,11 @@
       "permalink": "/intro/introChild/introGrandChild/",
       "categories": [],
       "tags": [],
-      "excerpt": "figma, files, deck files, slides, file, design, view, embed, embed deck, html",
-      "lastUpdate": "2025-06-22 15:44:19 +0300",
-      "lastUpdateUTC": 1750596259,
-      "createTime": "2025-06-22 15:44:15 +0300",
-      "createTimeUTC": 1750596255,
+      "excerpt": "figma, files, file, deck files, slides, design, html, elements, embed deck, view",
+      "lastUpdate": "2025-06-22 18:56:50 +0300",
+      "lastUpdateUTC": 1750607810,
+      "createTime": "2025-06-22 18:40:29 +0300",
+      "createTimeUTC": 1750606829,
       "relatedPages": [],
       "autoSummary": "Welcome to the Docaroo website. Here is a guide to how to embed rich media into your content, including slides, decks and prototypes. This is what we learned about. ...",
       "similarByContent": [],
@@ -349,9 +276,9 @@
         "tag3",
         "alfa"
       ],
-      "excerpt": "file, lorem ipsum, site, markdown content, title, link, latin, cicero, malorum, sections",
-      "lastUpdate": "2025-05-25 10:11:17 +0300",
-      "lastUpdateUTC": 1748157077,
+      "excerpt": "site, documentation site, documentation, content, markdown content, file, docs, guide, product, title",
+      "lastUpdate": "2025-06-23 10:49:30 +0300",
+      "lastUpdateUTC": 1750664970,
       "createTime": "2025-05-25 10:11:17 +0300",
       "createTimeUTC": 1748157077,
       "relatedPages": [
@@ -360,38 +287,22 @@
           "permalink": "/intro/"
         },
         {
-          "title": "Collection-2/Y",
-          "permalink": "/collection-2/y/y/"
-        },
-        {
           "title": "Collection-2/X",
           "permalink": "/collection-2/X/x/"
+        },
+        {
+          "title": "Collection-1/G11",
+          "permalink": "/collection-1/g11/"
         }
       ],
-      "autoSummary": "Welcome to lorem ipsum. Here is a guide to how to generate content generated from one part of another site page. This ...",
+      "autoSummary": "Welcome to the documentation site builder guide. This guide explains how to build a complete, maintainable, and ...",
       "similarByContent": [
-        {
-          "permalink": "/collection-2/y/y/",
-          "title": "Collection-2/Y"
-        },
         {
           "permalink": "/intro/",
           "title": "Introduction"
-        },
-        {
-          "permalink": "/collection-1/g1/",
-          "title": "Collection-1/G1"
-        },
-        {
-          "permalink": "/collection-2/X/x/",
-          "title": "Collection-2/X"
-        },
-        {
-          "permalink": "/intro/introChild/",
-          "title": "Intro Child Page"
         }
       ],
-      "readingTime": 2,
+      "readingTime": 3,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -462,9 +373,9 @@
       "permalink": "/collection-1/g1/",
       "categories": [],
       "tags": [],
-      "excerpt": "content, lorem ipsum, services, innohub, registration, email, access, process, latin, ihsutilities",
-      "lastUpdate": "2025-06-12 15:21:37 +0300",
-      "lastUpdateUTC": 1749730897,
+      "excerpt": "content, services, innohub, registration, access, email, lorem ipsum, process, ihsutilities, components",
+      "lastUpdate": "2025-06-23 10:49:22 +0300",
+      "lastUpdateUTC": 1750664962,
       "createTime": "2025-06-12 15:21:37 +0300",
       "createTimeUTC": 1749730897,
       "relatedPages": [
@@ -473,38 +384,13 @@
           "permalink": "/sf/f1/"
         },
         {
-          "title": "Introduction",
-          "permalink": "/intro/"
-        },
-        {
-          "title": "Collection-2/Y",
-          "permalink": "/collection-2/y/y/"
+          "title": "Terms",
+          "permalink": "/terms/"
         }
       ],
-      "autoSummary": "This is a summary of lorem ipsum, which contains some of the earliest examples of ethics written in Latin literature. Here is the answer to this question. ...",
-      "similarByContent": [
-        {
-          "permalink": "/collection-2/y/y/",
-          "title": "Collection-2/Y"
-        },
-        {
-          "permalink": "/sf/f1/",
-          "title": "Subfolder/F1"
-        },
-        {
-          "permalink": "/intro/introChild/",
-          "title": "Intro Child Page"
-        },
-        {
-          "permalink": "/intro/",
-          "title": "Introduction"
-        },
-        {
-          "permalink": "/pwc/",
-          "title": "Play with content"
-        }
-      ],
-      "readingTime": 5,
+      "autoSummary": "Welcome to innohub, a service that provides access to content and services provided by the operator. Here is the full text of the latest steps to register. ...",
+      "similarByContent": [],
+      "readingTime": 4,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -521,10 +407,10 @@
         "exa"
       ],
       "excerpt": "innohub support, support center, support forms, functionalities, center, functionality, information, service, issues, product",
-      "lastUpdate": "2025-06-22 15:44:15 +0300",
-      "lastUpdateUTC": 1750596255,
-      "createTime": "2025-06-22 15:44:15 +0300",
-      "createTimeUTC": 1750596255,
+      "lastUpdate": "2025-06-23 10:46:28 +0300",
+      "lastUpdateUTC": 1750664788,
+      "createTime": "2025-06-23 10:46:28 +0300",
+      "createTimeUTC": 1750664788,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -553,12 +439,8 @@
           "permalink": "/intro/introChild/"
         },
         {
-          "title": "Play with content",
-          "permalink": "/pwc/"
-        },
-        {
-          "title": "Introduction",
-          "permalink": "/intro/"
+          "title": "Subfolder/F1",
+          "permalink": "/sf/f1/"
         }
       ],
       "autoSummary": "This is a full transcript of lorem ipsum. This contains images from the earliest published versions of the book. Please help us find out more about the text. ...",
@@ -566,18 +448,6 @@
         {
           "permalink": "/intro/introChild/",
           "title": "Intro Child Page"
-        },
-        {
-          "permalink": "/intro/",
-          "title": "Introduction"
-        },
-        {
-          "permalink": "/collection-1/g1/",
-          "title": "Collection-1/G1"
-        },
-        {
-          "permalink": "/pwc/",
-          "title": "Play with content"
         },
         {
           "permalink": "/sf/f1/",
@@ -660,18 +530,54 @@
       "categories": [],
       "tags": [],
       "excerpt": "content, title, alert, file, elements, html class, markers, result, repositories, repo",
-      "lastUpdate": "2025-06-19 18:41:45 +0300",
-      "lastUpdateUTC": 1750347705,
+      "lastUpdate": "2025-06-23 10:49:26 +0300",
+      "lastUpdateUTC": 1750664966,
       "createTime": "2025-06-19 18:41:45 +0300",
       "createTimeUTC": 1750347705,
       "relatedPages": [
         {
           "title": "Collection-2/Z",
           "permalink": "/collection-2/Z/z/"
+        },
+        {
+          "title": "Play with content",
+          "permalink": "/pwc/"
         }
       ],
       "autoSummary": "Welcome to a guide to how to add alert blocks to your content. Here's what you need to know about these rules and how they can be used. ...",
       "similarByContent": [],
+      "readingTime": 3,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
+      "title": "Introduction",
+      "permalink": "/intro/",
+      "categories": [
+        "general"
+      ],
+      "tags": [
+        "documentation",
+        "site"
+      ],
+      "excerpt": "documentation, documentation site, site, content, guide, docs, product, deployment, knowledge, branding",
+      "lastUpdate": "2025-06-23 11:14:17 +0300",
+      "lastUpdateUTC": 1750666457,
+      "createTime": "2025-06-23 10:46:28 +0300",
+      "createTimeUTC": 1750664788,
+      "relatedPages": [
+        {
+          "title": "Play with content",
+          "permalink": "/pwc/"
+        }
+      ],
+      "autoSummary": "This is a guide for developers who want to build high-quality documentation sites for any kind of project, product, or ...",
+      "similarByContent": [
+        {
+          "permalink": "/pwc/",
+          "title": "Play with content"
+        }
+      ],
       "readingTime": 3,
       "hasDynamicContent": false,
       "parent": ""
@@ -703,24 +609,12 @@
       "autoSummary": "This is a full transcript of the terms and conditions published by the Public Prosecution and Crime Commission (PMc). Here is the full text of this agreement. ...",
       "similarByContent": [
         {
-          "permalink": "/collection-1/g1/",
-          "title": "Collection-1/G1"
-        },
-        {
           "permalink": "/collection-2/y/y/",
           "title": "Collection-2/Y"
         },
         {
           "permalink": "/intro/introChild/",
           "title": "Intro Child Page"
-        },
-        {
-          "permalink": "/terms/",
-          "title": "Terms"
-        },
-        {
-          "permalink": "/intro/",
-          "title": "Introduction"
         }
       ],
       "readingTime": 3,
@@ -731,11 +625,12 @@
   "tagList": [
     "alfa",
     "bootstrap",
+    "docs",
+    "documentation",
     "exa",
     "legal",
-    "t a g 1",
+    "site",
     "tag1",
-    "tag2",
     "tag3",
     "tag4"
   ],
@@ -745,7 +640,7 @@
         {
           "title": "Play with content",
           "permalink": "/pwc/",
-          "lastUpdate": "25-May-2025"
+          "lastUpdate": "23-Jun-2025"
         }
       ],
       "numPages": 1
@@ -755,7 +650,20 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "22-Jun-2025"
+          "lastUpdate": "23-Jun-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "docs": {
+      "pages": []
+    },
+    "documentation": {
+      "pages": [
+        {
+          "title": "Introduction",
+          "permalink": "/intro/",
+          "lastUpdate": "23-Jun-2025"
         }
       ],
       "numPages": 1
@@ -765,7 +673,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "22-Jun-2025"
+          "lastUpdate": "23-Jun-2025"
         }
       ],
       "numPages": 1
@@ -780,12 +688,12 @@
       ],
       "numPages": 1
     },
-    "t a g 1": {
+    "site": {
       "pages": [
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "22-Jun-2025"
+          "lastUpdate": "23-Jun-2025"
         }
       ],
       "numPages": 1
@@ -795,7 +703,7 @@
         {
           "title": "Play with content",
           "permalink": "/pwc/",
-          "lastUpdate": "25-May-2025"
+          "lastUpdate": "23-Jun-2025"
         },
         {
           "title": "External content",
@@ -805,7 +713,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "22-Jun-2025"
+          "lastUpdate": "23-Jun-2025"
         },
         {
           "title": "Collection-2/X",
@@ -815,22 +723,12 @@
       ],
       "numPages": 4
     },
-    "tag2": {
-      "pages": [
-        {
-          "title": "Introduction",
-          "permalink": "/intro/",
-          "lastUpdate": "22-Jun-2025"
-        }
-      ],
-      "numPages": 1
-    },
     "tag3": {
       "pages": [
         {
           "title": "Play with content",
           "permalink": "/pwc/",
-          "lastUpdate": "25-May-2025"
+          "lastUpdate": "23-Jun-2025"
         },
         {
           "title": "External content",
@@ -884,12 +782,12 @@
         {
           "title": "Play with content",
           "permalink": "/pwc/",
-          "lastUpdate": "25-May-2025"
+          "lastUpdate": "23-Jun-2025"
         },
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "22-Jun-2025"
+          "lastUpdate": "23-Jun-2025"
         }
       ],
       "numPages": 2
@@ -897,24 +795,24 @@
     "general": {
       "pages": [
         {
-          "title": "Introduction",
-          "permalink": "/intro/",
-          "lastUpdate": "22-Jun-2025"
-        },
-        {
           "title": "Play with content",
           "permalink": "/pwc/",
-          "lastUpdate": "25-May-2025"
+          "lastUpdate": "23-Jun-2025"
         },
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "22-Jun-2025"
+          "lastUpdate": "23-Jun-2025"
         },
         {
           "title": "Collection-2/Z",
           "permalink": "/collection-2/Z/z/",
           "lastUpdate": "25-May-2025"
+        },
+        {
+          "title": "Introduction",
+          "permalink": "/intro/",
+          "lastUpdate": "23-Jun-2025"
         }
       ],
       "numPages": 4
@@ -922,17 +820,12 @@
     "intro": {
       "pages": [
         {
-          "title": "Introduction",
-          "permalink": "/intro/",
-          "lastUpdate": "22-Jun-2025"
-        },
-        {
           "title": "Collection-2/Z",
           "permalink": "/collection-2/Z/z/",
           "lastUpdate": "25-May-2025"
         }
       ],
-      "numPages": 2
+      "numPages": 1
     }
   },
   "hsSettings": {
@@ -1383,6 +1276,9 @@
     "toast_utilities_js_external_content_loading_error": "Error loading external content!",
     "toast_utilities_js_dt_create_table_error": "Something went wrong when building the table! You may refresh page and try again. If the problem persists, contact support.",
     "elements_figma_reset_view_btn_text": "Reset view",
-    "elements_figma_link_to_file_text": "Open in Figma"
+    "elements_figma_link_to_file_text": "Open in Figma",
+    "elements_figma_wrong_file_type_alert_title": "Wrong file type",
+    "elements_figma_wrong_file_type_alert_file_type_text": "File type",
+    "elements_figma_wrong_file_type_alert_file_type_not_accepted_text": "is not accepted by elements/figma.html component"
   }
 }

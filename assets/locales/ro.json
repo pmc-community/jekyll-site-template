@@ -450,5 +450,9 @@
     "toast_utilities_js_dt_create_table_error": "A aparut o eroare la generarea unui tabel! Poti incerca sa reincarci pagina. Daca eroarea persista, te rugam sa o raportezi catre suport.",
 
     "elements_figma_reset_view_btn_text": "Reset",
-    "elements_figma_link_to_file_text": "Deschide in Figma"
+    "elements_figma_link_to_file_text": "Deschide in Figma",
+    "elements_figma_wrong_file_type_alert_title": "Eroare tip de fisier",
+    "elements_figma_wrong_file_type_alert_file_type_text": "Tipul de fisier",
+    "elements_figma_wrong_file_type_alert_file_type_not_accepted_text": "nu este acceptat de componenta elements/figma.html"
+
 }
