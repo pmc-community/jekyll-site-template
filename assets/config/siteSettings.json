@@ -626,7 +626,6 @@
     "alfa",
     "bootstrap",
     "docs",
-    "documentatie",
     "documentation",
     "exa",
     "legal",
@@ -657,9 +656,6 @@
       "numPages": 1
     },
     "docs": {
-      "pages": []
-    },
-    "documentatie": {
       "pages": []
     },
     "documentation": {
