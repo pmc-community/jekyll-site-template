@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Introduction
+title: Introducere
 permalink: /intro/
 
 has_children: true
