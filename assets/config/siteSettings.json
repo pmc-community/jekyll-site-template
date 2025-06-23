@@ -629,6 +629,7 @@
     "bootstrap",
     "docs",
     "documentatie",
+    "documentation",
     "exa",
     "legal",
     "site",
@@ -676,6 +677,9 @@
         }
       ],
       "numPages": 1
+    },
+    "documentation": {
+      "pages": []
     },
     "exa": {
       "pages": [
