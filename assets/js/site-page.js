@@ -483,7 +483,7 @@ const page__getPageInfo = () => {
                         <span 
                             sitefunction="pageFullInfoPageGeneralSimilarPagesText"
                             class="d-flex">
-                            <span class "d-md-flex">
+                            <span class="d-md-flex align-items-center">
                                 ${similarPagesHtml(pageSimilarPages)}
                             </span>           
                         </span>
