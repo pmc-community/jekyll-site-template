@@ -13,7 +13,7 @@ tags: [documentatie, site, docs]
 <!-- START_EXPOSED_SECTION -->
 # 📚 Introducere
 
-Bine ai venit la **Ghidul pentru Crearea unui Site de Documentație** — resursa ta completă pentru a învăța cum să **creezi, construiești și întreții site-uri de documentație de înaltă calitate** pentru orice tip de proiect, produs sau organizație.
+Bine ai venit la **DOCAROO** — resursa ta completă pentru a învăța cum să **creezi, construiești și întreții site-uri de documentație de înaltă calitate** pentru orice tip de proiect, produs sau organizație.
 
 Fie că ești un dezvoltator independent, un redactor tehnic, un contribuitor open-source, o echipă de startup sau un strateg de conținut într-o companie mare, acest ghid te va ghida pas cu pas pentru a construi un site de documentație complet, profesionist și ușor de întreținut.
 

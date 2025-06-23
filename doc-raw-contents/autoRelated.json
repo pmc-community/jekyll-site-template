@@ -1,22 +1,5 @@
 [
   {
-    "permalink": "/intro/",
-    "related": [
-      {
-        "title": "Play with content",
-        "permalink": "/pwc/"
-      },
-      {
-        "title": "Intro Child Page",
-        "permalink": "/intro/introChild/"
-      },
-      {
-        "title": "Collection-2/Y",
-        "permalink": "/collection-2/y/y/"
-      }
-    ]
-  },
-  {
     "permalink": "/intro/introChild/",
     "related": [
       {
@@ -24,12 +7,8 @@
         "permalink": "/collection-2/y/y/"
       },
       {
-        "title": "Introduction",
-        "permalink": "/intro/"
-      },
-      {
-        "title": "Play with content",
-        "permalink": "/pwc/"
+        "title": "Subfolder/F1",
+        "permalink": "/sf/f1/"
       }
     ]
   },
@@ -45,12 +24,12 @@
         "permalink": "/intro/"
       },
       {
-        "title": "Collection-2/Y",
-        "permalink": "/collection-2/y/y/"
-      },
-      {
         "title": "Collection-2/X",
         "permalink": "/collection-2/X/x/"
+      },
+      {
+        "title": "Collection-1/G11",
+        "permalink": "/collection-1/g11/"
       }
     ]
   },
@@ -84,12 +63,8 @@
         "permalink": "/sf/f1/"
       },
       {
-        "title": "Introduction",
-        "permalink": "/intro/"
-      },
-      {
-        "title": "Collection-2/Y",
-        "permalink": "/collection-2/y/y/"
+        "title": "Terms",
+        "permalink": "/terms/"
       }
     ]
   },
@@ -110,12 +85,8 @@
         "permalink": "/intro/introChild/"
       },
       {
-        "title": "Introduction",
-        "permalink": "/intro/"
-      },
-      {
-        "title": "Play with content",
-        "permalink": "/pwc/"
+        "title": "Subfolder/F1",
+        "permalink": "/sf/f1/"
       }
     ]
   },
@@ -127,10 +98,6 @@
         "permalink": "/collection-2/X/x/"
       },
       {
-        "title": "Play with content",
-        "permalink": "/pwc/"
-      },
-      {
         "title": "Alerts",
         "permalink": "/alerts/"
       }
@@ -140,12 +107,12 @@
     "permalink": "/collection-2/X/x/",
     "related": [
       {
-        "title": "Play with content",
-        "permalink": "/pwc/"
-      },
-      {
         "title": "Collection-2/Z",
         "permalink": "/collection-2/Z/z/"
+      },
+      {
+        "title": "Play with content",
+        "permalink": "/pwc/"
       }
     ]
   },
@@ -155,6 +122,15 @@
       {
         "title": "Collection-2/Z",
         "permalink": "/collection-2/Z/z/"
+      }
+    ]
+  },
+  {
+    "permalink": "/intro/",
+    "related": [
+      {
+        "title": "Play with content",
+        "permalink": "/pwc/"
       }
     ]
   },
