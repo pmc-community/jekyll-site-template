@@ -283,7 +283,7 @@
       "createTimeUTC": 1750666761,
       "relatedPages": [
         {
-          "title": "Introduction",
+          "title": "Introducere",
           "permalink": "/intro/"
         },
         {
@@ -299,7 +299,7 @@
       "similarByContent": [
         {
           "permalink": "/intro/",
-          "title": "Introduction"
+          "title": "Introducere"
         }
       ],
       "readingTime": 4,
@@ -407,10 +407,10 @@
         "exa"
       ],
       "excerpt": "innohub support, support center, support forms, functionalities, center, functionality, information, service, issues, product",
-      "lastUpdate": "2025-06-23 11:21:29 +0300",
-      "lastUpdateUTC": 1750666889,
-      "createTime": "2025-06-23 11:21:29 +0300",
-      "createTimeUTC": 1750666889,
+      "lastUpdate": "2025-06-23 11:28:52 +0300",
+      "lastUpdateUTC": 1750667332,
+      "createTime": "2025-06-23 11:28:52 +0300",
+      "createTimeUTC": 1750667332,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -477,7 +477,7 @@
           "permalink": "/collection-2/X/x/"
         },
         {
-          "title": "Alerts",
+          "title": "Alerte",
           "permalink": "/alerts/"
         }
       ],
@@ -517,10 +517,6 @@
       "autoSummary": "This is a full transcript of markdown content loaded from another md file from the same collection. Here is the full text of the summary of these sections. ...",
       "similarByContent": [
         {
-          "permalink": "/pwc/",
-          "title": "Play with content"
-        },
-        {
           "permalink": "/collection-2/Z/z/",
           "title": "Collection-2/Z"
         }
@@ -530,13 +526,13 @@
       "parent": ""
     },
     {
-      "title": "Alerts",
+      "title": "Alerte",
       "permalink": "/alerts/",
       "categories": [],
       "tags": [],
       "excerpt": "content, title, alert, file, elements, html class, markers, result, repositories, repo",
-      "lastUpdate": "2025-06-23 11:19:49 +0300",
-      "lastUpdateUTC": 1750666789,
+      "lastUpdate": "2025-06-23 11:33:26 +0300",
+      "lastUpdateUTC": 1750667606,
       "createTime": "2025-06-23 11:19:45 +0300",
       "createTimeUTC": 1750666785,
       "relatedPages": [
@@ -552,7 +548,7 @@
       "parent": ""
     },
     {
-      "title": "Introduction",
+      "title": "Introducere",
       "permalink": "/intro/",
       "categories": [
         "general"
@@ -560,13 +556,13 @@
       "tags": [
         "documentatie",
         "site",
-        "docs"
+        "doc"
       ],
       "excerpt": "documenta, pentru, este, care, inut, ghid, baza, intre, acest, structura",
-      "lastUpdate": "2025-06-23 11:25:21 +0300",
-      "lastUpdateUTC": 1750667121,
-      "createTime": "2025-06-23 11:21:29 +0300",
-      "createTimeUTC": 1750666889,
+      "lastUpdate": "2025-06-23 11:38:00 +0300",
+      "lastUpdateUTC": 1750667880,
+      "createTime": "2025-06-23 11:28:52 +0300",
+      "createTimeUTC": 1750667332,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -580,7 +576,7 @@
           "title": "Play with content"
         }
       ],
-      "readingTime": 0,
+      "readingTime": 3,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -617,6 +613,10 @@
         {
           "permalink": "/intro/introChild/",
           "title": "Intro Child Page"
+        },
+        {
+          "permalink": "/terms/",
+          "title": "Terms"
         }
       ],
       "readingTime": 3,
@@ -628,9 +628,7 @@
     "alfa",
     "bootstrap",
     "doc",
-    "docs",
     "documentatie",
-    "documentation",
     "exa",
     "legal",
     "site",
@@ -660,12 +658,9 @@
       "numPages": 1
     },
     "doc": {
-      "pages": []
-    },
-    "docs": {
       "pages": [
         {
-          "title": "Introduction",
+          "title": "Introducere",
           "permalink": "/intro/",
           "lastUpdate": "23-Jun-2025"
         }
@@ -675,15 +670,12 @@
     "documentatie": {
       "pages": [
         {
-          "title": "Introduction",
+          "title": "Introducere",
           "permalink": "/intro/",
           "lastUpdate": "23-Jun-2025"
         }
       ],
       "numPages": 1
-    },
-    "documentation": {
-      "pages": []
     },
     "exa": {
       "pages": [
@@ -708,7 +700,7 @@
     "site": {
       "pages": [
         {
-          "title": "Introduction",
+          "title": "Introducere",
           "permalink": "/intro/",
           "lastUpdate": "23-Jun-2025"
         }
@@ -827,7 +819,7 @@
           "lastUpdate": "25-May-2025"
         },
         {
-          "title": "Introduction",
+          "title": "Introducere",
           "permalink": "/intro/",
           "lastUpdate": "23-Jun-2025"
         }

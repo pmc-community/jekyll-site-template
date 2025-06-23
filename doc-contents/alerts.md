@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Alerts
+title: Alerte
 permalink: /alerts/
 ---
 

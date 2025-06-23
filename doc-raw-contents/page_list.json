@@ -130,10 +130,10 @@
       "exa"
     ],
     "excerpt": "",
-    "lastUpdate": "2025-06-23 11:21:29 +0300",
-    "lastUpdateUTC": 1750666889,
-    "createTime": "2025-06-23 11:21:29 +0300",
-    "createTimeUTC": 1750666889,
+    "lastUpdate": "2025-06-23 11:28:52 +0300",
+    "lastUpdateUTC": 1750667332,
+    "createTime": "2025-06-23 11:28:52 +0300",
+    "createTimeUTC": 1750667332,
     "relatedPages": [],
     "autoSummary": "",
     "similarByContent": [],
@@ -198,13 +198,13 @@
     "parent": ""
   },
   {
-    "title": "Alerts",
+    "title": "Alerte",
     "permalink": "/alerts/",
     "categories": [],
     "tags": [],
     "excerpt": "",
-    "lastUpdate": "2025-06-23 11:19:49 +0300",
-    "lastUpdateUTC": 1750666789,
+    "lastUpdate": "2025-06-23 11:33:26 +0300",
+    "lastUpdateUTC": 1750667606,
     "createTime": "2025-06-23 11:19:45 +0300",
     "createTimeUTC": 1750666785,
     "relatedPages": [],
@@ -215,7 +215,7 @@
     "parent": ""
   },
   {
-    "title": "Introduction",
+    "title": "Introducere",
     "permalink": "/intro/",
     "categories": [
       "general"
@@ -223,13 +223,13 @@
     "tags": [
       "documentatie",
       "site",
-      "docs"
+      "doc"
     ],
     "excerpt": "",
-    "lastUpdate": "2025-06-23 11:25:21 +0300",
-    "lastUpdateUTC": 1750667121,
-    "createTime": "2025-06-23 11:21:29 +0300",
-    "createTimeUTC": 1750666889,
+    "lastUpdate": "2025-06-23 11:38:00 +0300",
+    "lastUpdateUTC": 1750667880,
+    "createTime": "2025-06-23 11:28:52 +0300",
+    "createTimeUTC": 1750667332,
     "relatedPages": [],
     "autoSummary": "",
     "similarByContent": [],
