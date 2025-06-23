@@ -7,7 +7,7 @@ has_children: true
 
 categories: [general]
 
-tags: [documentatie, site, docs]
+tags: [documentatie, site, doc]
 ---
 
 <!-- START_EXPOSED_SECTION -->

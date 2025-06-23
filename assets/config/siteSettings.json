@@ -627,6 +627,7 @@
   "tagList": [
     "alfa",
     "bootstrap",
+    "doc",
     "docs",
     "documentatie",
     "documentation",
@@ -657,6 +658,9 @@
         }
       ],
       "numPages": 1
+    },
+    "doc": {
+      "pages": []
     },
     "docs": {
       "pages": [
