@@ -8,6 +8,8 @@ has_children: true
 categories: [general]
 
 tags: [documentatie, site, doc]
+
+nav_order: 1
 ---
 
 <!-- START_EXPOSED_SECTION -->
