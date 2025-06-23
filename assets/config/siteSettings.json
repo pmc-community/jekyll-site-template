@@ -626,13 +626,12 @@
     "alfa",
     "bootstrap",
     "docs",
+    "documentatie",
     "documentation",
     "exa",
     "legal",
     "site",
-    "t a g 1",
     "tag1",
-    "tag2",
     "tag3",
     "tag4"
   ],
@@ -658,6 +657,9 @@
       "numPages": 1
     },
     "docs": {
+      "pages": []
+    },
+    "documentatie": {
       "pages": []
     },
     "documentation": {
@@ -700,9 +702,6 @@
       ],
       "numPages": 1
     },
-    "t a g 1": {
-      "pages": []
-    },
     "tag1": {
       "pages": [
         {
@@ -727,9 +726,6 @@
         }
       ],
       "numPages": 4
-    },
-    "tag2": {
-      "pages": []
     },
     "tag3": {
       "pages": [
