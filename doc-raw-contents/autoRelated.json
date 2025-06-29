@@ -1,16 +1,7 @@
 [
   {
     "permalink": "/intro/introChild/",
-    "related": [
-      {
-        "title": "Collection-2/Y",
-        "permalink": "/collection-2/y/y/"
-      },
-      {
-        "title": "Subfolder/F1",
-        "permalink": "/sf/f1/"
-      }
-    ]
+    "related": []
   },
   {
     "permalink": "/intro/introChild/introGrandChild/",
@@ -24,12 +15,12 @@
         "permalink": "/intro/"
       },
       {
-        "title": "Collection-2/X",
-        "permalink": "/collection-2/X/x/"
-      },
-      {
         "title": "Collection-1/G11",
         "permalink": "/collection-1/g11/"
+      },
+      {
+        "title": "External content",
+        "permalink": "/ec/"
       }
     ]
   },
@@ -44,29 +35,11 @@
   },
   {
     "permalink": "/terms/",
-    "related": [
-      {
-        "title": "Subfolder/F1",
-        "permalink": "/sf/f1/"
-      },
-      {
-        "title": "Collection-1/G1",
-        "permalink": "/collection-1/g1/"
-      }
-    ]
+    "related": []
   },
   {
     "permalink": "/collection-1/g1/",
-    "related": [
-      {
-        "title": "Subfolder/F1",
-        "permalink": "/sf/f1/"
-      },
-      {
-        "title": "Terms",
-        "permalink": "/terms/"
-      }
-    ]
+    "related": []
   },
   {
     "permalink": "/collection-1/g11/",
@@ -79,51 +52,19 @@
   },
   {
     "permalink": "/collection-2/y/y/",
-    "related": [
-      {
-        "title": "Intro Child Page",
-        "permalink": "/intro/introChild/"
-      },
-      {
-        "title": "Subfolder/F1",
-        "permalink": "/sf/f1/"
-      }
-    ]
+    "related": []
   },
   {
     "permalink": "/collection-2/Z/z/",
-    "related": [
-      {
-        "title": "Collection-2/X",
-        "permalink": "/collection-2/X/x/"
-      },
-      {
-        "title": "Alerte",
-        "permalink": "/alerts/"
-      }
-    ]
+    "related": []
   },
   {
     "permalink": "/collection-2/X/x/",
-    "related": [
-      {
-        "title": "Collection-2/Z",
-        "permalink": "/collection-2/Z/z/"
-      },
-      {
-        "title": "Play with content",
-        "permalink": "/pwc/"
-      }
-    ]
+    "related": []
   },
   {
     "permalink": "/alerts/",
-    "related": [
-      {
-        "title": "Collection-2/Z",
-        "permalink": "/collection-2/Z/z/"
-      }
-    ]
+    "related": []
   },
   {
     "permalink": "/intro/",
@@ -136,19 +77,6 @@
   },
   {
     "permalink": "/sf/f1/",
-    "related": [
-      {
-        "title": "Terms",
-        "permalink": "/terms/"
-      },
-      {
-        "title": "Collection-1/G1",
-        "permalink": "/collection-1/g1/"
-      },
-      {
-        "title": "Intro Child Page",
-        "permalink": "/intro/introChild/"
-      }
-    ]
+    "related": []
   }
 ]

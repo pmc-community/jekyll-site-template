@@ -135,6 +135,7 @@ GEM
     unicode_utils (1.4.0)
     uri (1.0.3)
     webrick (1.9.1)
+    whatlanguage (1.0.6)
 
 PLATFORMS
   aarch64-linux
@@ -155,7 +156,6 @@ DEPENDENCIES
   jekyll (~> 4.3.3)
   jekyll-sass-converter (= 2.0.0)
   just-the-docs
-  liquid (~> 4.0)
   matrix
   nokogiri (>= 1.18.8)
   rack (~> 2.2.9)
@@ -168,6 +168,7 @@ DEPENDENCIES
   tzinfo-data
   wdm (~> 0.1.1)
   webrick (~> 1.8)
+  whatlanguage
 
 BUNDLED WITH
    2.5.9
