@@ -218,10 +218,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "lorem ipsum, latin, latin literature, line, evil, extremes, malorum, cicero, book, treatise",
-      "lastUpdate": "2025-06-18 17:32:32 +0300",
-      "lastUpdateUTC": 1750257152,
-      "createTime": "2025-06-18 17:32:27 +0300",
-      "createTimeUTC": 1750257147,
+      "lastUpdate": "2025-06-29 11:15:35 +0300",
+      "lastUpdateUTC": 1751184935,
+      "createTime": "2025-06-29 11:15:35 +0300",
+      "createTimeUTC": 1751184935,
       "relatedPages": [
         {
           "title": "Collection-2/Y",
@@ -253,10 +253,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "figma, files, file, deck files, slides, design, html, elements, embed deck, view",
-      "lastUpdate": "2025-06-22 18:56:50 +0300",
-      "lastUpdateUTC": 1750607810,
-      "createTime": "2025-06-22 18:40:29 +0300",
-      "createTimeUTC": 1750606829,
+      "lastUpdate": "2025-06-29 11:15:35 +0300",
+      "lastUpdateUTC": 1751184935,
+      "createTime": "2025-06-29 11:15:35 +0300",
+      "createTimeUTC": 1751184935,
       "relatedPages": [],
       "autoSummary": "Welcome to the Docaroo website. Here is a guide to how to embed rich media into your content, including slides, decks and prototypes. This is what we learned about. ...",
       "similarByContent": [],
@@ -277,10 +277,10 @@
         "alfa"
       ],
       "excerpt": "site, documentation site, documentation, content, markdown content, file, docs, guide, product, title",
-      "lastUpdate": "2025-06-23 10:49:30 +0300",
-      "lastUpdateUTC": 1750664970,
-      "createTime": "2025-05-25 10:11:17 +0300",
-      "createTimeUTC": 1748157077,
+      "lastUpdate": "2025-06-23 12:17:50 +0300",
+      "lastUpdateUTC": 1750670270,
+      "createTime": "2025-06-23 12:17:50 +0300",
+      "createTimeUTC": 1750670270,
       "relatedPages": [
         {
           "title": "Introduction",
@@ -374,10 +374,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "content, services, innohub, registration, access, email, lorem ipsum, process, ihsutilities, components",
-      "lastUpdate": "2025-06-23 10:49:22 +0300",
-      "lastUpdateUTC": 1750664962,
-      "createTime": "2025-06-12 15:21:37 +0300",
-      "createTimeUTC": 1749730897,
+      "lastUpdate": "2025-06-23 12:17:50 +0300",
+      "lastUpdateUTC": 1750670270,
+      "createTime": "2025-06-23 12:17:50 +0300",
+      "createTimeUTC": 1750670270,
       "relatedPages": [
         {
           "title": "Subfolder/F1",
@@ -407,10 +407,10 @@
         "exa"
       ],
       "excerpt": "innohub support, support center, support forms, functionalities, center, functionality, information, service, issues, product",
-      "lastUpdate": "2025-06-23 10:46:28 +0300",
-      "lastUpdateUTC": 1750664788,
-      "createTime": "2025-06-23 10:46:28 +0300",
-      "createTimeUTC": 1750664788,
+      "lastUpdate": "2025-06-29 11:15:35 +0300",
+      "lastUpdateUTC": 1751184935,
+      "createTime": "2025-06-29 11:15:35 +0300",
+      "createTimeUTC": 1751184935,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -530,10 +530,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "content, title, alert, file, elements, html class, markers, result, repositories, repo",
-      "lastUpdate": "2025-06-23 10:49:26 +0300",
-      "lastUpdateUTC": 1750664966,
-      "createTime": "2025-06-19 18:41:45 +0300",
-      "createTimeUTC": 1750347705,
+      "lastUpdate": "2025-06-29 11:15:35 +0300",
+      "lastUpdateUTC": 1751184935,
+      "createTime": "2025-06-29 11:15:35 +0300",
+      "createTimeUTC": 1751184935,
       "relatedPages": [
         {
           "title": "Collection-2/Z",
@@ -558,13 +558,14 @@
       ],
       "tags": [
         "documentation",
-        "site"
+        "site",
+        "docs"
       ],
       "excerpt": "documentation, documentation site, site, content, guide, docs, product, deployment, knowledge, branding",
-      "lastUpdate": "2025-06-23 11:14:17 +0300",
-      "lastUpdateUTC": 1750666457,
-      "createTime": "2025-06-23 10:46:28 +0300",
-      "createTimeUTC": 1750664788,
+      "lastUpdate": "2025-06-29 11:15:35 +0300",
+      "lastUpdateUTC": 1751184935,
+      "createTime": "2025-06-29 11:15:35 +0300",
+      "createTimeUTC": 1751184935,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -650,20 +651,27 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "23-Jun-2025"
+          "lastUpdate": "29-Jun-2025"
         }
       ],
       "numPages": 1
     },
     "docs": {
-      "pages": []
+      "pages": [
+        {
+          "title": "Introduction",
+          "permalink": "/intro/",
+          "lastUpdate": "29-Jun-2025"
+        }
+      ],
+      "numPages": 1
     },
     "documentation": {
       "pages": [
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "23-Jun-2025"
+          "lastUpdate": "29-Jun-2025"
         }
       ],
       "numPages": 1
@@ -673,7 +681,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "23-Jun-2025"
+          "lastUpdate": "29-Jun-2025"
         }
       ],
       "numPages": 1
@@ -693,7 +701,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "23-Jun-2025"
+          "lastUpdate": "29-Jun-2025"
         }
       ],
       "numPages": 1
@@ -713,7 +721,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "23-Jun-2025"
+          "lastUpdate": "29-Jun-2025"
         },
         {
           "title": "Collection-2/X",
@@ -787,7 +795,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "23-Jun-2025"
+          "lastUpdate": "29-Jun-2025"
         }
       ],
       "numPages": 2
@@ -802,7 +810,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "23-Jun-2025"
+          "lastUpdate": "29-Jun-2025"
         },
         {
           "title": "Collection-2/Z",
@@ -812,7 +820,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "23-Jun-2025"
+          "lastUpdate": "29-Jun-2025"
         }
       ],
       "numPages": 4
