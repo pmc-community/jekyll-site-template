@@ -218,10 +218,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "lorem ipsum, latin, latin literature, line, evil, extremes, malorum, cicero, book, treatise",
-      "lastUpdate": "2025-06-29 11:15:35 +0300",
-      "lastUpdateUTC": 1751184935,
-      "createTime": "2025-06-29 11:15:35 +0300",
-      "createTimeUTC": 1751184935,
+      "lastUpdate": "2025-06-29 13:07:04 +0300",
+      "lastUpdateUTC": 1751191624,
+      "createTime": "2025-06-29 13:07:04 +0300",
+      "createTimeUTC": 1751191624,
       "relatedPages": [
         {
           "title": "Collection-2/Y",
@@ -253,10 +253,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "figma, files, file, deck files, slides, design, html, elements, embed deck, view",
-      "lastUpdate": "2025-06-29 11:15:35 +0300",
-      "lastUpdateUTC": 1751184935,
-      "createTime": "2025-06-29 11:15:35 +0300",
-      "createTimeUTC": 1751184935,
+      "lastUpdate": "2025-06-29 13:07:04 +0300",
+      "lastUpdateUTC": 1751191624,
+      "createTime": "2025-06-29 13:07:04 +0300",
+      "createTimeUTC": 1751191624,
       "relatedPages": [],
       "autoSummary": "Welcome to the Docaroo website. Here is a guide to how to embed rich media into your content, including slides, decks and prototypes. This is what we learned about. ...",
       "similarByContent": [],
@@ -407,10 +407,10 @@
         "exa"
       ],
       "excerpt": "innohub support, support center, support forms, functionalities, center, functionality, information, service, issues, product",
-      "lastUpdate": "2025-06-29 11:15:35 +0300",
-      "lastUpdateUTC": 1751184935,
-      "createTime": "2025-06-29 11:15:35 +0300",
-      "createTimeUTC": 1751184935,
+      "lastUpdate": "2025-06-29 13:07:04 +0300",
+      "lastUpdateUTC": 1751191624,
+      "createTime": "2025-06-29 13:07:04 +0300",
+      "createTimeUTC": 1751191624,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -519,7 +519,12 @@
         }
       ],
       "autoSummary": "This is a full transcript of markdown content loaded from another md file from the same collection. Here is the full text of the summary of these sections. ...",
-      "similarByContent": [],
+      "similarByContent": [
+        {
+          "permalink": "/collection-2/Z/z/",
+          "title": "Collection-2/Z"
+        }
+      ],
       "readingTime": 1,
       "hasDynamicContent": true,
       "parent": ""
@@ -530,10 +535,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "content, title, alert, file, elements, html class, markers, result, repositories, repo",
-      "lastUpdate": "2025-06-29 11:15:35 +0300",
-      "lastUpdateUTC": 1751184935,
-      "createTime": "2025-06-29 11:15:35 +0300",
-      "createTimeUTC": 1751184935,
+      "lastUpdate": "2025-06-29 13:07:04 +0300",
+      "lastUpdateUTC": 1751191624,
+      "createTime": "2025-06-29 13:07:04 +0300",
+      "createTimeUTC": 1751191624,
       "relatedPages": [
         {
           "title": "Collection-2/Z",
@@ -562,10 +567,10 @@
         "docs"
       ],
       "excerpt": "documentation, documentation site, site, content, guide, docs, product, deployment, knowledge, branding",
-      "lastUpdate": "2025-06-29 11:15:35 +0300",
-      "lastUpdateUTC": 1751184935,
-      "createTime": "2025-06-29 11:15:35 +0300",
-      "createTimeUTC": 1751184935,
+      "lastUpdate": "2025-06-29 13:07:04 +0300",
+      "lastUpdateUTC": 1751191624,
+      "createTime": "2025-06-29 13:07:04 +0300",
+      "createTimeUTC": 1751191624,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -616,6 +621,10 @@
         {
           "permalink": "/intro/introChild/",
           "title": "Intro Child Page"
+        },
+        {
+          "permalink": "/terms/",
+          "title": "Terms"
         }
       ],
       "readingTime": 3,
@@ -626,9 +635,7 @@
   "tagList": [
     "alfa",
     "bootstrap",
-    "doc",
     "docs",
-    "documentatie",
     "documentation",
     "exa",
     "legal",
@@ -658,9 +665,6 @@
       ],
       "numPages": 1
     },
-    "doc": {
-      "pages": []
-    },
     "docs": {
       "pages": [
         {
@@ -670,9 +674,6 @@
         }
       ],
       "numPages": 1
-    },
-    "documentatie": {
-      "pages": []
     },
     "documentation": {
       "pages": [

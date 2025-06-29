@@ -1,18 +1,18 @@
 {
   "keywords": [
     {
-      "permalink": "/intro/",
+      "permalink": "/collection-2/y/y/",
       "keywords": [
-        "documentation",
-        "documentation site",
-        "site",
-        "content",
-        "guide",
-        "docs",
-        "product",
-        "deployment",
-        "knowledge",
-        "branding"
+        "lorem ipsum",
+        "latin",
+        "latin literature",
+        "line",
+        "file",
+        "extremes",
+        "evil",
+        "malorum",
+        "cicero",
+        "book"
       ]
     },
     {
@@ -61,20 +61,6 @@
       ]
     },
     {
-      "permalink": "/collection-2/Z/z/",
-      "keywords": [
-        "file",
-        "file loads",
-        "inline",
-        "place",
-        "repo",
-        "content",
-        "link",
-        "collection",
-        "folder"
-      ]
-    },
-    {
       "permalink": "/intro/introChild/introGrandChild/",
       "keywords": [
         "figma",
@@ -90,33 +76,32 @@
       ]
     },
     {
-      "permalink": "/collection-2/y/y/",
+      "permalink": "/collection-2/Z/z/",
       "keywords": [
-        "lorem ipsum",
-        "latin",
-        "latin literature",
-        "line",
         "file",
-        "extremes",
-        "evil",
-        "malorum",
-        "cicero",
-        "book"
+        "file loads",
+        "inline",
+        "place",
+        "repo",
+        "content",
+        "link",
+        "collection",
+        "folder"
       ]
     },
     {
-      "permalink": "/alerts/",
+      "permalink": "/intro/",
       "keywords": [
+        "documentation",
+        "documentation site",
+        "site",
         "content",
-        "title",
-        "alert",
-        "file",
-        "elements",
-        "html class",
-        "markers",
-        "result",
-        "repositories",
-        "repo"
+        "guide",
+        "docs",
+        "product",
+        "deployment",
+        "knowledge",
+        "branding"
       ]
     },
     {
@@ -132,6 +117,21 @@
         "sites",
         "website",
         "resources"
+      ]
+    },
+    {
+      "permalink": "/alerts/",
+      "keywords": [
+        "content",
+        "title",
+        "alert",
+        "file",
+        "elements",
+        "html class",
+        "markers",
+        "result",
+        "repositories",
+        "repo"
       ]
     },
     {
