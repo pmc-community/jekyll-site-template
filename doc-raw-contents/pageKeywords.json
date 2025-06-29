@@ -1,20 +1,6 @@
 {
   "keywords": [
     {
-      "permalink": "/collection-2/Z/z/",
-      "keywords": [
-        "file",
-        "file loads",
-        "inline",
-        "place",
-        "repo",
-        "content",
-        "link",
-        "collection",
-        "folder"
-      ]
-    },
-    {
       "permalink": "/intro/introChild/",
       "keywords": [
         "lorem ipsum",
@@ -45,18 +31,17 @@
       ]
     },
     {
-      "permalink": "/intro/introChild/introGrandChild/",
+      "permalink": "/collection-2/Z/z/",
       "keywords": [
-        "figma",
-        "files",
         "file",
-        "deck files",
-        "slides",
-        "design",
-        "html",
-        "elements",
-        "embed deck",
-        "view"
+        "file loads",
+        "inline",
+        "place",
+        "repo",
+        "content",
+        "link",
+        "collection",
+        "folder"
       ]
     },
     {
@@ -90,21 +75,6 @@
       ]
     },
     {
-      "permalink": "/intro/",
-      "keywords": [
-        "documenta",
-        "pentru",
-        "este",
-        "care",
-        "inut",
-        "ghid",
-        "baza",
-        "intre",
-        "acest",
-        "structura"
-      ]
-    },
-    {
       "permalink": "/sf/f1/",
       "keywords": [
         "services",
@@ -120,6 +90,21 @@
       ]
     },
     {
+      "permalink": "/intro/introChild/introGrandChild/",
+      "keywords": [
+        "figma",
+        "files",
+        "file",
+        "deck files",
+        "slides",
+        "design",
+        "html",
+        "elements",
+        "embed deck",
+        "view"
+      ]
+    },
+    {
       "permalink": "/alerts/",
       "keywords": [
         "content",
@@ -132,6 +117,21 @@
         "result",
         "repositories",
         "repo"
+      ]
+    },
+    {
+      "permalink": "/intro/",
+      "keywords": [
+        "documenta",
+        "pentru",
+        "este",
+        "care",
+        "inut",
+        "ghid",
+        "baza",
+        "intre",
+        "acest",
+        "structura"
       ]
     },
     {
