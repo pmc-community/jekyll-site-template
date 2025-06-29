@@ -75,4 +75,7 @@ gem "csv", "~> 3.3"
 
 gem "bigdecimal", "~> 3.1"
 
+# for keywords
 gem 'whatlanguage'
+gem 'iso-639'
+gem 'stopwords'

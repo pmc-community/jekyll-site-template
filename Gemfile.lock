@@ -45,6 +45,8 @@ GEM
       typhoeus (~> 1.4.0)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
+    iso-639 (0.3.8)
+      csv
     jekyll (4.3.4)
       addressable (~> 2.4)
       colorator (~> 1.0)
@@ -124,6 +126,7 @@ GEM
       ffi (~> 1.9)
     securerandom (0.4.1)
     sin_lru_redux (2.5.2)
+    stopwords (0.2)
     terminal-table (3.0.2)
       unicode-display_width (>= 1.1.1, < 3)
     text_rank (1.3.1)
@@ -153,6 +156,7 @@ DEPENDENCIES
   engtagger
   http_parser.rb (~> 0.6.0)
   hubspot-api-client
+  iso-639
   jekyll (~> 4.3.3)
   jekyll-sass-converter (= 2.0.0)
   just-the-docs
@@ -162,6 +166,7 @@ DEPENDENCIES
   rack-cors
   rack-livereload
   securerandom
+  stopwords
   text_rank
   tf-idf-similarity
   tzinfo (>= 1, < 3)
