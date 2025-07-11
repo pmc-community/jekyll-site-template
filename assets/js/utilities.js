@@ -79,8 +79,10 @@ $.fn.sizeChanged = function (handleFunction) {
         if (lastWidth === element.width()&&lastHeight === element.height())
             return;
         if (typeof (handleFunction) == 'function') {
-            handleFunction({ width: lastWidth, height: lastHeight },
-                            { width: element.width(), height: element.height() });
+            handleFunction(
+                { width: lastWidth, height: lastHeight }, 
+                { width: element.width(), height: element.height() }
+            );
             lastWidth = element.width();
             lastHeight = element.height();
         }
@@ -98,7 +100,7 @@ if (pagePermalink !== '/') {
         if ($(`#${settings.marker404}`).length === 0) Toc.init($myNav);
         // check if there is something in the ToC, if empty, the scrollspy raise errors in console
         // page toc will be further removed from page when the page loads
-        if ($(`${settings.pageToc.toc} ul`).children('li').length > 0 ) $(settings.pageToc.scrollSpyBase).scrollspy({target: navSelector,});
+        if ($(`${settings.pageToc.toc} ul`).children('li').length > 0 ) $(settings.pageToc.scrollSpyBase).scrollspy({target: navSelector});
     });
 
     // CONVERSION FUNCTIONS FOR DATATABLES SORTING PURPOSES
