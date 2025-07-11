@@ -165,6 +165,17 @@ module Globals
                 begin
                     response = JSON.parse(line)
                     outputNo += 1
+
+                    # we use stderr to print to console some things from the py scripts
+                    # that's because stdout is used to pass to ruby the results of the py scripts
+                    # here is the code to actually output to console the messages from the py scripts
+                    # HEADS UP!!!
+                    # better to suppress warnings to be shown by py scripts and leave only errors
+                    # otherwise the console may be "invaded" by warnings raised by any py script on traceback
+                    stderr.each_line do |line|
+                        puts "#{line}"
+                    end
+
                     callback.call({
                         "outputNo" => outputNo,
                         "payload" => response

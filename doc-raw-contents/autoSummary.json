@@ -1,56 +1,56 @@
 {
     "summaries": [
         {
-            "permalink": "/collection-2/Z/z/",
-            "summary": "this is a file from a collection. this file loads some external content from another repo and place it inline. link to file in different folder"
-        },
-        {
-            "permalink": "/collection-2/X/x/",
-            "summary": "This is a full transcript of markdown content loaded from another md file from the same collection. Here is the full text of the summary of these sections. ..."
-        },
-        {
             "permalink": "/intro/introChild/",
-            "summary": "lorem ipsum, a commonly known Latin word, has roots in classical literature from 45 bc. But what is it and why do we know it? ..."
-        },
-        {
-            "permalink": "/terms/",
-            "summary": "The terms and conditions of using innohub.space have been published by the British High Court. Here is a full summary of the terms of service provided by us. ..."
-        },
-        {
-            "permalink": "/collection-1/g1/",
-            "summary": "Welcome to innohub, a service that provides access to content and services provided by the operator. Here is the full text of the latest steps to register. ..."
-        },
-        {
-            "permalink": "/alerts/",
-            "summary": "Welcome to a guide to how to add alert blocks to your content. Here's what you need to know about these rules and how they can be used. ..."
-        },
-        {
-            "permalink": "/ec/",
-            "summary": "Welcome to innohub.space, a website which allows users to access content from anonymous and registered ways. Here is the full text of the service. ..."
-        },
-        {
-            "permalink": "/intro/",
-            "summary": "Docusaurus' - o guia de ideii inform\u00e1tica com a s e n \u0103 t u t\u0103 g ie. ..."
-        },
-        {
-            "permalink": "/collection-1/g11/",
-            "summary": "Welcome to innohub support centre. Here is a guide to the technical support service provided to us through the ..."
-        },
-        {
-            "permalink": "/sf/f1/",
-            "summary": "This is a full transcript of the terms and conditions published by the Public Prosecution and Crime Commission (PMc). Here is the full text of this agreement. ..."
-        },
-        {
-            "permalink": "/collection-2/y/y/",
-            "summary": "This is a full transcript of lorem ipsum. This contains images from the earliest published versions of the book. Please help us find out more about the text. ..."
+            "summary": "Contrary to popular belief, lorem ipsum is not simply random text. It has roots in a piece of classical latin literature from 45 bc, making it over 2000 years old. Richard mcclintock, a latin professor at hampden-sydney college in virginia, looked up one of the more obscure latin words, consectetur, from a lorem ipsum passage."
         },
         {
             "permalink": "/intro/introChild/introGrandChild/",
-            "summary": "Welcome to the Docaroo website. Here is a guide to how to embed rich media into your content, including slides, decks and prototypes. This is what we learned about. ..."
+            "summary": "Learn how to use docaroo components to embed rich media into your content. We do not encourage to store large media on your doc-contents folder."
         },
         {
             "permalink": "/pwc/",
-            "summary": "Welcome to the Docaroo - o guia de idei i s e n \u0103 t a g\u0103 t\u0103. A j u g iti : ..."
+            "summary": "Link to file in the same folder link to file in different folder broken link good external link broken external link. !- liquid tags may generate unexpected behaviour sometimes due to dry rendering during site build.- dry rendering is used in the site build process to generate related pages and keywords- it may be possible to have the front matter rendered also."
+        },
+        {
+            "permalink": "/ec/",
+            "summary": "Content from an exernal private repository."
+        },
+        {
+            "permalink": "/terms/",
+            "summary": "These terms of service are applicable from the date shown on this page. The list of the older versions can be seen on our legal center and can be available upon request, using the dedicated form available inside our legal center."
+        },
+        {
+            "permalink": "/collection-1/g1/",
+            "summary": "This is the answer to this is a question. This file loads some external content from another repo and place it inline. Link to file in different folder. Content for this file."
+        },
+        {
+            "permalink": "/collection-1/g11/",
+            "summary": "Innohub support center is the single point of contact for notifying us about the issues that you experience when using our services."
+        },
+        {
+            "permalink": "/collection-2/y/y/",
+            "summary": "Content for this file."
+        },
+        {
+            "permalink": "/collection-2/Z/z/",
+            "summary": ""
+        },
+        {
+            "permalink": "/collection-2/X/x/",
+            "summary": "Markdown content loaded from another md file from the same collection.heads up!watch out the limitations for loading content from another file, the source file must be below the destination file in the folder structure.otherwise the content should be loaded considering the source as external file and use getexternalcontent(.). This file loads some external content from another repo and place it inline. Link to file in different folder."
+        },
+        {
+            "permalink": "/alerts/",
+            "summary": "You can refer external content from other documents from your documentation or from external public or private repositories. The external content can either added using liquid sintax or custom liquid tags. There is no limit about how many external public repositories you refer the number of the external private repositories depends on the private access key type you configure."
+        },
+        {
+            "permalink": "/intro/",
+            "summary": "Bine ai venit la docaroo \u2014 resursa ta complet\u0103 pentru a \u00eenv\u0103\u021ba cum s\u0103 creezi, construie\u0219ti \u0219i \u00eentre\u021bii site-uri de documenta\u021bie de \u00eenalt\u0103 calitate pentru orice tip de proiect, produs sau organiza\u021bie. Fie c\u0103 e\u0219ti un dezvoltator independent, un redactor tehnic, un contribuitor open-source, o echip\u0103 de startup sau un strateg de con\u021binut \u00eentr-o companie mare, acest ghid te va ghida."
+        },
+        {
+            "permalink": "/sf/f1/",
+            "summary": ""
         }
     ]
 }

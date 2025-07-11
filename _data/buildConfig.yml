@@ -3,19 +3,23 @@ pyLaunch: "python3"
 pyPageSummary:
   allInOneStep: true
   allInOneStepScript: "tools_py/page-summary/auto-summary.py"
-  summaryLength: 30
+  summaryLength: 80 #play with the min summary words for better summaries
+  usePrompt: true
   model: 
-    name: "csebuetnlp/mT5_multilingual_XLSum"
-    max_length: 128
-    min_length: 40
+    # best option of pretrained model for summarizing multilingual texts
+    # use a specific language pretrained model from huggingface if the documentation is a single language
+    # check if the language you need is supported by the model, you may need to disable autosummary if there is no reasonable support
+    # allInOneStep: false will disable autosummary 
+    name: "facebook/mbart-large-50"
+    max_length: 256
+    min_length: 30
     length_penalty: 1.0
     num_beams: 4
     early_stopping: true
-  threadMultiplicator: 4
   tokenizer:
-    prompt: "summarize:"
-    max_length: 512
-    return_tensors: "tf"
+    prompt: "Write a concise, factual summary in %s with no greetings or instructions, maximum %d words, for the following text:"
+    max_length: 256
+    return_tensors: "pt"
     truncation: true
     skip_special_tokens: true
 rawContentFolder: "doc-raw-contents"
@@ -44,6 +48,9 @@ pySimilarPagesByContent:
   model_url: "https://tfhub.dev/google/universal-sentence-encoder/4"
 pageKeywords:
   enable: true
+  model: "mrm8488/t5-base-finetuned-question-generation-ap"
+  minKeywords: 10
+  maxKeywords: 15
 github:
   enabled: true
   user: "pmc-community"

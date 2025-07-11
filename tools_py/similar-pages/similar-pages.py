@@ -2,15 +2,20 @@ import os
 import tensorflow as tf
 import tensorflow_hub as hub
 import numpy as np
-from multiprocessing import Pool, cpu_count
+from multiprocessing.dummy import Pool as ThreadPool
+from multiprocessing import cpu_count
 import json
 import sys
+import logging
+
 
 # Suppress TensorFlow logging messages
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+os.environ['TF_XLA_FLAGS'] = '--tf_xla_enable_xla_devices=false'
 
-# Enable XLA (Accelerated Linear Algebra) compilation
-os.environ['TF_XLA_FLAGS'] = '--tf_xla_enable_xla_devices'
+# Suppress absl logging
+logging.getLogger('absl').setLevel(logging.ERROR)
+logging.getLogger('tensorflow').setLevel(logging.FATAL)
 
 # Set optimal thread settings
 num_threads = cpu_count()
@@ -31,6 +36,9 @@ max_files_per_batch = get_key_value_from_yml(build_settings_path, 'pySimilarPage
 similarity_threshold = get_key_value_from_yml(build_settings_path, 'pySimilarPagesByContent')['similarity_threshold']
 model_url = get_key_value_from_yml(build_settings_path, 'pySimilarPagesByContent')['model_url']
 max_files_per_chunk = get_key_value_from_yml(build_settings_path, 'pySimilarPagesByContent')['chunk_size_in_files_batch']
+
+# Load the model once globally
+model = hub.load(model_url)
 
 def load_text_files(files_to_be_processed, max_files_per_batch=max_files_per_batch):
     files_content = {}
@@ -59,9 +67,8 @@ def chunks(lst, chunk_size):
     for i in range(0, len(lst), chunk_size):
         yield lst[i:i + chunk_size]
 
-def process_chunk(chunk_data):
-    filenames, chunk_contents, model_url = chunk_data
-    model = hub.load(model_url)
+def process_chunk_threadsafe(chunk_data):
+    filenames, chunk_contents = chunk_data
     embeddings = model(chunk_contents).numpy()
     similarity_matrix = calculate_similarity_matrix(embeddings)
     similar_files = {}
@@ -71,9 +78,7 @@ def process_chunk(chunk_data):
         for j, similarity in enumerate(similarity_matrix[i]):
             if i != j and similarity >= similarity_threshold:
                 similar_files[filename].append((filenames[j], similarity))
-
         similar_files[filename].sort(key=lambda x: x[1], reverse=True)
-
     return similar_files
 
 def get_similar_by_content(files_to_be_processed):
@@ -81,15 +86,14 @@ def get_similar_by_content(files_to_be_processed):
 
     for files_content in load_text_files(files_to_be_processed):
         filenames = list(files_content.keys())
-        batch_size = max_files_per_chunk
-        chunks_data = [
-            (chunk_filenames, [files_content[filename] for filename in chunk_filenames], model_url)
-            for chunk_filenames in chunks(filenames, batch_size)
+        chunk_data = [
+            (chunk_filenames, [files_content[fn] for fn in chunk_filenames])
+            for chunk_filenames in chunks(filenames, max_files_per_chunk)
         ]
 
-        max_processes = cpu_count() * threadMultiplicator 
-        with Pool(processes=max_processes) as pool:
-            similar_files_chunks = pool.map(process_chunk, chunks_data)
+        max_threads = cpu_count() * threadMultiplicator
+        with ThreadPool(processes=max_threads) as pool:
+            similar_files_chunks = pool.map(process_chunk_threadsafe, chunk_data)
 
         for chunk_result in similar_files_chunks:
             all_similar_files.update(chunk_result)

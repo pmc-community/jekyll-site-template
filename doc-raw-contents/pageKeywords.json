@@ -1,182 +1,183 @@
 {
   "keywords": [
     {
+      "permalink": "/intro/",
+      "keywords": [
+        "venit",
+        "docaroo",
+        "resursa",
+        "completă",
+        "învăța",
+        "creezi",
+        "construiești",
+        "întreții",
+        "site",
+        "uri"
+      ]
+    },
+    {
+      "permalink": "/pwc/",
+      "keywords": [
+        "markdown",
+        "content",
+        "direct",
+        "included",
+        "the",
+        "page",
+        "stable",
+        "heads",
+        "links",
+        "other"
+      ]
+    },
+    {
+      "permalink": "/collection-2/y/y/",
+      "keywords": [
+        "content",
+        "file",
+        "contrary",
+        "popular",
+        "belief",
+        "lorem",
+        "ipsum",
+        "simply",
+        "random",
+        "roots"
+      ]
+    },
+    {
+      "permalink": "/collection-1/g1/",
+      "keywords": [
+        "answer",
+        "question",
+        "external",
+        "content",
+        "file",
+        "loads",
+        "external",
+        "content",
+        "repo",
+        "inline"
+      ]
+    },
+    {
       "permalink": "/intro/introChild/",
       "keywords": [
-        "lorem ipsum",
-        "latin",
-        "latin literature",
-        "line",
-        "evil",
-        "extremes",
-        "malorum",
-        "cicero",
-        "book",
-        "treatise"
+        "contrary",
+        "popular",
+        "belief",
+        "lorem",
+        "ipsum",
+        "simply",
+        "random",
+        "roots",
+        "piece",
+        "classical"
+      ]
+    },
+    {
+      "permalink": "/intro/introChild/introGrandChild/",
+      "keywords": [
+        "learn",
+        "docaroo",
+        "components",
+        "embed",
+        "rich",
+        "media",
+        "content",
+        "encourage",
+        "store",
+        "media"
+      ]
+    },
+    {
+      "permalink": "/alerts/",
+      "keywords": [
+        "learn",
+        "add",
+        "alert",
+        "blocks",
+        "content",
+        "add",
+        "simple",
+        "rich",
+        "alerts",
+        "alerts"
+      ]
+    },
+    {
+      "permalink": "/collection-1/g11/",
+      "keywords": [
+        "g11",
+        "innohub",
+        "support",
+        "center",
+        "single",
+        "contact",
+        "notifying",
+        "issues",
+        "experience",
+        "services"
       ]
     },
     {
       "permalink": "/collection-2/X/x/",
       "keywords": [
-        "file",
+        "markdown",
         "content",
-        "source file",
-        "markdown content",
+        "content",
+        "typed",
+        "collection",
         "inline",
+        "external",
         "link",
-        "collection-2",
-        "folder",
-        "classes head1",
-        "head"
+        "https",
+        "pmc"
+      ]
+    },
+    {
+      "permalink": "/terms/",
+      "keywords": [
+        "terms",
+        "service",
+        "applicable",
+        "list",
+        "versions",
+        "legal",
+        "center",
+        "request",
+        "dedicated",
+        "form"
       ]
     },
     {
       "permalink": "/collection-2/Z/z/",
       "keywords": [
         "file",
-        "file loads",
-        "inline",
-        "place",
-        "repo",
-        "content",
-        "link",
         "collection",
-        "folder"
-      ]
-    },
-    {
-      "permalink": "/pwc/",
-      "keywords": [
-        "documenta",
-        "pentru",
         "file",
-        "site",
-        "este",
-        "care",
+        "loads",
+        "external",
         "content",
-        "markdown",
-        "inut",
-        "ghid"
-      ]
-    },
-    {
-      "permalink": "/collection-2/y/y/",
-      "keywords": [
-        "lorem ipsum",
-        "latin",
-        "latin literature",
-        "line",
-        "file",
-        "extremes",
-        "evil",
-        "malorum",
-        "cicero",
-        "book"
+        "repo",
+        "inline",
+        "link",
+        "file"
       ]
     },
     {
       "permalink": "/sf/f1/",
       "keywords": [
-        "services",
-        "lorem ipsum",
-        "products",
-        "latin",
-        "user",
-        "user content",
-        "content",
-        "sites",
-        "website",
-        "resources"
-      ]
-    },
-    {
-      "permalink": "/intro/introChild/introGrandChild/",
-      "keywords": [
-        "figma",
-        "files",
-        "file",
-        "deck files",
-        "slides",
-        "design",
-        "html",
-        "elements",
-        "embed deck",
-        "view"
-      ]
-    },
-    {
-      "permalink": "/alerts/",
-      "keywords": [
-        "content",
-        "title",
-        "alert",
-        "file",
-        "elements",
-        "html class",
-        "markers",
-        "result",
-        "repositories",
-        "repo"
-      ]
-    },
-    {
-      "permalink": "/intro/",
-      "keywords": [
-        "documenta",
-        "pentru",
-        "este",
-        "care",
-        "inut",
-        "ghid",
-        "baza",
-        "intre",
-        "acest",
-        "structura"
-      ]
-    },
-    {
-      "permalink": "/collection-1/g11/",
-      "keywords": [
-        "innohub support",
-        "support center",
-        "support forms",
-        "functionalities",
-        "center",
-        "functionality",
-        "information",
-        "service",
-        "issues",
-        "product"
-      ]
-    },
-    {
-      "permalink": "/terms/",
-      "keywords": [
-        "services",
-        "space services",
-        "software",
-        "innohub",
-        "terms",
-        "service",
-        "content",
-        "website",
-        "user",
-        "property"
-      ]
-    },
-    {
-      "permalink": "/collection-1/g1/",
-      "keywords": [
-        "content",
-        "services",
-        "innohub",
-        "registration",
-        "access",
-        "email",
-        "lorem ipsum",
-        "process",
-        "ihsutilities",
-        "components"
+        "pmc",
+        "parties",
+        "provide",
+        "links",
+        "websites",
+        "resources",
+        "acknowledge",
+        "agree",
+        "responsible",
+        "availability"
       ]
     }
   ]
