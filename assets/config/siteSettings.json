@@ -217,12 +217,17 @@
       "permalink": "/intro/introChild/",
       "categories": [],
       "tags": [],
-      "excerpt": "",
+      "excerpt": "contrary, popular, belief, lorem, ipsum, simply, random, roots, piece, classical",
       "lastUpdate": "2025-07-11 12:29:04 +0300",
       "lastUpdateUTC": 1752226144,
       "createTime": "2025-07-11 12:29:04 +0300",
       "createTimeUTC": 1752226144,
-      "relatedPages": [],
+      "relatedPages": [
+        {
+          "title": "Collection-2/Y",
+          "permalink": "/collection-2/y/y/"
+        }
+      ],
       "autoSummary": "Lorem ipsum is one of the most obscure words in English, but it has roots in a piece of classical literature from 45 bc, making it over 2000 years old.",
       "similarByContent": [
         {
@@ -243,12 +248,17 @@
       "permalink": "/intro/introChild/introGrandChild/",
       "categories": [],
       "tags": [],
-      "excerpt": "",
+      "excerpt": "learn, docaroo, components, embed, rich, media, content, encourage, store, media",
       "lastUpdate": "2025-07-11 12:29:04 +0300",
       "lastUpdateUTC": 1752226144,
       "createTime": "2025-07-11 12:29:04 +0300",
       "createTimeUTC": 1752226144,
-      "relatedPages": [],
+      "relatedPages": [
+        {
+          "title": "Alerts",
+          "permalink": "/alerts/"
+        }
+      ],
       "autoSummary": "How to use docaroo components to embed rich media into your content: How to use docaroo components to embed rich media into your content: How to use docaroo components to embed rich media into your content:.",
       "similarByContent": [],
       "readingTime": 3,
@@ -267,12 +277,16 @@
         "tag3",
         "alfa"
       ],
-      "excerpt": "",
+      "excerpt": "markdown, content, direct, included, stable, heads, links, docs, permalinks, file",
       "lastUpdate": "2025-06-23 12:17:50 +0300",
       "lastUpdateUTC": 1750670270,
       "createTime": "2025-06-23 12:17:50 +0300",
       "createTimeUTC": 1750670270,
       "relatedPages": [
+        {
+          "title": "Collection-2/X",
+          "permalink": "/collection-2/X/x/"
+        },
         {
           "title": "Introduction",
           "permalink": "/intro/"
@@ -280,10 +294,6 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/"
-        },
-        {
-          "title": "External content",
-          "permalink": "/ec/"
         }
       ],
       "autoSummary": "Please use the following code to build a documentation site: using site vars from siteconfig: xxx markdown content generated from one part of another site page.",
@@ -333,7 +343,7 @@
       "tags": [
         "legal"
       ],
-      "excerpt": "",
+      "excerpt": "terms, service, applicable, list, versions, legal, center, request, dedicated, form",
       "lastUpdate": "2025-05-25 10:11:17 +0300",
       "lastUpdateUTC": 1748157077,
       "createTime": "2025-05-25 10:11:17 +0300",
@@ -355,12 +365,17 @@
       "permalink": "/collection-1/g1/",
       "categories": [],
       "tags": [],
-      "excerpt": "",
+      "excerpt": "answer, question, external, content, file, loads, external, content, repo, inline",
       "lastUpdate": "2025-06-23 12:17:50 +0300",
       "lastUpdateUTC": 1750670270,
       "createTime": "2025-06-23 12:17:50 +0300",
       "createTimeUTC": 1750670270,
-      "relatedPages": [],
+      "relatedPages": [
+        {
+          "title": "Collection-2/Z",
+          "permalink": "/collection-2/Z/z/"
+        }
+      ],
       "autoSummary": "Lorem ipsum is one of the most mysterious words in the English language, and it has been discovered by a university professor in the US.",
       "similarByContent": [],
       "readingTime": 4,
@@ -379,7 +394,7 @@
         "tag1",
         "exa"
       ],
-      "excerpt": "",
+      "excerpt": "g11, innohub, support, center, single, contact, notifying, issues, experience, services",
       "lastUpdate": "2025-07-11 12:29:04 +0300",
       "lastUpdateUTC": 1752226144,
       "createTime": "2025-07-11 12:29:04 +0300",
@@ -401,12 +416,17 @@
       "permalink": "/collection-2/y/y/",
       "categories": [],
       "tags": [],
-      "excerpt": "",
+      "excerpt": "content, file, contrary, popular, belief, lorem, ipsum, simply, random, roots",
       "lastUpdate": "2025-06-12 15:21:37 +0300",
       "lastUpdateUTC": 1749730897,
       "createTime": "2025-06-12 15:21:37 +0300",
       "createTimeUTC": 1749730897,
-      "relatedPages": [],
+      "relatedPages": [
+        {
+          "title": "Intro Child Page",
+          "permalink": "/intro/introChild/"
+        }
+      ],
       "autoSummary": "Lorem ipsum is one of the oldest words in the English language, dating back to the 5th Century, according to a new study.",
       "similarByContent": [
         {
@@ -430,12 +450,25 @@
         "intro"
       ],
       "tags": [],
-      "excerpt": "",
+      "excerpt": "file, collection, file, loads, external, content, repo, inline, link, file",
       "lastUpdate": "2025-05-25 10:11:17 +0300",
       "lastUpdateUTC": 1748157077,
       "createTime": "2025-05-25 10:11:17 +0300",
       "createTimeUTC": 1748157077,
-      "relatedPages": [],
+      "relatedPages": [
+        {
+          "title": "Collection-1/G1",
+          "permalink": "/collection-1/g1/"
+        },
+        {
+          "title": "Collection-2/X",
+          "permalink": "/collection-2/X/x/"
+        },
+        {
+          "title": "Play with content",
+          "permalink": "/pwc/"
+        }
+      ],
       "autoSummary": "Do you have a story to share with the world that you would like to see featured in the BBC News website and social media channels?... And don't forget to include your full name and town of residence.",
       "similarByContent": [
         {
@@ -454,12 +487,21 @@
       "tags": [
         "tag1"
       ],
-      "excerpt": "",
+      "excerpt": "markdown, content, content, typed, collection, inline, external, link, https, pmc",
       "lastUpdate": "2025-05-29 01:53:54 +0300",
       "lastUpdateUTC": 1748472834,
       "createTime": "2025-05-29 01:53:54 +0300",
       "createTimeUTC": 1748472834,
-      "relatedPages": [],
+      "relatedPages": [
+        {
+          "title": "Collection-2/Z",
+          "permalink": "/collection-2/Z/z/"
+        },
+        {
+          "title": "Play with content",
+          "permalink": "/pwc/"
+        }
+      ],
       "autoSummary": "Markdown content loaded from another file from the same collection.heads up!watch out the limitations for loading content from another file, the source file must be below the destination file in the folder structure.",
       "similarByContent": [
         {
@@ -476,12 +518,17 @@
       "permalink": "/alerts/",
       "categories": [],
       "tags": [],
-      "excerpt": "",
+      "excerpt": "learn, add, alert, blocks, content, add, simple, rich, alerts, alerts",
       "lastUpdate": "2025-07-11 12:29:04 +0300",
       "lastUpdateUTC": 1752226144,
       "createTime": "2025-07-11 12:29:04 +0300",
       "createTimeUTC": 1752226144,
-      "relatedPages": [],
+      "relatedPages": [
+        {
+          "title": "Intro Grand Child Page",
+          "permalink": "/intro/introChild/introGrandChild/"
+        }
+      ],
       "autoSummary": "Add alerts to your documents and pages by following the steps in the following guide: add alerts to your pages by following the steps in the following guide:.",
       "similarByContent": [],
       "readingTime": 3,
@@ -499,7 +546,7 @@
         "site",
         "docs"
       ],
-      "excerpt": "",
+      "excerpt": "documentation, builder, guide, comprehensive, resource, learning, create, build, maintain, quality",
       "lastUpdate": "2025-07-11 12:29:04 +0300",
       "lastUpdateUTC": 1752226144,
       "createTime": "2025-07-11 12:29:04 +0300",
@@ -526,7 +573,7 @@
       "permalink": "/sf/f1/",
       "categories": [],
       "tags": [],
-      "excerpt": "",
+      "excerpt": "pmc, parties, provide, links, websites, resources, acknowledge, agree, responsible, availability",
       "lastUpdate": "2025-05-25 10:11:17 +0300",
       "lastUpdateUTC": 1748157077,
       "createTime": "2025-05-25 10:11:17 +0300",
