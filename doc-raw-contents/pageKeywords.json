@@ -1,36 +1,6 @@
 {
   "keywords": [
     {
-      "permalink": "/collection-1/g1/",
-      "keywords": [
-        "answer",
-        "question",
-        "external",
-        "content",
-        "file",
-        "loads",
-        "external",
-        "content",
-        "repo",
-        "inline"
-      ]
-    },
-    {
-      "permalink": "/intro/introChild/",
-      "keywords": [
-        "contrary",
-        "popular",
-        "belief",
-        "lorem",
-        "ipsum",
-        "simply",
-        "random",
-        "roots",
-        "piece",
-        "classical"
-      ]
-    },
-    {
       "permalink": "/alerts/",
       "keywords": [
         "learn",
@@ -43,36 +13,6 @@
         "rich",
         "alerts",
         "alerts"
-      ]
-    },
-    {
-      "permalink": "/collection-2/Z/z/",
-      "keywords": [
-        "file",
-        "collection",
-        "file",
-        "loads",
-        "external",
-        "content",
-        "repo",
-        "inline",
-        "link",
-        "file"
-      ]
-    },
-    {
-      "permalink": "/intro/introChild/introGrandChild/",
-      "keywords": [
-        "learn",
-        "docaroo",
-        "components",
-        "embed",
-        "rich",
-        "media",
-        "content",
-        "encourage",
-        "store",
-        "media"
       ]
     },
     {
@@ -91,6 +31,21 @@
       ]
     },
     {
+      "permalink": "/collection-2/y/y/",
+      "keywords": [
+        "content",
+        "file",
+        "contrary",
+        "popular",
+        "belief",
+        "lorem",
+        "ipsum",
+        "simply",
+        "random",
+        "roots"
+      ]
+    },
+    {
       "permalink": "/pwc/",
       "keywords": [
         "markdown",
@@ -103,6 +58,21 @@
         "docs",
         "permalinks",
         "file"
+      ]
+    },
+    {
+      "permalink": "/intro/introChild/introGrandChild/",
+      "keywords": [
+        "learn",
+        "docaroo",
+        "components",
+        "embed",
+        "rich",
+        "media",
+        "content",
+        "encourage",
+        "store",
+        "media"
       ]
     },
     {
@@ -166,10 +136,8 @@
       ]
     },
     {
-      "permalink": "/collection-2/y/y/",
+      "permalink": "/intro/introChild/",
       "keywords": [
-        "content",
-        "file",
         "contrary",
         "popular",
         "belief",
@@ -177,7 +145,39 @@
         "ipsum",
         "simply",
         "random",
-        "roots"
+        "roots",
+        "piece",
+        "classical"
+      ]
+    },
+    {
+      "permalink": "/collection-1/g1/",
+      "keywords": [
+        "answer",
+        "question",
+        "external",
+        "content",
+        "file",
+        "loads",
+        "external",
+        "content",
+        "repo",
+        "inline"
+      ]
+    },
+    {
+      "permalink": "/collection-2/Z/z/",
+      "keywords": [
+        "file",
+        "collection",
+        "file",
+        "loads",
+        "external",
+        "content",
+        "repo",
+        "inline",
+        "link",
+        "file"
       ]
     }
   ]
