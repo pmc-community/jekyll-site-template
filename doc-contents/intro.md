@@ -26,7 +26,6 @@ This guide is a **step-by-step manual** that explains:
 - How to plan, structure, and organize documentation  
 - How to choose the right tools and technologies  
 - How to build a fully functional documentation site  
-- How to write clear, user-focused content  
 - How to style and customize your site for branding  
 - How to publish and maintain your site efficiently
 
@@ -49,17 +48,14 @@ By the end of this guide, you will understand:
 ## 1. Documentation Strategy
 - Identifying your audience  
 - Structuring documentation types: tutorials, references, FAQs, etc.  
-- Setting goals for discoverability and usability  
 
 ## 2. Tooling & Frameworks
-- Overview of static site generators (e.g., Docusaurus, MkDocs, VuePress)  
 - Markdown best practices  
-- Version control with Git  
-- Choosing deployment platforms (e.g., GitHub Pages, Netlify, Vercel)  
+- Choosing deployment platforms (e.g., GitHub Pages, Netlify)  
 
 ## 3. Site Architecture
 - Folder structures and content organization  
-- Sidebar and navigation design  
+- Sidebar and navigation  
 - Search and indexing setup  
 
 ## 4. Content Writing & Style
@@ -70,12 +66,12 @@ By the end of this guide, you will understand:
 
 ## 5. Theming & Customization
 - Branding your docs  
-- Adding custom styles and plugins  
+- Adding custom styles
 - Creating reusable components  
 
 ## 6. Publishing & Maintenance
 - Continuous deployment  
-- Versioning and changelogs  
+- Changelogs  
 - Community contributions  
 - Keeping docs up to date  
 
@@ -83,9 +79,9 @@ By the end of this guide, you will understand:
 
 To follow along with this guide, you’ll need:
 
-- Basic familiarity with Git and GitHub (or similar VCS)  
+- Basic familiarity with Git and GitHub 
 - A working knowledge of Markdown  
-- A development environment (Node.js recommended)  
+- A development environment 
 - Access to a browser and a text editor (e.g., VS Code)
 
 # 📁 What’s in This Documentation?

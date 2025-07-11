@@ -218,10 +218,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "contrary, popular, belief, lorem, ipsum, simply, random, roots, piece, classical",
-      "lastUpdate": "2025-07-11 12:29:04 +0300",
-      "lastUpdateUTC": 1752226144,
-      "createTime": "2025-07-11 12:29:04 +0300",
-      "createTimeUTC": 1752226144,
+      "lastUpdate": "2025-07-11 12:50:23 +0300",
+      "lastUpdateUTC": 1752227423,
+      "createTime": "2025-07-11 12:50:23 +0300",
+      "createTimeUTC": 1752227423,
       "relatedPages": [
         {
           "title": "Collection-2/Y",
@@ -249,10 +249,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "learn, docaroo, components, embed, rich, media, content, encourage, store, media",
-      "lastUpdate": "2025-07-11 12:29:04 +0300",
-      "lastUpdateUTC": 1752226144,
-      "createTime": "2025-07-11 12:29:04 +0300",
-      "createTimeUTC": 1752226144,
+      "lastUpdate": "2025-07-11 12:50:23 +0300",
+      "lastUpdateUTC": 1752227423,
+      "createTime": "2025-07-11 12:50:23 +0300",
+      "createTimeUTC": 1752227423,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -288,12 +288,12 @@
           "permalink": "/collection-2/X/x/"
         },
         {
-          "title": "Introduction",
-          "permalink": "/intro/"
-        },
-        {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/"
+        },
+        {
+          "title": "Introduction",
+          "permalink": "/intro/"
         }
       ],
       "autoSummary": "Please use the following code to build a documentation site: using site vars from siteconfig: xxx markdown content generated from one part of another site page.",
@@ -395,10 +395,10 @@
         "exa"
       ],
       "excerpt": "g11, innohub, support, center, single, contact, notifying, issues, experience, services",
-      "lastUpdate": "2025-07-11 12:29:04 +0300",
-      "lastUpdateUTC": 1752226144,
-      "createTime": "2025-07-11 12:29:04 +0300",
-      "createTimeUTC": 1752226144,
+      "lastUpdate": "2025-07-11 12:50:23 +0300",
+      "lastUpdateUTC": 1752227423,
+      "createTime": "2025-07-11 12:50:23 +0300",
+      "createTimeUTC": 1752227423,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -519,10 +519,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "learn, add, alert, blocks, content, add, simple, rich, alerts, alerts",
-      "lastUpdate": "2025-07-11 12:29:04 +0300",
-      "lastUpdateUTC": 1752226144,
-      "createTime": "2025-07-11 12:29:04 +0300",
-      "createTimeUTC": 1752226144,
+      "lastUpdate": "2025-07-11 12:50:23 +0300",
+      "lastUpdateUTC": 1752227423,
+      "createTime": "2025-07-11 12:50:23 +0300",
+      "createTimeUTC": 1752227423,
       "relatedPages": [
         {
           "title": "Intro Grand Child Page",
@@ -547,24 +547,24 @@
         "docs"
       ],
       "excerpt": "documentation, builder, guide, comprehensive, resource, learning, create, build, maintain, quality",
-      "lastUpdate": "2025-07-11 12:29:04 +0300",
-      "lastUpdateUTC": 1752226144,
-      "createTime": "2025-07-11 12:29:04 +0300",
-      "createTimeUTC": 1752226144,
+      "lastUpdate": "2025-07-11 13:10:08 +0300",
+      "lastUpdateUTC": 1752228608,
+      "createTime": "2025-07-11 12:52:13 +0300",
+      "createTimeUTC": 1752227533,
       "relatedPages": [
         {
           "title": "Play with content",
           "permalink": "/pwc/"
         }
       ],
-      "autoSummary": "How to build a comprehensive documentation site for any kind of project, product, or organization.., this guide is a step-by-step manual that explains:.",
+      "autoSummary": "The documentation site builder guide is a step-by-step manual that explains: how to plan, structure, and organize documentation how to choose the right tools and technologies how to build a fully functional documentation site how to style and your site for branding.",
       "similarByContent": [
         {
           "permalink": "/pwc/",
           "title": "Play with content"
         }
       ],
-      "readingTime": 3,
+      "readingTime": 2,
       "hasDynamicContent": false,
       "parent": ""
     },
