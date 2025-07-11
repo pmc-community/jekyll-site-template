@@ -10,7 +10,7 @@ pyPageSummary:
     # use a specific language pretrained model from huggingface if the documentation is a single language
     # check if the language you need is supported by the model, you may need to disable autosummary if there is no reasonable support
     # allInOneStep: false will disable autosummary 
-    name: "facebook/mbart-large-50"
+    name: "google/pegasus-xsum"
     max_length: 256
     min_length: 30
     length_penalty: 1.0

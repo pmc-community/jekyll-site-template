@@ -1,56 +1,56 @@
 {
     "summaries": [
         {
-            "permalink": "/collection-2/Z/z/",
-            "summary": "this is a file from a collection. this file loads some external content from another repo and place it inline. link to file in different folder"
-        },
-        {
-            "permalink": "/collection-2/X/x/",
-            "summary": "This is a full transcript of markdown content loaded from another md file from the same collection. Here is the full text of the summary of these sections. ..."
-        },
-        {
             "permalink": "/intro/introChild/",
-            "summary": "lorem ipsum, a commonly known Latin word, has roots in classical literature from 45 bc. But what is it and why do we know it? ..."
-        },
-        {
-            "permalink": "/collection-1/g1/",
-            "summary": "Welcome to innohub, a service that provides access to content and services provided by the operator. Here is the full text of the latest steps to register. ..."
-        },
-        {
-            "permalink": "/terms/",
-            "summary": "The terms and conditions of using innohub.space have been published by the British High Court. Here is a full summary of the terms of service provided by us. ..."
-        },
-        {
-            "permalink": "/alerts/",
-            "summary": "Welcome to a guide to how to add alert blocks to your content. Here's what you need to know about these rules and how they can be used. ..."
-        },
-        {
-            "permalink": "/ec/",
-            "summary": "Welcome to innohub.space, a website which allows users to access content from anonymous and registered ways. Here is the full text of the service. ..."
-        },
-        {
-            "permalink": "/intro/",
-            "summary": "This is a guide for developers who want to build high-quality documentation sites for any kind of project, product, or ..."
-        },
-        {
-            "permalink": "/sf/f1/",
-            "summary": "This is a full transcript of the terms and conditions published by the Public Prosecution and Crime Commission (PMc). Here is the full text of this agreement. ..."
-        },
-        {
-            "permalink": "/collection-2/y/y/",
-            "summary": "This is a full transcript of lorem ipsum. This contains images from the earliest published versions of the book. Please help us find out more about the text. ..."
-        },
-        {
-            "permalink": "/collection-1/g11/",
-            "summary": "Welcome to innohub support centre. Here is a guide to the technical support service provided to us through the ..."
-        },
-        {
-            "permalink": "/pwc/",
-            "summary": "Welcome to the documentation site builder guide. This guide explains how to build a complete, maintainable, and ..."
+            "summary": "Lorem ipsum is one of the most obscure words in English, but it has roots in a piece of classical literature from 45 bc, making it over 2000 years old."
         },
         {
             "permalink": "/intro/introChild/introGrandChild/",
-            "summary": "Welcome to the Docaroo website. Here is a guide to how to embed rich media into your content, including slides, decks and prototypes. This is what we learned about. ..."
+            "summary": "How to use docaroo components to embed rich media into your content: How to use docaroo components to embed rich media into your content: How to use docaroo components to embed rich media into your content:."
+        },
+        {
+            "permalink": "/pwc/",
+            "summary": "Please use the following code to build a documentation site: using site vars from siteconfig: xxx markdown content generated from one part of another site page."
+        },
+        {
+            "permalink": "/ec/",
+            "summary": "Do you want to share your views on the EU referendum with the rest of the world? As anonymous user you can browse for free all sections of innohub.space although some services are free to be used, we may need you to register and provide some information in order to be able to use the free services."
+        },
+        {
+            "permalink": "/terms/",
+            "summary": "These terms of service (terms, terms of service, tos) apply to your use of innohub.space website operated by pmc (us, we, our)."
+        },
+        {
+            "permalink": "/collection-1/g1/",
+            "summary": "Lorem ipsum is one of the most mysterious words in the English language, and it has been discovered by a university professor in the US."
+        },
+        {
+            "permalink": "/collection-1/g11/",
+            "summary": "Innohub support center offers a number of functionalities that will allow you to find a solution to your issue or to get in contact with us and let us assist you in finding a solution."
+        },
+        {
+            "permalink": "/collection-2/y/y/",
+            "summary": "Lorem ipsum is one of the oldest words in the English language, dating back to the 5th Century, according to a new study."
+        },
+        {
+            "permalink": "/collection-2/Z/z/",
+            "summary": "Do you have a story to share with the world that you would like to see featured in the BBC News website and social media channels?... And don't forget to include your full name and town of residence."
+        },
+        {
+            "permalink": "/collection-2/X/x/",
+            "summary": "Markdown content loaded from another file from the same collection.heads up!watch out the limitations for loading content from another file, the source file must be below the destination file in the folder structure."
+        },
+        {
+            "permalink": "/alerts/",
+            "summary": "Add alerts to your documents and pages by following the steps in the following guide: add alerts to your pages by following the steps in the following guide:."
+        },
+        {
+            "permalink": "/intro/",
+            "summary": "How to build a comprehensive documentation site for any kind of project, product, or organization.., this guide is a step-by-step manual that explains:."
+        },
+        {
+            "permalink": "/sf/f1/",
+            "summary": "Pmc is not responsible for the availability of any external sites or resources, and as such, we do not endorse nor are we responsible or liable for any content, products, advertising or any other materials, on or available from such third party sites or resources."
         }
     ]
 }
