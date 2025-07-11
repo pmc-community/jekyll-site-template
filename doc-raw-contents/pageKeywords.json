@@ -1,182 +1,183 @@
 {
   "keywords": [
     {
+      "permalink": "/alerts/",
+      "keywords": [
+        "learn",
+        "add",
+        "alert",
+        "blocks",
+        "content",
+        "add",
+        "simple",
+        "rich",
+        "alerts",
+        "alerts"
+      ]
+    },
+    {
       "permalink": "/intro/",
       "keywords": [
         "documentation",
-        "documentation site",
-        "site",
-        "content",
+        "builder",
         "guide",
-        "docs",
-        "product",
-        "deployment",
-        "knowledge",
-        "branding"
+        "comprehensive",
+        "resource",
+        "learning",
+        "create",
+        "build",
+        "maintain",
+        "quality"
+      ]
+    },
+    {
+      "permalink": "/collection-2/y/y/",
+      "keywords": [
+        "content",
+        "file",
+        "contrary",
+        "popular",
+        "belief",
+        "lorem",
+        "ipsum",
+        "simply",
+        "random",
+        "roots"
       ]
     },
     {
       "permalink": "/pwc/",
       "keywords": [
-        "site",
-        "documentation site",
-        "documentation",
+        "markdown",
         "content",
-        "markdown content",
-        "file",
+        "direct",
+        "included",
+        "stable",
+        "heads",
+        "links",
         "docs",
-        "guide",
-        "product",
-        "title"
+        "permalinks",
+        "file"
       ]
     },
     {
-      "permalink": "/intro/introChild/",
+      "permalink": "/intro/introChild/introGrandChild/",
       "keywords": [
-        "lorem ipsum",
-        "latin",
-        "latin literature",
-        "line",
-        "evil",
-        "extremes",
-        "malorum",
-        "cicero",
-        "book",
-        "treatise"
+        "learn",
+        "docaroo",
+        "components",
+        "embed",
+        "rich",
+        "media",
+        "content",
+        "encourage",
+        "store",
+        "media"
+      ]
+    },
+    {
+      "permalink": "/sf/f1/",
+      "keywords": [
+        "pmc",
+        "parties",
+        "provide",
+        "links",
+        "websites",
+        "resources",
+        "acknowledge",
+        "agree",
+        "responsible",
+        "availability"
+      ]
+    },
+    {
+      "permalink": "/terms/",
+      "keywords": [
+        "terms",
+        "service",
+        "applicable",
+        "list",
+        "versions",
+        "legal",
+        "center",
+        "request",
+        "dedicated",
+        "form"
+      ]
+    },
+    {
+      "permalink": "/collection-1/g11/",
+      "keywords": [
+        "g11",
+        "innohub",
+        "support",
+        "center",
+        "single",
+        "contact",
+        "notifying",
+        "issues",
+        "experience",
+        "services"
       ]
     },
     {
       "permalink": "/collection-2/X/x/",
       "keywords": [
-        "file",
+        "markdown",
         "content",
-        "source file",
-        "markdown content",
+        "content",
+        "typed",
+        "collection",
         "inline",
+        "external",
         "link",
-        "collection-2",
-        "folder",
-        "classes head1",
-        "head"
+        "https",
+        "pmc"
+      ]
+    },
+    {
+      "permalink": "/intro/introChild/",
+      "keywords": [
+        "contrary",
+        "popular",
+        "belief",
+        "lorem",
+        "ipsum",
+        "simply",
+        "random",
+        "roots",
+        "piece",
+        "classical"
+      ]
+    },
+    {
+      "permalink": "/collection-1/g1/",
+      "keywords": [
+        "answer",
+        "question",
+        "external",
+        "content",
+        "file",
+        "loads",
+        "external",
+        "content",
+        "repo",
+        "inline"
       ]
     },
     {
       "permalink": "/collection-2/Z/z/",
       "keywords": [
         "file",
-        "file loads",
-        "inline",
-        "place",
-        "repo",
-        "content",
-        "link",
         "collection",
-        "folder"
-      ]
-    },
-    {
-      "permalink": "/intro/introChild/introGrandChild/",
-      "keywords": [
-        "figma",
-        "files",
         "file",
-        "deck files",
-        "slides",
-        "design",
-        "html",
-        "elements",
-        "embed deck",
-        "view"
-      ]
-    },
-    {
-      "permalink": "/collection-2/y/y/",
-      "keywords": [
-        "lorem ipsum",
-        "latin",
-        "latin literature",
-        "line",
-        "file",
-        "extremes",
-        "evil",
-        "malorum",
-        "cicero",
-        "book"
-      ]
-    },
-    {
-      "permalink": "/alerts/",
-      "keywords": [
+        "loads",
+        "external",
         "content",
-        "title",
-        "alert",
-        "file",
-        "elements",
-        "html class",
-        "markers",
-        "result",
-        "repositories",
-        "repo"
-      ]
-    },
-    {
-      "permalink": "/sf/f1/",
-      "keywords": [
-        "services",
-        "lorem ipsum",
-        "products",
-        "latin",
-        "user",
-        "user content",
-        "content",
-        "sites",
-        "website",
-        "resources"
-      ]
-    },
-    {
-      "permalink": "/collection-1/g11/",
-      "keywords": [
-        "innohub support",
-        "support center",
-        "support forms",
-        "functionalities",
-        "center",
-        "functionality",
-        "information",
-        "service",
-        "issues",
-        "product"
-      ]
-    },
-    {
-      "permalink": "/terms/",
-      "keywords": [
-        "services",
-        "space services",
-        "software",
-        "innohub",
-        "terms",
-        "service",
-        "content",
-        "website",
-        "user",
-        "property"
-      ]
-    },
-    {
-      "permalink": "/collection-1/g1/",
-      "keywords": [
-        "content",
-        "services",
-        "innohub",
-        "registration",
-        "access",
-        "email",
-        "lorem ipsum",
-        "process",
-        "ihsutilities",
-        "components"
+        "repo",
+        "inline",
+        "link",
+        "file"
       ]
     }
   ]

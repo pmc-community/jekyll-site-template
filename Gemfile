@@ -74,3 +74,5 @@ gem 'algolia', '~> 3.15.4'
 gem "csv", "~> 3.3"
 
 gem "bigdecimal", "~> 3.1"
+
+gem 'whatlanguage'
