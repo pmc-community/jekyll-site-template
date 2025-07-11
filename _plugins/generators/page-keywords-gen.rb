@@ -2,9 +2,10 @@ require 'jekyll'
 require 'yaml'
 require 'nokogiri'
 require 'json'
+require 'net/http'
+require 'uri'
 require_relative "../../tools/modules/globals"
 require_relative "../../tools/modules/file-utilities"
-require 'text_rank'
 
 module Jekyll
 
@@ -15,26 +16,21 @@ module Jekyll
     priority :normal 
 
     def generate(site)
-      if (site.data['buildConfig']["pageKeywords"]["enable"])
+      if site.data['buildConfig']["pageKeywords"]["enable"]
         modified_files_path = "#{site.data["buildConfig"]["rawContentFolder"]}/modified_files.json"
-        modified_files = File.exist?(modified_files_path)? FileUtilities.read_json_file(modified_files_path) : {"files" => []}
+        modified_files = File.exist?(modified_files_path) ? FileUtilities.read_json_file(modified_files_path) : {"files" => []}
         
-        if (modified_files["files"].length > 0 )
+        if modified_files["files"].length > 0
           Globals.putsColText(Globals::PURPLE, "Generating keywords for pages ...")
           numPages = 0
 
-          # GENRATE KEYWORDS FOR PAGES THAT DOES NOT HAVE EXCERPT IN FRONT-MATTER
           Globals.show_spinner do
             @site = site
-            #doc_contents_dir = File.join(site.source, Globals::DOCS_ROOT)
-            #doc_files = Dir.glob("#{doc_contents_dir}/**/*.{md,html}")
             doc_files = FileUtilities.get_real_files_from_raw_content_files(modified_files["files"])
 
-            mutex = Mutex.new # Mutex for thread-safe access to numPages and site.data['page_list']
+            mutex = Mutex.new # for thread-safe increments
 
-            keywords = {}
-            pageKeywords_path = "#{site.data["buildConfig"]["rawContentFolder"]}/pageKeywords.json"
-            keywords_content = File.exist?(pageKeywords_path)? FileUtilities.read_json_file(pageKeywords_path) : { "keywords" => [] }
+            keywords_content = File.exist?(pageKeywords_path = "#{site.data["buildConfig"]["rawContentFolder"]}/pageKeywords.json") ? FileUtilities.read_json_file(pageKeywords_path) : { "keywords" => [] }
             keywords = keywords_content["keywords"]
 
             threads = doc_files.map do |file_path|
@@ -53,22 +49,25 @@ module Jekyll
                       excerpt = generate_keywords(
                         rendered_content,
                         site.data['buildConfig']["autoExcerpt"]["keywords"],
-                        site.data['buildConfig']["autoExcerpt"]["minKeywordLength"]
+                        site.data['buildConfig']["autoExcerpt"]["minKeywordLength"],
+                        front_matter['permalink']
                       )
 
                       if front_matter["permalink"] && !front_matter["permalink"].empty? && excerpt.length > 0
                         mutex.synchronize do
-                          # Update the pageKeywords.json
                           crtPage = { "permalink" => front_matter["permalink"], "keywords" => excerpt }
                           existingPage = keywords.find { |obj| obj["permalink"] == crtPage["permalink"] }
-
                           if existingPage
                             existingPage["keywords"] = crtPage["keywords"]
+                            Globals.putsColText(Globals::PURPLE, " - #{front_matter["permalink"]}: done")
                           else
                             keywords << crtPage
                           end
                           numPages += 1
 
+                          # Output the permalink of the processed file
+                          Globals.clearLine
+                          Globals.putsColText(Globals::PURPLE, "- PERMALINK: #{front_matter["permalink"]} ... done")
                         end
                       end
                     end
@@ -78,21 +77,21 @@ module Jekyll
                 end
               end
             end
-            threads.each(&:join) # Wait for all threads to finish
+            threads.each(&:join)
             FileUtilities.overwrite_file(pageKeywords_path, JSON.pretty_generate({ "keywords" => keywords }))
           end
         else
           Globals.putsColText(Globals::PURPLE, "Generating keywords for pages ... nothing to do! (no content changes)")
         end
 
-        # UPDATE data['page_list'] FROM pageKeywords.json
+        # Update site.data['page_list'] with keywords as excerpt
         pageKeywords_path = "#{site.data["buildConfig"]["rawContentFolder"]}/pageKeywords.json"
         return unless File.exist?(pageKeywords_path)
 
         begin
           keywords_json = JSON.parse(File.read(pageKeywords_path))
         rescue JSON::ParserError
-          Globals.putsColText(Globals::RED, "- Cannot parse #{site.data["buildConfig"]["rawContentFolder"]}/pageKeywords.json")
+          Globals.putsColText(Globals::RED, "- Cannot parse #{pageKeywords_path}")
           return
         end
 
@@ -108,55 +107,30 @@ module Jekyll
         end
         site.data['page_list'] = pageList.to_json
 
-        if (modified_files["files"].length > 0 )
-          Globals.moveUpOneLine
+        if modified_files["files"].length > 0
           Globals.clearLine
           Globals.putsColText(Globals::PURPLE, "Generating keywords for pages ... done (#{numPages} pages)")
         end
       end
-
     end
 
     private
 
-    def generate_keywords(content, words, minLength)
-      # Fully customized extraction:
-      extractor = TextRank::KeywordExtractor.new(
-        strategy: :dense,  # Specify PageRank strategy (dense or sparse)
-        damping: 0.95,     # The probability of following the graph vs. randomly choosing a new node
-        tolerance: 0.00001, # The desired accuracy of the results
-        graph_strategy: :Coocurrence,
-        tokenizers: [
-          :Word,
-          :Url
-        ],
-        rank_filters: [
-          :CollapseAdjacent, 
-          :NormalizeProbability, 
-          :NormalizeUnitVector, 
-          :SortByValue
-        ],
-        char_filters: [
-          :AsciiFolding, 
-          :Lowercase, 
-          :StripHtml, 
-          :StripEmail, 
-          :UndoContractions
-        ],
-        token_filters: [
-          :Stopwords, 
-          TextRank::TokenFilter::PartOfSpeech.new(parts_to_keep: %w[nn nns])
-        ]
-      )
-
-      # Perform the extraction with at most 100 iterations
-      extractor.extract(content, max_iterations: 100)
-        .select { |word, score| word.length > minLength }
-        .sort_by { |word, score| -score }
-        .first(words)
-        .map(&:first)
+    def generate_keywords(content, max_keywords, min_length, filename)
+      cmd = "tools_py/keywords/keywords.py dummy_input #{filename}"
+      ios = IO.popen(cmd, "r+") do |pipe|
+        pipe.write(content)
+        pipe.close_write
+        json_out = pipe.read
+        data = JSON.parse(json_out)
+        kws = data["keywords"] || []
+        return kws.select { |k| k.length >= min_length }.first(max_keywords)
+      end
+      rescue => e
+        puts "Local keyword extraction failed: #{e.message}"
+        []
     end
-  end
-  
-end
 
+  end
+
+end
