@@ -3401,5 +3401,18 @@ const docOrderOnScreen = () => {
     const validPermalinks = new Set(pageList.map(page => page.permalink));
     pagesOnScreen = pagesOnScreen.filter(permalink => validPermalinks.has(permalink));
 
-    return pagesOnScreen;
+    // need to be sure that permalinks are the normalise ones, without language code
+    const lang = siteLanguageCode;
+
+    if (isProd) {
+        if (lang && lang !== '') {
+            return pagesOnScreen.map(link => {
+                const parts = link.split("/").filter(Boolean); // Removes empty strings from split
+                return `/${parts.slice(1).join("/")}/`; // Remove the first part (lang code)
+            });
+        }
+        else
+            return pagesOnScreen
+    } else
+        return pagesOnScreen;
 }
