@@ -3415,7 +3415,6 @@ const docOrderOnScreen = () => {
     }
 
     pagesOnScreen = transformed;
-    console.log(pagesOnScreen);
 
     const validPermalinks = new Set(pageList.map(page => page.permalink));
     pagesOnScreen = pagesOnScreen.filter(permalink => validPermalinks.has(permalink));
