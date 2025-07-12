@@ -3,6 +3,8 @@ require 'yaml'
 require 'dotenv'
 require 'securerandom'
 require 'shellwords'
+require 'set'
+
 Dotenv.load
 
 module Globals
@@ -199,6 +201,35 @@ module Globals
 
     def self.uuid_gen()
         SecureRandom.uuid.gsub('-', '')[0, 10]    
+    end
+
+    def self.collect_with_descendants(original)
+        result = []
+        visited = Set.new
+
+        # Sort by path depth (shallowest paths first)
+        sorted = original.sort_by { |path| path.count('/') }
+
+        define_singleton_method(:add_with_descendants) do |item|
+            return if visited.include?(item)
+
+            visited << item
+            result << item
+
+            # Find direct descendants (start with item and are longer)
+            sorted.each do |candidate|
+            next if visited.include?(candidate)
+            if candidate.start_with?(item) && candidate != item
+                add_with_descendants(candidate)
+            end
+            end
+        end
+
+        sorted.each do |item|
+            add_with_descendants(item)
+        end
+
+        result
     end
       
 end
