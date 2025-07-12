@@ -1037,6 +1037,7 @@ const page__setNavPrevNext = () => {
     $(document).ready(function() {
         const docsOnScreen = docOrderOnScreen();
         const pageNo = docsOnScreen.length;
+        const lang = siteLanguageCode;
         
         let pagePrevIndex, pageNextIndex;
         pagePrevIndex = 0;
@@ -1044,7 +1045,11 @@ const page__setNavPrevNext = () => {
         if (pageNo === 0) $('#pageNavPrevNextSection').addClass('d-none');
         else {
             const pagePermalink = pageInfo.siteInfo.permalink;
-            const pageIndex = docsOnScreen.indexOf(pagePermalink);            
+            const pagePermalinkWithoutLangCode = !lang || lang === ''
+                ? pagePermalink
+                : pagePermalink.replace(/^\/[^\/]+/, '')
+
+            const pageIndex = docsOnScreen.indexOf(pagePermalinkWithoutLangCode);            
             if (pageIndex !== -1) {
                 $('#pageNavPrevNextSection').removeClass('d-none');
 
@@ -1062,19 +1067,32 @@ const page__setNavPrevNext = () => {
                 pageNextIndex = pageIndex + 1;
 
                 const prevPagePermalink = pagePrevIndex >= 0
-                    ? docsOnScreen[pagePrevIndex]
+                    ? !lang || lang === '' 
+                        ? docsOnScreen[pagePrevIndex]
+                        : `/${lang}${docsOnScreen[pagePrevIndex]}`
                     : '#';
 
                 const nextPagePermalink = pageNextIndex <= pageNo - 1
-                    ? docsOnScreen[pageNextIndex]
+                    ? !lang || lang === ''
+                        ? docsOnScreen[pageNextIndex]
+                        : `/${lang}${docsOnScreen[pageNextIndex]}`
                     : '#'
 
+                
+                const prevPagePermalinkWithoutLangCode = !lang || lang === ''
+                    ? prevPagePermalink
+                    : prevPagePermalink.replace(/^\/[^\/]+/, '')
+
+                const nextPagePermalinkWithoutLangCode = !lang || lang === ''
+                    ? nextPagePermalink
+                    : nextPagePermalink.replace(/^\/[^\/]+/, '')
+
                 const prevPageTitle = pagePrevIndex >= 0
-                    ? getObjectFromArray ({permalink: prevPagePermalink}, pageList).title
+                    ? getObjectFromArray ({permalink: prevPagePermalinkWithoutLangCode}, pageList).title
                     : ''
                 
                 const nextPageTitle = pageNextIndex <= pageNo - 1
-                    ? getObjectFromArray ({permalink: nextPagePermalink}, pageList).title
+                    ? getObjectFromArray ({permalink: nextPagePermalinkWithoutLangCode}, pageList).title
                     : ''
                 
                 $('#pageNavPrevLink').attr('href', prevPagePermalink);
