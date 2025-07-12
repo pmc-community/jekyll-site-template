@@ -3389,3 +3389,17 @@ const REFRESH_PAGE_INFO_BEFORE_AND_AFTER = (func) => {
         });
     };
 }
+
+// create the correct order of the documents based on how the docs are shown in left sidebar
+// used for page prev/next navigation
+const docOrderOnScreen = () => {
+    pagesOnScreen = [];
+    $('a[siteFunction="documentation_link_to_doc"]').each(function() {
+        pagesOnScreen.push($(this).attr('docarooHref'));
+    });
+
+    const validPermalinks = new Set(pageList.map(page => page.permalink));
+    pagesOnScreen = pagesOnScreen.filter(permalink => validPermalinks.has(permalink));
+
+    return pagesOnScreen;
+}

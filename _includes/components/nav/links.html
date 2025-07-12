@@ -15,7 +15,7 @@
     {%- if include.ancestors contains node.title -%}
     
       <li class="nav-list-item">
-        <a href="{{ node.url | relative_url }}" class="nav-list-link fs-6"> ∞ </a>
+        <a href="{{ node.url | relative_url }}" class="nav-list-link fs-6" siteFunction="documentation_link_to_doc" docarooHref="{{ node.url | relative_url }}"> ∞ </a>
       </li>
       {%- capture nav_error_report -%}
         <blockquote class="warning">
@@ -35,7 +35,7 @@
           <svg class="page-with-children-expander" viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
         </button>
         {%- endif -%}
-        <a href="{{ node.url | relative_url }}" class="nav-list-link fs-6 py-2 py-md-0">{{ node.title }}</a>
+        <a href="{{ node.url | relative_url }}" class="nav-list-link fs-6 py-2 py-md-0" siteFunction="documentation_link_to_doc" docarooHref="{{ node.url | relative_url }}">{{ node.title }}</a>
         {%- if nav_children.size >= 1 -%}
           {%- if node.child_nav_order == 'desc' or node.child_nav_order == 'reversed' -%}
             {%- assign nav_children = nav_children | reverse -%}

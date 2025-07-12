@@ -84,7 +84,8 @@ const page__getRelatedPages = () => {
             `   
                 <div 
                     id="pageRelatedPages" 
-                    siteFunction="pageRelatedPages">
+                    siteFunction="pageRelatedPages"
+                    class="col-12 col-md-7">
                     <span class="fs-6 fw-medium">
                         <span data-i18n="page_related_section_title">${i18next.t('page_related_section_title')}</span>:
                     </span>
@@ -148,7 +149,7 @@ const page__getPageNotes = () => {
                 <div 
                     id="pageNotes" 
                     siteFunction="pageNotes" 
-                    class="mb-4">
+                    class="mb-4 col-12 col-md-7">
                     <span class="fs-6 fw-medium">
                         <span data-i18n="page_notes_section_title">${i18next.t('page_notes_section_title')}</span>:
                     </span>
@@ -1025,6 +1026,69 @@ const page__showPageCustomTags = () => {
     });
 };
 
+// called from _includes/siteIncludes/partials/page-common/page-nav-prev-next.html
+const page__setNavPrevNext = () => {
+
+    // force reorder of the bottom page sections, above the feedback and support section
+    setTimeout(()=>{
+        $('div[siteFunction="pageFeedbackAndSupport"]').addClass('order');
+    }, 0); 
+
+    $(document).ready(function() {
+        const docsOnScreen = docOrderOnScreen();
+        const pageNo = docsOnScreen.length;
+        
+        let pagePrevIndex, pageNextIndex;
+        pagePrevIndex = 0;
+        pageNextIndex = 0;
+        if (pageNo === 0) $('#pageNavPrevNextSection').addClass('d-none');
+        else {
+            const pagePermalink = pageInfo.siteInfo.permalink;
+            const pageIndex = docsOnScreen.indexOf(pagePermalink);            
+            if (pageIndex !== -1) {
+                $('#pageNavPrevNextSection').removeClass('d-none');
+
+                if (pageIndex === 0) $('#pageNavPrevLink').addClass('d-none');
+                else {
+                    $('#pageNavPrevLink').removeClass('d-none');
+                }
+
+                if (pageIndex === pageNo-1) $('#pageNavNextLink').addClass('d-none');
+                else {
+                    $('#pageNavNextLink').removeClass('d-none');
+                }
+
+                pagePrevIndex = pageIndex - 1;
+                pageNextIndex = pageIndex + 1;
+
+                const prevPagePermalink = pagePrevIndex >= 0
+                    ? docsOnScreen[pagePrevIndex]
+                    : '#';
+
+                const nextPagePermalink = pageNextIndex <= pageNo - 1
+                    ? docsOnScreen[pageNextIndex]
+                    : '#'
+
+                const prevPageTitle = pagePrevIndex >= 0
+                    ? getObjectFromArray ({permalink: prevPagePermalink}, pageList).title
+                    : ''
+                
+                const nextPageTitle = pageNextIndex <= pageNo - 1
+                    ? getObjectFromArray ({permalink: nextPagePermalink}, pageList).title
+                    : ''
+                
+                $('#pageNavPrevLink').attr('href', prevPagePermalink);
+                $('#pageNavNextLink').attr('href', nextPagePermalink);
+                $('#pageNavPrevTitle').text(prevPageTitle);
+                $('#pageNavNextTitle').text(nextPageTitle);
+            }
+            else 
+                $('#pageNavPrevNextSection').addClass('d-none');
+        
+        }
+    });
+};
+
 // INTERNAL FUNCTIONS, NOT CALLED FROM HTML TEMPLATES
 
 const pageComments_AddCommentContainer = (context, comment = null) => {
@@ -1279,7 +1343,7 @@ const refreshPageDynamicInfo = () => {
 const setTriggerReorderSectionsInFooter = () => {
     removeObservers('div[siteFunction="pageFeedbackAndSupport"] class=order getClass=true');
     setElementChangeClassObserver('div[siteFunction="pageFeedbackAndSupport"]', 'order', true, () => {
-        const order = ['pageTags', 'pageNotes', 'pageRelatedPages'];
+        const order = ['pageTags', 'pageNotes', 'pageRelatedPages', 'pageNavPrevNextSection'];
         orderSectionsBeforeElement(order, 'div[siteFunction="pageFeedbackAndSupport"]');
         $('div[siteFunction="pageFeedbackAndSupport"]').removeClass('order');
     });

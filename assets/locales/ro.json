@@ -138,6 +138,8 @@
     "page_content_custom_comment_anchor_offcanvas_doc_title_text": "Titlu",
     "page_content_custom_comment_anchor_offcanvas_anchor_text": "Referinta",
     "page_content_context_menu_comment_in_comment_toast_message": "Nu este permis comentariu in interiorul altui comentariu!",
+    "page_nav_prev_next_prev_btn_text": "Precedent",
+    "page_nav_prev_next_next_btn_text": "Urmator",
 
     "hs_feedback_form_was_this_useful_text": "{{common.doc}} util:",
     "hs_feedback_form_submit_btn_text": "Trimite!",
