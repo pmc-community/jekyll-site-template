@@ -9,7 +9,7 @@ $contentContainerUnsortedListStyle: $lstyle-bullet;
 $unsortedListsWithoutMarkerListStyle: $lstyle-none;
 
 $singlePageElements: (
-    pageInfoButtons: 'button[sitefunction="pageShowPageFullInfo"], button[sitefunction="pageNavigateToFeedbackAndSupport"]',
+    pageInfoButtons: 'button[sitefunction="pageShowPageFullInfo"], button[sitefunction="pageNavigateToFeedbackAndSupport"], button[sitefunction="pageNavigateToPrevNextNav"]',
     breadcrumbItem: '.breadcrumb-nav-list-item',
     breadcrumb: '.breadcrumb-nav',
     customBreadcrumbItem: '.breadcrumb-item',
