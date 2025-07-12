@@ -1,0 +1,102 @@
+name: (NO-PY) Manual Deploy Multilingual Jekyll site to Pages
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout default (main) site
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+          bundler-cache: true
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Build default language site
+        run: bundle exec jekyll build --incremental --baseurl "${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
+          JEKYLL_ACCESS_TOKEN: ${{ secrets.JEKYLL_ACCESS_TOKEN }}
+          JEKYLL_GIT_USER: ${{ secrets.JEKYLL_GIT_USER }}
+          CONSOLE_BLANK_SPINNER_CHARS: ${{ secrets.CONSOLE_BLANK_SPINNER_CHARS }}
+          ALGOLIA_WRITE_API_KEY: ${{ secrets.ALGOLIA_WRITE_API_KEY }}
+          ALGOLIA_INDEX: ${{ secrets.ALGOLIA_INDEX }}
+          ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
+          ALGOLIA_PUBLIC_API_KEY: ${{ secrets.ALGOLIA_PUBLIC_API_KEY }}
+          ALGOLIA_SEARCH_ENABLED: ${{ secrets.ALGOLIA_SEARCH_ENABLED }}
+          DEPLOY_PROD_BASE_URL: ${{ secrets.DEPLOY_PROD_BASE_URL }}
+          NR_ENABLED: ${{ secrets.NR_ENABLED }}
+          NR_BROWSER_ENABLED: ${{ secrets.NR_BROWSER_ENABLED }}
+          NR_BROWSER_APP_ID: ${{ secrets.NR_BROWSER_APP_ID }}
+          NR_ACCOUNT_ID: ${{ secrets.NR_ACCOUNT_ID }}
+          NR_BROWSER_APP_LICENSE_KEY: ${{ secrets.NR_BROWSER_APP_LICENSE_KEY }}
+          NR_BROWSER_BEACON: ${{ secrets.NR_BROWSER_BEACON }}
+
+      - name: Build multilingual sites (from repo variable)
+        env:
+          MULTILINGUAL_BRANCHES: ${{ vars.MULTILINGUAL_BRANCHES }}
+        run: |
+          IFS=',' read -ra LANGUAGES <<< "$MULTILINGUAL_BRANCHES"
+
+          for lang in "${LANGUAGES[@]}"; do
+            lang="$(echo "$lang" | xargs)"  # trim whitespace
+            if git ls-remote --exit-code origin "$lang"; then
+              echo "Building $lang site..."
+              git clone --depth=1 --branch="$lang" "https://github.com/${{ github.repository }}" "temp-$lang"
+              cd "temp-$lang"
+              bundle install
+              JEKYLL_ENV=production \
+              JEKYLL_ACCESS_TOKEN=${{ secrets.JEKYLL_ACCESS_TOKEN }} \
+              JEKYLL_GIT_USER=${{ secrets.JEKYLL_GIT_USER }} \
+              CONSOLE_BLANK_SPINNER_CHARS=${{ secrets.CONSOLE_BLANK_SPINNER_CHARS }} \
+              ALGOLIA_WRITE_API_KEY=${{ secrets.ALGOLIA_WRITE_API_KEY }} \
+              ALGOLIA_INDEX=${{ secrets.ALGOLIA_INDEX }} \
+              ALGOLIA_APP_ID=${{ secrets.ALGOLIA_APP_ID }} \
+              ALGOLIA_PUBLIC_API_KEY=${{ secrets.ALGOLIA_PUBLIC_API_KEY }} \
+              ALGOLIA_SEARCH_ENABLED=${{ secrets.ALGOLIA_SEARCH_ENABLED }} \
+              DEPLOY_PROD_BASE_URL=${{ secrets.DEPLOY_PROD_BASE_URL }} \
+              NR_ENABLED=${{ secrets.NR_ENABLED }} \
+              NR_BROWSER_ENABLED=${{ secrets.NR_BROWSER_ENABLED }} \
+              NR_BROWSER_APP_ID=${{ secrets.NR_BROWSER_APP_ID }} \
+              NR_ACCOUNT_ID=${{ secrets.NR_ACCOUNT_ID }} \
+              NR_BROWSER_APP_LICENSE_KEY=${{ secrets.NR_BROWSER_APP_LICENSE_KEY }} \
+              NR_BROWSER_BEACON=${{ secrets.NR_BROWSER_BEACON }} \
+              bundle exec jekyll build --baseurl "/$lang" --destination "../_site/$lang"
+              cd ..
+            else
+              echo "Branch '$lang' not found. Skipping..."
+            fi
+          done
+
+      - name: Upload final multilingual site (default + optional langs)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-22.04
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

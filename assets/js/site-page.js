@@ -1037,10 +1037,12 @@ const page__setNavPrevNext = () => {
     $(document).ready(function() {
         const docsOnScreen = docOrderOnScreen();
         const pageNo = docsOnScreen.length;
+        const lang = siteLanguageCode;
         
         let pagePrevIndex, pageNextIndex;
         pagePrevIndex = 0;
         pageNextIndex = 0;
+
         if (pageNo === 0) $('#pageNavPrevNextSection').addClass('d-none');
         else {
             const pagePermalink = pageInfo.siteInfo.permalink;
@@ -1062,7 +1064,7 @@ const page__setNavPrevNext = () => {
                 pageNextIndex = pageIndex + 1;
 
                 const prevPagePermalink = pagePrevIndex >= 0
-                    ? docsOnScreen[pagePrevIndex]
+                    ? docsOnScreen[pagePrevIndex] 
                     : '#';
 
                 const nextPagePermalink = pageNextIndex <= pageNo - 1
@@ -1077,8 +1079,25 @@ const page__setNavPrevNext = () => {
                     ? getObjectFromArray ({permalink: nextPagePermalink}, pageList).title
                     : ''
                 
-                $('#pageNavPrevLink').attr('href', prevPagePermalink);
-                $('#pageNavNextLink').attr('href', nextPagePermalink);
+                const prevPagePermalinkWithLanguageCode = prevPagePermalink === '#'
+                    ? prevPagePermalink
+                    : !isProd
+                        ? prevPagePermalink
+                        : !lang || lang === ''
+                            ? prevPagePermalink
+                            : `/${lang}${prevPagePermalink}`;
+                    
+
+                const nextPagePermalinkWithLanguageCode = nextPagePermalink === '#'
+                    ? nextPagePermalink
+                    : !isProd
+                        ? nextPagePermalink
+                        : !lang || lang === ''
+                            ? nextPagePermalink
+                            : `/${lang}${nextPagePermalink}`;
+
+                $('#pageNavPrevLink').attr('href', prevPagePermalinkWithLanguageCode);
+                $('#pageNavNextLink').attr('href', nextPagePermalinkWithLanguageCode);
                 $('#pageNavPrevTitle').text(prevPageTitle);
                 $('#pageNavNextTitle').text(nextPageTitle);
             }
