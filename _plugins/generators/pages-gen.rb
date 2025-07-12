@@ -101,6 +101,12 @@ module Jekyll
 
       site.data['page_list'] = FileUtilities.read_json_file(page_list_path).to_json
       
+      permalinks = JSON.parse(site.data['page_list']).map { |obj| obj['permalink'] }
+      #puts permalinks = permalinks
+      #puts "------"
+      permalinks = Globals.collect_with_descendants(permalinks)
+      #puts permalinks
+      
       # PAGE DEPENDENCIES
       FileUtilities.generate_doc_dependencies(site)
     end
