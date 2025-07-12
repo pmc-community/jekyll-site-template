@@ -1042,12 +1042,15 @@ const page__setNavPrevNext = () => {
         let pagePrevIndex, pageNextIndex;
         pagePrevIndex = 0;
         pageNextIndex = 0;
+
         if (pageNo === 0) $('#pageNavPrevNextSection').addClass('d-none');
         else {
             const pagePermalink = pageInfo.siteInfo.permalink;
             const pagePermalinkWithoutLangCode = !lang || lang === ''
                 ? pagePermalink
-                : pagePermalink.replace(/^\/[^\/]+/, '')
+                : isProd
+                    ? pagePermalink.replace(/^\/[^\/]+/, '')
+                    : pagePermalink
 
             const pageIndex = docsOnScreen.indexOf(pagePermalinkWithoutLangCode);            
             if (pageIndex !== -1) {
@@ -1078,12 +1081,15 @@ const page__setNavPrevNext = () => {
                         : `/${lang}${docsOnScreen[pageNextIndex]}`
                     : '#'
 
-                
                 const prevPagePermalinkWithoutLangCode = !lang || lang === ''
+                ? prevPagePermalink
+                : isProd
                     ? prevPagePermalink
                     : prevPagePermalink.replace(/^\/[^\/]+/, '')
 
                 const nextPagePermalinkWithoutLangCode = !lang || lang === ''
+                ? nextPagePermalink
+                : isProd
                     ? nextPagePermalink
                     : nextPagePermalink.replace(/^\/[^\/]+/, '')
 
@@ -1095,8 +1101,15 @@ const page__setNavPrevNext = () => {
                     ? getObjectFromArray ({permalink: nextPagePermalinkWithoutLangCode}, pageList).title
                     : ''
                 
-                $('#pageNavPrevLink').attr('href', prevPagePermalink);
-                $('#pageNavNextLink').attr('href', nextPagePermalink);
+                if (isProd ){
+                    $('#pageNavPrevLink').attr('href', prevPagePermalink);
+                    $('#pageNavNextLink').attr('href', nextPagePermalink);
+                }
+                else{
+                    $('#pageNavPrevLink').attr('href', prevPagePermalinkWithoutLangCode);
+                    $('#pageNavNextLink').attr('href', nextPagePermalinkWithoutLangCode);
+                }
+
                 $('#pageNavPrevTitle').text(prevPageTitle);
                 $('#pageNavNextTitle').text(nextPageTitle);
             }
