@@ -3393,28 +3393,32 @@ const REFRESH_PAGE_INFO_BEFORE_AND_AFTER = (func) => {
 // create the correct order of the documents based on how the docs are shown in left sidebar
 // used for page prev/next navigation
 const docOrderOnScreen = () => {
+    const lang = siteLanguageCode;
     let pagesOnScreen = [];
     $('a[siteFunction="documentation_link_to_doc"]').each(function() {
         pagesOnScreen.push($(this).attr('docarooHref'));
     });
+    
+    let transformed = [];
+    if (isProd) {
+        if (lang && lang !== '') {
+            transformed = pagesOnScreen.map(link => {
+                const parts = link.split("/").filter(Boolean); // Removes empty strings from split
+                return `/${parts.slice(1).join("/")}/`; // Remove the first part (lang code)
+            });
+        }
+        else {
+            transformed = pagesOnScreen
+        }    
+    } else {
+        transformed = pagesOnScreen
+    }
+
+    pagesOnScreen = transformed;
 
     const validPermalinks = new Set(pageList.map(page => page.permalink));
     pagesOnScreen = pagesOnScreen.filter(permalink => validPermalinks.has(permalink));
 
-    // need to be sure that permalinks are the normalise ones, without language code
-    const lang = siteLanguageCode;
+    return pagesOnScreen;
 
-    if (isProd) {
-        if (lang && lang !== '') {
-            const transformed = pagesOnScreen.map(link => {
-                const parts = link.split("/").filter(Boolean); // Removes empty strings from split
-                return `/${parts.slice(1).join("/")}/`; // Remove the first part (lang code)
-            });
-            console.log(transformed);
-            return transformed;
-        }
-        else
-            return pagesOnScreen
-    } else
-        return pagesOnScreen;
 }

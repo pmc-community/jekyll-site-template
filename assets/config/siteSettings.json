@@ -996,6 +996,8 @@
     "page_page_info_doc_info_btn_title": "See document detailed information",
     "page_info_similar_pages_title": "Similar documents based on content",
     "page_info_similar_pages_text": "Similar",
+    "page_page_info_nav_btn_title": "Go to Prev/Next nav",
+    "page_page_info_nav_btn": "Nav",
     "page_toc_toc_title": "On this page",
     "page_toc_toc_title_mobile": "{{page_toc_toc_title}}",
     "faq_toc_toc_title_mobile": "Questions",

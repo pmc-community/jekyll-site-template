@@ -567,6 +567,14 @@ const page__getPageInfo = () => {
                                 data-i18n="[title]page_page_info_support_btn_title;page_page_info_support_btn">
                                 ${i18next.t('page_page_info_support_btn')}
                             </button>
+                            <button 
+                                sitefunction="pageNavigateToPrevNextNav" 
+                                type="button" 
+                                class="btn btn-sm btn-danger position-relative m-1" 
+                                title="${i18next.t('page_page_info_nav_btn_title')}"
+                                data-i18n="[title]page_page_info_nav_btn_title;page_page_info_nav_btn">
+                                ${i18next.t('page_page_info_nav_btn')}
+                            </button>
                         </div>
                     </div>
 
@@ -1431,6 +1439,15 @@ window.setPageButtonsFunctions = () => {
         .on('click', 'button[siteFunction="pageNavigateToFeedbackAndSupport"]', function() {
             $('html, body').animate({
                 scrollTop: $('#pageFeedbackAndSupport').offset().top 
+            }, 100);
+        });
+    
+    // click on nav btn
+    $(document)
+        .off('click', 'button[siteFunction="pageNavigateToPrevNextNav"]')
+        .on('click', 'button[siteFunction="pageNavigateToPrevNextNav"]', function() {
+            $('html, body').animate({
+                scrollTop: $('#pageNavPrevNextSection').offset().top - 50 // -50 for a better experience on mobile
             }, 100);
         });
 
