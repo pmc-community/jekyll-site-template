@@ -1,0 +1,47 @@
+<!-- page navigation prev, next, called from footer_custom.html -->
+
+<div 
+    id="pageNavPrevNextSection"
+    siteFunction="pageNavPrevNextSection"
+    class = "col-12 col-md-7 d-none">
+
+    <div 
+        class="d-flex justify-content-between fs-6 fw-light text-secondary border border-secondary border-opacity-25 shadow-none rounded p-4" 
+        id="pageNavPrevNextButtons">
+
+        <div class="col-6">
+        <a href="#" id="pageNavPrevLink">
+            <div id="pageNavPrev">
+                <div 
+                    id="pageNavPrevBtn" 
+                    class="text-secondary mb-2"
+                    data-i18n="page_nav_prev_next_prev_btn_text">
+                    Previous
+                </div>
+                <div id="pageNavPrevTitle" class="text-primary">prev-page-title</div>
+            </div>
+        </a>
+        </div>
+
+        <div class="col-6">
+        <a href="#" id="pageNavNextLink">
+            <div id="pageNavNext">
+                <div 
+                    id="pageNavNextBtn" 
+                    class="text-end text-secondary mb-2"
+                    data-i18n="page_nav_prev_next_next_btn_text">
+                    Next
+                </div>
+                <div id="pageNavNextTitle" class="text-primary text-end">next-page-title</div>
+            </div>
+        </a>
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+    page__setNavPrevNext();
+</script>
