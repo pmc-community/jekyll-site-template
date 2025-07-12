@@ -1447,7 +1447,7 @@ window.setPageButtonsFunctions = () => {
         .off('click', 'button[siteFunction="pageNavigateToPrevNextNav"]')
         .on('click', 'button[siteFunction="pageNavigateToPrevNextNav"]', function() {
             $('html, body').animate({
-                scrollTop: $('#pageNavPrevNextSection').offset().top 
+                scrollTop: $('#pageNavPrevNextSection').offset().top - 50 // -50 for a better experience on mobile
             }, 100);
         });
 
