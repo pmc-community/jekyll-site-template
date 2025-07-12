@@ -3397,6 +3397,7 @@ const docOrderOnScreen = () => {
     $('a[siteFunction="documentation_link_to_doc"]').each(function() {
         pagesOnScreen.push($(this).attr('docarooHref'));
     });
+    console.log(pagesOnScreen);
 
     const validPermalinks = new Set(pageList.map(page => page.permalink));
     pagesOnScreen = pagesOnScreen.filter(permalink => validPermalinks.has(permalink));
