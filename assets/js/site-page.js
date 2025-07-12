@@ -1046,13 +1046,7 @@ const page__setNavPrevNext = () => {
         if (pageNo === 0) $('#pageNavPrevNextSection').addClass('d-none');
         else {
             const pagePermalink = pageInfo.siteInfo.permalink;
-            const pagePermalinkWithoutLangCode = !lang || lang === ''
-                ? pagePermalink
-                : isProd
-                    ? pagePermalink.replace(/^\/[^\/]+/, '')
-                    : pagePermalink
-
-            const pageIndex = docsOnScreen.indexOf(pagePermalinkWithoutLangCode);            
+            const pageIndex = docsOnScreen.indexOf(pagePermalink);            
             if (pageIndex !== -1) {
                 $('#pageNavPrevNextSection').removeClass('d-none');
 
@@ -1070,46 +1064,40 @@ const page__setNavPrevNext = () => {
                 pageNextIndex = pageIndex + 1;
 
                 const prevPagePermalink = pagePrevIndex >= 0
-                    ? !lang || lang === '' 
-                        ? docsOnScreen[pagePrevIndex]
-                        : `/${lang}${docsOnScreen[pagePrevIndex]}`
+                    ? docsOnScreen[pagePrevIndex] 
                     : '#';
 
                 const nextPagePermalink = pageNextIndex <= pageNo - 1
-                    ? !lang || lang === ''
-                        ? docsOnScreen[pageNextIndex]
-                        : `/${lang}${docsOnScreen[pageNextIndex]}`
+                    ? docsOnScreen[pageNextIndex]
                     : '#'
 
-                const prevPagePermalinkWithoutLangCode = !lang || lang === ''
-                ? prevPagePermalink
-                : isProd
-                    ? prevPagePermalink
-                    : prevPagePermalink.replace(/^\/[^\/]+/, '')
-
-                const nextPagePermalinkWithoutLangCode = !lang || lang === ''
-                ? nextPagePermalink
-                : isProd
-                    ? nextPagePermalink
-                    : nextPagePermalink.replace(/^\/[^\/]+/, '')
-
                 const prevPageTitle = pagePrevIndex >= 0
-                    ? getObjectFromArray ({permalink: prevPagePermalinkWithoutLangCode}, pageList).title
+                    ? getObjectFromArray ({permalink: prevPagePermalink}, pageList).title
                     : ''
                 
                 const nextPageTitle = pageNextIndex <= pageNo - 1
-                    ? getObjectFromArray ({permalink: nextPagePermalinkWithoutLangCode}, pageList).title
+                    ? getObjectFromArray ({permalink: nextPagePermalink}, pageList).title
                     : ''
                 
-                if (isProd ){
-                    $('#pageNavPrevLink').attr('href', prevPagePermalink);
-                    $('#pageNavNextLink').attr('href', nextPagePermalink);
-                }
-                else{
-                    $('#pageNavPrevLink').attr('href', prevPagePermalinkWithoutLangCode);
-                    $('#pageNavNextLink').attr('href', nextPagePermalinkWithoutLangCode);
-                }
+                const prevPagePermalinkWithLanguageCode = prevPagePermalink === '#'
+                    ? prevPagePermalink
+                    : !isProd
+                        ? prevPagePermalink
+                        : !lang || lang === ''
+                            ? prevPagePermalink
+                            : `/${lang}${prevPagePermalink}`;
+                    
 
+                const nextPagePermalinkWithLanguageCode = nextPagePermalink === '#'
+                    ? nextPagePermalink
+                    : !isProd
+                        ? nextPagePermalink
+                        : !lang || lang === ''
+                            ? nextPagePermalink
+                            : `/${lang}${nextPagePermalink}`;
+
+                $('#pageNavPrevLink').attr('href', prevPagePermalinkWithLanguageCode);
+                $('#pageNavNextLink').attr('href', nextPagePermalinkWithLanguageCode);
                 $('#pageNavPrevTitle').text(prevPageTitle);
                 $('#pageNavNextTitle').text(nextPageTitle);
             }
