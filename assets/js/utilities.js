@@ -3413,8 +3413,12 @@ const docOrderOnScreen = () => {
             console.log(transformed);
             return transformed;
         }
-        else
-            return pagesOnScreen
-    } else
+        else {
+            console.log(pagesOnScreen);
+            return pagesOnScreen;
+        }    
+    } else {
+        console.log(pagesOnScreen);
         return pagesOnScreen;
+    }
 }
