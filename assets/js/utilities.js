@@ -3393,7 +3393,7 @@ const REFRESH_PAGE_INFO_BEFORE_AND_AFTER = (func) => {
 // create the correct order of the documents based on how the docs are shown in left sidebar
 // used for page prev/next navigation
 const docOrderOnScreen = () => {
-    pagesOnScreen = [];
+    let pagesOnScreen = [];
     $('a[siteFunction="documentation_link_to_doc"]').each(function() {
         pagesOnScreen.push($(this).attr('docarooHref'));
     });
@@ -3406,10 +3406,12 @@ const docOrderOnScreen = () => {
 
     if (isProd) {
         if (lang && lang !== '') {
-            return pagesOnScreen.map(link => {
+            const transformed = pagesOnScreen.map(link => {
                 const parts = link.split("/").filter(Boolean); // Removes empty strings from split
                 return `/${parts.slice(1).join("/")}/`; // Remove the first part (lang code)
             });
+            console.log(transformed);
+            return transformed;
         }
         else
             return pagesOnScreen
