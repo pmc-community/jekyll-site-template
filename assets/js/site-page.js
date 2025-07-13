@@ -506,6 +506,20 @@ const page__getPageInfo = () => {
             `;
 
         const pageSimilarPages = page.siteInfo.similarByContent.slice(0, settings.similarByContent.maxPages) || []
+
+        const prevNextNavBtn = settings.navPrevNextEnabled
+            ? 
+                `
+                    <button 
+                        sitefunction="pageNavigateToPrevNextNav" 
+                        type="button" 
+                        class="btn btn-sm btn-danger position-relative m-1" 
+                        title="${i18next.t('page_page_info_nav_btn_title')}"
+                        data-i18n="[title]page_page_info_nav_btn_title;page_page_info_nav_btn">
+                        ${i18next.t('page_page_info_nav_btn')}
+                    </button>
+                `
+            : ''
         return (
             `
                 <div id="pageLastUpdateAndPageInfo" class="my-4 p-0 container-xl">
@@ -567,14 +581,7 @@ const page__getPageInfo = () => {
                                 data-i18n="[title]page_page_info_support_btn_title;page_page_info_support_btn">
                                 ${i18next.t('page_page_info_support_btn')}
                             </button>
-                            <button 
-                                sitefunction="pageNavigateToPrevNextNav" 
-                                type="button" 
-                                class="btn btn-sm btn-danger position-relative m-1" 
-                                title="${i18next.t('page_page_info_nav_btn_title')}"
-                                data-i18n="[title]page_page_info_nav_btn_title;page_page_info_nav_btn">
-                                ${i18next.t('page_page_info_nav_btn')}
-                            </button>
+                            ${prevNextNavBtn}
                         </div>
                     </div>
 
