@@ -1,0 +1,13 @@
+{% capture uuid %}
+  {% UUID %}
+{% endcapture %}
+{% assign bid = uuid | strip %}
+
+{% assign type = include.type %}
+{% assign outline = include.outline %}
+
+
+
+<a class="btn btn-sm btn-primary" href="">
+    BtnText
+</a> 
