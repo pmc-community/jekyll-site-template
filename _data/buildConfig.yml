@@ -10,7 +10,7 @@ pyPageSummary:
     # use a specific language pretrained model from huggingface if the documentation is a single language
     # check if the language you need is supported by the model, you may need to disable autosummary if there is no reasonable support
     # allInOneStep: false will disable autosummary 
-    name: "google/pegasus-xsum" # reasonable summaries for English
+    name: "facebook/mbart-large-50" # reasonable summaries for Romanian
     max_length: 256
     min_length: 30
     length_penalty: 1.0
@@ -25,15 +25,15 @@ pyPageSummary:
 rawContentFolder: "doc-raw-contents"
 preFlight: false
 relatedPages:
-  "enable": true
-  "relPagesNo": 3
-  "scoreLimit": -0.1
-  "batchSize": 100
-  "tf_idf_weigths": #sum of weights must be 1
-    "keywords": 0.5
-    "tags": 0.3
-    "cats": 0.1
-    "content": 0.1
+  enable: true
+  relPagesNo: 3
+  scoreLimit: -0.1
+  batchSize: 100
+  tf_idf_weigths: #sum of weights must be 1
+    keywords: 0.5
+    tags: 0.3
+    cats: 0.1
+    content: 0.1
 autoExcerpt:
   keywords: 10
   minKeywordLength: 3
