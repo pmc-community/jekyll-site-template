@@ -25,15 +25,15 @@ pyPageSummary:
 rawContentFolder: "doc-raw-contents"
 preFlight: false
 relatedPages:
-  "enable": true
-  "relPagesNo": 3
-  "scoreLimit": -0.1
-  "batchSize": 100
-  "tf_idf_weigths": #sum of weights must be 1
-    "keywords": 0.5
-    "tags": 0.3
-    "cats": 0.1
-    "content": 0.1
+  enable: true
+  relPagesNo: 3
+  scoreLimit: -0.1
+  batchSize: 100
+  tf_idf_weigths: #sum of weights must be 1
+    keywords: 0.5
+    tags: 0.3
+    cats: 0.1
+    content: 0.1
 autoExcerpt:
   keywords: 10
   minKeywordLength: 3
