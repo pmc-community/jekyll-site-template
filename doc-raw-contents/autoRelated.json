@@ -9,15 +9,6 @@
     ]
   },
   {
-    "permalink": "/intro/introChild/introGrandChild/",
-    "related": [
-      {
-        "title": "Alerts",
-        "permalink": "/alerts/"
-      }
-    ]
-  },
-  {
     "permalink": "/pwc/",
     "related": [
       {
@@ -106,12 +97,15 @@
   },
   {
     "permalink": "/alerts/",
-    "related": [
-      {
-        "title": "Intro Grand Child Page",
-        "permalink": "/intro/introChild/introGrandChild/"
-      }
-    ]
+    "related": []
+  },
+  {
+    "permalink": "/components/intro/",
+    "related": []
+  },
+  {
+    "permalink": "/intro/introChild/introGrandChild/",
+    "related": []
   },
   {
     "permalink": "/intro/",

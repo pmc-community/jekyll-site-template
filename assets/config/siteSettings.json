@@ -219,17 +219,17 @@
       "categories": [],
       "tags": [],
       "excerpt": "contrary, popular, belief, lorem, ipsum, simply, random, roots, piece, classical",
-      "lastUpdate": "2025-07-12 14:58:27 +0300",
-      "lastUpdateUTC": 1752321507,
-      "createTime": "2025-07-12 14:58:27 +0300",
-      "createTimeUTC": 1752321507,
+      "lastUpdate": "2025-07-13 14:51:11 +0300",
+      "lastUpdateUTC": 1752407471,
+      "createTime": "2025-07-13 14:51:11 +0300",
+      "createTimeUTC": 1752407471,
       "relatedPages": [
         {
           "title": "Collection-2/Y",
           "permalink": "/collection-2/y/y/"
         }
       ],
-      "autoSummary": "Lorem ipsum is one of the most obscure words in English, but it has roots in a piece of classical literature from 45 bc, making it over 2000 years old.",
+      "autoSummary": "Contrary to popular belief, lorem ipsum is not simply random text. It has roots in a piece of classical latin literature from 45 bc, making it over 2000 years old. Richard mcclintock, a latin professor at hampden-sydney college in virginia, looked up one of the more obscure latin words, consectetur, from a lorem ipsum passage.",
       "similarByContent": [
         {
           "permalink": "/collection-2/y/y/",
@@ -243,28 +243,6 @@
       "readingTime": 1,
       "hasDynamicContent": false,
       "parent": "Introduction"
-    },
-    {
-      "title": "Intro Grand Child Page",
-      "permalink": "/intro/introChild/introGrandChild/",
-      "categories": [],
-      "tags": [],
-      "excerpt": "learn, docaroo, components, embed, rich, media, content, encourage, store, media",
-      "lastUpdate": "2025-07-12 14:58:27 +0300",
-      "lastUpdateUTC": 1752321507,
-      "createTime": "2025-07-12 14:58:27 +0300",
-      "createTimeUTC": 1752321507,
-      "relatedPages": [
-        {
-          "title": "Alerts",
-          "permalink": "/alerts/"
-        }
-      ],
-      "autoSummary": "How to use docaroo components to embed rich media into your content: How to use docaroo components to embed rich media into your content: How to use docaroo components to embed rich media into your content:.",
-      "similarByContent": [],
-      "readingTime": 3,
-      "hasDynamicContent": false,
-      "parent": "Intro Child Page"
     },
     {
       "title": "Play with content",
@@ -297,7 +275,7 @@
           "permalink": "/intro/"
         }
       ],
-      "autoSummary": "Please use the following code to build a documentation site: using site vars from siteconfig: xxx markdown content generated from one part of another site page.",
+      "autoSummary": "Link to file in the same folder link to file in different folder broken link good external link broken external link. !- liquid tags may generate unexpected behaviour sometimes due to dry rendering during site build.- dry rendering is used in the site build process to generate related pages and keywords- it may be possible to have the front matter rendered also.",
       "similarByContent": [
         {
           "permalink": "/intro/",
@@ -331,7 +309,7 @@
           "permalink": "/pwc/"
         }
       ],
-      "autoSummary": "Do you want to share your views on the EU referendum with the rest of the world? As anonymous user you can browse for free all sections of innohub.space although some services are free to be used, we may need you to register and provide some information in order to be able to use the free services.",
+      "autoSummary": "Content from an exernal private repository.",
       "similarByContent": [],
       "readingTime": 1,
       "hasDynamicContent": false,
@@ -350,7 +328,7 @@
       "createTime": "2025-05-25 10:11:17 +0300",
       "createTimeUTC": 1748157077,
       "relatedPages": [],
-      "autoSummary": "These terms of service (terms, terms of service, tos) apply to your use of innohub.space website operated by pmc (us, we, our).",
+      "autoSummary": "These terms of service are applicable from the date shown on this page. The list of the older versions can be seen on our legal center and can be available upon request, using the dedicated form available inside our legal center.",
       "similarByContent": [
         {
           "permalink": "/sf/f1/",
@@ -377,7 +355,7 @@
           "permalink": "/collection-2/Z/z/"
         }
       ],
-      "autoSummary": "Lorem ipsum, the ancient Greek word for 'evil', has been discovered by a professor at a college in the United States, and it's not just any old word.",
+      "autoSummary": "This is the answer to this is a question. This file loads some external content from another repo and place it inline. Link to file in different folder. Content for this file.",
       "similarByContent": [],
       "readingTime": 4,
       "hasDynamicContent": false,
@@ -396,17 +374,17 @@
         "exa"
       ],
       "excerpt": "g11, innohub, support, center, single, contact, notifying, issues, experience, services",
-      "lastUpdate": "2025-07-12 14:58:27 +0300",
-      "lastUpdateUTC": 1752321507,
-      "createTime": "2025-07-12 14:58:27 +0300",
-      "createTimeUTC": 1752321507,
+      "lastUpdate": "2025-07-13 14:51:11 +0300",
+      "lastUpdateUTC": 1752407471,
+      "createTime": "2025-07-13 14:51:11 +0300",
+      "createTimeUTC": 1752407471,
       "relatedPages": [
         {
           "title": "Play with content",
           "permalink": "/pwc/"
         }
       ],
-      "autoSummary": "Innohub support center offers a number of functionalities that will allow you to find a solution to your issue or to get in contact with us and let us assist you in finding a solution.",
+      "autoSummary": "Innohub support center is the single point of contact for notifying us about the issues that you experience when using our services.",
       "similarByContent": [],
       "readingTime": 4,
       "hasDynamicContent": false,
@@ -418,17 +396,17 @@
       "categories": [],
       "tags": [],
       "excerpt": "content, file, contrary, popular, belief, lorem, ipsum, simply, random, roots",
-      "lastUpdate": "2025-07-12 15:22:48 +0300",
-      "lastUpdateUTC": 1752322968,
-      "createTime": "2025-06-12 15:21:37 +0300",
-      "createTimeUTC": 1749730897,
+      "lastUpdate": "2025-07-12 16:11:34 +0300",
+      "lastUpdateUTC": 1752325894,
+      "createTime": "2025-07-12 16:11:34 +0300",
+      "createTimeUTC": 1752325894,
       "relatedPages": [
         {
           "title": "Intro Child Page",
           "permalink": "/intro/introChild/"
         }
       ],
-      "autoSummary": "Lorem ipsum is one of the oldest words in the English language, dating back to the 5th Century, according to a new study.",
+      "autoSummary": "lorem ipsum.",
       "similarByContent": [
         {
           "permalink": "/intro/introChild/",
@@ -470,7 +448,7 @@
           "permalink": "/pwc/"
         }
       ],
-      "autoSummary": "Do you have a story to share with the world that you would like to see featured in the BBC News website and social media channels?... And don't forget to include your full name and town of residence.",
+      "autoSummary": "",
       "similarByContent": [
         {
           "permalink": "/collection-2/X/x/",
@@ -503,7 +481,7 @@
           "permalink": "/pwc/"
         }
       ],
-      "autoSummary": "Markdown content loaded from another file from the same collection.heads up!watch out the limitations for loading content from another file, the source file must be below the destination file in the folder structure.",
+      "autoSummary": "Markdown content loaded from another md file from the same collection.heads up!watch out the limitations for loading content from another file, the source file must be below the destination file in the folder structure.otherwise the content should be loaded considering the source as external file and use getexternalcontent(.). This file loads some external content from another repo and place it inline. Link to file in different folder.",
       "similarByContent": [
         {
           "permalink": "/collection-2/Z/z/",
@@ -520,21 +498,50 @@
       "categories": [],
       "tags": [],
       "excerpt": "learn, add, alert, blocks, content, add, simple, rich, alerts, alerts",
-      "lastUpdate": "2025-07-12 14:58:27 +0300",
-      "lastUpdateUTC": 1752321507,
-      "createTime": "2025-07-12 14:58:27 +0300",
-      "createTimeUTC": 1752321507,
-      "relatedPages": [
-        {
-          "title": "Intro Grand Child Page",
-          "permalink": "/intro/introChild/introGrandChild/"
-        }
-      ],
-      "autoSummary": "Add alerts to your documents and pages by following the steps in the following guide: add alerts to your pages by following the steps in the following guide:.",
+      "lastUpdate": "2025-07-13 14:53:06 +0300",
+      "lastUpdateUTC": 1752407586,
+      "createTime": "2025-07-13 14:51:11 +0300",
+      "createTimeUTC": 1752407471,
+      "relatedPages": [],
+      "autoSummary": "You can refer external content from other documents from your documentation or from external public or private repositories. The external content can either added using liquid sintax or custom liquid tags. There is no limit about how many external public repositories you refer the number of the external private repositories depends on the private access key type you configure.",
+      "similarByContent": [],
+      "readingTime": 2,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
+      "title": "Components",
+      "permalink": "/components/intro/",
+      "categories": [],
+      "tags": [],
+      "excerpt": "learn, add, pre, defined, components, content, pre, defined, components, elements",
+      "lastUpdate": "2025-07-13 14:49:14 +0300",
+      "lastUpdateUTC": 1752407354,
+      "createTime": "2025-07-13 14:47:48 +0300",
+      "createTimeUTC": 1752407268,
+      "relatedPages": [],
+      "autoSummary": "Learn how to add different pre-defined components to your content.",
+      "similarByContent": [],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
+      "title": "Intro Grand Child Page",
+      "permalink": "/intro/introChild/introGrandChild/",
+      "categories": [],
+      "tags": [],
+      "excerpt": "learn, docaroo, components, embed, rich, media, content, encourage, store, media",
+      "lastUpdate": "2025-07-13 14:51:11 +0300",
+      "lastUpdateUTC": 1752407471,
+      "createTime": "2025-07-13 14:51:11 +0300",
+      "createTimeUTC": 1752407471,
+      "relatedPages": [],
+      "autoSummary": "Learn how to use docaroo components to embed rich media into your content. We do not encourage to store large media on your doc-contents folder.",
       "similarByContent": [],
       "readingTime": 3,
       "hasDynamicContent": false,
-      "parent": ""
+      "parent": "Intro Child Page"
     },
     {
       "title": "Introduction",
@@ -548,17 +555,17 @@
         "docs"
       ],
       "excerpt": "documentation, builder, guide, comprehensive, resource, learning, create, build, maintain, quality",
-      "lastUpdate": "2025-07-12 14:58:28 +0300",
-      "lastUpdateUTC": 1752321508,
-      "createTime": "2025-07-12 14:58:27 +0300",
-      "createTimeUTC": 1752321507,
+      "lastUpdate": "2025-07-13 14:51:11 +0300",
+      "lastUpdateUTC": 1752407471,
+      "createTime": "2025-07-13 14:51:11 +0300",
+      "createTimeUTC": 1752407471,
       "relatedPages": [
         {
           "title": "Play with content",
           "permalink": "/pwc/"
         }
       ],
-      "autoSummary": "The documentation site builder guide is a step-by-step manual that explains: how to plan, structure, and organize documentation how to choose the right tools and technologies how to build a fully functional documentation site how to style and your site for branding.",
+      "autoSummary": "Welcome to the documentation site builder guide — your comprehensive resource for learning how to create, build, and maintain high-quality documentation sites for any kind of project, product, or organization. Whether youre a solo developer, technical writer, open-source contributor, startup team, or enterprise content strategist,.",
       "similarByContent": [
         {
           "permalink": "/pwc/",
@@ -580,7 +587,7 @@
       "createTime": "2025-05-25 10:11:17 +0300",
       "createTimeUTC": 1748157077,
       "relatedPages": [],
-      "autoSummary": "Pmc is not responsible for the availability of any external sites or resources, and as such, we do not endorse nor are we responsible or liable for any content, products, advertising or any other materials, on or available from such third party sites or resources.",
+      "autoSummary": "",
       "similarByContent": [
         {
           "permalink": "/collection-2/y/y/",
@@ -589,6 +596,10 @@
         {
           "permalink": "/intro/introChild/",
           "title": "Intro Child Page"
+        },
+        {
+          "permalink": "/terms/",
+          "title": "Terms"
         }
       ],
       "readingTime": 3,
@@ -624,7 +635,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "12-Jul-2025"
+          "lastUpdate": "13-Jul-2025"
         }
       ],
       "numPages": 1
@@ -634,7 +645,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "12-Jul-2025"
+          "lastUpdate": "13-Jul-2025"
         }
       ],
       "numPages": 1
@@ -644,7 +655,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "12-Jul-2025"
+          "lastUpdate": "13-Jul-2025"
         }
       ],
       "numPages": 1
@@ -654,7 +665,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "12-Jul-2025"
+          "lastUpdate": "13-Jul-2025"
         }
       ],
       "numPages": 1
@@ -674,7 +685,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "12-Jul-2025"
+          "lastUpdate": "13-Jul-2025"
         }
       ],
       "numPages": 1
@@ -694,7 +705,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "12-Jul-2025"
+          "lastUpdate": "13-Jul-2025"
         },
         {
           "title": "Collection-2/X",
@@ -768,7 +779,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "12-Jul-2025"
+          "lastUpdate": "13-Jul-2025"
         }
       ],
       "numPages": 2
@@ -783,7 +794,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "12-Jul-2025"
+          "lastUpdate": "13-Jul-2025"
         },
         {
           "title": "Collection-2/Z",
@@ -793,7 +804,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "12-Jul-2025"
+          "lastUpdate": "13-Jul-2025"
         }
       ],
       "numPages": 4

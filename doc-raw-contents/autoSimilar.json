@@ -7,10 +7,6 @@
         ]
     },
     {
-        "permalink": "/intro/introChild/introGrandChild/",
-        "similarFiles": []
-    },
-    {
         "permalink": "/pwc/",
         "similarFiles": [
             "/intro/"
@@ -58,6 +54,14 @@
         "similarFiles": []
     },
     {
+        "permalink": "/components/intro/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/intro/introChild/introGrandChild/",
+        "similarFiles": []
+    },
+    {
         "permalink": "/intro/",
         "similarFiles": [
             "/pwc/"
@@ -67,7 +71,8 @@
         "permalink": "/sf/f1/",
         "similarFiles": [
             "/collection-2/y/y/",
-            "/intro/introChild/"
+            "/intro/introChild/",
+            "/terms/"
         ]
     }
 ]
