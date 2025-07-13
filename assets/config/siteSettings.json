@@ -219,10 +219,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "contrary, popular, belief, lorem, ipsum, simply, random, roots, piece, classical",
-      "lastUpdate": "2025-07-12 15:26:21 +0300",
-      "lastUpdateUTC": 1752323181,
-      "createTime": "2025-07-12 15:26:21 +0300",
-      "createTimeUTC": 1752323181,
+      "lastUpdate": "2025-07-13 11:49:59 +0300",
+      "lastUpdateUTC": 1752396599,
+      "createTime": "2025-07-13 11:49:59 +0300",
+      "createTimeUTC": 1752396599,
       "relatedPages": [
         {
           "title": "Collection-2/Y",
@@ -243,28 +243,6 @@
       "readingTime": 1,
       "hasDynamicContent": false,
       "parent": "Introducere"
-    },
-    {
-      "title": "Intro Grand Child Page",
-      "permalink": "/intro/introChild/introGrandChild/",
-      "categories": [],
-      "tags": [],
-      "excerpt": "learn, docaroo, components, embed, rich, media, content, encourage, store, media",
-      "lastUpdate": "2025-07-12 15:26:21 +0300",
-      "lastUpdateUTC": 1752323181,
-      "createTime": "2025-07-12 15:26:21 +0300",
-      "createTimeUTC": 1752323181,
-      "relatedPages": [
-        {
-          "title": "Alerte",
-          "permalink": "/alerts/"
-        }
-      ],
-      "autoSummary": "Learn how to use docaroo components to embed rich media into your content. We do not encourage to store large media on your doc-contents folder.",
-      "similarByContent": [],
-      "readingTime": 3,
-      "hasDynamicContent": false,
-      "parent": "Intro Child Page"
     },
     {
       "title": "Play with content",
@@ -396,10 +374,10 @@
         "exa"
       ],
       "excerpt": "g11, innohub, support, center, single, contact, notifying, issues, experience, services",
-      "lastUpdate": "2025-07-12 15:26:21 +0300",
-      "lastUpdateUTC": 1752323181,
-      "createTime": "2025-07-12 15:26:21 +0300",
-      "createTimeUTC": 1752323181,
+      "lastUpdate": "2025-07-13 11:49:59 +0300",
+      "lastUpdateUTC": 1752396599,
+      "createTime": "2025-07-13 11:49:59 +0300",
+      "createTimeUTC": 1752396599,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -418,10 +396,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "content, file, contrary, popular, belief, lorem, ipsum, simply, random, roots",
-      "lastUpdate": "2025-07-12 15:26:24 +0300",
-      "lastUpdateUTC": 1752323184,
-      "createTime": "2025-07-12 15:26:21 +0300",
-      "createTimeUTC": 1752323181,
+      "lastUpdate": "2025-07-12 16:11:34 +0300",
+      "lastUpdateUTC": 1752325894,
+      "createTime": "2025-07-12 16:11:34 +0300",
+      "createTimeUTC": 1752325894,
       "relatedPages": [
         {
           "title": "Intro Child Page",
@@ -512,21 +490,60 @@
     },
     {
       "title": "Alerte",
-      "permalink": "/alerts/",
+      "permalink": "/components/alerts/",
       "categories": [],
       "tags": [],
       "excerpt": "learn, add, alert, blocks, content, add, simple, rich, alerts, alerts",
-      "lastUpdate": "2025-07-12 15:26:21 +0300",
-      "lastUpdateUTC": 1752323181,
-      "createTime": "2025-07-12 15:26:21 +0300",
-      "createTimeUTC": 1752323181,
+      "lastUpdate": "2025-07-13 13:07:15 +0300",
+      "lastUpdateUTC": 1752401235,
+      "createTime": "2025-07-13 11:49:59 +0300",
+      "createTimeUTC": 1752396599,
       "relatedPages": [
         {
-          "title": "Intro Grand Child Page",
-          "permalink": "/intro/introChild/introGrandChild/"
+          "title": "Rich Media",
+          "permalink": "/components/rich-media/"
         }
       ],
       "autoSummary": "You can refer external content from other documents from your documentation or from external public or private repositories. The external content can either added using liquid sintax or custom liquid tags. There is no limit about how many external public repositories you refer the number of the external private repositories depends on the private access key type you configure.",
+      "similarByContent": [],
+      "readingTime": 2,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
+      "title": "Components",
+      "permalink": "/components/intro/",
+      "categories": [],
+      "tags": [],
+      "excerpt": "learn, add, pre, defined, components, content, pre, defined, components, elements",
+      "lastUpdate": "2025-07-13 13:28:04 +0300",
+      "lastUpdateUTC": 1752402484,
+      "createTime": "2025-07-13 12:29:00 +0300",
+      "createTimeUTC": 1752398940,
+      "relatedPages": [],
+      "autoSummary": "Learn how to add different pre-defined components to your content.",
+      "similarByContent": [],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
+      "title": "Rich Media",
+      "permalink": "/components/rich-media/",
+      "categories": [],
+      "tags": [],
+      "excerpt": "learn, docaroo, components, embed, rich, media, content, encourage, store, media",
+      "lastUpdate": "2025-07-13 13:02:24 +0300",
+      "lastUpdateUTC": 1752400944,
+      "createTime": "2025-07-13 11:49:59 +0300",
+      "createTimeUTC": 1752396599,
+      "relatedPages": [
+        {
+          "title": "Alerte",
+          "permalink": "/components/alerts/"
+        }
+      ],
+      "autoSummary": "Learn how to use docaroo components to embed rich media into your content. We do not encourage to store large media on your doc-contents folder.",
       "similarByContent": [],
       "readingTime": 3,
       "hasDynamicContent": false,
@@ -544,10 +561,10 @@
         "doc"
       ],
       "excerpt": "venit, docaroo, resursa, completă, învăța, creezi, construiești, întreții, site, uri",
-      "lastUpdate": "2025-07-12 15:26:21 +0300",
-      "lastUpdateUTC": 1752323181,
-      "createTime": "2025-07-12 15:26:21 +0300",
-      "createTimeUTC": 1752323181,
+      "lastUpdate": "2025-07-13 11:49:59 +0300",
+      "lastUpdateUTC": 1752396599,
+      "createTime": "2025-07-13 11:49:59 +0300",
+      "createTimeUTC": 1752396599,
       "relatedPages": [
         {
           "title": "Play with content",
@@ -585,6 +602,10 @@
         {
           "permalink": "/intro/introChild/",
           "title": "Intro Child Page"
+        },
+        {
+          "permalink": "/terms/",
+          "title": "Terms"
         }
       ],
       "readingTime": 3,
@@ -620,7 +641,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "12-Jul-2025"
+          "lastUpdate": "13-Jul-2025"
         }
       ],
       "numPages": 1
@@ -630,7 +651,7 @@
         {
           "title": "Introducere",
           "permalink": "/intro/",
-          "lastUpdate": "12-Jul-2025"
+          "lastUpdate": "13-Jul-2025"
         }
       ],
       "numPages": 1
@@ -640,7 +661,7 @@
         {
           "title": "Introducere",
           "permalink": "/intro/",
-          "lastUpdate": "12-Jul-2025"
+          "lastUpdate": "13-Jul-2025"
         }
       ],
       "numPages": 1
@@ -650,7 +671,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "12-Jul-2025"
+          "lastUpdate": "13-Jul-2025"
         }
       ],
       "numPages": 1
@@ -670,7 +691,7 @@
         {
           "title": "Introducere",
           "permalink": "/intro/",
-          "lastUpdate": "12-Jul-2025"
+          "lastUpdate": "13-Jul-2025"
         }
       ],
       "numPages": 1
@@ -690,7 +711,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "12-Jul-2025"
+          "lastUpdate": "13-Jul-2025"
         },
         {
           "title": "Collection-2/X",
@@ -764,7 +785,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "12-Jul-2025"
+          "lastUpdate": "13-Jul-2025"
         }
       ],
       "numPages": 2
@@ -779,7 +800,7 @@
         {
           "title": "Collection-1/G11",
           "permalink": "/collection-1/g11/",
-          "lastUpdate": "12-Jul-2025"
+          "lastUpdate": "13-Jul-2025"
         },
         {
           "title": "Collection-2/Z",
@@ -789,7 +810,7 @@
         {
           "title": "Introducere",
           "permalink": "/intro/",
-          "lastUpdate": "12-Jul-2025"
+          "lastUpdate": "13-Jul-2025"
         }
       ],
       "numPages": 4

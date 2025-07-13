@@ -5,10 +5,6 @@
             "summary": "Contrary to popular belief, lorem ipsum is not simply random text. It has roots in a piece of classical latin literature from 45 bc, making it over 2000 years old. Richard mcclintock, a latin professor at hampden-sydney college in virginia, looked up one of the more obscure latin words, consectetur, from a lorem ipsum passage."
         },
         {
-            "permalink": "/intro/introChild/introGrandChild/",
-            "summary": "Learn how to use docaroo components to embed rich media into your content. We do not encourage to store large media on your doc-contents folder."
-        },
-        {
             "permalink": "/pwc/",
             "summary": "Link to file in the same folder link to file in different folder broken link good external link broken external link. !- liquid tags may generate unexpected behaviour sometimes due to dry rendering during site build.- dry rendering is used in the site build process to generate related pages and keywords- it may be possible to have the front matter rendered also."
         },
@@ -41,8 +37,16 @@
             "summary": "Markdown content loaded from another md file from the same collection.heads up!watch out the limitations for loading content from another file, the source file must be below the destination file in the folder structure.otherwise the content should be loaded considering the source as external file and use getexternalcontent(.). This file loads some external content from another repo and place it inline. Link to file in different folder."
         },
         {
-            "permalink": "/alerts/",
+            "permalink": "/components/alerts/",
             "summary": "You can refer external content from other documents from your documentation or from external public or private repositories. The external content can either added using liquid sintax or custom liquid tags. There is no limit about how many external public repositories you refer the number of the external private repositories depends on the private access key type you configure."
+        },
+        {
+            "permalink": "/components/intro/",
+            "summary": "Learn how to add different pre-defined components to your content."
+        },
+        {
+            "permalink": "/components/rich-media/",
+            "summary": "Learn how to use docaroo components to embed rich media into your content. We do not encourage to store large media on your doc-contents folder."
         },
         {
             "permalink": "/intro/",

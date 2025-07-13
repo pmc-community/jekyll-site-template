@@ -9,15 +9,6 @@
     ]
   },
   {
-    "permalink": "/intro/introChild/introGrandChild/",
-    "related": [
-      {
-        "title": "Alerte",
-        "permalink": "/alerts/"
-      }
-    ]
-  },
-  {
     "permalink": "/pwc/",
     "related": [
       {
@@ -101,11 +92,24 @@
     ]
   },
   {
-    "permalink": "/alerts/",
+    "permalink": "/components/alerts/",
     "related": [
       {
-        "title": "Intro Grand Child Page",
-        "permalink": "/intro/introChild/introGrandChild/"
+        "title": "Rich Media",
+        "permalink": "/components/rich-media/"
+      }
+    ]
+  },
+  {
+    "permalink": "/components/intro/",
+    "related": []
+  },
+  {
+    "permalink": "/components/rich-media/",
+    "related": [
+      {
+        "title": "Alerte",
+        "permalink": "/components/alerts/"
       }
     ]
   },

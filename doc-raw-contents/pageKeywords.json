@@ -1,21 +1,6 @@
 {
   "keywords": [
     {
-      "permalink": "/intro/",
-      "keywords": [
-        "venit",
-        "docaroo",
-        "resursa",
-        "completă",
-        "învăța",
-        "creezi",
-        "construiești",
-        "întreții",
-        "site",
-        "uri"
-      ]
-    },
-    {
       "permalink": "/pwc/",
       "keywords": [
         "markdown",
@@ -28,126 +13,6 @@
         "heads",
         "links",
         "other"
-      ]
-    },
-    {
-      "permalink": "/collection-2/y/y/",
-      "keywords": [
-        "content",
-        "file",
-        "contrary",
-        "popular",
-        "belief",
-        "lorem",
-        "ipsum",
-        "simply",
-        "random",
-        "roots"
-      ]
-    },
-    {
-      "permalink": "/collection-1/g1/",
-      "keywords": [
-        "answer",
-        "question",
-        "external",
-        "content",
-        "file",
-        "loads",
-        "external",
-        "content",
-        "repo",
-        "inline"
-      ]
-    },
-    {
-      "permalink": "/intro/introChild/",
-      "keywords": [
-        "contrary",
-        "popular",
-        "belief",
-        "lorem",
-        "ipsum",
-        "simply",
-        "random",
-        "roots",
-        "piece",
-        "classical"
-      ]
-    },
-    {
-      "permalink": "/intro/introChild/introGrandChild/",
-      "keywords": [
-        "learn",
-        "docaroo",
-        "components",
-        "embed",
-        "rich",
-        "media",
-        "content",
-        "encourage",
-        "store",
-        "media"
-      ]
-    },
-    {
-      "permalink": "/alerts/",
-      "keywords": [
-        "learn",
-        "add",
-        "alert",
-        "blocks",
-        "content",
-        "add",
-        "simple",
-        "rich",
-        "alerts",
-        "alerts"
-      ]
-    },
-    {
-      "permalink": "/collection-1/g11/",
-      "keywords": [
-        "g11",
-        "innohub",
-        "support",
-        "center",
-        "single",
-        "contact",
-        "notifying",
-        "issues",
-        "experience",
-        "services"
-      ]
-    },
-    {
-      "permalink": "/collection-2/X/x/",
-      "keywords": [
-        "markdown",
-        "content",
-        "content",
-        "typed",
-        "collection",
-        "inline",
-        "external",
-        "link",
-        "https",
-        "pmc"
-      ]
-    },
-    {
-      "permalink": "/terms/",
-      "keywords": [
-        "terms",
-        "service",
-        "applicable",
-        "list",
-        "versions",
-        "legal",
-        "center",
-        "request",
-        "dedicated",
-        "form"
       ]
     },
     {
@@ -166,6 +31,51 @@
       ]
     },
     {
+      "permalink": "/components/intro/",
+      "keywords": [
+        "learn",
+        "add",
+        "pre",
+        "defined",
+        "components",
+        "content",
+        "pre",
+        "defined",
+        "components",
+        "elements"
+      ]
+    },
+    {
+      "permalink": "/intro/introChild/",
+      "keywords": [
+        "contrary",
+        "popular",
+        "belief",
+        "lorem",
+        "ipsum",
+        "simply",
+        "random",
+        "roots",
+        "piece",
+        "classical"
+      ]
+    },
+    {
+      "permalink": "/collection-2/y/y/",
+      "keywords": [
+        "content",
+        "file",
+        "contrary",
+        "popular",
+        "belief",
+        "lorem",
+        "ipsum",
+        "simply",
+        "random",
+        "roots"
+      ]
+    },
+    {
       "permalink": "/sf/f1/",
       "keywords": [
         "pmc",
@@ -178,6 +88,111 @@
         "agree",
         "responsible",
         "availability"
+      ]
+    },
+    {
+      "permalink": "/components/alerts/",
+      "keywords": [
+        "learn",
+        "add",
+        "alert",
+        "blocks",
+        "content",
+        "add",
+        "simple",
+        "rich",
+        "alerts",
+        "alerts"
+      ]
+    },
+    {
+      "permalink": "/terms/",
+      "keywords": [
+        "terms",
+        "service",
+        "applicable",
+        "list",
+        "versions",
+        "legal",
+        "center",
+        "request",
+        "dedicated",
+        "form"
+      ]
+    },
+    {
+      "permalink": "/collection-2/X/x/",
+      "keywords": [
+        "markdown",
+        "content",
+        "content",
+        "typed",
+        "collection",
+        "inline",
+        "external",
+        "link",
+        "https",
+        "pmc"
+      ]
+    },
+    {
+      "permalink": "/collection-1/g11/",
+      "keywords": [
+        "g11",
+        "innohub",
+        "support",
+        "center",
+        "single",
+        "contact",
+        "notifying",
+        "issues",
+        "experience",
+        "services"
+      ]
+    },
+    {
+      "permalink": "/components/rich-media/",
+      "keywords": [
+        "learn",
+        "docaroo",
+        "components",
+        "embed",
+        "rich",
+        "media",
+        "content",
+        "encourage",
+        "store",
+        "media"
+      ]
+    },
+    {
+      "permalink": "/collection-1/g1/",
+      "keywords": [
+        "answer",
+        "question",
+        "external",
+        "content",
+        "file",
+        "loads",
+        "external",
+        "content",
+        "repo",
+        "inline"
+      ]
+    },
+    {
+      "permalink": "/intro/",
+      "keywords": [
+        "venit",
+        "docaroo",
+        "resursa",
+        "completă",
+        "învăța",
+        "creezi",
+        "construiești",
+        "întreții",
+        "site",
+        "uri"
       ]
     }
   ]
