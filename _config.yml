@@ -85,6 +85,9 @@ collections_dir: doc-contents
 collections:
 
   # custom collections
+  components:
+    permalink: "/:collection/:path"
+    output: true
   collection-1:
     permalink: "/:collection/:path"
     output: true
@@ -105,16 +108,19 @@ collections:
 just_the_docs:
   collections:
     # custom collections
+    components:
+      name: Components
+      nav_fold: true
     collection-1:
-      name: Collection One
+      name: Sectiunea 1
       nav_fold: true
     collection-2:
-      name: Collection Two
+      name: Sectiunea 2
       nav_fold: true
 
     # default collections (last position(s))
     tools:
-      name: Tools
+      name: Utile
       nav_fold: true
 
 # MARKER COLLECTIONS END
