@@ -498,8 +498,8 @@
       "categories": [],
       "tags": [],
       "excerpt": "learn, add, alert, blocks, content, add, simple, rich, alerts, alerts",
-      "lastUpdate": "2025-07-13 14:53:06 +0300",
-      "lastUpdateUTC": 1752407586,
+      "lastUpdate": "2025-07-13 14:58:57 +0300",
+      "lastUpdateUTC": 1752407937,
       "createTime": "2025-07-13 14:51:11 +0300",
       "createTimeUTC": 1752407471,
       "relatedPages": [],
@@ -527,13 +527,13 @@
       "parent": ""
     },
     {
-      "title": "Intro Grand Child Page",
-      "permalink": "/intro/introChild/introGrandChild/",
+      "title": "Rich media",
+      "permalink": "/components/rich-media/",
       "categories": [],
       "tags": [],
       "excerpt": "learn, docaroo, components, embed, rich, media, content, encourage, store, media",
-      "lastUpdate": "2025-07-13 14:51:11 +0300",
-      "lastUpdateUTC": 1752407471,
+      "lastUpdate": "2025-07-13 14:59:49 +0300",
+      "lastUpdateUTC": 1752407989,
       "createTime": "2025-07-13 14:51:11 +0300",
       "createTimeUTC": 1752407471,
       "relatedPages": [],
@@ -541,7 +541,7 @@
       "similarByContent": [],
       "readingTime": 3,
       "hasDynamicContent": false,
-      "parent": "Intro Child Page"
+      "parent": ""
     },
     {
       "title": "Introduction",
