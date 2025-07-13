@@ -112,10 +112,10 @@ just_the_docs:
       name: Components
       nav_fold: true
     collection-1:
-      name: Sectiunea 1
+      name: Collection 1
       nav_fold: true
     collection-2:
-      name: Sectiunea 2
+      name: Collection 2
       nav_fold: true
 
     # default collections (last position(s))
