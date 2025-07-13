@@ -344,7 +344,7 @@
       "permalink": "/collection-1/g1/",
       "categories": [],
       "tags": [],
-      "excerpt": "answer, question, external, content, file, loads, external, content, repo, inline",
+      "excerpt": "answer, question, external, content, file, loads, repo, inline",
       "lastUpdate": "2025-06-23 12:17:50 +0300",
       "lastUpdateUTC": 1750670270,
       "createTime": "2025-06-23 12:17:50 +0300",
@@ -353,6 +353,10 @@
         {
           "title": "Collection-2/Z",
           "permalink": "/collection-2/Z/z/"
+        },
+        {
+          "title": "Collection-2/X",
+          "permalink": "/collection-2/X/x/"
         }
       ],
       "autoSummary": "This is the answer to this is a question. This file loads some external content from another repo and place it inline. Link to file in different folder. Content for this file.",
@@ -429,7 +433,7 @@
         "intro"
       ],
       "tags": [],
-      "excerpt": "file, collection, file, loads, external, content, repo, inline, link, file",
+      "excerpt": "file, collection, loads, external, content, repo, inline, link",
       "lastUpdate": "2025-05-25 10:11:17 +0300",
       "lastUpdateUTC": 1748157077,
       "createTime": "2025-05-25 10:11:17 +0300",
@@ -466,7 +470,7 @@
       "tags": [
         "tag1"
       ],
-      "excerpt": "markdown, content, content, typed, collection, inline, external, link, https, pmc",
+      "excerpt": "markdown, content, typed, collection, inline, external, link, https, pmc",
       "lastUpdate": "2025-05-29 01:53:54 +0300",
       "lastUpdateUTC": 1748472834,
       "createTime": "2025-05-29 01:53:54 +0300",
@@ -479,6 +483,10 @@
         {
           "title": "Play with content",
           "permalink": "/pwc/"
+        },
+        {
+          "title": "Collection-1/G1",
+          "permalink": "/collection-1/g1/"
         }
       ],
       "autoSummary": "Markdown content loaded from another md file from the same collection.heads up!watch out the limitations for loading content from another file, the source file must be below the destination file in the folder structure.otherwise the content should be loaded considering the source as external file and use getexternalcontent(.). This file loads some external content from another repo and place it inline. Link to file in different folder.",
@@ -497,12 +505,21 @@
       "permalink": "/alerts/",
       "categories": [],
       "tags": [],
-      "excerpt": "learn, add, alert, blocks, content, add, simple, rich, alerts, alerts",
+      "excerpt": "learn, add, alert, blocks, content, simple, rich, alerts",
       "lastUpdate": "2025-07-13 14:58:57 +0300",
       "lastUpdateUTC": 1752407937,
       "createTime": "2025-07-13 14:51:11 +0300",
       "createTimeUTC": 1752407471,
-      "relatedPages": [],
+      "relatedPages": [
+        {
+          "title": "Components",
+          "permalink": "/components/intro/"
+        },
+        {
+          "title": "Rich media",
+          "permalink": "/components/rich-media/"
+        }
+      ],
       "autoSummary": "You can refer external content from other documents from your documentation or from external public or private repositories. The external content can either added using liquid sintax or custom liquid tags. There is no limit about how many external public repositories you refer the number of the external private repositories depends on the private access key type you configure.",
       "similarByContent": [],
       "readingTime": 2,
@@ -514,12 +531,21 @@
       "permalink": "/components/intro/",
       "categories": [],
       "tags": [],
-      "excerpt": "learn, add, pre, defined, components, content, pre, defined, components, elements",
-      "lastUpdate": "2025-07-13 14:49:14 +0300",
-      "lastUpdateUTC": 1752407354,
+      "excerpt": "learn, add, pre, defined, components, content, elements",
+      "lastUpdate": "2025-07-13 15:05:19 +0300",
+      "lastUpdateUTC": 1752408319,
       "createTime": "2025-07-13 14:47:48 +0300",
       "createTimeUTC": 1752407268,
-      "relatedPages": [],
+      "relatedPages": [
+        {
+          "title": "Alerts",
+          "permalink": "/alerts/"
+        },
+        {
+          "title": "Rich media",
+          "permalink": "/components/rich-media/"
+        }
+      ],
       "autoSummary": "Learn how to add different pre-defined components to your content.",
       "similarByContent": [],
       "readingTime": 1,
@@ -531,12 +557,21 @@
       "permalink": "/components/rich-media/",
       "categories": [],
       "tags": [],
-      "excerpt": "learn, docaroo, components, embed, rich, media, content, encourage, store, media",
+      "excerpt": "learn, docaroo, components, embed, rich, media, content, encourage, store",
       "lastUpdate": "2025-07-13 14:59:49 +0300",
       "lastUpdateUTC": 1752407989,
       "createTime": "2025-07-13 14:51:11 +0300",
       "createTimeUTC": 1752407471,
-      "relatedPages": [],
+      "relatedPages": [
+        {
+          "title": "Alerts",
+          "permalink": "/alerts/"
+        },
+        {
+          "title": "Components",
+          "permalink": "/components/intro/"
+        }
+      ],
       "autoSummary": "Learn how to use docaroo components to embed rich media into your content. We do not encourage to store large media on your doc-contents folder.",
       "similarByContent": [],
       "readingTime": 3,

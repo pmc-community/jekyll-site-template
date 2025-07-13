@@ -1,36 +1,6 @@
 {
   "keywords": [
     {
-      "permalink": "/sf/f1/",
-      "keywords": [
-        "pmc",
-        "parties",
-        "provide",
-        "links",
-        "websites",
-        "resources",
-        "acknowledge",
-        "agree",
-        "responsible",
-        "availability"
-      ]
-    },
-    {
-      "permalink": "/collection-2/Z/z/",
-      "keywords": [
-        "file",
-        "collection",
-        "file",
-        "loads",
-        "external",
-        "content",
-        "repo",
-        "inline",
-        "link",
-        "file"
-      ]
-    },
-    {
       "permalink": "/collection-2/y/y/",
       "keywords": [
         "content",
@@ -43,141 +13,6 @@
         "simply",
         "random",
         "roots"
-      ]
-    },
-    {
-      "permalink": "/intro/",
-      "keywords": [
-        "documentation",
-        "builder",
-        "guide",
-        "comprehensive",
-        "resource",
-        "learning",
-        "create",
-        "build",
-        "maintain",
-        "quality"
-      ]
-    },
-    {
-      "permalink": "/collection-1/g1/",
-      "keywords": [
-        "answer",
-        "question",
-        "external",
-        "content",
-        "file",
-        "loads",
-        "external",
-        "content",
-        "repo",
-        "inline"
-      ]
-    },
-    {
-      "permalink": "/intro/introChild/",
-      "keywords": [
-        "contrary",
-        "popular",
-        "belief",
-        "lorem",
-        "ipsum",
-        "simply",
-        "random",
-        "roots",
-        "piece",
-        "classical"
-      ]
-    },
-    {
-      "permalink": "/components/intro/",
-      "keywords": [
-        "learn",
-        "add",
-        "pre",
-        "defined",
-        "components",
-        "content",
-        "pre",
-        "defined",
-        "components",
-        "elements"
-      ]
-    },
-    {
-      "permalink": "/collection-1/g11/",
-      "keywords": [
-        "g11",
-        "innohub",
-        "support",
-        "center",
-        "single",
-        "contact",
-        "notifying",
-        "issues",
-        "experience",
-        "services"
-      ]
-    },
-    {
-      "permalink": "/alerts/",
-      "keywords": [
-        "learn",
-        "add",
-        "alert",
-        "blocks",
-        "content",
-        "add",
-        "simple",
-        "rich",
-        "alerts",
-        "alerts"
-      ]
-    },
-    {
-      "permalink": "/terms/",
-      "keywords": [
-        "terms",
-        "service",
-        "applicable",
-        "list",
-        "versions",
-        "legal",
-        "center",
-        "request",
-        "dedicated",
-        "form"
-      ]
-    },
-    {
-      "permalink": "/intro/introChild/introGrandChild/",
-      "keywords": [
-        "learn",
-        "docaroo",
-        "components",
-        "embed",
-        "rich",
-        "media",
-        "content",
-        "encourage",
-        "store",
-        "media"
-      ]
-    },
-    {
-      "permalink": "/collection-2/X/x/",
-      "keywords": [
-        "markdown",
-        "content",
-        "content",
-        "typed",
-        "collection",
-        "inline",
-        "external",
-        "link",
-        "https",
-        "pmc"
       ]
     },
     {
@@ -196,6 +31,116 @@
       ]
     },
     {
+      "permalink": "/alerts/",
+      "keywords": [
+        "learn",
+        "add",
+        "alert",
+        "blocks",
+        "content",
+        "simple",
+        "rich",
+        "alerts"
+      ]
+    },
+    {
+      "permalink": "/intro/",
+      "keywords": [
+        "documentation",
+        "builder",
+        "guide",
+        "comprehensive",
+        "resource",
+        "learning",
+        "create",
+        "build",
+        "maintain",
+        "quality"
+      ]
+    },
+    {
+      "permalink": "/collection-2/Z/z/",
+      "keywords": [
+        "file",
+        "collection",
+        "loads",
+        "external",
+        "content",
+        "repo",
+        "inline",
+        "link"
+      ]
+    },
+    {
+      "permalink": "/intro/introChild/",
+      "keywords": [
+        "contrary",
+        "popular",
+        "belief",
+        "lorem",
+        "ipsum",
+        "simply",
+        "random",
+        "roots",
+        "piece",
+        "classical"
+      ]
+    },
+    {
+      "permalink": "/sf/f1/",
+      "keywords": [
+        "pmc",
+        "parties",
+        "provide",
+        "links",
+        "websites",
+        "resources",
+        "acknowledge",
+        "agree",
+        "responsible",
+        "availability"
+      ]
+    },
+    {
+      "permalink": "/collection-2/X/x/",
+      "keywords": [
+        "markdown",
+        "content",
+        "typed",
+        "collection",
+        "inline",
+        "external",
+        "link",
+        "https",
+        "pmc"
+      ]
+    },
+    {
+      "permalink": "/collection-1/g1/",
+      "keywords": [
+        "answer",
+        "question",
+        "external",
+        "content",
+        "file",
+        "loads",
+        "repo",
+        "inline"
+      ]
+    },
+    {
+      "permalink": "/components/intro/",
+      "keywords": [
+        "learn",
+        "add",
+        "pre",
+        "defined",
+        "components",
+        "content",
+        "elements"
+      ]
+    },
+    {
       "permalink": "/components/rich-media/",
       "keywords": [
         "learn",
@@ -206,8 +151,37 @@
         "media",
         "content",
         "encourage",
-        "store",
-        "media"
+        "store"
+      ]
+    },
+    {
+      "permalink": "/collection-1/g11/",
+      "keywords": [
+        "g11",
+        "innohub",
+        "support",
+        "center",
+        "single",
+        "contact",
+        "notifying",
+        "issues",
+        "experience",
+        "services"
+      ]
+    },
+    {
+      "permalink": "/terms/",
+      "keywords": [
+        "terms",
+        "service",
+        "applicable",
+        "list",
+        "versions",
+        "legal",
+        "center",
+        "request",
+        "dedicated",
+        "form"
       ]
     }
   ]

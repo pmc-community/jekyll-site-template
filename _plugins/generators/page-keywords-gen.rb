@@ -53,6 +53,8 @@ module Jekyll
                         front_matter['permalink']
                       )
 
+                      excerpt = excerpt.uniq
+
                       if front_matter["permalink"] && !front_matter["permalink"].empty? && excerpt.length > 0
                         mutex.synchronize do
                           crtPage = { "permalink" => front_matter["permalink"], "keywords" => excerpt }

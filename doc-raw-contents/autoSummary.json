@@ -45,7 +45,7 @@
             "summary": "Learn how to add different pre-defined components to your content."
         },
         {
-            "permalink": "/intro/introChild/introGrandChild/",
+            "permalink": "/components/rich-media/",
             "summary": "Learn how to use docaroo components to embed rich media into your content. We do not encourage to store large media on your doc-contents folder."
         },
         {
@@ -55,10 +55,6 @@
         {
             "permalink": "/sf/f1/",
             "summary": ""
-        },
-        {
-            "permalink": "/components/rich-media/",
-            "summary": "Learn how to use docaroo components to embed rich media into your content. We do not encourage to store large media on your doc-contents folder."
         }
     ]
 }
