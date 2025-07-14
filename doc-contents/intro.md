@@ -3,8 +3,6 @@ layout: page
 title: Introducere
 permalink: /intro/
 
-has_children: true
-
 categories: [General]
 
 tags: [documentatie]
