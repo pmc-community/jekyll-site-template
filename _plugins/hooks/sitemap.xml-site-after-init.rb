@@ -43,7 +43,6 @@ Jekyll::Hooks.register :site, :after_init do |site|
             # default language is the fallbackLang in _data/siteConfig.yml, multilang section
             url = ENV["DEPLOY_PROD_BASE_URL"] + permalink
             validUrl = LinkUtilities.check_link(url)
-
             if (validUrl == 0)
                 sitemap << {
                     'url' => ENV["DEPLOY_PROD_BASE_URL"] + permalink,
@@ -66,13 +65,19 @@ Jekyll::Hooks.register :site, :after_init do |site|
                 if (FileUtilities.file_exists?("assets/locales/#{language["lang"]}.json", Globals::ROOT_DIR))
                     # we don't add the default language pages to sitemap.xml
                     # because those pages were already added before
+
                     if (language["lang"] != siteLangCode)
-                        sitemap << {
-                            'url' => ENV["DEPLOY_PROD_BASE_URL"] + "/#{language["lang"]}" + permalink,
-                            'lastmod' => front_matter['lastmod'] || File.mtime(file_path).strftime('%Y-%m-%d'),
-                            'changefreq' => front_matter['changefreq'] || 'weekly',
-                            'priority' => front_matter['priority'] || '0.5'
-                        }
+                        url = ENV["DEPLOY_PROD_BASE_URL"] + "/#{language["lang"]}" + permalink
+                        validUrl = LinkUtilities.check_link(url)
+                        #puts "#{url} ... #{validUrl}"
+                        if (validUrl == 0 )
+                            sitemap << {
+                                'url' => ENV["DEPLOY_PROD_BASE_URL"] + "/#{language["lang"]}" + permalink,
+                                'lastmod' => front_matter['lastmod'] || File.mtime(file_path).strftime('%Y-%m-%d'),
+                                'changefreq' => front_matter['changefreq'] || 'weekly',
+                                'priority' => front_matter['priority'] || '0.5'
+                            }
+                        end
                     end
                 end
             end
