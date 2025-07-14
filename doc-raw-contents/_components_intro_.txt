@@ -1,1 +1,0 @@
-learn how to add different pre-defined components to your content. pre-defined components are elements that can be embedded in your documents using liquid tags and parameters as it will be shown for each of the next components. docaroo gives you the following pre-defined components:. alerts rich media faq item link buttons images
