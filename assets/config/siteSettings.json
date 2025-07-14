@@ -231,26 +231,10 @@
       "parent": ""
     }
   ],
-  "tagList": [
-    "docs",
-    "documentation"
-  ],
-  "tagDetails": {
-    "docs": {
-      "pages": []
-    },
-    "documentation": {
-      "pages": []
-    }
-  },
-  "catList": [
-    "General"
-  ],
-  "catDetails": {
-    "General": {
-      "pages": []
-    }
-  },
+  "tagList": [],
+  "tagDetails": {},
+  "catList": [],
+  "catDetails": {},
   "hsSettings": {
     "region": "na1",
     "portalID": "7598952",
