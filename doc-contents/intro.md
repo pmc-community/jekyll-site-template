@@ -2,11 +2,6 @@
 layout: page
 title: Introducere
 permalink: /intro/
-
-categories: [General]
-
-tags: [documentatie]
-
 nav_order: 1
 ---
 

@@ -235,36 +235,10 @@
       "parent": ""
     }
   ],
-  "tagList": [
-    "documentatie"
-  ],
-  "tagDetails": {
-    "documentatie": {
-      "pages": [
-        {
-          "title": "Introducere",
-          "permalink": "/intro/",
-          "lastUpdate": "14-Jul-2025"
-        }
-      ],
-      "numPages": 1
-    }
-  },
-  "catList": [
-    "General"
-  ],
-  "catDetails": {
-    "General": {
-      "pages": [
-        {
-          "title": "Introducere",
-          "permalink": "/intro/",
-          "lastUpdate": "14-Jul-2025"
-        }
-      ],
-      "numPages": 1
-    }
-  },
+  "tagList": [],
+  "tagDetails": {},
+  "catList": [],
+  "catDetails": {},
   "hsSettings": {
     "region": "na1",
     "portalID": "7598952",
