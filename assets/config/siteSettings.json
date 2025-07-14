@@ -102,7 +102,7 @@
         ]
       }
     ],
-    "catMenu": true,
+    "catMenu": false,
     "catMenuMoreBtn": "category-menu-more",
     "siteVars": {
       "siteTestBadge": "xxx"
@@ -110,7 +110,7 @@
     "similarByContent": {
       "maxPages": 4
     },
-    "navPrevNextEnabled": true,
+    "navPrevNextEnabled": false,
     "hsIntegration": {
       "enabled": true,
       "bootstrapCSS": "https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css",
@@ -214,93 +214,21 @@
   },
   "pageList": [
     {
-      "title": "Alerte",
-      "permalink": "/components/alerts/",
-      "categories": [],
-      "tags": [],
-      "excerpt": "learn, add, blocks, content, alerts, types, colors",
-      "lastUpdate": "2025-07-14 18:32:06 +0300",
-      "lastUpdateUTC": 1752507126,
-      "createTime": "2025-07-14 18:32:06 +0300",
-      "createTimeUTC": 1752507126,
-      "relatedPages": [
-        {
-          "title": "Components",
-          "permalink": "/components/intro/"
-        }
-      ],
-      "autoSummary": "Learn how to add. Blocks to your content. You can add both. Alerts can be of different types as shown by the colors (,,,.",
-      "similarByContent": [],
-      "readingTime": 1,
-      "hasDynamicContent": false,
-      "parent": ""
-    },
-    {
-      "title": "Components",
-      "permalink": "/components/intro/",
-      "categories": [],
-      "tags": [],
-      "excerpt": "learn, add, content, pre, defined, components, elements, embedded, documents, tags",
-      "lastUpdate": "2025-07-14 18:32:06 +0300",
-      "lastUpdateUTC": 1752507126,
-      "createTime": "2025-07-14 18:32:06 +0300",
-      "createTimeUTC": 1752507126,
-      "relatedPages": [
-        {
-          "title": "Alerte",
-          "permalink": "/components/alerts/"
-        },
-        {
-          "title": "Rich Media",
-          "permalink": "/components/rich-media/"
-        }
-      ],
-      "autoSummary": "Learn how to add different. Pre-defined components are elements that can be embedded in your documents using.",
-      "similarByContent": [],
-      "readingTime": 1,
-      "hasDynamicContent": false,
-      "parent": ""
-    },
-    {
-      "title": "Rich Media",
-      "permalink": "/components/rich-media/",
-      "categories": [],
-      "tags": [],
-      "excerpt": "learn, docaroo, components, embed, rich, media, content, encourage, store",
-      "lastUpdate": "2025-07-14 18:32:06 +0300",
-      "lastUpdateUTC": 1752507126,
-      "createTime": "2025-07-14 18:32:06 +0300",
-      "createTimeUTC": 1752507126,
-      "relatedPages": [
-        {
-          "title": "Components",
-          "permalink": "/components/intro/"
-        }
-      ],
-      "autoSummary": "Learn how to use docaroo components to embed rich media into your content. We do not encourage to store large media on your doc-contents folder.",
-      "similarByContent": [],
-      "readingTime": 3,
-      "hasDynamicContent": false,
-      "parent": ""
-    },
-    {
       "title": "Introducere",
       "permalink": "/intro/",
       "categories": [
-        "general"
+        "General"
       ],
       "tags": [
-        "documentatie",
-        "site",
-        "doc"
+        "documentatie"
       ],
-      "excerpt": "venit, docaroo, resursa, completă, învăța, creezi, construiești, întreții, site, uri",
-      "lastUpdate": "2025-07-14 18:32:06 +0300",
-      "lastUpdateUTC": 1752507126,
+      "excerpt": "important, varianta, limba, romana, exista, exemplifica, capabilitatile, multilanguage, afara, pagina",
+      "lastUpdate": "2025-07-14 19:13:14 +0300",
+      "lastUpdateUTC": 1752509594,
       "createTime": "2025-07-14 18:32:06 +0300",
       "createTimeUTC": 1752507126,
       "relatedPages": [],
-      "autoSummary": "Bine ai venit la docaroo — resursa ta completă pentru a învăța cum să creezi, construiești și întreții site-uri de documentație de înaltă calitate pentru orice tip de proiect, produs sau.",
+      "autoSummary": "Important varianta in limba romana exista doar pentru a exemplifica capabilitatile multilanguage. In afara de acesta pagina nu exista alt continut in limba romana. Comutarea pe limba romana din orice alta.",
       "similarByContent": [],
       "readingTime": 3,
       "hasDynamicContent": false,
@@ -308,32 +236,10 @@
     }
   ],
   "tagList": [
-    "doc",
-    "documentatie",
-    "site"
+    "documentatie"
   ],
   "tagDetails": {
-    "doc": {
-      "pages": [
-        {
-          "title": "Introducere",
-          "permalink": "/intro/",
-          "lastUpdate": "14-Jul-2025"
-        }
-      ],
-      "numPages": 1
-    },
     "documentatie": {
-      "pages": [
-        {
-          "title": "Introducere",
-          "permalink": "/intro/",
-          "lastUpdate": "14-Jul-2025"
-        }
-      ],
-      "numPages": 1
-    },
-    "site": {
       "pages": [
         {
           "title": "Introducere",
@@ -345,10 +251,10 @@
     }
   },
   "catList": [
-    "general"
+    "General"
   ],
   "catDetails": {
-    "general": {
+    "General": {
       "pages": [
         {
           "title": "Introducere",

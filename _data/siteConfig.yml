@@ -76,13 +76,13 @@ toBeRemovedAfterLoad:
   - "h1":
     - "testAttr"
     - "testAttr_1"
-catMenu: true
+catMenu: false
 catMenuMoreBtn: "category-menu-more"
 siteVars:
   siteTestBadge: "xxx"
 similarByContent:
   maxPages: 4
-navPrevNextEnabled: true # enable/disable page Prev/Next navigation feature
+navPrevNextEnabled: false # enable/disable page Prev/Next navigation feature
 hsIntegration:
   enabled: true
   bootstrapCSS: "https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"

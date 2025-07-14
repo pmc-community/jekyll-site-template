@@ -5,14 +5,15 @@ permalink: /intro/
 
 has_children: true
 
-categories: [general]
+categories: [General]
 
-tags: [documentatie, site, doc]
+tags: [documentatie]
 
 nav_order: 1
 ---
 
-<!-- START_EXPOSED_SECTION -->
+{% include elements/alert.html class="primary" content="Varianta in limba Romana exista doar pentru a exemplifica capabilitatile multilanguage. **In afara de acesta pagina nu exista alt continut in limba Romana.** Comutarea pe limba Romana din orice alta pagina in afara de aceasta pagina va afisa **404 Not Found**." title="IMPORTANT" %}
+
 # 📚 Introducere
 
 Bine ai venit la **DOCAROO** — resursa ta completă pentru a învăța cum să **creezi, construiești și întreții site-uri de documentație de înaltă calitate** pentru orice tip de proiect, produs sau organizație.
@@ -117,5 +118,3 @@ O documentație bună nu este doar un bonus — este o **componentă esențială
 # ✅ Să începem!
 
 Folosește meniul lateral pentru a naviga la prima secțiune și a începe călătoria. Fiecare subiect include exemple, șabloane și sfaturi practice din lumea reală pentru a te ajuta să treci de la o pagină goală la o documentație completă.
-
-<!-- END_EXPOSED_SECTION -->

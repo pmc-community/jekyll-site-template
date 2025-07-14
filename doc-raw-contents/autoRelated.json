@@ -1,36 +1,5 @@
 [
   {
-    "permalink": "/components/alerts/",
-    "related": [
-      {
-        "title": "Components",
-        "permalink": "/components/intro/"
-      }
-    ]
-  },
-  {
-    "permalink": "/components/intro/",
-    "related": [
-      {
-        "title": "Alerte",
-        "permalink": "/components/alerts/"
-      },
-      {
-        "title": "Rich Media",
-        "permalink": "/components/rich-media/"
-      }
-    ]
-  },
-  {
-    "permalink": "/components/rich-media/",
-    "related": [
-      {
-        "title": "Components",
-        "permalink": "/components/intro/"
-      }
-    ]
-  },
-  {
     "permalink": "/intro/",
     "related": []
   }

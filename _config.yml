@@ -84,14 +84,7 @@ collections_dir: doc-contents
 # MARKER COLLECTIONS START
 collections:
 
-  # custom collections
-  content:
-    permalink: "/:collection/:path"
-    output: true
-  components:
-    permalink: "/:collection/:path"
-    output: true
-  
+  # custom collections  
 
   # default collections (last position(s))
   tools:
@@ -106,12 +99,6 @@ collections:
 just_the_docs:
   collections:
     # custom collections
-    content:
-      name: Continut
-      nav_fold: true
-    components:
-      name: Componente
-      nav_fold: true
 
     # default collections (last position(s))
     tools:
