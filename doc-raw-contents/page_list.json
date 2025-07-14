@@ -2,17 +2,13 @@
   {
     "title": "Introducere",
     "permalink": "/intro/",
-    "categories": [
-      "General"
-    ],
-    "tags": [
-      "documentatie"
-    ],
+    "categories": [],
+    "tags": [],
     "excerpt": "",
-    "lastUpdate": "2025-07-14 19:13:14 +0300",
-    "lastUpdateUTC": 1752509594,
-    "createTime": "2025-07-14 18:32:06 +0300",
-    "createTimeUTC": 1752507126,
+    "lastUpdate": "2025-07-14 19:44:21 +0300",
+    "lastUpdateUTC": 1752511461,
+    "createTime": "2025-07-14 19:32:45 +0300",
+    "createTimeUTC": 1752510765,
     "relatedPages": [],
     "autoSummary": "",
     "similarByContent": [],
