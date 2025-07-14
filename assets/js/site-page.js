@@ -399,13 +399,13 @@ const page__getPageInfo = () => {
 
             const isNotLast = '<span class="fw-normal">  </span>';
 
-            const catColor = _.findIndex(globCustomCats, item => item.toLowerCase() === cat.trim().toLowerCase()) === -1 ?
-                'text-danger' :
-                'text-success';
+            const catColor = _.findIndex(globCustomCats, item => item.toLowerCase() === cat.trim().toLowerCase()) === -1 
+                ? 'text-danger' 
+                : 'text-success';
 
-            const numPages = _.findIndex(globCustomCats, item => item.toLowerCase() === cat.trim().toLowerCase()) === -1 ?
-                catDetails[cat].numPages:
-                getCatPages(cat);
+            const numPages = _.findIndex(globCustomCats, item => item.toLowerCase() === cat.trim().toLowerCase()) === -1 
+                ? catDetails[cat].numPages
+                : getCatPages(cat);
             
             const langPrefix = !isProd ? '' : siteLanguageCode === '' ? '' : `/${siteLanguageCode}`;
 
