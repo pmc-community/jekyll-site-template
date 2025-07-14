@@ -5,6 +5,7 @@
 require 'yaml'
 require_relative "../../tools/modules/globals"
 require_relative "../../tools/modules/file-utilities"
+require_relative "../../tools/modules/link-utilities"
 require 'dotenv'
 
 Dotenv.load
@@ -40,12 +41,17 @@ Jekyll::Hooks.register :site, :after_init do |site|
             # adding default language pages to sitemap.xml
             # these are without language code in the url
             # default language is the fallbackLang in _data/siteConfig.yml, multilang section
-            sitemap << {
-                'url' => ENV["DEPLOY_PROD_BASE_URL"] + permalink,
-                'lastmod' => front_matter['lastmod'] || File.mtime(file_path).strftime('%Y-%m-%d'),
-                'changefreq' => front_matter['changefreq'] || 'weekly',
-                'priority' => front_matter['priority'] || '0.5'
-            }
+            url = ENV["DEPLOY_PROD_BASE_URL"] + permalink
+            validUrl = LinkUtilities.check_link(url)
+
+            if (validUrl == 0)
+                sitemap << {
+                    'url' => ENV["DEPLOY_PROD_BASE_URL"] + permalink,
+                    'lastmod' => front_matter['lastmod'] || File.mtime(file_path).strftime('%Y-%m-%d'),
+                    'changefreq' => front_matter['changefreq'] || 'weekly',
+                    'priority' => front_matter['priority'] || '0.5'
+                }
+            end
 
             # add language pages to sitemap
             # need to read the siteConfig.yml because at the moment of :after_init the site var is not known yet
