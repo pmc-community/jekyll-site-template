@@ -1,118 +1,18 @@
 [
   {
-    "permalink": "/intro/introChild/",
+    "permalink": "/components/alerts/",
     "related": [
       {
-        "title": "Collection-2/Y",
-        "permalink": "/collection-2/y/y/"
-      }
-    ]
-  },
-  {
-    "permalink": "/pwc/",
-    "related": [
-      {
-        "title": "Collection-2/X",
-        "permalink": "/collection-2/X/x/"
+        "title": "Content",
+        "permalink": "/content/intro/"
       },
       {
-        "title": "Collection-1/G11",
-        "permalink": "/collection-1/g11/"
+        "title": "Link button",
+        "permalink": "/components/link-button/"
       },
-      {
-        "title": "Introduction",
-        "permalink": "/intro/"
-      }
-    ]
-  },
-  {
-    "permalink": "/ec/",
-    "related": [
-      {
-        "title": "Play with content",
-        "permalink": "/pwc/"
-      }
-    ]
-  },
-  {
-    "permalink": "/terms/",
-    "related": []
-  },
-  {
-    "permalink": "/collection-1/g1/",
-    "related": [
-      {
-        "title": "Collection-2/Z",
-        "permalink": "/collection-2/Z/z/"
-      },
-      {
-        "title": "Collection-2/X",
-        "permalink": "/collection-2/X/x/"
-      }
-    ]
-  },
-  {
-    "permalink": "/collection-1/g11/",
-    "related": [
-      {
-        "title": "Play with content",
-        "permalink": "/pwc/"
-      }
-    ]
-  },
-  {
-    "permalink": "/collection-2/y/y/",
-    "related": [
-      {
-        "title": "Intro Child Page",
-        "permalink": "/intro/introChild/"
-      }
-    ]
-  },
-  {
-    "permalink": "/collection-2/Z/z/",
-    "related": [
-      {
-        "title": "Collection-1/G1",
-        "permalink": "/collection-1/g1/"
-      },
-      {
-        "title": "Collection-2/X",
-        "permalink": "/collection-2/X/x/"
-      },
-      {
-        "title": "Play with content",
-        "permalink": "/pwc/"
-      }
-    ]
-  },
-  {
-    "permalink": "/collection-2/X/x/",
-    "related": [
-      {
-        "title": "Collection-2/Z",
-        "permalink": "/collection-2/Z/z/"
-      },
-      {
-        "title": "Play with content",
-        "permalink": "/pwc/"
-      },
-      {
-        "title": "Collection-1/G1",
-        "permalink": "/collection-1/g1/"
-      }
-    ]
-  },
-  {
-    "permalink": "/alerts/",
-    "related": [
       {
         "title": "Components",
         "permalink": "/components/intro/"
-      },
-      {
-        "title": "Rich media",
-        "permalink": "/components/rich-media/"
       }
     ]
   },
@@ -120,8 +20,12 @@
     "permalink": "/components/intro/",
     "related": [
       {
+        "title": "Content",
+        "permalink": "/content/intro/"
+      },
+      {
         "title": "Alerts",
-        "permalink": "/alerts/"
+        "permalink": "/components/alerts/"
       },
       {
         "title": "Rich media",
@@ -130,11 +34,15 @@
     ]
   },
   {
-    "permalink": "/components/rich-media/",
+    "permalink": "/components/qitem/",
+    "related": []
+  },
+  {
+    "permalink": "/components/link-button/",
     "related": [
       {
         "title": "Alerts",
-        "permalink": "/alerts/"
+        "permalink": "/components/alerts/"
       },
       {
         "title": "Components",
@@ -143,16 +51,42 @@
     ]
   },
   {
-    "permalink": "/intro/",
+    "permalink": "/components/rich-media/",
     "related": [
       {
-        "title": "Play with content",
-        "permalink": "/pwc/"
+        "title": "Components",
+        "permalink": "/components/intro/"
       }
     ]
   },
   {
-    "permalink": "/sf/f1/",
+    "permalink": "/content/intro/",
+    "related": [
+      {
+        "title": "Alerts",
+        "permalink": "/components/alerts/"
+      },
+      {
+        "title": "Components",
+        "permalink": "/components/intro/"
+      },
+      {
+        "title": "External content",
+        "permalink": "/content/ec/"
+      }
+    ]
+  },
+  {
+    "permalink": "/content/ec/",
+    "related": [
+      {
+        "title": "Content",
+        "permalink": "/content/intro/"
+      }
+    ]
+  },
+  {
+    "permalink": "/intro/",
     "related": []
   }
 ]

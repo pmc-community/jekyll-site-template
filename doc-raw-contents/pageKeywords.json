@@ -1,49 +1,6 @@
 {
   "keywords": [
     {
-      "permalink": "/collection-2/y/y/",
-      "keywords": [
-        "content",
-        "file",
-        "contrary",
-        "popular",
-        "belief",
-        "lorem",
-        "ipsum",
-        "simply",
-        "random",
-        "roots"
-      ]
-    },
-    {
-      "permalink": "/pwc/",
-      "keywords": [
-        "markdown",
-        "content",
-        "direct",
-        "included",
-        "stable",
-        "heads",
-        "links",
-        "docs",
-        "permalinks",
-        "file"
-      ]
-    },
-    {
-      "permalink": "/alerts/",
-      "keywords": [
-        "learn",
-        "add",
-        "alert",
-        "blocks",
-        "content",
-        "simple",
-        "rich",
-        "alerts"
-      ]
-    },
-    {
       "permalink": "/intro/",
       "keywords": [
         "documentation",
@@ -59,85 +16,15 @@
       ]
     },
     {
-      "permalink": "/collection-2/Z/z/",
-      "keywords": [
-        "file",
-        "collection",
-        "loads",
-        "external",
-        "content",
-        "repo",
-        "inline",
-        "link"
-      ]
-    },
-    {
-      "permalink": "/intro/introChild/",
-      "keywords": [
-        "contrary",
-        "popular",
-        "belief",
-        "lorem",
-        "ipsum",
-        "simply",
-        "random",
-        "roots",
-        "piece",
-        "classical"
-      ]
-    },
-    {
-      "permalink": "/sf/f1/",
-      "keywords": [
-        "pmc",
-        "parties",
-        "provide",
-        "links",
-        "websites",
-        "resources",
-        "acknowledge",
-        "agree",
-        "responsible",
-        "availability"
-      ]
-    },
-    {
-      "permalink": "/collection-2/X/x/",
-      "keywords": [
-        "markdown",
-        "content",
-        "typed",
-        "collection",
-        "inline",
-        "external",
-        "link",
-        "https",
-        "pmc"
-      ]
-    },
-    {
-      "permalink": "/collection-1/g1/",
-      "keywords": [
-        "answer",
-        "question",
-        "external",
-        "content",
-        "file",
-        "loads",
-        "repo",
-        "inline"
-      ]
-    },
-    {
-      "permalink": "/components/intro/",
+      "permalink": "/components/alerts/",
       "keywords": [
         "learn",
         "add",
-        "pre",
-        "defined",
-        "components",
+        "blocks",
         "content",
-        "elements"
+        "alerts",
+        "types",
+        "colors"
       ]
     },
     {
@@ -155,33 +42,75 @@
       ]
     },
     {
-      "permalink": "/collection-1/g11/",
+      "permalink": "/components/link-button/",
       "keywords": [
-        "g11",
-        "innohub",
-        "support",
-        "center",
-        "single",
-        "contact",
-        "notifying",
-        "issues",
-        "experience",
-        "services"
+        "learn",
+        "add",
+        "link",
+        "buttons",
+        "content",
+        "helps",
+        "users",
+        "navigate"
       ]
     },
     {
-      "permalink": "/terms/",
+      "permalink": "/content/ec/",
       "keywords": [
-        "terms",
-        "service",
-        "applicable",
-        "list",
-        "versions",
-        "legal",
-        "center",
-        "request",
-        "dedicated",
-        "form"
+        "docaroo",
+        "documents",
+        "external",
+        "content",
+        "create",
+        "import",
+        "multiple"
+      ]
+    },
+    {
+      "permalink": "/collection-2/Z/z/",
+      "keywords": [
+        "file",
+        "collection",
+        "loads",
+        "external",
+        "content",
+        "repo",
+        "inline",
+        "link"
+      ]
+    },
+    {
+      "permalink": "/components/qitem/",
+      "keywords": [
+        "answer",
+        "question"
+      ]
+    },
+    {
+      "permalink": "/content/intro/",
+      "keywords": [
+        "learn",
+        "structure",
+        "content",
+        "efficient",
+        "types",
+        "documents",
+        "included"
+      ]
+    },
+    {
+      "permalink": "/components/intro/",
+      "keywords": [
+        "learn",
+        "add",
+        "content",
+        "pre",
+        "defined",
+        "components",
+        "elements",
+        "embedded",
+        "documents",
+        "tags"
       ]
     }
   ]

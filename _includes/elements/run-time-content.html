@@ -1,0 +1,27 @@
+{% comment %}
+  it calls the function getExternalContent = (file, position, startMarker , endMarker, header, whereID, whoCalled) 
+{% endcomment %}
+
+{% capture uuid %}
+  {% UUID %}
+{% endcapture %}
+{% assign rtcid = uuid | strip %}
+
+{% assign source = include.source %}
+{% assign startMarker = include.startMarker || default: "fullFile" %}
+{% assign endMarker = include.endMarker || default: "fullFile" %}
+{% assign caller = include.caller || default: "unknown_caller" %}
+{% assign header = include.header || default: "" %}
+
+<div id="rtc-{{rtcid}}"></div>
+<script siteAttr = "externalContent"> 
+    getExternalContent( 
+        '{{source}}', 
+        'before', 
+        '{{startMarker}}', 
+        '{{endMarker}}', 
+        '{{header}}', 
+        'rtc-{{rtcid}}', 
+        '{{caller}}'
+    ); 
+</script>

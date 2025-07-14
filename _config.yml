@@ -85,15 +85,13 @@ collections_dir: doc-contents
 collections:
 
   # custom collections
+  content:
+    permalink: "/:collection/:path"
+    output: true
   components:
     permalink: "/:collection/:path"
     output: true
-  collection-1:
-    permalink: "/:collection/:path"
-    output: true
-  collection-2:
-    permalink: "/:collection/:path"
-    output: true
+  
 
   # default collections (last position(s))
   tools:
@@ -108,19 +106,16 @@ collections:
 just_the_docs:
   collections:
     # custom collections
+    content:
+      name: Content
+      nav_fold: true
     components:
       name: Components
-      nav_fold: true
-    collection-1:
-      name: Collection 1
-      nav_fold: true
-    collection-2:
-      name: Collection 2
       nav_fold: true
 
     # default collections (last position(s))
     tools:
-      name: Utile
+      name: Tools
       nav_fold: true
 
 # MARKER COLLECTIONS END

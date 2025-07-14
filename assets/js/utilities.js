@@ -346,8 +346,9 @@ const arrayDuplicates = (arr) => {
 // INSTEAD USE JEKYLL SPECIFIC LIQUID TAGS TO GENERATE THE CONTENT AT BUILD TIME
 // DYNAMIC CLIENT-SIDE CLIENT MAY BE USEFUL WHEN NEED TO SHOW CONTENT LIKE NEWS OR ANNOUNCEMENTS OR SIMILAR
 const getExternalContent = (file, position, startMarker , endMarker, header, whereID, whoCalled) => {
-    $(window).on('load', async () => {
+    $(document).ready( async () => {
         await waitForI18Next();
+
         // prevent returning unwanted quantity of content
         if (typeof startMarker === 'undefined' ||  typeof endMarker === 'undefined' ) return;
         if (startMarker.trim() === '' && endMarker.trim() === '') return;

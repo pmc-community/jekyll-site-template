@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Alerts
-permalink: /alerts/
+permalink: /components/alerts/
 ---
 
 # Summary

@@ -1,56 +1,6 @@
 [
     {
-        "permalink": "/intro/introChild/",
-        "similarFiles": [
-            "/collection-2/y/y/",
-            "/sf/f1/"
-        ]
-    },
-    {
-        "permalink": "/pwc/",
-        "similarFiles": [
-            "/intro/"
-        ]
-    },
-    {
-        "permalink": "/ec/",
-        "similarFiles": []
-    },
-    {
-        "permalink": "/terms/",
-        "similarFiles": [
-            "/sf/f1/"
-        ]
-    },
-    {
-        "permalink": "/collection-1/g1/",
-        "similarFiles": []
-    },
-    {
-        "permalink": "/collection-1/g11/",
-        "similarFiles": []
-    },
-    {
-        "permalink": "/collection-2/y/y/",
-        "similarFiles": [
-            "/intro/introChild/",
-            "/sf/f1/"
-        ]
-    },
-    {
-        "permalink": "/collection-2/Z/z/",
-        "similarFiles": [
-            "/collection-2/X/x/"
-        ]
-    },
-    {
-        "permalink": "/collection-2/X/x/",
-        "similarFiles": [
-            "/collection-2/Z/z/"
-        ]
-    },
-    {
-        "permalink": "/alerts/",
+        "permalink": "/components/alerts/",
         "similarFiles": []
     },
     {
@@ -58,21 +8,31 @@
         "similarFiles": []
     },
     {
+        "permalink": "/components/qitem/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/components/link-button/",
+        "similarFiles": []
+    },
+    {
         "permalink": "/components/rich-media/",
         "similarFiles": []
     },
     {
-        "permalink": "/intro/",
-        "similarFiles": [
-            "/pwc/"
-        ]
+        "permalink": "/content/intro/",
+        "similarFiles": []
     },
     {
-        "permalink": "/sf/f1/",
-        "similarFiles": [
-            "/collection-2/y/y/",
-            "/intro/introChild/",
-            "/terms/"
-        ]
+        "permalink": "/content/ec/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/collection-2/Z/z/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/intro/",
+        "similarFiles": []
     }
 ]
