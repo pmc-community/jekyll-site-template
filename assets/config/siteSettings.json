@@ -452,18 +452,11 @@
     }
   },
   "catList": [
-    "general"
+    "General"
   ],
   "catDetails": {
-    "general": {
-      "pages": [
-        {
-          "title": "Introduction",
-          "permalink": "/intro/",
-          "lastUpdate": "14-Jul-2025"
-        }
-      ],
-      "numPages": 1
+    "General": {
+      "pages": []
     }
   },
   "hsSettings": {

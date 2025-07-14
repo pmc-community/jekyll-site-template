@@ -3,7 +3,7 @@ layout: page
 title: Introduction
 permalink: /intro/
 
-categories: [general]
+categories: [General]
 
 tags: [documentation, site, docs]
 
