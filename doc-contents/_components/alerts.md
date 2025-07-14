@@ -32,34 +32,34 @@ Add content taken from external files to your alerts like this. Content is taken
 {% capture c %}
     {% ExternalSiteContent  {
         "markdown": true,
-        "file_path":"_collection-2/Z/z.md", 
+        "file_path":"partials/external-content-demo/alert-content.md", 
         "ignore_wp_shortcodes": true, 
-        "start_marker": "<!-- START MARKER 1 -->", 
+        "start_marker": "fullFile", 
         "include_start_marker": false,
-        "end_marker": "<!-- END MARKER 1 -->",
+        "end_marker": "fullFile",
         "include_end_marker": false,
         "needAuth": true 
     } 
     %}
 {% endcapture %}
-{% include elements/alert.html class="success" content=c %}
+{% include elements/alert.html class="success" content=c title="Alert title" %}
 ```
 {% endraw %}
 
 {% capture c %}
   {% ExternalSiteContent  {
         "markdown": true,
-        "file_path":"_collection-2/Z/z.md", 
+        "file_path":"partials/external-content-demo/alert-content.md", 
         "ignore_wp_shortcodes": true, 
-        "start_marker": "<!-- START MARKER 1 -->", 
+        "start_marker": "fullFile", 
         "include_start_marker": false,
-        "end_marker": "<!-- END MARKER 1 -->",
+        "end_marker": "fullFile",
         "include_end_marker": false,
         "needAuth": true 
     } 
   %}
 {% endcapture %}
-{% include elements/alert.html class="success" content=c %}
+{% include elements/alert.html class="success" content=c title="Alert title" %}
 
 # Simple alerts
 Add simple alerts to your page like this:

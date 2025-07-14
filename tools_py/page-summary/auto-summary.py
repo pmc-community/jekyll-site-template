@@ -14,6 +14,7 @@ from langdetect import detect, LangDetectException
 
 # === SUPPRESS WARNINGS/LOGS ===
 warnings.filterwarnings("ignore", message="resource_tracker: There appear to be")
+warnings.filterwarnings("ignore", category=FutureWarning, module="huggingface_hub.file_download")
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 os.environ["XLA_FLAGS"] = "--xla_cpu_enable_fast_math=false"
 logging.getLogger('absl').setLevel(logging.ERROR)
@@ -248,7 +249,8 @@ def process_file_mp(file_name):
 
 def process_files(file_names, pageList=None):
     total_memory = psutil.virtual_memory().total
-    cpu_limit = max(1, int(cpu_count() * 0.6))
+    #cpu_limit = max(1, int(cpu_count() * 0.6))
+    cpu_limit = min(len(file_names), max(1, int(cpu_count() * 0.6)))
 
     with Manager() as manager:
         write_lock = manager.Lock()

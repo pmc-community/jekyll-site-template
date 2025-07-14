@@ -1,7 +1,9 @@
 [
     {
         "permalink": "/components/alerts/",
-        "similarFiles": []
+        "similarFiles": [
+            "/content/ec/"
+        ]
     },
     {
         "permalink": "/components/intro/",
@@ -21,18 +23,22 @@
     },
     {
         "permalink": "/content/intro/",
-        "similarFiles": []
+        "similarFiles": [
+            "/content/ec/",
+            "/intro/"
+        ]
     },
     {
         "permalink": "/content/ec/",
-        "similarFiles": []
-    },
-    {
-        "permalink": "/collection-2/Z/z/",
-        "similarFiles": []
+        "similarFiles": [
+            "/content/intro/",
+            "/components/alerts/"
+        ]
     },
     {
         "permalink": "/intro/",
-        "similarFiles": []
+        "similarFiles": [
+            "/content/intro/"
+        ]
     }
 ]

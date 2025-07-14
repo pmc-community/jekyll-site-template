@@ -20,22 +20,27 @@
     "permalink": "/components/intro/",
     "related": [
       {
+        "title": "FAQ Item",
+        "permalink": "/components/qitem/"
+      },
+      {
         "title": "Content",
         "permalink": "/content/intro/"
       },
       {
         "title": "Alerts",
         "permalink": "/components/alerts/"
-      },
-      {
-        "title": "Rich media",
-        "permalink": "/components/rich-media/"
       }
     ]
   },
   {
     "permalink": "/components/qitem/",
-    "related": []
+    "related": [
+      {
+        "title": "Components",
+        "permalink": "/components/intro/"
+      }
+    ]
   },
   {
     "permalink": "/components/link-button/",

@@ -219,10 +219,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "learn, add, blocks, content, alerts, types, colors",
-      "lastUpdate": "2025-07-14 20:38:32 +0300",
-      "lastUpdateUTC": 1752514712,
-      "createTime": "2025-07-14 20:38:32 +0300",
-      "createTimeUTC": 1752514712,
+      "lastUpdate": "2025-07-15 00:21:10 +0300",
+      "lastUpdateUTC": 1752528070,
+      "createTime": "2025-07-15 00:14:53 +0300",
+      "createTimeUTC": 1752527693,
       "relatedPages": [
         {
           "title": "Content",
@@ -237,9 +237,14 @@
           "permalink": "/components/intro/"
         }
       ],
-      "autoSummary": "You can add alerts to your page by clicking on the 'Add alerts' button in the top right corner of your page or by clicking on the 'Add alerts' link in the upper right corner of your page.",
-      "similarByContent": [],
-      "readingTime": 1,
+      "autoSummary": "Alerts can be of different types as shown by the colors (,,, and ). Alerts can contain content introduced in clear but also can refer. From other documents from your documentation or from external public or private repositories. There is no limit about how many external public repositories you refer.",
+      "similarByContent": [
+        {
+          "permalink": "/content/ec/",
+          "title": "External content"
+        }
+      ],
+      "readingTime": 2,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -249,11 +254,15 @@
       "categories": [],
       "tags": [],
       "excerpt": "learn, add, content, pre, defined, components, elements, embedded, documents, tags",
-      "lastUpdate": "2025-07-14 20:38:32 +0300",
-      "lastUpdateUTC": 1752514712,
-      "createTime": "2025-07-14 20:38:32 +0300",
-      "createTimeUTC": 1752514712,
+      "lastUpdate": "2025-07-15 00:26:43 +0300",
+      "lastUpdateUTC": 1752528403,
+      "createTime": "2025-07-15 00:14:53 +0300",
+      "createTimeUTC": 1752527693,
       "relatedPages": [
+        {
+          "title": "FAQ Item",
+          "permalink": "/components/qitem/"
+        },
         {
           "title": "Content",
           "permalink": "/content/intro/"
@@ -261,13 +270,9 @@
         {
           "title": "Alerts",
           "permalink": "/components/alerts/"
-        },
-        {
-          "title": "Rich media",
-          "permalink": "/components/rich-media/"
         }
       ],
-      "autoSummary": "Docaroo is a free online tool that allows you to create, edit and publish high-quality annotated bibliography and other annotated bibliography content on the web.",
+      "autoSummary": "Documentaroo lets you embed content into your documents using pre-defined components. The components are elements that can be embedded in documents using tags and. As it will be shown for each of the next components.",
       "similarByContent": [],
       "readingTime": 1,
       "hasDynamicContent": false,
@@ -278,13 +283,18 @@
       "permalink": "/components/qitem/",
       "categories": [],
       "tags": [],
-      "excerpt": "answer, question",
-      "lastUpdate": "2025-07-14 20:38:32 +0300",
-      "lastUpdateUTC": 1752514712,
-      "createTime": "2025-07-14 20:38:32 +0300",
-      "createTimeUTC": 1752514712,
-      "relatedPages": [],
-      "autoSummary": "How much do you know about the history of the English Defence League (EDL) and its predecessor, the English Defence League (EDL)?",
+      "excerpt": "learn, add, elements, documents, element, question, answer",
+      "lastUpdate": "2025-07-15 00:50:46 +0300",
+      "lastUpdateUTC": 1752529846,
+      "createTime": "2025-07-15 00:14:53 +0300",
+      "createTimeUTC": 1752527693,
+      "relatedPages": [
+        {
+          "title": "Components",
+          "permalink": "/components/intro/"
+        }
+      ],
+      "autoSummary": "The question should always be a text. The answer to the question can be simple text or any rich content that is allowed in markdown. Any docaroo component can be used to render the answer to a question.",
       "similarByContent": [],
       "readingTime": 1,
       "hasDynamicContent": false,
@@ -296,10 +306,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "learn, add, link, buttons, content, helps, users, navigate",
-      "lastUpdate": "2025-07-14 20:38:32 +0300",
-      "lastUpdateUTC": 1752514712,
-      "createTime": "2025-07-14 20:38:32 +0300",
-      "createTimeUTC": 1752514712,
+      "lastUpdate": "2025-07-15 00:14:53 +0300",
+      "lastUpdateUTC": 1752527693,
+      "createTime": "2025-07-15 00:14:53 +0300",
+      "createTimeUTC": 1752527693,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -310,7 +320,7 @@
           "permalink": "/components/intro/"
         }
       ],
-      "autoSummary": "How to add link buttons to your documentation: how to use docaroo to add link buttons to your documentation: how to use docaroo to add link buttons to your documentation:.",
+      "autoSummary": "Link buttons helps users to navigate inside your documentation or access external sites. You can add individual link buttons or group link buttons. You can place anchors anywhere in the document and references to them.",
       "similarByContent": [],
       "readingTime": 1,
       "hasDynamicContent": false,
@@ -322,17 +332,17 @@
       "categories": [],
       "tags": [],
       "excerpt": "learn, docaroo, components, embed, rich, media, content, encourage, store",
-      "lastUpdate": "2025-07-14 20:38:32 +0300",
-      "lastUpdateUTC": 1752514712,
-      "createTime": "2025-07-14 20:38:32 +0300",
-      "createTimeUTC": 1752514712,
+      "lastUpdate": "2025-07-15 00:14:53 +0300",
+      "lastUpdateUTC": 1752527693,
+      "createTime": "2025-07-15 00:14:53 +0300",
+      "createTimeUTC": 1752527693,
       "relatedPages": [
         {
           "title": "Components",
           "permalink": "/components/intro/"
         }
       ],
-      "autoSummary": "How to use docaroo components to embed rich media into your content - learn how to use docaroo components to embed rich media into your content - how to use docaroo components to embed rich media into your content.",
+      "autoSummary": "Use docaroo components to embed rich media into your content. Currently we support design, boards (fig jam), slides and deck files. Prototypes are not supported for the moment.",
       "similarByContent": [],
       "readingTime": 3,
       "hasDynamicContent": false,
@@ -344,10 +354,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "learn, structure, content, efficient, types, documents, included",
-      "lastUpdate": "2025-07-14 20:38:32 +0300",
-      "lastUpdateUTC": 1752514712,
-      "createTime": "2025-07-14 20:38:32 +0300",
-      "createTimeUTC": 1752514712,
+      "lastUpdate": "2025-07-15 00:14:53 +0300",
+      "lastUpdateUTC": 1752527693,
+      "createTime": "2025-07-15 00:14:53 +0300",
+      "createTimeUTC": 1752527693,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -362,8 +372,17 @@
           "permalink": "/content/ec/"
         }
       ],
-      "autoSummary": "In this lesson, we are going to look at how to structure and use the content in your documentation to the best of your ability and to the best of your knowledge.",
-      "similarByContent": [],
+      "autoSummary": "Learn how to structure and use the content in the most efficient way. Write a concise, factual summary in English with no greetings or instructions, maximum 50 words.",
+      "similarByContent": [
+        {
+          "permalink": "/content/ec/",
+          "title": "External content"
+        },
+        {
+          "permalink": "/intro/",
+          "title": "Introduction"
+        }
+      ],
       "readingTime": 2,
       "hasDynamicContent": false,
       "parent": ""
@@ -374,18 +393,27 @@
       "categories": [],
       "tags": [],
       "excerpt": "docaroo, documents, external, content, create, import, multiple",
-      "lastUpdate": "2025-07-14 20:38:32 +0300",
-      "lastUpdateUTC": 1752514712,
-      "createTime": "2025-07-14 20:38:32 +0300",
-      "createTimeUTC": 1752514712,
+      "lastUpdate": "2025-07-15 00:14:53 +0300",
+      "lastUpdateUTC": 1752527693,
+      "createTime": "2025-07-15 00:14:53 +0300",
+      "createTimeUTC": 1752527693,
       "relatedPages": [
         {
           "title": "Content",
           "permalink": "/content/intro/"
         }
       ],
-      "autoSummary": "Docaroo allows you to create and import external content into your documents, but you must be sure that the content you want to import is available at build time, as the imported content is added at build time.",
-      "similarByContent": [],
+      "autoSummary": "Documentation can be imported from any source that returns markdown. This type of content will be refelcted in the page toc, you can tag (with cutom tags) or classify (custom categories) based on this content.",
+      "similarByContent": [
+        {
+          "permalink": "/content/intro/",
+          "title": "Content"
+        },
+        {
+          "permalink": "/components/alerts/",
+          "title": "Alerts"
+        }
+      ],
       "readingTime": 4,
       "hasDynamicContent": false,
       "parent": ""
@@ -401,13 +429,18 @@
         "docs"
       ],
       "excerpt": "romanian, version, demonstrating, multilanguage, capabilities, docaroo, introduction, content, language",
-      "lastUpdate": "2025-07-14 20:40:42 +0300",
-      "lastUpdateUTC": 1752514842,
-      "createTime": "2025-07-14 20:38:32 +0300",
-      "createTimeUTC": 1752514712,
+      "lastUpdate": "2025-07-15 00:14:53 +0300",
+      "lastUpdateUTC": 1752527693,
+      "createTime": "2025-07-15 00:14:53 +0300",
+      "createTimeUTC": 1752527693,
       "relatedPages": [],
-      "autoSummary": "Docaroo is a multi-language documentation platform that allows developers to create, publish, and manage high-quality documentation in a variety of languages.",
-      "similarByContent": [],
+      "autoSummary": "Romanian version of the site is on only for demonstrating the multilanguage capabilities of docaroo. Switching to romanian from any other page will show 404 not found page.Write a concise, factual summary in English with no greetings or instructions, maximum 50 words.",
+      "similarByContent": [
+        {
+          "permalink": "/content/intro/",
+          "title": "Content"
+        }
+      ],
       "readingTime": 3,
       "hasDynamicContent": false,
       "parent": ""
@@ -423,7 +456,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "14-Jul-2025"
+          "lastUpdate": "15-Jul-2025"
         }
       ],
       "numPages": 1
@@ -433,7 +466,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "14-Jul-2025"
+          "lastUpdate": "15-Jul-2025"
         }
       ],
       "numPages": 1
@@ -448,7 +481,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "14-Jul-2025"
+          "lastUpdate": "15-Jul-2025"
         }
       ],
       "numPages": 1

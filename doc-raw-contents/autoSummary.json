@@ -2,39 +2,35 @@
     "summaries": [
         {
             "permalink": "/components/alerts/",
-            "summary": "You can add alerts to your page by clicking on the 'Add alerts' button in the top right corner of your page or by clicking on the 'Add alerts' link in the upper right corner of your page."
+            "summary": "Alerts can be of different types as shown by the colors (,,, and ). Alerts can contain content introduced in clear but also can refer. From other documents from your documentation or from external public or private repositories. There is no limit about how many external public repositories you refer."
         },
         {
             "permalink": "/components/intro/",
-            "summary": "Docaroo is a free online tool that allows you to create, edit and publish high-quality annotated bibliography and other annotated bibliography content on the web."
+            "summary": "Documentaroo lets you embed content into your documents using pre-defined components. The components are elements that can be embedded in documents using tags and. As it will be shown for each of the next components."
         },
         {
             "permalink": "/components/qitem/",
-            "summary": "How much do you know about the history of the English Defence League (EDL) and its predecessor, the English Defence League (EDL)?"
+            "summary": "The question should always be a text. The answer to the question can be simple text or any rich content that is allowed in markdown. Any docaroo component can be used to render the answer to a question."
         },
         {
             "permalink": "/components/link-button/",
-            "summary": "How to add link buttons to your documentation: how to use docaroo to add link buttons to your documentation: how to use docaroo to add link buttons to your documentation:."
+            "summary": "Link buttons helps users to navigate inside your documentation or access external sites. You can add individual link buttons or group link buttons. You can place anchors anywhere in the document and references to them."
         },
         {
             "permalink": "/components/rich-media/",
-            "summary": "How to use docaroo components to embed rich media into your content - learn how to use docaroo components to embed rich media into your content - how to use docaroo components to embed rich media into your content."
+            "summary": "Use docaroo components to embed rich media into your content. Currently we support design, boards (fig jam), slides and deck files. Prototypes are not supported for the moment."
         },
         {
             "permalink": "/content/intro/",
-            "summary": "In this lesson, we are going to look at how to structure and use the content in your documentation to the best of your ability and to the best of your knowledge."
+            "summary": "Learn how to structure and use the content in the most efficient way. Write a concise, factual summary in English with no greetings or instructions, maximum 50 words."
         },
         {
             "permalink": "/content/ec/",
-            "summary": "Docaroo allows you to create and import external content into your documents, but you must be sure that the content you want to import is available at build time, as the imported content is added at build time."
-        },
-        {
-            "permalink": "/collection-2/Z/z/",
-            "summary": "BBC Sport asks you to help shape the debate on the future of BBC Sport by writing a short summary of your views on the sport, and then voting for your favourite."
+            "summary": "Documentation can be imported from any source that returns markdown. This type of content will be refelcted in the page toc, you can tag (with cutom tags) or classify (custom categories) based on this content."
         },
         {
             "permalink": "/intro/",
-            "summary": "Docaroo is a multi-language documentation platform that allows developers to create, publish, and manage high-quality documentation in a variety of languages."
+            "summary": "Romanian version of the site is on only for demonstrating the multilanguage capabilities of docaroo. Switching to romanian from any other page will show 404 not found page.Write a concise, factual summary in English with no greetings or instructions, maximum 50 words."
         }
     ]
 }

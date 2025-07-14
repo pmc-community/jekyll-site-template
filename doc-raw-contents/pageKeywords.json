@@ -1,29 +1,52 @@
 {
   "keywords": [
     {
-      "permalink": "/intro/",
-      "keywords": [
-        "romanian",
-        "version",
-        "demonstrating",
-        "multilanguage",
-        "capabilities",
-        "docaroo",
-        "introduction",
-        "content",
-        "language"
-      ]
-    },
-    {
-      "permalink": "/components/alerts/",
+      "permalink": "/components/qitem/",
       "keywords": [
         "learn",
         "add",
-        "blocks",
+        "elements",
+        "documents",
+        "element",
+        "question",
+        "answer"
+      ]
+    },
+    {
+      "permalink": "/components/link-button/",
+      "keywords": [
+        "learn",
+        "add",
+        "link",
+        "buttons",
         "content",
-        "alerts",
+        "helps",
+        "users",
+        "navigate"
+      ]
+    },
+    {
+      "permalink": "/content/intro/",
+      "keywords": [
+        "learn",
+        "structure",
+        "content",
+        "efficient",
         "types",
-        "colors"
+        "documents",
+        "included"
+      ]
+    },
+    {
+      "permalink": "/content/ec/",
+      "keywords": [
+        "docaroo",
+        "documents",
+        "external",
+        "content",
+        "create",
+        "import",
+        "multiple"
       ]
     },
     {
@@ -41,60 +64,29 @@
       ]
     },
     {
-      "permalink": "/components/link-button/",
+      "permalink": "/components/alerts/",
       "keywords": [
         "learn",
         "add",
-        "link",
-        "buttons",
+        "blocks",
         "content",
-        "helps",
-        "users",
-        "navigate"
-      ]
-    },
-    {
-      "permalink": "/content/ec/",
-      "keywords": [
-        "docaroo",
-        "documents",
-        "external",
-        "content",
-        "create",
-        "import",
-        "multiple"
-      ]
-    },
-    {
-      "permalink": "/collection-2/Z/z/",
-      "keywords": [
-        "file",
-        "collection",
-        "loads",
-        "external",
-        "content",
-        "repo",
-        "inline",
-        "link"
-      ]
-    },
-    {
-      "permalink": "/components/qitem/",
-      "keywords": [
-        "answer",
-        "question"
-      ]
-    },
-    {
-      "permalink": "/content/intro/",
-      "keywords": [
-        "learn",
-        "structure",
-        "content",
-        "efficient",
+        "alerts",
         "types",
-        "documents",
-        "included"
+        "colors"
+      ]
+    },
+    {
+      "permalink": "/intro/",
+      "keywords": [
+        "romanian",
+        "version",
+        "demonstrating",
+        "multilanguage",
+        "capabilities",
+        "docaroo",
+        "introduction",
+        "content",
+        "language"
       ]
     },
     {
