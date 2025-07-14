@@ -219,10 +219,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "learn, add, blocks, content, alerts, types, colors",
-      "lastUpdate": "2025-07-15 00:21:10 +0300",
-      "lastUpdateUTC": 1752528070,
-      "createTime": "2025-07-15 00:14:53 +0300",
-      "createTimeUTC": 1752527693,
+      "lastUpdate": "2025-07-15 01:00:30 +0300",
+      "lastUpdateUTC": 1752530430,
+      "createTime": "2025-07-15 01:00:30 +0300",
+      "createTimeUTC": 1752530430,
       "relatedPages": [
         {
           "title": "Content",
@@ -254,10 +254,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "learn, add, content, pre, defined, components, elements, embedded, documents, tags",
-      "lastUpdate": "2025-07-15 00:26:43 +0300",
-      "lastUpdateUTC": 1752528403,
-      "createTime": "2025-07-15 00:14:53 +0300",
-      "createTimeUTC": 1752527693,
+      "lastUpdate": "2025-07-15 01:00:30 +0300",
+      "lastUpdateUTC": 1752530430,
+      "createTime": "2025-07-15 01:00:30 +0300",
+      "createTimeUTC": 1752530430,
       "relatedPages": [
         {
           "title": "FAQ Item",
@@ -284,10 +284,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "learn, add, elements, documents, element, question, answer",
-      "lastUpdate": "2025-07-15 00:50:46 +0300",
-      "lastUpdateUTC": 1752529846,
-      "createTime": "2025-07-15 00:14:53 +0300",
-      "createTimeUTC": 1752527693,
+      "lastUpdate": "2025-07-15 01:00:30 +0300",
+      "lastUpdateUTC": 1752530430,
+      "createTime": "2025-07-15 01:00:30 +0300",
+      "createTimeUTC": 1752530430,
       "relatedPages": [
         {
           "title": "Components",
@@ -306,10 +306,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "learn, add, link, buttons, content, helps, users, navigate",
-      "lastUpdate": "2025-07-15 00:14:53 +0300",
-      "lastUpdateUTC": 1752527693,
-      "createTime": "2025-07-15 00:14:53 +0300",
-      "createTimeUTC": 1752527693,
+      "lastUpdate": "2025-07-15 01:00:30 +0300",
+      "lastUpdateUTC": 1752530430,
+      "createTime": "2025-07-15 01:00:30 +0300",
+      "createTimeUTC": 1752530430,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -332,10 +332,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "learn, docaroo, components, embed, rich, media, content, encourage, store",
-      "lastUpdate": "2025-07-15 00:14:53 +0300",
-      "lastUpdateUTC": 1752527693,
-      "createTime": "2025-07-15 00:14:53 +0300",
-      "createTimeUTC": 1752527693,
+      "lastUpdate": "2025-07-15 01:00:30 +0300",
+      "lastUpdateUTC": 1752530430,
+      "createTime": "2025-07-15 01:00:30 +0300",
+      "createTimeUTC": 1752530430,
       "relatedPages": [
         {
           "title": "Components",
@@ -354,10 +354,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "learn, structure, content, efficient, types, documents, included",
-      "lastUpdate": "2025-07-15 00:14:53 +0300",
-      "lastUpdateUTC": 1752527693,
-      "createTime": "2025-07-15 00:14:53 +0300",
-      "createTimeUTC": 1752527693,
+      "lastUpdate": "2025-07-15 01:00:30 +0300",
+      "lastUpdateUTC": 1752530430,
+      "createTime": "2025-07-15 01:00:30 +0300",
+      "createTimeUTC": 1752530430,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -375,10 +375,6 @@
       "autoSummary": "Learn how to structure and use the content in the most efficient way. Write a concise, factual summary in English with no greetings or instructions, maximum 50 words.",
       "similarByContent": [
         {
-          "permalink": "/content/ec/",
-          "title": "External content"
-        },
-        {
           "permalink": "/intro/",
           "title": "Introduction"
         }
@@ -393,10 +389,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "docaroo, documents, external, content, create, import, multiple",
-      "lastUpdate": "2025-07-15 00:14:53 +0300",
-      "lastUpdateUTC": 1752527693,
-      "createTime": "2025-07-15 00:14:53 +0300",
-      "createTimeUTC": 1752527693,
+      "lastUpdate": "2025-07-15 01:00:30 +0300",
+      "lastUpdateUTC": 1752530430,
+      "createTime": "2025-07-15 01:00:30 +0300",
+      "createTimeUTC": 1752530430,
       "relatedPages": [
         {
           "title": "Content",
@@ -428,20 +424,20 @@
         "documentation",
         "docs"
       ],
-      "excerpt": "romanian, version, demonstrating, multilanguage, capabilities, docaroo, introduction, content, language",
-      "lastUpdate": "2025-07-15 00:14:53 +0300",
-      "lastUpdateUTC": 1752527693,
-      "createTime": "2025-07-15 00:14:53 +0300",
-      "createTimeUTC": 1752527693,
+      "excerpt": "documentation, builder, guide, comprehensive, resource, learning, create, build, maintain, quality",
+      "lastUpdate": "2025-07-15 01:04:08 +0300",
+      "lastUpdateUTC": 1752530648,
+      "createTime": "2025-07-15 01:00:30 +0300",
+      "createTimeUTC": 1752530430,
       "relatedPages": [],
-      "autoSummary": "Romanian version of the site is on only for demonstrating the multilanguage capabilities of docaroo. Switching to romanian from any other page will show 404 not found page.Write a concise, factual summary in English with no greetings or instructions, maximum 50 words.",
+      "autoSummary": "This guide will walk you through everything you need to know about building a complete, maintainable, and professional documentation site from scratch. This guide is suitable for:. Developers who want to document apis, libraries, or frameworks product teams building internal or customer-facing documentation technical writers looking to improve structure and.",
       "similarByContent": [
         {
           "permalink": "/content/intro/",
           "title": "Content"
         }
       ],
-      "readingTime": 3,
+      "readingTime": 2,
       "hasDynamicContent": false,
       "parent": ""
     }

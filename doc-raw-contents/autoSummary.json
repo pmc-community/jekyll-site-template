@@ -30,7 +30,7 @@
         },
         {
             "permalink": "/intro/",
-            "summary": "Romanian version of the site is on only for demonstrating the multilanguage capabilities of docaroo. Switching to romanian from any other page will show 404 not found page.Write a concise, factual summary in English with no greetings or instructions, maximum 50 words."
+            "summary": "This guide will walk you through everything you need to know about building a complete, maintainable, and professional documentation site from scratch. This guide is suitable for:. Developers who want to document apis, libraries, or frameworks product teams building internal or customer-facing documentation technical writers looking to improve structure and."
         }
     ]
 }
