@@ -3,7 +3,10 @@ layout: default
 ---
 
 <div siteFunction="homePageContent">
-    
+
+     <!-- other content from the parent page (index.md) -->
+    {{content}}
+
     <!-- header section -->
     <div siteFunction="homePageHeaderSection" class="mt-md-4 mt-4 py-0 py-md-5">
         {% include siteIncludes/partials/home/header-section.html %}
@@ -25,8 +28,6 @@ layout: default
     <div siteFunction="homePageStatsSection" class="py-md-5 py-0">
         {% include siteIncludes/partials/home/stats-section.html %}
     </div>
-
-    <!-- other content from the parent page (index.md) -->
-    {{content}}
+   
 </div>
 
