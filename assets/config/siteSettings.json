@@ -415,11 +415,14 @@
     }
   ],
   "tagList": [
+    "Site",
     "docs",
-    "documentation",
-    "site"
+    "documentation"
   ],
   "tagDetails": {
+    "Site": {
+      "pages": []
+    },
     "docs": {
       "pages": [
         {
@@ -439,8 +442,17 @@
         }
       ],
       "numPages": 1
+    }
+  },
+  "catList": [
+    "General",
+    "general"
+  ],
+  "catDetails": {
+    "General": {
+      "pages": []
     },
-    "site": {
+    "general": {
       "pages": [
         {
           "title": "Introduction",
@@ -449,14 +461,6 @@
         }
       ],
       "numPages": 1
-    }
-  },
-  "catList": [
-    "General"
-  ],
-  "catDetails": {
-    "General": {
-      "pages": []
     }
   },
   "hsSettings": {

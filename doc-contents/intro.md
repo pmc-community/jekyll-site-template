@@ -3,9 +3,9 @@ layout: page
 title: Introduction
 permalink: /intro/
 
-categories: [General]
+categories: [general, General]
 
-tags: [documentation, site, docs]
+tags: [documentation, Site, docs]
 
 nav_order: 1
 ---
