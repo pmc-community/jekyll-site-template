@@ -416,7 +416,6 @@
   ],
   "tagList": [
     "docs",
-    "documentatie",
     "documentation",
     "site"
   ],
@@ -430,9 +429,6 @@
         }
       ],
       "numPages": 1
-    },
-    "documentatie": {
-      "pages": []
     },
     "documentation": {
       "pages": [
@@ -456,13 +452,9 @@
     }
   },
   "catList": [
-    "General",
     "general"
   ],
   "catDetails": {
-    "General": {
-      "pages": []
-    },
     "general": {
       "pages": [
         {
