@@ -219,10 +219,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "learn, add, blocks, content, alerts, types, colors",
-      "lastUpdate": "2025-07-13 17:03:03 +0300",
-      "lastUpdateUTC": 1752415383,
-      "createTime": "2025-07-13 15:22:42 +0300",
-      "createTimeUTC": 1752409362,
+      "lastUpdate": "2025-07-14 20:33:53 +0300",
+      "lastUpdateUTC": 1752514433,
+      "createTime": "2025-07-14 20:33:53 +0300",
+      "createTimeUTC": 1752514433,
       "relatedPages": [
         {
           "title": "Content",
@@ -249,10 +249,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "learn, add, content, pre, defined, components, elements, embedded, documents, tags",
-      "lastUpdate": "2025-07-14 10:37:35 +0300",
-      "lastUpdateUTC": 1752478655,
-      "createTime": "2025-07-13 14:47:48 +0300",
-      "createTimeUTC": 1752407268,
+      "lastUpdate": "2025-07-14 20:33:53 +0300",
+      "lastUpdateUTC": 1752514433,
+      "createTime": "2025-07-14 20:33:53 +0300",
+      "createTimeUTC": 1752514433,
       "relatedPages": [
         {
           "title": "Content",
@@ -279,10 +279,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "answer, question",
-      "lastUpdate": "2025-07-14 10:29:04 +0300",
-      "lastUpdateUTC": 1752478144,
-      "createTime": "2025-07-14 10:17:48 +0300",
-      "createTimeUTC": 1752477468,
+      "lastUpdate": "2025-07-14 20:33:53 +0300",
+      "lastUpdateUTC": 1752514433,
+      "createTime": "2025-07-14 20:33:53 +0300",
+      "createTimeUTC": 1752514433,
       "relatedPages": [],
       "autoSummary": "How much do you know about the history of the English Defence League (EDL) and its predecessor, the English Defence League (EDL)?",
       "similarByContent": [],
@@ -296,10 +296,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "learn, add, link, buttons, content, helps, users, navigate",
-      "lastUpdate": "2025-07-13 22:50:06 +0300",
-      "lastUpdateUTC": 1752436206,
-      "createTime": "2025-07-13 15:45:04 +0300",
-      "createTimeUTC": 1752410704,
+      "lastUpdate": "2025-07-14 20:33:53 +0300",
+      "lastUpdateUTC": 1752514433,
+      "createTime": "2025-07-14 20:33:53 +0300",
+      "createTimeUTC": 1752514433,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -322,10 +322,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "learn, docaroo, components, embed, rich, media, content, encourage, store",
-      "lastUpdate": "2025-07-13 15:22:42 +0300",
-      "lastUpdateUTC": 1752409362,
-      "createTime": "2025-07-13 15:22:42 +0300",
-      "createTimeUTC": 1752409362,
+      "lastUpdate": "2025-07-14 20:33:53 +0300",
+      "lastUpdateUTC": 1752514433,
+      "createTime": "2025-07-14 20:33:53 +0300",
+      "createTimeUTC": 1752514433,
       "relatedPages": [
         {
           "title": "Components",
@@ -344,10 +344,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "learn, structure, content, efficient, types, documents, included",
-      "lastUpdate": "2025-07-14 18:16:26 +0300",
-      "lastUpdateUTC": 1752506186,
-      "createTime": "2025-07-14 10:50:54 +0300",
-      "createTimeUTC": 1752479454,
+      "lastUpdate": "2025-07-14 20:33:53 +0300",
+      "lastUpdateUTC": 1752514433,
+      "createTime": "2025-07-14 20:33:53 +0300",
+      "createTimeUTC": 1752514433,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -374,10 +374,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "docaroo, documents, external, content, create, import, multiple",
-      "lastUpdate": "2025-07-14 16:52:04 +0300",
-      "lastUpdateUTC": 1752501124,
-      "createTime": "2025-05-29 01:53:54 +0300",
-      "createTimeUTC": 1748472834,
+      "lastUpdate": "2025-07-14 20:33:53 +0300",
+      "lastUpdateUTC": 1752514433,
+      "createTime": "2025-07-14 20:33:53 +0300",
+      "createTimeUTC": 1752514433,
       "relatedPages": [
         {
           "title": "Content",
@@ -394,18 +394,17 @@
       "title": "Introduction",
       "permalink": "/intro/",
       "categories": [
-        "general"
+        "General"
       ],
       "tags": [
         "documentation",
-        "site",
         "docs"
       ],
       "excerpt": "documentation, builder, guide, comprehensive, resource, learning, create, build, maintain, quality",
-      "lastUpdate": "2025-07-14 10:56:29 +0300",
-      "lastUpdateUTC": 1752479789,
-      "createTime": "2025-07-13 15:22:42 +0300",
-      "createTimeUTC": 1752409362,
+      "lastUpdate": "2025-07-14 20:34:18 +0300",
+      "lastUpdateUTC": 1752514458,
+      "createTime": "2025-07-14 20:33:53 +0300",
+      "createTimeUTC": 1752514433,
       "relatedPages": [],
       "autoSummary": "The documentation site builder guide is a step-by-step manual that explains: how to plan, structure, and organize documentation how to choose the right tools and technologies how to build a fully functional documentation site how to style and your site for branding.",
       "similarByContent": [],
@@ -415,14 +414,10 @@
     }
   ],
   "tagList": [
-    "Site",
     "docs",
     "documentation"
   ],
   "tagDetails": {
-    "Site": {
-      "pages": []
-    },
     "docs": {
       "pages": [
         {
@@ -445,14 +440,10 @@
     }
   },
   "catList": [
-    "General",
-    "general"
+    "General"
   ],
   "catDetails": {
     "General": {
-      "pages": []
-    },
-    "general": {
       "pages": [
         {
           "title": "Introduction",
