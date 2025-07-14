@@ -1,16 +1,16 @@
-pyEnable: true # enable/disable all PY based features (Related Pages, Autosummary, Keywords, Similar Pages)
+pyEnable: true #enable/disable all PY based features (Related Pages, Autosummary, Keywords, Similar Pages)
 pyLaunch: "python3"
 pyPageSummary:
-  allInOneStep: true
+  allInOneStep: true #enable/disable summary generation
   allInOneStepScript: "tools_py/page-summary/auto-summary.py"
-  summaryLength: 80 #play with the min summary words for better summaries
-  usePrompt: true
+  summaryLength: 50 #play with the min summary words for better summaries
+  usePrompt: true #some models doesn't need prompt, propmt may even reduce the quality of summary
   model: 
     # best option of pretrained model for summarizing multilingual texts
     # use a specific language pretrained model from huggingface if the documentation is a single language
-    # check if the language you need is supported by the model, you may need to disable autosummary if there is no reasonable support
+    # check if the language you need is supported by the model, you may need to disable autosummary if there is no reasonable summarising model for your needed language
     # allInOneStep: false will disable autosummary 
-    name: "facebook/mbart-large-50" # reasonable summaries for Romanian
+    name: "facebook/mbart-large-50 " #google/pegasus-xsum #reasonable summaries for English; facebook/mbart-large-50 reasonable for Romanian
     max_length: 256
     min_length: 30
     length_penalty: 1.0
@@ -25,7 +25,7 @@ pyPageSummary:
 rawContentFolder: "doc-raw-contents"
 preFlight: false
 relatedPages:
-  enable: true # enable/disable related pages feature
+  enable: true #enable/disable related pages feature
   relPagesNo: 3
   scoreLimit: -0.1
   batchSize: 100
@@ -37,9 +37,9 @@ relatedPages:
 autoExcerpt:
   keywords: 10
   minKeywordLength: 3
-tagsToRemoveOnDryRender: ["script", "style", "h1", "h2", "h3", "h4", "h5", "h6"]
+tagsToRemoveOnDryRender: ["script", "style", "h1", "h2", "h3", "h4", "h5", "h6", "code"] #code must be ignored because it can alter summary/keywords generation
 pySimilarPagesByContent:
-  enable: true # enable/disabel Similar Pages feature
+  enable: true #enable/disable Similar Pages feature
   script: "tools_py/similar-pages/similar-pages.py"
   similarity_threshold: 0.6
   files_batch: 100
@@ -47,7 +47,7 @@ pySimilarPagesByContent:
   threadMultiplicator: 2 # safer to be >1 
   model_url: "https://tfhub.dev/google/universal-sentence-encoder/4"
 pageKeywords:
-  enable: true # enable/disable automatic Keywords generation feature
+  enable: true #enable/disable automatic Keywords generation feature
   model: "mrm8488/t5-base-finetuned-question-generation-ap"
   minKeywords: 10
   maxKeywords: 15
@@ -58,7 +58,7 @@ github:
   discussionOrg: "pmc-community"
   discussionsRepo: "discussions"
 readingTime:
-  enabled: true # enable/disable reading time calculation feature
+  enabled: true #enable/disable reading time calculation feature
   average_adult: 240        # Average adult reading speed
   comprehension_study: 200  # Study with focus on comprehension
   skimming_study: 300       # Speed reading or skimming
@@ -68,14 +68,14 @@ algoliaSearch:
   maxResultsPerGroup: 20
   hitsPerPage: 10
   insights: true
-  textHighlightPrefixTag: "<mark>" # prefix and postfix tags must be exactly as defined in Algolia DocSearch Index/Configuration/Hightlighting
+  textHighlightPrefixTag: "<mark>" #prefix and postfix tags must be exactly as defined in Algolia DocSearch Index/Configuration/Hightlighting
   textHighlightPostfixTag: "</mark>"
   customIndexContentMaxSize: 500
   searchBtnLoadTimeout: 500
 JTDSearch:
   searchBoxWidth: "fit-content"
 changeLog:
-  enabled: false # enable/disable changelog feature
+  enabled: false #enable/disable changelog feature
   history: 10
 siteFooter:
   container: ".site-footer"
@@ -83,10 +83,10 @@ siteFooter:
     - content: "<div class=\"footer_first_row px-4 px-md-0\"><a href=\"https://innohub.space/eng/terms-of-service/\" target=_blank>Terms</a> | <a href=\"https://innohub.space/eng/privacy/\" target=_blank>Privacy</a> | <a href=\"https://innohub.space/eng/cookie-policy/\" target=_blank>Cookies</a></div>"
     - content: "<div class=\"footer_first_row  px-4 px-md-0\">Copyright <i class=\"bi bi-c-circle\"></i> <a href=\"https://pmc-expert.com\" target=_blank>PMC</a></div>"
 googleAnalytics:
-  enabled: true # enable/disable GA integration
+  enabled: true #enable/disable GA integration
   ga: "G-T86D5YQ5WF"
 googleTagManager:
-  enabled: true # enable/disable GTM integration
+  enabled: true #enable/disable GTM integration
   gtm: "GTM-KCLM93S"
 breadcrumbs:
   depth: 100
@@ -96,7 +96,7 @@ hubspot:
   feedbackFormID: 
     ID: "e166804c-61ea-4b51-801d-f4299cb5c06c"
 faq:
-  enabled: true # enable/disable FAQ feature
+  enabled: true #enable/disable FAQ feature
   pagination: true
   displayedPagesDesktop: 10
   displayedPagesMobile: 7
