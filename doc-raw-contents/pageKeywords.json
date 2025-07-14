@@ -1,67 +1,56 @@
 {
   "keywords": [
     {
-      "permalink": "/alerts/",
+      "permalink": "/components/qitem/",
       "keywords": [
         "learn",
         "add",
-        "alert",
-        "blocks",
-        "content",
+        "elements",
+        "documents",
+        "element",
+        "question",
+        "answer"
+      ]
+    },
+    {
+      "permalink": "/components/link-button/",
+      "keywords": [
+        "learn",
         "add",
-        "simple",
-        "rich",
-        "alerts",
-        "alerts"
+        "link",
+        "buttons",
+        "content",
+        "helps",
+        "users",
+        "navigate"
       ]
     },
     {
-      "permalink": "/intro/",
+      "permalink": "/content/intro/",
       "keywords": [
-        "documentation",
-        "builder",
-        "guide",
-        "comprehensive",
-        "resource",
-        "learning",
+        "learn",
+        "structure",
+        "content",
+        "efficient",
+        "types",
+        "documents",
+        "included"
+      ]
+    },
+    {
+      "permalink": "/content/ec/",
+      "keywords": [
+        "docaroo",
+        "documents",
+        "external",
+        "content",
         "create",
-        "build",
-        "maintain",
-        "quality"
+        "import",
+        "multiple"
       ]
     },
     {
-      "permalink": "/collection-2/y/y/",
-      "keywords": [
-        "content",
-        "file",
-        "contrary",
-        "popular",
-        "belief",
-        "lorem",
-        "ipsum",
-        "simply",
-        "random",
-        "roots"
-      ]
-    },
-    {
-      "permalink": "/pwc/",
-      "keywords": [
-        "markdown",
-        "content",
-        "direct",
-        "included",
-        "stable",
-        "heads",
-        "links",
-        "docs",
-        "permalinks",
-        "file"
-      ]
-    },
-    {
-      "permalink": "/intro/introChild/introGrandChild/",
+      "permalink": "/components/rich-media/",
       "keywords": [
         "learn",
         "docaroo",
@@ -71,113 +60,48 @@
         "media",
         "content",
         "encourage",
-        "store",
-        "media"
+        "store"
       ]
     },
     {
-      "permalink": "/sf/f1/",
+      "permalink": "/components/alerts/",
       "keywords": [
-        "pmc",
-        "parties",
-        "provide",
-        "links",
-        "websites",
-        "resources",
-        "acknowledge",
-        "agree",
-        "responsible",
-        "availability"
-      ]
-    },
-    {
-      "permalink": "/terms/",
-      "keywords": [
-        "terms",
-        "service",
-        "applicable",
-        "list",
-        "versions",
-        "legal",
-        "center",
-        "request",
-        "dedicated",
-        "form"
-      ]
-    },
-    {
-      "permalink": "/collection-1/g11/",
-      "keywords": [
-        "g11",
-        "innohub",
-        "support",
-        "center",
-        "single",
-        "contact",
-        "notifying",
-        "issues",
-        "experience",
-        "services"
-      ]
-    },
-    {
-      "permalink": "/collection-2/X/x/",
-      "keywords": [
-        "markdown",
+        "learn",
+        "add",
+        "blocks",
         "content",
-        "content",
-        "typed",
-        "collection",
-        "inline",
-        "external",
-        "link",
-        "https",
-        "pmc"
+        "alerts",
+        "types",
+        "colors"
       ]
     },
     {
-      "permalink": "/intro/introChild/",
+      "permalink": "/intro/",
       "keywords": [
-        "contrary",
-        "popular",
-        "belief",
-        "lorem",
-        "ipsum",
-        "simply",
-        "random",
-        "roots",
-        "piece",
-        "classical"
+        "romanian",
+        "version",
+        "demonstrating",
+        "multilanguage",
+        "capabilities",
+        "docaroo",
+        "introduction",
+        "content",
+        "language"
       ]
     },
     {
-      "permalink": "/collection-1/g1/",
+      "permalink": "/components/intro/",
       "keywords": [
-        "answer",
-        "question",
-        "external",
+        "learn",
+        "add",
         "content",
-        "file",
-        "loads",
-        "external",
-        "content",
-        "repo",
-        "inline"
-      ]
-    },
-    {
-      "permalink": "/collection-2/Z/z/",
-      "keywords": [
-        "file",
-        "collection",
-        "file",
-        "loads",
-        "external",
-        "content",
-        "repo",
-        "inline",
-        "link",
-        "file"
+        "pre",
+        "defined",
+        "components",
+        "elements",
+        "embedded",
+        "documents",
+        "tags"
       ]
     }
   ]

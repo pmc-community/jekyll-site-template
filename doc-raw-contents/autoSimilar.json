@@ -1,73 +1,44 @@
 [
     {
-        "permalink": "/intro/introChild/",
+        "permalink": "/components/alerts/",
         "similarFiles": [
-            "/collection-2/y/y/",
-            "/sf/f1/"
+            "/content/ec/"
         ]
     },
     {
-        "permalink": "/intro/introChild/introGrandChild/",
+        "permalink": "/components/intro/",
         "similarFiles": []
     },
     {
-        "permalink": "/pwc/",
+        "permalink": "/components/qitem/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/components/link-button/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/components/rich-media/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/content/intro/",
         "similarFiles": [
+            "/content/ec/",
             "/intro/"
         ]
     },
     {
-        "permalink": "/ec/",
-        "similarFiles": []
-    },
-    {
-        "permalink": "/terms/",
+        "permalink": "/content/ec/",
         "similarFiles": [
-            "/sf/f1/"
+            "/content/intro/",
+            "/components/alerts/"
         ]
-    },
-    {
-        "permalink": "/collection-1/g1/",
-        "similarFiles": []
-    },
-    {
-        "permalink": "/collection-1/g11/",
-        "similarFiles": []
-    },
-    {
-        "permalink": "/collection-2/y/y/",
-        "similarFiles": [
-            "/intro/introChild/",
-            "/sf/f1/"
-        ]
-    },
-    {
-        "permalink": "/collection-2/Z/z/",
-        "similarFiles": [
-            "/collection-2/X/x/"
-        ]
-    },
-    {
-        "permalink": "/collection-2/X/x/",
-        "similarFiles": [
-            "/collection-2/Z/z/"
-        ]
-    },
-    {
-        "permalink": "/alerts/",
-        "similarFiles": []
     },
     {
         "permalink": "/intro/",
         "similarFiles": [
-            "/pwc/"
-        ]
-    },
-    {
-        "permalink": "/sf/f1/",
-        "similarFiles": [
-            "/collection-2/y/y/",
-            "/intro/introChild/"
+            "/content/intro/"
         ]
     }
 ]

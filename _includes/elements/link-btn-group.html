@@ -1,0 +1,68 @@
+{% comment %}
+  elements/link-btn-group.html
+  This include processes a comma-separated string of button definitions
+  and renders a group of link buttons.
+
+  Example usage:
+  {% capture buttons %}
+      type=primary|outline=false|text=Internal link|href="/intro/"|newTab=true,
+      type=secondary|outline=false|text=External link|href="https://pmc-expert.com"|newTab=true,
+      type=success|outline=false|text=Other external|href="https://hub.innohub.space"|newTab=false
+  {% endcapture %}
+  {% include elements/link-btn-group.html buttons=buttons %}
+{% endcomment %}
+
+{% capture uuid %}
+  {% UUID %}
+{% endcapture %}
+{% assign bgid = uuid | strip %}
+
+<div class="d-flex" id="btn-lnk-group-{{ bgid }}">
+  {% assign button_defs = include.buttons | split: "," %}
+
+  {% for def in button_defs %}
+    {% assign type = "" %}
+    {% assign outline = "" %}
+    {% assign text = "" %}
+    {% assign href = "" %}
+    {% assign newTab = "" %}
+
+    {% comment %} Split each definition into key-value pairs {% endcomment %}
+    {% assign parts = def | split: "|" %}
+
+    {% for pair in parts %}
+      {% assign pair_parts = pair | split: "=" %}
+      {% assign key = pair_parts[0] | strip %}
+      {% assign val = pair_parts[1] | strip %}
+
+      {% comment %}
+        Remove leading/trailing quotes from the value.
+        This is a more reliable way than checking first/last char and slicing.
+      {% endcomment %}
+      {% assign val = val | remove: '"' %}
+
+      {% case key %}
+        {% when "type" %}
+          {% assign type = val %}
+        {% when "outline" %}
+          {% assign outline = val %}
+        {% when "text" %}
+          {% assign text = val %}
+        {% when "href" %}
+          {% assign href = val %}
+        {% when "newTab" %}
+          {% assign newTab = val %}
+      {% endcase %}
+    {% endfor %}
+
+    <div class="m-1">
+      {% include elements/link-btn.html
+        type=type
+        outline=outline
+        text=text
+        href=href
+        newTab=newTab
+      %}
+    </div>
+  {% endfor %}
+</div>

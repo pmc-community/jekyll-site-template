@@ -1,0 +1,1 @@
+Wrong button type. Only `primary`, `secondary`, `success`, `danger`, `warning`, `info`, `light` types are accepted.

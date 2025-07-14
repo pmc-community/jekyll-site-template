@@ -337,4 +337,31 @@ module FileUtilities
         getFileFromPermalink(Globals::DOCS_DIR, transformed_name)
     end
 
+    def self.generate_folder_structure(root_path)
+        root_path = File.expand_path(root_path.strip)
+        return "Error: Directory not found - #{root_path}" unless Dir.exist?(root_path)
+
+        lines = []
+        lines << "📁 #{File.basename(root_path)}/"
+
+        traverse = lambda do |dir, prefix|
+            entries = Dir.children(dir).sort
+            entries.each_with_index do |entry, index|
+            path = File.join(dir, entry)
+            is_last = index == entries.length - 1
+            connector = is_last ? "└── " : "├── "
+            icon = File.directory?(path) ? "📁" : "📄"
+            lines << "#{prefix}#{connector}#{icon} #{entry}"
+
+            if File.directory?(path)
+                new_prefix = prefix + (is_last ? "    " : "│   ")
+                traverse.call(path, new_prefix)
+            end
+            end
+        end
+
+        traverse.call(root_path, "")
+         "```\n" + lines.join("\n") + "\n```"
+    end
+
 end

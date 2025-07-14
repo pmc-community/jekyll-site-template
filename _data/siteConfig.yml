@@ -82,6 +82,7 @@ siteVars:
   siteTestBadge: "xxx"
 similarByContent:
   maxPages: 4
+navPrevNextEnabled: true # enable/disable page Prev/Next navigation feature
 hsIntegration:
   enabled: true
   bootstrapCSS: "https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
@@ -106,7 +107,7 @@ links:
   privacyLink: "https://innohub.space/eng/privacy"
   supportLink: "https://innohub.space/eng/mypmc/technical-support/"
 selectedTextContextMenu:
-  enabled: true
+  enabled: true  # enable/disable context menu feature on desktop for page content. better to be disabled if Algolia is not used
   minWords: 1
   maxWords: 10
   comments:
@@ -121,7 +122,7 @@ user:
 savedItems:
   autoSaveBeforeLoad: true
 multilang:
-  enabled: true
+  enabled: true  # enable/disable page multilanguage feature
   langCookie: "PrefLanguage"
   timeout: 1000
   scripts:

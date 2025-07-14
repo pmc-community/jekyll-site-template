@@ -3,16 +3,15 @@ layout: page
 title: Introduction
 permalink: /intro/
 
-has_children: true
+categories: [General]
 
-categories: [general]
-
-tags: [documentation, site, docs]
+tags: [documentation,docs]
 
 nav_order: 1
 ---
 
-<!-- START_EXPOSED_SECTION -->
+{% include elements/alert.html class="primary" content="The Romanian version of the site is on only for demonstrating the multilanguage capabilities of Docaroo. **Besides the Home and Introduction pages, there is not other content in Romanian language.** Switching to Romanian from any other page will show **404 Not Found page**." title="IMPORTANT" %}
+
 # 📚 Introduction
 
 Welcome to the **Documentation Site Builder Guide** — your comprehensive resource for learning how to **create, build, and maintain high-quality documentation sites** for any kind of project, product, or organization.
@@ -112,5 +111,3 @@ Good documentation isn't just nice to have — it's a **core part of product suc
 # ✅ Let’s Get Started
 
 Use the sidebar to navigate to the first section and begin your journey. Each topic includes examples, templates, and real-world tips to help you go from blank page to beautiful docs.
-
-<!-- END_EXPOSED_SECTION -->

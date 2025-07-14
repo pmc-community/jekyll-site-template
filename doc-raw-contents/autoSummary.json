@@ -1,56 +1,36 @@
 {
     "summaries": [
         {
-            "permalink": "/intro/introChild/",
-            "summary": "Lorem ipsum is one of the most obscure words in English, but it has roots in a piece of classical literature from 45 bc, making it over 2000 years old."
+            "permalink": "/components/alerts/",
+            "summary": "Alerts can be of different types as shown by the colors (,,, and ). Alerts can contain content introduced in clear but also can refer. From other documents from your documentation or from external public or private repositories. There is no limit about how many external public repositories you refer."
         },
         {
-            "permalink": "/intro/introChild/introGrandChild/",
-            "summary": "How to use docaroo components to embed rich media into your content: How to use docaroo components to embed rich media into your content: How to use docaroo components to embed rich media into your content:."
+            "permalink": "/components/intro/",
+            "summary": "Documentaroo lets you embed content into your documents using pre-defined components. The components are elements that can be embedded in documents using tags and. As it will be shown for each of the next components."
         },
         {
-            "permalink": "/pwc/",
-            "summary": "Please use the following code to build a documentation site: using site vars from siteconfig: xxx markdown content generated from one part of another site page."
+            "permalink": "/components/qitem/",
+            "summary": "The question should always be a text. The answer to the question can be simple text or any rich content that is allowed in markdown. Any docaroo component can be used to render the answer to a question."
         },
         {
-            "permalink": "/ec/",
-            "summary": "Do you want to share your views on the EU referendum with the rest of the world? As anonymous user you can browse for free all sections of innohub.space although some services are free to be used, we may need you to register and provide some information in order to be able to use the free services."
+            "permalink": "/components/link-button/",
+            "summary": "Link buttons helps users to navigate inside your documentation or access external sites. You can add individual link buttons or group link buttons. You can place anchors anywhere in the document and references to them."
         },
         {
-            "permalink": "/terms/",
-            "summary": "These terms of service (terms, terms of service, tos) apply to your use of innohub.space website operated by pmc (us, we, our)."
+            "permalink": "/components/rich-media/",
+            "summary": "Use docaroo components to embed rich media into your content. Currently we support design, boards (fig jam), slides and deck files. Prototypes are not supported for the moment."
         },
         {
-            "permalink": "/collection-1/g1/",
-            "summary": "Lorem ipsum, the ancient Greek word for 'evil', has been discovered by a professor at a college in the United States, and it's not just any old word."
+            "permalink": "/content/intro/",
+            "summary": "Learn how to structure and use the content in the most efficient way. Write a concise, factual summary in English with no greetings or instructions, maximum 50 words."
         },
         {
-            "permalink": "/collection-1/g11/",
-            "summary": "Innohub support center offers a number of functionalities that will allow you to find a solution to your issue or to get in contact with us and let us assist you in finding a solution."
-        },
-        {
-            "permalink": "/collection-2/y/y/",
-            "summary": "Lorem ipsum is one of the oldest words in the English language, dating back to the 5th Century, according to a new study."
-        },
-        {
-            "permalink": "/collection-2/Z/z/",
-            "summary": "Do you have a story to share with the world that you would like to see featured in the BBC News website and social media channels?... And don't forget to include your full name and town of residence."
-        },
-        {
-            "permalink": "/collection-2/X/x/",
-            "summary": "Markdown content loaded from another file from the same collection.heads up!watch out the limitations for loading content from another file, the source file must be below the destination file in the folder structure."
-        },
-        {
-            "permalink": "/alerts/",
-            "summary": "Add alerts to your documents and pages by following the steps in the following guide: add alerts to your pages by following the steps in the following guide:."
+            "permalink": "/content/ec/",
+            "summary": "Documentation can be imported from any source that returns markdown. This type of content will be refelcted in the page toc, you can tag (with cutom tags) or classify (custom categories) based on this content."
         },
         {
             "permalink": "/intro/",
-            "summary": "The documentation site builder guide is a step-by-step manual that explains: how to plan, structure, and organize documentation how to choose the right tools and technologies how to build a fully functional documentation site how to style and your site for branding."
-        },
-        {
-            "permalink": "/sf/f1/",
-            "summary": "Pmc is not responsible for the availability of any external sites or resources, and as such, we do not endorse nor are we responsible or liable for any content, products, advertising or any other materials, on or available from such third party sites or resources."
+            "summary": "Romanian version of the site is on only for demonstrating the multilanguage capabilities of docaroo. Switching to romanian from any other page will show 404 not found page.Write a concise, factual summary in English with no greetings or instructions, maximum 50 words."
         }
     ]
 }

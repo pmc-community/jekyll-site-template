@@ -1,0 +1,5 @@
+{% comment %}
+  Observe the fact that this script has a single row. We need the anchor to be inline, so no white space or newline is allowed.
+  Otherwise the markdown converter will split the text in multiple rows.
+{% endcomment %}
+{% if include.id %}<a id="{{include.id}}"></a>{% endif %}

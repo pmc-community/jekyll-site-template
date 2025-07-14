@@ -13,6 +13,10 @@ import threading
 import time
 import signal
 
+if os.environ.get("PYTHONMALLOC") != "default":
+    os.environ["PYTHONMALLOC"] = "default"
+    os.execv(sys.executable, [sys.executable] + sys.argv)
+
 # ─── RESOURCE LIMITS ─────────────────────────────────────
 total_memory = psutil.virtual_memory().total
 max_memory_bytes = int(total_memory * 0.6)

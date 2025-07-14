@@ -37,9 +37,10 @@ module Jekyll
       FileUtilities.generate_raw_content(site)
 
       modified_files_path = "#{site.data["buildConfig"]["rawContentFolder"]}/modified_files.json"
+      page_list_path = "#{site.data["buildConfig"]["rawContentFolder"]}/page_list.json"
       modified_files = File.exist?(modified_files_path)? FileUtilities.read_json_file(modified_files_path) : {"files" => []}
 
-      if (modified_files["files"].length > 0 )
+      if (modified_files["files"].length > 0 || !File.exist?(page_list_path))
         Globals.putsColText(Globals::PURPLE,"Generating list of pages ...")
       
         numPages = 0

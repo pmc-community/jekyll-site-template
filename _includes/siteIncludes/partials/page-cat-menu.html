@@ -134,9 +134,9 @@
                             <a 
                                 siteFunction="menuItemLevel2" 
                                 class="px-0 dropdown-item fs-6 fw-medium text-primary" 
-                                href="{{lang_prefix}}/site-pages">
-                                    <i class="bi bi-file-text"></i>
-                                    <span data-i18n="main_menu_documents">Documents</span>
+                                href="{{lang_prefix}}/site-pages"
+                                data-i18n="main_menu_documents">
+                                Documents
                             </a>
                         </li>
                         <li class="px-4">
@@ -184,6 +184,8 @@
 
         </ul>
     {% endif %}
+{% else %}
+    <ul id="category-menu" class="px-md-5 px-0 nav mb-md-0 mb-3 pt-2 pt-md-0 justify-content-md-start justify-content-around align-items-center"></ul>
 {% endif %}
 
 
