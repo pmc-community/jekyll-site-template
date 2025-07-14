@@ -218,13 +218,18 @@
       "permalink": "/components/alerts/",
       "categories": [],
       "tags": [],
-      "excerpt": "",
+      "excerpt": "learn, add, blocks, content, alerts, types, colors",
       "lastUpdate": "2025-07-14 18:32:06 +0300",
       "lastUpdateUTC": 1752507126,
       "createTime": "2025-07-14 18:32:06 +0300",
       "createTimeUTC": 1752507126,
-      "relatedPages": [],
-      "autoSummary": "",
+      "relatedPages": [
+        {
+          "title": "Components",
+          "permalink": "/components/intro/"
+        }
+      ],
+      "autoSummary": "Learn how to add. Blocks to your content. You can add both. Alerts can be of different types as shown by the colors (,,,.",
       "similarByContent": [],
       "readingTime": 1,
       "hasDynamicContent": false,
@@ -235,13 +240,22 @@
       "permalink": "/components/intro/",
       "categories": [],
       "tags": [],
-      "excerpt": "",
+      "excerpt": "learn, add, content, pre, defined, components, elements, embedded, documents, tags",
       "lastUpdate": "2025-07-14 18:32:06 +0300",
       "lastUpdateUTC": 1752507126,
       "createTime": "2025-07-14 18:32:06 +0300",
       "createTimeUTC": 1752507126,
-      "relatedPages": [],
-      "autoSummary": "",
+      "relatedPages": [
+        {
+          "title": "Alerte",
+          "permalink": "/components/alerts/"
+        },
+        {
+          "title": "Rich Media",
+          "permalink": "/components/rich-media/"
+        }
+      ],
+      "autoSummary": "Learn how to add different. Pre-defined components are elements that can be embedded in your documents using.",
       "similarByContent": [],
       "readingTime": 1,
       "hasDynamicContent": false,
@@ -252,13 +266,18 @@
       "permalink": "/components/rich-media/",
       "categories": [],
       "tags": [],
-      "excerpt": "",
+      "excerpt": "learn, docaroo, components, embed, rich, media, content, encourage, store",
       "lastUpdate": "2025-07-14 18:32:06 +0300",
       "lastUpdateUTC": 1752507126,
       "createTime": "2025-07-14 18:32:06 +0300",
       "createTimeUTC": 1752507126,
-      "relatedPages": [],
-      "autoSummary": "",
+      "relatedPages": [
+        {
+          "title": "Components",
+          "permalink": "/components/intro/"
+        }
+      ],
+      "autoSummary": "Learn how to use docaroo components to embed rich media into your content. We do not encourage to store large media on your doc-contents folder.",
       "similarByContent": [],
       "readingTime": 3,
       "hasDynamicContent": false,
@@ -275,13 +294,13 @@
         "site",
         "doc"
       ],
-      "excerpt": "",
+      "excerpt": "venit, docaroo, resursa, completă, învăța, creezi, construiești, întreții, site, uri",
       "lastUpdate": "2025-07-14 18:32:06 +0300",
       "lastUpdateUTC": 1752507126,
       "createTime": "2025-07-14 18:32:06 +0300",
       "createTimeUTC": 1752507126,
       "relatedPages": [],
-      "autoSummary": "",
+      "autoSummary": "Bine ai venit la docaroo — resursa ta completă pentru a învăța cum să creezi, construiești și întreții site-uri de documentație de înaltă calitate pentru orice tip de proiect, produs sau.",
       "similarByContent": [],
       "readingTime": 3,
       "hasDynamicContent": false,

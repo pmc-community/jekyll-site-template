@@ -1,0 +1,60 @@
+{
+  "keywords": [
+    {
+      "permalink": "/intro/",
+      "keywords": [
+        "venit",
+        "docaroo",
+        "resursa",
+        "completă",
+        "învăța",
+        "creezi",
+        "construiești",
+        "întreții",
+        "site",
+        "uri"
+      ]
+    },
+    {
+      "permalink": "/components/intro/",
+      "keywords": [
+        "learn",
+        "add",
+        "content",
+        "pre",
+        "defined",
+        "components",
+        "elements",
+        "embedded",
+        "documents",
+        "tags"
+      ]
+    },
+    {
+      "permalink": "/components/alerts/",
+      "keywords": [
+        "learn",
+        "add",
+        "blocks",
+        "content",
+        "alerts",
+        "types",
+        "colors"
+      ]
+    },
+    {
+      "permalink": "/components/rich-media/",
+      "keywords": [
+        "learn",
+        "docaroo",
+        "components",
+        "embed",
+        "rich",
+        "media",
+        "content",
+        "encourage",
+        "store"
+      ]
+    }
+  ]
+}
