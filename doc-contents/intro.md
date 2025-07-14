@@ -5,7 +5,7 @@ permalink: /intro/
 nav_order: 1
 ---
 
-{% include elements/alert.html class="primary" content="Varianta in limba Romana exista doar pentru a exemplifica capabilitatile multilanguage. **In afara de acesta pagina nu exista alt continut in limba Romana.** Comutarea pe limba Romana din orice alta pagina in afara de aceasta pagina va afisa **404 Not Found**." title="IMPORTANT" %}
+{% include elements/alert.html class="primary" content="Varianta in limba Romana exista doar pentru a exemplifica capabilitatile multilanguage. **In afara de acesta pagina nu exista alt continut in limba Romana.** Comutarea pe limba Romana din orice alta pagina in afara de aceasta pagina si de prima pagina va afisa **404 Not Found**." title="IMPORTANT" %}
 
 # 📚 Introducere
 

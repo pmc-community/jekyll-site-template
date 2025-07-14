@@ -219,10 +219,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "important, varianta, limba, romana, exista, exemplifica, capabilitatile, multilanguage, afara, pagina",
-      "lastUpdate": "2025-07-14 20:32:37 +0300",
-      "lastUpdateUTC": 1752514357,
-      "createTime": "2025-07-14 19:32:45 +0300",
-      "createTimeUTC": 1752510765,
+      "lastUpdate": "2025-07-14 20:36:23 +0300",
+      "lastUpdateUTC": 1752514583,
+      "createTime": "2025-07-14 20:35:55 +0300",
+      "createTimeUTC": 1752514555,
       "relatedPages": [],
       "autoSummary": "Important varianta in limba romana exista doar pentru a exemplifica capabilitatile multilanguage. In afara de acesta pagina nu exista alt continut in limba romana. Comutarea pe limba romana din orice alta.",
       "similarByContent": [],
@@ -231,10 +231,26 @@
       "parent": ""
     }
   ],
-  "tagList": [],
-  "tagDetails": {},
-  "catList": [],
-  "catDetails": {},
+  "tagList": [
+    "docs",
+    "documentation"
+  ],
+  "tagDetails": {
+    "docs": {
+      "pages": []
+    },
+    "documentation": {
+      "pages": []
+    }
+  },
+  "catList": [
+    "General"
+  ],
+  "catDetails": {
+    "General": {
+      "pages": []
+    }
+  },
   "hsSettings": {
     "region": "na1",
     "portalID": "7598952",
