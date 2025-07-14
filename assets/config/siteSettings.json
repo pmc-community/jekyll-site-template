@@ -411,7 +411,7 @@
         }
       ],
       "readingTime": 4,
-      "hasDynamicContent": false,
+      "hasDynamicContent": true,
       "parent": ""
     },
     {
