@@ -3,10 +3,6 @@
     "permalink": "/components/alerts/",
     "related": [
       {
-        "title": "Content",
-        "permalink": "/content/intro/"
-      },
-      {
         "title": "Link button",
         "permalink": "/components/link-button/"
       },
@@ -24,12 +20,12 @@
         "permalink": "/components/qitem/"
       },
       {
-        "title": "Content",
-        "permalink": "/content/intro/"
-      },
-      {
         "title": "Alerts",
         "permalink": "/components/alerts/"
+      },
+      {
+        "title": "Link button",
+        "permalink": "/components/link-button/"
       }
     ]
   },
@@ -66,29 +62,11 @@
   },
   {
     "permalink": "/content/intro/",
-    "related": [
-      {
-        "title": "Alerts",
-        "permalink": "/components/alerts/"
-      },
-      {
-        "title": "Components",
-        "permalink": "/components/intro/"
-      },
-      {
-        "title": "External content",
-        "permalink": "/content/ec/"
-      }
-    ]
+    "related": []
   },
   {
     "permalink": "/content/ec/",
-    "related": [
-      {
-        "title": "Content",
-        "permalink": "/content/intro/"
-      }
-    ]
+    "related": []
   },
   {
     "permalink": "/intro/",

@@ -7,7 +7,8 @@ start: true
 ---
 
 # Summary
-Learn how to structure and use the content in the most efficient way.
+Learn how to structure and use the content in the most efficient way. The secret is to use to the maximum extent the features made available, out of which importing external content (at build time or at run time) is the most powerful since it allows establishing single source of truth for a lot of repetitive pieces of content that you may need to use in your documents. As such, when modifying this kind of pieces of content, you don't have to remember in which document you place it, only modify the source and the pice of content will appear in its new version in all document where is placed.
+
 There are two types of content that you can use in your documents:
 - content directly included in your documents
 - content imported from `external sources`
@@ -27,3 +28,5 @@ Following the structure of Docaroo documents, you can organise your documentatio
     - `_faq`: if `faq` feature is active for the site, this sub-folder contains the questions and answers
 3. Use `collections` of documents to group your documents in relevant sections. A collection is a folder starting with `_` and properly declared in `_config.yml`
 4. For easy find all document's components (such as images), you can put each document on it's own folder together with the media files that it uses. This approach may be bette than having a single source of many media files. However, large media files (such as videos) should not be stored in the `docs root folder` and to be rendered/played from specialized and much faster sources (such as Vimeo or Youtube).  We provide dedicated components for such situations.
+
+{% include elements/alert.html class="primary" content="Observe the files in partials sub-folder. These files doesn't have regular front matter and should stay like this to avoid them to be rendered as documents at build time." %}

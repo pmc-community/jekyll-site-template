@@ -22,11 +22,11 @@
         },
         {
             "permalink": "/content/intro/",
-            "summary": "Learn how to structure and use the content in the most efficient way. Write a concise, factual summary in English with no greetings or instructions, maximum 50 words."
+            "summary": "There are two types of content that you can use in your documents:. Content directly included in your document or content imported from. External sources are very important because allows you to create reusable pieces of content."
         },
         {
             "permalink": "/content/ec/",
-            "summary": "Documentation can be imported from any source that returns markdown. You can tag (with cutom tags) or classify (custom categories) based on this content. This type of content will not be returned by site search features."
+            "summary": "Documentaroo allows you to create. Of content and import these parts in multiple places in your documents. It is possible to import content from external public and private repositories. You must be sure that the content you want to import is available at the time when you build your site."
         },
         {
             "permalink": "/intro/",
