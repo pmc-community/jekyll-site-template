@@ -56,12 +56,15 @@ algolia = {
     highlightTextPrefixTag: algoliaSettings.algoliaTextHighlightPrefixTag,
     highlightTextPostfixTag: algoliaSettings.algoliaTextHighlightPostfixTag,
     hitItemDetailsBoxGutter: 5,
-    langCode: !settings.multilang.enabled 
-        ? null 
-        : siteLanguageCode !== '' 
-            ? siteLanguageCode 
-            : settings.multilang.availableLang[settings.multilang.fallbackLang].lang,
+    langCode: this.getLangCode(),
     isProd: isProd,
+
+    getLangCode: () => {
+        if (!settings.multilang.enabled) return '';
+        if (siteLanguageCode === '') return '';
+        if (siteLanguageCode === settings.multilang.availableLang[settings.multilang.fallbackLang].lang) return '';
+        return siteLanguageCode;
+    },
 
     getPageFullUrl: (permalink) => {
         const u = new URL(window.location.href);
@@ -162,7 +165,6 @@ algolia = {
     },
 
     silentSearchInSite: (query, searchResultsCallback) => {
-        
         const client = algoliasearch(algolia.appId, algolia.apiKey);
         const index = client.initIndex(algolia.indexName);
         index.search(query, {facetFilters: [`lang:${algolia.langCode}`]})
