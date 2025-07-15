@@ -219,10 +219,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "learn, add, blocks, content, alerts, types, colors",
-      "lastUpdate": "2025-07-15 01:00:30 +0300",
-      "lastUpdateUTC": 1752530430,
-      "createTime": "2025-07-15 01:00:30 +0300",
-      "createTimeUTC": 1752530430,
+      "lastUpdate": "2025-07-15 17:41:21 +0300",
+      "lastUpdateUTC": 1752590481,
+      "createTime": "2025-07-15 17:41:21 +0300",
+      "createTimeUTC": 1752590481,
       "relatedPages": [
         {
           "title": "Content",
@@ -254,10 +254,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "learn, add, content, pre, defined, components, elements, embedded, documents, tags",
-      "lastUpdate": "2025-07-15 01:00:30 +0300",
-      "lastUpdateUTC": 1752530430,
-      "createTime": "2025-07-15 01:00:30 +0300",
-      "createTimeUTC": 1752530430,
+      "lastUpdate": "2025-07-15 17:41:21 +0300",
+      "lastUpdateUTC": 1752590481,
+      "createTime": "2025-07-15 17:41:21 +0300",
+      "createTimeUTC": 1752590481,
       "relatedPages": [
         {
           "title": "FAQ Item",
@@ -284,10 +284,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "learn, add, elements, documents, element, question, answer",
-      "lastUpdate": "2025-07-15 01:00:30 +0300",
-      "lastUpdateUTC": 1752530430,
-      "createTime": "2025-07-15 01:00:30 +0300",
-      "createTimeUTC": 1752530430,
+      "lastUpdate": "2025-07-15 17:41:21 +0300",
+      "lastUpdateUTC": 1752590481,
+      "createTime": "2025-07-15 17:41:21 +0300",
+      "createTimeUTC": 1752590481,
       "relatedPages": [
         {
           "title": "Components",
@@ -306,10 +306,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "learn, add, link, buttons, content, helps, users, navigate",
-      "lastUpdate": "2025-07-15 01:00:30 +0300",
-      "lastUpdateUTC": 1752530430,
-      "createTime": "2025-07-15 01:00:30 +0300",
-      "createTimeUTC": 1752530430,
+      "lastUpdate": "2025-07-15 17:41:21 +0300",
+      "lastUpdateUTC": 1752590481,
+      "createTime": "2025-07-15 17:41:21 +0300",
+      "createTimeUTC": 1752590481,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -332,10 +332,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "learn, docaroo, components, embed, rich, media, content, encourage, store",
-      "lastUpdate": "2025-07-15 01:00:30 +0300",
-      "lastUpdateUTC": 1752530430,
-      "createTime": "2025-07-15 01:00:30 +0300",
-      "createTimeUTC": 1752530430,
+      "lastUpdate": "2025-07-15 17:41:21 +0300",
+      "lastUpdateUTC": 1752590481,
+      "createTime": "2025-07-15 17:41:21 +0300",
+      "createTimeUTC": 1752590481,
       "relatedPages": [
         {
           "title": "Components",
@@ -354,10 +354,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "learn, structure, content, efficient, types, documents, included",
-      "lastUpdate": "2025-07-15 01:00:30 +0300",
-      "lastUpdateUTC": 1752530430,
-      "createTime": "2025-07-15 01:00:30 +0300",
-      "createTimeUTC": 1752530430,
+      "lastUpdate": "2025-07-15 17:41:21 +0300",
+      "lastUpdateUTC": 1752590481,
+      "createTime": "2025-07-15 17:41:21 +0300",
+      "createTimeUTC": 1752590481,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -389,17 +389,17 @@
       "categories": [],
       "tags": [],
       "excerpt": "docaroo, documents, external, content, create, import, multiple",
-      "lastUpdate": "2025-07-15 01:00:30 +0300",
-      "lastUpdateUTC": 1752530430,
-      "createTime": "2025-07-15 01:00:30 +0300",
-      "createTimeUTC": 1752530430,
+      "lastUpdate": "2025-07-15 17:54:19 +0300",
+      "lastUpdateUTC": 1752591259,
+      "createTime": "2025-07-15 17:41:21 +0300",
+      "createTimeUTC": 1752590481,
       "relatedPages": [
         {
           "title": "Content",
           "permalink": "/content/intro/"
         }
       ],
-      "autoSummary": "Documentation can be imported from any source that returns markdown. This type of content will be refelcted in the page toc, you can tag (with cutom tags) or classify (custom categories) based on this content.",
+      "autoSummary": "Documentation can be imported from any source that returns markdown. You can tag (with cutom tags) or classify (custom categories) based on this content. This type of content will not be returned by site search features.",
       "similarByContent": [
         {
           "permalink": "/content/intro/",
@@ -425,10 +425,10 @@
         "docs"
       ],
       "excerpt": "documentation, builder, guide, comprehensive, resource, learning, create, build, maintain, quality",
-      "lastUpdate": "2025-07-15 01:04:08 +0300",
-      "lastUpdateUTC": 1752530648,
-      "createTime": "2025-07-15 01:00:30 +0300",
-      "createTimeUTC": 1752530430,
+      "lastUpdate": "2025-07-15 17:41:21 +0300",
+      "lastUpdateUTC": 1752590481,
+      "createTime": "2025-07-15 17:41:21 +0300",
+      "createTimeUTC": 1752590481,
       "relatedPages": [],
       "autoSummary": "This guide will walk you through everything you need to know about building a complete, maintainable, and professional documentation site from scratch. This guide is suitable for:. Developers who want to document apis, libraries, or frameworks product teams building internal or customer-facing documentation technical writers looking to improve structure and.",
       "similarByContent": [
@@ -864,7 +864,7 @@
     "algolia_doc_search_custom_panel_cats_text": "Categories",
     "algolia_doc_search_custom_panel_hit_text": "Hit",
     "algolia_doc_search_custom_panel_heads_up_text": "Heads up!!!",
-    "algolia_doc_search_custom_panel_heads_up_warning_text": "This ToC does not capture dynamic document headings.",
+    "algolia_doc_search_custom_panel_heads_up_warning_text": "This ToC may not capture dynamic document headings.",
     "algolia_doc_search_custom_panel_heads_up_has_dynamic_content_text": "has dynamic content!",
     "algolia_doc_search_custom_panel_heads_up_not_has_dynamic_content_text": "doesn't have dynamic content!",
     "algolia_doc_search_btn_text": "Search",

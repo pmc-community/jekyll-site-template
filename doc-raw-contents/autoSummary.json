@@ -26,7 +26,7 @@
         },
         {
             "permalink": "/content/ec/",
-            "summary": "Documentation can be imported from any source that returns markdown. This type of content will be refelcted in the page toc, you can tag (with cutom tags) or classify (custom categories) based on this content."
+            "summary": "Documentation can be imported from any source that returns markdown. You can tag (with cutom tags) or classify (custom categories) based on this content. This type of content will not be returned by site search features."
         },
         {
             "permalink": "/intro/",
