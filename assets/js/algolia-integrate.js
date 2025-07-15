@@ -913,7 +913,7 @@ algolia = {
             if (outputObj !== 'none') {
                 return markOutput(outputObj.toc);
             } else {
-                return await fetchToc(getPageFullUrl(url));
+                return await fetchToc(algolia.getPageFullUrl(url));
             }
         };
 
