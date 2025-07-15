@@ -847,8 +847,7 @@ algolia = {
             //however, dynamic client-side content is not searchable either (not by JTD search or Algolia)
             const fetchToc = async (url, originalUrl) => {
                 try {                    
-                   const response = await $.get(url);
-
+                    const response = await $.get(url);
                     const html = $(response);
                     const content = html.find('main');
                     const headings = content.find('h1, h2, h3, h4, h5, h6');
@@ -880,7 +879,7 @@ algolia = {
                     if (headings.length === 0) output = '';
                     else {
                         headings.each(function () {                            
-                            const fullUrl = `${algolia.getPageFullUrl(originalUrl)}#id_${$(this).attr('id')}`;
+                            const fullUrl = `${algolia.getPageFullUrl(originalUrl)}#${$(this).attr('id')}`;
 
                             output += 
                                 `
