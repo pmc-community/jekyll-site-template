@@ -845,7 +845,7 @@ algolia = {
             // cannot use #toc_content of the hit target page because is dynamically generated
             // so the toc we generate here may be smaller than the actual toc of the hit target page
             //however, dynamic client-side content is not searchable either (not by JTD search or Algolia)
-            const fetchToc = async (url) => {
+            const fetchToc = async (url, originalUrl) => {
                 try {                    
                     const response = await $.get(url);
                     const html = $(response);
@@ -879,7 +879,7 @@ algolia = {
                     if (headings.length === 0) output = '';
                     else {
                         headings.each(function () {                            
-                            const fullUrl = `${algolia.getPageFullUrl(url)}#${$(this).attr('id')}`;
+                            const fullUrl = `${algolia.getPageFullUrl(originalUrl)}#${$(this).attr('id')}`;
 
                             output += 
                                 `
@@ -913,7 +913,7 @@ algolia = {
             if (outputObj !== 'none') {
                 return markOutput(outputObj.toc);
             } else {
-                return await fetchToc(algolia.getPageFullUrl(url));
+                return await fetchToc(algolia.getPageFullUrl(url),url);
             }
         };
 
