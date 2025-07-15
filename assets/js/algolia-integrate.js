@@ -79,6 +79,31 @@ algolia = {
         return pl;
     },
 
+    getRenderedPageSource: async (url) => {
+        return new Promise((resolve, reject) => {
+            const iframe = document.createElement('iframe');
+            iframe.style.display = 'none'; // Keep it hidden
+            iframe.src = url;
+
+            iframe.onload = () => {
+                try {
+                    const doc = iframe.contentDocument || iframe.contentWindow.document;
+                    const html = doc.documentElement.outerHTML;
+                    document.body.removeChild(iframe); // clean up
+                    resolve(html);
+                } catch (err) {
+                    reject(err);
+                }
+            };
+
+            iframe.onerror = (e) => {
+                reject(new Error(`Failed to load iframe for URL: ${url}`));
+            };
+
+            document.body.appendChild(iframe);
+        });
+    },
+
     resetSearch: () => {
         $('div[siteFunction="showMoreShowLessButtons"]').remove();
         $('.pagination-buttons').remove();
@@ -274,6 +299,7 @@ algolia = {
             return marked.length > 0 ? marked[0].value : null;
         }
         
+        console.log(result.anchor)
         return firstRow 
         ? (
             `
@@ -847,35 +873,12 @@ algolia = {
             //however, dynamic client-side content is not searchable either (not by JTD search or Algolia)
             const fetchToc = async (url, originalUrl) => {
 
-                async function getRenderedPageSource(url) {
-                    return new Promise((resolve, reject) => {
-                        const iframe = document.createElement('iframe');
-                        iframe.style.display = 'none'; // Keep it hidden
-                        iframe.src = url;
-
-                        iframe.onload = () => {
-                            try {
-                                const doc = iframe.contentDocument || iframe.contentWindow.document;
-                                const html = doc.documentElement.outerHTML;
-                                document.body.removeChild(iframe); // clean up
-                                resolve(html);
-                            } catch (err) {
-                                reject(err);
-                            }
-                        };
-
-                        iframe.onerror = (e) => {
-                            reject(new Error(`Failed to load iframe for URL: ${url}`));
-                        };
-
-                        document.body.appendChild(iframe);
-                    });
-                }
+                
 
                 try {                    
                     //const response = await $.get(url);
 
-                    const response = await getRenderedPageSource(url)
+                    const response = await algolia.getRenderedPageSource(url)
                     const html = $(response);
                     const content = html.find('main');
                     const headings = content.find('h1, h2, h3, h4, h5, h6');
