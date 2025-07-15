@@ -859,8 +859,8 @@ algolia = {
                         credentials: 'include',
                     });
 
-                    const htmlx = await response.text();
-                    const html = $(htmlx);
+                    const htmlRaw = await response.text();
+                    const html = $(htmlRaw);
                     const content = html.find('main');
                     const headings = content.find('h1, h2, h3, h4, h5, h6');
 
