@@ -56,8 +56,8 @@ algolia = {
     highlightTextPrefixTag: algoliaSettings.algoliaTextHighlightPrefixTag,
     highlightTextPostfixTag: algoliaSettings.algoliaTextHighlightPostfixTag,
     hitItemDetailsBoxGutter: 5,
-    langCode: algolia.getLangCode(),
     isProd: isProd,
+    get langCode() { return this.getLangCode()},
 
     getLangCode: () => {
         if (!settings.multilang.enabled) return '';
