@@ -847,20 +847,9 @@ algolia = {
             //however, dynamic client-side content is not searchable either (not by JTD search or Algolia)
             const fetchToc = async (url, originalUrl) => {
                 try {                    
-                   // const response = await $.get(url);
+                   const response = await $.get(url);
 
-                    const response = await fetch(url, {
-                        method: 'GET',
-                        headers: {
-                            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/115.0 Safari/537.36',
-                            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-                            'Accept-Language': 'en-US,en;q=0.9',
-                        },
-                        credentials: 'include',
-                    });
-
-                    const htmlRaw = await response.text();
-                    const html = $(htmlRaw);
+                    const html = $(response);
                     const content = html.find('main');
                     const headings = content.find('h1, h2, h3, h4, h5, h6');
 
