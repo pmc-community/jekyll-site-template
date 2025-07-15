@@ -913,11 +913,7 @@ algolia = {
             if (outputObj !== 'none') {
                 return markOutput(outputObj.toc);
             } else {
-                let fullUrl;
-                if (algolia.langCode === '') fullUrl = url;
-                else fullUrl = `/${algolia.langCode}${url}`;
-                
-                return await fetchToc(fullUrl);
+                return await fetchToc(getPageFullUrl(url));
             }
         };
 
