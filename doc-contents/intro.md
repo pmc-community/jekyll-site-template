@@ -10,8 +10,6 @@ tags: [documentation,docs]
 nav_order: 1
 ---
 
-{% include elements/alert.html class="primary" content="The Romanian version of the site is on only for demonstrating the multilanguage capabilities of Docaroo. **Besides the Home and Introduction pages, there is not other content in Romanian language.** Switching to Romanian from any other page will show **404 Not Found page**." title="IMPORTANT" %}
-
 # 📚 Introduction
 
 Welcome to the **Documentation Site Builder Guide** — your comprehensive resource for learning how to **create, build, and maintain high-quality documentation sites** for any kind of project, product, or organization.

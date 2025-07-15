@@ -219,15 +219,11 @@
       "categories": [],
       "tags": [],
       "excerpt": "learn, add, blocks, content, alerts, types, colors",
-      "lastUpdate": "2025-07-15 00:21:10 +0300",
-      "lastUpdateUTC": 1752528070,
-      "createTime": "2025-07-15 00:14:53 +0300",
-      "createTimeUTC": 1752527693,
+      "lastUpdate": "2025-07-15 17:57:57 +0300",
+      "lastUpdateUTC": 1752591477,
+      "createTime": "2025-07-15 17:57:57 +0300",
+      "createTimeUTC": 1752591477,
       "relatedPages": [
-        {
-          "title": "Content",
-          "permalink": "/content/intro/"
-        },
         {
           "title": "Link button",
           "permalink": "/components/link-button/"
@@ -254,22 +250,22 @@
       "categories": [],
       "tags": [],
       "excerpt": "learn, add, content, pre, defined, components, elements, embedded, documents, tags",
-      "lastUpdate": "2025-07-15 00:26:43 +0300",
-      "lastUpdateUTC": 1752528403,
-      "createTime": "2025-07-15 00:14:53 +0300",
-      "createTimeUTC": 1752527693,
+      "lastUpdate": "2025-07-15 17:57:57 +0300",
+      "lastUpdateUTC": 1752591477,
+      "createTime": "2025-07-15 17:57:57 +0300",
+      "createTimeUTC": 1752591477,
       "relatedPages": [
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/"
         },
         {
-          "title": "Content",
-          "permalink": "/content/intro/"
-        },
-        {
           "title": "Alerts",
           "permalink": "/components/alerts/"
+        },
+        {
+          "title": "Link button",
+          "permalink": "/components/link-button/"
         }
       ],
       "autoSummary": "Documentaroo lets you embed content into your documents using pre-defined components. The components are elements that can be embedded in documents using tags and. As it will be shown for each of the next components.",
@@ -284,10 +280,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "learn, add, elements, documents, element, question, answer",
-      "lastUpdate": "2025-07-15 00:50:46 +0300",
-      "lastUpdateUTC": 1752529846,
-      "createTime": "2025-07-15 00:14:53 +0300",
-      "createTimeUTC": 1752527693,
+      "lastUpdate": "2025-07-15 17:57:57 +0300",
+      "lastUpdateUTC": 1752591477,
+      "createTime": "2025-07-15 17:57:57 +0300",
+      "createTimeUTC": 1752591477,
       "relatedPages": [
         {
           "title": "Components",
@@ -306,10 +302,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "learn, add, link, buttons, content, helps, users, navigate",
-      "lastUpdate": "2025-07-15 00:14:53 +0300",
-      "lastUpdateUTC": 1752527693,
-      "createTime": "2025-07-15 00:14:53 +0300",
-      "createTimeUTC": 1752527693,
+      "lastUpdate": "2025-07-15 17:57:57 +0300",
+      "lastUpdateUTC": 1752591477,
+      "createTime": "2025-07-15 17:57:57 +0300",
+      "createTimeUTC": 1752591477,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -332,10 +328,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "learn, docaroo, components, embed, rich, media, content, encourage, store",
-      "lastUpdate": "2025-07-15 00:14:53 +0300",
-      "lastUpdateUTC": 1752527693,
-      "createTime": "2025-07-15 00:14:53 +0300",
-      "createTimeUTC": 1752527693,
+      "lastUpdate": "2025-07-15 17:57:57 +0300",
+      "lastUpdateUTC": 1752591477,
+      "createTime": "2025-07-15 17:57:57 +0300",
+      "createTimeUTC": 1752591477,
       "relatedPages": [
         {
           "title": "Components",
@@ -353,31 +349,14 @@
       "permalink": "/content/intro/",
       "categories": [],
       "tags": [],
-      "excerpt": "learn, structure, content, efficient, types, documents, included",
-      "lastUpdate": "2025-07-15 00:14:53 +0300",
-      "lastUpdateUTC": 1752527693,
-      "createTime": "2025-07-15 00:14:53 +0300",
-      "createTimeUTC": 1752527693,
-      "relatedPages": [
-        {
-          "title": "Alerts",
-          "permalink": "/components/alerts/"
-        },
-        {
-          "title": "Components",
-          "permalink": "/components/intro/"
-        },
-        {
-          "title": "External content",
-          "permalink": "/content/ec/"
-        }
-      ],
-      "autoSummary": "Learn how to structure and use the content in the most efficient way. Write a concise, factual summary in English with no greetings or instructions, maximum 50 words.",
+      "excerpt": "learn, structure, content, efficient, secret, maximum, extent, features, importing, external",
+      "lastUpdate": "2025-07-15 18:09:16 +0300",
+      "lastUpdateUTC": 1752592156,
+      "createTime": "2025-07-15 17:57:57 +0300",
+      "createTimeUTC": 1752591477,
+      "relatedPages": [],
+      "autoSummary": "There are two types of content that you can use in your documents:. Content directly included in your document or content imported from. External sources are very important because allows you to create reusable pieces of content.",
       "similarByContent": [
-        {
-          "permalink": "/content/ec/",
-          "title": "External content"
-        },
         {
           "permalink": "/intro/",
           "title": "Introduction"
@@ -393,17 +372,12 @@
       "categories": [],
       "tags": [],
       "excerpt": "docaroo, documents, external, content, create, import, multiple",
-      "lastUpdate": "2025-07-15 00:14:53 +0300",
-      "lastUpdateUTC": 1752527693,
-      "createTime": "2025-07-15 00:14:53 +0300",
-      "createTimeUTC": 1752527693,
-      "relatedPages": [
-        {
-          "title": "Content",
-          "permalink": "/content/intro/"
-        }
-      ],
-      "autoSummary": "Documentation can be imported from any source that returns markdown. This type of content will be refelcted in the page toc, you can tag (with cutom tags) or classify (custom categories) based on this content.",
+      "lastUpdate": "2025-07-15 18:02:15 +0300",
+      "lastUpdateUTC": 1752591735,
+      "createTime": "2025-07-15 17:57:57 +0300",
+      "createTimeUTC": 1752591477,
+      "relatedPages": [],
+      "autoSummary": "Documentaroo allows you to create. Of content and import these parts in multiple places in your documents. It is possible to import content from external public and private repositories. You must be sure that the content you want to import is available at the time when you build your site.",
       "similarByContent": [
         {
           "permalink": "/content/intro/",
@@ -415,7 +389,7 @@
         }
       ],
       "readingTime": 4,
-      "hasDynamicContent": false,
+      "hasDynamicContent": true,
       "parent": ""
     },
     {
@@ -428,20 +402,20 @@
         "documentation",
         "docs"
       ],
-      "excerpt": "romanian, version, demonstrating, multilanguage, capabilities, docaroo, introduction, content, language",
-      "lastUpdate": "2025-07-15 00:14:53 +0300",
-      "lastUpdateUTC": 1752527693,
-      "createTime": "2025-07-15 00:14:53 +0300",
-      "createTimeUTC": 1752527693,
+      "excerpt": "documentation, builder, guide, comprehensive, resource, learning, create, build, maintain, quality",
+      "lastUpdate": "2025-07-15 17:57:57 +0300",
+      "lastUpdateUTC": 1752591477,
+      "createTime": "2025-07-15 17:57:57 +0300",
+      "createTimeUTC": 1752591477,
       "relatedPages": [],
-      "autoSummary": "Romanian version of the site is on only for demonstrating the multilanguage capabilities of docaroo. Switching to romanian from any other page will show 404 not found page.Write a concise, factual summary in English with no greetings or instructions, maximum 50 words.",
+      "autoSummary": "This guide will walk you through everything you need to know about building a complete, maintainable, and professional documentation site from scratch. This guide is suitable for:. Developers who want to document apis, libraries, or frameworks product teams building internal or customer-facing documentation technical writers looking to improve structure and.",
       "similarByContent": [
         {
           "permalink": "/content/intro/",
           "title": "Content"
         }
       ],
-      "readingTime": 3,
+      "readingTime": 2,
       "hasDynamicContent": false,
       "parent": ""
     }
@@ -868,7 +842,7 @@
     "algolia_doc_search_custom_panel_cats_text": "Categories",
     "algolia_doc_search_custom_panel_hit_text": "Hit",
     "algolia_doc_search_custom_panel_heads_up_text": "Heads up!!!",
-    "algolia_doc_search_custom_panel_heads_up_warning_text": "This ToC does not capture dynamic document headings.",
+    "algolia_doc_search_custom_panel_heads_up_warning_text": "This ToC may not capture dynamic document headings.",
     "algolia_doc_search_custom_panel_heads_up_has_dynamic_content_text": "has dynamic content!",
     "algolia_doc_search_custom_panel_heads_up_not_has_dynamic_content_text": "doesn't have dynamic content!",
     "algolia_doc_search_btn_text": "Search",

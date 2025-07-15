@@ -56,12 +56,15 @@ algolia = {
     highlightTextPrefixTag: algoliaSettings.algoliaTextHighlightPrefixTag,
     highlightTextPostfixTag: algoliaSettings.algoliaTextHighlightPostfixTag,
     hitItemDetailsBoxGutter: 5,
-    langCode: !settings.multilang.enabled 
-        ? null 
-        : siteLanguageCode !== '' 
-            ? siteLanguageCode 
-            : settings.multilang.availableLang[settings.multilang.fallbackLang].lang,
     isProd: isProd,
+    get langCode() { return this.getLangCode()},
+
+    getLangCode: () => {
+        if (!settings.multilang.enabled) return '';
+        if (siteLanguageCode === '') return '';
+        if (siteLanguageCode === settings.multilang.availableLang[settings.multilang.fallbackLang].lang) return '';
+        return siteLanguageCode;
+    },
 
     getPageFullUrl: (permalink) => {
         const u = new URL(window.location.href);
@@ -74,6 +77,31 @@ algolia = {
                     ? `${u.protocol}//${u.hostname}${permalink}`
                     : `${u.protocol}//${u.hostname}/${algolia.langCode}${permalink}`;
         return pl;
+    },
+
+    getRenderedPageSource: async (url) => {
+        return new Promise((resolve, reject) => {
+            const iframe = document.createElement('iframe');
+            iframe.style.display = 'none'; // Keep it hidden
+            iframe.src = url;
+
+            iframe.onload = () => {
+                try {
+                    const doc = iframe.contentDocument || iframe.contentWindow.document;
+                    const html = doc.documentElement.outerHTML;
+                    document.body.removeChild(iframe); // clean up
+                    resolve(html);
+                } catch (err) {
+                    reject(err);
+                }
+            };
+
+            iframe.onerror = (e) => {
+                reject(new Error(`Failed to load iframe for URL: ${url}`));
+            };
+
+            document.body.appendChild(iframe);
+        });
     },
 
     resetSearch: () => {
@@ -842,9 +870,14 @@ algolia = {
             // cannot use #toc_content of the hit target page because is dynamically generated
             // so the toc we generate here may be smaller than the actual toc of the hit target page
             //however, dynamic client-side content is not searchable either (not by JTD search or Algolia)
-            const fetchToc = async (url) => {
+            const fetchToc = async (url, originalUrl) => {
+
+                
+
                 try {                    
-                    const response = await $.get(url);
+                    //const response = await $.get(url);
+
+                    const response = await algolia.getRenderedPageSource(url)
                     const html = $(response);
                     const content = html.find('main');
                     const headings = content.find('h1, h2, h3, h4, h5, h6');
@@ -876,7 +909,7 @@ algolia = {
                     if (headings.length === 0) output = '';
                     else {
                         headings.each(function () {                            
-                            const fullUrl = `${algolia.getPageFullUrl(url)}#${$(this).attr('id')}`;
+                            const fullUrl = `${algolia.getPageFullUrl(originalUrl)}#${$(this).attr('id')}`;
 
                             output += 
                                 `
@@ -910,7 +943,7 @@ algolia = {
             if (outputObj !== 'none') {
                 return markOutput(outputObj.toc);
             } else {
-                return await fetchToc(url);
+                return await fetchToc(algolia.getPageFullUrl(url),url);
             }
         };
 

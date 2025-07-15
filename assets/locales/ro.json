@@ -373,7 +373,7 @@
     "algolia_doc_search_custom_panel_cats_text": "Categorii",
     "algolia_doc_search_custom_panel_hit_text": "Hit",
     "algolia_doc_search_custom_panel_heads_up_text": "Atentie!!!",
-    "algolia_doc_search_custom_panel_heads_up_warning_text": "Acest cuprins nu poate captura continut dinamic.",
+    "algolia_doc_search_custom_panel_heads_up_warning_text": "Acest cuprins e posibil sa nu poata captura continut dinamic.",
     "algolia_doc_search_custom_panel_heads_up_has_dynamic_content_text": "are continut dinamic!",
     "algolia_doc_search_custom_panel_heads_up_not_has_dynamic_content_text": "nu are continut dinamic!",
     "algolia_doc_search_btn_text": "Cauta",
