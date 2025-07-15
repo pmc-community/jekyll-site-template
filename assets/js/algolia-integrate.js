@@ -299,7 +299,6 @@ algolia = {
             return marked.length > 0 ? marked[0].value : null;
         }
         
-        console.log(result.anchor)
         return firstRow 
         ? (
             `
