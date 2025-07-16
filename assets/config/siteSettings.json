@@ -264,8 +264,8 @@
           "permalink": "/components/alerts/"
         },
         {
-          "title": "Link button",
-          "permalink": "/components/link-button/"
+          "title": "Rich media",
+          "permalink": "/components/rich-media/"
         }
       ],
       "autoSummary": "Documentaroo lets you embed content into your documents using pre-defined components. The components are elements that can be embedded in documents using tags and. As it will be shown for each of the next components.",
@@ -420,7 +420,6 @@
       "parent": ""
     }
   ],
-<<<<<<< Updated upstream
   "tagList": [
     "docs",
     "documentation"
@@ -462,12 +461,6 @@
       "numPages": 1
     }
   },
-=======
-  "tagList": [],
-  "tagDetails": {},
-  "catList": [],
-  "catDetails": {},
->>>>>>> Stashed changes
   "hsSettings": {
     "region": "na1",
     "portalID": "7598952",
