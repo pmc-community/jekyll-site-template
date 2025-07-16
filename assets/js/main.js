@@ -59,7 +59,7 @@ window.customiseTheme = (pageObj = null) => {
     additionalSiteMenuButtonOnMobile(); // button to switch off the site menu
     handleSiteMenuClickOnMobile(); // switch off site menu when click on elements that doesn't change the page
     handleTocOnMobile(); // page ToC functionality on mobile
-    clearTheUrl();
+    
 
     $(document).ready(() => {
         setResizeObserver_height('body', () => adjustBodyHeight_mobile()); // keep site-footer at bottom of screen on mobile
@@ -123,6 +123,9 @@ window.customiseTheme = (pageObj = null) => {
             $('body').css('visibility','visible');
             $('#contentLoading').addClass('d-none');  
         }, settings.colSchemaCorrections.hideBodyUntilLoadTimeout);
+
+    goToAnchor();
+    //setTimeout(()=>clearTheUrl(),500);
 });
 
 }
