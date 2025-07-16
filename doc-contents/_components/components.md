@@ -4,6 +4,7 @@ title: Components
 permalink: /components/intro/
 nav_order: 1
 start: true
+categories: [Components]
 ---
 
 # Summary

@@ -4,6 +4,8 @@ title: Content
 permalink: /content/intro/
 nav_order: 1
 start: true
+categories: [Content]
+tags: [documentation, organise docs]
 ---
 
 # Summary

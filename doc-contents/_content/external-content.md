@@ -2,6 +2,8 @@
 layout: page
 title: External content
 permalink: /content/ec/
+categories: [Content]
+tags: [embed]
 ---
 
 # Summary

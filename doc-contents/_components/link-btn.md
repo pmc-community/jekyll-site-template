@@ -2,6 +2,8 @@
 layout: page
 title: Link button
 permalink: /components/link-button/
+categories: [Components]
+tags: [button, link, anchor]
 ---
 
 # Summary
