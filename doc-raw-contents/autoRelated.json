@@ -90,6 +90,10 @@
       {
         "title": "External content",
         "permalink": "/content/ec/"
+      },
+      {
+        "title": "Get started",
+        "permalink": "/get-started/"
       }
     ]
   },
@@ -111,7 +115,25 @@
     ]
   },
   {
+    "permalink": "/get-started/",
+    "related": [
+      {
+        "title": "Introduction",
+        "permalink": "/intro/"
+      },
+      {
+        "title": "Content",
+        "permalink": "/content/intro/"
+      }
+    ]
+  },
+  {
     "permalink": "/intro/",
-    "related": []
+    "related": [
+      {
+        "title": "Get started",
+        "permalink": "/get-started/"
+      }
+    ]
   }
 ]

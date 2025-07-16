@@ -31,6 +31,10 @@
         {
             "permalink": "/intro/",
             "summary": "This guide will walk you through everything you need to know about building a complete, maintainable, and professional documentation site from scratch. This guide is suitable for:. Developers who want to document apis, libraries, or frameworks product teams building internal or customer-facing documentation technical writers looking to improve structure and."
+        },
+        {
+            "permalink": "/get-started/",
+            "summary": "Getting started with docaroo requires, first of all, to. Organising well your documentation (or blog) is crucial. This will involve defining the folder structure and also the taxonomies. After you designed your documentaion, you need to install the local environment."
         }
     ]
 }
