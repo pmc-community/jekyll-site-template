@@ -420,6 +420,7 @@
       "parent": ""
     }
   ],
+<<<<<<< Updated upstream
   "tagList": [
     "docs",
     "documentation"
@@ -461,6 +462,12 @@
       "numPages": 1
     }
   },
+=======
+  "tagList": [],
+  "tagDetails": {},
+  "catList": [],
+  "catDetails": {},
+>>>>>>> Stashed changes
   "hsSettings": {
     "region": "na1",
     "portalID": "7598952",

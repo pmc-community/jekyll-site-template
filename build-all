@@ -1,0 +1,73 @@
+#!/bin/bash
+
+# List of branches to build from
+branches=("gh-pages" "ro")  # <- Edit this as needed
+
+# Load color and global variables
+source tools_sh/colors.sh
+source tools_sh/globals.sh
+
+clear
+echo ""
+print_color "$BOLD_WHITE" "HOLD ON!!! START WORKING ..."
+print_color "$BOLD_WHITE" "-------------------------------"
+
+# Save the current branch to return later
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+
+# Loop through each branch
+for branch in "${branches[@]}"; do
+  echo ""
+  print_color_enclosed "$BLUE" "Switching to branch: $branch"
+
+  # Stash changes to avoid conflicts
+  git stash -q --keep-index
+
+  # Checkout branch
+  if ! git checkout "$branch"; then
+    echo "❌ Failed to checkout branch: $branch — skipping"
+    git stash pop -q
+    continue
+  fi
+
+  echo ""
+  print_color_enclosed "$PURPLE" "PY pre-build scripts"
+  pyEnable=$(grep 'pyEnable' _data/buildConfig.yml | awk '{print $2}')
+  if [ "$pyEnable" = "true" ]; then
+    ./tools_py/preBuild-pyScripts
+  else
+    echo "pyEnable is false. Skipping Python scripts."
+  fi
+
+  echo ""
+  print_color_enclosed "$PURPLE" "Pre-flight check (dev only)"
+  preFlight=$(grep 'preFlight' _data/buildConfig.yml | awk '{print $2}')
+  if [ "$preFlight" = "true" ]; then
+    ./check
+  else
+    echo "preFlight is false. Skipping site check."
+  fi
+
+  echo ""
+  print_color_enclosed "$PURPLE" "Building site for branch: $branch"
+
+  # Activate Python venv if needed
+  if [ -f "$HOME/py-dev-env-392/bin/activate" ]; then
+    source "$HOME/py-dev-env-392/bin/activate"
+  fi
+
+  # Clean and build site
+  bundle exec jekyll clean
+  LANG="en_US.UTF-8" LC_ALL="en_US.UTF-8" bundle exec jekyll build --incremental --trace
+
+  echo ""
+  print_color_enclosed "$GREEN" "✅ Build complete for branch: $branch"
+
+  # Restore stashed changes
+  git stash pop -q
+done
+
+# Return to original branch
+git checkout "$current_branch"
+echo ""
+print_color "$BOLD_WHITE" "✅ All branches built. Back on: $current_branch"
