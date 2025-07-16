@@ -382,8 +382,8 @@
           "permalink": "/components/intro/"
         },
         {
-          "title": "FAQ Item",
-          "permalink": "/components/qitem/"
+          "title": "External content",
+          "permalink": "/content/ec/"
         }
       ],
       "autoSummary": "Use docaroo components to embed rich media into your content. Currently we support design, boards (fig jam), slides and deck files. Prototypes are not supported for the moment.",
