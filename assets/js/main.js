@@ -121,10 +121,12 @@ window.customiseTheme = (pageObj = null) => {
             
             // body was hidden in _includes/head_custom.html
             $('body').css('visibility','visible');
-            $('#contentLoading').addClass('d-none');  
+            $('#contentLoading').addClass('d-none'); 
+
+            goToAnchor();
         }, settings.colSchemaCorrections.hideBodyUntilLoadTimeout);
 
-    goToAnchor();
+    
     //setTimeout(()=>clearTheUrl(),500);
 });
 
