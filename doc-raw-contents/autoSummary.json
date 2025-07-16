@@ -34,7 +34,7 @@
         },
         {
             "permalink": "/get-started/",
-            "summary": "Getting started with docaroo requires, first of all, to. Organising well your documentation (or blog) is crucial. This will involve defining the folder structure and also the taxonomies. After you designed your documentaion, you need to install the local environment."
+            "summary": "Getting started with docaroo requires, first of all, to design your documentation. Organising well your documentation (or blog) is crucial. This will involve defining the folder structure and also the taxonomies. Docaroo can take care of automatically generating other information about you documentation."
         }
     ]
 }

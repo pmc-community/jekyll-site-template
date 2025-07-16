@@ -382,8 +382,8 @@
           "permalink": "/components/intro/"
         },
         {
-          "title": "External content",
-          "permalink": "/content/ec/"
+          "title": "FAQ Item",
+          "permalink": "/components/qitem/"
         }
       ],
       "autoSummary": "Use docaroo components to embed rich media into your content. Currently we support design, boards (fig jam), slides and deck files. Prototypes are not supported for the moment.",
@@ -481,9 +481,9 @@
         "documentation",
         "docs"
       ],
-      "excerpt": "started, docaroo, requires, organising, documentation, blog, crucial, involve, defining, folder",
-      "lastUpdate": "2025-07-16 18:19:49 +0300",
-      "lastUpdateUTC": 1752679189,
+      "excerpt": "started, docaroo, requires, design, documentation, organising, blog, crucial, involve",
+      "lastUpdate": "2025-07-16 18:47:43 +0300",
+      "lastUpdateUTC": 1752680863,
       "createTime": "2025-07-16 17:59:43 +0300",
       "createTimeUTC": 1752677983,
       "relatedPages": [
@@ -496,9 +496,9 @@
           "permalink": "/content/intro/"
         }
       ],
-      "autoSummary": "Getting started with docaroo requires, first of all, to. Organising well your documentation (or blog) is crucial. This will involve defining the folder structure and also the taxonomies. After you designed your documentaion, you need to install the local environment.",
+      "autoSummary": "Getting started with docaroo requires, first of all, to design your documentation. Organising well your documentation (or blog) is crucial. This will involve defining the folder structure and also the taxonomies. Docaroo can take care of automatically generating other information about you documentation.",
       "similarByContent": [],
-      "readingTime": 1,
+      "readingTime": 2,
       "hasDynamicContent": false,
       "parent": ""
     },
