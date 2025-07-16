@@ -231,26 +231,10 @@
       "parent": ""
     }
   ],
-  "tagList": [
-    "docs",
-    "documentation"
-  ],
-  "tagDetails": {
-    "docs": {
-      "pages": []
-    },
-    "documentation": {
-      "pages": []
-    }
-  },
-  "catList": [
-    "General"
-  ],
-  "catDetails": {
-    "General": {
-      "pages": []
-    }
-  },
+  "tagList": [],
+  "tagDetails": {},
+  "catList": [],
+  "catDetails": {},
   "hsSettings": {
     "region": "na1",
     "portalID": "7598952",
@@ -632,7 +616,7 @@
     "algolia_doc_search_custom_panel_cats_text": "Categories",
     "algolia_doc_search_custom_panel_hit_text": "Hit",
     "algolia_doc_search_custom_panel_heads_up_text": "Heads up!!!",
-    "algolia_doc_search_custom_panel_heads_up_warning_text": "This ToC does not capture dynamic document headings.",
+    "algolia_doc_search_custom_panel_heads_up_warning_text": "This ToC may not capture dynamic document headings.",
     "algolia_doc_search_custom_panel_heads_up_has_dynamic_content_text": "has dynamic content!",
     "algolia_doc_search_custom_panel_heads_up_not_has_dynamic_content_text": "doesn't have dynamic content!",
     "algolia_doc_search_btn_text": "Search",
