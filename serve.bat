@@ -42,7 +42,7 @@ call :print_color_enclosed PURPLE "Time to build the site. Sit back and relax ..
 
 REM ACTIVATE PYTHON ENV
 REM Use full path to activate your venv
-call %USERPROFILE%\py-dev-env-392\Scripts\activate.bat
+call %USERPROFILE%\py-dev-env-392\Scripts\activate
 
 REM CLEANING AND BUILDING SITE
 bundle exec jekyll clean
