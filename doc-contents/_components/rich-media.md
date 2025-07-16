@@ -2,6 +2,8 @@
 layout: page
 title: Rich media
 permalink: /components/rich-media/
+categories: [Components]
+tags: [embed, figma, lottie, video]
 ---
 
 # Summary

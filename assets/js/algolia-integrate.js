@@ -58,11 +58,22 @@ algolia = {
     hitItemDetailsBoxGutter: 5,
     isProd: isProd,
     get langCode() { return this.getLangCode()},
+    get realLangCode() { return this.getRealLangCode()},
 
+    // lang code is needed to modify the URLs accordingly
+    // HEADS UP!!! for the default site language, the lang code should be ''
+    // while real lang code (see below) must be the actual lang code since is an Algolia facet
     getLangCode: () => {
         if (!settings.multilang.enabled) return '';
         if (siteLanguageCode === '') return '';
         if (siteLanguageCode === settings.multilang.availableLang[settings.multilang.fallbackLang].lang) return '';
+        return siteLanguageCode;
+    },
+
+    // real lang code is needed to filter search hits based on real language facet
+    getRealLangCode: () => {
+        if (!settings.multilang.enabled) return '';
+        if (siteLanguageCode === '') return '';
         return siteLanguageCode;
     },
 
@@ -192,7 +203,7 @@ algolia = {
     silentSearchInSite: (query, searchResultsCallback) => {
         const client = algoliasearch(algolia.appId, algolia.apiKey);
         const index = client.initIndex(algolia.indexName);
-        index.search(query, {facetFilters: [`lang:${algolia.langCode}`]})
+        index.search(query, {facetFilters: [`lang:${algolia.realLangCode}`]})
             .then(function(initialSearchResults) {
                 const resultsPages = initialSearchResults.nbPages;
                 let results = [];
@@ -506,7 +517,7 @@ algolia = {
             searchParameters: {
                 // HEADS UP!!! NEEDS TO BE INCLUDED IN index.search(....) TOO, SEE BELOW, FUNCTION refreshResults
                 hitsPerPage: algolia.hitsPerPage,
-                facetFilters: [`lang:${algolia.langCode}`]
+                facetFilters: [`lang:${algolia.realLangCode}`]
             },
 
 
@@ -594,7 +605,7 @@ algolia = {
 
             const index = client.initIndex(algolia.indexName);
     
-            index.search(query, { page: page, hitsPerPage: algolia.hitsPerPage, facetFilters: [`lang:${algolia.langCode}`] })
+            index.search(query, { page: page, hitsPerPage: algolia.hitsPerPage, facetFilters: [`lang:${algolia.realLangCode}`] })
                 .then(function(searchResults) { 
                     
                     // Clear existing results and append new ones

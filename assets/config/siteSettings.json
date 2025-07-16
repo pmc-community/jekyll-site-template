@@ -216,21 +216,29 @@
     {
       "title": "Alerts",
       "permalink": "/components/alerts/",
-      "categories": [],
-      "tags": [],
+      "categories": [
+        "Components"
+      ],
+      "tags": [
+        "embed"
+      ],
       "excerpt": "learn, add, blocks, content, alerts, types, colors",
-      "lastUpdate": "2025-07-15 17:57:57 +0300",
-      "lastUpdateUTC": 1752591477,
-      "createTime": "2025-07-15 17:57:57 +0300",
-      "createTimeUTC": 1752591477,
+      "lastUpdate": "2025-07-16 17:55:22 +0300",
+      "lastUpdateUTC": 1752677722,
+      "createTime": "2025-07-16 14:20:42 +0300",
+      "createTimeUTC": 1752664842,
       "relatedPages": [
         {
-          "title": "Link button",
-          "permalink": "/components/link-button/"
+          "title": "FAQ Item",
+          "permalink": "/components/qitem/"
         },
         {
-          "title": "Components",
-          "permalink": "/components/intro/"
+          "title": "External content",
+          "permalink": "/content/ec/"
+        },
+        {
+          "title": "Rich media",
+          "permalink": "/components/rich-media/"
         }
       ],
       "autoSummary": "Alerts can be of different types as shown by the colors (,,, and ). Alerts can contain content introduced in clear but also can refer. From other documents from your documentation or from external public or private repositories. There is no limit about how many external public repositories you refer.",
@@ -247,13 +255,15 @@
     {
       "title": "Components",
       "permalink": "/components/intro/",
-      "categories": [],
+      "categories": [
+        "Components"
+      ],
       "tags": [],
       "excerpt": "learn, add, content, pre, defined, components, elements, embedded, documents, tags",
-      "lastUpdate": "2025-07-15 17:57:57 +0300",
-      "lastUpdateUTC": 1752591477,
-      "createTime": "2025-07-15 17:57:57 +0300",
-      "createTimeUTC": 1752591477,
+      "lastUpdate": "2025-07-16 17:55:44 +0300",
+      "lastUpdateUTC": 1752677744,
+      "createTime": "2025-07-16 14:20:42 +0300",
+      "createTimeUTC": 1752664842,
       "relatedPages": [
         {
           "title": "FAQ Item",
@@ -277,17 +287,30 @@
     {
       "title": "FAQ Item",
       "permalink": "/components/qitem/",
-      "categories": [],
-      "tags": [],
+      "categories": [
+        "Components"
+      ],
+      "tags": [
+        "embed",
+        "faq"
+      ],
       "excerpt": "learn, add, elements, documents, element, question, answer",
-      "lastUpdate": "2025-07-15 17:57:57 +0300",
-      "lastUpdateUTC": 1752591477,
-      "createTime": "2025-07-15 17:57:57 +0300",
-      "createTimeUTC": 1752591477,
+      "lastUpdate": "2025-07-16 17:55:58 +0300",
+      "lastUpdateUTC": 1752677758,
+      "createTime": "2025-07-16 14:20:42 +0300",
+      "createTimeUTC": 1752664842,
       "relatedPages": [
+        {
+          "title": "Alerts",
+          "permalink": "/components/alerts/"
+        },
         {
           "title": "Components",
           "permalink": "/components/intro/"
+        },
+        {
+          "title": "External content",
+          "permalink": "/content/ec/"
         }
       ],
       "autoSummary": "The question should always be a text. The answer to the question can be simple text or any rich content that is allowed in markdown. Any docaroo component can be used to render the answer to a question.",
@@ -299,13 +322,19 @@
     {
       "title": "Link button",
       "permalink": "/components/link-button/",
-      "categories": [],
-      "tags": [],
+      "categories": [
+        "Components"
+      ],
+      "tags": [
+        "button",
+        "link",
+        "anchor"
+      ],
       "excerpt": "learn, add, link, buttons, content, helps, users, navigate",
-      "lastUpdate": "2025-07-15 17:57:57 +0300",
-      "lastUpdateUTC": 1752591477,
-      "createTime": "2025-07-15 17:57:57 +0300",
-      "createTimeUTC": 1752591477,
+      "lastUpdate": "2025-07-16 17:56:20 +0300",
+      "lastUpdateUTC": 1752677780,
+      "createTime": "2025-07-16 14:20:42 +0300",
+      "createTimeUTC": 1752664842,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -314,6 +343,10 @@
         {
           "title": "Components",
           "permalink": "/components/intro/"
+        },
+        {
+          "title": "FAQ Item",
+          "permalink": "/components/qitem/"
         }
       ],
       "autoSummary": "Link buttons helps users to navigate inside your documentation or access external sites. You can add individual link buttons or group link buttons. You can place anchors anywhere in the document and references to them.",
@@ -325,17 +358,32 @@
     {
       "title": "Rich media",
       "permalink": "/components/rich-media/",
-      "categories": [],
-      "tags": [],
+      "categories": [
+        "Components"
+      ],
+      "tags": [
+        "embed",
+        "figma",
+        "lottie",
+        "video"
+      ],
       "excerpt": "learn, docaroo, components, embed, rich, media, content, encourage, store",
-      "lastUpdate": "2025-07-15 17:57:57 +0300",
-      "lastUpdateUTC": 1752591477,
-      "createTime": "2025-07-15 17:57:57 +0300",
-      "createTimeUTC": 1752591477,
+      "lastUpdate": "2025-07-16 17:56:45 +0300",
+      "lastUpdateUTC": 1752677805,
+      "createTime": "2025-07-16 14:20:42 +0300",
+      "createTimeUTC": 1752664842,
       "relatedPages": [
+        {
+          "title": "Alerts",
+          "permalink": "/components/alerts/"
+        },
         {
           "title": "Components",
           "permalink": "/components/intro/"
+        },
+        {
+          "title": "External content",
+          "permalink": "/content/ec/"
         }
       ],
       "autoSummary": "Use docaroo components to embed rich media into your content. Currently we support design, boards (fig jam), slides and deck files. Prototypes are not supported for the moment.",
@@ -347,14 +395,28 @@
     {
       "title": "Content",
       "permalink": "/content/intro/",
-      "categories": [],
-      "tags": [],
+      "categories": [
+        "Content"
+      ],
+      "tags": [
+        "documentation",
+        "organise docs"
+      ],
       "excerpt": "learn, structure, content, efficient, secret, maximum, extent, features, importing, external",
-      "lastUpdate": "2025-07-15 18:09:16 +0300",
-      "lastUpdateUTC": 1752592156,
-      "createTime": "2025-07-15 17:57:57 +0300",
-      "createTimeUTC": 1752591477,
-      "relatedPages": [],
+      "lastUpdate": "2025-07-16 17:54:28 +0300",
+      "lastUpdateUTC": 1752677668,
+      "createTime": "2025-07-16 14:20:42 +0300",
+      "createTimeUTC": 1752664842,
+      "relatedPages": [
+        {
+          "title": "External content",
+          "permalink": "/content/ec/"
+        },
+        {
+          "title": "Get started",
+          "permalink": "/get-started/"
+        }
+      ],
       "autoSummary": "There are two types of content that you can use in your documents:. Content directly included in your document or content imported from. External sources are very important because allows you to create reusable pieces of content.",
       "similarByContent": [
         {
@@ -369,14 +431,31 @@
     {
       "title": "External content",
       "permalink": "/content/ec/",
-      "categories": [],
-      "tags": [],
+      "categories": [
+        "Content"
+      ],
+      "tags": [
+        "embed"
+      ],
       "excerpt": "docaroo, documents, external, content, create, import, multiple",
-      "lastUpdate": "2025-07-15 18:02:15 +0300",
-      "lastUpdateUTC": 1752591735,
-      "createTime": "2025-07-15 17:57:57 +0300",
-      "createTimeUTC": 1752591477,
-      "relatedPages": [],
+      "lastUpdate": "2025-07-16 17:54:49 +0300",
+      "lastUpdateUTC": 1752677689,
+      "createTime": "2025-07-16 14:20:42 +0300",
+      "createTimeUTC": 1752664842,
+      "relatedPages": [
+        {
+          "title": "Alerts",
+          "permalink": "/components/alerts/"
+        },
+        {
+          "title": "FAQ Item",
+          "permalink": "/components/qitem/"
+        },
+        {
+          "title": "Rich media",
+          "permalink": "/components/rich-media/"
+        }
+      ],
       "autoSummary": "Documentaroo allows you to create. Of content and import these parts in multiple places in your documents. It is possible to import content from external public and private repositories. You must be sure that the content you want to import is available at the time when you build your site.",
       "similarByContent": [
         {
@@ -393,6 +472,37 @@
       "parent": ""
     },
     {
+      "title": "Get started",
+      "permalink": "/get-started/",
+      "categories": [
+        "General"
+      ],
+      "tags": [
+        "documentation",
+        "docs"
+      ],
+      "excerpt": "started, docaroo, requires, design, documentation, organising, blog, crucial, involve",
+      "lastUpdate": "2025-07-16 18:47:43 +0300",
+      "lastUpdateUTC": 1752680863,
+      "createTime": "2025-07-16 17:59:43 +0300",
+      "createTimeUTC": 1752677983,
+      "relatedPages": [
+        {
+          "title": "Introduction",
+          "permalink": "/intro/"
+        },
+        {
+          "title": "Content",
+          "permalink": "/content/intro/"
+        }
+      ],
+      "autoSummary": "Getting started with docaroo requires, first of all, to design your documentation. Organising well your documentation (or blog) is crucial. This will involve defining the folder structure and also the taxonomies. Docaroo can take care of automatically generating other information about you documentation.",
+      "similarByContent": [],
+      "readingTime": 2,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
       "title": "Introduction",
       "permalink": "/intro/",
       "categories": [
@@ -403,11 +513,16 @@
         "docs"
       ],
       "excerpt": "documentation, builder, guide, comprehensive, resource, learning, create, build, maintain, quality",
-      "lastUpdate": "2025-07-15 17:57:57 +0300",
-      "lastUpdateUTC": 1752591477,
-      "createTime": "2025-07-15 17:57:57 +0300",
-      "createTimeUTC": 1752591477,
-      "relatedPages": [],
+      "lastUpdate": "2025-07-16 14:20:42 +0300",
+      "lastUpdateUTC": 1752664842,
+      "createTime": "2025-07-16 14:20:42 +0300",
+      "createTimeUTC": 1752664842,
+      "relatedPages": [
+        {
+          "title": "Get started",
+          "permalink": "/get-started/"
+        }
+      ],
       "autoSummary": "This guide will walk you through everything you need to know about building a complete, maintainable, and professional documentation site from scratch. This guide is suitable for:. Developers who want to document apis, libraries, or frameworks product teams building internal or customer-facing documentation technical writers looking to improve structure and.",
       "similarByContent": [
         {
@@ -421,44 +536,225 @@
     }
   ],
   "tagList": [
+    "anchor",
+    "button",
     "docs",
-    "documentation"
+    "documentation",
+    "embed",
+    "faq",
+    "figma",
+    "link",
+    "lottie",
+    "organise docs",
+    "video"
   ],
   "tagDetails": {
-    "docs": {
+    "anchor": {
       "pages": [
         {
-          "title": "Introduction",
-          "permalink": "/intro/",
-          "lastUpdate": "15-Jul-2025"
+          "title": "Link button",
+          "permalink": "/components/link-button/",
+          "lastUpdate": "16-Jul-2025"
         }
       ],
       "numPages": 1
     },
-    "documentation": {
+    "button": {
       "pages": [
+        {
+          "title": "Link button",
+          "permalink": "/components/link-button/",
+          "lastUpdate": "16-Jul-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "docs": {
+      "pages": [
+        {
+          "title": "Get started",
+          "permalink": "/get-started/",
+          "lastUpdate": "16-Jul-2025"
+        },
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "15-Jul-2025"
+          "lastUpdate": "16-Jul-2025"
+        }
+      ],
+      "numPages": 2
+    },
+    "documentation": {
+      "pages": [
+        {
+          "title": "Content",
+          "permalink": "/content/intro/",
+          "lastUpdate": "16-Jul-2025"
+        },
+        {
+          "title": "Get started",
+          "permalink": "/get-started/",
+          "lastUpdate": "16-Jul-2025"
+        },
+        {
+          "title": "Introduction",
+          "permalink": "/intro/",
+          "lastUpdate": "16-Jul-2025"
+        }
+      ],
+      "numPages": 3
+    },
+    "embed": {
+      "pages": [
+        {
+          "title": "Alerts",
+          "permalink": "/components/alerts/",
+          "lastUpdate": "16-Jul-2025"
+        },
+        {
+          "title": "FAQ Item",
+          "permalink": "/components/qitem/",
+          "lastUpdate": "16-Jul-2025"
+        },
+        {
+          "title": "Rich media",
+          "permalink": "/components/rich-media/",
+          "lastUpdate": "16-Jul-2025"
+        },
+        {
+          "title": "External content",
+          "permalink": "/content/ec/",
+          "lastUpdate": "16-Jul-2025"
+        }
+      ],
+      "numPages": 4
+    },
+    "faq": {
+      "pages": [
+        {
+          "title": "FAQ Item",
+          "permalink": "/components/qitem/",
+          "lastUpdate": "16-Jul-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "figma": {
+      "pages": [
+        {
+          "title": "Rich media",
+          "permalink": "/components/rich-media/",
+          "lastUpdate": "16-Jul-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "link": {
+      "pages": [
+        {
+          "title": "Link button",
+          "permalink": "/components/link-button/",
+          "lastUpdate": "16-Jul-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "lottie": {
+      "pages": [
+        {
+          "title": "Rich media",
+          "permalink": "/components/rich-media/",
+          "lastUpdate": "16-Jul-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "organise docs": {
+      "pages": [
+        {
+          "title": "Content",
+          "permalink": "/content/intro/",
+          "lastUpdate": "16-Jul-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "video": {
+      "pages": [
+        {
+          "title": "Rich media",
+          "permalink": "/components/rich-media/",
+          "lastUpdate": "16-Jul-2025"
         }
       ],
       "numPages": 1
     }
   },
   "catList": [
+    "Components",
+    "Content",
     "General"
   ],
   "catDetails": {
+    "Components": {
+      "pages": [
+        {
+          "title": "Alerts",
+          "permalink": "/components/alerts/",
+          "lastUpdate": "16-Jul-2025"
+        },
+        {
+          "title": "Components",
+          "permalink": "/components/intro/",
+          "lastUpdate": "16-Jul-2025"
+        },
+        {
+          "title": "FAQ Item",
+          "permalink": "/components/qitem/",
+          "lastUpdate": "16-Jul-2025"
+        },
+        {
+          "title": "Link button",
+          "permalink": "/components/link-button/",
+          "lastUpdate": "16-Jul-2025"
+        },
+        {
+          "title": "Rich media",
+          "permalink": "/components/rich-media/",
+          "lastUpdate": "16-Jul-2025"
+        }
+      ],
+      "numPages": 5
+    },
+    "Content": {
+      "pages": [
+        {
+          "title": "Content",
+          "permalink": "/content/intro/",
+          "lastUpdate": "16-Jul-2025"
+        },
+        {
+          "title": "External content",
+          "permalink": "/content/ec/",
+          "lastUpdate": "16-Jul-2025"
+        }
+      ],
+      "numPages": 2
+    },
     "General": {
       "pages": [
         {
+          "title": "Get started",
+          "permalink": "/get-started/",
+          "lastUpdate": "16-Jul-2025"
+        },
+        {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "15-Jul-2025"
+          "lastUpdate": "16-Jul-2025"
         }
       ],
-      "numPages": 1
+      "numPages": 2
     }
   },
   "hsSettings": {

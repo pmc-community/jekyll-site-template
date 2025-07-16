@@ -2,6 +2,8 @@
 layout: page
 title: Alerts
 permalink: /components/alerts/
+categories: [Components]
+tags: [embed]
 ---
 
 # Summary

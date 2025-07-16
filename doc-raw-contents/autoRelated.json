@@ -3,12 +3,16 @@
     "permalink": "/components/alerts/",
     "related": [
       {
-        "title": "Link button",
-        "permalink": "/components/link-button/"
+        "title": "FAQ Item",
+        "permalink": "/components/qitem/"
       },
       {
-        "title": "Components",
-        "permalink": "/components/intro/"
+        "title": "External content",
+        "permalink": "/content/ec/"
+      },
+      {
+        "title": "Rich media",
+        "permalink": "/components/rich-media/"
       }
     ]
   },
@@ -33,8 +37,16 @@
     "permalink": "/components/qitem/",
     "related": [
       {
+        "title": "Alerts",
+        "permalink": "/components/alerts/"
+      },
+      {
         "title": "Components",
         "permalink": "/components/intro/"
+      },
+      {
+        "title": "External content",
+        "permalink": "/content/ec/"
       }
     ]
   },
@@ -48,6 +60,10 @@
       {
         "title": "Components",
         "permalink": "/components/intro/"
+      },
+      {
+        "title": "FAQ Item",
+        "permalink": "/components/qitem/"
       }
     ]
   },
@@ -55,21 +71,69 @@
     "permalink": "/components/rich-media/",
     "related": [
       {
+        "title": "Alerts",
+        "permalink": "/components/alerts/"
+      },
+      {
         "title": "Components",
         "permalink": "/components/intro/"
+      },
+      {
+        "title": "External content",
+        "permalink": "/content/ec/"
       }
     ]
   },
   {
     "permalink": "/content/intro/",
-    "related": []
+    "related": [
+      {
+        "title": "External content",
+        "permalink": "/content/ec/"
+      },
+      {
+        "title": "Get started",
+        "permalink": "/get-started/"
+      }
+    ]
   },
   {
     "permalink": "/content/ec/",
-    "related": []
+    "related": [
+      {
+        "title": "Alerts",
+        "permalink": "/components/alerts/"
+      },
+      {
+        "title": "FAQ Item",
+        "permalink": "/components/qitem/"
+      },
+      {
+        "title": "Rich media",
+        "permalink": "/components/rich-media/"
+      }
+    ]
+  },
+  {
+    "permalink": "/get-started/",
+    "related": [
+      {
+        "title": "Introduction",
+        "permalink": "/intro/"
+      },
+      {
+        "title": "Content",
+        "permalink": "/content/intro/"
+      }
+    ]
   },
   {
     "permalink": "/intro/",
-    "related": []
+    "related": [
+      {
+        "title": "Get started",
+        "permalink": "/get-started/"
+      }
+    ]
   }
 ]
