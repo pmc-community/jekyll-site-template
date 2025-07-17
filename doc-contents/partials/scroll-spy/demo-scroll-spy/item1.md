@@ -1,0 +1,4 @@
+---
+name: Regular content
+---
+**Lorem ipsum** dolor sit amet, consectetur adipiscing elit. `Fusce sed accumsan erat.` Nulla facilisi. Quisque pellentesque quis quam non malesuada. _Orci varius_ natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut ut tincidunt urna. In ultricies dui at rutrum commodo. Aliquam augue nisl, sollicitudin ut risus et, maximus porttitor nisl. Aliquam tempus risus in urna pretium consequat. Aenean eleifend neque sed magna auctor, eget tristique dolor malesuada. Quisque tempus nulla quis leo condimentum, eu molestie tellus ullamcorper. Aenean posuere rhoncus eleifend. Vivamus malesuada semper orci, a lobortis ante dapibus sit amet. Integer id venenatis massa. Interdum et malesuada fames ac ante ipsum primis in faucibus.

@@ -86,7 +86,20 @@
   },
   {
     "permalink": "/components/scrollspy/",
-    "related": []
+    "related": [
+      {
+        "title": "Alerts",
+        "permalink": "/components/alerts/"
+      },
+      {
+        "title": "Rich media",
+        "permalink": "/components/rich-media/"
+      },
+      {
+        "title": "External content",
+        "permalink": "/content/ec/"
+      }
+    ]
   },
   {
     "permalink": "/content/intro/",

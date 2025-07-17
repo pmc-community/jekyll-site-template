@@ -223,10 +223,10 @@
         "embed"
       ],
       "excerpt": "learn, add, blocks, content, alerts, types, colors",
-      "lastUpdate": "2025-07-16 23:59:34 +0300",
-      "lastUpdateUTC": 1752699574,
-      "createTime": "2025-07-16 23:59:34 +0300",
-      "createTimeUTC": 1752699574,
+      "lastUpdate": "2025-07-17 16:04:01 +0300",
+      "lastUpdateUTC": 1752757441,
+      "createTime": "2025-07-17 16:04:01 +0300",
+      "createTimeUTC": 1752757441,
       "relatedPages": [
         {
           "title": "FAQ Item",
@@ -260,10 +260,10 @@
       ],
       "tags": [],
       "excerpt": "learn, add, content, pre, defined, components, elements, embedded, documents, tags",
-      "lastUpdate": "2025-07-16 23:59:34 +0300",
-      "lastUpdateUTC": 1752699574,
-      "createTime": "2025-07-16 23:59:34 +0300",
-      "createTimeUTC": 1752699574,
+      "lastUpdate": "2025-07-17 16:04:01 +0300",
+      "lastUpdateUTC": 1752757441,
+      "createTime": "2025-07-17 16:04:01 +0300",
+      "createTimeUTC": 1752757441,
       "relatedPages": [
         {
           "title": "FAQ Item",
@@ -295,10 +295,10 @@
         "faq"
       ],
       "excerpt": "learn, add, elements, documents, element, question, answer",
-      "lastUpdate": "2025-07-16 23:59:34 +0300",
-      "lastUpdateUTC": 1752699574,
-      "createTime": "2025-07-16 23:59:34 +0300",
-      "createTimeUTC": 1752699574,
+      "lastUpdate": "2025-07-17 16:04:01 +0300",
+      "lastUpdateUTC": 1752757441,
+      "createTime": "2025-07-17 16:04:01 +0300",
+      "createTimeUTC": 1752757441,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -331,10 +331,10 @@
         "anchor"
       ],
       "excerpt": "learn, add, link, buttons, content, helps, users, navigate",
-      "lastUpdate": "2025-07-16 23:59:34 +0300",
-      "lastUpdateUTC": 1752699574,
-      "createTime": "2025-07-16 23:59:34 +0300",
-      "createTimeUTC": 1752699574,
+      "lastUpdate": "2025-07-17 16:04:01 +0300",
+      "lastUpdateUTC": 1752757441,
+      "createTime": "2025-07-17 16:04:01 +0300",
+      "createTimeUTC": 1752757441,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -368,10 +368,10 @@
         "video"
       ],
       "excerpt": "learn, docaroo, components, embed, rich, media, content, encourage, store",
-      "lastUpdate": "2025-07-16 23:59:34 +0300",
-      "lastUpdateUTC": 1752699574,
-      "createTime": "2025-07-16 23:59:34 +0300",
-      "createTimeUTC": 1752699574,
+      "lastUpdate": "2025-07-17 16:04:01 +0300",
+      "lastUpdateUTC": 1752757441,
+      "createTime": "2025-07-17 16:04:01 +0300",
+      "createTimeUTC": 1752757441,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -399,15 +399,28 @@
         "Components"
       ],
       "tags": [],
-      "excerpt": "item, lorem, ipsum, dolor",
-      "lastUpdate": "2025-07-17 11:13:14 +0300",
-      "lastUpdateUTC": 1752739994,
-      "createTime": "2025-07-17 10:35:16 +0300",
-      "createTimeUTC": 1752737716,
-      "relatedPages": [],
-      "autoSummary": "Write a concise, factual summary in Catalan with no greetings or instructions, maximum 50 words, for the following text. Item 1 lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed accumsan erat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In ultricies dui at rutrum.",
+      "excerpt": "regular, content, external, rich, again, finally",
+      "lastUpdate": "2025-07-17 18:28:47 +0300",
+      "lastUpdateUTC": 1752766127,
+      "createTime": "2025-07-17 16:04:01 +0300",
+      "createTimeUTC": 1752757441,
+      "relatedPages": [
+        {
+          "title": "Alerts",
+          "permalink": "/components/alerts/"
+        },
+        {
+          "title": "Rich media",
+          "permalink": "/components/rich-media/"
+        },
+        {
+          "title": "External content",
+          "permalink": "/content/ec/"
+        }
+      ],
+      "autoSummary": "Write a concise, factual summary in Catalan with no greetings or instructions, maximum 50 words, for the following text. Write a brief summary of the most important news stories of the day.",
       "similarByContent": [],
-      "readingTime": 3,
+      "readingTime": 2,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -422,10 +435,10 @@
         "organise docs"
       ],
       "excerpt": "learn, structure, content, efficient, secret, maximum, extent, features, importing, external",
-      "lastUpdate": "2025-07-16 23:59:34 +0300",
-      "lastUpdateUTC": 1752699574,
-      "createTime": "2025-07-16 23:59:34 +0300",
-      "createTimeUTC": 1752699574,
+      "lastUpdate": "2025-07-17 16:04:01 +0300",
+      "lastUpdateUTC": 1752757441,
+      "createTime": "2025-07-17 16:04:01 +0300",
+      "createTimeUTC": 1752757441,
       "relatedPages": [
         {
           "title": "External content",
@@ -457,10 +470,10 @@
         "embed"
       ],
       "excerpt": "docaroo, documents, external, content, create, import, multiple",
-      "lastUpdate": "2025-07-16 23:59:34 +0300",
-      "lastUpdateUTC": 1752699574,
-      "createTime": "2025-07-16 23:59:34 +0300",
-      "createTimeUTC": 1752699574,
+      "lastUpdate": "2025-07-17 16:04:01 +0300",
+      "lastUpdateUTC": 1752757441,
+      "createTime": "2025-07-17 16:04:01 +0300",
+      "createTimeUTC": 1752757441,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -501,10 +514,10 @@
         "docs"
       ],
       "excerpt": "started, docaroo, requires, design, documentation, organising, blog, crucial, involve",
-      "lastUpdate": "2025-07-16 23:59:34 +0300",
-      "lastUpdateUTC": 1752699574,
-      "createTime": "2025-07-16 23:59:34 +0300",
-      "createTimeUTC": 1752699574,
+      "lastUpdate": "2025-07-17 16:04:01 +0300",
+      "lastUpdateUTC": 1752757441,
+      "createTime": "2025-07-17 16:04:01 +0300",
+      "createTimeUTC": 1752757441,
       "relatedPages": [
         {
           "title": "Introduction",
@@ -532,10 +545,10 @@
         "docs"
       ],
       "excerpt": "documentation, builder, guide, comprehensive, resource, learning, create, build, maintain, quality",
-      "lastUpdate": "2025-07-16 23:52:51 +0300",
-      "lastUpdateUTC": 1752699171,
-      "createTime": "2025-07-16 23:52:51 +0300",
-      "createTimeUTC": 1752699171,
+      "lastUpdate": "2025-07-17 16:04:01 +0300",
+      "lastUpdateUTC": 1752757441,
+      "createTime": "2025-07-17 16:04:01 +0300",
+      "createTimeUTC": 1752757441,
       "relatedPages": [
         {
           "title": "Get started",
@@ -573,7 +586,7 @@
         {
           "title": "Link button",
           "permalink": "/components/link-button/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         }
       ],
       "numPages": 1
@@ -583,7 +596,7 @@
         {
           "title": "Link button",
           "permalink": "/components/link-button/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         }
       ],
       "numPages": 1
@@ -593,12 +606,12 @@
         {
           "title": "Get started",
           "permalink": "/get-started/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         },
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         }
       ],
       "numPages": 2
@@ -608,17 +621,17 @@
         {
           "title": "Content",
           "permalink": "/content/intro/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         },
         {
           "title": "Get started",
           "permalink": "/get-started/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         },
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         }
       ],
       "numPages": 3
@@ -628,22 +641,22 @@
         {
           "title": "Alerts",
           "permalink": "/components/alerts/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         },
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         },
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         },
         {
           "title": "External content",
           "permalink": "/content/ec/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         }
       ],
       "numPages": 4
@@ -653,7 +666,7 @@
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         }
       ],
       "numPages": 1
@@ -663,7 +676,7 @@
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         }
       ],
       "numPages": 1
@@ -673,7 +686,7 @@
         {
           "title": "Link button",
           "permalink": "/components/link-button/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         }
       ],
       "numPages": 1
@@ -683,7 +696,7 @@
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         }
       ],
       "numPages": 1
@@ -693,7 +706,7 @@
         {
           "title": "Content",
           "permalink": "/content/intro/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         }
       ],
       "numPages": 1
@@ -703,7 +716,7 @@
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         }
       ],
       "numPages": 1
@@ -720,27 +733,27 @@
         {
           "title": "Alerts",
           "permalink": "/components/alerts/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         },
         {
           "title": "Components",
           "permalink": "/components/intro/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         },
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         },
         {
           "title": "Link button",
           "permalink": "/components/link-button/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         },
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         },
         {
           "title": "Scroll Spy",
@@ -755,12 +768,12 @@
         {
           "title": "Content",
           "permalink": "/content/intro/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         },
         {
           "title": "External content",
           "permalink": "/content/ec/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         }
       ],
       "numPages": 2
@@ -770,12 +783,12 @@
         {
           "title": "Get started",
           "permalink": "/get-started/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         },
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         }
       ],
       "numPages": 2
