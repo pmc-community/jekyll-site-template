@@ -223,10 +223,10 @@
         "embed"
       ],
       "excerpt": "learn, add, blocks, content, alerts, types, colors",
-      "lastUpdate": "2025-07-16 17:55:22 +0300",
-      "lastUpdateUTC": 1752677722,
-      "createTime": "2025-07-16 14:20:42 +0300",
-      "createTimeUTC": 1752664842,
+      "lastUpdate": "2025-07-17 18:38:45 +0300",
+      "lastUpdateUTC": 1752766725,
+      "createTime": "2025-07-17 18:38:45 +0300",
+      "createTimeUTC": 1752766725,
       "relatedPages": [
         {
           "title": "FAQ Item",
@@ -260,10 +260,10 @@
       ],
       "tags": [],
       "excerpt": "learn, add, content, pre, defined, components, elements, embedded, documents, tags",
-      "lastUpdate": "2025-07-16 17:55:44 +0300",
-      "lastUpdateUTC": 1752677744,
-      "createTime": "2025-07-16 14:20:42 +0300",
-      "createTimeUTC": 1752664842,
+      "lastUpdate": "2025-07-17 18:38:45 +0300",
+      "lastUpdateUTC": 1752766725,
+      "createTime": "2025-07-17 18:38:45 +0300",
+      "createTimeUTC": 1752766725,
       "relatedPages": [
         {
           "title": "FAQ Item",
@@ -295,10 +295,10 @@
         "faq"
       ],
       "excerpt": "learn, add, elements, documents, element, question, answer",
-      "lastUpdate": "2025-07-16 17:55:58 +0300",
-      "lastUpdateUTC": 1752677758,
-      "createTime": "2025-07-16 14:20:42 +0300",
-      "createTimeUTC": 1752664842,
+      "lastUpdate": "2025-07-17 18:38:45 +0300",
+      "lastUpdateUTC": 1752766725,
+      "createTime": "2025-07-17 18:38:45 +0300",
+      "createTimeUTC": 1752766725,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -331,10 +331,10 @@
         "anchor"
       ],
       "excerpt": "learn, add, link, buttons, content, helps, users, navigate",
-      "lastUpdate": "2025-07-16 17:56:20 +0300",
-      "lastUpdateUTC": 1752677780,
-      "createTime": "2025-07-16 14:20:42 +0300",
-      "createTimeUTC": 1752664842,
+      "lastUpdate": "2025-07-17 18:38:45 +0300",
+      "lastUpdateUTC": 1752766725,
+      "createTime": "2025-07-17 18:38:45 +0300",
+      "createTimeUTC": 1752766725,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -368,10 +368,10 @@
         "video"
       ],
       "excerpt": "learn, docaroo, components, embed, rich, media, content, encourage, store",
-      "lastUpdate": "2025-07-16 17:56:45 +0300",
-      "lastUpdateUTC": 1752677805,
-      "createTime": "2025-07-16 14:20:42 +0300",
-      "createTimeUTC": 1752664842,
+      "lastUpdate": "2025-07-17 18:38:45 +0300",
+      "lastUpdateUTC": 1752766725,
+      "createTime": "2025-07-17 18:38:45 +0300",
+      "createTimeUTC": 1752766725,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -393,6 +393,25 @@
       "parent": ""
     },
     {
+      "title": "Scroll Spy",
+      "permalink": "/components/scrollspy/",
+      "categories": [
+        "Components"
+      ],
+      "tags": [],
+      "excerpt": "scroll, spy, gret, organising, documents, flexible, easy, included, docaroo",
+      "lastUpdate": "2025-07-17 22:54:23 +0300",
+      "lastUpdateUTC": 1752782063,
+      "createTime": "2025-07-17 18:38:45 +0300",
+      "createTimeUTC": 1752766725,
+      "relatedPages": [],
+      "autoSummary": "Scroll spy is a gret way of organising information inside your documents. Any docaroo component, including importing esternal content or rich content ones, can be used to populate a scroll spy.",
+      "similarByContent": [],
+      "readingTime": 3,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
       "title": "Content",
       "permalink": "/content/intro/",
       "categories": [
@@ -403,10 +422,10 @@
         "organise docs"
       ],
       "excerpt": "learn, structure, content, efficient, secret, maximum, extent, features, importing, external",
-      "lastUpdate": "2025-07-16 17:54:28 +0300",
-      "lastUpdateUTC": 1752677668,
-      "createTime": "2025-07-16 14:20:42 +0300",
-      "createTimeUTC": 1752664842,
+      "lastUpdate": "2025-07-17 18:38:45 +0300",
+      "lastUpdateUTC": 1752766725,
+      "createTime": "2025-07-17 18:38:45 +0300",
+      "createTimeUTC": 1752766725,
       "relatedPages": [
         {
           "title": "External content",
@@ -438,10 +457,10 @@
         "embed"
       ],
       "excerpt": "docaroo, documents, external, content, create, import, multiple",
-      "lastUpdate": "2025-07-16 17:54:49 +0300",
-      "lastUpdateUTC": 1752677689,
-      "createTime": "2025-07-16 14:20:42 +0300",
-      "createTimeUTC": 1752664842,
+      "lastUpdate": "2025-07-17 18:38:45 +0300",
+      "lastUpdateUTC": 1752766725,
+      "createTime": "2025-07-17 18:38:45 +0300",
+      "createTimeUTC": 1752766725,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -482,10 +501,10 @@
         "docs"
       ],
       "excerpt": "started, docaroo, requires, design, documentation, organising, blog, crucial, involve",
-      "lastUpdate": "2025-07-16 18:47:43 +0300",
-      "lastUpdateUTC": 1752680863,
-      "createTime": "2025-07-16 17:59:43 +0300",
-      "createTimeUTC": 1752677983,
+      "lastUpdate": "2025-07-17 18:38:45 +0300",
+      "lastUpdateUTC": 1752766725,
+      "createTime": "2025-07-17 18:38:45 +0300",
+      "createTimeUTC": 1752766725,
       "relatedPages": [
         {
           "title": "Introduction",
@@ -513,10 +532,10 @@
         "docs"
       ],
       "excerpt": "documentation, builder, guide, comprehensive, resource, learning, create, build, maintain, quality",
-      "lastUpdate": "2025-07-16 14:20:42 +0300",
-      "lastUpdateUTC": 1752664842,
-      "createTime": "2025-07-16 14:20:42 +0300",
-      "createTimeUTC": 1752664842,
+      "lastUpdate": "2025-07-17 18:38:45 +0300",
+      "lastUpdateUTC": 1752766725,
+      "createTime": "2025-07-17 18:38:45 +0300",
+      "createTimeUTC": 1752766725,
       "relatedPages": [
         {
           "title": "Get started",
@@ -554,7 +573,7 @@
         {
           "title": "Link button",
           "permalink": "/components/link-button/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         }
       ],
       "numPages": 1
@@ -564,7 +583,7 @@
         {
           "title": "Link button",
           "permalink": "/components/link-button/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         }
       ],
       "numPages": 1
@@ -574,12 +593,12 @@
         {
           "title": "Get started",
           "permalink": "/get-started/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         },
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         }
       ],
       "numPages": 2
@@ -589,17 +608,17 @@
         {
           "title": "Content",
           "permalink": "/content/intro/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         },
         {
           "title": "Get started",
           "permalink": "/get-started/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         },
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         }
       ],
       "numPages": 3
@@ -609,22 +628,22 @@
         {
           "title": "Alerts",
           "permalink": "/components/alerts/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         },
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         },
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         },
         {
           "title": "External content",
           "permalink": "/content/ec/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         }
       ],
       "numPages": 4
@@ -634,7 +653,7 @@
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         }
       ],
       "numPages": 1
@@ -644,7 +663,7 @@
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         }
       ],
       "numPages": 1
@@ -654,7 +673,7 @@
         {
           "title": "Link button",
           "permalink": "/components/link-button/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         }
       ],
       "numPages": 1
@@ -664,7 +683,7 @@
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         }
       ],
       "numPages": 1
@@ -674,7 +693,7 @@
         {
           "title": "Content",
           "permalink": "/content/intro/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         }
       ],
       "numPages": 1
@@ -684,7 +703,7 @@
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         }
       ],
       "numPages": 1
@@ -701,42 +720,47 @@
         {
           "title": "Alerts",
           "permalink": "/components/alerts/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         },
         {
           "title": "Components",
           "permalink": "/components/intro/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         },
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         },
         {
           "title": "Link button",
           "permalink": "/components/link-button/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         },
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
+        },
+        {
+          "title": "Scroll Spy",
+          "permalink": "/components/scrollspy/",
+          "lastUpdate": "17-Jul-2025"
         }
       ],
-      "numPages": 5
+      "numPages": 6
     },
     "Content": {
       "pages": [
         {
           "title": "Content",
           "permalink": "/content/intro/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         },
         {
           "title": "External content",
           "permalink": "/content/ec/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         }
       ],
       "numPages": 2
@@ -746,12 +770,12 @@
         {
           "title": "Get started",
           "permalink": "/get-started/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         },
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "16-Jul-2025"
+          "lastUpdate": "17-Jul-2025"
         }
       ],
       "numPages": 2

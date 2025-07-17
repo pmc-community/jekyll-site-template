@@ -2,6 +2,8 @@ require 'net/http'
 require 'kramdown'
 require 'dotenv'
 
+require_relative "../../tools/modules/file-utilities"
+
 Dotenv.load
 
 module ContentUtilities
@@ -149,6 +151,26 @@ module ContentUtilities
                 return "Start and/or End markers are wrong! Cannot return anything."
             end
         end
+    end
+
+    def self.getScrollSpy(dir)
+        spyDir = dir.gsub('"', '')
+        spyHtml = {
+            "items" => [],
+            "content" => []
+        }
+        if Dir.exist?(spyDir)
+            spy_content = Dir.glob("#{spyDir}**/*.md")
+            spy_content.each do |file_path|
+                front_matter, content = FileUtilities.parse_front_matter(File.read(file_path))
+                next if !front_matter
+                next if !content
+                next if !front_matter["name"]
+                spyHtml["items"] << front_matter["name"]
+                spyHtml["content"] << content
+            end
+        end
+            spyHtml
     end
 
 end

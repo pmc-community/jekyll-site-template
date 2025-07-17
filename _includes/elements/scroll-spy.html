@@ -1,0 +1,136 @@
+{% capture uuid %}
+  {% UUID %}
+{% endcapture %}
+{% assign spyid = uuid | strip %}
+
+{% assign h = include.h || default: "300px" %}
+{% assign btn = include.btn || default: "false" %}
+{% assign btnType = include.btnType || default: "primary" %}
+{% assign outline = include.outline || default: "false" %}
+{% assign separators = include.separators || default: "false" %}
+{% assign spyBorder = include.spyBorder || default: "false" %}
+
+{% assign allowedTypes = "primary,secondary,success,danger,warning,info,light" | split: "," %}
+{% if btn == "true" %}
+    {% if outline == "true" %}
+        {% assign btnTypeClass="btn btn-sm btn-outline-" | append: btnType %}
+    {% else %}
+        {% assign btnTypeClass="btn btn-sm btn-" | append: btnType %}
+    {% endif %}   
+{% else %}
+    {% assign btnTypeClass = "" %}
+{% endif %}
+
+{% if spyBorder == "true" %}
+    {% assign spyBorderClass = "border-top border-bottom border-secondary border-opacity-25" %}
+{% else %}
+    {% assign spyBorderClass = "" %}
+{% endif %}
+
+{% if separators == "true" %}
+    {% assign contentSeparatorClass = "border-start border-secondary border-opacity-25" %}
+{% else %}
+    {% assign contentSeparatorClass = "" %}
+{% endif %}
+
+{% capture spyContent %}
+    {% ScrollSpy partials/scroll-spy/demo-scroll-spy %}
+{% endcapture %}
+
+{% assign spyContentJSONString = spyContent | replace: "=>", ":" %}
+{% assign spyContentObj = spyContentJSONString | json_string_to_object %}
+
+{% if spyContentObj.items.size > 0 %}
+ {% assign itemsContentArray = "" | split: "" %}
+ {% assign itemsIdArray = "" | split: "" %}
+ <div class="py-2 {{spyBorderClass}}">
+
+ <div id="spy-items-container-{{spyid}}" class="row overflow-auto" >
+  <div class="col-4 overflow-y-auto align-self-center">
+    <div id="spy-items-{{spyid}}" class="d-flex flex-column gap-2 spy-items-{{spyid}}-scrollspy text-start">
+        {% for item in spyContentObj.items %}
+
+            {% capture uuid %}
+                {% UUID %}
+            {% endcapture %}
+
+            {% assign itemId = uuid | strip %}
+            {% assign itemFullId = "spyScroll-" | append: spyid | append: "-item-" | append: itemId %}
+
+            {% assign itemIndex = forloop.index0 %}
+            
+            {% assign rc = spyContentObj.content[itemIndex] %}
+            {% capture rendered_item_content %}
+                {% DryRenderPage rc %}
+            {% endcapture %}
+            {% assign rendered_item_content_md = rendered_item_content | markdonify %}
+
+            {% assign extra = "" | split: "" %}
+            {% assign extra = extra | push: rendered_item_content_md %}
+
+            {% assign extraId = "" | split: "" %}
+            {% assign extraId = extraId | push: itemFullId %}
+
+            {% if extra %}
+                {% assign itemsContentArray = itemsContentArray | concat: extra %}
+                {% assign itemsIdArray = itemsIdArray | concat: extraId %}
+                <a class="p-1 {{btnTypeClass}}" href="#{{itemFullId}}">{{item}}</a>
+            {% endif %}
+            
+        {% endfor %}   
+    </div>
+  </div>
+  <div class="col-8 {{contentSeparatorClass}}">
+    <div data-bs-spy="scroll" data-bs-target="#spy-items-{{spyid}}" data-bs-offset="0" data-bs-smooth-scroll="true" tabindex="0" style="overflow-y:auto; max-height: {{h}};">
+        {% for item in itemsIdArray %}
+            {% assign itemIndex = forloop.index0 %}
+            {% assign itemContent = itemsContentArray[itemIndex] %}
+            {% assign itemId = itemsIdArray[itemIndex] %}
+            {% assign itemName = spyContentObj.items[itemIndex] %}
+            <div id="{{itemId}}" class="mt-2 mb-1 fw-medium text-primary">{{itemName}}</div>
+            <div class="pr-2">{{itemContent}}</div>
+        {% endfor %}
+    </div>
+  </div>
+ </div>
+ 
+ </div>
+
+ <style>
+    #spy-items-container-{{spyid}} {
+        max-height: {{h}};
+    }
+
+    #spy-items-{{spyid}} {
+        position: sticky; 
+        top:0;
+    }
+ </style>
+
+ <script>
+    $('#spy-items-{{spyid}} a[href^="#"]').on('click', function (e) {
+        e.preventDefault(); 
+
+        const targetId = $(this).attr('href'); 
+
+        const $container = $('[data-bs-spy="scroll"]');
+
+        const $target = $container.find(targetId);
+        if ($target.length) {
+            const containerTop = $container.offset().top;
+            const targetTop = $target.offset().top;
+            const scrollTop = $container.scrollTop();
+            const offset = targetTop - containerTop + scrollTop;
+
+            $container.animate({ scrollTop: offset }, 400);
+
+            setTimeout(() => clearTheUrl(), 0);
+        }
+    });
+
+    $('[data-bs-spy="scroll"]').on('activate.bs.scrollspy', function () {
+        const $activeLink = $('#spy-items-{{spyid}} a.active');
+        const id = $activeLink.attr('href');
+    });
+ </script>
+{% endif %}
