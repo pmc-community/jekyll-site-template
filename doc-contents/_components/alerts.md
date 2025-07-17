@@ -3,7 +3,7 @@ layout: page
 title: Alerts
 permalink: /components/alerts/
 categories: [Components]
-tags: [embed]
+tags: [embed, alert]
 ---
 
 # Summary

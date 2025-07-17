@@ -17,7 +17,7 @@ module Jekyll
             def render(context)
                 param = Liquid::Template.parse(@input).render(context)
                 scrollSpy = ContentUtilities.getScrollSpy("#{Dir.pwd}/#{Globals::DOCS_ROOT}/#{param.strip}/")
-                
+                scrollSpy
             end
             
         end
