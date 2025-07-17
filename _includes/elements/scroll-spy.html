@@ -9,6 +9,8 @@
 {% assign outline = include.outline || default: "false" %}
 {% assign separators = include.separators || default: "false" %}
 {% assign spyBorder = include.spyBorder || default: "false" %}
+{% assign source = include.source || default: "" %}
+
 
 {% assign allowedTypes = "primary,secondary,success,danger,warning,info,light" | split: "," %}
 {% if btn == "true" %}
@@ -34,7 +36,7 @@
 {% endif %}
 
 {% capture spyContent %}
-    {% ScrollSpy partials/scroll-spy/demo-scroll-spy %}
+    {% ScrollSpy {{source}} %}
 {% endcapture %}
 
 {% assign spyContentJSONString = spyContent | replace: "=>", ":" %}
@@ -133,4 +135,9 @@
         const id = $activeLink.attr('href');
     });
  </script>
+
+{% else %}
+{% assign mess="Something went wrong when building scrollspy from source: " | append: source | append: ". Check if the source exits and if the scrollspy items are present in the right format." %}
+ {% include elements/alert.html class="danger" content=mess title="Error" %}
 {% endif %}
+
