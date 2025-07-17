@@ -223,10 +223,10 @@
         "embed"
       ],
       "excerpt": "learn, add, blocks, content, alerts, types, colors",
-      "lastUpdate": "2025-07-17 16:04:01 +0300",
-      "lastUpdateUTC": 1752757441,
-      "createTime": "2025-07-17 16:04:01 +0300",
-      "createTimeUTC": 1752757441,
+      "lastUpdate": "2025-07-17 18:38:45 +0300",
+      "lastUpdateUTC": 1752766725,
+      "createTime": "2025-07-17 18:38:45 +0300",
+      "createTimeUTC": 1752766725,
       "relatedPages": [
         {
           "title": "FAQ Item",
@@ -260,10 +260,10 @@
       ],
       "tags": [],
       "excerpt": "learn, add, content, pre, defined, components, elements, embedded, documents, tags",
-      "lastUpdate": "2025-07-17 16:04:01 +0300",
-      "lastUpdateUTC": 1752757441,
-      "createTime": "2025-07-17 16:04:01 +0300",
-      "createTimeUTC": 1752757441,
+      "lastUpdate": "2025-07-17 18:38:45 +0300",
+      "lastUpdateUTC": 1752766725,
+      "createTime": "2025-07-17 18:38:45 +0300",
+      "createTimeUTC": 1752766725,
       "relatedPages": [
         {
           "title": "FAQ Item",
@@ -295,10 +295,10 @@
         "faq"
       ],
       "excerpt": "learn, add, elements, documents, element, question, answer",
-      "lastUpdate": "2025-07-17 16:04:01 +0300",
-      "lastUpdateUTC": 1752757441,
-      "createTime": "2025-07-17 16:04:01 +0300",
-      "createTimeUTC": 1752757441,
+      "lastUpdate": "2025-07-17 18:38:45 +0300",
+      "lastUpdateUTC": 1752766725,
+      "createTime": "2025-07-17 18:38:45 +0300",
+      "createTimeUTC": 1752766725,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -331,10 +331,10 @@
         "anchor"
       ],
       "excerpt": "learn, add, link, buttons, content, helps, users, navigate",
-      "lastUpdate": "2025-07-17 16:04:01 +0300",
-      "lastUpdateUTC": 1752757441,
-      "createTime": "2025-07-17 16:04:01 +0300",
-      "createTimeUTC": 1752757441,
+      "lastUpdate": "2025-07-17 18:38:45 +0300",
+      "lastUpdateUTC": 1752766725,
+      "createTime": "2025-07-17 18:38:45 +0300",
+      "createTimeUTC": 1752766725,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -368,10 +368,10 @@
         "video"
       ],
       "excerpt": "learn, docaroo, components, embed, rich, media, content, encourage, store",
-      "lastUpdate": "2025-07-17 16:04:01 +0300",
-      "lastUpdateUTC": 1752757441,
-      "createTime": "2025-07-17 16:04:01 +0300",
-      "createTimeUTC": 1752757441,
+      "lastUpdate": "2025-07-17 18:38:45 +0300",
+      "lastUpdateUTC": 1752766725,
+      "createTime": "2025-07-17 18:38:45 +0300",
+      "createTimeUTC": 1752766725,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -399,28 +399,15 @@
         "Components"
       ],
       "tags": [],
-      "excerpt": "regular, content, external, rich, again, finally",
-      "lastUpdate": "2025-07-17 18:28:47 +0300",
-      "lastUpdateUTC": 1752766127,
-      "createTime": "2025-07-17 16:04:01 +0300",
-      "createTimeUTC": 1752757441,
-      "relatedPages": [
-        {
-          "title": "Alerts",
-          "permalink": "/components/alerts/"
-        },
-        {
-          "title": "Rich media",
-          "permalink": "/components/rich-media/"
-        },
-        {
-          "title": "External content",
-          "permalink": "/content/ec/"
-        }
-      ],
-      "autoSummary": "Write a concise, factual summary in Catalan with no greetings or instructions, maximum 50 words, for the following text. Write a brief summary of the most important news stories of the day.",
+      "excerpt": "scroll, spy, gret, organising, documents, flexible, easy, included, docaroo",
+      "lastUpdate": "2025-07-17 22:54:23 +0300",
+      "lastUpdateUTC": 1752782063,
+      "createTime": "2025-07-17 18:38:45 +0300",
+      "createTimeUTC": 1752766725,
+      "relatedPages": [],
+      "autoSummary": "Scroll spy is a gret way of organising information inside your documents. Any docaroo component, including importing esternal content or rich content ones, can be used to populate a scroll spy.",
       "similarByContent": [],
-      "readingTime": 2,
+      "readingTime": 3,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -435,10 +422,10 @@
         "organise docs"
       ],
       "excerpt": "learn, structure, content, efficient, secret, maximum, extent, features, importing, external",
-      "lastUpdate": "2025-07-17 16:04:01 +0300",
-      "lastUpdateUTC": 1752757441,
-      "createTime": "2025-07-17 16:04:01 +0300",
-      "createTimeUTC": 1752757441,
+      "lastUpdate": "2025-07-17 18:38:45 +0300",
+      "lastUpdateUTC": 1752766725,
+      "createTime": "2025-07-17 18:38:45 +0300",
+      "createTimeUTC": 1752766725,
       "relatedPages": [
         {
           "title": "External content",
@@ -470,10 +457,10 @@
         "embed"
       ],
       "excerpt": "docaroo, documents, external, content, create, import, multiple",
-      "lastUpdate": "2025-07-17 16:04:01 +0300",
-      "lastUpdateUTC": 1752757441,
-      "createTime": "2025-07-17 16:04:01 +0300",
-      "createTimeUTC": 1752757441,
+      "lastUpdate": "2025-07-17 18:38:45 +0300",
+      "lastUpdateUTC": 1752766725,
+      "createTime": "2025-07-17 18:38:45 +0300",
+      "createTimeUTC": 1752766725,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -514,10 +501,10 @@
         "docs"
       ],
       "excerpt": "started, docaroo, requires, design, documentation, organising, blog, crucial, involve",
-      "lastUpdate": "2025-07-17 16:04:01 +0300",
-      "lastUpdateUTC": 1752757441,
-      "createTime": "2025-07-17 16:04:01 +0300",
-      "createTimeUTC": 1752757441,
+      "lastUpdate": "2025-07-17 18:38:45 +0300",
+      "lastUpdateUTC": 1752766725,
+      "createTime": "2025-07-17 18:38:45 +0300",
+      "createTimeUTC": 1752766725,
       "relatedPages": [
         {
           "title": "Introduction",
@@ -545,10 +532,10 @@
         "docs"
       ],
       "excerpt": "documentation, builder, guide, comprehensive, resource, learning, create, build, maintain, quality",
-      "lastUpdate": "2025-07-17 16:04:01 +0300",
-      "lastUpdateUTC": 1752757441,
-      "createTime": "2025-07-17 16:04:01 +0300",
-      "createTimeUTC": 1752757441,
+      "lastUpdate": "2025-07-17 18:38:45 +0300",
+      "lastUpdateUTC": 1752766725,
+      "createTime": "2025-07-17 18:38:45 +0300",
+      "createTimeUTC": 1752766725,
       "relatedPages": [
         {
           "title": "Get started",
