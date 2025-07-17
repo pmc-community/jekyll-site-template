@@ -100,7 +100,7 @@ faq:
   pagination: true
   displayedPagesDesktop: 10
   displayedPagesMobile: 7
-  perPage: 10
+  perPage: 5
   faqToc: true
 elements:
   figma:
