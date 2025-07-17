@@ -70,7 +70,9 @@ Jekyll::Hooks.register :site, :after_init do |site|
         
     else
         faqPageFilePath = "#{Globals::DOCS_DIR}/_tools/faq.md"
-        File.delete(faqPageFilePath)
+        if (File.exist?(faqPageFilePath))
+            File.delete(faqPageFilePath)
+        end
         Globals.putsColText(Globals::PURPLE,"FAQ not active for this site, skipping ...")
     end
 end
