@@ -35,6 +35,10 @@
         {
             "permalink": "/get-started/",
             "summary": "Getting started with docaroo requires, first of all, to design your documentation. Organising well your documentation (or blog) is crucial. This will involve defining the folder structure and also the taxonomies. Docaroo can take care of automatically generating other information about you documentation."
+        },
+        {
+            "permalink": "/components/scrollspy/",
+            "summary": "Write a concise, factual summary in Catalan with no greetings or instructions, maximum 50 words, for the following text. Item 1 lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed accumsan erat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In ultricies dui at rutrum."
         }
     ]
 }

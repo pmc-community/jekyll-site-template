@@ -464,35 +464,6 @@ const setGoToTopBtn = () => {
 
     $(document).on('click', settings.goToTopBtn.btnId, function() {goToTarget();});
     $(window).on('scroll', () =>{hideWhenNotNeeded();});
-}        
-
-window.clearTheUrl = () => {
-    $(window).on('scroll', function() {
-        hash = window.location.hash;
-        if(hash && $(hash).length ) {
-            // remove the hash and keep everything else
-            history.replaceState({}, document.title, location.pathname + location.search);
-            setTimeout (() =>
-                $([document.documentElement, document.body]).animate({
-                    scrollTop: $(`${hash}`).offset().top - $(settings.headerAboveContent.headerID).height() - settings.headerAboveContent.offsetWhenScroll
-                }, 100), 
-            0);
-
-        }
-    });
-
-    $(window).on('load', function() {
-        hash = window.location.hash;
-        if(hash && $(hash).length ) {
-            history.replaceState({}, document.title, location.pathname + location.search);
-
-            setTimeout (() =>
-                $([document.documentElement, document.body]).animate({
-                    scrollTop: $(`${hash}`).offset().top - $(settings.headerAboveContent.headerID).height() - settings.headerAboveContent.offsetWhenScroll
-                }, 100), 
-            0);
-        }
-    });
 }
 
 const handleTocActiveElementsOnScroll = () => {
