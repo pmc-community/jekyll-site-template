@@ -10,10 +10,11 @@ fi
 ruby tools/log-init.rb
 
 # checking permalinks
-ruby tools/permalinks.rb  doc-contents true $silent
+ruby tools/permalinks.rb doc-contents true $silent '["/faq", "/site-pages", "/cat-info", "/tag-info"]'
 
 # checking for broken include or include_relative tags
-ruby tools/brinclude.rb doc-contents false $silent
+current_dir=$(pwd)
+ruby tools/brinclude.rb current_dir false $silent
 
 # checking for broken internal links
 ruby tools/brlinks.rb doc-contents false $silent
