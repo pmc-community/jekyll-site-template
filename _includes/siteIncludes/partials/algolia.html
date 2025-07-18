@@ -2,11 +2,12 @@
 {% if algolia.algoliaEnabled == 'true' %}
   <!-- docsearch container set in aux items -->
   <script id="algoliaSearch" type="text/javascript">
+    $('.search').remove();
     $('#category-menu').removeClass('justify-content-md-end').addClass('justify-content-start');
-    $(document).ready(function() {
+    $(document).on('translationComplete', function() {
       setTimeout(()=>{
         algolia.setDocSearchBox();
-      },{{site.data.bulidConfig.algoliaSearch.searchBtnLoadTimeout}});
+      },{{site.data.buildConfig.algoliaSearch.searchBtnLoadTimeout}});
     });
   </script>
 {% elsif site.search_enabled %}
