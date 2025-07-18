@@ -10,6 +10,8 @@ window.alert = async function(message) {
     console.error(message);
 };
 
+// handle the header height when scrolling
+// scroll must stop below the header to prevent the target anchor to get under the header
 $(window).on('scroll', () => {
 
     // handle fixed header scroll
