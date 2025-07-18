@@ -38,7 +38,7 @@
         },
         {
             "permalink": "/components/scrollspy/",
-            "summary": "Scroll spy is a great way of organising information inside your documents. Any docaroo component, including importing esternal content or rich content ones, can be used to populate a scroll spy."
+            "summary": "Scroll spies are great ways of organising information inside your documents. We made them flexible and easy to be included in the documents. Any docaroo component, including importing esternal content or rich content ones, can be used to populate scroll spies and tabs."
         }
     ]
 }

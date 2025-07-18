@@ -224,10 +224,10 @@
         "alert"
       ],
       "excerpt": "learn, add, blocks, content, alerts, types, colors",
-      "lastUpdate": "2025-07-18 15:36:35 +0300",
-      "lastUpdateUTC": 1752842195,
-      "createTime": "2025-07-18 15:36:35 +0300",
-      "createTimeUTC": 1752842195,
+      "lastUpdate": "2025-07-18 18:57:49 +0300",
+      "lastUpdateUTC": 1752854269,
+      "createTime": "2025-07-18 18:57:49 +0300",
+      "createTimeUTC": 1752854269,
       "relatedPages": [
         {
           "title": "FAQ Item",
@@ -261,10 +261,10 @@
       ],
       "tags": [],
       "excerpt": "learn, add, content, pre, defined, components, elements, embedded, documents, tags",
-      "lastUpdate": "2025-07-18 15:36:35 +0300",
-      "lastUpdateUTC": 1752842195,
-      "createTime": "2025-07-18 15:36:35 +0300",
-      "createTimeUTC": 1752842195,
+      "lastUpdate": "2025-07-18 18:57:49 +0300",
+      "lastUpdateUTC": 1752854269,
+      "createTime": "2025-07-18 18:57:49 +0300",
+      "createTimeUTC": 1752854269,
       "relatedPages": [
         {
           "title": "FAQ Item",
@@ -296,10 +296,10 @@
         "faq"
       ],
       "excerpt": "learn, add, elements, documents, element, question, answer",
-      "lastUpdate": "2025-07-18 15:36:35 +0300",
-      "lastUpdateUTC": 1752842195,
-      "createTime": "2025-07-18 15:36:35 +0300",
-      "createTimeUTC": 1752842195,
+      "lastUpdate": "2025-07-18 18:57:49 +0300",
+      "lastUpdateUTC": 1752854269,
+      "createTime": "2025-07-18 18:57:49 +0300",
+      "createTimeUTC": 1752854269,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -332,10 +332,10 @@
         "anchor"
       ],
       "excerpt": "learn, add, link, buttons, content, helps, users, navigate",
-      "lastUpdate": "2025-07-18 15:36:35 +0300",
-      "lastUpdateUTC": 1752842195,
-      "createTime": "2025-07-18 15:36:35 +0300",
-      "createTimeUTC": 1752842195,
+      "lastUpdate": "2025-07-18 18:57:49 +0300",
+      "lastUpdateUTC": 1752854269,
+      "createTime": "2025-07-18 18:57:49 +0300",
+      "createTimeUTC": 1752854269,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -369,10 +369,10 @@
         "video"
       ],
       "excerpt": "learn, docaroo, components, embed, rich, media, content, encourage, store",
-      "lastUpdate": "2025-07-18 15:36:35 +0300",
-      "lastUpdateUTC": 1752842195,
-      "createTime": "2025-07-18 15:36:35 +0300",
-      "createTimeUTC": 1752842195,
+      "lastUpdate": "2025-07-18 18:57:49 +0300",
+      "lastUpdateUTC": 1752854269,
+      "createTime": "2025-07-18 18:57:49 +0300",
+      "createTimeUTC": 1752854269,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -394,7 +394,7 @@
       "parent": ""
     },
     {
-      "title": "Scroll Spy",
+      "title": "Scroll Spy & Tabs",
       "permalink": "/components/scrollspy/",
       "categories": [
         "Components"
@@ -402,15 +402,15 @@
       "tags": [
         "scrollspy"
       ],
-      "excerpt": "scroll, spy, organising, documents, flexible, easy, included, docaroo, component",
-      "lastUpdate": "2025-07-18 18:01:05 +0300",
-      "lastUpdateUTC": 1752850865,
-      "createTime": "2025-07-18 15:36:35 +0300",
-      "createTimeUTC": 1752842195,
+      "excerpt": "and, are, great, ways, organising, information, inside, your, documents, made",
+      "lastUpdate": "2025-07-18 22:13:11 +0300",
+      "lastUpdateUTC": 1752865991,
+      "createTime": "2025-07-18 18:57:49 +0300",
+      "createTimeUTC": 1752854269,
       "relatedPages": [],
-      "autoSummary": "Scroll spy is a great way of organising information inside your documents. Any docaroo component, including importing esternal content or rich content ones, can be used to populate a scroll spy.",
+      "autoSummary": "Scroll spies are great ways of organising information inside your documents. We made them flexible and easy to be included in the documents. Any docaroo component, including importing esternal content or rich content ones, can be used to populate scroll spies and tabs.",
       "similarByContent": [],
-      "readingTime": 3,
+      "readingTime": 6,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -425,10 +425,10 @@
         "organise docs"
       ],
       "excerpt": "learn, structure, content, efficient, secret, maximum, extent, features, importing, external",
-      "lastUpdate": "2025-07-18 15:36:35 +0300",
-      "lastUpdateUTC": 1752842195,
-      "createTime": "2025-07-18 15:36:35 +0300",
-      "createTimeUTC": 1752842195,
+      "lastUpdate": "2025-07-18 18:57:49 +0300",
+      "lastUpdateUTC": 1752854269,
+      "createTime": "2025-07-18 18:57:49 +0300",
+      "createTimeUTC": 1752854269,
       "relatedPages": [
         {
           "title": "External content",
@@ -460,10 +460,10 @@
         "embed"
       ],
       "excerpt": "docaroo, documents, external, content, create, import, multiple",
-      "lastUpdate": "2025-07-18 15:36:35 +0300",
-      "lastUpdateUTC": 1752842195,
-      "createTime": "2025-07-18 15:36:35 +0300",
-      "createTimeUTC": 1752842195,
+      "lastUpdate": "2025-07-18 18:57:49 +0300",
+      "lastUpdateUTC": 1752854269,
+      "createTime": "2025-07-18 18:57:49 +0300",
+      "createTimeUTC": 1752854269,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -504,10 +504,10 @@
         "docs"
       ],
       "excerpt": "started, docaroo, requires, design, documentation, organising, blog, crucial, involve",
-      "lastUpdate": "2025-07-18 15:36:35 +0300",
-      "lastUpdateUTC": 1752842195,
-      "createTime": "2025-07-18 15:36:35 +0300",
-      "createTimeUTC": 1752842195,
+      "lastUpdate": "2025-07-18 18:57:49 +0300",
+      "lastUpdateUTC": 1752854269,
+      "createTime": "2025-07-18 18:57:49 +0300",
+      "createTimeUTC": 1752854269,
       "relatedPages": [
         {
           "title": "Introduction",
@@ -535,10 +535,10 @@
         "docs"
       ],
       "excerpt": "documentation, builder, guide, comprehensive, resource, learning, create, build, maintain, quality",
-      "lastUpdate": "2025-07-18 15:36:35 +0300",
-      "lastUpdateUTC": 1752842195,
-      "createTime": "2025-07-18 15:36:35 +0300",
-      "createTimeUTC": 1752842195,
+      "lastUpdate": "2025-07-18 18:57:49 +0300",
+      "lastUpdateUTC": 1752854269,
+      "createTime": "2025-07-18 18:57:49 +0300",
+      "createTimeUTC": 1752854269,
       "relatedPages": [
         {
           "title": "Get started",
@@ -716,7 +716,7 @@
     "scrollspy": {
       "pages": [
         {
-          "title": "Scroll Spy",
+          "title": "Scroll Spy & Tabs",
           "permalink": "/components/scrollspy/",
           "lastUpdate": "18-Jul-2025"
         }
@@ -768,7 +768,7 @@
           "lastUpdate": "18-Jul-2025"
         },
         {
-          "title": "Scroll Spy",
+          "title": "Scroll Spy & Tabs",
           "permalink": "/components/scrollspy/",
           "lastUpdate": "18-Jul-2025"
         }
