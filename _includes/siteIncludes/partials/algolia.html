@@ -2,7 +2,7 @@
 {% if algolia.algoliaEnabled == 'true' %}
   <!-- docsearch container set in aux items -->
   <script id="algoliaSearch" type="text/javascript">
-    $('.search').remove();
+    $('.search').hide();
     $('#category-menu').removeClass('justify-content-md-end').addClass('justify-content-start');
     $(document).on('translationComplete', function() {
       setTimeout(()=>{
