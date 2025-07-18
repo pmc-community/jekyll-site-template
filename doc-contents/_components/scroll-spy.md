@@ -51,3 +51,14 @@ Feel free to size the height according to your needs, the default one is 300px, 
 - `outline`: "false"
 - `separators`: "false"
 - `spyBorder`: "false"
+
+# Tabs
+
+`START TABS DEMO`
+
+{% include elements/tabs.html 
+    source="partials/scroll-spy/demo-scroll-spy"
+    h="300px" 
+%}
+
+`END TABS DEMO`
