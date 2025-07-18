@@ -2,7 +2,7 @@ require 'jekyll'
 require_relative 'modules/file-utilities'
 require_relative 'modules/globals'
 
-site_dir = ARGV[0] || 'doc-contents'
+site_dir = ARGV[0] || Globals::ROOT_DIR
 silent = ARGV[2]&.downcase == 'true'? true : false
 
 Globals.clearConsole() if ARGV[1]&.downcase == 'true'
