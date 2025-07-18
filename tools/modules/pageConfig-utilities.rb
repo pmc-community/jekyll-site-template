@@ -22,7 +22,7 @@ module PageConfigUtilities
         
         pageConfigPermalinks.each do |permalink|
             puts "checking #{permalink}" if !silent
-            if (!sitePermalinks.include?(permalink))
+            if (!sitePermalinks.include?(permalink) && permalink != "/")
                 pageConfigErrors += 1
                 result = "Permalink \"#{permalink}\" from #{pageConfigFile} not found in site permalinks"
                 Globals.putsColText(Globals::YELLOW, " - #{result}") if !silent
