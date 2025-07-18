@@ -10,6 +10,20 @@ window.alert = async function(message) {
     console.error(message);
 };
 
+$(window).on('scroll', () => {
+
+    // handle fixed header scroll
+    const hash = window.location.hash;
+    if (hash) {
+        // if the header is not fixed, 
+        // -$(settings.headerAboveContent.headerID).height() - settings.headerAboveContent.offsetWhenScroll 
+        // can be removed
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $(hash).offset().top - $(settings.headerAboveContent.headerID).height() - settings.headerAboveContent.offsetWhenScroll
+        }, 0);
+    }
+});
+
 
 const goToAnchor = () => {
     const hash = window.location.hash;
