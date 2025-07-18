@@ -51,15 +51,15 @@ module FileUtilities
             file_path =match[0].split(" ", 0)[0]
             file_extension = File.extname(file_path)
             if (file_extension != ".liquid")
-                unless file_exists?(file_path, base_dir)
-                    result = "#{source}: Missing include: #{file_path} (in #{base_dir})"
+                unless File.exist?("#{Globals::ROOT_DIR}/_includes/#{file_path}")
+                    result = "#{source}: Missing include: #{file_path}"
                     Globals.putsColText(Globals::YELLOW, " - #{result}") if !silent
                     write_file("#{Globals::ROOT_DIR}/tools/checks/broken-includes.log", "#{result}\n")
                     brokeIncludes += 1
                 end
             else
-                unless File.exist?("#{Globals::ROOT_DIR}/_includes/"+file_path)
-                    fileName = File.basename(("#{Globals::ROOT_DIR}/_includes/"+file_path))
+                unless File.exist?("#{Globals::ROOT_DIR}/_includes/#{file_path}")
+                    fileName = File.basename("#{Globals::ROOT_DIR}/_includes/#{file_path}")
                     result = "#{source}: Missing include: #{fileName} (in #{Globals::ROOT_DIR}/_includes/#{file_path})"
                     Globals.putsColText(Globals::YELLOW, " - #{result}") if !silent
                     write_file("#{Globals::ROOT_DIR}/tools/checks/broken-includes.log", "#{result}\n")
