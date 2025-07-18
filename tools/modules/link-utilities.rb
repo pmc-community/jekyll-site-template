@@ -92,15 +92,17 @@ module LinkUtilities
             puts "ckecking #{file}" if !silent
             linkPos = 0
             links.each do |link|
-                linkToCheck = Globals.removeFirstAndLastSlash(link)
-                found_value = spl.find { |value| value == linkToCheck }
-                if (!found_value)
-                    result = "#{file}: Broken link: #{link}"
-                    Globals.putsColText(Globals::YELLOW, " - #{result}") if !silent
-                    FileUtilities.write_file("#{Globals::ROOT_DIR}/tools/checks/broken-internal-links.log", "#{result}\n")
-                    brokenLinks += 1
+                unless link.start_with?("#") # we don't check internal anchors
+                    linkToCheck = Globals.removeFirstAndLastSlash(link)
+                    found_value = spl.find { |value| value == linkToCheck }
+                    if (!found_value)
+                        result = "#{file}: Broken link: #{link}"
+                        Globals.putsColText(Globals::YELLOW, " - #{result}") if !silent
+                        FileUtilities.write_file("#{Globals::ROOT_DIR}/tools/checks/broken-internal-links.log", "#{result}\n")
+                        brokenLinks += 1
+                    end
+                    linkPos += 1
                 end
-                linkPos += 1
             end
         end
         return brokenLinks
