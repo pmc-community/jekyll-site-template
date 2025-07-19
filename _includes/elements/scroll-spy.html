@@ -83,7 +83,7 @@
     </div>
   </div>
   <div class="col-8 {{contentSeparatorClass}}">
-    <div data-bs-spy="scroll" data-bs-target="#spy-items-{{spyid}}" data-bs-offset="0" data-bs-smooth-scroll="true" tabindex="0" style="overflow-y:auto; max-height: {{h}};">
+    <div data-bs-spy="scroll-{{spyid}}" data-bs-target="#spy-items-{{spyid}}" data-bs-offset="0" data-bs-smooth-scroll="true" tabindex="0" style="overflow-y:auto; max-height: {{h}};">
         {% for item in itemsIdArray %}
             {% assign itemIndex = forloop.index0 %}
             {% assign itemContent = itemsContentArray[itemIndex] %}
@@ -110,12 +110,12 @@
  </style>
 
  <script>
-    $('#spy-items-{{spyid}} a[href^="#"]').on('click', function (e) {
+   $('#spy-items-{{spyid}} a[href^="#"]').on('click', function (e) {
         e.preventDefault(); 
 
         const targetId = $(this).attr('href'); 
 
-        const $container = $('[data-bs-spy="scroll"]');
+        const $container = $('[data-bs-spy="scroll-{{spyid}}"]');
 
         const $target = $container.find(targetId);
         if ($target.length) {
@@ -130,11 +130,13 @@
         }
     });
 
-    $('[data-bs-spy="scroll"]').on('activate.bs.scrollspy', function () {
+    $('[data-bs-spy="scroll-{{spyid}}"]').on('activate.bs.scrollspy', function () {
         const $activeLink = $('#spy-items-{{spyid}} a.active');
         const id = $activeLink.attr('href');
     });
- </script>
+
+</script>
+
 
 {% else %}
 {% assign mess="Something went wrong when building scrollspy from source: " | append: source | append: ". Check if the source exits and if the scrollspy items are present in the right format." %}
