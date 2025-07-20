@@ -73,7 +73,8 @@ Here are the default values for scroll spy parameters. If you don't provide a pa
 `END TABS DEMO`
 
 # Combined
-It is possible to combine tabs and scroll spies (or the other way around). Here is an example based on the content from the folder `demo-combined-scroll-spy`:
+It is possible to combine tabs and scroll spies (or the other way around). We do not recommend to include `tabs` into `scroll spies` (although it is possible) because of potential readability issues on mobile phone screens. Including `scroll spies` into `tabs` looks well on mobile screens too.
+Here is an example based on the content from the folder `demo-combined-scroll-spy`:
 
 {% DirStructure doc-contents/partials/scroll-spy %}
 

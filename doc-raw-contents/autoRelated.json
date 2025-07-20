@@ -11,8 +11,8 @@
         "permalink": "/components/rich-media/"
       },
       {
-        "title": "External content",
-        "permalink": "/content/ec/"
+        "title": "Link button",
+        "permalink": "/components/link-button/"
       }
     ]
   },
@@ -45,8 +45,8 @@
         "permalink": "/components/intro/"
       },
       {
-        "title": "External content",
-        "permalink": "/content/ec/"
+        "title": "Rich media",
+        "permalink": "/components/rich-media/"
       }
     ]
   },
@@ -79,8 +79,8 @@
         "permalink": "/components/intro/"
       },
       {
-        "title": "External content",
-        "permalink": "/content/ec/"
+        "title": "FAQ Item",
+        "permalink": "/components/qitem/"
       }
     ]
   },
@@ -105,16 +105,16 @@
     "permalink": "/content/ec/",
     "related": [
       {
-        "title": "Alerts",
-        "permalink": "/components/alerts/"
-      },
-      {
-        "title": "FAQ Item",
-        "permalink": "/components/qitem/"
+        "title": "Content",
+        "permalink": "/content/intro/"
       },
       {
         "title": "Rich media",
         "permalink": "/components/rich-media/"
+      },
+      {
+        "title": "Alerts",
+        "permalink": "/components/alerts/"
       }
     ]
   },

@@ -224,10 +224,10 @@
         "alert"
       ],
       "excerpt": "learn, add, blocks, content, alerts, types, colors",
-      "lastUpdate": "2025-07-18 18:57:49 +0300",
-      "lastUpdateUTC": 1752854269,
-      "createTime": "2025-07-18 18:57:49 +0300",
-      "createTimeUTC": 1752854269,
+      "lastUpdate": "2025-07-20 10:20:34 +0300",
+      "lastUpdateUTC": 1752996034,
+      "createTime": "2025-07-19 10:49:57 +0300",
+      "createTimeUTC": 1752911397,
       "relatedPages": [
         {
           "title": "FAQ Item",
@@ -238,8 +238,8 @@
           "permalink": "/components/rich-media/"
         },
         {
-          "title": "External content",
-          "permalink": "/content/ec/"
+          "title": "Link button",
+          "permalink": "/components/link-button/"
         }
       ],
       "autoSummary": "Alerts can be of different types as shown by the colors (,,, and ). Alerts can contain content introduced in clear but also can refer. From other documents from your documentation or from external public or private repositories. There is no limit about how many external public repositories you refer.",
@@ -261,10 +261,10 @@
       ],
       "tags": [],
       "excerpt": "learn, add, content, pre, defined, components, elements, embedded, documents, tags",
-      "lastUpdate": "2025-07-18 18:57:49 +0300",
-      "lastUpdateUTC": 1752854269,
-      "createTime": "2025-07-18 18:57:49 +0300",
-      "createTimeUTC": 1752854269,
+      "lastUpdate": "2025-07-19 10:49:57 +0300",
+      "lastUpdateUTC": 1752911397,
+      "createTime": "2025-07-19 10:49:57 +0300",
+      "createTimeUTC": 1752911397,
       "relatedPages": [
         {
           "title": "FAQ Item",
@@ -296,10 +296,10 @@
         "faq"
       ],
       "excerpt": "learn, add, elements, documents, element, question, answer",
-      "lastUpdate": "2025-07-18 18:57:49 +0300",
-      "lastUpdateUTC": 1752854269,
-      "createTime": "2025-07-18 18:57:49 +0300",
-      "createTimeUTC": 1752854269,
+      "lastUpdate": "2025-07-19 10:49:57 +0300",
+      "lastUpdateUTC": 1752911397,
+      "createTime": "2025-07-19 10:49:57 +0300",
+      "createTimeUTC": 1752911397,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -310,8 +310,8 @@
           "permalink": "/components/intro/"
         },
         {
-          "title": "External content",
-          "permalink": "/content/ec/"
+          "title": "Rich media",
+          "permalink": "/components/rich-media/"
         }
       ],
       "autoSummary": "The question should always be a text. The answer to the question can be simple text or any rich content that is allowed in markdown. Any docaroo component can be used to render the answer to a question.",
@@ -332,10 +332,10 @@
         "anchor"
       ],
       "excerpt": "learn, add, link, buttons, content, helps, users, navigate",
-      "lastUpdate": "2025-07-18 18:57:49 +0300",
-      "lastUpdateUTC": 1752854269,
-      "createTime": "2025-07-18 18:57:49 +0300",
-      "createTimeUTC": 1752854269,
+      "lastUpdate": "2025-07-19 10:49:57 +0300",
+      "lastUpdateUTC": 1752911397,
+      "createTime": "2025-07-19 10:49:57 +0300",
+      "createTimeUTC": 1752911397,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -369,10 +369,10 @@
         "video"
       ],
       "excerpt": "learn, docaroo, components, embed, rich, media, content, encourage, store",
-      "lastUpdate": "2025-07-18 18:57:49 +0300",
-      "lastUpdateUTC": 1752854269,
-      "createTime": "2025-07-18 18:57:49 +0300",
-      "createTimeUTC": 1752854269,
+      "lastUpdate": "2025-07-19 10:49:57 +0300",
+      "lastUpdateUTC": 1752911397,
+      "createTime": "2025-07-19 10:49:57 +0300",
+      "createTimeUTC": 1752911397,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -383,8 +383,8 @@
           "permalink": "/components/intro/"
         },
         {
-          "title": "External content",
-          "permalink": "/content/ec/"
+          "title": "FAQ Item",
+          "permalink": "/components/qitem/"
         }
       ],
       "autoSummary": "Use docaroo components to embed rich media into your content. Currently we support design, boards (fig jam), slides and deck files. Prototypes are not supported for the moment.",
@@ -403,14 +403,14 @@
         "scrollspy"
       ],
       "excerpt": "and, are, great, ways, organising, information, inside, your, documents, made",
-      "lastUpdate": "2025-07-18 22:13:11 +0300",
-      "lastUpdateUTC": 1752865991,
-      "createTime": "2025-07-18 18:57:49 +0300",
-      "createTimeUTC": 1752854269,
+      "lastUpdate": "2025-07-19 10:53:34 +0300",
+      "lastUpdateUTC": 1752911614,
+      "createTime": "2025-07-19 10:49:57 +0300",
+      "createTimeUTC": 1752911397,
       "relatedPages": [],
       "autoSummary": "Scroll spies are great ways of organising information inside your documents. We made them flexible and easy to be included in the documents. Any docaroo component, including importing esternal content or rich content ones, can be used to populate scroll spies and tabs.",
       "similarByContent": [],
-      "readingTime": 6,
+      "readingTime": 7,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -425,10 +425,10 @@
         "organise docs"
       ],
       "excerpt": "learn, structure, content, efficient, secret, maximum, extent, features, importing, external",
-      "lastUpdate": "2025-07-18 18:57:49 +0300",
-      "lastUpdateUTC": 1752854269,
-      "createTime": "2025-07-18 18:57:49 +0300",
-      "createTimeUTC": 1752854269,
+      "lastUpdate": "2025-07-19 10:49:57 +0300",
+      "lastUpdateUTC": 1752911397,
+      "createTime": "2025-07-19 10:49:57 +0300",
+      "createTimeUTC": 1752911397,
       "relatedPages": [
         {
           "title": "External content",
@@ -457,25 +457,27 @@
         "Content"
       ],
       "tags": [
-        "embed"
+        "embed",
+        "external",
+        "import"
       ],
       "excerpt": "docaroo, documents, external, content, create, import, multiple",
-      "lastUpdate": "2025-07-18 18:57:49 +0300",
-      "lastUpdateUTC": 1752854269,
-      "createTime": "2025-07-18 18:57:49 +0300",
-      "createTimeUTC": 1752854269,
+      "lastUpdate": "2025-07-20 10:21:27 +0300",
+      "lastUpdateUTC": 1752996087,
+      "createTime": "2025-07-19 10:49:57 +0300",
+      "createTimeUTC": 1752911397,
       "relatedPages": [
         {
-          "title": "Alerts",
-          "permalink": "/components/alerts/"
-        },
-        {
-          "title": "FAQ Item",
-          "permalink": "/components/qitem/"
+          "title": "Content",
+          "permalink": "/content/intro/"
         },
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/"
+        },
+        {
+          "title": "Alerts",
+          "permalink": "/components/alerts/"
         }
       ],
       "autoSummary": "Documentaroo allows you to create. Of content and import these parts in multiple places in your documents. It is possible to import content from external public and private repositories. You must be sure that the content you want to import is available at the time when you build your site.",
@@ -504,10 +506,10 @@
         "docs"
       ],
       "excerpt": "started, docaroo, requires, design, documentation, organising, blog, crucial, involve",
-      "lastUpdate": "2025-07-18 18:57:49 +0300",
-      "lastUpdateUTC": 1752854269,
-      "createTime": "2025-07-18 18:57:49 +0300",
-      "createTimeUTC": 1752854269,
+      "lastUpdate": "2025-07-19 10:49:57 +0300",
+      "lastUpdateUTC": 1752911397,
+      "createTime": "2025-07-19 10:49:57 +0300",
+      "createTimeUTC": 1752911397,
       "relatedPages": [
         {
           "title": "Introduction",
@@ -535,10 +537,10 @@
         "docs"
       ],
       "excerpt": "documentation, builder, guide, comprehensive, resource, learning, create, build, maintain, quality",
-      "lastUpdate": "2025-07-18 18:57:49 +0300",
-      "lastUpdateUTC": 1752854269,
-      "createTime": "2025-07-18 18:57:49 +0300",
-      "createTimeUTC": 1752854269,
+      "lastUpdate": "2025-07-19 10:49:57 +0300",
+      "lastUpdateUTC": 1752911397,
+      "createTime": "2025-07-19 10:49:57 +0300",
+      "createTimeUTC": 1752911397,
       "relatedPages": [
         {
           "title": "Get started",
@@ -564,8 +566,10 @@
     "docs",
     "documentation",
     "embed",
+    "external",
     "faq",
     "figma",
+    "import",
     "link",
     "lottie",
     "organise docs",
@@ -578,7 +582,7 @@
         {
           "title": "Alerts",
           "permalink": "/components/alerts/",
-          "lastUpdate": "18-Jul-2025"
+          "lastUpdate": "20-Jul-2025"
         }
       ],
       "numPages": 1
@@ -588,7 +592,7 @@
         {
           "title": "Link button",
           "permalink": "/components/link-button/",
-          "lastUpdate": "18-Jul-2025"
+          "lastUpdate": "19-Jul-2025"
         }
       ],
       "numPages": 1
@@ -598,7 +602,7 @@
         {
           "title": "Link button",
           "permalink": "/components/link-button/",
-          "lastUpdate": "18-Jul-2025"
+          "lastUpdate": "19-Jul-2025"
         }
       ],
       "numPages": 1
@@ -608,12 +612,12 @@
         {
           "title": "Get started",
           "permalink": "/get-started/",
-          "lastUpdate": "18-Jul-2025"
+          "lastUpdate": "19-Jul-2025"
         },
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "18-Jul-2025"
+          "lastUpdate": "19-Jul-2025"
         }
       ],
       "numPages": 2
@@ -623,17 +627,17 @@
         {
           "title": "Content",
           "permalink": "/content/intro/",
-          "lastUpdate": "18-Jul-2025"
+          "lastUpdate": "19-Jul-2025"
         },
         {
           "title": "Get started",
           "permalink": "/get-started/",
-          "lastUpdate": "18-Jul-2025"
+          "lastUpdate": "19-Jul-2025"
         },
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "18-Jul-2025"
+          "lastUpdate": "19-Jul-2025"
         }
       ],
       "numPages": 3
@@ -643,32 +647,42 @@
         {
           "title": "Alerts",
           "permalink": "/components/alerts/",
-          "lastUpdate": "18-Jul-2025"
+          "lastUpdate": "20-Jul-2025"
         },
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/",
-          "lastUpdate": "18-Jul-2025"
+          "lastUpdate": "19-Jul-2025"
         },
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "18-Jul-2025"
+          "lastUpdate": "19-Jul-2025"
         },
         {
           "title": "External content",
           "permalink": "/content/ec/",
-          "lastUpdate": "18-Jul-2025"
+          "lastUpdate": "20-Jul-2025"
         }
       ],
       "numPages": 4
+    },
+    "external": {
+      "pages": [
+        {
+          "title": "External content",
+          "permalink": "/content/ec/",
+          "lastUpdate": "20-Jul-2025"
+        }
+      ],
+      "numPages": 1
     },
     "faq": {
       "pages": [
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/",
-          "lastUpdate": "18-Jul-2025"
+          "lastUpdate": "19-Jul-2025"
         }
       ],
       "numPages": 1
@@ -678,7 +692,17 @@
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "18-Jul-2025"
+          "lastUpdate": "19-Jul-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "import": {
+      "pages": [
+        {
+          "title": "External content",
+          "permalink": "/content/ec/",
+          "lastUpdate": "20-Jul-2025"
         }
       ],
       "numPages": 1
@@ -688,7 +712,7 @@
         {
           "title": "Link button",
           "permalink": "/components/link-button/",
-          "lastUpdate": "18-Jul-2025"
+          "lastUpdate": "19-Jul-2025"
         }
       ],
       "numPages": 1
@@ -698,7 +722,7 @@
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "18-Jul-2025"
+          "lastUpdate": "19-Jul-2025"
         }
       ],
       "numPages": 1
@@ -708,7 +732,7 @@
         {
           "title": "Content",
           "permalink": "/content/intro/",
-          "lastUpdate": "18-Jul-2025"
+          "lastUpdate": "19-Jul-2025"
         }
       ],
       "numPages": 1
@@ -718,7 +742,7 @@
         {
           "title": "Scroll Spy & Tabs",
           "permalink": "/components/scrollspy/",
-          "lastUpdate": "18-Jul-2025"
+          "lastUpdate": "19-Jul-2025"
         }
       ],
       "numPages": 1
@@ -728,7 +752,7 @@
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "18-Jul-2025"
+          "lastUpdate": "19-Jul-2025"
         }
       ],
       "numPages": 1
@@ -745,32 +769,32 @@
         {
           "title": "Alerts",
           "permalink": "/components/alerts/",
-          "lastUpdate": "18-Jul-2025"
+          "lastUpdate": "20-Jul-2025"
         },
         {
           "title": "Components",
           "permalink": "/components/intro/",
-          "lastUpdate": "18-Jul-2025"
+          "lastUpdate": "19-Jul-2025"
         },
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/",
-          "lastUpdate": "18-Jul-2025"
+          "lastUpdate": "19-Jul-2025"
         },
         {
           "title": "Link button",
           "permalink": "/components/link-button/",
-          "lastUpdate": "18-Jul-2025"
+          "lastUpdate": "19-Jul-2025"
         },
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "18-Jul-2025"
+          "lastUpdate": "19-Jul-2025"
         },
         {
           "title": "Scroll Spy & Tabs",
           "permalink": "/components/scrollspy/",
-          "lastUpdate": "18-Jul-2025"
+          "lastUpdate": "19-Jul-2025"
         }
       ],
       "numPages": 6
@@ -780,12 +804,12 @@
         {
           "title": "Content",
           "permalink": "/content/intro/",
-          "lastUpdate": "18-Jul-2025"
+          "lastUpdate": "19-Jul-2025"
         },
         {
           "title": "External content",
           "permalink": "/content/ec/",
-          "lastUpdate": "18-Jul-2025"
+          "lastUpdate": "20-Jul-2025"
         }
       ],
       "numPages": 2
@@ -795,12 +819,12 @@
         {
           "title": "Get started",
           "permalink": "/get-started/",
-          "lastUpdate": "18-Jul-2025"
+          "lastUpdate": "19-Jul-2025"
         },
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "18-Jul-2025"
+          "lastUpdate": "19-Jul-2025"
         }
       ],
       "numPages": 2
