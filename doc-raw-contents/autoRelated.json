@@ -11,8 +11,8 @@
         "permalink": "/components/rich-media/"
       },
       {
-        "title": "Link button",
-        "permalink": "/components/link-button/"
+        "title": "Components",
+        "permalink": "/components/intro/"
       }
     ]
   },
@@ -37,16 +37,16 @@
     "permalink": "/components/content-items/",
     "related": [
       {
-        "title": "Components",
-        "permalink": "/components/intro/"
-      },
-      {
         "title": "External content",
         "permalink": "/content/ec/"
       },
       {
         "title": "Rich media",
         "permalink": "/components/rich-media/"
+      },
+      {
+        "title": "Components",
+        "permalink": "/components/intro/"
       }
     ]
   },
@@ -71,12 +71,12 @@
     "permalink": "/components/link-button/",
     "related": [
       {
-        "title": "Alerts",
-        "permalink": "/components/alerts/"
-      },
-      {
         "title": "Components",
         "permalink": "/components/intro/"
+      },
+      {
+        "title": "Alerts",
+        "permalink": "/components/alerts/"
       },
       {
         "title": "FAQ Item",

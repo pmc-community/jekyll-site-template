@@ -238,8 +238,8 @@
           "permalink": "/components/rich-media/"
         },
         {
-          "title": "Link button",
-          "permalink": "/components/link-button/"
+          "title": "Components",
+          "permalink": "/components/intro/"
         }
       ],
       "autoSummary": "Alerts can be of different types as shown by the colors (,,, and ). Alerts can contain content introduced in clear but also can refer. From other documents from your documentation or from external public or private repositories. There is no limit about how many external public repositories you refer.",
@@ -260,9 +260,9 @@
         "Components"
       ],
       "tags": [],
-      "excerpt": "learn, add, content, pre, defined, components, elements, embedded, documents, tags",
-      "lastUpdate": "2025-07-21 12:40:11 +0300",
-      "lastUpdateUTC": 1753090811,
+      "excerpt": "learn, add, pre, defined, content, components, elements, embedded",
+      "lastUpdate": "2025-07-21 12:44:05 +0300",
+      "lastUpdateUTC": 1753091045,
       "createTime": "2025-07-19 10:49:57 +0300",
       "createTimeUTC": 1752911397,
       "relatedPages": [
@@ -279,7 +279,7 @@
           "permalink": "/components/alerts/"
         }
       ],
-      "autoSummary": "Pre-defined components are elements that can be embedded in your documents using. Tags and liquid tags. Docaroo gives you the following. Components: alert type notifications inside your docs. Different types of rich media such as videos or figma files inside your documents. Types of links to internal and external.",
+      "autoSummary": "Pre-defined components are elements that can be embedded in your documents using. As it will be shown for each of the next components. Docaroo gives you the following. Components: alert type notifications inside your docs. Different types of rich media such as videos or figma files inside your.",
       "similarByContent": [],
       "readingTime": 1,
       "hasDynamicContent": false,
@@ -302,16 +302,16 @@
       "createTimeUTC": 1752999897,
       "relatedPages": [
         {
-          "title": "Components",
-          "permalink": "/components/intro/"
-        },
-        {
           "title": "External content",
           "permalink": "/content/ec/"
         },
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/"
+        },
+        {
+          "title": "Components",
+          "permalink": "/components/intro/"
         }
       ],
       "autoSummary": "Documentation is written in English with no greetings or instructions, maximum 50 words, for the following text:: docaroo makes available a series of content items that can be used to enrich your documents.",
@@ -373,12 +373,12 @@
       "createTimeUTC": 1752911397,
       "relatedPages": [
         {
-          "title": "Alerts",
-          "permalink": "/components/alerts/"
-        },
-        {
           "title": "Components",
           "permalink": "/components/intro/"
+        },
+        {
+          "title": "Alerts",
+          "permalink": "/components/alerts/"
         },
         {
           "title": "FAQ Item",
