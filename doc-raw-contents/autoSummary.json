@@ -43,6 +43,14 @@
         {
             "permalink": "/components/content-items/",
             "summary": "Documentation is written in English with no greetings or instructions, maximum 50 words, for the following text:: docaroo makes available a series of content items that can be used to enrich your documents."
+        },
+        {
+            "permalink": "/components/downloads/",
+            "summary": ""
+        },
+        {
+            "permalink": "/components/download-link/",
+            "summary": ""
         }
     ]
 }

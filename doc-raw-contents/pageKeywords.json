@@ -148,6 +148,18 @@
         "incorporate",
         "piecers"
       ]
+    },
+    {
+      "permalink": "/components/downloads/",
+      "keywords": [
+        "download"
+      ]
+    },
+    {
+      "permalink": "/components/download-link/",
+      "keywords": [
+        "download"
+      ]
     }
   ]
 }

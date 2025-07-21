@@ -51,6 +51,15 @@
     ]
   },
   {
+    "permalink": "/components/download-link/",
+    "related": [
+      {
+        "title": "Link button",
+        "permalink": "/components/link-button/"
+      }
+    ]
+  },
+  {
     "permalink": "/components/qitem/",
     "related": [
       {

@@ -261,8 +261,8 @@
       ],
       "tags": [],
       "excerpt": "learn, add, pre, defined, content, components, elements, embedded",
-      "lastUpdate": "2025-07-21 12:44:05 +0300",
-      "lastUpdateUTC": 1753091045,
+      "lastUpdate": "2025-07-21 23:49:03 +0300",
+      "lastUpdateUTC": 1753130943,
       "createTime": "2025-07-19 10:49:57 +0300",
       "createTimeUTC": 1752911397,
       "relatedPages": [
@@ -317,6 +317,35 @@
       "autoSummary": "Documentation is written in English with no greetings or instructions, maximum 50 words, for the following text:: docaroo makes available a series of content items that can be used to enrich your documents.",
       "similarByContent": [],
       "readingTime": 2,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
+      "title": "Downloads",
+      "permalink": "/components/download-link/",
+      "categories": [
+        "Components"
+      ],
+      "tags": [
+        "download",
+        "file",
+        "link",
+        "button"
+      ],
+      "excerpt": "download",
+      "lastUpdate": "2025-07-22 00:03:57 +0300",
+      "lastUpdateUTC": 1753131837,
+      "createTime": "2025-07-21 23:22:21 +0300",
+      "createTimeUTC": 1753129341,
+      "relatedPages": [
+        {
+          "title": "Link button",
+          "permalink": "/components/link-button/"
+        }
+      ],
+      "autoSummary": "",
+      "similarByContent": [],
+      "readingTime": 1,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -404,8 +433,8 @@
         "video"
       ],
       "excerpt": "learn, docaroo, components, embed, rich, media, content, encourage, store",
-      "lastUpdate": "2025-07-19 10:49:57 +0300",
-      "lastUpdateUTC": 1752911397,
+      "lastUpdate": "2025-07-21 14:30:06 +0300",
+      "lastUpdateUTC": 1753097406,
       "createTime": "2025-07-19 10:49:57 +0300",
       "createTimeUTC": 1752911397,
       "relatedPages": [
@@ -601,10 +630,12 @@
     "content",
     "docs",
     "documentation",
+    "download",
     "embed",
     "external",
     "faq",
     "figma",
+    "file",
     "import",
     "items",
     "link",
@@ -637,12 +668,17 @@
     "button": {
       "pages": [
         {
+          "title": "Downloads",
+          "permalink": "/components/download-link/",
+          "lastUpdate": "22-Jul-2025"
+        },
+        {
           "title": "Link button",
           "permalink": "/components/link-button/",
           "lastUpdate": "20-Jul-2025"
         }
       ],
-      "numPages": 1
+      "numPages": 2
     },
     "content": {
       "pages": [
@@ -689,6 +725,16 @@
       ],
       "numPages": 3
     },
+    "download": {
+      "pages": [
+        {
+          "title": "Downloads",
+          "permalink": "/components/download-link/",
+          "lastUpdate": "22-Jul-2025"
+        }
+      ],
+      "numPages": 1
+    },
     "embed": {
       "pages": [
         {
@@ -704,7 +750,7 @@
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "19-Jul-2025"
+          "lastUpdate": "21-Jul-2025"
         },
         {
           "title": "External content",
@@ -739,7 +785,17 @@
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "19-Jul-2025"
+          "lastUpdate": "21-Jul-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "file": {
+      "pages": [
+        {
+          "title": "Downloads",
+          "permalink": "/components/download-link/",
+          "lastUpdate": "22-Jul-2025"
         }
       ],
       "numPages": 1
@@ -767,19 +823,24 @@
     "link": {
       "pages": [
         {
+          "title": "Downloads",
+          "permalink": "/components/download-link/",
+          "lastUpdate": "22-Jul-2025"
+        },
+        {
           "title": "Link button",
           "permalink": "/components/link-button/",
           "lastUpdate": "20-Jul-2025"
         }
       ],
-      "numPages": 1
+      "numPages": 2
     },
     "lottie": {
       "pages": [
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "19-Jul-2025"
+          "lastUpdate": "21-Jul-2025"
         }
       ],
       "numPages": 1
@@ -809,7 +870,7 @@
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "19-Jul-2025"
+          "lastUpdate": "21-Jul-2025"
         }
       ],
       "numPages": 1
@@ -839,6 +900,11 @@
           "lastUpdate": "21-Jul-2025"
         },
         {
+          "title": "Downloads",
+          "permalink": "/components/download-link/",
+          "lastUpdate": "22-Jul-2025"
+        },
+        {
           "title": "FAQ Item",
           "permalink": "/components/qitem/",
           "lastUpdate": "19-Jul-2025"
@@ -851,7 +917,7 @@
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "19-Jul-2025"
+          "lastUpdate": "21-Jul-2025"
         },
         {
           "title": "Scroll Spy & Tabs",
@@ -859,7 +925,7 @@
           "lastUpdate": "19-Jul-2025"
         }
       ],
-      "numPages": 7
+      "numPages": 8
     },
     "Content": {
       "pages": [

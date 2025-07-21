@@ -33,8 +33,8 @@ Great ways to organise your content inside a document in a logical structure.
 ## **[`Content items`](/components/content-items/){: target="_blank" }** 
 Some helpful liquid tags generating pieces of content.
 
-## **[`Downloads`](#){: target="_blank" }**
-Link to downloads.
+## **[`Downloads`](/components/downloads/){: target="_blank" }**
+Create button link to download a file.
 
 ## **[`Tables`](#){: target="_blank" }**
 
