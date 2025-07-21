@@ -66,5 +66,5 @@ If it make more sense to have an unique directory containing all the downloads o
 - `outline` specify of the button is outlined button or not; default value is `false`
 - `text` the text rendered on the link button
 - `file` the name of the downloadable file
-- `downloadName` the name under which the file is downloaded; if nor provided, the file is downloaded with its name
+- `downloadName` the name under which the file is downloaded; if not provided, the file is downloaded with its name
 - `downloadsDir` specify if the downloadable file is in the same directory as the parent document or is in doc-contents/downloads directory; default is `true` 
