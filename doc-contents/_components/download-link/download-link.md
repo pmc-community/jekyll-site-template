@@ -35,7 +35,7 @@ Downloading from the same directory as the current document is the recommended a
 %}
 
 # Download from `downloads` directory
-If it make more sense to have an unique directory containing all the downloads of your site, then create a `downloads` directory inside `doc-contents` root documentation directory and place your download(s) there, all in the root directory or in separate folders. Creating the download link is as shown below. Observe that you need to privide the full url (path) to the download file. It is not allowed to create download links to files hosted in external sites. 
+If it make more sense to have an unique directory containing all the downloads of your site, then create a `downloads` directory inside `doc-contents` root documentation directory and place your download(s) there, all in the root directory or in separate sub-folders inside `doc-contents/downloads` directory. Creating the download link is as shown below. 
 
 {% DirStructure doc-contents/downloads %}
 
@@ -60,3 +60,11 @@ If it make more sense to have an unique directory containing all the downloads o
     downloadName="lorem_ipsum_alt.pdf" 
     downloadsDir="true"      
 %}
+
+# Parameters
+- `type` the button link type; default value is `primary`
+- `outline` specify of the button is outlined button or not; default value is `false`
+- `text` the text rendered on the link button
+- `file` the name of the downloadable file
+- `downloadName` the name under which the file is downloaded; if nor provided, the file is downloaded with its name
+- `downloadsDir` specify if the downloadable file is in the same directory as the parent document or is in doc-contents/downloads directory; default is `true` 

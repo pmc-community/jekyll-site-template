@@ -50,7 +50,7 @@
         },
         {
             "permalink": "/components/download-link/",
-            "summary": "Download-link component generates a button link for downloading files from your documentation site. Only downloading from your site is allowed, for security reasons it is not allowed to create download links targeting files hosted on external sites."
+            "summary": "The download-link component generates a button link for downloading files from your documentation site. Only downloading from your site is allowed, for security reasons it is not allowed to create download links targeting files hosted on external sites."
         }
     ]
 }
