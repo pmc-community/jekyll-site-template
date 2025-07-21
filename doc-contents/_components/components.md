@@ -10,6 +10,8 @@ categories: [Components]
 # Summary
 Learn how to add different `pre-defined components` to your content. Pre-defined components are elements that can be embedded in your documents using `liquid` tags and `parameters` as it will be shown for each of the next components.
 
+Pre-defined components represents the most efficient way to create complex and easy to maintain quality content in your docs. We focused on complex components, without having any intention to overwrite the default functionalities of markdown syntax for simple pieces of content as formatting text, headings, simple inline links and other similar.
+
 # Components
 Docaroo gives you the following `pre-defined` components:
 
