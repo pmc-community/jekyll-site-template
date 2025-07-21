@@ -158,7 +158,14 @@
     {
       "permalink": "/components/download-link/",
       "keywords": [
-        "download"
+        "download",
+        "link",
+        "component",
+        "generates",
+        "button",
+        "downloading",
+        "files",
+        "documentation"
       ]
     }
   ]

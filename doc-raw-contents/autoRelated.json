@@ -80,16 +80,16 @@
     "permalink": "/components/link-button/",
     "related": [
       {
+        "title": "Downloads",
+        "permalink": "/components/download-link/"
+      },
+      {
         "title": "Components",
         "permalink": "/components/intro/"
       },
       {
         "title": "Alerts",
         "permalink": "/components/alerts/"
-      },
-      {
-        "title": "FAQ Item",
-        "permalink": "/components/qitem/"
       }
     ]
   },

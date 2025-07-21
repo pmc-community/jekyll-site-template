@@ -17,6 +17,14 @@
 {% assign file = include.file || default: "" %}
 {% assign downloadName = include.downloadName || default: "" %}
 
+{% assign downloadsDir = include.downloadsDir || default: "false" %}
+
+{% if downloadsDir == "false" %}
+    {% assign source = file %}
+{% else %}
+    {% assign source = site.url | append: "/doc-contents/downloads/" | append: file %}
+{% endif %}
+
 {% if file %}
  {% if allowedTypes contains type %}  
 
@@ -27,7 +35,7 @@
 
  <script>
     $('#download-btn-{{did}}').on('click', function () {
-        const fileUrl = '{{file}}';
+        const fileUrl = '{{source}}';
 
         {% if downloadName !="" %}
             const fileName = '{{downloadName}}';
