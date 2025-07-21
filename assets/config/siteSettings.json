@@ -333,8 +333,8 @@
         "button"
       ],
       "excerpt": "download, link, component, generates, button, downloading, files, documentation",
-      "lastUpdate": "2025-07-22 01:37:15 +0300",
-      "lastUpdateUTC": 1753137435,
+      "lastUpdate": "2025-07-22 01:38:40 +0300",
+      "lastUpdateUTC": 1753137520,
       "createTime": "2025-07-22 00:16:02 +0300",
       "createTimeUTC": 1753132562,
       "relatedPages": [
@@ -343,7 +343,7 @@
           "permalink": "/components/link-button/"
         }
       ],
-      "autoSummary": "Download-link component generates a button link for downloading files from your documentation site. Only downloading from your site is allowed, for security reasons it is not allowed to create download links targeting files hosted on external sites. There are two prossible approaches for placing the downloadable files into the doc-contents.",
+      "autoSummary": "The download-link component generates a button link for downloading files from your documentation site. Only downloading from your site is allowed, for security reasons it is not allowed to create download links targeting files hosted on external sites.",
       "similarByContent": [],
       "readingTime": 1,
       "hasDynamicContent": false,
