@@ -8,7 +8,7 @@ tags: [download, file, link, button]
 
 
 {% include elements/downloads.html 
-    type="primary" 
+    type="warning" 
     outline="false" 
     text="Download test" 
     file="lorem-ipsum.pdf"
