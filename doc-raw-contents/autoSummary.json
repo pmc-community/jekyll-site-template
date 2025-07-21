@@ -6,7 +6,7 @@
         },
         {
             "permalink": "/components/intro/",
-            "summary": "Documentaroo lets you embed content into your documents using pre-defined components. The components are elements that can be embedded in documents using tags and. As it will be shown for each of the next components."
+            "summary": "Documentaroo lets you embed content into your documents using pre-defined components. Features include alert type notifications, rich media and links to external and internal files."
         },
         {
             "permalink": "/components/qitem/",
@@ -39,6 +39,10 @@
         {
             "permalink": "/components/scrollspy/",
             "summary": "Scroll spies are great ways of organising information inside your documents. We made them flexible and easy to be included in the documents. Any docaroo component, including importing esternal content or rich content ones, can be used to populate scroll spies and tabs."
+        },
+        {
+            "permalink": "/components/content-items/",
+            "summary": "Documentation is written in English with no greetings or instructions, maximum 50 words, for the following text:: docaroo makes available a series of content items that can be used to enrich your documents."
         }
     ]
 }

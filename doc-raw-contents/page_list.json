@@ -29,10 +29,32 @@
     ],
     "tags": [],
     "excerpt": "",
-    "lastUpdate": "2025-07-19 10:49:57 +0300",
-    "lastUpdateUTC": 1752911397,
+    "lastUpdate": "2025-07-21 12:31:38 +0300",
+    "lastUpdateUTC": 1753090298,
     "createTime": "2025-07-19 10:49:57 +0300",
     "createTimeUTC": 1752911397,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Content items",
+    "permalink": "/components/content-items/",
+    "categories": [
+      "Components"
+    ],
+    "tags": [
+      "items",
+      "content"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-07-21 11:56:56 +0300",
+    "lastUpdateUTC": 1753088216,
+    "createTime": "2025-07-20 11:24:57 +0300",
+    "createTimeUTC": 1752999897,
     "relatedPages": [],
     "autoSummary": "",
     "similarByContent": [],
@@ -74,8 +96,8 @@
       "anchor"
     ],
     "excerpt": "",
-    "lastUpdate": "2025-07-19 10:49:57 +0300",
-    "lastUpdateUTC": 1752911397,
+    "lastUpdate": "2025-07-20 11:39:24 +0300",
+    "lastUpdateUTC": 1753000764,
     "createTime": "2025-07-19 10:49:57 +0300",
     "createTimeUTC": 1752911397,
     "relatedPages": [],

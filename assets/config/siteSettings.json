@@ -261,8 +261,8 @@
       ],
       "tags": [],
       "excerpt": "learn, add, content, pre, defined, components, elements, embedded, documents, tags",
-      "lastUpdate": "2025-07-19 10:49:57 +0300",
-      "lastUpdateUTC": 1752911397,
+      "lastUpdate": "2025-07-21 12:31:38 +0300",
+      "lastUpdateUTC": 1753090298,
       "createTime": "2025-07-19 10:49:57 +0300",
       "createTimeUTC": 1752911397,
       "relatedPages": [
@@ -271,17 +271,52 @@
           "permalink": "/components/qitem/"
         },
         {
-          "title": "Alerts",
-          "permalink": "/components/alerts/"
-        },
-        {
           "title": "Link button",
           "permalink": "/components/link-button/"
+        },
+        {
+          "title": "Alerts",
+          "permalink": "/components/alerts/"
         }
       ],
-      "autoSummary": "Documentaroo lets you embed content into your documents using pre-defined components. The components are elements that can be embedded in documents using tags and. As it will be shown for each of the next components.",
+      "autoSummary": "Documentaroo lets you embed content into your documents using pre-defined components. Features include alert type notifications, rich media and links to external and internal files.",
       "similarByContent": [],
       "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
+      "title": "Content items",
+      "permalink": "/components/content-items/",
+      "categories": [
+        "Components"
+      ],
+      "tags": [
+        "items",
+        "content"
+      ],
+      "excerpt": "docaroo, series, content, items, enrich, documents, effiient, incorporate, piecers",
+      "lastUpdate": "2025-07-21 11:56:56 +0300",
+      "lastUpdateUTC": 1753088216,
+      "createTime": "2025-07-20 11:24:57 +0300",
+      "createTimeUTC": 1752999897,
+      "relatedPages": [
+        {
+          "title": "Components",
+          "permalink": "/components/intro/"
+        },
+        {
+          "title": "External content",
+          "permalink": "/content/ec/"
+        },
+        {
+          "title": "Rich media",
+          "permalink": "/components/rich-media/"
+        }
+      ],
+      "autoSummary": "Documentation is written in English with no greetings or instructions, maximum 50 words, for the following text:: docaroo makes available a series of content items that can be used to enrich your documents.",
+      "similarByContent": [],
+      "readingTime": 2,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -332,8 +367,8 @@
         "anchor"
       ],
       "excerpt": "learn, add, link, buttons, content, helps, users, navigate",
-      "lastUpdate": "2025-07-19 10:49:57 +0300",
-      "lastUpdateUTC": 1752911397,
+      "lastUpdate": "2025-07-20 11:39:24 +0300",
+      "lastUpdateUTC": 1753000764,
       "createTime": "2025-07-19 10:49:57 +0300",
       "createTimeUTC": 1752911397,
       "relatedPages": [
@@ -563,6 +598,7 @@
     "alert",
     "anchor",
     "button",
+    "content",
     "docs",
     "documentation",
     "embed",
@@ -570,6 +606,7 @@
     "faq",
     "figma",
     "import",
+    "items",
     "link",
     "lottie",
     "organise docs",
@@ -592,7 +629,7 @@
         {
           "title": "Link button",
           "permalink": "/components/link-button/",
-          "lastUpdate": "19-Jul-2025"
+          "lastUpdate": "20-Jul-2025"
         }
       ],
       "numPages": 1
@@ -602,7 +639,17 @@
         {
           "title": "Link button",
           "permalink": "/components/link-button/",
-          "lastUpdate": "19-Jul-2025"
+          "lastUpdate": "20-Jul-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "content": {
+      "pages": [
+        {
+          "title": "Content items",
+          "permalink": "/components/content-items/",
+          "lastUpdate": "21-Jul-2025"
         }
       ],
       "numPages": 1
@@ -707,12 +754,22 @@
       ],
       "numPages": 1
     },
+    "items": {
+      "pages": [
+        {
+          "title": "Content items",
+          "permalink": "/components/content-items/",
+          "lastUpdate": "21-Jul-2025"
+        }
+      ],
+      "numPages": 1
+    },
     "link": {
       "pages": [
         {
           "title": "Link button",
           "permalink": "/components/link-button/",
-          "lastUpdate": "19-Jul-2025"
+          "lastUpdate": "20-Jul-2025"
         }
       ],
       "numPages": 1
@@ -774,7 +831,12 @@
         {
           "title": "Components",
           "permalink": "/components/intro/",
-          "lastUpdate": "19-Jul-2025"
+          "lastUpdate": "21-Jul-2025"
+        },
+        {
+          "title": "Content items",
+          "permalink": "/components/content-items/",
+          "lastUpdate": "21-Jul-2025"
         },
         {
           "title": "FAQ Item",
@@ -784,7 +846,7 @@
         {
           "title": "Link button",
           "permalink": "/components/link-button/",
-          "lastUpdate": "19-Jul-2025"
+          "lastUpdate": "20-Jul-2025"
         },
         {
           "title": "Rich media",
@@ -797,7 +859,7 @@
           "lastUpdate": "19-Jul-2025"
         }
       ],
-      "numPages": 6
+      "numPages": 7
     },
     "Content": {
       "pages": [

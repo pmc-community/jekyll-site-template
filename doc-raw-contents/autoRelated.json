@@ -24,12 +24,29 @@
         "permalink": "/components/qitem/"
       },
       {
-        "title": "Alerts",
-        "permalink": "/components/alerts/"
-      },
-      {
         "title": "Link button",
         "permalink": "/components/link-button/"
+      },
+      {
+        "title": "Alerts",
+        "permalink": "/components/alerts/"
+      }
+    ]
+  },
+  {
+    "permalink": "/components/content-items/",
+    "related": [
+      {
+        "title": "Components",
+        "permalink": "/components/intro/"
+      },
+      {
+        "title": "External content",
+        "permalink": "/content/ec/"
+      },
+      {
+        "title": "Rich media",
+        "permalink": "/components/rich-media/"
       }
     ]
   },

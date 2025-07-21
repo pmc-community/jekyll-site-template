@@ -17,7 +17,13 @@ Primary outline link button targeting external link in a new tab.
 
 {% raw %}
 ```javascript
-{% include elements/link-btn.html type="primary" outline="true" text="External link" href="https://pmc-expert.com" newTab="true" %}
+{% include elements/link-btn.html 
+    type="primary" 
+    outline="true" 
+    text="External link" 
+    href="https://pmc-expert.com" 
+    newTab="true" 
+%}
 ```
 {% endraw %}
 
@@ -27,7 +33,11 @@ Warning button targeting a documentation permalink in the same tab
 
 {% raw %}
 ```javascript
-{% include elements/link-btn.html type="warning" text="Internal link" href="/components/intro/" %}
+{% include elements/link-btn.html 
+    type="warning" 
+    text="Internal link" 
+    href="/components/intro/" 
+%}
 ```
 {% endraw %}
 
