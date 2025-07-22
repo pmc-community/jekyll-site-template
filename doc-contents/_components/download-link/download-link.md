@@ -68,3 +68,22 @@ If it make more sense to have an unique directory containing all the downloads o
 - `file` the name of the downloadable file
 - `downloadName` the name under which the file is downloaded; if not provided, the file is downloaded with its name
 - `downloadsDir` specify if the downloadable file is in the same directory as the parent document or is in doc-contents/downloads directory; default is `true` 
+
+# Download links group
+Use this component when you want to group multiple downloads in the same section.
+
+{% raw %}
+```javascript
+{% capture downloads %}
+      type=primary|outline=false|text=Download link 1|file="lorem-ipsum.pdf"|downloadName="lorem-ipsum-group.pdf"|downloadsDir="false",
+      type=secondary|outline=false|text=Download link 2|file="lorem-ipsum.pdf"|downloadName="lorem-ipsum-group-alt.pdf"|downloadsDir="true"
+{% endcapture %}
+{% include elements/downloads-group.html downloads=downloads %}
+```
+{% endraw %}
+
+{% capture downloads %}
+      type=primary|outline=false|text=Download link 1|file="lorem-ipsum.pdf"|downloadName="lorem-ipsum-group.pdf"|downloadsDir="false",
+      type=secondary|outline=false|text=Download link 2|file="lorem-ipsum.pdf"|downloadName="lorem-ipsum-group-alt.pdf"|downloadsDir="true"
+  {% endcapture %}
+{% include elements/downloads-group.html downloads=downloads %}

@@ -1,0 +1,71 @@
+{% comment %}
+  elements/downloads-group.html
+  This include processes a comma-separated string of button definitions
+  and renders a group of link buttons.
+
+  Example usage:
+ {% capture downloads %}
+      type=primary|outline=false|text=Download link 1|file="lorem-ipsum.pdf"|downloadName="lorem-ipsum-group.pdf"|downloadsDir="false",
+      type=secondary|outline=false|text=Download link 2|file="lorem-ipsum.pdf"|downloadName="lorem-ipsum-group-alt.pdf"|downloadsDir="true"
+  {% endcapture %}
+{% include elements/downloads-group.html downloads=downloads %}
+{% endcomment %}
+
+{% capture uuid %}
+  {% UUID %}
+{% endcapture %}
+{% assign dgid = uuid | strip %}
+
+<div class="d-flex" id="downloads-group-{{dgid}}">
+  {% assign downloads_defs = include.downloads | split: "," %}
+
+  {% for def in downloads_defs %}
+    {% assign type = "" %}
+    {% assign outline = "" %}
+    {% assign text = "" %}
+    {% assign file = "" %}
+    {% assign downloadName = "" %}
+    {% assign downloadsDir = "" %}
+
+    {% comment %} Split each definition into key-value pairs {% endcomment %}
+    {% assign parts = def | split: "|" %}
+
+    {% for pair in parts %}
+      {% assign pair_parts = pair | split: "=" %}
+      {% assign key = pair_parts[0] | strip %}
+      {% assign val = pair_parts[1] | strip %}
+
+      {% comment %}
+        Remove leading/trailing quotes from the value.
+        This is a more reliable way than checking first/last char and slicing.
+      {% endcomment %}
+      {% assign val = val | remove: '"' %}
+
+      {% case key %}
+        {% when "type" %}
+          {% assign type = val %}
+        {% when "outline" %}
+          {% assign outline = val %}
+        {% when "text" %}
+          {% assign text = val %}
+        {% when "file" %}
+          {% assign file = val %}
+        {% when "downloadName" %}
+          {% assign downloadName = val %}
+        {% when "downloadsDir" %}
+          {% assign downloadsDir = val %}
+      {% endcase %}
+    {% endfor %}
+
+    <div class="m-1">
+      {% include elements/downloads.html
+        type=type
+        outline=outline
+        text=text
+        file=file
+        downloadName=downloadName
+        downloadsDir=downloadsDir
+      %}
+    </div>
+  {% endfor %}
+</div>
