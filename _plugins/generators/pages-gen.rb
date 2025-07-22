@@ -24,6 +24,17 @@ module Jekyll
       doc_raw_content_dir = Globals::RAW_DOCS_ROOT
       doc_list = []
       documents = []
+
+      # force rebuilding page_list.json to capture potential changes of the information in the page front matter
+      # (such as tags, cats, etc.)
+      Globals.putsColText(Globals::PURPLE,"Force page list re-build ...")
+      if (File.exist?(page_list_path))
+        File.delete(page_list_path)
+      end
+      Globals.moveUpOneLine
+      Globals.clearLine
+      Globals.putsColText(Globals::PURPLE,"Force page list re-build ... done")
+
       Dir.glob(File.join(doc_contents_dir, '**', '*.{md,html}')).each do |file_path|
           front_matter, _ = FileUtilities.parse_front_matter(File.read(file_path))
           doc_list << file_path if front_matter && !file_path.index("404") && front_matter['layout'] && front_matter['layout'] == "page"
