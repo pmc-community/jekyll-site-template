@@ -58,7 +58,7 @@ If it make more sense to have an unique directory containing all the downloads o
     text="Download"
     file="lorem-ipsum.pdf"
     downloadName="lorem_ipsum_alt.pdf" 
-    downloadsDir="true"      
+    downloadsDir="true"
 %}
 
 # Parameters
@@ -70,7 +70,7 @@ If it make more sense to have an unique directory containing all the downloads o
 - `downloadsDir` specify if the downloadable file is in the same directory as the parent document or is in doc-contents/downloads directory; default is `true` 
 
 # Download links group
-Use this component when you want to group multiple downloads in the same section.
+Use this component when you want to group multiple download links in the same section.
 
 {% raw %}
 ```javascript
@@ -85,5 +85,5 @@ Use this component when you want to group multiple downloads in the same section
 {% capture downloads %}
       type=primary|outline=false|text=Download link 1|file="lorem-ipsum.pdf"|downloadName="lorem-ipsum-group.pdf"|downloadsDir="false",
       type=secondary|outline=false|text=Download link 2|file="lorem-ipsum.pdf"|downloadName="lorem-ipsum-group-alt.pdf"|downloadsDir="true"
-  {% endcapture %}
+{% endcapture %}
 {% include elements/downloads-group.html downloads=downloads %}
