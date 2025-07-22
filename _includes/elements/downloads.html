@@ -45,7 +45,10 @@
 
         fetch(fileUrl)
         .then(response => {
-            if (!response.ok) throw new Error('Failed to fetch file');
+            if (!response.ok) {
+                throw new Error('Failed to fetch file');
+                showToast(i18next.t('elements_downloads_download_file_not_found', { postProcess: 'sprintf', sprintf: [fileName] }), 'bg-danger', 'text-light');
+            }
             return response.blob();
         })
         .then(blob => {
@@ -59,10 +62,11 @@
             a[0].click();
             a.remove();
             URL.revokeObjectURL(blobUrl);
+            showToast(i18next.t('elements_downloads_download_completed', { postProcess: 'sprintf', sprintf: [fileName] }), 'bg-success', 'text-light');
         })
         .catch(error => {
             console.error('Download failed:', error);
-            alert('File download failed.');
+            showToast(i18next.t('elements_downloads_download_failed', { postProcess: 'sprintf', sprintf: [fileName] }), 'bg-danger', 'text-light');
         });
     });
  </script>
