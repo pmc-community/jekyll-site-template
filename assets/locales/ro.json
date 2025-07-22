@@ -457,6 +457,9 @@
     "elements_figma_link_to_file_text": "Deschide in Figma",
     "elements_figma_wrong_file_type_alert_title": "Eroare tip de fisier",
     "elements_figma_wrong_file_type_alert_file_type_text": "Tipul de fisier",
-    "elements_figma_wrong_file_type_alert_file_type_not_accepted_text": "nu este acceptat de componenta elements/figma.html"
+    "elements_figma_wrong_file_type_alert_file_type_not_accepted_text": "nu este acceptat de componenta elements/figma.html",
+    "elements_downloads_download_completed": "Descarcare completa! Fisierul este in folderul downloads, %s.",
+    "elements_downloads_download_failed": "Eraore la descarcarea fisierului %s!",
+    "elements_downloads_download_file_not_found": "Nu am gasit fisierul %s!"
 
 }

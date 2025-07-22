@@ -1413,6 +1413,9 @@
     "elements_figma_link_to_file_text": "Open in Figma",
     "elements_figma_wrong_file_type_alert_title": "Wrong file type",
     "elements_figma_wrong_file_type_alert_file_type_text": "File type",
-    "elements_figma_wrong_file_type_alert_file_type_not_accepted_text": "is not accepted by elements/figma.html component"
+    "elements_figma_wrong_file_type_alert_file_type_not_accepted_text": "is not accepted by elements/figma.html component",
+    "elements_downloads_download_completed": "Download completed! The file is in downloads folder, %s.",
+    "elements_downloads_download_failed": "Download failed for file %s!",
+    "elements_downloads_download_file_not_found": "File %s not found!"
   }
 }
