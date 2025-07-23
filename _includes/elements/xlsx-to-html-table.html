@@ -1,0 +1,64 @@
+{% capture uuid %}
+  {% UUID %}
+{% endcapture %}
+{% assign tid = uuid | strip %}
+
+{% assign file = include.file %}
+{% assign range = include.range %}
+{% assign sheet = include.sheet %}
+{% assign source = include.source %}
+{% assign simple = include.simple || default: "true" %}
+
+{% if file and range and sheet and source %}
+  <div id="xlsx-table-container-{{tid}}">
+   {% XLSXToHtmlTable "{{file}}" "{{range}}" "{{sheet}}" "{{source}}" %}
+  </div>
+
+  <script>
+
+    $('#xlsx-table-container-{{tid}}').find('table').attr('id', 'xlsx-table-{{tid}}');
+    $('#xlsx-table-{{tid}}').addClass('table table-striped table-hover table-responsive');
+    $('#xlsx-table-{{tid}}').find('td').addClass('align-middle border border-secondary border-opacity-25');
+    $('#xlsx-table-{{tid}}').find('th').addClass('text-center text-primary fw-medium align-middle border border-secondary border-opacity-25 bg-secondary bg-opacity-25');
+    
+
+    if (!checkForMergedCells($('#xlsx-table-{{tid}}')) && {{simple}} !== 'true') {
+      setTimeout(()=>{
+        setDataTable (
+          '#xlsx-table-{{tid}}',
+          'DataTables-xlsx-table-{{tid}}',
+          null,
+          (table) => {
+            $('#xlsx-table-{{tid}}').find('.dt-column-title').addClass('text-primary fw-medium');
+          },
+          null,
+          {
+            ignoreSaveState: true,
+            autoWidth: true,
+            scrollCollapse: false,
+          },
+          null,
+          preFlight.envInfo,
+          null,
+          null,
+          null
+        )}, 0);
+
+      };
+
+  </script>
+
+  <style>
+    #xlsx-table-{{tid}}_wrapper .pagination{
+      list-style: none !important;
+    }
+
+  </style>
+
+
+
+{% else %}
+{% assign mess="Something went wrong when building table from source: file=" | append: file | append: " range=" | append: range | append: " sheet=" | append: sheet %}
+ {% include elements/alert.html class="danger" content=mess title="Error" %}
+{% endif %}
+

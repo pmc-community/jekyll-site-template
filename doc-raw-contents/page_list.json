@@ -177,6 +177,28 @@
     "parent": ""
   },
   {
+    "title": "XLSX Tables",
+    "permalink": "/components/xlsx-tables/",
+    "categories": [
+      "Components"
+    ],
+    "tags": [
+      "table",
+      "xls"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-07-24 02:22:07 +0300",
+    "lastUpdateUTC": 1753312927,
+    "createTime": "2025-07-23 11:36:42 +0300",
+    "createTimeUTC": 1753259802,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
     "title": "Content",
     "permalink": "/content/intro/",
     "categories": [

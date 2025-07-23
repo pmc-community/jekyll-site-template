@@ -51,6 +51,10 @@
         {
             "permalink": "/components/download-link/",
             "summary": "The download-link component generates a button link for downloading files from your documentation site. Only downloading from your site is allowed, for security reasons it is not allowed to create download links targeting files hosted on external sites."
+        },
+        {
+            "permalink": "/components/xlsx-tables/",
+            "summary": "Creating a table in markdown can be quite a challenge. Why not create tables in excel and loading them in our docs? This component does this now. See how tables from excel can be imported in your document."
         }
     ]
 }

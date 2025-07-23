@@ -479,6 +479,28 @@
       "parent": ""
     },
     {
+      "title": "XLSX Tables",
+      "permalink": "/components/xlsx-tables/",
+      "categories": [
+        "Components"
+      ],
+      "tags": [
+        "table",
+        "xls"
+      ],
+      "excerpt": "users, creating, table, markdown, challenge, merged, cells, crazy, quick, maintaining",
+      "lastUpdate": "2025-07-24 02:22:07 +0300",
+      "lastUpdateUTC": 1753312927,
+      "createTime": "2025-07-23 11:36:42 +0300",
+      "createTimeUTC": 1753259802,
+      "relatedPages": [],
+      "autoSummary": "Creating a table in markdown can be quite a challenge. Why not create tables in excel and loading them in our docs? This component does this now. See how tables from excel can be imported in your document.",
+      "similarByContent": [],
+      "readingTime": 2,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
       "title": "Content",
       "permalink": "/content/intro/",
       "categories": [
@@ -642,7 +664,9 @@
     "lottie",
     "organise docs",
     "scrollspy",
-    "video"
+    "table",
+    "video",
+    "xls"
   ],
   "tagDetails": {
     "alert": {
@@ -865,12 +889,32 @@
       ],
       "numPages": 1
     },
+    "table": {
+      "pages": [
+        {
+          "title": "XLSX Tables",
+          "permalink": "/components/xlsx-tables/",
+          "lastUpdate": "24-Jul-2025"
+        }
+      ],
+      "numPages": 1
+    },
     "video": {
       "pages": [
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
           "lastUpdate": "22-Jul-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "xls": {
+      "pages": [
+        {
+          "title": "XLSX Tables",
+          "permalink": "/components/xlsx-tables/",
+          "lastUpdate": "24-Jul-2025"
         }
       ],
       "numPages": 1
@@ -923,9 +967,14 @@
           "title": "Scroll Spy & Tabs",
           "permalink": "/components/scrollspy/",
           "lastUpdate": "22-Jul-2025"
+        },
+        {
+          "title": "XLSX Tables",
+          "permalink": "/components/xlsx-tables/",
+          "lastUpdate": "24-Jul-2025"
         }
       ],
-      "numPages": 8
+      "numPages": 9
     },
     "Content": {
       "pages": [
