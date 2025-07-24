@@ -24,6 +24,16 @@ jobs:
         with:
           ruby-version: '3.1'
           bundler-cache: true
+      
+      - name: Setup Python (if pyEnable is set)
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+
+      - name: Install Python minimal dependencies (if pyEnable is set)
+        run: |
+          python -m pip install --upgrade pip
+          pip install openpyxl
 
       - name: Setup Pages
         id: pages
