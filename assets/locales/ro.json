@@ -460,6 +460,7 @@
     "elements_figma_wrong_file_type_alert_file_type_not_accepted_text": "nu este acceptat de componenta elements/figma.html",
     "elements_downloads_download_completed": "Descarcare completa! Fisierul este in folderul downloads, %s.",
     "elements_downloads_download_failed": "Eraore la descarcarea fisierului %s!",
-    "elements_downloads_download_file_not_found": "Nu am gasit fisierul %s!"
+    "elements_downloads_download_file_not_found": "Nu am gasit fisierul %s!",
+    "elements_xlsx_tables_show_per_page": "Arata"
 
 }
