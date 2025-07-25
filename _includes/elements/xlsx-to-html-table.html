@@ -87,7 +87,8 @@
             $('.dt-buttons').find('button').removeClass('btn-sm btn-secondary mb-2').addClass('border-0 mb-0 btn-primary');
             $('.tab-features-button-{{tid}} span').addClass('text-light');
 
-.          },
+            table.columns.adjust().draw();
+          },
           null,
           {
             ignoreSaveState: true,
@@ -98,7 +99,9 @@
           },
           null,
           preFlight.envInfo,
-          ()=>{ $('#xlsx-table-{{tid}}').wrap('<div style="overflow: auto; position: relative; width:100%"></div>'); },
+          ()=>{ 
+            $('#xlsx-table-{{tid}}').wrap('<div style="overflow: auto; position: relative; width:100%"></div>'); 
+          },
           null,
           null
         );
