@@ -231,5 +231,11 @@ module Globals
 
         result
     end
-      
+    
+    def self.extract_directory_from_path(path)
+        # Remove query parameters and fragment identifiers
+        clean_path = path.split(/[?#]/).first
+        File.dirname(clean_path)
+    end
+
 end
