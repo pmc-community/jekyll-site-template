@@ -305,7 +305,15 @@ def create_plotly_chart(chart_data):
         title=chart_data['chart'],
         xaxis_title=chart_data.get('category_axis_title'),
         yaxis_title=chart_data.get('value_axis_title'),
-        hovermode="x unified"
+        hovermode="x unified",
+        # Added lines for legend positioning
+        legend=dict(
+            orientation="h", # Horizontal orientation
+            yanchor="top",   # Anchor legend's top to y position
+            y=-0.2,          # Position below the plot area. Adjust as needed.
+            xanchor="center", # Center legend horizontally
+            x=0.5             # Center legend horizontally
+        )
     )
 
     return fig.to_html(full_html=True)
