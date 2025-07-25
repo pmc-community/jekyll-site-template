@@ -1,0 +1,9 @@
+<script src="https://cdn.plot.ly/plotly-3.1.0-rc.0.min.js"></script>
+
+{% assign file = include.file %}
+{% assign sheet = include.sheet %}
+{% assign chart = include.chart %}
+{% assign source = include.source %}
+
+{% XLSXToHtmlChart "{{file}}" "{{sheet}}" "{{chart}}" "{{source}}" %}
+

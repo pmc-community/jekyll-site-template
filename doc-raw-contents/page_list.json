@@ -177,6 +177,29 @@
     "parent": ""
   },
   {
+    "title": "XLSX Charts",
+    "permalink": "/components/xlsx-charts/",
+    "categories": [
+      "Components"
+    ],
+    "tags": [
+      "table",
+      "xls",
+      "chart"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-07-25 21:16:27 +0300",
+    "lastUpdateUTC": 1753467387,
+    "createTime": "2025-07-25 18:16:41 +0300",
+    "createTimeUTC": 1753456601,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
     "title": "XLSX Tables",
     "permalink": "/components/xlsx-tables/",
     "categories": [

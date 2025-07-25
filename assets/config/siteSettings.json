@@ -479,6 +479,34 @@
       "parent": ""
     },
     {
+      "title": "XLSX Charts",
+      "permalink": "/components/xlsx-charts/",
+      "categories": [
+        "Components"
+      ],
+      "tags": [
+        "table",
+        "xls",
+        "chart"
+      ],
+      "excerpt": "finally",
+      "lastUpdate": "2025-07-25 21:16:27 +0300",
+      "lastUpdateUTC": 1753467387,
+      "createTime": "2025-07-25 18:16:41 +0300",
+      "createTimeUTC": 1753456601,
+      "relatedPages": [
+        {
+          "title": "XLSX Tables",
+          "permalink": "/components/xlsx-tables/"
+        }
+      ],
+      "autoSummary": "Write a concise, factual summary in English with no greetings or instructions, maximum 50 words, for the following text. Write a new text for the next text.",
+      "similarByContent": [],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
       "title": "XLSX Tables",
       "permalink": "/components/xlsx-tables/",
       "categories": [
@@ -493,7 +521,12 @@
       "lastUpdateUTC": 1753445877,
       "createTime": "2025-07-25 15:17:57 +0300",
       "createTimeUTC": 1753445877,
-      "relatedPages": [],
+      "relatedPages": [
+        {
+          "title": "XLSX Charts",
+          "permalink": "/components/xlsx-charts/"
+        }
+      ],
       "autoSummary": "Tables can be imported directly from excel. When a table contains merged cells, it will be rendered as table, regardless of the value of the.",
       "similarByContent": [],
       "readingTime": 3,
@@ -649,6 +682,7 @@
     "alert",
     "anchor",
     "button",
+    "chart",
     "content",
     "docs",
     "documentation",
@@ -703,6 +737,16 @@
         }
       ],
       "numPages": 2
+    },
+    "chart": {
+      "pages": [
+        {
+          "title": "XLSX Charts",
+          "permalink": "/components/xlsx-charts/",
+          "lastUpdate": "25-Jul-2025"
+        }
+      ],
+      "numPages": 1
     },
     "content": {
       "pages": [
@@ -892,12 +936,17 @@
     "table": {
       "pages": [
         {
+          "title": "XLSX Charts",
+          "permalink": "/components/xlsx-charts/",
+          "lastUpdate": "25-Jul-2025"
+        },
+        {
           "title": "XLSX Tables",
           "permalink": "/components/xlsx-tables/",
           "lastUpdate": "25-Jul-2025"
         }
       ],
-      "numPages": 1
+      "numPages": 2
     },
     "video": {
       "pages": [
@@ -912,12 +961,17 @@
     "xls": {
       "pages": [
         {
+          "title": "XLSX Charts",
+          "permalink": "/components/xlsx-charts/",
+          "lastUpdate": "25-Jul-2025"
+        },
+        {
           "title": "XLSX Tables",
           "permalink": "/components/xlsx-tables/",
           "lastUpdate": "25-Jul-2025"
         }
       ],
-      "numPages": 1
+      "numPages": 2
     }
   },
   "catList": [
@@ -969,12 +1023,17 @@
           "lastUpdate": "25-Jul-2025"
         },
         {
+          "title": "XLSX Charts",
+          "permalink": "/components/xlsx-charts/",
+          "lastUpdate": "25-Jul-2025"
+        },
+        {
           "title": "XLSX Tables",
           "permalink": "/components/xlsx-tables/",
           "lastUpdate": "25-Jul-2025"
         }
       ],
-      "numPages": 9
+      "numPages": 10
     },
     "Content": {
       "pages": [

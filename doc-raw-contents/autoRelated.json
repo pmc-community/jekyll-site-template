@@ -115,8 +115,22 @@
     "related": []
   },
   {
+    "permalink": "/components/xlsx-charts/",
+    "related": [
+      {
+        "title": "XLSX Tables",
+        "permalink": "/components/xlsx-tables/"
+      }
+    ]
+  },
+  {
     "permalink": "/components/xlsx-tables/",
-    "related": []
+    "related": [
+      {
+        "title": "XLSX Charts",
+        "permalink": "/components/xlsx-charts/"
+      }
+    ]
   },
   {
     "permalink": "/content/intro/",

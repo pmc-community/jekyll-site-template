@@ -55,6 +55,10 @@
         {
             "permalink": "/components/xlsx-tables/",
             "summary": "Tables can be imported directly from excel. When a table contains merged cells, it will be rendered as table, regardless of the value of the."
+        },
+        {
+            "permalink": "/components/xlsx-charts/",
+            "summary": "Write a concise, factual summary in English with no greetings or instructions, maximum 50 words, for the following text. Write a new text for the next text."
         }
     ]
 }
