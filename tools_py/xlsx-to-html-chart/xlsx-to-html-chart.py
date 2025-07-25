@@ -316,7 +316,7 @@ def create_plotly_chart(chart_data):
         )
     )
 
-    return fig.to_html(full_html=True)
+    return fig.to_html(full_html=False, config={'responsive': True, 'displaylogo': False})
 
 
 if __name__ == "__main__":
