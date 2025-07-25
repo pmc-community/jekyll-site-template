@@ -447,6 +447,13 @@
     "elements_downloads_download_completed": "Download completed! The file is in downloads folder, %s.",
     "elements_downloads_download_failed": "Download failed for file %s!",
     "elements_downloads_download_file_not_found": "File %s not found!",
-    "elements_xlsx_tables_show_per_page": "Show"
+    "elements_xlsx_tables_show_per_page": "Show",
+    "elements_xlsx_tables_features_btn_text": "Features",
+    "elements_xlsx_tables_features_copy": "Copy",
+    "elements_xlsx_tables_features_csv": "CSV",
+    "elements_xlsx_tables_features_excel": "Excel",
+    "elements_xlsx_tables_features_pdf": "PDF",
+    "elements_xlsx_tables_features_filter": "Filter",
+    "elements_xlsx_tables_features_search":"Search"
 }
 

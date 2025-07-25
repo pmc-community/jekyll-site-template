@@ -1,3 +1,4 @@
+
 {% capture uuid %}
   {% UUID %}
 {% endcapture %}
@@ -14,7 +15,7 @@
 {% if file and range and sheet and source %}
   <div class="d-flex justify-content-start align-items-center" id="xlsx-table-length-container-{{tid}}">
     <span data-i18n="elements_xlsx_tables_show_per_page" class="mr-2">Show</span>
-      <select name="xlsx-table-length-{{tid}}" aria-controls="xlsx-table-{{tid}}" class="w-auto d-inline-block form-select form-select-sm" style="height: auto" id="xlsx-table-length-{{tid}}">
+      <select name="xlsx-table-length-{{tid}}" aria-controls="xlsx-table-{{tid}}" class="w-auto d-inline-block form-select form-select-sm" id="xlsx-table-length-{{tid}}">
         <option value="5">5</option>
         <option value="10">10</option>
         <option value="25">25</option>
@@ -61,16 +62,44 @@
             $('.dt-buttons').prependTo($('.dt-info').parent());
             $('.dt-info').remove();
             $('.dt-buttons').parent().addClass('d-flex align-items-center mt-auto');
+            $('.dt-buttons').find('button').removeClass('btn-sm btn-secondary').addClass('btn-primary');
+            $('.dt-buttons').removeClass('btn-group');
+
+            const buttons = [
+              { extend: 'collection',
+                text: i18next.t('elements_xlsx_tables_features_btn_text'),
+                className: 'tab-features-button-{{tid}}',
+                buttons: [
+                  { extend: 'copyHtml5', text: i18next.t('elements_xlsx_tables_features_copy') },
+                  { extend: 'csvHtml5', text: i18next.t('elements_xlsx_tables_features_csv') },
+                  { extend: 'excelHtml5', text: i18next.t('elements_xlsx_tables_features_excel') },
+                  { extend: 'pdfHtml5', text: i18next.t('elements_xlsx_tables_features_pdf')},
+                  { extend: 'searchPanes', text: i18next.t('elements_xlsx_tables_features_filter')},
+                  { extend: 'searchBuilder', text: i18next.t('elements_xlsx_tables_features_search')}
+                ]
+              }
+            ];
+
+            buttons.forEach(btnConfig => {
+              table.button().add(null, btnConfig);
+            });
+
+            $('.dt-buttons').find('button').removeClass('btn-sm btn-secondary mb-2').addClass('border-0 mb-0 btn-primary');
+            $('.tab-features-button-{{tid}} span').addClass('text-light');
+
+            table.colums.adjust().draw();
           },
           null,
           {
             ignoreSaveState: true,
             autoWidth: true,
             scrollCollapse: false,
+           
+            
           },
           null,
           preFlight.envInfo,
-          null,
+          ()=>{ $('#xlsx-table-{{tid}}').wrap('<div style="overflow: auto; position: relative; width:100%"></div>'); },
           null,
           null
         );
@@ -78,7 +107,8 @@
         $('#xlsx-table-controls-{{tid}}').remove();
         $('#xlsx-table-length-container-{{tid}}').remove();
         $('#xlsx-table-pagination-script-{{tid}}').remove();
-        
+        applyColorSchemaCorrections();
+
       },0); 
     }
   </script>

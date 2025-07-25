@@ -461,6 +461,13 @@
     "elements_downloads_download_completed": "Descarcare completa! Fisierul este in folderul downloads, %s.",
     "elements_downloads_download_failed": "Eraore la descarcarea fisierului %s!",
     "elements_downloads_download_file_not_found": "Nu am gasit fisierul %s!",
-    "elements_xlsx_tables_show_per_page": "Arata"
+    "elements_xlsx_tables_show_per_page": "Arata",
+    "elements_xlsx_tables_features_btn_text": "Utile",
+     "elements_xlsx_tables_features_copy": "Copiere",
+    "elements_xlsx_tables_features_csv": "CSV",
+    "elements_xlsx_tables_features_excel": "Excel",
+    "elements_xlsx_tables_features_pdf": "PDF",
+    "elements_xlsx_tables_features_filter": "Filtre",
+    "elements_xlsx_tables_features_search":"Cautare"
 
 }

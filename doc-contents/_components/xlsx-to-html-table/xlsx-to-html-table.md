@@ -16,7 +16,7 @@ The component offers two types of tables:
 
 When `simple` parameter is set to true, the table will be rendered as `simple`table. When the table contains merged cells, then it will be rendered as `simple` table, regardless of the value of the `simple` parameter.
 
-- For `featured` tables, this component provides `columns selection` and `sorting`, `pagination` and `table search`. For `simple` tables some of these features are not available (`columns selection` and `sorting`).
+- For `featured` tables, this component provides `columns selection` and `sorting`, `pagination`, `table search and filtering` and `export options`. For `simple` tables some of these features are not available.
 - In all cases, the imported table `preserves the horizontal alignment` of values in cells, so feel free to do whatever alignment you need directly in Excel. 
 - In all cases, the imported table `captures the values of the calculated cells` (the last saved calculated values), so feel free to use whatever formulas you need to create your table in Excel, all values will be correctly imported.
 - In all cases, the `hidden rows in Excel are skipped`, so, when do you don't want to import some rows (maybe due confidentiality reasons), just hide them in Excel
@@ -93,5 +93,5 @@ Here is an example of a `featured` table with head, without merged cells on rows
 - `range`: the portion of the table which is imported. Remember that the first row is always assumed as the table header.
 - `sheet`: the sheet where the table is located inside the workbook
 - `source`: the parent document, including its relative path to the root of the site directory. `DO NOT CHANGE THIS PARAMETER !!!`
-- `simple`: specify if the table is rendered as simple table, without features like, `search` or `columns selector`. If the table contains merged cells, this parameter will not have any influence. Its default value is `true`, but is ignored in the case of detecting merged cells.
+- `simple`: specify if the table is rendered as simple table. If the table contains merged cells, this parameter will not have any influence. Its default value is `true`, but is ignored in the case of detecting merged cells.
 - `showHead`: specify if the table head is shown or not. The default value is `true`. Remember that `always, the first row is considered as table header`. So, if you want to not see the head but to have all needed rows on screen, extend the `range` with one row above and set `showHead="false"`
