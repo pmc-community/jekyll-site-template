@@ -1,3 +1,4 @@
+
 {% capture uuid %}
   {% UUID %}
 {% endcapture %}
@@ -9,6 +10,7 @@
 {% assign source = include.source %}
 {% assign border = include.border || default: "false" %}
 
+
 {% if border == "false" %}
  {% assign borderClass = "border-0" %}
 {% else %}
@@ -16,15 +18,17 @@
 {% endif %}
 
 {% if file and sheet and chart and source %}
+
  <div id="xlsx-chart-{{chid}}" class="{{borderClass}}">
     {% XLSXToHtmlChart "{{file}}" "{{sheet}}" "{{chart}}" "{{source}}" %}
  </div>
-
+ 
  <style>
     .plotly-notifier {
         display: none !important
     }
  </style>
+
 {%else%}
  {% assign mess="Something went wrong when building chart from source: file=" | append: file | append: " sheet=" | append: sheet | append: " chart=" | append: chart %}
  {% include elements/alert.html class="danger" content=mess title="Error" %}
