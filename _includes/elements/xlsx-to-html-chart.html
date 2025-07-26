@@ -19,6 +19,12 @@
  <div id="xlsx-chart-{{chid}}" class="{{borderClass}}">
     {% XLSXToHtmlChart "{{file}}" "{{sheet}}" "{{chart}}" "{{source}}" %}
  </div>
+
+ <style>
+    .plotly-notifier {
+        display: none !important
+    }
+ </style>
 {%else%}
  {% assign mess="Something went wrong when building chart from source: file=" | append: file | append: " sheet=" | append: sheet | append: " chart=" | append: chart %}
  {% include elements/alert.html class="danger" content=mess title="Error" %}
