@@ -4,8 +4,8 @@
 {% assign source = include.source %}
 
 {% if file and sheet and chart and source %}
- {% XLSXToHtmlChart "{{file}}" "{{sheet}}" "{{chart}}" "{{source}}" %}
-{% else %}
+  {% XLSXToHtmlChart "{{file}}" "{{sheet}}" "{{chart}}" "{{source}}" %}
+{%else%}
  {% assign mess="Something went wrong when building chart from source: file=" | append: file | append: " sheet=" | append: sheet | append: " chart=" | append: chart %}
  {% include elements/alert.html class="danger" content=mess title="Error" %}
 {% endif %}
