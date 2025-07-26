@@ -68,7 +68,7 @@ Observe that the excel files are located in the same folder as the parent docume
     border="true"
 %}
 
-## Bar chart (vertical)
+## Line chart
 
 {% raw %}
 ```javascript
