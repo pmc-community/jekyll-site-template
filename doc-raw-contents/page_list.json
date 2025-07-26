@@ -109,6 +109,28 @@
     "parent": ""
   },
   {
+    "title": "Image",
+    "permalink": "/components/image/",
+    "categories": [
+      "Components"
+    ],
+    "tags": [
+      "image",
+      "component"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-07-26 18:30:59 +0300",
+    "lastUpdateUTC": 1753543859,
+    "createTime": "2025-07-26 18:27:50 +0300",
+    "createTimeUTC": 1753543670,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
     "title": "Link button",
     "permalink": "/components/link-button/",
     "categories": [

@@ -1,0 +1,38 @@
+{% capture siteLanguage %}
+    {% SiteLanguage %}
+{% endcapture %}
+
+{% assign lang_path = siteLanguage | strip %}
+{% assign lang_prefix = '' %}
+{% unless lang_path == '' %}
+  {% assign lang_prefix = '/' | append: lang_path %}
+{% endunless %}
+
+{% assign source = include.source %}
+{% assign caption = include.caption %}
+
+{% if source %}
+ {% capture fullPath %}
+    {% ImgFullPath {{source}} %}
+ {% endcapture %}
+
+ {% assign full_path = lang_prefix | append: fullPath %}
+
+ {% assign alt = "" %}
+ {% if caption %}
+  {% assign alt = "alt='" | append: caption | append: "'" %}
+ {% endif %}
+
+ <figure class="figure">
+  <img src="{{full_path}}" class="figure-img img-fluid rounded" {{alt}}>
+  
+  {% if caption %}
+   <figcaption class="figure-caption ghbtnLink text-secondary">{{caption}}</figcaption>
+  {% endif %}
+ 
+</figure>
+
+{% else %}
+ {% assign mess="Something went wrong when looking for image from source=" | append: source %}
+ {% include elements/alert.html class="danger" content=mess title="Error" %}
+{% endif %}

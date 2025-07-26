@@ -196,6 +196,13 @@
         "simple",
         "create"
       ]
+    },
+    {
+      "permalink": "/components/image/",
+      "keywords": [
+        "test",
+        "image"
+      ]
     }
   ]
 }

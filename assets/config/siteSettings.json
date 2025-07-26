@@ -389,6 +389,28 @@
       "parent": ""
     },
     {
+      "title": "Image",
+      "permalink": "/components/image/",
+      "categories": [
+        "Components"
+      ],
+      "tags": [
+        "image",
+        "component"
+      ],
+      "excerpt": "test, image",
+      "lastUpdate": "2025-07-26 18:30:59 +0300",
+      "lastUpdateUTC": 1753543859,
+      "createTime": "2025-07-26 18:27:50 +0300",
+      "createTimeUTC": 1753543670,
+      "relatedPages": [],
+      "autoSummary": "Write a concise, factual summary in Estonian with no greetings or instructions, maximum 50 words, for the following text. Write a brief summary of the events that have happened in the last 24 hours.",
+      "similarByContent": [],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
       "title": "Link button",
       "permalink": "/components/link-button/",
       "categories": [
@@ -568,6 +590,10 @@
         {
           "title": "Get started",
           "permalink": "/get-started/"
+        },
+        {
+          "title": "Introduction",
+          "permalink": "/intro/"
         }
       ],
       "autoSummary": "There are two types of content that you can use in your documents:. Content directly included in your document or content imported from. External sources are very important because allows you to create reusable pieces of content.",
@@ -676,6 +702,10 @@
         {
           "title": "Get started",
           "permalink": "/get-started/"
+        },
+        {
+          "title": "Content",
+          "permalink": "/content/intro/"
         }
       ],
       "autoSummary": "Documentation site builder guide is a comprehensive resource for learning how to create, build, and maintain high-quality documentation sites. This guide will walk you through everything you need to know about building a complete, maintainable, and professional documentation site.",
@@ -695,6 +725,7 @@
     "anchor",
     "button",
     "chart",
+    "component",
     "content",
     "docs",
     "documentation",
@@ -704,6 +735,7 @@
     "faq",
     "figma",
     "file",
+    "image",
     "import",
     "items",
     "link",
@@ -755,6 +787,16 @@
         {
           "title": "XLSX Charts",
           "permalink": "/components/xlsx-charts/",
+          "lastUpdate": "26-Jul-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "component": {
+      "pages": [
+        {
+          "title": "Image",
+          "permalink": "/components/image/",
           "lastUpdate": "26-Jul-2025"
         }
       ],
@@ -875,6 +917,16 @@
         {
           "title": "Downloads",
           "permalink": "/components/download-link/",
+          "lastUpdate": "26-Jul-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "image": {
+      "pages": [
+        {
+          "title": "Image",
+          "permalink": "/components/image/",
           "lastUpdate": "26-Jul-2025"
         }
       ],
@@ -1020,6 +1072,11 @@
           "lastUpdate": "26-Jul-2025"
         },
         {
+          "title": "Image",
+          "permalink": "/components/image/",
+          "lastUpdate": "26-Jul-2025"
+        },
+        {
           "title": "Link button",
           "permalink": "/components/link-button/",
           "lastUpdate": "26-Jul-2025"
@@ -1045,7 +1102,7 @@
           "lastUpdate": "26-Jul-2025"
         }
       ],
-      "numPages": 10
+      "numPages": 11
     },
     "Content": {
       "pages": [

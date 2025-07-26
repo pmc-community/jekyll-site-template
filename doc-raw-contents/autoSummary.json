@@ -59,6 +59,10 @@
         {
             "permalink": "/components/xlsx-charts/",
             "summary": "This component allows importing excel charts into your documents. Currently we support only:. Line charts column and bar charts pie and doughnut charts. We do not support importing the colors you assign to the series in the excel chart."
+        },
+        {
+            "permalink": "/components/image/",
+            "summary": "Write a concise, factual summary in Estonian with no greetings or instructions, maximum 50 words, for the following text. Write a brief summary of the events that have happened in the last 24 hours."
         }
     ]
 }
