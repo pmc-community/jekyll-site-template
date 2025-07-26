@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Content items
-permalink: /components/content-items/
+permalink: /content/content-items/
 categories: [Components]
 tags: [items, content]
 ---
