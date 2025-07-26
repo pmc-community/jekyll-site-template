@@ -1,0 +1,25 @@
+{% capture uuid %}
+  {% UUID %}
+{% endcapture %}
+{% assign chid = uuid | strip %}
+
+{% assign file = include.file %}
+{% assign sheet = include.sheet %}
+{% assign chart = include.chart %}
+{% assign source = include.source %}
+{% assign border = include.border || default: "false" %}
+
+{% if border == "false" %}
+ {% assign borderClass = "border-0" %}
+{% else %}
+ {% assign borderClass = "border border-secondary border-opacity-25 rounded shadow-none" %}
+{% endif %}
+
+{% if file and sheet and chart and source %}
+ <div id="xlsx-chart-{{chid}}" class="{{borderClass}}">
+    {% XLSXToHtmlChart "{{file}}" "{{sheet}}" "{{chart}}" "{{source}}" %}
+ </div>
+{%else%}
+ {% assign mess="Something went wrong when building chart from source: file=" | append: file | append: " sheet=" | append: sheet | append: " chart=" | append: chart %}
+ {% include elements/alert.html class="danger" content=mess title="Error" %}
+{% endif %}
