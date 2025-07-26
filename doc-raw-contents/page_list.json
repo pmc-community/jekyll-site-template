@@ -41,28 +41,6 @@
     "parent": ""
   },
   {
-    "title": "Content items",
-    "permalink": "/components/content-items/",
-    "categories": [
-      "Components"
-    ],
-    "tags": [
-      "items",
-      "content"
-    ],
-    "excerpt": "",
-    "lastUpdate": "2025-07-26 17:16:00 +0300",
-    "lastUpdateUTC": 1753539360,
-    "createTime": "2025-07-26 13:00:18 +0300",
-    "createTimeUTC": 1753524018,
-    "relatedPages": [],
-    "autoSummary": "",
-    "similarByContent": [],
-    "readingTime": 0,
-    "hasDynamicContent": false,
-    "parent": ""
-  },
-  {
     "title": "Downloads",
     "permalink": "/components/download-link/",
     "categories": [
@@ -244,6 +222,28 @@
     "parent": ""
   },
   {
+    "title": "Content items",
+    "permalink": "/content/content-items/",
+    "categories": [
+      "Components"
+    ],
+    "tags": [
+      "items",
+      "content"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-07-26 22:43:33 +0300",
+    "lastUpdateUTC": 1753559013,
+    "createTime": "2025-07-26 13:00:18 +0300",
+    "createTimeUTC": 1753524018,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
     "title": "Content",
     "permalink": "/content/intro/",
     "categories": [
@@ -254,8 +254,8 @@
       "organise docs"
     ],
     "excerpt": "",
-    "lastUpdate": "2025-07-26 13:00:18 +0300",
-    "lastUpdateUTC": 1753524018,
+    "lastUpdate": "2025-07-26 22:43:29 +0300",
+    "lastUpdateUTC": 1753559009,
     "createTime": "2025-07-26 13:00:18 +0300",
     "createTimeUTC": 1753524018,
     "relatedPages": [],

@@ -286,41 +286,6 @@
       "parent": ""
     },
     {
-      "title": "Content items",
-      "permalink": "/components/content-items/",
-      "categories": [
-        "Components"
-      ],
-      "tags": [
-        "items",
-        "content"
-      ],
-      "excerpt": "docaroo, series, content, items, enrich, documents, efficient, incorporate, piecers",
-      "lastUpdate": "2025-07-26 17:16:00 +0300",
-      "lastUpdateUTC": 1753539360,
-      "createTime": "2025-07-26 13:00:18 +0300",
-      "createTimeUTC": 1753524018,
-      "relatedPages": [
-        {
-          "title": "Components",
-          "permalink": "/components/intro/"
-        },
-        {
-          "title": "External content",
-          "permalink": "/content/ec/"
-        },
-        {
-          "title": "Rich media",
-          "permalink": "/components/rich-media/"
-        }
-      ],
-      "autoSummary": "Docaroo makes available a series of content items that can be used to enrich your documents and to be very efficient when wanting to incorporate piecers of content in a fast and robust way.",
-      "similarByContent": [],
-      "readingTime": 2,
-      "hasDynamicContent": false,
-      "parent": ""
-    },
-    {
       "title": "Downloads",
       "permalink": "/components/download-link/",
       "categories": [
@@ -531,7 +496,7 @@
         },
         {
           "title": "Content items",
-          "permalink": "/components/content-items/"
+          "permalink": "/content/content-items/"
         }
       ],
       "autoSummary": "This component allows importing excel charts into your documents. Currently we support only:. Line charts column and bar charts pie and doughnut charts. We do not support importing the colors you assign to the series in the excel chart.",
@@ -568,6 +533,41 @@
       "parent": ""
     },
     {
+      "title": "Content items",
+      "permalink": "/content/content-items/",
+      "categories": [
+        "Components"
+      ],
+      "tags": [
+        "items",
+        "content"
+      ],
+      "excerpt": "docaroo, series, content, items, enrich, documents, efficient, incorporate, piecers",
+      "lastUpdate": "2025-07-26 22:43:33 +0300",
+      "lastUpdateUTC": 1753559013,
+      "createTime": "2025-07-26 13:00:18 +0300",
+      "createTimeUTC": 1753524018,
+      "relatedPages": [
+        {
+          "title": "Components",
+          "permalink": "/components/intro/"
+        },
+        {
+          "title": "External content",
+          "permalink": "/content/ec/"
+        },
+        {
+          "title": "Rich media",
+          "permalink": "/components/rich-media/"
+        }
+      ],
+      "autoSummary": "Docaroo makes available a series of content items that can be used to enrich your documents and to be very efficient when wanting to incorporate piecers of content in a fast and robust way.",
+      "similarByContent": [],
+      "readingTime": 2,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
       "title": "Content",
       "permalink": "/content/intro/",
       "categories": [
@@ -578,8 +578,8 @@
         "organise docs"
       ],
       "excerpt": "learn, structure, content, efficient, secret, maximum, extent, features, importing, external",
-      "lastUpdate": "2025-07-26 13:00:18 +0300",
-      "lastUpdateUTC": 1753524018,
+      "lastUpdate": "2025-07-26 22:43:29 +0300",
+      "lastUpdateUTC": 1753559009,
       "createTime": "2025-07-26 13:00:18 +0300",
       "createTimeUTC": 1753524018,
       "relatedPages": [
@@ -806,7 +806,7 @@
       "pages": [
         {
           "title": "Content items",
-          "permalink": "/components/content-items/",
+          "permalink": "/content/content-items/",
           "lastUpdate": "26-Jul-2025"
         }
       ],
@@ -946,7 +946,7 @@
       "pages": [
         {
           "title": "Content items",
-          "permalink": "/components/content-items/",
+          "permalink": "/content/content-items/",
           "lastUpdate": "26-Jul-2025"
         }
       ],
@@ -1057,11 +1057,6 @@
           "lastUpdate": "26-Jul-2025"
         },
         {
-          "title": "Content items",
-          "permalink": "/components/content-items/",
-          "lastUpdate": "26-Jul-2025"
-        },
-        {
           "title": "Downloads",
           "permalink": "/components/download-link/",
           "lastUpdate": "26-Jul-2025"
@@ -1099,6 +1094,11 @@
         {
           "title": "XLSX Tables",
           "permalink": "/components/xlsx-tables/",
+          "lastUpdate": "26-Jul-2025"
+        },
+        {
+          "title": "Content items",
+          "permalink": "/content/content-items/",
           "lastUpdate": "26-Jul-2025"
         }
       ],

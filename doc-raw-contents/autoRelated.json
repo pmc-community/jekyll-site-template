@@ -34,23 +34,6 @@
     ]
   },
   {
-    "permalink": "/components/content-items/",
-    "related": [
-      {
-        "title": "Components",
-        "permalink": "/components/intro/"
-      },
-      {
-        "title": "External content",
-        "permalink": "/content/ec/"
-      },
-      {
-        "title": "Rich media",
-        "permalink": "/components/rich-media/"
-      }
-    ]
-  },
-  {
     "permalink": "/components/download-link/",
     "related": [
       {
@@ -135,7 +118,7 @@
       },
       {
         "title": "Content items",
-        "permalink": "/components/content-items/"
+        "permalink": "/content/content-items/"
       }
     ]
   },
@@ -145,6 +128,23 @@
       {
         "title": "XLSX Charts",
         "permalink": "/components/xlsx-charts/"
+      }
+    ]
+  },
+  {
+    "permalink": "/content/content-items/",
+    "related": [
+      {
+        "title": "Components",
+        "permalink": "/components/intro/"
+      },
+      {
+        "title": "External content",
+        "permalink": "/content/ec/"
+      },
+      {
+        "title": "Rich media",
+        "permalink": "/components/rich-media/"
       }
     ]
   },

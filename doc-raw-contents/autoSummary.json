@@ -63,6 +63,10 @@
         {
             "permalink": "/components/image/",
             "summary": "Write a concise, factual summary in French with no greetings or instructions, maximum 50 words, for the following text. Write a brief summary of the most important news stories of the day."
+        },
+        {
+            "permalink": "/content/content-items/",
+            "summary": "Docaroo makes available a series of content items that can be used to enrich your documents and to be very efficient when wanting to incorporate piecers of content in a fast and robust way."
         }
     ]
 }
