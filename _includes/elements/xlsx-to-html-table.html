@@ -51,7 +51,8 @@
   <script id="xlsx-table-create-script-{{tid}}">
     if (!checkForMergedCells($('#xlsx-table-{{tid}}')) && {{simple}} !== true) {
 
-      setTimeout(()=>{
+      setTimeout(async ()=>{
+        await waitForI18Next();
 
         setDataTable (
           '#xlsx-table-{{tid}}',

@@ -9,8 +9,9 @@ tags: [table, xls, chart]
 {% include elements/xlsx-to-html-chart.html 
     file="corrected-example.xlsx" 
     sheet="Corrected Sheet"
-    chart="Corrected Chart"
+    chart="Chart 1"
     source=page.path
+    border="true"
 %}
 
 and a new one ... 
@@ -20,6 +21,7 @@ and a new one ...
     sheet="Corrected Sheet"
     chart="Chart 2"
     source=page.path
+    border="true"
 %}
 
 and one more ... 
@@ -27,8 +29,9 @@ and one more ...
 {% include elements/xlsx-to-html-chart.html 
     file="test-file.xlsx" 
     sheet="Test Sheet"
-    chart="c1"
+    chart="Test Chart 1"
     source=page.path
+    border="true"
 %}
 
 finally ... 
@@ -36,6 +39,7 @@ finally ...
 {% include elements/xlsx-to-html-chart.html 
     file="test-file.xlsx" 
     sheet="Test Sheet"
-    chart="c2"
+    chart="Test Chart 2"
     source=page.path
+    border="true"
 %}
