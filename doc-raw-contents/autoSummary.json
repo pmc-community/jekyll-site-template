@@ -30,7 +30,7 @@
         },
         {
             "permalink": "/intro/",
-            "summary": "This guide will walk you through everything you need to know about building a complete, maintainable, and professional documentation site from scratch. This guide is suitable for:. Developers who want to document apis, libraries, or frameworks product teams building internal or customer-facing documentation technical writers looking to improve structure and."
+            "summary": "Documentation site builder guide is a comprehensive resource for learning how to create, build, and maintain high-quality documentation sites. This guide will walk you through everything you need to know about building a complete, maintainable, and professional documentation site."
         },
         {
             "permalink": "/get-started/",
@@ -42,7 +42,7 @@
         },
         {
             "permalink": "/components/content-items/",
-            "summary": "Documentation is written in English with no greetings or instructions, maximum 50 words, for the following text:: docaroo makes available a series of content items that can be used to enrich your documents."
+            "summary": "Docaroo makes available a series of content items that can be used to enrich your documents and to be very efficient when wanting to incorporate piecers of content in a fast and robust way."
         },
         {
             "permalink": "/components/downloads/",

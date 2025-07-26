@@ -295,9 +295,9 @@
         "items",
         "content"
       ],
-      "excerpt": "docaroo, series, content, items, enrich, documents, effiient, incorporate, piecers",
-      "lastUpdate": "2025-07-26 13:09:48 +0300",
-      "lastUpdateUTC": 1753524588,
+      "excerpt": "docaroo, series, content, items, enrich, documents, efficient, incorporate, piecers",
+      "lastUpdate": "2025-07-26 17:16:00 +0300",
+      "lastUpdateUTC": 1753539360,
       "createTime": "2025-07-26 13:00:18 +0300",
       "createTimeUTC": 1753524018,
       "relatedPages": [
@@ -314,7 +314,7 @@
           "permalink": "/components/rich-media/"
         }
       ],
-      "autoSummary": "Documentation is written in English with no greetings or instructions, maximum 50 words, for the following text:: docaroo makes available a series of content items that can be used to enrich your documents.",
+      "autoSummary": "Docaroo makes available a series of content items that can be used to enrich your documents and to be very efficient when wanting to incorporate piecers of content in a fast and robust way.",
       "similarByContent": [],
       "readingTime": 2,
       "hasDynamicContent": false,
@@ -668,8 +668,8 @@
         "docs"
       ],
       "excerpt": "documentation, builder, guide, comprehensive, resource, learning, create, build, maintain, quality",
-      "lastUpdate": "2025-07-26 13:00:18 +0300",
-      "lastUpdateUTC": 1753524018,
+      "lastUpdate": "2025-07-26 17:27:20 +0300",
+      "lastUpdateUTC": 1753540040,
       "createTime": "2025-07-26 13:00:18 +0300",
       "createTimeUTC": 1753524018,
       "relatedPages": [
@@ -678,14 +678,14 @@
           "permalink": "/get-started/"
         }
       ],
-      "autoSummary": "This guide will walk you through everything you need to know about building a complete, maintainable, and professional documentation site from scratch. This guide is suitable for:. Developers who want to document apis, libraries, or frameworks product teams building internal or customer-facing documentation technical writers looking to improve structure and.",
+      "autoSummary": "Documentation site builder guide is a comprehensive resource for learning how to create, build, and maintain high-quality documentation sites. This guide will walk you through everything you need to know about building a complete, maintainable, and professional documentation site.",
       "similarByContent": [
         {
           "permalink": "/content/intro/",
           "title": "Content"
         }
       ],
-      "readingTime": 2,
+      "readingTime": 3,
       "hasDynamicContent": false,
       "parent": ""
     }

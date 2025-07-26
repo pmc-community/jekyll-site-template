@@ -7,7 +7,7 @@ tags: [items, content]
 ---
 
 # Summary
-Docaroo makes available a series of content items that can be used to enrich your documents and to be very effiient when wanting to incorporate piecers of content in a fast and robust way. As main difference from the regular `components`, the `content items` are, usually, designed to provide pieces of content 
+Docaroo makes available a series of content items that can be used to enrich your documents and to be very efficient when wanting to incorporate piecers of content in a fast and robust way. As main difference from the regular components, content items are, usually, designed to provide smaller pieces of content that can be incorporated directly in your documents or are used in components.
 
 # Directory structure
 This content item renders the structure of any folder/directory from your documentation project. It us useful when wanting to point out the source of some pats of your documentation. Use it like:
