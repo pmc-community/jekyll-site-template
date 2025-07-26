@@ -6,7 +6,7 @@
         },
         {
             "permalink": "/components/intro/",
-            "summary": "Pre-defined components are elements that can be embedded in your documents using. As it will be shown for each of the next components. Docaroo gives you the following. Components: alert type notifications inside your docs. Different types of rich media such as videos or figma files inside your."
+            "summary": "Learn how to add different pre-defined. Content items to your content. These are elements that can be embedded in your documents using. As it will be shown for each of the next components."
         },
         {
             "permalink": "/components/qitem/",
@@ -58,7 +58,7 @@
         },
         {
             "permalink": "/components/xlsx-charts/",
-            "summary": "Write a concise, factual summary in English with no greetings or instructions, maximum 50 words, for the following text. Write a new text for the next text."
+            "summary": "This component allows importing excel charts into your documents. Currently we support only:. Line charts column and bar charts pie and doughnut charts. We do not support importing the colors you assign to the series in the excel chart."
         }
     ]
 }

@@ -101,9 +101,11 @@
         "pre",
         "defined",
         "content",
-        "components",
         "elements",
-        "embedded"
+        "embedded",
+        "documents",
+        "tags",
+        "components"
       ]
     },
     {
@@ -186,7 +188,13 @@
     {
       "permalink": "/components/xlsx-charts/",
       "keywords": [
-        "finally"
+        "component",
+        "importing",
+        "excel",
+        "charts",
+        "documents",
+        "simple",
+        "create"
       ]
     }
   ]

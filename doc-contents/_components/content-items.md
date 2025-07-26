@@ -33,3 +33,12 @@ However, `when importing content from external repositories, be aware of potenti
 
 {% include elements/link-btn.html type="warning" outline="false" text="Import content" href="/content/ec/" newTab="true" %}
 
+# Table and charts
+These two content items are designed to add the power of Excel to your docs. Usually, creating complex tables directly in markdown can be a challenge even for experienced authors. Creating charts in markdown is not even possible by default. So, we created these content items to allow you to focus on what is important and to use the right tools for tables and charts. This tool is Excel ... so feel free to create your tables and charts in Excel files and then import them to your docs.
+
+{% capture buttons %}
+    type=warning|outline=false|text=Tables|href="/components/xlsx-tables/"|newTab=true,
+    type=warning|outline=false|text=Charts|href="/components/xlsx-charts/"|newTab=true
+{% endcapture %}
+{% include elements/link-btn-group.html buttons=buttons %}
+

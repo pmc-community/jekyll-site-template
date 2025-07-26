@@ -11,8 +11,8 @@
         "permalink": "/components/rich-media/"
       },
       {
-        "title": "Components",
-        "permalink": "/components/intro/"
+        "title": "Link button",
+        "permalink": "/components/link-button/"
       }
     ]
   },
@@ -37,16 +37,16 @@
     "permalink": "/components/content-items/",
     "related": [
       {
+        "title": "Components",
+        "permalink": "/components/intro/"
+      },
+      {
         "title": "External content",
         "permalink": "/content/ec/"
       },
       {
         "title": "Rich media",
         "permalink": "/components/rich-media/"
-      },
-      {
-        "title": "Components",
-        "permalink": "/components/intro/"
       }
     ]
   },
@@ -56,6 +56,10 @@
       {
         "title": "Link button",
         "permalink": "/components/link-button/"
+      },
+      {
+        "title": "XLSX Charts",
+        "permalink": "/components/xlsx-charts/"
       }
     ]
   },
@@ -84,12 +88,12 @@
         "permalink": "/components/download-link/"
       },
       {
-        "title": "Components",
-        "permalink": "/components/intro/"
-      },
-      {
         "title": "Alerts",
         "permalink": "/components/alerts/"
+      },
+      {
+        "title": "Components",
+        "permalink": "/components/intro/"
       }
     ]
   },
@@ -120,6 +124,14 @@
       {
         "title": "XLSX Tables",
         "permalink": "/components/xlsx-tables/"
+      },
+      {
+        "title": "Downloads",
+        "permalink": "/components/download-link/"
+      },
+      {
+        "title": "Content items",
+        "permalink": "/components/content-items/"
       }
     ]
   },
