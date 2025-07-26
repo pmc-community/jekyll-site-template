@@ -311,7 +311,7 @@ def create_plotly_chart(chart_data):
     """Creates an HTML div with a Plotly chart from the extracted data."""
     fig = go.Figure()
     
-    # see https://plotly.com/python/layout/
+    # see https://plotly.com/python/reference/layout/
     fig.update_layout(
         autosize = True,
         margin = dict(l=20, r=20, t=80, b=80), # give a bit more horizontal margin because will overlap the right border otherwise (default is 80) 
