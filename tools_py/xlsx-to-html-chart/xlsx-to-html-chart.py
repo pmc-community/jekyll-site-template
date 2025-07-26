@@ -386,7 +386,7 @@ def create_plotly_chart(chart_data):
         hovermode="x unified",
         legend=dict(orientation="h", yanchor="top", y=-0.2, xanchor="center", x=0.5)
     )
-    return fig.to_html(full_html=False, config={'responsive': True, 'displaylogo': False })
+    return fig.to_html(full_html=False, include_plotlyjs=False, config={'responsive': True, 'displaylogo': False })
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
