@@ -51,7 +51,8 @@
   <script id="xlsx-table-create-script-{{tid}}">
     if (!checkForMergedCells($('#xlsx-table-{{tid}}')) && {{simple}} !== true) {
 
-      setTimeout(()=>{
+      setTimeout(async ()=>{
+        await waitForI18Next();
 
         setDataTable (
           '#xlsx-table-{{tid}}',
@@ -87,19 +88,19 @@
             $('.dt-buttons').find('button').removeClass('btn-sm btn-secondary mb-2').addClass('border-0 mb-0 btn-primary');
             $('.tab-features-button-{{tid}} span').addClass('text-light');
 
-            table.colums.adjust().draw();
+            table.columns.adjust().draw();
           },
           null,
           {
             ignoreSaveState: true,
             autoWidth: true,
             scrollCollapse: false,
-           
-            
           },
           null,
           preFlight.envInfo,
-          ()=>{ $('#xlsx-table-{{tid}}').wrap('<div style="overflow: auto; position: relative; width:100%"></div>'); },
+          ()=>{ 
+            $('#xlsx-table-{{tid}}').wrap('<div style="overflow: auto; position: relative; width:100%"></div>'); 
+          },
           null,
           null
         );
@@ -114,104 +115,103 @@
   </script>
 
   <script id="xlsx-table-pagination-script-{{tid}}">
-  if (checkForMergedCells($('#xlsx-table-{{tid}}')) || {{simple}} === true) {
+    if (checkForMergedCells($('#xlsx-table-{{tid}}')) || {{simple}} === true) {
 
-    $('#xlsx-table-pagination-{{tid}}').removeClass('d-none');
-    $('#xlsx-table-create-script-{{tid}}').remove();
+      $('#xlsx-table-pagination-{{tid}}').removeClass('d-none');
+      $('#xlsx-table-create-script-{{tid}}').remove();
 
-    const initPagination__{{tid}} = () => {
-      const rowsPerPage = parseInt($('#xlsx-table-length-{{tid}}').val(), 10) || {{defaultRowsPerPage}};
-      const $rows = $('#xlsx-table-{{tid}} tbody tr');
-      const totalRows = $rows.length;
-      const totalPages = Math.ceil(totalRows / rowsPerPage);
-      return { rowsPerPage, $rows, totalRows, totalPages };
-    };
-
-    const showPage__{{tid}} = (page, rowsPerPage, $rows, totalPages) => {
-      const start = (page - 1) * rowsPerPage;
-      const end = start + rowsPerPage;
-
-      $rows.hide().slice(start, end).show();
-      const $pagination = $('#xlsx-table-pagination-{{tid}}');
-      $pagination.empty();
-
-      const addItem = (label, pageNum, disabled = false, active = false, isDots = false) => {
-        const li = $(`
-          <li class="page-item ${disabled ? 'disabled' : ''} ${active ? 'active' : ''}">
-            <a id="page-link-{{tid}}" class="page-link" href="#" ${isDots ? '' : `data-page="${pageNum}"`}>
-              ${label}
-            </a>
-          </li>
-        `);
-        $pagination.append(li);
+      const initPagination__{{tid}} = () => {
+        const rowsPerPage = parseInt($('#xlsx-table-length-{{tid}}').val(), 10) || {{defaultRowsPerPage}};
+        const $rows = $('#xlsx-table-{{tid}} tbody tr');
+        const totalRows = $rows.length;
+        const totalPages = Math.ceil(totalRows / rowsPerPage);
+        return { rowsPerPage, $rows, totalRows, totalPages };
       };
 
-      addItem('«', 1, page === 1);
-      addItem('‹', page - 1, page === 1);
+      const showPage__{{tid}} = (page, rowsPerPage, $rows, totalPages) => {
+        const start = (page - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
 
-      if (totalPages <= 5) {
-        for (let i = 1; i <= totalPages; i++) {
-          addItem(i, i, false, i === page);
-        }
-      } else {
-        if (page <= 3) {
-          for (let i = 1; i <= 3; i++) {
-            addItem(i, i, false, i === page);
-          }
-          addItem('...', null, true, false, true);
-        } else if (page >= totalPages - 2) {
-          addItem('...', null, true, false, true);
-          for (let i = totalPages - 2; i <= totalPages; i++) {
+        $rows.hide().slice(start, end).show();
+        const $pagination = $('#xlsx-table-pagination-{{tid}}');
+        $pagination.empty();
+
+        const addItem = (label, pageNum, disabled = false, active = false, isDots = false) => {
+          const li = $(`
+            <li class="page-item ${disabled ? 'disabled' : ''} ${active ? 'active' : ''}">
+              <a id="page-link-{{tid}}" class="page-link" href="#" ${isDots ? '' : `data-page="${pageNum}"`}>
+                ${label}
+              </a>
+            </li>
+          `);
+          $pagination.append(li);
+        };
+
+        addItem('«', 1, page === 1);
+        addItem('‹', page - 1, page === 1);
+
+        if (totalPages <= 5) {
+          for (let i = 1; i <= totalPages; i++) {
             addItem(i, i, false, i === page);
           }
         } else {
-          addItem('...', null, true, false, true);
-          addItem(page - 1, page - 1, false, false);
-          addItem(page, page, false, true);
-          addItem(page + 1, page + 1, false, false);
-          addItem('...', null, true, false, true);
+          if (page <= 3) {
+            for (let i = 1; i <= 3; i++) {
+              addItem(i, i, false, i === page);
+            }
+            addItem('...', null, true, false, true);
+          } else if (page >= totalPages - 2) {
+            addItem('...', null, true, false, true);
+            for (let i = totalPages - 2; i <= totalPages; i++) {
+              addItem(i, i, false, i === page);
+            }
+          } else {
+            addItem('...', null, true, false, true);
+            addItem(page - 1, page - 1, false, false);
+            addItem(page, page, false, true);
+            addItem(page + 1, page + 1, false, false);
+            addItem('...', null, true, false, true);
+          }
         }
-      }
 
-      addItem('›', page + 1, page === totalPages);
-      addItem('»', totalPages, page === totalPages);
-    };
-
-    const applyPagination__{{tid}} = () => {
-      const { rowsPerPage, $rows, totalPages } = initPagination__{{tid}}();
-      let currentPage = 1;
-
-      const refreshPage = () => {
-        showPage__{{tid}}(currentPage, rowsPerPage, $rows, totalPages);
+        addItem('›', page + 1, page === totalPages);
+        addItem('»', totalPages, page === totalPages);
       };
 
-      if (totalPages > 1) {
-        $('#xlsx-table-pagination-{{tid}}').removeClass('d-none');
-        $('#xlsx-table-pagination-{{tid}}')
-          .off('click', '#page-link-{{tid}}')
-          .on('click', '#page-link-{{tid}}', function (e) {
-            e.preventDefault();
-            const targetPage = parseInt($(this).data('page'), 10);
-            if (!isNaN(targetPage) && targetPage >= 1 && targetPage <= totalPages) {
-              currentPage = targetPage;
-              refreshPage();
-            }
-          });
-      } else {
-        $('#xlsx-table-pagination-{{tid}}').addClass('d-none');
-      }
+      const applyPagination__{{tid}} = () => {
+        const { rowsPerPage, $rows, totalPages } = initPagination__{{tid}}();
+        let currentPage = 1;
 
-      refreshPage();
-    };
+        const refreshPage = () => {
+          showPage__{{tid}}(currentPage, rowsPerPage, $rows, totalPages);
+        };
 
-    $('#xlsx-table-length-{{tid}}').on('change', function () {
+        if (totalPages > 1) {
+          $('#xlsx-table-pagination-{{tid}}').removeClass('d-none');
+          $('#xlsx-table-pagination-{{tid}}')
+            .off('click', '#page-link-{{tid}}')
+            .on('click', '#page-link-{{tid}}', function (e) {
+              e.preventDefault();
+              const targetPage = parseInt($(this).data('page'), 10);
+              if (!isNaN(targetPage) && targetPage >= 1 && targetPage <= totalPages) {
+                currentPage = targetPage;
+                refreshPage();
+              }
+            });
+        } else {
+          $('#xlsx-table-pagination-{{tid}}').addClass('d-none');
+        }
+
+        refreshPage();
+      };
+
+      $('#xlsx-table-length-{{tid}}').on('change', function () {
+        applyPagination__{{tid}}();
+      });
+
       applyPagination__{{tid}}();
-    });
-
-    applyPagination__{{tid}}();
-  }
-</script>
-
+    }
+  </script>
 
   <style>
     #xlsx-table-{{tid}}_wrapper .pagination {
