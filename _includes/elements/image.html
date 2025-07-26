@@ -49,7 +49,12 @@
   {% assign alt = "alt='" | append: caption | append: "'" %}
  {% endif %}
 
-   <figure class="figure">
+   {% assign additionalFigureClass = "" %}
+   {% if link %}
+    {% assign additionalFigureClass = "w-auto position-relative" %}
+   {% endif %}
+
+   <figure class="figure {{additionalFigureClass}}">
     <img  id="figure-{{imgid}}" src="{{full_path}}" class="figure-img img-fluid rounded" {{alt}}>
 
     {% assign captionBorderClass = "" %}
@@ -67,18 +72,18 @@
      {% if newTab != "false" %}
       {% assign target = "target=_blank" %}
      {% endif %}
-     
+
      <a href="{{link}}" {{target}} class="stretched-link"></a>
     {% endif %}
   </figure>
  
  {% if final_h and final_w %}
- <style>
+  <style>
     #figure-{{imgid}} {
         height: {{final_h}};
         width: {{final_w}}        
     }
- </style>
+  </style>
  {% endif %}
 
 {% else %}

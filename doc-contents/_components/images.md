@@ -10,7 +10,7 @@ tags: [image, component]
   source="partials/media/home-600.png" 
   caption="Image caption"
   captionBorder="true"
-  h="400px"
+  h="300px"
   link="/intro/"
   newTab="true"
 %}
