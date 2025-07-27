@@ -42,3 +42,6 @@ Create button link to download a file.
 
 ## **[`Tables`](/components/xlsx-tables/){: target="_blank" }** and **[`Charts`](/components/xlsx-charts/){: target="_blank" }**
 Import Excel tables and charts into your docs.
+
+## **[`Images`](/components/image/){: target="_blank" }**
+Place images into your docs.

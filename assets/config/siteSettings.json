@@ -261,8 +261,8 @@
       ],
       "tags": [],
       "excerpt": "learn, add, pre, defined, content, elements, embedded, documents, tags, components",
-      "lastUpdate": "2025-07-26 13:22:37 +0300",
-      "lastUpdateUTC": 1753525357,
+      "lastUpdate": "2025-07-27 12:12:47 +0300",
+      "lastUpdateUTC": 1753607567,
       "createTime": "2025-07-26 13:00:18 +0300",
       "createTimeUTC": 1753524018,
       "relatedPages": [
@@ -310,6 +310,10 @@
         {
           "title": "XLSX Charts",
           "permalink": "/components/xlsx-charts/"
+        },
+        {
+          "title": "Image",
+          "permalink": "/components/image/"
         }
       ],
       "autoSummary": "The download-link component generates a button link for downloading files from your documentation site. Only downloading from your site is allowed, for security reasons it is not allowed to create download links targeting files hosted on external sites.",
@@ -363,15 +367,28 @@
         "image",
         "component"
       ],
-      "excerpt": "image, caption",
-      "lastUpdate": "2025-07-27 11:35:47 +0300",
-      "lastUpdateUTC": 1753605347,
+      "excerpt": "component, placing, images, content, captions, credits, copyright, compoenent, designed",
+      "lastUpdate": "2025-07-27 12:06:37 +0300",
+      "lastUpdateUTC": 1753607197,
       "createTime": "2025-07-26 18:27:50 +0300",
       "createTimeUTC": 1753543670,
-      "relatedPages": [],
-      "autoSummary": "Write a concise, factual summary in French with no greetings or instructions, maximum 50 words, for the following text. Write a brief summary of the most important news stories of the day.",
+      "relatedPages": [
+        {
+          "title": "XLSX Charts",
+          "permalink": "/components/xlsx-charts/"
+        },
+        {
+          "title": "Downloads",
+          "permalink": "/components/download-link/"
+        },
+        {
+          "title": "Link button",
+          "permalink": "/components/link-button/"
+        }
+      ],
+      "autoSummary": "This component allows placing images into your content. Images can have captions (lets say you need to show some credits or copyright information) or not. The compoenent is designed to work with responsive images.",
       "similarByContent": [],
-      "readingTime": 1,
+      "readingTime": 2,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -491,12 +508,12 @@
           "permalink": "/components/xlsx-tables/"
         },
         {
-          "title": "Downloads",
-          "permalink": "/components/download-link/"
+          "title": "Image",
+          "permalink": "/components/image/"
         },
         {
-          "title": "Content items",
-          "permalink": "/content/content-items/"
+          "title": "Downloads",
+          "permalink": "/components/download-link/"
         }
       ],
       "autoSummary": "This component allows importing excel charts into your documents. Currently we support only:. Line charts column and bar charts pie and doughnut charts. We do not support importing the colors you assign to the series in the excel chart.",
@@ -590,10 +607,6 @@
         {
           "title": "Get started",
           "permalink": "/get-started/"
-        },
-        {
-          "title": "Introduction",
-          "permalink": "/intro/"
         }
       ],
       "autoSummary": "There are two types of content that you can use in your documents:. Content directly included in your document or content imported from. External sources are very important because allows you to create reusable pieces of content.",
@@ -702,10 +715,6 @@
         {
           "title": "Get started",
           "permalink": "/get-started/"
-        },
-        {
-          "title": "Content",
-          "permalink": "/content/intro/"
         }
       ],
       "autoSummary": "Documentation site builder guide is a comprehensive resource for learning how to create, build, and maintain high-quality documentation sites. This guide will walk you through everything you need to know about building a complete, maintainable, and professional documentation site.",
@@ -1054,7 +1063,7 @@
         {
           "title": "Components",
           "permalink": "/components/intro/",
-          "lastUpdate": "26-Jul-2025"
+          "lastUpdate": "27-Jul-2025"
         },
         {
           "title": "Downloads",

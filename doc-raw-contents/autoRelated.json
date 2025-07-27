@@ -43,6 +43,10 @@
       {
         "title": "XLSX Charts",
         "permalink": "/components/xlsx-charts/"
+      },
+      {
+        "title": "Image",
+        "permalink": "/components/image/"
       }
     ]
   },
@@ -65,7 +69,20 @@
   },
   {
     "permalink": "/components/image/",
-    "related": []
+    "related": [
+      {
+        "title": "XLSX Charts",
+        "permalink": "/components/xlsx-charts/"
+      },
+      {
+        "title": "Downloads",
+        "permalink": "/components/download-link/"
+      },
+      {
+        "title": "Link button",
+        "permalink": "/components/link-button/"
+      }
+    ]
   },
   {
     "permalink": "/components/link-button/",
@@ -113,12 +130,12 @@
         "permalink": "/components/xlsx-tables/"
       },
       {
-        "title": "Downloads",
-        "permalink": "/components/download-link/"
+        "title": "Image",
+        "permalink": "/components/image/"
       },
       {
-        "title": "Content items",
-        "permalink": "/content/content-items/"
+        "title": "Downloads",
+        "permalink": "/components/download-link/"
       }
     ]
   },
@@ -158,10 +175,6 @@
       {
         "title": "Get started",
         "permalink": "/get-started/"
-      },
-      {
-        "title": "Introduction",
-        "permalink": "/intro/"
       }
     ]
   },
@@ -201,10 +214,6 @@
       {
         "title": "Get started",
         "permalink": "/get-started/"
-      },
-      {
-        "title": "Content",
-        "permalink": "/content/intro/"
       }
     ]
   }

@@ -62,7 +62,7 @@
         },
         {
             "permalink": "/components/image/",
-            "summary": "Write a concise, factual summary in French with no greetings or instructions, maximum 50 words, for the following text. Write a brief summary of the most important news stories of the day."
+            "summary": "This component allows placing images into your content. Images can have captions (lets say you need to show some credits or copyright information) or not. The compoenent is designed to work with responsive images."
         },
         {
             "permalink": "/content/content-items/",
