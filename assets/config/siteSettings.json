@@ -31,7 +31,7 @@
       ]
     },
     "colSchemaCorrections": {
-      "elementsWithBackgroundAffected": "body, #category-menu-more-list, table, tbody, thead, tr, td, th, td[class=\"child\"], .offcanvas, .ck-editor__main, .side-bar, #hs-eu-cookie-confirmation, #toc_mobile, .accordion-item, .accordion-header, .accordion-button",
+      "elementsWithBackgroundAffected": "html, body, #category-menu-more-list, table, tbody, thead, tr, td, th, td[class=\"child\"], .offcanvas, .ck-editor__main, .side-bar, #hs-eu-cookie-confirmation, #toc_mobile, .accordion-item, .accordion-header, .accordion-button",
       "backgroundColorOnElementsAffected": {
         "light": "#fff",
         "dark": "#0d1117"
@@ -219,10 +219,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "important, varianta, limba, romana, exista, exemplifica, capabilitatile, multilanguage, afara, pagina",
-      "lastUpdate": "2025-07-27 16:41:10 +0300",
-      "lastUpdateUTC": 1753623670,
-      "createTime": "2025-07-27 16:41:10 +0300",
-      "createTimeUTC": 1753623670,
+      "lastUpdate": "2025-07-27 19:03:50 +0300",
+      "lastUpdateUTC": 1753632230,
+      "createTime": "2025-07-27 19:03:50 +0300",
+      "createTimeUTC": 1753632230,
       "relatedPages": [],
       "autoSummary": "Important varianta in limba romana exista doar pentru a exemplifica capabilitatile multilanguage. In afara de pagina de start si de pagina inroducere nu exista alt continut in limba romana.",
       "similarByContent": [],
