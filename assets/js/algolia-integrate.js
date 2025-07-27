@@ -878,9 +878,8 @@ algolia = {
                     <span class='text-dark'>${i18next.t('algolia_doc_search_custom_panel_heads_up_text')}</span>
                 `
             // we need to fetch the hit target page and extract headings
-            // cannot use #toc_content of the hit target page because is dynamically generated
-            // so the toc we generate here may be smaller than the actual toc of the hit target page
-            //however, dynamic client-side content is not searchable either (not by JTD search or Algolia)
+            // HEADS UP!!!!
+            // this feature is currrently deactivated          
             const fetchToc = async (url, originalUrl) => {
                 try {                    
                     const response = await algolia.getRenderedPageSource(url)
@@ -946,10 +945,11 @@ algolia = {
             };
         
             const outputObj = getObjectFromArray({ permalink: url }, docSearchHitPageToc);
+            
             //if (outputObj !== 'none') {
                 return markOutput(outputObj.toc);
             //} else {
-            //    return await fetchToc(algolia.getPageFullUrl(url),url);
+            //    return await fetchToc(algolia.getPageFullUrl(url),url); /* FEATURE DEACTIVATED HERE */
             //}
         };
 
