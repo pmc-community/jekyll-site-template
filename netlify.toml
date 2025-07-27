@@ -22,7 +22,7 @@
         pyenv global 3.9.0
         # Upgrade pip and install required Python packages
         pip install --upgrade pip
-        pip install tensorflow tensorflow-hub numpy pandas markdown transformers langdetect
+        pip install tensorflow tensorflow-hub numpy pandas markdown transformers langdetect openpyxl plotly
         # Run pre-build python scripts
         ./tools_py/preBuild-pyScripts
     fi
