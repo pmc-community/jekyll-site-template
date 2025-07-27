@@ -41,6 +41,8 @@ exclude:
   - check
   - test
   - netlify.toml
+  - requirements.txt
+  - runtime.txt
   - CNAME
   - LICENSE
   - README.md
