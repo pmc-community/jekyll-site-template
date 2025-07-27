@@ -22,7 +22,7 @@ The following examples are based on a dedicated media folder:
   source="partials/media/home-600.png" 
   caption="Image caption"
   captionBorder="true"
-  link="/intro/"
+  link="https://pmc-expert.com"
   newTab="true"
 %}
 ```
