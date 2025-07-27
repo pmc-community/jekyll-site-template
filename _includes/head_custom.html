@@ -348,8 +348,6 @@
     <link href="{{lang_prefix}}/assets/js/site-pages.js" rel="preload" as="script">
     <script src="{{lang_prefix}}/assets/js/site-pages.js"></script>
 
-    <!-- plotly is kind of heavy, we load it only when we need -->
-    <link href="{{lang_prefix}}/assets/js/plotly-basic.js" rel="preload" as="script">
     {% assign hasCharts = false %}
 
     {% capture hasCharts %}
@@ -358,6 +356,8 @@
     {% assign hc = hasCharts | strip %}
 
     {% if hc  == "true" %}
+        <!-- plotly is kind of heavy, we load it only when we need -->
+        <link href="{{lang_prefix}}/assets/js/plotly-basic.js" rel="preload" as="script">
         <script src="{{lang_prefix}}/assets/js/plotly-basic.js"></script>
     {% endif %}
 
