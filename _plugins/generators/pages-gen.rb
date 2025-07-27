@@ -59,6 +59,8 @@ module Jekyll
         site.data['page_list'] = [].to_json
 
         doc_list.each do |file_path|
+          lastUpdate = File.mtime(file_path)
+          createTime = File.birthtime(file_path)
           front_matter, _ = FileUtilities.parse_front_matter(File.read(file_path))
           title = front_matter['title']
           permalink = front_matter['permalink']
@@ -66,8 +68,7 @@ module Jekyll
           categories = front_matter['categories']
           tags = front_matter['tags']
           excerpt = front_matter['excerpt']
-          lastUpdate = File.mtime(file_path)
-          createTime = File.birthtime(file_path)
+          
           hasDynamicContent = ExtContentUtilities.checkCallsForExternalContent(file_path)
           parent = front_matter['parent'] ? front_matter['parent'] : ""
           document_data_raw = {
