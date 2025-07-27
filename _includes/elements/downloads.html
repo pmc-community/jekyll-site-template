@@ -1,0 +1,94 @@
+{% capture uuid %}
+  {% UUID %}
+{% endcapture %}
+{% assign did = uuid | strip %}
+
+{% assign type = include.type || default: "primary" %}
+{% assign outline = include.outline %}
+{% assign text = include.text %}
+
+{% assign allowedTypes = "primary,secondary,success,danger,warning,info,light" | split: "," %}
+{% if outline == "true" %}
+ {% assign btnClass="btn-outline-" | append: type %}
+{% else %}
+ {% assign btnClass="btn-" | append: type %}
+{% endif %}
+
+{% assign file = include.file || default: "" %}
+{% assign downloadName = include.downloadName || default: "" %}
+
+{% assign downloadsDir = include.downloadsDir || default: "false" %}
+
+{% if downloadsDir == "false" %}
+    {% assign source = file %}
+{% else %}
+    {% assign source = site.url | append: "/doc-contents/downloads/" | append: file %}
+{% endif %}
+
+{% if file %}
+ {% if allowedTypes contains type %}  
+
+ <button id="download-btn-{{did}}" class="btn btn-sm {{btnClass}}">
+    {{text}}
+ </button>
+
+
+ <script>
+    $('#download-btn-{{did}}').on('click', function () {
+        const fileUrl = '{{source}}';
+
+        {% if downloadName !="" %}
+            const fileName = '{{downloadName}}';
+        {% else %}
+            const fileName = fileUrl.split('/').pop();
+        {% endif %}
+
+        fetch(fileUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch file');
+                showToast(i18next.t('elements_downloads_download_file_not_found', { postProcess: 'sprintf', sprintf: [fileName] }), 'bg-danger', 'text-light');
+            }
+            return response.blob();
+        })
+        .then(blob => {
+            const blobUrl = URL.createObjectURL(blob);
+            const a = $('<a>')
+            .attr('href', blobUrl)
+            .attr('download', fileName)
+            .css('display', 'none')
+            .appendTo('body');
+
+            a[0].click();
+            a.remove();
+            URL.revokeObjectURL(blobUrl);
+            showToast(i18next.t('elements_downloads_download_completed', { postProcess: 'sprintf', sprintf: [fileName] }), 'bg-success', 'text-light');
+        })
+        .catch(error => {
+            console.error('Download failed:', error);
+            showToast(i18next.t('elements_downloads_download_failed', { postProcess: 'sprintf', sprintf: [fileName] }), 'bg-danger', 'text-light');
+        });
+    });
+ </script>
+
+ {% else %}
+ {% capture c %}
+  {% ExternalSiteContent  
+    {
+     "markdown": true,
+     "file_path":"partials/errors-and-warnings/wrong-link-btn-type.md", 
+     "ignore_wp_shortcodes": true, 
+     "start_marker": "fullFile", 
+     "include_start_marker": false,
+     "end_marker": "fullFile",
+     "include_end_marker": false,
+     "needAuth": false 
+    } 
+  %}
+ {% endcapture %}
+
+ {% include elements/alert.html class="danger" content=c title="Error" %}
+
+ {% endif %}
+
+{% endif %}

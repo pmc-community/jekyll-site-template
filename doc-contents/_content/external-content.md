@@ -3,7 +3,7 @@ layout: page
 title: External content
 permalink: /content/ec/
 categories: [Content]
-tags: [embed]
+tags: [embed, external, import]
 ---
 
 # Summary

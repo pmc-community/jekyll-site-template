@@ -31,7 +31,7 @@
       ]
     },
     "colSchemaCorrections": {
-      "elementsWithBackgroundAffected": "body, #category-menu-more-list, table, tbody, thead, tr, td, th, td[class=\"child\"], .offcanvas, .ck-editor__main, .side-bar, #hs-eu-cookie-confirmation, #toc_mobile, .accordion-item, .accordion-header, .accordion-button",
+      "elementsWithBackgroundAffected": "html, body, #category-menu-more-list, table, tbody, thead, tr, td, th, td[class=\"child\"], .offcanvas, .ck-editor__main, .side-bar, #hs-eu-cookie-confirmation, #toc_mobile, .accordion-item, .accordion-header, .accordion-button",
       "backgroundColorOnElementsAffected": {
         "light": "#fff",
         "dark": "#0d1117"
@@ -220,25 +220,26 @@
         "Components"
       ],
       "tags": [
-        "embed"
+        "embed",
+        "alert"
       ],
       "excerpt": "learn, add, blocks, content, alerts, types, colors",
-      "lastUpdate": "2025-07-17 18:38:45 +0300",
-      "lastUpdateUTC": 1752766725,
-      "createTime": "2025-07-17 18:38:45 +0300",
-      "createTimeUTC": 1752766725,
+      "lastUpdate": "2025-07-27 19:04:49 +0300",
+      "lastUpdateUTC": 1753632289,
+      "createTime": "2025-07-27 19:04:49 +0300",
+      "createTimeUTC": 1753632289,
       "relatedPages": [
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/"
         },
         {
-          "title": "External content",
-          "permalink": "/content/ec/"
-        },
-        {
           "title": "Rich media",
           "permalink": "/components/rich-media/"
+        },
+        {
+          "title": "Link button",
+          "permalink": "/components/link-button/"
         }
       ],
       "autoSummary": "Alerts can be of different types as shown by the colors (,,, and ). Alerts can contain content introduced in clear but also can refer. From other documents from your documentation or from external public or private repositories. There is no limit about how many external public repositories you refer.",
@@ -259,28 +260,65 @@
         "Components"
       ],
       "tags": [],
-      "excerpt": "learn, add, content, pre, defined, components, elements, embedded, documents, tags",
-      "lastUpdate": "2025-07-17 18:38:45 +0300",
-      "lastUpdateUTC": 1752766725,
-      "createTime": "2025-07-17 18:38:45 +0300",
-      "createTimeUTC": 1752766725,
+      "excerpt": "learn, add, pre, defined, content, elements, embedded, documents, tags, components",
+      "lastUpdate": "2025-07-27 19:04:49 +0300",
+      "lastUpdateUTC": 1753632289,
+      "createTime": "2025-07-27 19:04:49 +0300",
+      "createTimeUTC": 1753632289,
       "relatedPages": [
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/"
         },
         {
+          "title": "Link button",
+          "permalink": "/components/link-button/"
+        },
+        {
           "title": "Alerts",
           "permalink": "/components/alerts/"
-        },
+        }
+      ],
+      "autoSummary": "Learn how to add different pre-defined. Content items to your content. These are elements that can be embedded in your documents using. As it will be shown for each of the next components.",
+      "similarByContent": [],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
+      "title": "Downloads",
+      "permalink": "/components/download-link/",
+      "categories": [
+        "Components"
+      ],
+      "tags": [
+        "download",
+        "file",
+        "link",
+        "button"
+      ],
+      "excerpt": "download, link, component, generates, button, downloading, files, documentation",
+      "lastUpdate": "2025-07-27 19:04:49 +0300",
+      "lastUpdateUTC": 1753632289,
+      "createTime": "2025-07-27 19:04:49 +0300",
+      "createTimeUTC": 1753632289,
+      "relatedPages": [
         {
           "title": "Link button",
           "permalink": "/components/link-button/"
+        },
+        {
+          "title": "XLSX Charts",
+          "permalink": "/components/xlsx-charts/"
+        },
+        {
+          "title": "Image",
+          "permalink": "/components/image/"
         }
       ],
-      "autoSummary": "Documentaroo lets you embed content into your documents using pre-defined components. The components are elements that can be embedded in documents using tags and. As it will be shown for each of the next components.",
+      "autoSummary": "The download-link component generates a button link for downloading files from your documentation site. Only downloading from your site is allowed, for security reasons it is not allowed to create download links targeting files hosted on external sites.",
       "similarByContent": [],
-      "readingTime": 1,
+      "readingTime": 2,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -295,10 +333,10 @@
         "faq"
       ],
       "excerpt": "learn, add, elements, documents, element, question, answer",
-      "lastUpdate": "2025-07-17 18:38:45 +0300",
-      "lastUpdateUTC": 1752766725,
-      "createTime": "2025-07-17 18:38:45 +0300",
-      "createTimeUTC": 1752766725,
+      "lastUpdate": "2025-07-27 19:04:49 +0300",
+      "lastUpdateUTC": 1753632289,
+      "createTime": "2025-07-27 19:04:49 +0300",
+      "createTimeUTC": 1753632289,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -309,13 +347,48 @@
           "permalink": "/components/intro/"
         },
         {
-          "title": "External content",
-          "permalink": "/content/ec/"
+          "title": "Rich media",
+          "permalink": "/components/rich-media/"
         }
       ],
       "autoSummary": "The question should always be a text. The answer to the question can be simple text or any rich content that is allowed in markdown. Any docaroo component can be used to render the answer to a question.",
       "similarByContent": [],
       "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
+      "title": "Image",
+      "permalink": "/components/image/",
+      "categories": [
+        "Components"
+      ],
+      "tags": [
+        "image",
+        "component"
+      ],
+      "excerpt": "component, placing, images, content, captions, credits, copyright, compoenent, designed",
+      "lastUpdate": "2025-07-27 22:37:26 +0300",
+      "lastUpdateUTC": 1753645046,
+      "createTime": "2025-07-27 19:04:49 +0300",
+      "createTimeUTC": 1753632289,
+      "relatedPages": [
+        {
+          "title": "XLSX Charts",
+          "permalink": "/components/xlsx-charts/"
+        },
+        {
+          "title": "Downloads",
+          "permalink": "/components/download-link/"
+        },
+        {
+          "title": "Link button",
+          "permalink": "/components/link-button/"
+        }
+      ],
+      "autoSummary": "This component allows placing images into your content. Images can have captions (lets say you need to show some credits or copyright information) or not. The compoenent is designed to work with responsive images.",
+      "similarByContent": [],
+      "readingTime": 2,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -331,11 +404,15 @@
         "anchor"
       ],
       "excerpt": "learn, add, link, buttons, content, helps, users, navigate",
-      "lastUpdate": "2025-07-17 18:38:45 +0300",
-      "lastUpdateUTC": 1752766725,
-      "createTime": "2025-07-17 18:38:45 +0300",
-      "createTimeUTC": 1752766725,
+      "lastUpdate": "2025-07-27 19:04:49 +0300",
+      "lastUpdateUTC": 1753632289,
+      "createTime": "2025-07-27 19:04:49 +0300",
+      "createTimeUTC": 1753632289,
       "relatedPages": [
+        {
+          "title": "Downloads",
+          "permalink": "/components/download-link/"
+        },
         {
           "title": "Alerts",
           "permalink": "/components/alerts/"
@@ -343,10 +420,6 @@
         {
           "title": "Components",
           "permalink": "/components/intro/"
-        },
-        {
-          "title": "FAQ Item",
-          "permalink": "/components/qitem/"
         }
       ],
       "autoSummary": "Link buttons helps users to navigate inside your documentation or access external sites. You can add individual link buttons or group link buttons. You can place anchors anywhere in the document and references to them.",
@@ -368,10 +441,10 @@
         "video"
       ],
       "excerpt": "learn, docaroo, components, embed, rich, media, content, encourage, store",
-      "lastUpdate": "2025-07-17 18:38:45 +0300",
-      "lastUpdateUTC": 1752766725,
-      "createTime": "2025-07-17 18:38:45 +0300",
-      "createTimeUTC": 1752766725,
+      "lastUpdate": "2025-07-27 19:04:49 +0300",
+      "lastUpdateUTC": 1753632289,
+      "createTime": "2025-07-27 19:04:49 +0300",
+      "createTimeUTC": 1753632289,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -382,8 +455,8 @@
           "permalink": "/components/intro/"
         },
         {
-          "title": "External content",
-          "permalink": "/content/ec/"
+          "title": "FAQ Item",
+          "permalink": "/components/qitem/"
         }
       ],
       "autoSummary": "Use docaroo components to embed rich media into your content. Currently we support design, boards (fig jam), slides and deck files. Prototypes are not supported for the moment.",
@@ -393,21 +466,121 @@
       "parent": ""
     },
     {
-      "title": "Scroll Spy",
+      "title": "Scroll Spy & Tabs",
       "permalink": "/components/scrollspy/",
       "categories": [
         "Components"
       ],
-      "tags": [],
-      "excerpt": "scroll, spy, gret, organising, documents, flexible, easy, included, docaroo",
-      "lastUpdate": "2025-07-17 22:54:23 +0300",
-      "lastUpdateUTC": 1752782063,
-      "createTime": "2025-07-17 18:38:45 +0300",
-      "createTimeUTC": 1752766725,
+      "tags": [
+        "scrollspy"
+      ],
+      "excerpt": "and, are, great, ways, organising, information, inside, your, documents, made",
+      "lastUpdate": "2025-07-27 19:04:49 +0300",
+      "lastUpdateUTC": 1753632289,
+      "createTime": "2025-07-27 19:04:49 +0300",
+      "createTimeUTC": 1753632289,
       "relatedPages": [],
-      "autoSummary": "Scroll spy is a gret way of organising information inside your documents. Any docaroo component, including importing esternal content or rich content ones, can be used to populate a scroll spy.",
+      "autoSummary": "Scroll spies are great ways of organising information inside your documents. We made them flexible and easy to be included in the documents. Any docaroo component, including importing esternal content or rich content ones, can be used to populate scroll spies and tabs.",
+      "similarByContent": [],
+      "readingTime": 7,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
+      "title": "XLSX Charts",
+      "permalink": "/components/xlsx-charts/",
+      "categories": [
+        "Components"
+      ],
+      "tags": [
+        "table",
+        "xls",
+        "chart"
+      ],
+      "excerpt": "component, importing, excel, charts, documents, simple, create",
+      "lastUpdate": "2025-07-27 19:04:49 +0300",
+      "lastUpdateUTC": 1753632289,
+      "createTime": "2025-07-27 19:04:49 +0300",
+      "createTimeUTC": 1753632289,
+      "relatedPages": [
+        {
+          "title": "XLSX Tables",
+          "permalink": "/components/xlsx-tables/"
+        },
+        {
+          "title": "Image",
+          "permalink": "/components/image/"
+        },
+        {
+          "title": "Downloads",
+          "permalink": "/components/download-link/"
+        }
+      ],
+      "autoSummary": "This component allows importing excel charts into your documents. Currently we support only:. Line charts column and bar charts pie and doughnut charts. We do not support importing the colors you assign to the series in the excel chart.",
+      "similarByContent": [],
+      "readingTime": 2,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
+      "title": "XLSX Tables",
+      "permalink": "/components/xlsx-tables/",
+      "categories": [
+        "Components"
+      ],
+      "tags": [
+        "table",
+        "xls"
+      ],
+      "excerpt": "users, creating, table, markdown, challenge, merged, cells, crazy, quick, maintaining",
+      "lastUpdate": "2025-07-27 19:04:49 +0300",
+      "lastUpdateUTC": 1753632289,
+      "createTime": "2025-07-27 19:04:49 +0300",
+      "createTimeUTC": 1753632289,
+      "relatedPages": [
+        {
+          "title": "XLSX Charts",
+          "permalink": "/components/xlsx-charts/"
+        }
+      ],
+      "autoSummary": "Tables can be imported directly from excel. When a table contains merged cells, it will be rendered as table, regardless of the value of the.",
       "similarByContent": [],
       "readingTime": 3,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
+      "title": "Content items",
+      "permalink": "/content/content-items/",
+      "categories": [
+        "Components"
+      ],
+      "tags": [
+        "items",
+        "content"
+      ],
+      "excerpt": "docaroo, series, content, items, enrich, documents, efficient, incorporate, piecers",
+      "lastUpdate": "2025-07-27 19:04:49 +0300",
+      "lastUpdateUTC": 1753632289,
+      "createTime": "2025-07-27 19:04:49 +0300",
+      "createTimeUTC": 1753632289,
+      "relatedPages": [
+        {
+          "title": "Components",
+          "permalink": "/components/intro/"
+        },
+        {
+          "title": "External content",
+          "permalink": "/content/ec/"
+        },
+        {
+          "title": "Rich media",
+          "permalink": "/components/rich-media/"
+        }
+      ],
+      "autoSummary": "Docaroo makes available a series of content items that can be used to enrich your documents and to be very efficient when wanting to incorporate piecers of content in a fast and robust way.",
+      "similarByContent": [],
+      "readingTime": 2,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -422,10 +595,10 @@
         "organise docs"
       ],
       "excerpt": "learn, structure, content, efficient, secret, maximum, extent, features, importing, external",
-      "lastUpdate": "2025-07-17 18:38:45 +0300",
-      "lastUpdateUTC": 1752766725,
-      "createTime": "2025-07-17 18:38:45 +0300",
-      "createTimeUTC": 1752766725,
+      "lastUpdate": "2025-07-27 19:04:49 +0300",
+      "lastUpdateUTC": 1753632289,
+      "createTime": "2025-07-27 19:04:49 +0300",
+      "createTimeUTC": 1753632289,
       "relatedPages": [
         {
           "title": "External content",
@@ -439,8 +612,8 @@
       "autoSummary": "There are two types of content that you can use in your documents:. Content directly included in your document or content imported from. External sources are very important because allows you to create reusable pieces of content.",
       "similarByContent": [
         {
-          "permalink": "/intro/",
-          "title": "Introduction"
+          "permalink": "/content/ec/",
+          "title": "External content"
         }
       ],
       "readingTime": 2,
@@ -454,25 +627,27 @@
         "Content"
       ],
       "tags": [
-        "embed"
+        "embed",
+        "external",
+        "import"
       ],
       "excerpt": "docaroo, documents, external, content, create, import, multiple",
-      "lastUpdate": "2025-07-17 18:38:45 +0300",
-      "lastUpdateUTC": 1752766725,
-      "createTime": "2025-07-17 18:38:45 +0300",
-      "createTimeUTC": 1752766725,
+      "lastUpdate": "2025-07-27 19:04:49 +0300",
+      "lastUpdateUTC": 1753632289,
+      "createTime": "2025-07-27 19:04:49 +0300",
+      "createTimeUTC": 1753632289,
       "relatedPages": [
         {
-          "title": "Alerts",
-          "permalink": "/components/alerts/"
-        },
-        {
-          "title": "FAQ Item",
-          "permalink": "/components/qitem/"
+          "title": "Content",
+          "permalink": "/content/intro/"
         },
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/"
+        },
+        {
+          "title": "Alerts",
+          "permalink": "/components/alerts/"
         }
       ],
       "autoSummary": "Documentaroo allows you to create. Of content and import these parts in multiple places in your documents. It is possible to import content from external public and private repositories. You must be sure that the content you want to import is available at the time when you build your site.",
@@ -501,10 +676,10 @@
         "docs"
       ],
       "excerpt": "started, docaroo, requires, design, documentation, organising, blog, crucial, involve",
-      "lastUpdate": "2025-07-17 18:38:45 +0300",
-      "lastUpdateUTC": 1752766725,
-      "createTime": "2025-07-17 18:38:45 +0300",
-      "createTimeUTC": 1752766725,
+      "lastUpdate": "2025-07-27 19:04:49 +0300",
+      "lastUpdateUTC": 1753632289,
+      "createTime": "2025-07-27 19:04:49 +0300",
+      "createTimeUTC": 1753632289,
       "relatedPages": [
         {
           "title": "Introduction",
@@ -532,48 +707,71 @@
         "docs"
       ],
       "excerpt": "documentation, builder, guide, comprehensive, resource, learning, create, build, maintain, quality",
-      "lastUpdate": "2025-07-17 18:38:45 +0300",
-      "lastUpdateUTC": 1752766725,
-      "createTime": "2025-07-17 18:38:45 +0300",
-      "createTimeUTC": 1752766725,
+      "lastUpdate": "2025-07-27 19:04:49 +0300",
+      "lastUpdateUTC": 1753632289,
+      "createTime": "2025-07-27 19:04:49 +0300",
+      "createTimeUTC": 1753632289,
       "relatedPages": [
         {
           "title": "Get started",
           "permalink": "/get-started/"
         }
       ],
-      "autoSummary": "This guide will walk you through everything you need to know about building a complete, maintainable, and professional documentation site from scratch. This guide is suitable for:. Developers who want to document apis, libraries, or frameworks product teams building internal or customer-facing documentation technical writers looking to improve structure and.",
+      "autoSummary": "Documentation site builder guide is a comprehensive resource for learning how to create, build, and maintain high-quality documentation sites. This guide will walk you through everything you need to know about building a complete, maintainable, and professional documentation site.",
       "similarByContent": [
         {
           "permalink": "/content/intro/",
           "title": "Content"
         }
       ],
-      "readingTime": 2,
+      "readingTime": 3,
       "hasDynamicContent": false,
       "parent": ""
     }
   ],
   "tagList": [
+    "alert",
     "anchor",
     "button",
+    "chart",
+    "component",
+    "content",
     "docs",
     "documentation",
+    "download",
     "embed",
+    "external",
     "faq",
     "figma",
+    "file",
+    "image",
+    "import",
+    "items",
     "link",
     "lottie",
     "organise docs",
-    "video"
+    "scrollspy",
+    "table",
+    "video",
+    "xls"
   ],
   "tagDetails": {
+    "alert": {
+      "pages": [
+        {
+          "title": "Alerts",
+          "permalink": "/components/alerts/",
+          "lastUpdate": "27-Jul-2025"
+        }
+      ],
+      "numPages": 1
+    },
     "anchor": {
       "pages": [
         {
           "title": "Link button",
           "permalink": "/components/link-button/",
-          "lastUpdate": "17-Jul-2025"
+          "lastUpdate": "27-Jul-2025"
         }
       ],
       "numPages": 1
@@ -581,9 +779,44 @@
     "button": {
       "pages": [
         {
+          "title": "Downloads",
+          "permalink": "/components/download-link/",
+          "lastUpdate": "27-Jul-2025"
+        },
+        {
           "title": "Link button",
           "permalink": "/components/link-button/",
-          "lastUpdate": "17-Jul-2025"
+          "lastUpdate": "27-Jul-2025"
+        }
+      ],
+      "numPages": 2
+    },
+    "chart": {
+      "pages": [
+        {
+          "title": "XLSX Charts",
+          "permalink": "/components/xlsx-charts/",
+          "lastUpdate": "27-Jul-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "component": {
+      "pages": [
+        {
+          "title": "Image",
+          "permalink": "/components/image/",
+          "lastUpdate": "27-Jul-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "content": {
+      "pages": [
+        {
+          "title": "Content items",
+          "permalink": "/content/content-items/",
+          "lastUpdate": "27-Jul-2025"
         }
       ],
       "numPages": 1
@@ -593,12 +826,12 @@
         {
           "title": "Get started",
           "permalink": "/get-started/",
-          "lastUpdate": "17-Jul-2025"
+          "lastUpdate": "27-Jul-2025"
         },
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "17-Jul-2025"
+          "lastUpdate": "27-Jul-2025"
         }
       ],
       "numPages": 2
@@ -608,52 +841,72 @@
         {
           "title": "Content",
           "permalink": "/content/intro/",
-          "lastUpdate": "17-Jul-2025"
+          "lastUpdate": "27-Jul-2025"
         },
         {
           "title": "Get started",
           "permalink": "/get-started/",
-          "lastUpdate": "17-Jul-2025"
+          "lastUpdate": "27-Jul-2025"
         },
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "17-Jul-2025"
+          "lastUpdate": "27-Jul-2025"
         }
       ],
       "numPages": 3
+    },
+    "download": {
+      "pages": [
+        {
+          "title": "Downloads",
+          "permalink": "/components/download-link/",
+          "lastUpdate": "27-Jul-2025"
+        }
+      ],
+      "numPages": 1
     },
     "embed": {
       "pages": [
         {
           "title": "Alerts",
           "permalink": "/components/alerts/",
-          "lastUpdate": "17-Jul-2025"
+          "lastUpdate": "27-Jul-2025"
         },
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/",
-          "lastUpdate": "17-Jul-2025"
+          "lastUpdate": "27-Jul-2025"
         },
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "17-Jul-2025"
+          "lastUpdate": "27-Jul-2025"
         },
         {
           "title": "External content",
           "permalink": "/content/ec/",
-          "lastUpdate": "17-Jul-2025"
+          "lastUpdate": "27-Jul-2025"
         }
       ],
       "numPages": 4
+    },
+    "external": {
+      "pages": [
+        {
+          "title": "External content",
+          "permalink": "/content/ec/",
+          "lastUpdate": "27-Jul-2025"
+        }
+      ],
+      "numPages": 1
     },
     "faq": {
       "pages": [
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/",
-          "lastUpdate": "17-Jul-2025"
+          "lastUpdate": "27-Jul-2025"
         }
       ],
       "numPages": 1
@@ -663,7 +916,47 @@
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "17-Jul-2025"
+          "lastUpdate": "27-Jul-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "file": {
+      "pages": [
+        {
+          "title": "Downloads",
+          "permalink": "/components/download-link/",
+          "lastUpdate": "27-Jul-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "image": {
+      "pages": [
+        {
+          "title": "Image",
+          "permalink": "/components/image/",
+          "lastUpdate": "27-Jul-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "import": {
+      "pages": [
+        {
+          "title": "External content",
+          "permalink": "/content/ec/",
+          "lastUpdate": "27-Jul-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "items": {
+      "pages": [
+        {
+          "title": "Content items",
+          "permalink": "/content/content-items/",
+          "lastUpdate": "27-Jul-2025"
         }
       ],
       "numPages": 1
@@ -671,19 +964,24 @@
     "link": {
       "pages": [
         {
+          "title": "Downloads",
+          "permalink": "/components/download-link/",
+          "lastUpdate": "27-Jul-2025"
+        },
+        {
           "title": "Link button",
           "permalink": "/components/link-button/",
-          "lastUpdate": "17-Jul-2025"
+          "lastUpdate": "27-Jul-2025"
         }
       ],
-      "numPages": 1
+      "numPages": 2
     },
     "lottie": {
       "pages": [
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "17-Jul-2025"
+          "lastUpdate": "27-Jul-2025"
         }
       ],
       "numPages": 1
@@ -693,20 +991,60 @@
         {
           "title": "Content",
           "permalink": "/content/intro/",
-          "lastUpdate": "17-Jul-2025"
+          "lastUpdate": "27-Jul-2025"
         }
       ],
       "numPages": 1
+    },
+    "scrollspy": {
+      "pages": [
+        {
+          "title": "Scroll Spy & Tabs",
+          "permalink": "/components/scrollspy/",
+          "lastUpdate": "27-Jul-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "table": {
+      "pages": [
+        {
+          "title": "XLSX Charts",
+          "permalink": "/components/xlsx-charts/",
+          "lastUpdate": "27-Jul-2025"
+        },
+        {
+          "title": "XLSX Tables",
+          "permalink": "/components/xlsx-tables/",
+          "lastUpdate": "27-Jul-2025"
+        }
+      ],
+      "numPages": 2
     },
     "video": {
       "pages": [
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "17-Jul-2025"
+          "lastUpdate": "27-Jul-2025"
         }
       ],
       "numPages": 1
+    },
+    "xls": {
+      "pages": [
+        {
+          "title": "XLSX Charts",
+          "permalink": "/components/xlsx-charts/",
+          "lastUpdate": "27-Jul-2025"
+        },
+        {
+          "title": "XLSX Tables",
+          "permalink": "/components/xlsx-tables/",
+          "lastUpdate": "27-Jul-2025"
+        }
+      ],
+      "numPages": 2
     }
   },
   "catList": [
@@ -720,47 +1058,72 @@
         {
           "title": "Alerts",
           "permalink": "/components/alerts/",
-          "lastUpdate": "17-Jul-2025"
+          "lastUpdate": "27-Jul-2025"
         },
         {
           "title": "Components",
           "permalink": "/components/intro/",
-          "lastUpdate": "17-Jul-2025"
+          "lastUpdate": "27-Jul-2025"
+        },
+        {
+          "title": "Downloads",
+          "permalink": "/components/download-link/",
+          "lastUpdate": "27-Jul-2025"
         },
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/",
-          "lastUpdate": "17-Jul-2025"
+          "lastUpdate": "27-Jul-2025"
+        },
+        {
+          "title": "Image",
+          "permalink": "/components/image/",
+          "lastUpdate": "27-Jul-2025"
         },
         {
           "title": "Link button",
           "permalink": "/components/link-button/",
-          "lastUpdate": "17-Jul-2025"
+          "lastUpdate": "27-Jul-2025"
         },
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "17-Jul-2025"
+          "lastUpdate": "27-Jul-2025"
         },
         {
-          "title": "Scroll Spy",
+          "title": "Scroll Spy & Tabs",
           "permalink": "/components/scrollspy/",
-          "lastUpdate": "17-Jul-2025"
+          "lastUpdate": "27-Jul-2025"
+        },
+        {
+          "title": "XLSX Charts",
+          "permalink": "/components/xlsx-charts/",
+          "lastUpdate": "27-Jul-2025"
+        },
+        {
+          "title": "XLSX Tables",
+          "permalink": "/components/xlsx-tables/",
+          "lastUpdate": "27-Jul-2025"
+        },
+        {
+          "title": "Content items",
+          "permalink": "/content/content-items/",
+          "lastUpdate": "27-Jul-2025"
         }
       ],
-      "numPages": 6
+      "numPages": 11
     },
     "Content": {
       "pages": [
         {
           "title": "Content",
           "permalink": "/content/intro/",
-          "lastUpdate": "17-Jul-2025"
+          "lastUpdate": "27-Jul-2025"
         },
         {
           "title": "External content",
           "permalink": "/content/ec/",
-          "lastUpdate": "17-Jul-2025"
+          "lastUpdate": "27-Jul-2025"
         }
       ],
       "numPages": 2
@@ -770,12 +1133,12 @@
         {
           "title": "Get started",
           "permalink": "/get-started/",
-          "lastUpdate": "17-Jul-2025"
+          "lastUpdate": "27-Jul-2025"
         },
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "17-Jul-2025"
+          "lastUpdate": "27-Jul-2025"
         }
       ],
       "numPages": 2
@@ -1236,6 +1599,17 @@
     "elements_figma_link_to_file_text": "Open in Figma",
     "elements_figma_wrong_file_type_alert_title": "Wrong file type",
     "elements_figma_wrong_file_type_alert_file_type_text": "File type",
-    "elements_figma_wrong_file_type_alert_file_type_not_accepted_text": "is not accepted by elements/figma.html component"
+    "elements_figma_wrong_file_type_alert_file_type_not_accepted_text": "is not accepted by elements/figma.html component",
+    "elements_downloads_download_completed": "Download completed! The file is in downloads folder, %s.",
+    "elements_downloads_download_failed": "Download failed for file %s!",
+    "elements_downloads_download_file_not_found": "File %s not found!",
+    "elements_xlsx_tables_show_per_page": "Show",
+    "elements_xlsx_tables_features_btn_text": "Features",
+    "elements_xlsx_tables_features_copy": "Copy",
+    "elements_xlsx_tables_features_csv": "CSV",
+    "elements_xlsx_tables_features_excel": "Excel",
+    "elements_xlsx_tables_features_pdf": "PDF",
+    "elements_xlsx_tables_features_filter": "Filter",
+    "elements_xlsx_tables_features_search": "Search"
   }
 }

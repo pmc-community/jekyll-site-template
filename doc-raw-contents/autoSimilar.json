@@ -24,7 +24,7 @@
     {
         "permalink": "/content/intro/",
         "similarFiles": [
-            "/intro/"
+            "/content/ec/"
         ]
     },
     {
@@ -46,6 +46,34 @@
     },
     {
         "permalink": "/components/scrollspy/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/components/content-items/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/components/downloads/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/components/download-link/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/components/xlsx-tables/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/components/xlsx-charts/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/components/image/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/content/content-items/",
         "similarFiles": []
     }
 ]

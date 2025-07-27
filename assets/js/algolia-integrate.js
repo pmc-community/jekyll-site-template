@@ -73,7 +73,7 @@ algolia = {
     // real lang code is needed to filter search hits based on real language facet
     getRealLangCode: () => {
         if (!settings.multilang.enabled) return '';
-        if (siteLanguageCode === '') return '';
+        if (siteLanguageCode === '') return settings.multilang.availableLang[settings.multilang.fallbackLang].lang;
         return siteLanguageCode;
     },
 
@@ -607,7 +607,6 @@ algolia = {
     
             index.search(query, { page: page, hitsPerPage: algolia.hitsPerPage, facetFilters: [`lang:${algolia.realLangCode}`] })
                 .then(function(searchResults) { 
-                    
                     // Clear existing results and append new ones
                     $('#docsearch-list').empty();
                     
@@ -781,7 +780,7 @@ algolia = {
                 if (permalink.charAt(0) !== '/') permalink = '/' + permalink;
                 const fullUrl = algolia.getPageFullUrl(permalink);
                 return (
-                    `
+                    `   
                         <a href="${fullUrl}"
                             target=_blank 
                             class="btn btn-sm btn-primary"
@@ -833,6 +832,7 @@ algolia = {
         }
 
         const getPageToc = async (hit) => {
+            let docSearchHitPageToc = [];
             let url = hit.pagePermalink;
             let title = hit.pageTitle;
             if (url.charAt(0) !== '/') url = '/' + url;
@@ -878,16 +878,10 @@ algolia = {
                     <span class='text-dark'>${i18next.t('algolia_doc_search_custom_panel_heads_up_text')}</span>
                 `
             // we need to fetch the hit target page and extract headings
-            // cannot use #toc_content of the hit target page because is dynamically generated
-            // so the toc we generate here may be smaller than the actual toc of the hit target page
-            //however, dynamic client-side content is not searchable either (not by JTD search or Algolia)
+            // HEADS UP!!!!
+            // this feature is currrently deactivated          
             const fetchToc = async (url, originalUrl) => {
-
-                
-
                 try {                    
-                    //const response = await $.get(url);
-
                     const response = await algolia.getRenderedPageSource(url)
                     const html = $(response);
                     const content = html.find('main');
@@ -951,11 +945,12 @@ algolia = {
             };
         
             const outputObj = getObjectFromArray({ permalink: url }, docSearchHitPageToc);
-            if (outputObj !== 'none') {
+            
+            //if (outputObj !== 'none') {
                 return markOutput(outputObj.toc);
-            } else {
-                return await fetchToc(algolia.getPageFullUrl(url),url);
-            }
+            //} else {
+            //    return await fetchToc(algolia.getPageFullUrl(url),url); /* FEATURE DEACTIVATED HERE */
+            //}
         };
 
         const getPageTags = (hit, page) => {
@@ -1212,17 +1207,33 @@ algolia = {
             // hit target page toc
             getPageToc(hit).then(toc  => {
                 $('div[siteFunction="docSearch_HitDetails_pageToc"]').empty();
-                if (toc.html() === undefined) $('div[siteFunction="docSearch_HitDetails_pageToc"]').addClass('d-none');
+                if (toc.html() === undefined) {
+                    $('div[siteFunction="docSearch_HitDetails_pageToc"]').addClass('d-none');
+                    $('div[siteFunction="docSearch_searchHitDetails_header_nav"] button').each(function() {
+                        if ($(this).text() === i18next.t('algolia_doc_search_custom_panel_contents_text') )
+                            $(this).remove();
+                    });
+                }
                 else {
 
                     $('div[siteFunction="docSearch_HitDetails_pageToc"]').removeClass('d-none');
                     $('div[siteFunction="docSearch_HitDetails_pageToc"]').append(toc);
 
-                    $('div[siteFunction="docSearch_searchHitDetails_header_nav"]')
-                        .append($navBtn(
-                            'div[siteFunction="docSearch_HitDetails_pageToc"]', 
-                            i18next.t('algolia_doc_search_custom_panel_contents_text')
-                        ));
+                    // need to check if the ToC button is there already to not double it
+                    let addTocButtonInNav = true;
+                    $('div[siteFunction="docSearch_searchHitDetails_header_nav"] button').each(function() {
+                        if ($(this).text() === i18next.t('algolia_doc_search_custom_panel_contents_text') )
+                            addTocButtonInNav = false;
+                    });
+
+                    if (addTocButtonInNav) {
+                        $('div[siteFunction="docSearch_searchHitDetails_header_nav"]')
+                            .append($navBtn(
+                                'div[siteFunction="docSearch_HitDetails_pageToc"]', 
+                                i18next.t('algolia_doc_search_custom_panel_contents_text')
+                            ));
+                    }
+
                     $('span[data-i18n="algolia_doc_search_custom_panel_contents_text"]')
                             .text(i18next.t('algolia_doc_search_custom_panel_contents_text'));
 

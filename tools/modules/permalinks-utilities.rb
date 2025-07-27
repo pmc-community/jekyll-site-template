@@ -14,10 +14,12 @@ module PermalinksUtilities
         return permalinks.compact
     end
 
-    def self.checkPermalinks(site_dir, sitePermalinks, silent)
+    def self.checkPermalinks(site_dir, sitePermalinks, silent, ignore)
         badPermalinks = 0;
         badPatterns = 0
         normalizedPermalinks = Globals.removeSlashesFromArrayElements(sitePermalinks)
+        #puts JSON.parse(ignore)
+        toIgnore = JSON.parse(ignore)
 
         Globals.putsColText(Globals::WHITE, "Checking duplicates:") if !silent
         duplicates = Globals.getArrayDuplicates(normalizedPermalinks)
@@ -40,18 +42,20 @@ module PermalinksUtilities
 
         Globals.putsColText(Globals::WHITE, "Checking consistency:") if !silent
         sitePermalinks.compact.each do |permalink|
-            permalinkPattern = 0
-            permalinkPattern = permalink.include?(".html") ? 0 : checkPermalinkPattern(permalink);
-            badPatterns += permalinkPattern
-            if (permalinkPattern == 1)
-                result = "Inconsistent pattern for permalink \"#{permalink}\" #{Globals::ARROW_RIGHT} #{FileUtilities.getFileFromPermalink(site_dir, permalink)}; Consider to use: \"/#{Globals.removeFirstAndLastSlash(permalink)}/\""
-                Globals.putsColText(Globals::YELLOW, " - #{result}") if !silent
-                FileUtilities.write_file("#{Globals::ROOT_DIR}/tools/checks/permalinks.log", "#{result}\n")
-            end
-            if (permalinkPattern == 2)
-                result = "Invalid characters for permalink \"#{permalink}\" #{Globals::ARROW_RIGHT} #{FileUtilities.getFileFromPermalink(site_dir, permalink)}"
-                Globals.putsColText(Globals::YELLOW, " - #{result}") if !silent
-                FileUtilities.write_file("#{Globals::ROOT_DIR}/tools/checks/permalinks.log", "#{result}\n")
+            unless toIgnore.include?(permalink)
+                permalinkPattern = 0
+                permalinkPattern = permalink.include?(".html") ? 0 : checkPermalinkPattern(permalink);
+                badPatterns += permalinkPattern
+                if (permalinkPattern == 1)
+                    result = "Inconsistent pattern for permalink \"#{permalink}\" #{Globals::ARROW_RIGHT} #{FileUtilities.getFileFromPermalink(site_dir, permalink)}; Consider to use: \"/#{Globals.removeFirstAndLastSlash(permalink)}/\""
+                    Globals.putsColText(Globals::YELLOW, " - #{result}") if !silent
+                    FileUtilities.write_file("#{Globals::ROOT_DIR}/tools/checks/permalinks.log", "#{result}\n")
+                end
+                if (permalinkPattern == 2)
+                    result = "Invalid characters for permalink \"#{permalink}\" #{Globals::ARROW_RIGHT} #{FileUtilities.getFileFromPermalink(site_dir, permalink)}"
+                    Globals.putsColText(Globals::YELLOW, " - #{result}") if !silent
+                    FileUtilities.write_file("#{Globals::ROOT_DIR}/tools/checks/permalinks.log", "#{result}\n")
+                end
             end
         end
 

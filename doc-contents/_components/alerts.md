@@ -3,7 +3,7 @@ layout: page
 title: Alerts
 permalink: /components/alerts/
 categories: [Components]
-tags: [embed]
+tags: [embed, alert]
 ---
 
 # Summary
@@ -20,7 +20,11 @@ Add a simple primary alert to your page like this:
 
 {% raw %}
 ```javascript
-{% include elements/alert.html class="primary" content="primary alert" title="Title" %}
+{% include elements/alert.html 
+  class="primary" 
+  content="primary alert" 
+  title="Title" 
+%}
 ```
 {% endraw %}
 
@@ -44,7 +48,12 @@ Add content taken from external files to your alerts like this. Content is taken
     } 
     %}
 {% endcapture %}
-{% include elements/alert.html class="success" content=c title="Alert title" %}
+
+{% include elements/alert.html 
+  class="success" 
+  content=c 
+  title="Alert title" 
+%}
 ```
 {% endraw %}
 
@@ -67,9 +76,23 @@ Add content taken from external files to your alerts like this. Content is taken
 Add simple alerts to your page like this:
 {% raw %}
 ```javascript
-{% include elements/alert.html class="danger" content="danger alert" title="Title" %}
-{% include elements/alert.html class="warning" content="warning alert" title="Title" %}
-{% include elements/alert.html class="info" content="info alert" title="Title" %}
+{% include elements/alert.html 
+  class="danger" 
+  content="danger alert" 
+  title="Title" 
+%}
+
+{% include elements/alert.html 
+  class="warning" 
+  content="warning alert"
+   title="Title" 
+%}
+
+{% include elements/alert.html 
+  class="info" 
+  content="info alert" 
+  title="Title" 
+%}
 ```
 {% endraw %}
 

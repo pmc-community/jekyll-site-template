@@ -33,6 +33,6 @@ Deploy locally using one simple command launched from your project directory. Op
 {% include elements/alert.html class="warning" content="Our strong recommendation is to buid and test incrementally, the build process is desigend to process only the changes from previous builds. Processing a large number of docs (more than 20) in a sigle batch may take time (mostly when you use the advanced Python based features)." %}
 
 # Deploy
-Setup a Github repository for your project, commit your project there and setup [Github pages](https://docs.github.com/en/pages){: .text-primary target="_blank"} for it. Run manually one of the deployment actions. 
+Setup a Github repository for your project, commit your project there and setup [Github pages](https://docs.github.com/en/pages){: .text-primary target="_blank"} for it. If your site shoud be multilangual, setup the multilanguage configuration (repository branches and settings), ensure that the the translation files are in their location(`assets/locales`) and all translations are complete. Run manually one of the deployment actions. 
 
 {% include elements/alert.html class="warning" content="If you use the advanced Python based features, our strong recommendation is to build locally, commit to Github and use the `(NO-PY) Manual Deploy Multilingual Jekyll site to Pages` deployment action. Otherwise the deployment can take long time which may consume quite a lot of your Github build minutes." %}

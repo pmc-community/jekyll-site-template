@@ -16,6 +16,10 @@ Welcome to the **Documentation Site Builder Guide** — your comprehensive resou
 
 Whether you’re a solo developer, technical writer, open-source contributor, startup team, or enterprise content strategist, this guide will walk you through everything you need to know about building a complete, maintainable, and professional documentation site from scratch.
 
+Docaroo was created having in mind the main things that can transform writing good documentation into a painful task. We wanted to create a product that allows you to focus on what is important and not on to learn technical things to be able to write your documentation. So, we choose markdown as the base of writing, nothing new here, all similar products do the same. But, on this base we created a bunch of components and content items that makes your life easier and also lets you to enrich your documents with quality content such as different media, Figma design and whiteboards, Excel table and charts and many others. In simple words, focus on writing, not on learning how to write.
+
+Of course, the basics of markdown must be known, but how difficult is to learn to use headings, is even easier than heading style in Word. And that's pretty much all you need to know. Apart from this, take look to how simple is to use pre-defined components and content items, how powerful is to create reusable content and place it anywhere in your docs while maintaining consistency when is needed to change the content, enjoy importing content from other external sources and keep it in sync ... and many more!
+
 # 🚀 What Is This Guide?
 
 This guide is a **step-by-step manual** that explains:

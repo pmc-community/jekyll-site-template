@@ -6,7 +6,7 @@
         },
         {
             "permalink": "/components/intro/",
-            "summary": "Documentaroo lets you embed content into your documents using pre-defined components. The components are elements that can be embedded in documents using tags and. As it will be shown for each of the next components."
+            "summary": "Learn how to add different pre-defined. Content items to your content. These are elements that can be embedded in your documents using. As it will be shown for each of the next components."
         },
         {
             "permalink": "/components/qitem/",
@@ -30,7 +30,7 @@
         },
         {
             "permalink": "/intro/",
-            "summary": "This guide will walk you through everything you need to know about building a complete, maintainable, and professional documentation site from scratch. This guide is suitable for:. Developers who want to document apis, libraries, or frameworks product teams building internal or customer-facing documentation technical writers looking to improve structure and."
+            "summary": "Documentation site builder guide is a comprehensive resource for learning how to create, build, and maintain high-quality documentation sites. This guide will walk you through everything you need to know about building a complete, maintainable, and professional documentation site."
         },
         {
             "permalink": "/get-started/",
@@ -38,7 +38,35 @@
         },
         {
             "permalink": "/components/scrollspy/",
-            "summary": "Scroll spy is a gret way of organising information inside your documents. Any docaroo component, including importing esternal content or rich content ones, can be used to populate a scroll spy."
+            "summary": "Scroll spies are great ways of organising information inside your documents. We made them flexible and easy to be included in the documents. Any docaroo component, including importing esternal content or rich content ones, can be used to populate scroll spies and tabs."
+        },
+        {
+            "permalink": "/components/content-items/",
+            "summary": "Docaroo makes available a series of content items that can be used to enrich your documents and to be very efficient when wanting to incorporate piecers of content in a fast and robust way."
+        },
+        {
+            "permalink": "/components/downloads/",
+            "summary": ""
+        },
+        {
+            "permalink": "/components/download-link/",
+            "summary": "The download-link component generates a button link for downloading files from your documentation site. Only downloading from your site is allowed, for security reasons it is not allowed to create download links targeting files hosted on external sites."
+        },
+        {
+            "permalink": "/components/xlsx-tables/",
+            "summary": "Tables can be imported directly from excel. When a table contains merged cells, it will be rendered as table, regardless of the value of the."
+        },
+        {
+            "permalink": "/components/xlsx-charts/",
+            "summary": "This component allows importing excel charts into your documents. Currently we support only:. Line charts column and bar charts pie and doughnut charts. We do not support importing the colors you assign to the series in the excel chart."
+        },
+        {
+            "permalink": "/components/image/",
+            "summary": "This component allows placing images into your content. Images can have captions (lets say you need to show some credits or copyright information) or not. The compoenent is designed to work with responsive images."
+        },
+        {
+            "permalink": "/content/content-items/",
+            "summary": "Docaroo makes available a series of content items that can be used to enrich your documents and to be very efficient when wanting to incorporate piecers of content in a fast and robust way."
         }
     ]
 }

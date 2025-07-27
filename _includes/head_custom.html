@@ -1,4 +1,25 @@
-<style>body {visibility: hidden}</style>
+
+{% assign dark = site.data["siteConfig"].colSchemaCorrections.backgroundColorOnElementsAffected.dark %}
+{% assign light = site.data["siteConfig"].colSchemaCorrections.backgroundColorOnElementsAffected.light %}
+{% assign themeCookie = site.data["siteConfig"].themeSwitch.cookie %}
+<script>
+    const cVal = `; ${document.cookie}`;
+    const parts = cVal.split(`; ${'{{themeCookie}}'}=`);
+    let theme = 0; 
+    if (parts.length === 2) {
+        theme = parts.pop().split(';').shift();
+    }
+    
+    if (theme === '0') {
+        document.documentElement.style.backgroundColor = '{{light}}';
+    } else {
+        document.documentElement.style.backgroundColor = '{{dark}}';
+    }
+</script>
+
+<style>
+    body {visibility: hidden}
+</style>
 
 <script type="application/javascript">
     let userIP = undefined;
@@ -159,6 +180,20 @@
         src="https://cdn.datatables.net/v/bs5/jq-3.7.0/jszip-3.10.1/dt-2.0.5/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.1/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/rr-1.5.0/sc-2.4.1/sb-1.7.1/sp-2.3.1/sl-2.0.1/sr-1.4.1/datatables.min.js">
     </script>
 
+    <link 
+        href="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js" rel="preload" 
+        as="script">
+    <script 
+        src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js">
+    </script>
+
+    <link 
+        href="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js" rel="preload" 
+        as="script">
+    <script 
+        src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js">
+    </script>
+ 
     <link 
         href="https://cdn.ckeditor.com/ckeditor5/41.3.1/decoupled-document/ckeditor.js" 
         rel="preload" 
@@ -333,6 +368,19 @@
 
     <link href="{{lang_prefix}}/assets/js/site-pages.js" rel="preload" as="script">
     <script src="{{lang_prefix}}/assets/js/site-pages.js"></script>
+
+    {% assign hasCharts = false %}
+
+    {% capture hasCharts %}
+        {% HasCharts {{page.path}} %}
+    {% endcapture %}
+    {% assign hc = hasCharts | strip %}
+
+    {% if hc  == "true" %}
+        <!-- plotly is kind of heavy, we load it only when we need -->
+        <link href="{{lang_prefix}}/assets/js/plotly-basic.js" rel="preload" as="script">
+        <script src="{{lang_prefix}}/assets/js/plotly-basic.js"></script>
+    {% endif %}
 
 {% endif %}
 

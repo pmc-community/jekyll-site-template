@@ -173,4 +173,21 @@ module ContentUtilities
             spyHtml
     end
 
+    def self.checkForCharts(file_path)
+        # called as {% HasCharts {{page.path}} %} from liquid tag
+        #puts File.expand_path("#{Globals::DOCS_ROOT}/#{file_path}")
+        liquid_tag_regex = /include elements\/xlsx-to-html-chart\.html/
+        result = false
+        begin
+            file_content = File.read(File.expand_path("#{Globals::DOCS_ROOT}/#{file_path}"))
+            file_content.force_encoding('UTF-8').encode!('UTF-8', invalid: :replace, undef: :replace)
+            if ( file_content.match(liquid_tag_regex) )
+                result = true
+            end
+            return result
+        rescue
+            return result
+        end
+    end
+
 end

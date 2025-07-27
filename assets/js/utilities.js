@@ -10,6 +10,24 @@ window.alert = async function(message) {
     console.error(message);
 };
 
+// handle the header height when scrolling
+// scroll must stop below the header to prevent the target anchor to get under the header
+$(window).on('scroll', () => {
+
+    // handle fixed header scroll
+    const hash = window.location.hash;
+    if (!hash || !$(hash).length) return;
+     
+    // if the header is not fixed, 
+    // -$(settings.headerAboveContent.headerID).height() - settings.headerAboveContent.offsetWhenScroll 
+    // can be removed
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $(hash).offset().top - $(settings.headerAboveContent.headerID).height() - settings.headerAboveContent.offsetWhenScroll
+    },100);
+    clearTheUrl(); 
+    
+});
+
 
 const goToAnchor = () => {
     const hash = window.location.hash;
@@ -888,7 +906,7 @@ const setDataTable = async (
             // callback to be personalised for each table
             // for post processing the table (i.e. adding buttons based on context)
             if (callback) callback(table);
-        },  
+        },
         serverSide: false,
         paging: true,
         pageLength: 5,
@@ -907,12 +925,12 @@ const setDataTable = async (
                 buttons: bottom2Buttons
             },
         },
-        stateSave: true,
+        stateSave: additionalSettings.ignoreSaveState ? false : true,
         stateSaveCallback: function (settings, data) {
-            localStorage.setItem(`${window.location.pathname.replace(/^\/|\/$/g, '').replace(/\//g, '_')}_DataTables_` + tableUniqueID, JSON.stringify(data));
+                localStorage.setItem(`${window.location.pathname.replace(/^\/|\/$/g, '').replace(/\//g, '_')}_DataTables_` + tableUniqueID, JSON.stringify(data));
         },
         stateLoadCallback: function (settings) {
-            return JSON.parse(localStorage.getItem(`${window.location.pathname.replace(/^\/|\/$/g, '').replace(/\//g, '_')}_DataTables_` + tableUniqueID));
+                return JSON.parse(localStorage.getItem(`${window.location.pathname.replace(/^\/|\/$/g, '').replace(/\//g, '_')}_DataTables_` + tableUniqueID));
         },
         columns: columnsConfig,
         language: {
@@ -940,7 +958,6 @@ const setDataTable = async (
         afterSearchPanesCallback,
         afterSearchApplied
     ) => {
-
         return new Promise ( (resolve, reject) => {
 
             $(`${tableSelector} tr`).removeClass('table-active'); // just to be sure that nothing is marked as selected
@@ -1063,7 +1080,9 @@ const setDataTable = async (
                 // i.e. when returning from page info offcanvas, columnsConfig may not be available anymore for direct access
                 
                 try {
-                    cD = table.settings().init().columns; // read cols definitions directly from table object
+                    cD = table.settings().init()
+                        ? table.settings().init().columns
+                        : []; // read cols definitions directly from table object
                 } catch (error) {
                     showToast(i18next.t('toast_utilities_js_dt_create_table_error'), 'bg-danger', 'text-light');
                     console.error('Docs table error:', error);
@@ -1302,11 +1321,7 @@ const setDataTable = async (
             // everything set, now we need to resolve the promise 
             // we pass the table and its current search panes selection to the next steps
             /* resolving the promise inside a custom message handler */
-            setTimeout(()=>{
-                $(tableSelector).trigger('timeToBuildTheTable')
-            }, settings.dataTables.TO_resolvePromiseIncreateTable_ASYNC);
-
-            $(tableSelector).on('timeToBuildTheTable', function() {
+            $(document).off('timeToBuildTheTable', tableSelector).on('timeToBuildTheTable', tableSelector, function() {           
                 resolve(
                     {
                         table: table,
@@ -1315,7 +1330,11 @@ const setDataTable = async (
                         tableSelector: tableSelector,
                     }
                 )
-            })
+            });
+
+            setTimeout(()=>{
+                $(tableSelector).trigger('timeToBuildTheTable')
+            }, settings.dataTables.TO_resolvePromiseIncreateTable_ASYNC);
 
             /* resolving the promise inside a longer setTimeout */
             /*
@@ -1340,7 +1359,6 @@ const setDataTable = async (
         // then apply active searchPanes selection if available and some styles on mobile
 
         waitForI18Next().then(() => {
-            
             createTable_ASYNC(
                 tableSelector,
                 tableUniqueID, 
@@ -1353,7 +1371,6 @@ const setDataTable = async (
                 afterSearchApplied
             )
                 .then( (result) => {
-                    
                     const timeout = settings.dataTables.TO_afterAutoApplySearchPanesCurrentFilter;
                     setTimeout(() => {
                         if (result.table.helpers && result.table.helpers !== 'undefined') 
@@ -3454,3 +3471,11 @@ const docOrderOnScreen = () => {
     return pagesOnScreen;
 
 }
+
+const checkForMergedCells = ($table) => {
+    return $table.find('td[rowspan], td[colspan], th[rowspan], th[colspan]').filter(function () {
+    const rs = parseInt($(this).attr('rowspan') || 1, 10);
+    const cs = parseInt($(this).attr('colspan') || 1, 10);
+    return rs > 1 || cs > 1;
+    }).length > 0;
+};

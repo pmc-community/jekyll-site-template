@@ -1,0 +1,230 @@
+
+{% capture uuid %}
+  {% UUID %}
+{% endcapture %}
+{% assign tid = uuid | strip %}
+
+{% assign file = include.file %}
+{% assign range = include.range %}
+{% assign sheet = include.sheet %}
+{% assign source = include.source %}
+{% assign simple = include.simple || default: "true" %}
+{% assign showHead = include.showHead || default: "true" %}
+{% assign defaultRowsPerPage = 5 %}
+
+{% if file and range and sheet and source %}
+  <div class="d-flex justify-content-start align-items-center" id="xlsx-table-length-container-{{tid}}">
+    <span data-i18n="elements_xlsx_tables_show_per_page" class="mr-2">Show</span>
+      <select name="xlsx-table-length-{{tid}}" aria-controls="xlsx-table-{{tid}}" class="w-auto d-inline-block form-select form-select-sm" id="xlsx-table-length-{{tid}}">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="25">25</option>
+        <option value="50">50</option>
+      </select>
+  </div>
+
+  <div id="xlsx-table-container-{{tid}}">
+   {% XLSXToHtmlTable "{{file}}" "{{range}}" "{{sheet}}" "{{source}}" %}
+  </div>
+
+  <div class="d-flex justify-content-between" id="xlsx-table-controls-{{tid}}">
+    
+
+    <nav id="xlsx-table-pagination-nav-{{tid}}" class="d-flex justify-content-start justify-content-md-end">
+      <ul class="pagination d-none mt-0 pl-0" id="xlsx-table-pagination-{{tid}}">
+      </ul>
+    </nav>
+
+  </div>
+
+  <script id="xlsx-table-common-script-{{tid}}">
+    $('#xlsx-table-container-{{tid}}').find('table').attr('id', 'xlsx-table-{{tid}}');
+    $('#xlsx-table-{{tid}}').addClass('table table-striped table-hover table-responsive');
+    $('#xlsx-table-{{tid}}').find('tr').addClass('align-middle border border-secondary border-opacity-25');
+    $('#xlsx-table-{{tid}}').find('td').addClass('align-middle border border-secondary border-opacity-25');
+    $('#xlsx-table-{{tid}}').find('th').addClass('text-center text-primary fw-medium align-middle border border-secondary border-opacity-25 bg-secondary bg-opacity-25');
+    $('.table-wrapper').addClass('p-1 mb-2');
+
+    if ({{showHead}} === false) $('#xlsx-table-{{tid}}').find('thead').hide();
+  </script>
+
+  <script id="xlsx-table-create-script-{{tid}}">
+    if (!checkForMergedCells($('#xlsx-table-{{tid}}')) && {{simple}} !== true) {
+
+      setTimeout(async ()=>{
+        await waitForI18Next();
+
+        setDataTable (
+          '#xlsx-table-{{tid}}',
+          'DataTables-xlsx-table-{{tid}}',
+          null,
+          (table) => {
+            $('#xlsx-table-{{tid}}').find('.dt-column-title').addClass('text-primary fw-medium');
+            $('.dt-buttons').prependTo($('.dt-info').parent());
+            $('.dt-info').remove();
+            $('.dt-buttons').parent().addClass('d-flex align-items-center mt-auto');
+            $('.dt-buttons').find('button').removeClass('btn-sm btn-secondary').addClass('btn-primary');
+            $('.dt-buttons').removeClass('btn-group');
+
+            const buttons = [
+              { extend: 'collection',
+                text: i18next.t('elements_xlsx_tables_features_btn_text'),
+                className: 'tab-features-button-{{tid}}',
+                buttons: [
+                  { extend: 'copyHtml5', text: i18next.t('elements_xlsx_tables_features_copy') },
+                  { extend: 'csvHtml5', text: i18next.t('elements_xlsx_tables_features_csv') },
+                  { extend: 'excelHtml5', text: i18next.t('elements_xlsx_tables_features_excel') },
+                  { extend: 'pdfHtml5', text: i18next.t('elements_xlsx_tables_features_pdf')},
+                  { extend: 'searchBuilder', text: i18next.t('elements_xlsx_tables_features_search')}
+                ]
+              }
+            ];
+
+            buttons.forEach(btnConfig => {
+              table.button().add(null, btnConfig);
+            });
+
+            $('.dt-buttons').find('button').removeClass('btn-sm btn-secondary mb-2').addClass('border-0 mb-0 btn-primary');
+            $('.tab-features-button-{{tid}} span').addClass('text-light');
+
+            table.columns.adjust().draw();
+          },
+          null,
+          {
+            ignoreSaveState: true,
+            autoWidth: true,
+            scrollCollapse: false,
+          },
+          null,
+          preFlight.envInfo,
+          ()=>{ 
+            $('#xlsx-table-{{tid}}').wrap('<div style="overflow: auto; position: relative; width:100%"></div>'); 
+          },
+          null,
+          null
+        );
+
+        $('#xlsx-table-controls-{{tid}}').remove();
+        $('#xlsx-table-length-container-{{tid}}').remove();
+        $('#xlsx-table-pagination-script-{{tid}}').remove();
+        applyColorSchemaCorrections();
+
+      },200); 
+    }
+  </script>
+
+  <script id="xlsx-table-pagination-script-{{tid}}">
+    if (checkForMergedCells($('#xlsx-table-{{tid}}')) || {{simple}} === true) {
+
+      $('#xlsx-table-pagination-{{tid}}').removeClass('d-none');
+      $('#xlsx-table-create-script-{{tid}}').remove();
+
+      const initPagination__{{tid}} = () => {
+        const rowsPerPage = parseInt($('#xlsx-table-length-{{tid}}').val(), 10) || {{defaultRowsPerPage}};
+        const $rows = $('#xlsx-table-{{tid}} tbody tr');
+        const totalRows = $rows.length;
+        const totalPages = Math.ceil(totalRows / rowsPerPage);
+        return { rowsPerPage, $rows, totalRows, totalPages };
+      };
+
+      const showPage__{{tid}} = (page, rowsPerPage, $rows, totalPages) => {
+        const start = (page - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
+
+        $rows.hide().slice(start, end).show();
+        const $pagination = $('#xlsx-table-pagination-{{tid}}');
+        $pagination.empty();
+
+        const addItem = (label, pageNum, disabled = false, active = false, isDots = false) => {
+          const li = $(`
+            <li class="page-item ${disabled ? 'disabled' : ''} ${active ? 'active' : ''}">
+              <a id="page-link-{{tid}}" class="page-link" href="#" ${isDots ? '' : `data-page="${pageNum}"`}>
+                ${label}
+              </a>
+            </li>
+          `);
+          $pagination.append(li);
+        };
+
+        addItem('«', 1, page === 1);
+        addItem('‹', page - 1, page === 1);
+
+        if (totalPages <= 5) {
+          for (let i = 1; i <= totalPages; i++) {
+            addItem(i, i, false, i === page);
+          }
+        } else {
+          if (page <= 3) {
+            for (let i = 1; i <= 3; i++) {
+              addItem(i, i, false, i === page);
+            }
+            addItem('...', null, true, false, true);
+          } else if (page >= totalPages - 2) {
+            addItem('...', null, true, false, true);
+            for (let i = totalPages - 2; i <= totalPages; i++) {
+              addItem(i, i, false, i === page);
+            }
+          } else {
+            addItem('...', null, true, false, true);
+            addItem(page - 1, page - 1, false, false);
+            addItem(page, page, false, true);
+            addItem(page + 1, page + 1, false, false);
+            addItem('...', null, true, false, true);
+          }
+        }
+
+        addItem('›', page + 1, page === totalPages);
+        addItem('»', totalPages, page === totalPages);
+      };
+
+      const applyPagination__{{tid}} = () => {
+        const { rowsPerPage, $rows, totalPages } = initPagination__{{tid}}();
+        let currentPage = 1;
+
+        const refreshPage = () => {
+          showPage__{{tid}}(currentPage, rowsPerPage, $rows, totalPages);
+        };
+
+        if (totalPages > 1) {
+          $('#xlsx-table-pagination-{{tid}}').removeClass('d-none');
+          $('#xlsx-table-pagination-{{tid}}')
+            .off('click', '#page-link-{{tid}}')
+            .on('click', '#page-link-{{tid}}', function (e) {
+              e.preventDefault();
+              const targetPage = parseInt($(this).data('page'), 10);
+              if (!isNaN(targetPage) && targetPage >= 1 && targetPage <= totalPages) {
+                currentPage = targetPage;
+                refreshPage();
+              }
+            });
+        } else {
+          $('#xlsx-table-pagination-{{tid}}').addClass('d-none');
+        }
+
+        refreshPage();
+      };
+
+      $('#xlsx-table-length-{{tid}}').on('change', function () {
+        applyPagination__{{tid}}();
+      });
+
+      applyPagination__{{tid}}();
+    }
+  </script>
+
+  <style>
+    #xlsx-table-{{tid}}_wrapper .pagination {
+      list-style: none !important;
+    }
+
+    #xlsx-table-pagination-nav-{{tid}} .pagination {
+      list-style: none !important;
+    }
+
+  </style>
+
+{% else %}
+ {% assign mess="Something went wrong when building table from source: file=" | append: file | append: " range=" | append: range | append: " sheet=" | append: sheet %}
+ {% include elements/alert.html class="danger" content=mess title="Error" %}
+{% endif %}
+

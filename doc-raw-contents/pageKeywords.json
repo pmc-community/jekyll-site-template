@@ -98,14 +98,14 @@
       "keywords": [
         "learn",
         "add",
-        "content",
         "pre",
         "defined",
-        "components",
+        "content",
         "elements",
         "embedded",
         "documents",
-        "tags"
+        "tags",
+        "components"
       ]
     },
     {
@@ -125,15 +125,104 @@
     {
       "permalink": "/components/scrollspy/",
       "keywords": [
-        "scroll",
-        "spy",
-        "gret",
+        "and",
+        "are",
+        "great",
+        "ways",
         "organising",
+        "information",
+        "inside",
+        "your",
         "documents",
-        "flexible",
-        "easy",
-        "included",
-        "docaroo"
+        "made"
+      ]
+    },
+    {
+      "permalink": "/components/content-items/",
+      "keywords": [
+        "docaroo",
+        "series",
+        "content",
+        "items",
+        "enrich",
+        "documents",
+        "efficient",
+        "incorporate",
+        "piecers"
+      ]
+    },
+    {
+      "permalink": "/components/downloads/",
+      "keywords": [
+        "download"
+      ]
+    },
+    {
+      "permalink": "/components/download-link/",
+      "keywords": [
+        "download",
+        "link",
+        "component",
+        "generates",
+        "button",
+        "downloading",
+        "files",
+        "documentation"
+      ]
+    },
+    {
+      "permalink": "/components/xlsx-tables/",
+      "keywords": [
+        "users",
+        "creating",
+        "table",
+        "markdown",
+        "challenge",
+        "merged",
+        "cells",
+        "crazy",
+        "quick",
+        "maintaining"
+      ]
+    },
+    {
+      "permalink": "/components/xlsx-charts/",
+      "keywords": [
+        "component",
+        "importing",
+        "excel",
+        "charts",
+        "documents",
+        "simple",
+        "create"
+      ]
+    },
+    {
+      "permalink": "/components/image/",
+      "keywords": [
+        "component",
+        "placing",
+        "images",
+        "content",
+        "captions",
+        "credits",
+        "copyright",
+        "compoenent",
+        "designed"
+      ]
+    },
+    {
+      "permalink": "/content/content-items/",
+      "keywords": [
+        "docaroo",
+        "series",
+        "content",
+        "items",
+        "enrich",
+        "documents",
+        "efficient",
+        "incorporate",
+        "piecers"
       ]
     }
   ]

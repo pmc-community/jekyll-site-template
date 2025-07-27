@@ -33,6 +33,8 @@ module Jekyll
                             Globals.putsColText( Globals::PURPLE, "- PERMALINK: #{permalink} ... done (#{pageNo})")
                         end
 
+                        # the py script generates doc-raw-contents/autoSummary.json
+                        # this is further processed by the ruby script and page_list site variable is updated
                         Globals.run_python_script(site, python_script, json_input, page_summary_callback)
                     end
                 

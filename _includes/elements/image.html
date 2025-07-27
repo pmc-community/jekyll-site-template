@@ -1,0 +1,92 @@
+{% capture uuid %}
+  {% UUID %}
+{% endcapture %}
+{% assign imgid = uuid | strip %}
+
+{% capture siteLanguage %}
+    {% SiteLanguage %}
+{% endcapture %}
+
+{% assign lang_path = siteLanguage | strip %}
+{% assign lang_prefix = '' %}
+{% unless lang_path == '' %}
+  {% assign lang_prefix = '/' | append: lang_path %}
+{% endunless %}
+
+{% assign source = include.source %}
+{% assign caption = include.caption %}
+{% assign h = include.h || default: "" %}
+{% assign w = include.w || default: "" %}
+{% assign captionBorder = include.captionBorder || default: "false" %}
+{% assign link = include.link || default: "" %}
+{% assign newTab = include.newTab || default: "false" %}
+
+{% if h and w %}
+  {% assign final_h = h %}
+  {% assign final_w = w %}
+{% elsif h and not w %}
+  {% assign final_h = h %}
+  {% assign final_w = "auto" %}
+{% elsif w and not h %}
+  {% assign final_w = w %}
+  {% assign final_h = "auto" %}
+{% else %}
+  {% assign final_h = "" %}
+  {% assign final_w = "" %}
+{% endif %}
+
+
+{% if source %}
+ {% capture fullPath %}
+    {% ImgFullPath {{source}} %}
+ {% endcapture %}
+
+ {% assign full_path = lang_prefix | append: fullPath %}
+
+ {% assign alt = "" %}
+
+ {% if caption %}
+  {% assign alt = "alt='" | append: caption | append: "'" %}
+ {% endif %}
+
+   {% assign additionalFigureClass = "" %}
+   {% if link %}
+    {% assign additionalFigureClass = "w-auto position-relative" %}
+   {% endif %}
+
+   <figure class="figure {{additionalFigureClass}} my-1">
+    <img  id="figure-{{imgid}}" src="{{full_path}}" class="figure-img img-fluid rounded" {{alt}}>
+
+    {% assign captionBorderClass = "" %}
+    {% if captionBorder != "false" %}
+        {% assign captionBorderClass = "border-top border-secondary border-opacity-25 pt-1" %}
+    {% endif %}
+
+    {% if caption %}
+     <figcaption class="figure-caption ghbtnLink text-primary {{captionBorderClass}}">{{caption}}</figcaption>
+    {% endif %}
+
+    {% if link %}
+     {% assign target = "" %}
+
+     {% if newTab != "false" %}
+      {% assign target = "target=_blank" %}
+     {% endif %}
+
+     <a href="{{link}}" {{target}} class="stretched-link"></a>
+    {% endif %}
+  </figure>
+ 
+ {% if final_h and final_w %}
+  <style>
+    #figure-{{imgid}} {
+        height: {{final_h}};
+        width: {{final_w}}        
+    }
+  </style>
+ {% endif %}
+
+{% else %}
+ {% assign mess="Something went wrong when looking for image from source=" | append: source %}
+ {% include elements/alert.html class="danger" content=mess title="Error" %}
+{% endif %}
