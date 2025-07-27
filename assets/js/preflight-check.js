@@ -254,7 +254,7 @@ preFlight = {
 }
 
 // LET'S START
-console.log(preFlight.envInfo);
+//console.log(preFlight.envInfo);
 
 // init superglobals
 const settings = allSettings.settings;
