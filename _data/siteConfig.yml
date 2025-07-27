@@ -25,7 +25,7 @@ pageToc:
     - cat-info
     - site-pages
 colSchemaCorrections:
-  elementsWithBackgroundAffected: "body, #category-menu-more-list, table, tbody, thead, tr, td, th, td[class=\"child\"], .offcanvas, .ck-editor__main, .side-bar, #hs-eu-cookie-confirmation, #toc_mobile, .accordion-item, .accordion-header, .accordion-button"
+  elementsWithBackgroundAffected: "html, body, #category-menu-more-list, table, tbody, thead, tr, td, th, td[class=\"child\"], .offcanvas, .ck-editor__main, .side-bar, #hs-eu-cookie-confirmation, #toc_mobile, .accordion-item, .accordion-header, .accordion-button"
   backgroundColorOnElementsAffected:
     light: "#fff"
     dark: "#0d1117" # HERE TO CHANGE DARK THEME BACKGROUND
