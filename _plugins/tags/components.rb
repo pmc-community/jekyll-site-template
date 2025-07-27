@@ -95,6 +95,22 @@ module Jekyll
 
         end
 
+        class ImgFullPath < Liquid::Tag
+  
+            def initialize(tag_name, input, context)
+                super
+                @input = input
+            end
+
+            def render(context)
+                param = Liquid::Template.parse(@input).render(context)
+                fullPath = "/#{Globals::DOCS_ROOT}/#{param.strip}"
+                fullPath
+            end
+            
+        end
+
+
     end
 
 end
@@ -102,4 +118,6 @@ end
 Liquid::Template.register_tag('ScrollSpy', Jekyll::Components::ScrollSpy)
 Liquid::Template.register_tag('XLSXToHtmlTable', Jekyll::Components::XLSXToHtmlTable)
 Liquid::Template.register_tag('XLSXToHtmlChart', Jekyll::Components::XLSXToHtmlChart)
+Liquid::Template.register_tag('ImgFullPath', Jekyll::Components::ImgFullPath)
+
 
