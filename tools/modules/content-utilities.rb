@@ -174,6 +174,7 @@ module ContentUtilities
     end
 
     def self.checkForCharts(file_path)
+        # called as {% HasCharts {{page.path}} %} from liquid tag
         #puts File.expand_path("#{Globals::DOCS_ROOT}/#{file_path}")
         liquid_tag_regex = /include elements\/xlsx-to-html-chart\.html/
         result = false
