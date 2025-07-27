@@ -1,4 +1,25 @@
-<style>body {visibility: hidden}</style>
+
+{% assign dark = site.data["siteConfig"].colSchemaCorrections.backgroundColorOnElementsAffected.dark %}
+{% assign light = site.data["siteConfig"].colSchemaCorrections.backgroundColorOnElementsAffected.light %}
+{% assign themeCookie = site.data["siteConfig"].themeSwitch.cookie %}
+<script>
+    const cVal = `; ${document.cookie}`;
+    const parts = cVal.split(`; ${'{{themeCookie}}'}=`);
+    let theme = 0; 
+    if (parts.length === 2) {
+        theme = parts.pop().split(';').shift();
+    }
+    
+    if (theme === '0') {
+        document.documentElement.style.backgroundColor = '{{light}}';
+    } else {
+        document.documentElement.style.backgroundColor = '{{dark}}';
+    }
+</script>
+
+<style>
+    body {visibility: hidden}
+</style>
 
 <script type="application/javascript">
     let userIP = undefined;
