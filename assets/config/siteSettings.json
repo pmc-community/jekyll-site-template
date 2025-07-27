@@ -219,10 +219,10 @@
       "categories": [],
       "tags": [],
       "excerpt": "important, varianta, limba, romana, exista, exemplifica, capabilitatile, multilanguage, afara, pagina",
-      "lastUpdate": "2025-07-27 19:03:50 +0300",
-      "lastUpdateUTC": 1753632230,
-      "createTime": "2025-07-27 19:03:50 +0300",
-      "createTimeUTC": 1753632230,
+      "lastUpdate": "2025-07-27 23:48:29 +0300",
+      "lastUpdateUTC": 1753649309,
+      "createTime": "2025-07-27 23:48:29 +0300",
+      "createTimeUTC": 1753649309,
       "relatedPages": [],
       "autoSummary": "Important varianta in limba romana exista doar pentru a exemplifica capabilitatile multilanguage. In afara de pagina de start si de pagina inroducere nu exista alt continut in limba romana.",
       "similarByContent": [],
@@ -231,10 +231,122 @@
       "parent": ""
     }
   ],
-  "tagList": [],
-  "tagDetails": {},
-  "catList": [],
-  "catDetails": {},
+  "tagList": [
+    "alert",
+    "anchor",
+    "button",
+    "chart",
+    "component",
+    "content",
+    "docs",
+    "documentation",
+    "download",
+    "embed",
+    "external",
+    "faq",
+    "figma",
+    "file",
+    "image",
+    "import",
+    "items",
+    "link",
+    "lottie",
+    "organise docs",
+    "scrollspy",
+    "table",
+    "video",
+    "xls"
+  ],
+  "tagDetails": {
+    "alert": {
+      "pages": []
+    },
+    "anchor": {
+      "pages": []
+    },
+    "button": {
+      "pages": []
+    },
+    "chart": {
+      "pages": []
+    },
+    "component": {
+      "pages": []
+    },
+    "content": {
+      "pages": []
+    },
+    "docs": {
+      "pages": []
+    },
+    "documentation": {
+      "pages": []
+    },
+    "download": {
+      "pages": []
+    },
+    "embed": {
+      "pages": []
+    },
+    "external": {
+      "pages": []
+    },
+    "faq": {
+      "pages": []
+    },
+    "figma": {
+      "pages": []
+    },
+    "file": {
+      "pages": []
+    },
+    "image": {
+      "pages": []
+    },
+    "import": {
+      "pages": []
+    },
+    "items": {
+      "pages": []
+    },
+    "link": {
+      "pages": []
+    },
+    "lottie": {
+      "pages": []
+    },
+    "organise docs": {
+      "pages": []
+    },
+    "scrollspy": {
+      "pages": []
+    },
+    "table": {
+      "pages": []
+    },
+    "video": {
+      "pages": []
+    },
+    "xls": {
+      "pages": []
+    }
+  },
+  "catList": [
+    "Components",
+    "Content",
+    "General"
+  ],
+  "catDetails": {
+    "Components": {
+      "pages": []
+    },
+    "Content": {
+      "pages": []
+    },
+    "General": {
+      "pages": []
+    }
+  },
   "hsSettings": {
     "region": "na1",
     "portalID": "7598952",
