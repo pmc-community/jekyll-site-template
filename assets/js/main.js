@@ -144,13 +144,32 @@ const setPrefLang = () => {
     });
 }
 
+// customise default JTD search box and search results 
 const correctJTDSearch = () => {
     if (!algoliaSettings.algoliaEnabled) {
+
+        const replaceHashWithId = (permalink) => {
+            const hashIndex = permalink.indexOf('#');
+            if (hashIndex === -1) {
+                return permalink;
+            }
+            const hashValue = permalink.slice(hashIndex + 1);
+            const newHash = '#id_' + hashValue;
+            return permalink.slice(0, hashIndex) + newHash;
+        }
+
         removeObservers('body (class=search-results-list)');
         setElementCreatedByClassObserver('search-results-list', () => {
-            $('.search-results-list').addClass('fs-6');
-            $('.search-result-previews').addClass('fs-6');
-            $('.search-result-highlight').addClass('text-danger');
+
+            $('.search-results-list').find('a').each(function() {
+                const link = $(this).attr('href');
+                const newlink = replaceHashWithId(link);
+                $(this).attr('href', link);
+            });
+
+            //$('.search-results-list').addClass('fs-6');
+            //$('.search-result-previews').addClass('fs-6');
+            $('.search-result-highlight').addClass('text-danger fw-normal');
             $('.search-overlay').remove();
             $('.search-result').removeClass('active)');            
             
