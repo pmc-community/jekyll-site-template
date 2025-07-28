@@ -399,13 +399,13 @@ const page__getPageInfo = () => {
 
             const isNotLast = '<span class="fw-normal">  </span>';
 
-            const catColor = _.findIndex(globCustomCats, item => item.toLowerCase() === cat.trim().toLowerCase()) === -1 
-                ? 'text-danger' 
-                : 'text-success';
+            const catColor = _.findIndex(globCustomCats, item => item.toLowerCase() === cat.trim().toLowerCase()) === -1 ?
+                'text-danger' :
+                'text-success';
 
-            const numPages = _.findIndex(globCustomCats, item => item.toLowerCase() === cat.trim().toLowerCase()) === -1 
-                ? catDetails[cat].numPages
-                : getCatPages(cat);
+            const numPages = _.findIndex(globCustomCats, item => item.toLowerCase() === cat.trim().toLowerCase()) === -1 ?
+                catDetails[cat].numPages:
+                getCatPages(cat);
             
             const langPrefix = !isProd ? '' : siteLanguageCode === '' ? '' : `/${siteLanguageCode}`;
 
@@ -982,8 +982,8 @@ const page__showPageCustomTags = () => {
                     class="mb-4">
                     <span 
                         siteFunction="pageTagsContainer" 
-                        class="mr-5 fs-6 fw-medium">
-                        <span data-i18n="page_tags_section_title">Tags</span>:
+                        class="fs-6 fw-medium">
+                        <span data-i18n="page_tags_section_title" class="d-none">Tags</span><span class="d-none">:</span>
                     </span>
                 </div>
             `
