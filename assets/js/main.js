@@ -144,6 +144,7 @@ const setPrefLang = () => {
     });
 }
 
+// customise default JTD search box and search results 
 const correctJTDSearch = () => {
     if (!algoliaSettings.algoliaEnabled) {
 
@@ -161,8 +162,8 @@ const correctJTDSearch = () => {
         setElementCreatedByClassObserver('search-results-list', () => {
 
             $('.search-results-list').find('a').each(function() {
-                link = $(this).attr('href');
-                link = replaceHashWithId(link);
+                const link = $(this).attr('href');
+                const newlink = replaceHashWithId(link);
                 $(this).attr('href', link);
             });
 
