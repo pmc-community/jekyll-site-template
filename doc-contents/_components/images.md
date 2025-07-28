@@ -72,7 +72,7 @@ Galleries of images can be added to documents as further shown. The number of im
     source="partials/media/man-thinking.png"
 {% endcapture %}
 
-{% include elements/image-galery.html img=img border="true" %}
+{% include elements/image-gallery.html img=img border="true" %}
 
 # Parameters
 - `source`: path to the image file provided as relative path from the root of doc-contents folder
