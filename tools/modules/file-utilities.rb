@@ -364,4 +364,9 @@ module FileUtilities
          "```\n" + lines.join("\n") + "\n```"
     end
 
+    def self.git_last_commit_time(file_path)
+        time_str = `git log -1 --format="%ct" -- "#{file_path}"`.strip
+        time_str.empty? ? nil : Time.at(time_str.to_i)
+    end
+
 end
