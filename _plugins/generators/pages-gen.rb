@@ -25,15 +25,17 @@ module Jekyll
       doc_list = []
       documents = []
 
-      # force rebuilding page_list.json to capture potential changes of the information in the page front matter
-      # (such as tags, cats, etc.)
-      Globals.putsColText(Globals::PURPLE,"Force page list re-build ...")
-      if (File.exist?(page_list_path))
-        File.delete(page_list_path)
+      if (ENV["DEPLOY_ENV"] == "dev")
+        # force rebuilding page_list.json to capture potential changes of the information in the page front matter
+        # (such as tags, cats, etc.)
+        Globals.putsColText(Globals::PURPLE,"Force page list re-build ...")
+        if (File.exist?(page_list_path))
+          File.delete(page_list_path)
+        end
+        Globals.moveUpOneLine
+        Globals.clearLine
+        Globals.putsColText(Globals::PURPLE,"Force page list re-build ... done")
       end
-      Globals.moveUpOneLine
-      Globals.clearLine
-      Globals.putsColText(Globals::PURPLE,"Force page list re-build ... done")
 
       file_timestamps = {}
 
@@ -127,7 +129,11 @@ module Jekyll
           documents << document_data if front_matter != {} && !file_path.index("404") && front_matter['layout'] && front_matter['layout'] == "page"
           numPages += 1 if front_matter != {} && !file_path.index("404") && front_matter['layout'] && front_matter['layout'] == "page"
         end
-        FileUtilities.overwrite_file(page_list_path, JSON.pretty_generate(documents))  
+
+        if (ENV["DEPLOY_ENV"] == "dev")
+          FileUtilities.overwrite_file(page_list_path, JSON.pretty_generate(documents))
+        end
+
         Globals.moveUpOneLine
         Globals.clearLine
         Globals.putsColText(Globals::PURPLE,"Generating list of pages ... done (#{numPages} pages)")
