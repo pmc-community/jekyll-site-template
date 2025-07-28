@@ -591,12 +591,16 @@ $sidebarLogo, $sideBarFooter, $sideBarHeader, $sideBarDocLink,$sideBarCategoryBt
     }
 
     #{map-get($tableElements, tablePaginationPgNumbers)} {
+        list-style: $tablePaginationPgNumbersListStyle !important;
+        
         @include phone {
             padding-left: $tablePaginationPgNumbersPaddingLeft_phone !important;
+            list-style: $tablePaginationPgNumbersListStyle !important;
         }
 
         @include tablet {
             padding-left: $tablePaginationPgNumbersPaddingLeft_phone !important;
+            list-style: $tablePaginationPgNumbersListStyle !important;
         }
     }
 
