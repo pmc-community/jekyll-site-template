@@ -221,10 +221,10 @@
         "alert"
       ],
       "excerpt": "learn, add, blocks, content, alerts, types, colors",
-      "lastUpdate": "2025-07-20 10:25:22 +0300",
-      "lastUpdateUTC": 1752996322,
-      "createTime": "2025-07-20 10:25:22 +0300",
-      "createTimeUTC": 1752996322,
+      "lastUpdate": "2025-07-29 01:34:01 +0300",
+      "lastUpdateUTC": 1753742041,
+      "createTime": "2025-07-29 01:34:01 +0300",
+      "createTimeUTC": 1753742041,
       "relatedPages": [
         {
           "title": "FAQ Item",
@@ -365,10 +365,10 @@
         "component"
       ],
       "excerpt": "component, placing, images, content, captions, credits, copyright, compoenent, designed",
-      "lastUpdate": "2025-07-27 22:57:54 +0300",
-      "lastUpdateUTC": 1753646274,
-      "createTime": "2025-07-27 22:57:54 +0300",
-      "createTimeUTC": 1753646274,
+      "lastUpdate": "2025-07-29 01:40:31 +0300",
+      "lastUpdateUTC": 1753742431,
+      "createTime": "2025-07-29 01:40:31 +0300",
+      "createTimeUTC": 1753742431,
       "relatedPages": [
         {
           "title": "XLSX Charts",
@@ -758,7 +758,7 @@
         {
           "title": "Alerts",
           "permalink": "/components/alerts/",
-          "lastUpdate": "20-Jul-2025"
+          "lastUpdate": "29-Jul-2025"
         }
       ],
       "numPages": 1
@@ -803,7 +803,7 @@
         {
           "title": "Image",
           "permalink": "/components/image/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "29-Jul-2025"
         }
       ],
       "numPages": 1
@@ -868,7 +868,7 @@
         {
           "title": "Alerts",
           "permalink": "/components/alerts/",
-          "lastUpdate": "20-Jul-2025"
+          "lastUpdate": "29-Jul-2025"
         },
         {
           "title": "FAQ Item",
@@ -933,7 +933,7 @@
         {
           "title": "Image",
           "permalink": "/components/image/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "29-Jul-2025"
         }
       ],
       "numPages": 1
@@ -1055,7 +1055,7 @@
         {
           "title": "Alerts",
           "permalink": "/components/alerts/",
-          "lastUpdate": "20-Jul-2025"
+          "lastUpdate": "29-Jul-2025"
         },
         {
           "title": "Components",
@@ -1075,7 +1075,7 @@
         {
           "title": "Image",
           "permalink": "/components/image/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "29-Jul-2025"
         },
         {
           "title": "Link button",
