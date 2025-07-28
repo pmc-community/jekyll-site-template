@@ -25,26 +25,43 @@ module Jekyll
       doc_list = []
       documents = []
 
-      # force rebuilding page_list.json to capture potential changes of the information in the page front matter
-      # (such as tags, cats, etc.)
-      Globals.putsColText(Globals::PURPLE,"Force page list re-build ...")
-      if (File.exist?(page_list_path))
-        File.delete(page_list_path)
+      if (ENV["DEPLOY_ENV"] == "dev")
+        # force rebuilding page_list.json to capture potential changes of the information in the page front matter
+        # (such as tags, cats, etc.)
+        Globals.putsColText(Globals::PURPLE,"Force page list re-build ...")
+        if (File.exist?(page_list_path))
+          File.delete(page_list_path)
+        end
+        Globals.moveUpOneLine
+        Globals.clearLine
+        Globals.putsColText(Globals::PURPLE,"Force page list re-build ... done")
       end
-      Globals.moveUpOneLine
-      Globals.clearLine
-      Globals.putsColText(Globals::PURPLE,"Force page list re-build ... done")
+
+      file_timestamps = {}
 
       Dir.glob(File.join(doc_contents_dir, '**', '*.{md,html}')).each do |file_path|
+
+         # FIRST: capturing the timestamps because may be altered when reading the files
+         # getting timestamps must be executed before any file open/read; later, the timestamps may be altered
+         # using git last commit timestamps because file system may be not reliable
+          last_commit_time = FileUtilities.git_last_commit_time(file_path)
+          file_timestamps[file_path] = {
+            lastUpdate: last_commit_time,
+            createTime: last_commit_time
+          }
+
           front_matter, _ = FileUtilities.parse_front_matter(File.read(file_path))
           doc_list << file_path if front_matter && !file_path.index("404") && front_matter['layout'] && front_matter['layout'] == "page"
           documents << front_matter if front_matter && !file_path.index("404") && front_matter['layout'] && front_matter['layout'] == "page"
+
       end
 
       # we create a temp  site.data['page_list'] to be able to generate the raw content
       # and to see if there are modifications of the content files
       site.data['page_list'] = documents.to_json
+
       # RAW CONTENT AND MODIFIED PAGES SINCE LAST BUILD
+
       FileUtilities.generate_raw_content(site)
 
       modified_files_path = "#{site.data["buildConfig"]["rawContentFolder"]}/modified_files.json"
@@ -59,8 +76,16 @@ module Jekyll
         site.data['page_list'] = [].to_json
 
         doc_list.each do |file_path|
-          lastUpdate = File.mtime(file_path)
-          createTime = File.birthtime(file_path)
+
+          # get the timestamps from saved file_timestamps
+          timestamps = file_timestamps[file_path] || {}
+
+          lastUpdate = timestamps[:lastUpdate]
+          createTime = timestamps[:createTime]
+
+          lastUpdateUTC = lastUpdate.to_time.to_i || 0
+          createTimeUTC = createTime.to_time.to_i || 0
+
           front_matter, _ = FileUtilities.parse_front_matter(File.read(file_path))
           title = front_matter['title']
           permalink = front_matter['permalink']
@@ -78,9 +103,9 @@ module Jekyll
             'tags' => tags || [],
             'excerpt' => excerpt || "",
             'lastUpdate' => lastUpdate || "",
-            'lastUpdateUTC' => lastUpdate.to_time.to_i || 0,
+            'lastUpdateUTC' => lastUpdateUTC,
             'createTime' => createTime || "",
-            'createTimeUTC' => createTime.to_time.to_i || 0,
+            'createTimeUTC' => createTimeUTC,
             'relatedPages' => [],
             'autoSummary' => "",
             'similarByContent' => [],
@@ -104,12 +129,29 @@ module Jekyll
           documents << document_data if front_matter != {} && !file_path.index("404") && front_matter['layout'] && front_matter['layout'] == "page"
           numPages += 1 if front_matter != {} && !file_path.index("404") && front_matter['layout'] && front_matter['layout'] == "page"
         end
-        FileUtilities.overwrite_file(page_list_path, JSON.pretty_generate(documents))  
+
+        if (ENV["DEPLOY_ENV"] == "dev")
+          FileUtilities.overwrite_file(page_list_path, JSON.pretty_generate(documents))
+        else
+          if (!File.exist?(page_list_path))
+            FileUtilities.overwrite_file(page_list_path, JSON.pretty_generate(documents))
+          end
+        end
+
         Globals.moveUpOneLine
         Globals.clearLine
-        Globals.putsColText(Globals::PURPLE,"Generating list of pages ... done (#{numPages} pages)")
+
+        if (ENV["DEPLOY_ENV"] == "dev")
+          Globals.putsColText(Globals::PURPLE,"Generating list of pages ... DEV:done (#{numPages} pages)")
+        else
+          Globals.putsColText(Globals::PURPLE,"Generating list of pages ... PROD:done (#{numPages} pages)")
+        end
       else
-        Globals.putsColText(Globals::PURPLE,"Generating list of pages ... done (no content changes)")
+        if (ENV["DEPLOY_ENV"] == "dev")
+          Globals.putsColText(Globals::PURPLE,"Generating list of pages ... DEV:done (no content changes)")
+        else
+          Globals.putsColText(Globals::PURPLE,"Generating list of pages ... PROD:done (no content changes)")
+        end
       end
 
       site.data['page_list'] = FileUtilities.read_json_file(page_list_path).to_json
@@ -117,7 +159,9 @@ module Jekyll
       permalinks = JSON.parse(site.data['page_list']).map { |obj| obj['permalink'] }
       #puts permalinks = permalinks
       #puts "------"
-      permalinks = Globals.collect_with_descendants(permalinks)
+      # orders the permalinks based on path as /a/, /a/a1/, /a/a1/a11, /b/, /c/, /c/c1/ ...
+      # NOT USED
+      # permalinks = Globals.collect_with_descendants(permalinks)
       #puts permalinks
       
       # PAGE DEPENDENCIES

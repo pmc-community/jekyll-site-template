@@ -20,6 +20,8 @@
 {% assign captionBorder = include.captionBorder || default: "false" %}
 {% assign link = include.link || default: "" %}
 {% assign newTab = include.newTab || default: "false" %}
+{% assign imgLink = include.imgLink || default: "" %}
+{% assign imgLinkNewTab = include.imgLinkNewTab || default: "false" %}
 
 {% if h and w %}
   {% assign final_h = h %}
@@ -50,12 +52,12 @@
  {% endif %}
 
    {% assign additionalFigureClass = "" %}
-   {% if link %}
+   {% if link !="" %}
     {% assign additionalFigureClass = "w-auto position-relative" %}
    {% endif %}
 
    <figure class="figure {{additionalFigureClass}} my-1">
-    <img  id="figure-{{imgid}}" src="{{full_path}}" class="figure-img img-fluid rounded" {{alt}}>
+    <img  id="figure-{{imgid}}" src="{{full_path}}" class="figure-img img-fluid rounded" {{alt}} imgLink="{{imgLink}}" linkNewTab="{{imgLinkNewTab}}">
 
     {% assign captionBorderClass = "" %}
     {% if captionBorder != "false" %}
@@ -66,7 +68,7 @@
      <figcaption class="figure-caption ghbtnLink text-primary {{captionBorderClass}}">{{caption}}</figcaption>
     {% endif %}
 
-    {% if link %}
+    {% if link !="" %}
      {% assign target = "" %}
 
      {% if newTab != "false" %}

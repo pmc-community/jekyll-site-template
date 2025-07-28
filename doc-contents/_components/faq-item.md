@@ -24,7 +24,7 @@ In a simple FAQ item both question and answer are simple texts. Markdown syntax 
 {% include elements/faq-item.html q=q a=a %}
 
 # Rich content FAQ item
-In a rich content FAQ item the question is simple texts. Markdown syntax for text format can be used. The answer is a rich media content. Any Docaroo component can be used to render the answer to a question, including importing content from external sources, at build time or run time.
+In a rich content FAQ item the question is always simple texts. Markdown syntax for text format can be used. The answer to the question (the content of the FAQ item) is a rich media content. Any Docaroo component can be used to render the answer to a question, including importing content from external sources, at build time or run time.
 
 {% raw %}
 ```javascript

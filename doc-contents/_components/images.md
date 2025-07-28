@@ -14,7 +14,7 @@ The following examples are based on a dedicated media folder:
 
 {% DirStructure doc-contents/partials/media %}
 
-## Simple image
+# Simple image
 
 {% raw %}
 ```javascript
@@ -44,3 +44,39 @@ Observe that the `height` and `width` parameters were not provided to not break 
 - `captionBorder`: specify it to render a thin border between the image and the caption
 - `link`: link to an external target if you want to have the image as link to another internal or external page
 - `newTab`: specify if to open `link` in the same or a new tab
+
+# Image galery
+Galleries of images can be added to documents as further shown. The number of images per each row is limited to 3 on large screens and to 2 images for narrow screens (mobile).
+
+{% raw %}
+```javascript
+{% capture img %}
+    source="partials/media/home-s.png"|caption="Image 1"|captionBorder="true",
+    source="partials/media/doc-site-s.png"|caption="Image 2"|captionBorder="true"|imgLink="https://pmc-expert.com"|imgLinkNewTab="true",
+    source="partials/media/w2s-gr-s.png"|caption="Image 3"|captionBorder="true"|imgLink="https://hub.innohub.space"|imgLinkNewTab="false",
+    source="partials/media/man-s.png",
+    source="partials/media/joy-s.png",
+    source="partials/media/man-thinking.png"
+{% endcapture %}
+
+{% include elements/image-galery.html img=img border="true" %}
+```
+{% endraw %}
+
+{% capture img %}
+    source="partials/media/home-s.png"|caption="Image 1"|captionBorder="true",
+    source="partials/media/doc-site-s.png"|caption="Image 2"|captionBorder="true"|imgLink="https://pmc-expert.com"|imgLinkNewTab="true",
+    source="partials/media/w2s-gr-s.png"|caption="Image 3"|captionBorder="true"|imgLink="https://hub.innohub.space"|imgLinkNewTab="false",
+    source="partials/media/man-s.png",
+    source="partials/media/joy-s.png",
+    source="partials/media/man-thinking.png"
+{% endcapture %}
+
+{% include elements/image-gallery.html img=img border="true" %}
+
+# Parameters
+- `source`: path to the image file provided as relative path from the root of doc-contents folder
+- `caption`: image caption if needed
+- `captionBorder`: specify it to render a thin border between the image and the caption
+- `imgLink`: link to an external target if you want to have the image as link to another internal or external page. Note that the behaviour of the `imgLink` in case of galleries is different than the behaviour of `link` in case of simple images. The navigation to external pages is not triggered directly from the gallery, is shown as button after the gallery image opens in a larger view. 
+- `imgLinkNewTab`: specify if to open `link` in the same or a new tab

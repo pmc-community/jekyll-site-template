@@ -78,8 +78,6 @@ toBeRemovedAfterLoad:
     - "testAttr_1"
 catMenu: true
 catMenuMoreBtn: "category-menu-more"
-siteVars:
-  siteTestBadge: "xxx"
 similarByContent:
   maxPages: 4
 navPrevNextEnabled: true # enable/disable page Prev/Next navigation feature

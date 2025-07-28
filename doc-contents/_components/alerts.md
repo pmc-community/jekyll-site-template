@@ -30,7 +30,7 @@ Add a simple primary alert to your page like this:
 
 {% include elements/alert.html class="primary" content="primary alert" title="Title" %}
 
-# Rich external content alert
+# External content alert
 Add content taken from external files to your alerts like this. Content is taken from another file that can be in the same repo or in other pubic (or private) repo.
 
 {% raw %}

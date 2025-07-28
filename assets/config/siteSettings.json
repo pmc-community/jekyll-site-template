@@ -104,9 +104,6 @@
     ],
     "catMenu": true,
     "catMenuMoreBtn": "category-menu-more",
-    "siteVars": {
-      "siteTestBadge": "xxx"
-    },
     "similarByContent": {
       "maxPages": 4
     },
@@ -224,10 +221,10 @@
         "alert"
       ],
       "excerpt": "learn, add, blocks, content, alerts, types, colors",
-      "lastUpdate": "2025-07-27 23:48:53 +0300",
-      "lastUpdateUTC": 1753649333,
-      "createTime": "2025-07-27 23:48:53 +0300",
-      "createTimeUTC": 1753649333,
+      "lastUpdate": "2025-07-29 01:34:01 +0300",
+      "lastUpdateUTC": 1753742041,
+      "createTime": "2025-07-29 01:34:01 +0300",
+      "createTimeUTC": 1753742041,
       "relatedPages": [
         {
           "title": "FAQ Item",
@@ -261,10 +258,10 @@
       ],
       "tags": [],
       "excerpt": "learn, add, pre, defined, content, elements, embedded, documents, tags, components",
-      "lastUpdate": "2025-07-27 23:48:53 +0300",
-      "lastUpdateUTC": 1753649333,
-      "createTime": "2025-07-27 23:48:53 +0300",
-      "createTimeUTC": 1753649333,
+      "lastUpdate": "2025-07-27 14:25:46 +0300",
+      "lastUpdateUTC": 1753615546,
+      "createTime": "2025-07-27 14:25:46 +0300",
+      "createTimeUTC": 1753615546,
       "relatedPages": [
         {
           "title": "FAQ Item",
@@ -298,10 +295,10 @@
         "button"
       ],
       "excerpt": "download, link, component, generates, button, downloading, files, documentation",
-      "lastUpdate": "2025-07-27 23:48:53 +0300",
-      "lastUpdateUTC": 1753649333,
-      "createTime": "2025-07-27 23:48:53 +0300",
-      "createTimeUTC": 1753649333,
+      "lastUpdate": "2025-07-22 17:26:26 +0300",
+      "lastUpdateUTC": 1753194386,
+      "createTime": "2025-07-22 17:26:26 +0300",
+      "createTimeUTC": 1753194386,
       "relatedPages": [
         {
           "title": "Link button",
@@ -333,10 +330,10 @@
         "faq"
       ],
       "excerpt": "learn, add, elements, documents, element, question, answer",
-      "lastUpdate": "2025-07-27 23:48:53 +0300",
-      "lastUpdateUTC": 1753649333,
-      "createTime": "2025-07-27 23:48:53 +0300",
-      "createTimeUTC": 1753649333,
+      "lastUpdate": "2025-07-28 11:20:25 +0300",
+      "lastUpdateUTC": 1753690825,
+      "createTime": "2025-07-28 11:20:25 +0300",
+      "createTimeUTC": 1753690825,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -368,10 +365,10 @@
         "component"
       ],
       "excerpt": "component, placing, images, content, captions, credits, copyright, compoenent, designed",
-      "lastUpdate": "2025-07-27 23:48:53 +0300",
-      "lastUpdateUTC": 1753649333,
-      "createTime": "2025-07-27 23:48:53 +0300",
-      "createTimeUTC": 1753649333,
+      "lastUpdate": "2025-07-29 01:40:31 +0300",
+      "lastUpdateUTC": 1753742431,
+      "createTime": "2025-07-29 01:40:31 +0300",
+      "createTimeUTC": 1753742431,
       "relatedPages": [
         {
           "title": "XLSX Charts",
@@ -382,8 +379,8 @@
           "permalink": "/components/download-link/"
         },
         {
-          "title": "Link button",
-          "permalink": "/components/link-button/"
+          "title": "Rich media",
+          "permalink": "/components/rich-media/"
         }
       ],
       "autoSummary": "This component allows placing images into your content. Images can have captions (lets say you need to show some credits or copyright information) or not. The compoenent is designed to work with responsive images.",
@@ -404,10 +401,10 @@
         "anchor"
       ],
       "excerpt": "learn, add, link, buttons, content, helps, users, navigate",
-      "lastUpdate": "2025-07-27 23:48:53 +0300",
-      "lastUpdateUTC": 1753649333,
-      "createTime": "2025-07-27 23:48:53 +0300",
-      "createTimeUTC": 1753649333,
+      "lastUpdate": "2025-07-21 12:36:32 +0300",
+      "lastUpdateUTC": 1753090592,
+      "createTime": "2025-07-21 12:36:32 +0300",
+      "createTimeUTC": 1753090592,
       "relatedPages": [
         {
           "title": "Downloads",
@@ -441,10 +438,10 @@
         "video"
       ],
       "excerpt": "learn, docaroo, components, embed, rich, media, content, encourage, store",
-      "lastUpdate": "2025-07-27 23:48:53 +0300",
-      "lastUpdateUTC": 1753649333,
-      "createTime": "2025-07-27 23:48:53 +0300",
-      "createTimeUTC": 1753649333,
+      "lastUpdate": "2025-07-21 14:31:07 +0300",
+      "lastUpdateUTC": 1753097467,
+      "createTime": "2025-07-21 14:31:07 +0300",
+      "createTimeUTC": 1753097467,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -475,10 +472,10 @@
         "scrollspy"
       ],
       "excerpt": "and, are, great, ways, organising, information, inside, your, documents, made",
-      "lastUpdate": "2025-07-27 23:48:53 +0300",
-      "lastUpdateUTC": 1753649333,
-      "createTime": "2025-07-27 23:48:53 +0300",
-      "createTimeUTC": 1753649333,
+      "lastUpdate": "2025-07-20 10:25:22 +0300",
+      "lastUpdateUTC": 1752996322,
+      "createTime": "2025-07-20 10:25:22 +0300",
+      "createTimeUTC": 1752996322,
       "relatedPages": [],
       "autoSummary": "Scroll spies are great ways of organising information inside your documents. We made them flexible and easy to be included in the documents. Any docaroo component, including importing esternal content or rich content ones, can be used to populate scroll spies and tabs.",
       "similarByContent": [],
@@ -498,10 +495,10 @@
         "chart"
       ],
       "excerpt": "component, importing, excel, charts, documents, simple, create",
-      "lastUpdate": "2025-07-27 23:48:53 +0300",
-      "lastUpdateUTC": 1753649333,
-      "createTime": "2025-07-27 23:48:53 +0300",
-      "createTimeUTC": 1753649333,
+      "lastUpdate": "2025-07-26 15:54:49 +0300",
+      "lastUpdateUTC": 1753534489,
+      "createTime": "2025-07-26 15:54:49 +0300",
+      "createTimeUTC": 1753534489,
       "relatedPages": [
         {
           "title": "XLSX Tables",
@@ -533,10 +530,10 @@
         "xls"
       ],
       "excerpt": "users, creating, table, markdown, challenge, merged, cells, crazy, quick, maintaining",
-      "lastUpdate": "2025-07-27 23:48:53 +0300",
-      "lastUpdateUTC": 1753649333,
-      "createTime": "2025-07-27 23:48:53 +0300",
-      "createTimeUTC": 1753649333,
+      "lastUpdate": "2025-07-25 15:09:17 +0300",
+      "lastUpdateUTC": 1753445357,
+      "createTime": "2025-07-25 15:09:17 +0300",
+      "createTimeUTC": 1753445357,
       "relatedPages": [
         {
           "title": "XLSX Charts",
@@ -560,10 +557,10 @@
         "content"
       ],
       "excerpt": "docaroo, series, content, items, enrich, documents, efficient, incorporate, piecers",
-      "lastUpdate": "2025-07-27 23:48:53 +0300",
-      "lastUpdateUTC": 1753649333,
-      "createTime": "2025-07-27 23:48:53 +0300",
-      "createTimeUTC": 1753649333,
+      "lastUpdate": "2025-07-26 22:43:40 +0300",
+      "lastUpdateUTC": 1753559020,
+      "createTime": "2025-07-26 22:43:40 +0300",
+      "createTimeUTC": 1753559020,
       "relatedPages": [
         {
           "title": "Components",
@@ -595,10 +592,10 @@
         "organise docs"
       ],
       "excerpt": "learn, structure, content, efficient, secret, maximum, extent, features, importing, external",
-      "lastUpdate": "2025-07-27 23:48:53 +0300",
-      "lastUpdateUTC": 1753649333,
-      "createTime": "2025-07-27 23:48:53 +0300",
-      "createTimeUTC": 1753649333,
+      "lastUpdate": "2025-07-16 17:59:04 +0300",
+      "lastUpdateUTC": 1752677944,
+      "createTime": "2025-07-16 17:59:04 +0300",
+      "createTimeUTC": 1752677944,
       "relatedPages": [
         {
           "title": "External content",
@@ -632,10 +629,10 @@
         "import"
       ],
       "excerpt": "docaroo, documents, external, content, create, import, multiple",
-      "lastUpdate": "2025-07-27 23:48:53 +0300",
-      "lastUpdateUTC": 1753649333,
-      "createTime": "2025-07-27 23:48:53 +0300",
-      "createTimeUTC": 1753649333,
+      "lastUpdate": "2025-07-20 10:25:22 +0300",
+      "lastUpdateUTC": 1752996322,
+      "createTime": "2025-07-20 10:25:22 +0300",
+      "createTimeUTC": 1752996322,
       "relatedPages": [
         {
           "title": "Content",
@@ -676,10 +673,10 @@
         "docs"
       ],
       "excerpt": "started, docaroo, requires, design, documentation, organising, blog, crucial, involve",
-      "lastUpdate": "2025-07-27 23:48:53 +0300",
-      "lastUpdateUTC": 1753649333,
-      "createTime": "2025-07-27 23:48:53 +0300",
-      "createTimeUTC": 1753649333,
+      "lastUpdate": "2025-07-27 16:40:01 +0300",
+      "lastUpdateUTC": 1753623601,
+      "createTime": "2025-07-27 16:40:01 +0300",
+      "createTimeUTC": 1753623601,
       "relatedPages": [
         {
           "title": "Introduction",
@@ -707,10 +704,10 @@
         "docs"
       ],
       "excerpt": "documentation, builder, guide, comprehensive, resource, learning, create, build, maintain, quality",
-      "lastUpdate": "2025-07-27 23:48:53 +0300",
-      "lastUpdateUTC": 1753649333,
-      "createTime": "2025-07-27 23:48:53 +0300",
-      "createTimeUTC": 1753649333,
+      "lastUpdate": "2025-07-26 17:29:03 +0300",
+      "lastUpdateUTC": 1753540143,
+      "createTime": "2025-07-26 17:29:03 +0300",
+      "createTimeUTC": 1753540143,
       "relatedPages": [
         {
           "title": "Get started",
@@ -761,7 +758,7 @@
         {
           "title": "Alerts",
           "permalink": "/components/alerts/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "29-Jul-2025"
         }
       ],
       "numPages": 1
@@ -771,7 +768,7 @@
         {
           "title": "Link button",
           "permalink": "/components/link-button/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "21-Jul-2025"
         }
       ],
       "numPages": 1
@@ -781,12 +778,12 @@
         {
           "title": "Downloads",
           "permalink": "/components/download-link/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "22-Jul-2025"
         },
         {
           "title": "Link button",
           "permalink": "/components/link-button/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "21-Jul-2025"
         }
       ],
       "numPages": 2
@@ -796,7 +793,7 @@
         {
           "title": "XLSX Charts",
           "permalink": "/components/xlsx-charts/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "26-Jul-2025"
         }
       ],
       "numPages": 1
@@ -806,7 +803,7 @@
         {
           "title": "Image",
           "permalink": "/components/image/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "29-Jul-2025"
         }
       ],
       "numPages": 1
@@ -816,7 +813,7 @@
         {
           "title": "Content items",
           "permalink": "/content/content-items/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "26-Jul-2025"
         }
       ],
       "numPages": 1
@@ -831,7 +828,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "26-Jul-2025"
         }
       ],
       "numPages": 2
@@ -841,7 +838,7 @@
         {
           "title": "Content",
           "permalink": "/content/intro/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "16-Jul-2025"
         },
         {
           "title": "Get started",
@@ -851,7 +848,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "26-Jul-2025"
         }
       ],
       "numPages": 3
@@ -861,7 +858,7 @@
         {
           "title": "Downloads",
           "permalink": "/components/download-link/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "22-Jul-2025"
         }
       ],
       "numPages": 1
@@ -871,22 +868,22 @@
         {
           "title": "Alerts",
           "permalink": "/components/alerts/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "29-Jul-2025"
         },
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "28-Jul-2025"
         },
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "21-Jul-2025"
         },
         {
           "title": "External content",
           "permalink": "/content/ec/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "20-Jul-2025"
         }
       ],
       "numPages": 4
@@ -896,7 +893,7 @@
         {
           "title": "External content",
           "permalink": "/content/ec/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "20-Jul-2025"
         }
       ],
       "numPages": 1
@@ -906,7 +903,7 @@
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "28-Jul-2025"
         }
       ],
       "numPages": 1
@@ -916,7 +913,7 @@
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "21-Jul-2025"
         }
       ],
       "numPages": 1
@@ -926,7 +923,7 @@
         {
           "title": "Downloads",
           "permalink": "/components/download-link/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "22-Jul-2025"
         }
       ],
       "numPages": 1
@@ -936,7 +933,7 @@
         {
           "title": "Image",
           "permalink": "/components/image/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "29-Jul-2025"
         }
       ],
       "numPages": 1
@@ -946,7 +943,7 @@
         {
           "title": "External content",
           "permalink": "/content/ec/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "20-Jul-2025"
         }
       ],
       "numPages": 1
@@ -956,7 +953,7 @@
         {
           "title": "Content items",
           "permalink": "/content/content-items/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "26-Jul-2025"
         }
       ],
       "numPages": 1
@@ -966,12 +963,12 @@
         {
           "title": "Downloads",
           "permalink": "/components/download-link/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "22-Jul-2025"
         },
         {
           "title": "Link button",
           "permalink": "/components/link-button/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "21-Jul-2025"
         }
       ],
       "numPages": 2
@@ -981,7 +978,7 @@
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "21-Jul-2025"
         }
       ],
       "numPages": 1
@@ -991,7 +988,7 @@
         {
           "title": "Content",
           "permalink": "/content/intro/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "16-Jul-2025"
         }
       ],
       "numPages": 1
@@ -1001,7 +998,7 @@
         {
           "title": "Scroll Spy & Tabs",
           "permalink": "/components/scrollspy/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "20-Jul-2025"
         }
       ],
       "numPages": 1
@@ -1011,12 +1008,12 @@
         {
           "title": "XLSX Charts",
           "permalink": "/components/xlsx-charts/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "26-Jul-2025"
         },
         {
           "title": "XLSX Tables",
           "permalink": "/components/xlsx-tables/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "25-Jul-2025"
         }
       ],
       "numPages": 2
@@ -1026,7 +1023,7 @@
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "21-Jul-2025"
         }
       ],
       "numPages": 1
@@ -1036,12 +1033,12 @@
         {
           "title": "XLSX Charts",
           "permalink": "/components/xlsx-charts/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "26-Jul-2025"
         },
         {
           "title": "XLSX Tables",
           "permalink": "/components/xlsx-tables/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "25-Jul-2025"
         }
       ],
       "numPages": 2
@@ -1058,7 +1055,7 @@
         {
           "title": "Alerts",
           "permalink": "/components/alerts/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "29-Jul-2025"
         },
         {
           "title": "Components",
@@ -1068,47 +1065,47 @@
         {
           "title": "Downloads",
           "permalink": "/components/download-link/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "22-Jul-2025"
         },
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "28-Jul-2025"
         },
         {
           "title": "Image",
           "permalink": "/components/image/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "29-Jul-2025"
         },
         {
           "title": "Link button",
           "permalink": "/components/link-button/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "21-Jul-2025"
         },
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "21-Jul-2025"
         },
         {
           "title": "Scroll Spy & Tabs",
           "permalink": "/components/scrollspy/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "20-Jul-2025"
         },
         {
           "title": "XLSX Charts",
           "permalink": "/components/xlsx-charts/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "26-Jul-2025"
         },
         {
           "title": "XLSX Tables",
           "permalink": "/components/xlsx-tables/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "25-Jul-2025"
         },
         {
           "title": "Content items",
           "permalink": "/content/content-items/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "26-Jul-2025"
         }
       ],
       "numPages": 11
@@ -1118,12 +1115,12 @@
         {
           "title": "Content",
           "permalink": "/content/intro/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "16-Jul-2025"
         },
         {
           "title": "External content",
           "permalink": "/content/ec/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "20-Jul-2025"
         }
       ],
       "numPages": 2
@@ -1138,7 +1135,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "26-Jul-2025"
         }
       ],
       "numPages": 2
