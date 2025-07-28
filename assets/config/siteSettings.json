@@ -1149,7 +1149,22 @@
       "ID": "e166804c-61ea-4b51-801d-f4299cb5c06c"
     }
   },
-  "algoliaSettings": {},
+  "algoliaSettings": {
+    "algoliaEnabled": true,
+    "algoliaAppID": "5VXQ8BSD61",
+    "algoliaIndex": "aroo-innohub",
+    "algoliaPublicApiKey": "e0e2b8690ed863aee6926330aa979904",
+    "algoliaSearchBoxContainer": "#docsearch",
+    "algoliaDebug": false,
+    "algoliaMaxResultsPerGroup": 20,
+    "algoliaHitsPerPage": 10,
+    "algoliaSendInsights": true,
+    "algoliaTextHighlightPrefixTag": "<mark>",
+    "algoliaTextHighlightPostfixTag": "</mark>",
+    "algoliaRaiseIssueLink": "https://github.com/pmc-community/jekyll-site-template/issues/new?title=",
+    "algoliaDocSearchEnabled": true,
+    "algoliaCustomEnabled": false
+  },
   "pageSettings": {
     "/": {
       "sections": {
