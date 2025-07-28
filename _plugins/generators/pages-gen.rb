@@ -132,13 +132,26 @@ module Jekyll
 
         if (ENV["DEPLOY_ENV"] == "dev")
           FileUtilities.overwrite_file(page_list_path, JSON.pretty_generate(documents))
+        else
+          if (!File.exist?(page_list_path))
+            FileUtilities.overwrite_file(page_list_path, JSON.pretty_generate(documents))
+          end
         end
 
         Globals.moveUpOneLine
         Globals.clearLine
-        Globals.putsColText(Globals::PURPLE,"Generating list of pages ... done (#{numPages} pages)")
+
+        if (ENV["DEPLOY_ENV"] == "dev")
+          Globals.putsColText(Globals::PURPLE,"Generating list of pages ... DEV:done (#{numPages} pages)")
+        else
+          Globals.putsColText(Globals::PURPLE,"Generating list of pages ... PROD:done (#{numPages} pages)")
+        end
       else
-        Globals.putsColText(Globals::PURPLE,"Generating list of pages ... done (no content changes)")
+        if (ENV["DEPLOY_ENV"] == "dev")
+          Globals.putsColText(Globals::PURPLE,"Generating list of pages ... DEV:done (no content changes)")
+        else
+          Globals.putsColText(Globals::PURPLE,"Generating list of pages ... PROD:done (no content changes)")
+        end
       end
 
       site.data['page_list'] = FileUtilities.read_json_file(page_list_path).to_json
