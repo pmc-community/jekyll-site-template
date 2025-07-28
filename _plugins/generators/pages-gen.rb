@@ -35,16 +35,31 @@ module Jekyll
       Globals.clearLine
       Globals.putsColText(Globals::PURPLE,"Force page list re-build ... done")
 
+      file_timestamps = {}
+
       Dir.glob(File.join(doc_contents_dir, '**', '*.{md,html}')).each do |file_path|
+
+         # FIRST: capturing the timestamps because may be altered when reading the files
+         # getting timestamps must be executed before any file open/read; later, the timestamps may be altered
+         # using git last commit timestamps because file system may be not reliable
+          last_commit_time = FileUtilities.git_last_commit_time(file_path)
+          file_timestamps[file_path] = {
+            lastUpdate: last_commit_time,
+            createTime: last_commit_time
+          }
+
           front_matter, _ = FileUtilities.parse_front_matter(File.read(file_path))
           doc_list << file_path if front_matter && !file_path.index("404") && front_matter['layout'] && front_matter['layout'] == "page"
           documents << front_matter if front_matter && !file_path.index("404") && front_matter['layout'] && front_matter['layout'] == "page"
+
       end
 
       # we create a temp  site.data['page_list'] to be able to generate the raw content
       # and to see if there are modifications of the content files
       site.data['page_list'] = documents.to_json
+
       # RAW CONTENT AND MODIFIED PAGES SINCE LAST BUILD
+
       FileUtilities.generate_raw_content(site)
 
       modified_files_path = "#{site.data["buildConfig"]["rawContentFolder"]}/modified_files.json"
@@ -59,8 +74,16 @@ module Jekyll
         site.data['page_list'] = [].to_json
 
         doc_list.each do |file_path|
-          lastUpdate = File.mtime(file_path)
-          createTime = File.birthtime(file_path)
+
+          # get the timestamps from saved file_timestamps
+          timestamps = file_timestamps[file_path] || {}
+
+          lastUpdate = timestamps[:lastUpdate]
+          createTime = timestamps[:createTime]
+
+          lastUpdateUTC = lastUpdate.to_time.to_i || 0
+          createTimeUTC = createTime.to_time.to_i || 0
+
           front_matter, _ = FileUtilities.parse_front_matter(File.read(file_path))
           title = front_matter['title']
           permalink = front_matter['permalink']
@@ -78,9 +101,9 @@ module Jekyll
             'tags' => tags || [],
             'excerpt' => excerpt || "",
             'lastUpdate' => lastUpdate || "",
-            'lastUpdateUTC' => lastUpdate.to_time.to_i || 0,
+            'lastUpdateUTC' => lastUpdateUTC,
             'createTime' => createTime || "",
-            'createTimeUTC' => createTime.to_time.to_i || 0,
+            'createTimeUTC' => createTimeUTC,
             'relatedPages' => [],
             'autoSummary' => "",
             'similarByContent' => [],
@@ -117,7 +140,9 @@ module Jekyll
       permalinks = JSON.parse(site.data['page_list']).map { |obj| obj['permalink'] }
       #puts permalinks = permalinks
       #puts "------"
-      permalinks = Globals.collect_with_descendants(permalinks)
+      # orders the permalinks based on path as /a/, /a/a1/, /a/a1/a11, /b/, /c/, /c/c1/ ...
+      # NOT USED
+      # permalinks = Globals.collect_with_descendants(permalinks)
       #puts permalinks
       
       # PAGE DEPENDENCIES
