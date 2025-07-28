@@ -1,0 +1,183 @@
+{% capture uuid %}
+  {% UUID %}
+{% endcapture %}
+{% assign igid = uuid | strip %}
+
+{% assign border = include.border | || default: "false" %}
+
+{% if border != "false" %}
+    {% assign galeryBorderClass = "p-4 border border-secondary border-opacity-25 rounded" %}
+{% else %}
+    {% assign galeryBorderClass = "" %}
+{% endif %}
+
+<div class="container {{galeryBorderClass}}" id="image-gallery-container-{{igid}}">
+  <div class="row g-3 d-flex align-items-center justify-content-start" id="image-gallery-{{igid}}">
+
+    {% assign img_defs = include.img | split: "," %}
+
+    {% for def in img_defs %}
+        {% assign source = "" %}
+        {% assign caption = "" %}
+        {% assign captionBorder = "" %}
+        {% assign imgLink = "" %}
+        {% assign imgLinkNewTab = "false" %}
+
+        {% assign parts = def | split: "|" %}
+
+        {% for pair in parts %}
+            {% assign pair_parts = pair | split: "=" %}
+            {% assign key = pair_parts[0] | strip %}
+            {% assign val = pair_parts[1] | strip %}
+            {% assign val = val | remove: '"' %}
+
+            {% case key %}
+                {% when "source" %}
+                    {% assign source = val %}
+                {% when "caption" %}
+                    {% assign caption = val %}
+                {% when "captionBorder" %}
+                    {% assign captionBorder = val %}
+                {% when "imgLink" %}
+                    {% assign imgLink = val  %}
+                {% when "imgLinkNewTab" %}
+                    {% assign imgLinkNewTab = val %}
+            {% endcase %}
+        {% endfor %}
+
+        <div class="col-md-4 col-6 mx-auto">
+            {% include elements/image.html
+                source=source
+                caption=caption
+                captionBorder=captionBorder
+                imgLink=imgLink
+                imgLinkNewTab=imgLinkNewTab
+            %}
+        </div>
+    {% endfor %}
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade p-4" id="imageModal-{{igid}}" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm modal-dialog-scrollable">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="modal-title mt-0 text-primary fw-medium" id="modal-title-{{igid}}">Modal title</span>
+            <button id="imageModal-btn-close-{{igid}}" type="button" class="btn-close" data-bs-theme="dark" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-2">
+            <img src="" id="modalImage-{{igid}}" class="img-fluid w-100" alt="Large view">
+        </div>
+        <div class="d-none modal-footer d-flex justify-content-start" id="modal-footer-{{igid}}">
+            <a id="modal-link-{{igid}}" class="btn btn-primary">Info</a>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<script id="script-align-caption-gallery-{{igid}}">
+    $('figcaption').addClass('d-flex justify-content-start');
+</script>
+
+<script id="script-scale-images-gallery-{{igid}}">
+    const scaleImagesToSmallestHeight = (galleryId) => {
+        const $images = $('#' + galleryId + ' img');
+        if ($images.length === 0) return;
+
+        let loadedCount = 0;
+        $images.each(function() {
+            if (this.complete) {
+                loadedCount++;
+            } else {
+                $(this).on('load', function() {
+                    loadedCount++;
+                    if (loadedCount === $images.length) {
+                        applyScaling();
+                    }
+                });
+            }
+        });
+
+        const applyScaling = () => {
+            const minHeight = Math.min(...$images.map(function() {
+                return $(this).height();
+            }).get());
+
+            $images.each(function() {
+                $(this).css({
+                    height: minHeight + 'px',
+                    width: 'auto',
+                    objectFit: 'contain'
+                });
+                });
+        };
+
+        if (loadedCount === $images.length) {
+            applyScaling();
+        }
+    };
+
+    scaleImagesToSmallestHeight('image-gallery-{{igid}}');
+
+</script>
+
+<script id="script-open-img-gallery-{{igid}}">
+    $('#image-gallery-{{igid}} img').on('click', function() {
+        const isrc = $(this).attr('src');
+        const ialt = $(this).attr('alt');
+        const imgLink = $(this).attr('imgLink');
+        const imgLinkNewTab = $(this).attr('linkNewTab');
+
+        $('#imageModal-{{igid}}').attr('img-caption', ialt);
+        $('#imageModal-{{igid}}').attr('img-link', imgLink);
+        $('#imageModal-{{igid}}').attr('img-newTab', imgLinkNewTab);
+
+        $('#modalImage-{{igid}}').attr('src', isrc);
+        $('#modal-title-{{igid}}').text(ialt);
+        new bootstrap.Modal(document.getElementById('imageModal-{{igid}}')).show();
+    });
+
+    $('#imageModal-{{igid}}').on('shown.bs.modal', function(event) {
+        $('#imageModal-btn-close-{{igid}}').removeClass('btn-close-white');
+        const caption = $('#imageModal-{{igid}}').attr('img-caption');
+        $('#modalImage-{{igid}}').attr('alt', caption);
+
+        $('#modalImage-{{igid}}').trigger('focus');
+    });
+
+    $('#imageModal-{{igid}}').on('show.bs.modal', function() {
+        const link = $('#imageModal-{{igid}}').attr('img-link');
+        const newTab = $('#imageModal-{{igid}}').attr('img-newTab');
+        const target = newTab !== 'false'
+            ? '_blank'
+            : '_self';
+        if (link !== '') {
+            $('#modal-footer-{{igid}}').find('a').attr('href', link);
+            $('#modal-footer-{{igid}}').find('a').attr('target', target);
+            $('#modal-footer-{{igid}}').removeClass('d-none');
+        }
+        else {
+            $('#modal-footer-{{igid}}').addClass('d-none');
+        }
+    });
+
+    $('#modal-link-{{igid}}').on('click', function() {
+        $('#imageModal-btn-close-{{igid}}').click();
+    });
+
+</script>
+
+<style>
+    
+    #image-gallery-{{igid}} img {
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+   #image-gallery-{{igid}} img:hover {
+      transform: scale(1.07);
+    }
+    
+</style>

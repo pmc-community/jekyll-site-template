@@ -379,8 +379,8 @@
           "permalink": "/components/download-link/"
         },
         {
-          "title": "Link button",
-          "permalink": "/components/link-button/"
+          "title": "Rich media",
+          "permalink": "/components/rich-media/"
         }
       ],
       "autoSummary": "This component allows placing images into your content. Images can have captions (lets say you need to show some credits or copyright information) or not. The compoenent is designed to work with responsive images.",
