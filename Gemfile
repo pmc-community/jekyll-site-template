@@ -76,3 +76,7 @@ gem "csv", "~> 3.3"
 gem "bigdecimal", "~> 3.1"
 
 gem 'whatlanguage'
+
+# force a version for em-websocket greater than 0.5.3
+# because 0.5.3 installs very slow on GHP
+gem 'em-websocket', '>= 0.5.3'
