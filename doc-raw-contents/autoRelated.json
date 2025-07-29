@@ -130,12 +130,12 @@
         "permalink": "/components/xlsx-tables/"
       },
       {
-        "title": "Image",
-        "permalink": "/components/image/"
-      },
-      {
         "title": "Downloads",
         "permalink": "/components/download-link/"
+      },
+      {
+        "title": "Image",
+        "permalink": "/components/image/"
       }
     ]
   },

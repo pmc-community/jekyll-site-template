@@ -385,7 +385,7 @@
       ],
       "autoSummary": "This component allows placing images into your content. Images can have captions (lets say you need to show some credits or copyright information) or not. The compoenent is designed to work with responsive images.",
       "similarByContent": [],
-      "readingTime": 2,
+      "readingTime": 3,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -505,12 +505,12 @@
           "permalink": "/components/xlsx-tables/"
         },
         {
-          "title": "Image",
-          "permalink": "/components/image/"
-        },
-        {
           "title": "Downloads",
           "permalink": "/components/download-link/"
+        },
+        {
+          "title": "Image",
+          "permalink": "/components/image/"
         }
       ],
       "autoSummary": "This component allows importing excel charts into your documents. Currently we support only:. Line charts column and bar charts pie and doughnut charts. We do not support importing the colors you assign to the series in the excel chart.",
