@@ -20,7 +20,7 @@ module Jekyll
       allSettings = {
         "isProd" => ENV["JEKYLL_ENV"] != "production" ? false : true,
         "settings" => site.data["siteConfig"],
-        "pageList" => JSON.parse(FileUtilities.read_json_file(page_list_path).to_json), #????
+        "pageList" => JSON.parse(FileUtilities.read_json_file(page_list_path).to_json), # read from file to be sure that lastUpdateDate is good
         "tagList" => JSON.parse(site.data["tag_list"]),
         "tagDetails" => site.data["tags_details"],
         "catList" => JSON.parse(site.data["category_list"]),
