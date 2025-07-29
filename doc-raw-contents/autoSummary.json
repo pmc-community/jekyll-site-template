@@ -10,7 +10,7 @@
         },
         {
             "permalink": "/components/qitem/",
-            "summary": "The question should always be a text. The answer to the question can be simple text or any rich content that is allowed in markdown. Any docaroo component can be used to render the answer to a question."
+            "summary": "The question should always be a text. The answer to the question can be simple text or any rich content that is allowed in markdown. Docaroo suports 2 types of text search."
         },
         {
             "permalink": "/components/link-button/",

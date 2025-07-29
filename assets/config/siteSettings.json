@@ -329,7 +329,7 @@
         "embed",
         "faq"
       ],
-      "excerpt": "learn, add, elements, documents, element, question, answer",
+      "excerpt": "learn, add, elements, documents, element, question, header, answer, body",
       "lastUpdate": "2025-07-28 11:20:25 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-07-28 11:20:25 +0300",
@@ -348,9 +348,9 @@
           "permalink": "/components/rich-media/"
         }
       ],
-      "autoSummary": "The question should always be a text. The answer to the question can be simple text or any rich content that is allowed in markdown. Any docaroo component can be used to render the answer to a question.",
+      "autoSummary": "The question should always be a text. The answer to the question can be simple text or any rich content that is allowed in markdown. Docaroo suports 2 types of text search.",
       "similarByContent": [],
-      "readingTime": 1,
+      "readingTime": 2,
       "hasDynamicContent": false,
       "parent": ""
     },

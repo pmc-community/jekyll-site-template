@@ -9,7 +9,9 @@
         "documents",
         "element",
         "question",
-        "answer"
+        "header",
+        "answer",
+        "body"
       ]
     },
     {
