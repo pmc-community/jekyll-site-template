@@ -3,6 +3,7 @@ require_relative "../../tools/modules/file-utilities"
 require 'fileutils'
 require 'json'
 require 'dotenv'
+require 'time'
 
 Dotenv.load
 
@@ -16,11 +17,30 @@ module Jekyll
       Globals.putsColText(Globals::PURPLE,"Generating site settings ...")
       settings_path = "assets/config/siteSettings.json"
       enLanguage_path = "assets/locales/en.json"
+
+      # ensure that lastUpdateDate is the right one
       page_list_path = "#{site.data["buildConfig"]["rawContentFolder"]}/page_list.json"
+      basePageList = JSON.parse(FileUtilities.read_json_file(page_list_path).to_json)
+      sitePageList = JSON.parse(site.data["page_list"])
+
+      sitePageList.each do |page|
+        basePage = Globals.find_object_by_multiple_key_value(basePageList, {"permalink" => page["permalink"]})
+        createTime =  basePage["createTime"]
+        createTimeUTC = Time.parse(createTime).to_i rescue 0
+        
+        lastUpdate =  basePage["lastUpdate"]
+        lastUpdateUTC = Time.parse(lastUpdateUTC).to_i rescue 0
+
+        Globals.find_object_by_multiple_key_value(sitePageList, {"permalink" => page["permalink"]})["createTime"] = createTime
+        Globals.find_object_by_multiple_key_value(sitePageList, {"permalink" => page["permalink"]})["createTimeUTC"] = createTimeUTC
+        Globals.find_object_by_multiple_key_value(sitePageList, {"permalink" => page["permalink"]})["lastUpdate"] = lastUpdate
+        Globals.find_object_by_multiple_key_value(sitePageList, {"permalink" => page["permalink"]})["lastUpdateUTC"] = lastUpdateUTC
+      end
+
       allSettings = {
         "isProd" => ENV["JEKYLL_ENV"] != "production" ? false : true,
         "settings" => site.data["siteConfig"],
-        "pageList" => JSON.parse(FileUtilities.read_json_file(page_list_path).to_json), # read from file to be sure that lastUpdateDate is good
+        "pageList" => sitePageList,
         "tagList" => JSON.parse(site.data["tag_list"]),
         "tagDetails" => site.data["tags_details"],
         "catList" => JSON.parse(site.data["category_list"]),
