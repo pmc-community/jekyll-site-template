@@ -16,10 +16,11 @@ module Jekyll
       Globals.putsColText(Globals::PURPLE,"Generating site settings ...")
       settings_path = "assets/config/siteSettings.json"
       enLanguage_path = "assets/locales/en.json"
+      page_list_path = "#{site.data["buildConfig"]["rawContentFolder"]}/page_list.json"
       allSettings = {
         "isProd" => ENV["JEKYLL_ENV"] != "production" ? false : true,
         "settings" => site.data["siteConfig"],
-        "pageList" => JSON.parse(site.data["page_list"]),
+        "pageList" => JSON.parse(FileUtilities.read_json_file(page_list_path).to_json), #????
         "tagList" => JSON.parse(site.data["tag_list"]),
         "tagDetails" => site.data["tags_details"],
         "catList" => JSON.parse(site.data["category_list"]),
