@@ -67,6 +67,10 @@
         {
             "permalink": "/content/content-items/",
             "summary": "Docaroo makes available a series of content items that can be used to enrich your documents and to be very efficient when wanting to incorporate piecers of content in a fast and robust way."
+        },
+        {
+            "permalink": "/components/card/",
+            "summary": "Write a concise, factual summary in English with no greetings or instructions, maximum 50 words. Some quick example text to build on the card title and make up the bulk of the cards content."
         }
     ]
 }

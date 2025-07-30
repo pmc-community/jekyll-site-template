@@ -22,6 +22,27 @@
     "parent": ""
   },
   {
+    "title": "Card",
+    "permalink": "/components/card/",
+    "categories": [
+      "Components"
+    ],
+    "tags": [
+      "card"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-07-30 11:11:04 +0300",
+    "lastUpdateUTC": 1753863064,
+    "createTime": "2025-07-30 11:11:04 +0300",
+    "createTimeUTC": 1753863064,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
     "title": "Components",
     "permalink": "/components/intro/",
     "categories": [

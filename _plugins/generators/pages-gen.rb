@@ -44,7 +44,7 @@ module Jekyll
          # FIRST: capturing the timestamps because may be altered when reading the files
          # getting timestamps must be executed before any file open/read; later, the timestamps may be altered
          # using git last commit timestamps because file system may be not reliable
-          last_commit_time = FileUtilities.git_last_commit_time(file_path)
+          last_commit_time = FileUtilities.git_last_commit_time(file_path) || File.mtime(file_path)
           file_timestamps[file_path] = {
             lastUpdate: last_commit_time,
             createTime: last_commit_time
@@ -83,8 +83,8 @@ module Jekyll
           lastUpdate = timestamps[:lastUpdate]
           createTime = timestamps[:createTime]
 
-          lastUpdateUTC = lastUpdate.to_time.to_i || 0
-          createTimeUTC = createTime.to_time.to_i || 0
+          lastUpdateUTC = lastUpdate.to_time.to_i rescue 0
+          createTimeUTC = createTime.to_time.to_i rescue 0
 
           front_matter, _ = FileUtilities.parse_front_matter(File.read(file_path))
           title = front_matter['title']

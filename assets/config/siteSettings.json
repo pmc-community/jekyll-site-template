@@ -251,6 +251,32 @@
       "parent": ""
     },
     {
+      "title": "Card",
+      "permalink": "/components/card/",
+      "categories": [
+        "Components"
+      ],
+      "tags": [
+        "card"
+      ],
+      "excerpt": "card, component, quick, build, title, bulk, content",
+      "lastUpdate": "2025-07-30 11:11:04 +0300",
+      "lastUpdateUTC": 0,
+      "createTime": "2025-07-30 11:11:04 +0300",
+      "createTimeUTC": 1753863064,
+      "relatedPages": [
+        {
+          "title": "Image",
+          "permalink": "/components/image/"
+        }
+      ],
+      "autoSummary": "Write a concise, factual summary in English with no greetings or instructions, maximum 50 words. Some quick example text to build on the card title and make up the bulk of the cards content.",
+      "similarByContent": [],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
       "title": "Components",
       "permalink": "/components/intro/",
       "categories": [
@@ -371,16 +397,16 @@
       "createTimeUTC": 1753805322,
       "relatedPages": [
         {
+          "title": "Card",
+          "permalink": "/components/card/"
+        },
+        {
           "title": "XLSX Charts",
           "permalink": "/components/xlsx-charts/"
         },
         {
           "title": "Downloads",
           "permalink": "/components/download-link/"
-        },
-        {
-          "title": "Rich media",
-          "permalink": "/components/rich-media/"
         }
       ],
       "autoSummary": "This component allows placing images into your content. Images can have captions (lets say you need to show some credits or copyright information) or not. The compoenent is designed to work with responsive images.",
@@ -730,6 +756,7 @@
     "alert",
     "anchor",
     "button",
+    "card",
     "chart",
     "component",
     "content",
@@ -787,6 +814,16 @@
         }
       ],
       "numPages": 2
+    },
+    "card": {
+      "pages": [
+        {
+          "title": "Card",
+          "permalink": "/components/card/",
+          "lastUpdate": "30-Jul-2025"
+        }
+      ],
+      "numPages": 1
     },
     "chart": {
       "pages": [
@@ -1058,6 +1095,11 @@
           "lastUpdate": "29-Jul-2025"
         },
         {
+          "title": "Card",
+          "permalink": "/components/card/",
+          "lastUpdate": "30-Jul-2025"
+        },
+        {
           "title": "Components",
           "permalink": "/components/intro/",
           "lastUpdate": "27-Jul-2025"
@@ -1108,7 +1150,7 @@
           "lastUpdate": "26-Jul-2025"
         }
       ],
-      "numPages": 11
+      "numPages": 12
     },
     "Content": {
       "pages": [

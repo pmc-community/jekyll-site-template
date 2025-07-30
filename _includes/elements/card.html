@@ -1,0 +1,14 @@
+{% capture uuid %}
+  {% UUID %}
+{% endcapture %}
+{% assign cid = uuid | strip %}
+
+
+<div class="card-{{cid}}" style="width: 18rem;">
+  <img src="cloud-1.png" class="card-img-top">
+  <div class="card-body-{{cid}}">
+    <h5 class="card-title-{{cid}}">Card title</h5>
+    <p class="card-text-{{cid}}">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>

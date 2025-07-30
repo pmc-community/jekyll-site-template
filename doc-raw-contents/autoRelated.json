@@ -17,6 +17,15 @@
     ]
   },
   {
+    "permalink": "/components/card/",
+    "related": [
+      {
+        "title": "Image",
+        "permalink": "/components/image/"
+      }
+    ]
+  },
+  {
     "permalink": "/components/intro/",
     "related": [
       {
@@ -71,16 +80,16 @@
     "permalink": "/components/image/",
     "related": [
       {
+        "title": "Card",
+        "permalink": "/components/card/"
+      },
+      {
         "title": "XLSX Charts",
         "permalink": "/components/xlsx-charts/"
       },
       {
         "title": "Downloads",
         "permalink": "/components/download-link/"
-      },
-      {
-        "title": "Rich media",
-        "permalink": "/components/rich-media/"
       }
     ]
   },
