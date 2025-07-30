@@ -330,10 +330,10 @@
         "faq"
       ],
       "excerpt": "learn, add, elements, documents, element, question, header, answer, body",
-      "lastUpdate": "2025-07-28 11:20:25 +0300",
+      "lastUpdate": "2025-07-29 23:24:30 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-07-28 11:20:25 +0300",
-      "createTimeUTC": 1753690825,
+      "createTime": "2025-07-29 23:24:30 +0300",
+      "createTimeUTC": 1753820670,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -873,7 +873,7 @@
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/",
-          "lastUpdate": "28-Jul-2025"
+          "lastUpdate": "29-Jul-2025"
         },
         {
           "title": "Rich media",
@@ -903,7 +903,7 @@
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/",
-          "lastUpdate": "28-Jul-2025"
+          "lastUpdate": "29-Jul-2025"
         }
       ],
       "numPages": 1
@@ -1070,7 +1070,7 @@
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/",
-          "lastUpdate": "28-Jul-2025"
+          "lastUpdate": "29-Jul-2025"
         },
         {
           "title": "Image",

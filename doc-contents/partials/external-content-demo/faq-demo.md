@@ -1,8 +1,3 @@
----
-q: What search options are available?
-ref: /site-pages
----
-
 Docaroo suports 2 types of text search:
 - Native search
 - Algolia Docs search
