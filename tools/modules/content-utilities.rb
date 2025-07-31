@@ -34,7 +34,6 @@ module ContentUtilities
                     file_info["start_marker"], 
                     file_info["end_marker"]
                 ).force_encoding('UTF-8')
-            
             if (file_info["include_start_marker"])
                 markdown_content = file_info["start_marker"] + markdown_content
             end
@@ -148,7 +147,7 @@ module ContentUtilities
             if match_data
                 return match_data[1]
             else
-                return "Start and/or End markers are wrong! Cannot return anything."
+                return "Start and/or End markers are wrong! Cannot read between markers."
             end
         end
     end

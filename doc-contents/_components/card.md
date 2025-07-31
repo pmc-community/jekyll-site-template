@@ -16,3 +16,21 @@ tags: [card]
     content="Best experience is achieved when using images with transparent background in cards" 
     title="Tip" 
 %}
+
+ ```yaml
+{% 
+    ExternalRepoContent  { 
+        "markdown": true,
+        "owner":"pmc-community", 
+        "repo":"jekyll-site-template", 
+        "branch":"gh-pages", 
+        "file_path":"_data/buildConfig.yml", 
+        "ignore_wp_shortcodes": true, 
+        "start_marker": "card:",
+        "include_start_marker": true,
+        "end_marker": "0.875rem\"" ,
+        "include_end_marker": true,
+        "needAuth": true
+    }
+%}
+```
