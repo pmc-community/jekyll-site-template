@@ -83,8 +83,8 @@
         "permalink": "/components/download-link/"
       },
       {
-        "title": "Rich media",
-        "permalink": "/components/rich-media/"
+        "title": "Link button",
+        "permalink": "/components/link-button/"
       }
     ]
   },
@@ -149,6 +149,10 @@
       {
         "title": "XLSX Charts",
         "permalink": "/components/xlsx-charts/"
+      },
+      {
+        "title": "Link button",
+        "permalink": "/components/link-button/"
       }
     ]
   },

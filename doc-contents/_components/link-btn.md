@@ -68,6 +68,14 @@ Please observe and respect the syntax as shown in the example above. Changing th
 
 {% include elements/link-btn-group.html buttons=buttons %}
 
+# Parameters
+- `type`: type of the link (`primary`, `secondary`, `warning`, `succees`, `danger`, `info`, `light`, `dark`, `link`). See also [Bootstap buttons](https://getbootstrap.com/docs/5.3/components/buttons/). Default value is `primary`. If type=`link`, `outline` and `border` are ignored.
+- `outline`: See [Bootstap buttons](https://getbootstrap.com/docs/5.3/components/buttons/)
+- `border`: specify if the button has or not a border, default value is `false`
+- `href`: link to be targeted when click on the button
+- `newTab`: specify if to open `href` in the same or a new tab
+- `text`: the text to be rendered on the button
+
 # Anchor links
 Place anchors anywhere in the document like this:
 

@@ -260,10 +260,10 @@
         "card"
       ],
       "excerpt": "docaroo, card, lorem, ipsum, dolor, sit, amet, consectetur, adipiscing, elit",
-      "lastUpdate": "2025-07-31 10:43:53 +0300",
+      "lastUpdate": "2025-07-31 18:13:48 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-07-31 10:43:53 +0300",
-      "createTimeUTC": 1753947833,
+      "createTime": "2025-07-31 18:13:48 +0300",
+      "createTimeUTC": 1753974828,
       "relatedPages": [],
       "autoSummary": "Write a concise, factual summary in English with no greetings or instructions, maximum 50 words, for the following text. Use images with transparent background in cards.",
       "similarByContent": [],
@@ -400,8 +400,8 @@
           "permalink": "/components/download-link/"
         },
         {
-          "title": "Rich media",
-          "permalink": "/components/rich-media/"
+          "title": "Link button",
+          "permalink": "/components/link-button/"
         }
       ],
       "autoSummary": "This component allows placing images into your content. Images can have captions (lets say you need to show some credits or copyright information) or not. The compoenent is designed to work with responsive images.",
@@ -440,9 +440,9 @@
           "permalink": "/components/intro/"
         }
       ],
-      "autoSummary": "Link buttons helps users to navigate inside your documentation or access external sites. You can add individual link buttons or group link buttons. You can place anchors anywhere in the document and references to them.",
+      "autoSummary": "Link buttons helps users to navigate inside your documentation or access external sites. Docaroo provides link buttons in style. You can add individual link buttons or group link buttons.",
       "similarByContent": [],
-      "readingTime": 1,
+      "readingTime": 2,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -559,6 +559,10 @@
         {
           "title": "XLSX Charts",
           "permalink": "/components/xlsx-charts/"
+        },
+        {
+          "title": "Link button",
+          "permalink": "/components/link-button/"
         }
       ],
       "autoSummary": "Tables can be imported directly from excel. When a table contains merged cells, it will be rendered as table, regardless of the value of the.",

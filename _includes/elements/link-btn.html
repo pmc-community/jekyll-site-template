@@ -14,9 +14,10 @@
 
 {% assign type = include.type || default: "primary" %}
 {% assign outline = include.outline %}
+{% assign border = include.border || default: "false" %}
 {% assign text = include.text %}
 {% assign href = include.href || default: "#" %}
-{% assign newTab = include.newTab || default: "false" %}
+{% assign newTab = include.newTab || default: "true" %}
 
 {% if newTab == "true" %}
  {% assign target = "target=_blank"%}
@@ -24,16 +25,26 @@
  {% assign target = ""%}
  {% endif %}
 
-{% assign allowedTypes = "primary,secondary,success,danger,warning,info,light" | split: "," %}
+{% assign allowedTypes = "primary,secondary,success,danger,warning,info,light,dark,link" | split: "," %}
 {% if outline == "true" %}
- {% assign btnClass="btn-outline-" | append: type %}
+  {% if type == "link" %}
+    {% assign btnClass="btn-" | append: type %}
+  {% else %}
+   {% assign btnClass="btn-outline-" | append: type %}
+  {% endif %}
 {% else %}
  {% assign btnClass="btn-" | append: type %}
 {% endif %}
 
+{% if boder != true %}
+  {%assign borderClass = "border-0" %}
+{% else %}
+  {% assign borderClass = "" %}
+{% endif %}
+
 {% if allowedTypes contains type %}  
 
-<a id="lnk-btn-{{bid}}" class="btn btn-sm {{btnClass}}" {{target}} href="{{href}}">
+<a id="lnk-btn-{{bid}}" class="btn btn-sm {{btnClass}} {{borderClass}}" {{target}} href="{{href}}">
     {{text}}
 </a>
 

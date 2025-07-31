@@ -18,7 +18,8 @@
 
 {% if file !="" %}
 
-<div id="card-{{cid}}" style="width: 18rem" class="bg-transparent card border border-secondary border-opacity-25 rounded my-4">
+{% assign cardWidth = site.data["buildConfig"]["elements"]["card"]["cardWidth"] %}
+<div id="card-{{cid}}" style="width: {{cardWidth}}" class="bg-transparent card border border-secondary border-opacity-25 rounded my-4">
     
  {% if imgFullPath != "" %}
   <img id="card-img-{{cid}}" src="{{imgFullPath}}" class="pt-2 card-img-top img-fluid">
@@ -59,8 +60,8 @@
    
    <div id="card-buttons-{{cid}}" class="border-top border-secondary border-opacity-25 pt-2 mt-1">
     {% capture buttons %}
-     type=primary|outline=false|text=Intro|href="/intro/"|newTab=true,
-     type=secondary|outline=false|text=PMC|href="https://pmc-expert.com"|newTab=true
+     type=link|outline=true|border=true|text=Intro|href="/intro/"|newTab=true,
+     type=link"|border=false|text=PMC|href="https://pmc-expert.com"|newTab=true
     {% endcapture %}
 
     {% include elements/link-btn-group.html buttons=buttons %}
@@ -71,16 +72,18 @@
 </div>
 
 <style>
+ {% assign cardImgHeight = site.data["buildConfig"]["elements"]["card"]["cardImgHeight"] %}
  #card-img-{{cid}} {
   margin-top: -3px;
   border-top-left-radius: 10px !important;
   border-top-right-radius: 10px !important;
-  max-height: 12rem !important;
+  max-height: {{cardImgHeight}} !important;
   width:auto !important;
   object-fit: cover;
   object-position: top;
  }
 
+ {% assign cardImgText = site.data["buildConfig"]["elements"]["card"]["cardImgText"] %}
  #card-text-{{cid}} {
   font-size: 0.875rem;
  }
