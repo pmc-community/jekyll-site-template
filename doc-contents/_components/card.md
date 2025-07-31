@@ -11,3 +11,8 @@ tags: [card]
     title="Docaroo card"
     file="partials/external-content-demo/card-content-demo.md"   
 %}
+
+{% include elements/alert.html class="primary" 
+    content="Best experience is achieved when using images with transparent background in cards" 
+    title="Tip" 
+%}

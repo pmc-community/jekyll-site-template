@@ -260,12 +260,12 @@
         "card"
       ],
       "excerpt": "docaroo, card, lorem, ipsum, dolor, sit, amet, consectetur, adipiscing, elit",
-      "lastUpdate": "2025-07-30 18:58:58 +0300",
+      "lastUpdate": "2025-07-31 10:43:53 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-07-30 18:58:58 +0300",
-      "createTimeUTC": 1753891138,
+      "createTime": "2025-07-31 10:43:53 +0300",
+      "createTimeUTC": 1753947833,
       "relatedPages": [],
-      "autoSummary": "docaroo card.",
+      "autoSummary": "Write a concise, factual summary in English with no greetings or instructions, maximum 50 words, for the following text. Use images with transparent background in cards.",
       "similarByContent": [],
       "readingTime": 1,
       "hasDynamicContent": false,
@@ -815,7 +815,7 @@
         {
           "title": "Card",
           "permalink": "/components/card/",
-          "lastUpdate": "30-Jul-2025"
+          "lastUpdate": "31-Jul-2025"
         }
       ],
       "numPages": 1
@@ -1092,7 +1092,7 @@
         {
           "title": "Card",
           "permalink": "/components/card/",
-          "lastUpdate": "30-Jul-2025"
+          "lastUpdate": "31-Jul-2025"
         },
         {
           "title": "Components",
