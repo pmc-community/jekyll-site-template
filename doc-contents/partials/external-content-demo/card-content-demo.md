@@ -5,7 +5,7 @@
         "ignore_wp_shortcodes": true, 
         "start_marker": "<!-- START MARKER 1 -->", 
         "include_start_marker": false,
-        "end_marker": "<!-- END MARKER 1 -->",
+        "end_marker": "<!-- END CARD MARKER -->",
         "include_end_marker": false,
         "needAuth": false 
     }
