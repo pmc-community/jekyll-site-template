@@ -26,6 +26,7 @@
     {% assign text = "" %}
     {% assign href = "" %}
     {% assign newTab = "" %}
+    {% assign border = "" %}
 
     {% comment %} Split each definition into key-value pairs {% endcomment %}
     {% assign parts = def | split: "|" %}
@@ -52,6 +53,8 @@
           {% assign href = val %}
         {% when "newTab" %}
           {% assign newTab = val %}
+        {% when "border" %}
+          {% assign border = val %}
       {% endcase %}
     {% endfor %}
 
@@ -62,6 +65,7 @@
         text=text
         href=href
         newTab=newTab
+        border=border
       %}
     </div>
   {% endfor %}
