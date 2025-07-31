@@ -3,12 +3,87 @@
 {% endcapture %}
 {% assign cid = uuid | strip %}
 
+{% assign img = include.img || default: "" %}
+{% if img == "" %}
+    {% assign imgFullPath = "" %}
+{% else %}
+    {% capture fullPath %}
+        {% ImgFullPath {{img}} %}
+    {% endcapture %}
+    {% assign imgFullPath = fullPath %}
+{% endif %}
 
-<div class="card-{{cid}}" style="width: 18rem;">
-  <img src="cloud-1.png" class="card-img-top">
-  <div class="card-body-{{cid}}">
-    <h5 class="card-title-{{cid}}">Card title</h5>
-    <p class="card-text-{{cid}}">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+{% assign file = include.file || default: "" %}
+{% assign title = include.title || default: "" %}
+
+{% if file !="" %}
+
+<div id="card-{{cid}}" style="width: 18rem" class="bg-transparent card border border-secondary border-opacity-25 rounded">
+    
+ {% if imgFullPath != "" %}
+  <img id="card-img-{{cid}}" src="{{imgFullPath}}" class="pt-2 card-img-top img-fluid">
+ {% endif %}
+
+ <div id="card-body-{{cid}}" class="card-body">
+   
+   {% if title != "" %}
+    <span class="fw-medium card-title text-primary" id="card-title-{{cid}}">{{title}}</span>
+   {% endif %}
+
+   <div id="card-text-{{cid}}" class="card-text">
+    <div class="text-secondary">
+            
+     {% capture content %}
+      {% 
+        ExternalSiteContent  {
+         "markdown": true,
+         "file_path":"{{file}}", 
+         "ignore_wp_shortcodes": true, 
+         "start_marker": "fullFile", 
+         "include_start_marker": false,
+         "end_marker": "fullFile",
+         "include_end_marker": false,
+         "needAuth": false 
+        }
+      %}
+     {% endcapture %}
+
+     {% capture rendered_content %}
+      {% DryRenderPage content %}
+     {% endcapture %}
+
+     {{rendered_content | markdonify}}
+
+    </div>
+   </div>
+   
+   <div id="card-buttons-{{cid}}" class="border-top border-secondary border-opacity-25 pt-2 mt-1">
+    {% capture buttons %}
+     type=primary|outline=false|text=Intro|href="/intro/"|newTab=true,
+     type=secondary|outline=false|text=PMC|href="https://pmc-expert.com"|newTab=true
+    {% endcapture %}
+
+    {% include elements/link-btn-group.html buttons=buttons %}
+   </div>
+
   </div>
+
 </div>
+
+<style>
+ #card-img-{{cid}} {
+  margin-top: -3px;
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+  max-height: 10rem !important;
+  width:auto !important;
+  object-fit: cover;
+  object-position: top;
+ }
+
+</style>
+
+{%else%}
+ {% assign mess="Something went wrong when creating card. Source file is missing!" %}
+ {% include elements/alert.html class="danger" content=mess title="Error" %}
+{% endif %}
