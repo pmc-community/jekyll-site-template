@@ -1704,7 +1704,7 @@ const fedbackFormContainer__ASYNC = (formContainerSelector) => {
         const formContainer = () => {
             return (
                 `
-                    <div id = "pageFeedbackFormColumn" class="mt-4">
+                    <div id = "pageFeedbackFormColumn" class="mt-2">
                         <div 
                             id="${formContainerSelector}" 
                             class="d-none">

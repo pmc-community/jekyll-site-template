@@ -97,4 +97,10 @@ Adding simple cards is easy, only add the code shown below. However, as visual e
     content="As much as possible avoid using cards without link buton(s) in the footer. Apart from the purpose of focusing on short conclusions, the links to more detailed information which can be provided in the card footer are also important for the overall user experience" 
     title="Tip" 
 %}
- 
+
+# Parameters
+- `img`: path to the image to be the rendered in the card header
+- `title`: the card title
+- `file`: path to the file for the content of the card
+- `contentAside`: path to the file for the aside content. Will be ignored when for card galleries
+- `buttons`: the link buttons to be rendered in the footer of the card

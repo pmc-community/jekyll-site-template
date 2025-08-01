@@ -114,4 +114,4 @@ elements:
   card:
     cardWidth: "18rem"
     cardImgHeight: "12rem"
-    cardImgText: "0.875rem"
+    cardImgText: "0.775rem"

@@ -35,7 +35,10 @@
  <div id="card-body-{{cid}}" class="card-body">
    
    {% if title != "" %}
-    <span class="fw-medium card-title text-primary" id="card-title-{{cid}}">{{title}}</span>
+    <div id="card-title-container-{{cid}}" class="d-flex justify-content-between">
+     <span class="fw-medium card-title text-primary" id="card-title-{{cid}}">{{title}}</span>
+     <i id="card-title-go-to-aside-content-{{cid}}" class="bi bi-box-arrow-down fs-4 fw-medium text-secondary alwaysCursorPointer d-none"></i>
+    </div>
    {% endif %}
 
    <div id="card-text-{{cid}}" class="card-text">
@@ -80,7 +83,7 @@
 
   <div id="card-aside-container-{{cid}}" class="col-md-7 col-12 p-2 align-content-center">
   
-   {% capture content %} {% ExternalSiteContent  {
+   {% capture content %} {% ExternalSiteContent {
         "markdown": true,
         "file_path":"{{contentAside}}", 
         "ignore_wp_shortcodes": true, 
@@ -103,6 +106,21 @@
  </div>
 
 {% endif %}
+
+<script>
+ $('#card-buttons-{{cid}}').find('div[id^="btn-lnk-group-"]').addClass('justify-content-between');
+ 
+ if (preFlight.envInfo.device.deviceType !== 'desktop') {
+    $('#card-title-go-to-aside-content-{{cid}}').removeClass('d-none');
+ }
+
+ $('#card-title-go-to-aside-content-{{cid}}').on('click', function() {
+  $('html, body').animate({
+   scrollTop: $('#card-aside-container-{{cid}}').offset().top - 100
+  }, 100);
+
+ });
+</script>
 
 <style>
  {% assign cardImgHeight = site.data["buildConfig"]["elements"]["card"]["cardImgHeight"] %}
