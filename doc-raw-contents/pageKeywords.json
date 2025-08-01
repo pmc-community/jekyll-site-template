@@ -9,7 +9,9 @@
         "documents",
         "element",
         "question",
-        "answer"
+        "header",
+        "answer",
+        "body"
       ]
     },
     {
@@ -223,6 +225,21 @@
         "efficient",
         "incorporate",
         "piecers"
+      ]
+    },
+    {
+      "permalink": "/components/card/",
+      "keywords": [
+        "card",
+        "emphasise",
+        "piece",
+        "provide",
+        "relevant",
+        "visual",
+        "experience",
+        "images",
+        "references",
+        "detailed"
       ]
     }
   ]

@@ -10,11 +10,11 @@
         },
         {
             "permalink": "/components/qitem/",
-            "summary": "The question should always be a text. The answer to the question can be simple text or any rich content that is allowed in markdown. Any docaroo component can be used to render the answer to a question."
+            "summary": "The question should always be a text. The answer to the question can be simple text or any rich content that is allowed in markdown. Docaroo suports 2 types of text search."
         },
         {
             "permalink": "/components/link-button/",
-            "summary": "Link buttons helps users to navigate inside your documentation or access external sites. You can add individual link buttons or group link buttons. You can place anchors anywhere in the document and references to them."
+            "summary": "Link buttons helps users to navigate inside your documentation or access external sites. Docaroo provides link buttons in style. You can add individual link buttons or group link buttons."
         },
         {
             "permalink": "/components/rich-media/",
@@ -67,6 +67,10 @@
         {
             "permalink": "/content/content-items/",
             "summary": "Docaroo makes available a series of content items that can be used to enrich your documents and to be very efficient when wanting to incorporate piecers of content in a fast and robust way."
+        },
+        {
+            "permalink": "/components/card/",
+            "summary": "Cards can be included as single items or in galleries of cards."
         }
     ]
 }

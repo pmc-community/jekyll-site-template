@@ -1,0 +1,163 @@
+{% capture uuid %}
+  {% UUID %}
+{% endcapture %}
+{% assign cid = uuid | strip %}
+
+{% assign img = include.img || default: "" %}
+{% if img == "" %}
+    {% assign imgFullPath = "" %}
+{% else %}
+    {% capture fullPath %}
+        {% ImgFullPath {{img}} %}
+    {% endcapture %}
+    {% assign imgFullPath = fullPath %}
+{% endif %}
+
+{% assign file = include.file || default: "" %}
+{% assign title = include.title || default: "" %}
+{% assign contentAside = include.contentAside || default: "false" %}
+{% assign buttons = include.buttons || default: "" %}
+
+{% if file !="" %}
+
+{% if contentAside != "false" %}
+ <div id="card-whole-container-{{cid}}" class="row d-flex py-4">
+  <div id="card-container-{{cid}}"  class="col-md-5 col-12 align-content-center">
+{% endif %}
+
+{% assign cardWidth = site.data["buildConfig"]["elements"]["card"]["cardWidth"] %}
+<div id="card-{{cid}}" style="width: {{cardWidth}}" class="w-sm-auto mx-auto bg-transparent card border border-secondary border-opacity-25 rounded my-4">
+    
+ {% if imgFullPath != "" %}
+  <img id="card-img-{{cid}}" src="{{imgFullPath}}" class="pt-2 card-img-top img-fluid">
+ {% endif %}
+
+ <div id="card-body-{{cid}}" class="card-body">
+   
+   {% if title != "" %}
+    <div id="card-title-container-{{cid}}" class="d-flex justify-content-between">
+     <span class="fw-medium card-title text-primary" id="card-title-{{cid}}">{{title}}</span>
+     <i id="card-title-go-to-aside-content-{{cid}}" class="bi bi-box-arrow-down fs-4 fw-medium text-secondary alwaysCursorPointer d-none"></i>
+    </div>
+   {% endif %}
+
+   <div id="card-text-{{cid}}" class="card-text">
+    <div class="text-secondary">
+            
+     {% capture content %} {% ExternalSiteContent {
+        "markdown": true,
+        "file_path":"{{file}}", 
+        "ignore_wp_shortcodes": true, 
+        "start_marker": "fullFile", 
+        "include_start_marker": false,
+        "end_marker": "fullFile",
+        "include_end_marker": false,
+        "needAuth": false 
+        } %}
+     {% endcapture %}
+
+     {% capture rendered_content %}
+      {% DryRenderPage content %}
+     {% endcapture %}
+    
+     {{rendered_content | markdonify}}
+
+    </div>
+   </div>
+   
+   <div id="card-buttons-{{cid}}" class="border-top border-secondary border-opacity-25 pt-2 mt-1">
+    
+    {% if buttons %}
+     {% include elements/link-btn-group.html buttons=buttons %}
+    {% endif %}
+
+   </div>
+
+  </div>
+
+</div>
+
+{% if contentAside != "false" %}
+
+  </div>
+
+  <div id="card-aside-container-{{cid}}" class="col-md-7 col-12 p-2 align-content-center">
+   <div id="card-aside-container-go-to-card-top-{{cid}}" class="d-none d-flex py-1 bg-secondary bg-opacity-25 rounded mb-2 justify-content-center alwaysCursorPointer">
+    <i class="bi bi-box-arrow-up fs-4 fw-medium text-secondary"></i>
+   </div>
+
+   {% capture content %} {% ExternalSiteContent {
+        "markdown": true,
+        "file_path":"{{contentAside}}", 
+        "ignore_wp_shortcodes": true, 
+        "start_marker": "fullFile", 
+        "include_start_marker": false,
+        "end_marker": "fullFile",
+        "include_end_marker": false,
+        "needAuth": false 
+    }%}
+   {% endcapture %}
+
+   {% capture rendered_content %}
+    {% DryRenderPage content %}
+   {% endcapture %}
+
+   {{rendered_content | markdonify}}
+  
+   <div id="card-aside-container-go-to-card-bottom-{{cid}}" class="d-none d-flex py-1 bg-secondary bg-opacity-25 rounded mt-2 justify-content-center alwaysCursorPointer">
+    <i class="bi bi-box-arrow-up fs-4 fw-medium text-secondary"></i>
+   </div>
+
+  </div>
+
+ </div>
+
+{% endif %}
+
+<script>
+ $('#card-buttons-{{cid}}').find('div[id^="btn-lnk-group-"]').addClass('justify-content-between');
+ 
+ if (preFlight.envInfo.device.deviceType !== 'desktop') {
+    $('#card-title-go-to-aside-content-{{cid}}, #card-aside-container-go-to-card-top-{{cid}}, #card-aside-container-go-to-card-bottom-{{cid}}').removeClass('d-none');
+    $('#card-aside-container-{{cid}}').css('height',0).css('visibility', 'hidden');
+ }
+
+ $('#card-title-go-to-aside-content-{{cid}}').on('click', function() {
+  $('#card-aside-container-{{cid}}').css('height','fit-content').css('visibility', 'visible');
+  $('html, body').animate({
+   scrollTop: $('#card-aside-container-{{cid}}').offset().top - 100
+  }, 100);
+ });
+
+ $('#card-aside-container-go-to-card-top-{{cid}}, #card-aside-container-go-to-card-bottom-{{cid}}').on('click', function() {
+  $('#card-aside-container-{{cid}}').css('height',0).css('visibility', 'hidden');
+  $('html, body').animate({
+   scrollTop: $('#card-whole-container-{{cid}}').offset().top - 100
+  }, 100);
+ });
+
+</script>
+
+<style>
+ {% assign cardImgHeight = site.data["buildConfig"]["elements"]["card"]["cardImgHeight"] %}
+ #card-img-{{cid}} {
+  margin-top: -3px;
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+  max-height: {{cardImgHeight}} !important;
+  width:100% !important;
+  object-fit: cover;
+  object-position: top;
+ }
+
+ {% assign cardImgText = site.data["buildConfig"]["elements"]["card"]["cardImgText"] %}
+ #card-text-{{cid}} {
+  font-size: 0.875rem;
+ }
+
+</style>
+
+{% else %}
+ {% assign mess="Something went wrong when creating card. Source file is missing!" %}
+ {% include elements/alert.html class="danger" content=mess title="Error" %}
+{% endif %}

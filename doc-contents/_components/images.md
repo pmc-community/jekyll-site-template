@@ -3,7 +3,7 @@ layout: page
 title: Image
 permalink: /components/image/
 categories: [Components]
-tags: [image, component]
+tags: [image, component, gallery]
 ---
 
 # Summary
@@ -44,9 +44,13 @@ Observe that the `height` and `width` parameters were not provided to not break 
 - `captionBorder`: specify it to render a thin border between the image and the caption
 - `link`: link to an external target if you want to have the image as link to another internal or external page
 - `newTab`: specify if to open `link` in the same or a new tab
+- `h`: image height
+- `w`: image width
+- `imgLink`: link to an external target if the image is included in a gallery (see `Image Gellery` below). Note that the behaviour of the `imgLink` in case of galleries is different than the behaviour of `link` in case of simple images. The navigation to external pages is not triggered directly from the gallery, is shown as button after the gallery image opens in a larger view.
+- `imgLinkNewTab`: specify if to open `imgLink` in the same or a new tab (see `Image Gellery` below)
 
-# Image galery
-Galleries of images can be added to documents as further shown. The number of images per each row is limited to 3 on large screens and to 2 images for narrow screens (mobile).
+# Image gallery
+Galleries of images can be added to documents as further shown. The number of images per each row is limited to 3 on large screens and to 2 images for narrow screens (mobile) if the height of the gallery is not set by `oneRow`.
 
 {% raw %}
 ```javascript
@@ -59,7 +63,12 @@ Galleries of images can be added to documents as further shown. The number of im
     source="partials/media/man-thinking.png"
 {% endcapture %}
 
-{% include elements/image-galery.html img=img border="true" %}
+{% include elements/image-gallery.html 
+  img=img 
+  border="true" 
+  hg="400px"
+  oneRow="mobile" 
+%}
 ```
 {% endraw %}
 
@@ -72,11 +81,18 @@ Galleries of images can be added to documents as further shown. The number of im
     source="partials/media/man-thinking.png"
 {% endcapture %}
 
-{% include elements/image-gallery.html img=img border="true" %}
+{% include elements/image-gallery.html 
+  img=img 
+  border="true" 
+  hg="400px"
+  oneRow="mobile" 
+%}
 
 # Parameters
 - `source`: path to the image file provided as relative path from the root of doc-contents folder
 - `caption`: image caption if needed
 - `captionBorder`: specify it to render a thin border between the image and the caption
-- `imgLink`: link to an external target if you want to have the image as link to another internal or external page. Note that the behaviour of the `imgLink` in case of galleries is different than the behaviour of `link` in case of simple images. The navigation to external pages is not triggered directly from the gallery, is shown as button after the gallery image opens in a larger view. 
-- `imgLinkNewTab`: specify if to open `link` in the same or a new tab
+- `hg`: fixed height of the whole gallery (useful for large galleries). Vertical scroll is enabled if necessary.
+- `oneRow`: the gallery is rendered on a single row and horizontal scroll is enabled. 
+
+Note that `oneRow` can be `none`, `all`, `mobile` or `desktop`. Any other value will make it to be assigned with `none`. When a device type is specified, the gallery is rendered on a single row on that device and acoording to `hg` on other devices. When `oneRow` is missing or set to `none`, the gallery is rendered on all devices with a height equal to `hg` or full height if `hg` is missing.

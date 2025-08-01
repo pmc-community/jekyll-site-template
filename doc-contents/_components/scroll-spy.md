@@ -3,7 +3,7 @@ layout: page
 title: Scroll Spy & Tabs
 permalink: /components/scrollspy/
 categories: [Components]
-tags: [scrollspy]
+tags: [scrollspy, content, tabs]
 ---
 
 # Summary

@@ -7,13 +7,40 @@
     ],
     "tags": [
       "embed",
-      "alert"
+      "alert",
+      "content"
     ],
     "excerpt": "",
-    "lastUpdate": "2025-07-29 01:34:01 +0300",
-    "lastUpdateUTC": 1753742041,
-    "createTime": "2025-07-29 01:34:01 +0300",
-    "createTimeUTC": 1753742041,
+    "lastUpdate": "2025-08-02 01:05:20 +0300",
+    "lastUpdateUTC": 1754085920,
+    "createTime": "2025-08-02 01:05:20 +0300",
+    "createTimeUTC": 1754085920,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Card",
+    "permalink": "/components/card/",
+    "categories": [
+      "Components"
+    ],
+    "tags": [
+      "card",
+      "content",
+      "external",
+      "button",
+      "link",
+      "gallery"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-08-02 01:05:20 +0300",
+    "lastUpdateUTC": 1754085920,
+    "createTime": "2025-08-02 01:05:20 +0300",
+    "createTimeUTC": 1754085920,
     "relatedPages": [],
     "autoSummary": "",
     "similarByContent": [],
@@ -72,13 +99,14 @@
     ],
     "tags": [
       "embed",
-      "faq"
+      "faq",
+      "content"
     ],
     "excerpt": "",
-    "lastUpdate": "2025-07-28 11:20:25 +0300",
-    "lastUpdateUTC": 1753690825,
-    "createTime": "2025-07-28 11:20:25 +0300",
-    "createTimeUTC": 1753690825,
+    "lastUpdate": "2025-08-02 01:05:20 +0300",
+    "lastUpdateUTC": 1754085920,
+    "createTime": "2025-08-02 01:05:20 +0300",
+    "createTimeUTC": 1754085920,
     "relatedPages": [],
     "autoSummary": "",
     "similarByContent": [],
@@ -94,13 +122,14 @@
     ],
     "tags": [
       "image",
-      "component"
+      "component",
+      "gallery"
     ],
     "excerpt": "",
-    "lastUpdate": "2025-07-29 01:40:31 +0300",
-    "lastUpdateUTC": 1753742431,
-    "createTime": "2025-07-29 01:40:31 +0300",
-    "createTimeUTC": 1753742431,
+    "lastUpdate": "2025-08-02 01:05:20 +0300",
+    "lastUpdateUTC": 1754085920,
+    "createTime": "2025-08-02 01:05:20 +0300",
+    "createTimeUTC": 1754085920,
     "relatedPages": [],
     "autoSummary": "",
     "similarByContent": [],
@@ -120,10 +149,10 @@
       "anchor"
     ],
     "excerpt": "",
-    "lastUpdate": "2025-07-21 12:36:32 +0300",
-    "lastUpdateUTC": 1753090592,
-    "createTime": "2025-07-21 12:36:32 +0300",
-    "createTimeUTC": 1753090592,
+    "lastUpdate": "2025-07-31 18:50:45 +0300",
+    "lastUpdateUTC": 1753977045,
+    "createTime": "2025-07-31 18:50:45 +0300",
+    "createTimeUTC": 1753977045,
     "relatedPages": [],
     "autoSummary": "",
     "similarByContent": [],
@@ -162,13 +191,15 @@
       "Components"
     ],
     "tags": [
-      "scrollspy"
+      "scrollspy",
+      "content",
+      "tabs"
     ],
     "excerpt": "",
-    "lastUpdate": "2025-07-20 10:25:22 +0300",
-    "lastUpdateUTC": 1752996322,
-    "createTime": "2025-07-20 10:25:22 +0300",
-    "createTimeUTC": 1752996322,
+    "lastUpdate": "2025-08-02 01:05:20 +0300",
+    "lastUpdateUTC": 1754085920,
+    "createTime": "2025-08-02 01:05:20 +0300",
+    "createTimeUTC": 1754085920,
     "relatedPages": [],
     "autoSummary": "",
     "similarByContent": [],

@@ -22,7 +22,7 @@
     {% assign bgBaseColor = "var(--bs-primary)" %}
 {% endif %}
 
-<div id="alert-{{aid}}" class="alert {{alertClass}} border-5 border-start border-top-0 border-end-0 border-bottom-0 {{borderLeftClass}} alert-{{aid}}-opacity" role="alert">
+<div id="alert-{{aid}}" class="alert {{alertClass}} border-3 border-start border-top-0 border-end-0 border-bottom-0 {{borderLeftClass}} alert-{{aid}}-opacity bg-transparent" role="alert">
     {% if title != "" %}
         <div id="alert-title-{{aid}}" class="d-flex align-items-center fs-5 fw-medium {{titleClass}}">{{title}}</div>
     {% endif %}
