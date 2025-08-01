@@ -15,11 +15,18 @@
 
 {% assign file = include.file || default: "" %}
 {% assign title = include.title || default: "" %}
+{% assign contentAside = include.contentAside || default: "false" %}
+{% assign buttons = include.buttons || default: "" %}
 
 {% if file !="" %}
 
+{% if contentAside != "false" %}
+ <div id="card-whole-container-{{cid}}" class="row d-flex py-4">
+  <div id="card-container-{{cid}}"  class="col-md-5 col-12 align-content-center">
+{% endif %}
+
 {% assign cardWidth = site.data["buildConfig"]["elements"]["card"]["cardWidth"] %}
-<div id="card-{{cid}}" style="width: {{cardWidth}}" class="bg-transparent card border border-secondary border-opacity-25 rounded my-4">
+<div id="card-{{cid}}" style="width: {{cardWidth}}" class="w-sm-auto mx-auto bg-transparent card border border-secondary border-opacity-25 rounded my-4">
     
  {% if imgFullPath != "" %}
   <img id="card-img-{{cid}}" src="{{imgFullPath}}" class="pt-2 card-img-top img-fluid">
@@ -34,43 +41,68 @@
    <div id="card-text-{{cid}}" class="card-text">
     <div class="text-secondary">
             
-     {% capture content %}
-      {% 
-        ExternalSiteContent  {
-         "markdown": true,
-         "file_path":"{{file}}", 
-         "ignore_wp_shortcodes": true, 
-         "start_marker": "fullFile", 
-         "include_start_marker": false,
-         "end_marker": "fullFile",
-         "include_end_marker": false,
-         "needAuth": false 
-        }
-      %}
+     {% capture content %} {% ExternalSiteContent {
+        "markdown": true,
+        "file_path":"{{file}}", 
+        "ignore_wp_shortcodes": true, 
+        "start_marker": "fullFile", 
+        "include_start_marker": false,
+        "end_marker": "fullFile",
+        "include_end_marker": false,
+        "needAuth": false 
+        } %}
      {% endcapture %}
 
      {% capture rendered_content %}
       {% DryRenderPage content %}
      {% endcapture %}
-
+    
      {{rendered_content | markdonify}}
 
     </div>
    </div>
    
    <div id="card-buttons-{{cid}}" class="border-top border-secondary border-opacity-25 pt-2 mt-1">
-    {% capture buttons %}
-     type=link|outline=true|border=true|text=Intro|href="/intro/"|newTab=true,
-     type=link"|border=false|text=PMC|href="https://pmc-expert.com"|newTab=true
-    {% endcapture %}
+    
+    {% if buttons %}
+     {% include elements/link-btn-group.html buttons=buttons %}
+    {% endif %}
 
-    {% include elements/link-btn-group.html buttons=buttons %}
    </div>
 
   </div>
 
 </div>
 
+{% if contentAside != "false" %}
+
+  </div>
+
+  <div id="card-aside-container-{{cid}}" class="col-md-7 col-12 p-2 align-content-center">
+  
+   {% capture content %} {% ExternalSiteContent  {
+        "markdown": true,
+        "file_path":"{{contentAside}}", 
+        "ignore_wp_shortcodes": true, 
+        "start_marker": "fullFile", 
+        "include_start_marker": false,
+        "end_marker": "fullFile",
+        "include_end_marker": false,
+        "needAuth": false 
+    }%}
+   {% endcapture %}
+
+   {% capture rendered_content %}
+    {% DryRenderPage content %}
+   {% endcapture %}
+
+   {{rendered_content | markdonify}}
+  
+  </div>
+
+ </div>
+
+{% endif %}
 
 <style>
  {% assign cardImgHeight = site.data["buildConfig"]["elements"]["card"]["cardImgHeight"] %}
@@ -91,7 +123,7 @@
 
 </style>
 
-{%else%}
+{% else %}
  {% assign mess="Something went wrong when creating card. Source file is missing!" %}
  {% include elements/alert.html class="danger" content=mess title="Error" %}
 {% endif %}

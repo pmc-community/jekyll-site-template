@@ -49,7 +49,7 @@ Observe that the `height` and `width` parameters were not provided to not break 
 - `imgLink`: link to an external target if the image is included in a gallery (see `Image Gellery` below). Note that the behaviour of the `imgLink` in case of galleries is different than the behaviour of `link` in case of simple images. The navigation to external pages is not triggered directly from the gallery, is shown as button after the gallery image opens in a larger view.
 - `imgLinkNewTab`: specify if to open `imgLink` in the same or a new tab (see `Image Gellery` below)
 
-# Image galery
+# Image gallery
 Galleries of images can be added to documents as further shown. The number of images per each row is limited to 3 on large screens and to 2 images for narrow screens (mobile) if the height of the gallery is not set by `oneRow`.
 
 {% raw %}

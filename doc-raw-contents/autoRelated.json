@@ -18,7 +18,12 @@
   },
   {
     "permalink": "/components/card/",
-    "related": []
+    "related": [
+      {
+        "title": "Image",
+        "permalink": "/components/image/"
+      }
+    ]
   },
   {
     "permalink": "/components/intro/",

@@ -259,15 +259,20 @@
       "tags": [
         "card"
       ],
-      "excerpt": "docaroo, card, lorem, ipsum, dolor, sit, amet, consectetur, adipiscing, elit",
+      "excerpt": "card, emphasise, piece, provide, relevant, visual, experience, images, references, detailed",
       "lastUpdate": "2025-07-31 21:50:00 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-07-31 21:50:00 +0300",
       "createTimeUTC": 1753987800,
-      "relatedPages": [],
-      "autoSummary": "Write a concise, factual summary in English with no greetings or instructions, maximum 50 words, for the following text. Use images with transparent background in cards.",
+      "relatedPages": [
+        {
+          "title": "Image",
+          "permalink": "/components/image/"
+        }
+      ],
+      "autoSummary": "Cards can be included as single items or in galleries of cards.",
       "similarByContent": [],
-      "readingTime": 1,
+      "readingTime": 3,
       "hasDynamicContent": false,
       "parent": ""
     },

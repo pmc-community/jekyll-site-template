@@ -42,9 +42,15 @@
   {% assign borderClass = "" %}
 {% endif %}
 
+{% if type == "link" %}
+  {% assign shadowClass = "shadow-none" %}
+{% else %}
+  {% assign shadowClass = "" %}
+{% endif %}
+
 {% if allowedTypes contains type %}  
 
-<a id="lnk-btn-{{bid}}" class="btn btn-sm {{btnClass}} {{borderClass}}" {{target}} href="{{href}}">
+<a id="lnk-btn-{{bid}}" class="btn btn-sm {{btnClass}} {{borderClass}} {{shadowClass}}" {{target}} href="{{href}}">
     {{text}}
 </a>
 
