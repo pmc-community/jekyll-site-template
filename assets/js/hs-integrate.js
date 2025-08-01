@@ -188,8 +188,14 @@ hsIntegrate = {
 
         $iframeBody.css('background', $('body').css('background'));
         $iframeBody.css('font-family', $('body').css('font-family'));
+        $iframeBody.css('height', 'fit-content');
+        
         $iframeHtml.css('background', $('body').css('background'));
+        $iframeHtml.css('height', 'fit-content');
+
         $form.css('background', $('body').css('background'));
+        $form.addClass('mb-0');
+        $form.find('.hs-form-field').addClass('mb-0');
 
         $iframeBody.find('iframe').on('load', function() {
             $(this).css('height', '0px')
