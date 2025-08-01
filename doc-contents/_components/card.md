@@ -82,6 +82,7 @@ Adding simple cards is easy, only add the code shown below. However, as visual e
     title="Tip" 
 %}
 
+<!-- card definition -->
 {% capture buttons %}
     type=link|outline=true|border=true|text=Galleries|href="/components/image/#id_image_gallery"|newTab=true,
     type=link|border=false|text=Content|href="/content/ec/#id_import_external_repo_content"|newTab=true,
@@ -95,6 +96,7 @@ Adding simple cards is easy, only add the code shown below. However, as visual e
     contentAside="partials/external-content-demo/card-content-aside-demo.md"
     buttons=buttons
 %}
+<!-- end card definition -->
 
 {% include elements/alert.html class="primary" 
     content="As much as possible avoid using cards without link buton(s) in the footer. Apart from the purpose of focusing on short conclusions, the links to more detailed information which can be provided in the card footer are also important for the overall user experience" 
@@ -107,3 +109,5 @@ Adding simple cards is easy, only add the code shown below. However, as visual e
 - `file`: path to the file for the content of the card
 - `contentAside`: path to the file for the aside content. Will be ignored when for card galleries
 - `buttons`: the link buttons to be rendered in the footer of the card
+
+# Card gallery

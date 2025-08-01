@@ -18,7 +18,7 @@
 {% assign contentAside = include.contentAside || default: "false" %}
 {% assign buttons = include.buttons || default: "" %}
 
-{% if file !="" %}
+{% if file !="" and title !="" %}
 
 {% if contentAside != "false" %}
  <div id="card-whole-container-{{cid}}" class="row d-flex py-4">
@@ -158,6 +158,6 @@
 </style>
 
 {% else %}
- {% assign mess="Something went wrong when creating card. Source file is missing!" %}
+{% assign mess="Something went wrong when creating card from file: '" | append: file | append: "' with title: '" | append: title | append: "'. File and title parameters are mandatory!"%}
  {% include elements/alert.html class="danger" content=mess title="Error" %}
 {% endif %}
