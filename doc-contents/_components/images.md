@@ -3,7 +3,7 @@ layout: page
 title: Image
 permalink: /components/image/
 categories: [Components]
-tags: [image, component]
+tags: [image, component, gallery]
 ---
 
 # Summary

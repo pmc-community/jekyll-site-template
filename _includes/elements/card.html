@@ -82,7 +82,10 @@
   </div>
 
   <div id="card-aside-container-{{cid}}" class="col-md-7 col-12 p-2 align-content-center">
-  
+   <div id="card-aside-container-go-to-card-top-{{cid}}" class="d-none d-flex py-1 bg-secondary bg-opacity-25 rounded mb-2 justify-content-center alwaysCursorPointer">
+    <i class="bi bi-box-arrow-up fs-4 fw-medium text-secondary"></i>
+   </div>
+
    {% capture content %} {% ExternalSiteContent {
         "markdown": true,
         "file_path":"{{contentAside}}", 
@@ -101,6 +104,10 @@
 
    {{rendered_content | markdonify}}
   
+   <div id="card-aside-container-go-to-card-bottom-{{cid}}" class="d-none d-flex py-1 bg-secondary bg-opacity-25 rounded mt-2 justify-content-center alwaysCursorPointer">
+    <i class="bi bi-box-arrow-up fs-4 fw-medium text-secondary"></i>
+   </div>
+
   </div>
 
  </div>
@@ -111,15 +118,24 @@
  $('#card-buttons-{{cid}}').find('div[id^="btn-lnk-group-"]').addClass('justify-content-between');
  
  if (preFlight.envInfo.device.deviceType !== 'desktop') {
-    $('#card-title-go-to-aside-content-{{cid}}').removeClass('d-none');
+    $('#card-title-go-to-aside-content-{{cid}}, #card-aside-container-go-to-card-top-{{cid}}, #card-aside-container-go-to-card-bottom-{{cid}}').removeClass('d-none');
+    $('#card-aside-container-{{cid}}').css('height',0).css('visibility', 'hidden');
  }
 
  $('#card-title-go-to-aside-content-{{cid}}').on('click', function() {
+  $('#card-aside-container-{{cid}}').css('height','fit-content').css('visibility', 'visible');
   $('html, body').animate({
    scrollTop: $('#card-aside-container-{{cid}}').offset().top - 100
   }, 100);
-
  });
+
+ $('#card-aside-container-go-to-card-top-{{cid}}, #card-aside-container-go-to-card-bottom-{{cid}}').on('click', function() {
+  $('#card-aside-container-{{cid}}').css('height',0).css('visibility', 'hidden');
+  $('html, body').animate({
+   scrollTop: $('#card-whole-container-{{cid}}').offset().top - 100
+  }, 100);
+ });
+
 </script>
 
 <style>

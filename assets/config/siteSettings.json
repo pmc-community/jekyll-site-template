@@ -218,7 +218,8 @@
       ],
       "tags": [
         "embed",
-        "alert"
+        "alert",
+        "content"
       ],
       "excerpt": "learn, add, blocks, content, alerts, types, colors",
       "lastUpdate": "2025-07-29 01:34:01 +0300",
@@ -257,22 +258,35 @@
         "Components"
       ],
       "tags": [
-        "card"
+        "card",
+        "content",
+        "external",
+        "button",
+        "link",
+        "gallery"
       ],
       "excerpt": "card, emphasise, piece, provide, relevant, visual, experience, images, references, detailed",
-      "lastUpdate": "2025-08-01 13:13:46 +0300",
+      "lastUpdate": "2025-08-01 19:07:11 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-08-01 13:13:46 +0300",
-      "createTimeUTC": 1754043226,
+      "createTime": "2025-08-01 19:07:11 +0300",
+      "createTimeUTC": 1754064431,
       "relatedPages": [
         {
           "title": "Image",
           "permalink": "/components/image/"
+        },
+        {
+          "title": "Link button",
+          "permalink": "/components/link-button/"
+        },
+        {
+          "title": "Downloads",
+          "permalink": "/components/download-link/"
         }
       ],
       "autoSummary": "Cards can be included as single items or in galleries of cards.",
       "similarByContent": [],
-      "readingTime": 3,
+      "readingTime": 4,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -331,12 +345,12 @@
           "permalink": "/components/link-button/"
         },
         {
-          "title": "XLSX Charts",
-          "permalink": "/components/xlsx-charts/"
+          "title": "Card",
+          "permalink": "/components/card/"
         },
         {
-          "title": "Image",
-          "permalink": "/components/image/"
+          "title": "XLSX Charts",
+          "permalink": "/components/xlsx-charts/"
         }
       ],
       "autoSummary": "The download-link component generates a button link for downloading files from your documentation site. Only downloading from your site is allowed, for security reasons it is not allowed to create download links targeting files hosted on external sites.",
@@ -353,7 +367,8 @@
       ],
       "tags": [
         "embed",
-        "faq"
+        "faq",
+        "content"
       ],
       "excerpt": "learn, add, elements, documents, element, question, header, answer, body",
       "lastUpdate": "2025-07-29 23:24:30 +0300",
@@ -370,8 +385,8 @@
           "permalink": "/components/intro/"
         },
         {
-          "title": "Rich media",
-          "permalink": "/components/rich-media/"
+          "title": "Content items",
+          "permalink": "/content/content-items/"
         }
       ],
       "autoSummary": "The question should always be a text. The answer to the question can be simple text or any rich content that is allowed in markdown. Docaroo suports 2 types of text search.",
@@ -388,7 +403,8 @@
       ],
       "tags": [
         "image",
-        "component"
+        "component",
+        "gallery"
       ],
       "excerpt": "component, placing, images, content, captions, credits, copyright, compoenent, designed",
       "lastUpdate": "2025-08-01 13:13:46 +0300",
@@ -397,16 +413,16 @@
       "createTimeUTC": 1754043226,
       "relatedPages": [
         {
+          "title": "Card",
+          "permalink": "/components/card/"
+        },
+        {
           "title": "XLSX Charts",
           "permalink": "/components/xlsx-charts/"
         },
         {
           "title": "Downloads",
           "permalink": "/components/download-link/"
-        },
-        {
-          "title": "Link button",
-          "permalink": "/components/link-button/"
         }
       ],
       "autoSummary": "This component allows placing images into your content. Images can have captions (lets say you need to show some credits or copyright information) or not. The compoenent is designed to work with responsive images.",
@@ -495,14 +511,29 @@
         "Components"
       ],
       "tags": [
-        "scrollspy"
+        "scrollspy",
+        "content",
+        "tabs"
       ],
       "excerpt": "and, are, great, ways, organising, information, inside, your, documents, made",
       "lastUpdate": "2025-07-20 10:25:22 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-07-20 10:25:22 +0300",
       "createTimeUTC": 1752996322,
-      "relatedPages": [],
+      "relatedPages": [
+        {
+          "title": "Content items",
+          "permalink": "/content/content-items/"
+        },
+        {
+          "title": "FAQ Item",
+          "permalink": "/components/qitem/"
+        },
+        {
+          "title": "Alerts",
+          "permalink": "/components/alerts/"
+        }
+      ],
       "autoSummary": "Scroll spies are great ways of organising information inside your documents. We made them flexible and easy to be included in the documents. Any docaroo component, including importing esternal content or rich content ones, can be used to populate scroll spies and tabs.",
       "similarByContent": [],
       "readingTime": 6,
@@ -593,16 +624,16 @@
       "createTimeUTC": 1753559020,
       "relatedPages": [
         {
-          "title": "Components",
-          "permalink": "/components/intro/"
+          "title": "FAQ Item",
+          "permalink": "/components/qitem/"
         },
         {
-          "title": "External content",
-          "permalink": "/content/ec/"
+          "title": "Alerts",
+          "permalink": "/components/alerts/"
         },
         {
-          "title": "Rich media",
-          "permalink": "/components/rich-media/"
+          "title": "Scroll Spy & Tabs",
+          "permalink": "/components/scrollspy/"
         }
       ],
       "autoSummary": "Docaroo makes available a series of content items that can be used to enrich your documents and to be very efficient when wanting to incorporate piecers of content in a fast and robust way.",
@@ -673,8 +704,8 @@
           "permalink": "/components/rich-media/"
         },
         {
-          "title": "Alerts",
-          "permalink": "/components/alerts/"
+          "title": "Content items",
+          "permalink": "/content/content-items/"
         }
       ],
       "autoSummary": "Documentaroo allows you to create. Of content and import these parts in multiple places in your documents. It is possible to import content from external public and private repositories. You must be sure that the content you want to import is available at the time when you build your site.",
@@ -772,6 +803,7 @@
     "faq",
     "figma",
     "file",
+    "gallery",
     "image",
     "import",
     "items",
@@ -780,6 +812,7 @@
     "organise docs",
     "scrollspy",
     "table",
+    "tabs",
     "video",
     "xls"
   ],
@@ -807,6 +840,11 @@
     "button": {
       "pages": [
         {
+          "title": "Card",
+          "permalink": "/components/card/",
+          "lastUpdate": "01-Aug-2025"
+        },
+        {
           "title": "Downloads",
           "permalink": "/components/download-link/",
           "lastUpdate": "22-Jul-2025"
@@ -817,7 +855,7 @@
           "lastUpdate": "31-Jul-2025"
         }
       ],
-      "numPages": 2
+      "numPages": 3
     },
     "card": {
       "pages": [
@@ -852,12 +890,32 @@
     "content": {
       "pages": [
         {
+          "title": "Alerts",
+          "permalink": "/components/alerts/",
+          "lastUpdate": "29-Jul-2025"
+        },
+        {
+          "title": "Card",
+          "permalink": "/components/card/",
+          "lastUpdate": "01-Aug-2025"
+        },
+        {
+          "title": "FAQ Item",
+          "permalink": "/components/qitem/",
+          "lastUpdate": "29-Jul-2025"
+        },
+        {
+          "title": "Scroll Spy & Tabs",
+          "permalink": "/components/scrollspy/",
+          "lastUpdate": "20-Jul-2025"
+        },
+        {
           "title": "Content items",
           "permalink": "/content/content-items/",
           "lastUpdate": "26-Jul-2025"
         }
       ],
-      "numPages": 1
+      "numPages": 5
     },
     "docs": {
       "pages": [
@@ -932,12 +990,17 @@
     "external": {
       "pages": [
         {
+          "title": "Card",
+          "permalink": "/components/card/",
+          "lastUpdate": "01-Aug-2025"
+        },
+        {
           "title": "External content",
           "permalink": "/content/ec/",
           "lastUpdate": "20-Jul-2025"
         }
       ],
-      "numPages": 1
+      "numPages": 2
     },
     "faq": {
       "pages": [
@@ -968,6 +1031,21 @@
         }
       ],
       "numPages": 1
+    },
+    "gallery": {
+      "pages": [
+        {
+          "title": "Card",
+          "permalink": "/components/card/",
+          "lastUpdate": "01-Aug-2025"
+        },
+        {
+          "title": "Image",
+          "permalink": "/components/image/",
+          "lastUpdate": "01-Aug-2025"
+        }
+      ],
+      "numPages": 2
     },
     "image": {
       "pages": [
@@ -1002,6 +1080,11 @@
     "link": {
       "pages": [
         {
+          "title": "Card",
+          "permalink": "/components/card/",
+          "lastUpdate": "01-Aug-2025"
+        },
+        {
           "title": "Downloads",
           "permalink": "/components/download-link/",
           "lastUpdate": "22-Jul-2025"
@@ -1012,7 +1095,7 @@
           "lastUpdate": "31-Jul-2025"
         }
       ],
-      "numPages": 2
+      "numPages": 3
     },
     "lottie": {
       "pages": [
@@ -1058,6 +1141,16 @@
         }
       ],
       "numPages": 2
+    },
+    "tabs": {
+      "pages": [
+        {
+          "title": "Scroll Spy & Tabs",
+          "permalink": "/components/scrollspy/",
+          "lastUpdate": "20-Jul-2025"
+        }
+      ],
+      "numPages": 1
     },
     "video": {
       "pages": [

@@ -7,7 +7,8 @@
     ],
     "tags": [
       "embed",
-      "alert"
+      "alert",
+      "content"
     ],
     "excerpt": "",
     "lastUpdate": "2025-07-29 01:34:01 +0300",
@@ -28,13 +29,18 @@
       "Components"
     ],
     "tags": [
-      "card"
+      "card",
+      "content",
+      "external",
+      "button",
+      "link",
+      "gallery"
     ],
     "excerpt": "",
-    "lastUpdate": "2025-08-01 13:13:46 +0300",
-    "lastUpdateUTC": 1754043226,
-    "createTime": "2025-08-01 13:13:46 +0300",
-    "createTimeUTC": 1754043226,
+    "lastUpdate": "2025-08-01 19:07:11 +0300",
+    "lastUpdateUTC": 1754064431,
+    "createTime": "2025-08-01 19:07:11 +0300",
+    "createTimeUTC": 1754064431,
     "relatedPages": [],
     "autoSummary": "",
     "similarByContent": [],
@@ -93,7 +99,8 @@
     ],
     "tags": [
       "embed",
-      "faq"
+      "faq",
+      "content"
     ],
     "excerpt": "",
     "lastUpdate": "2025-07-29 23:24:30 +0300",
@@ -115,7 +122,8 @@
     ],
     "tags": [
       "image",
-      "component"
+      "component",
+      "gallery"
     ],
     "excerpt": "",
     "lastUpdate": "2025-08-01 13:13:46 +0300",
@@ -183,7 +191,9 @@
       "Components"
     ],
     "tags": [
-      "scrollspy"
+      "scrollspy",
+      "content",
+      "tabs"
     ],
     "excerpt": "",
     "lastUpdate": "2025-07-20 10:25:22 +0300",

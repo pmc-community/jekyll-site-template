@@ -3,7 +3,7 @@ layout: page
 title: FAQ Item
 permalink: /components/qitem/
 categories: [Components]
-tags: [embed, faq]
+tags: [embed, faq, content]
 ---
 
 # Summary

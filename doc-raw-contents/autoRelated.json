@@ -22,6 +22,14 @@
       {
         "title": "Image",
         "permalink": "/components/image/"
+      },
+      {
+        "title": "Link button",
+        "permalink": "/components/link-button/"
+      },
+      {
+        "title": "Downloads",
+        "permalink": "/components/download-link/"
       }
     ]
   },
@@ -50,12 +58,12 @@
         "permalink": "/components/link-button/"
       },
       {
-        "title": "XLSX Charts",
-        "permalink": "/components/xlsx-charts/"
+        "title": "Card",
+        "permalink": "/components/card/"
       },
       {
-        "title": "Image",
-        "permalink": "/components/image/"
+        "title": "XLSX Charts",
+        "permalink": "/components/xlsx-charts/"
       }
     ]
   },
@@ -71,8 +79,8 @@
         "permalink": "/components/intro/"
       },
       {
-        "title": "Rich media",
-        "permalink": "/components/rich-media/"
+        "title": "Content items",
+        "permalink": "/content/content-items/"
       }
     ]
   },
@@ -80,16 +88,16 @@
     "permalink": "/components/image/",
     "related": [
       {
+        "title": "Card",
+        "permalink": "/components/card/"
+      },
+      {
         "title": "XLSX Charts",
         "permalink": "/components/xlsx-charts/"
       },
       {
         "title": "Downloads",
         "permalink": "/components/download-link/"
-      },
-      {
-        "title": "Link button",
-        "permalink": "/components/link-button/"
       }
     ]
   },
@@ -129,7 +137,20 @@
   },
   {
     "permalink": "/components/scrollspy/",
-    "related": []
+    "related": [
+      {
+        "title": "Content items",
+        "permalink": "/content/content-items/"
+      },
+      {
+        "title": "FAQ Item",
+        "permalink": "/components/qitem/"
+      },
+      {
+        "title": "Alerts",
+        "permalink": "/components/alerts/"
+      }
+    ]
   },
   {
     "permalink": "/components/xlsx-charts/",
@@ -165,16 +186,16 @@
     "permalink": "/content/content-items/",
     "related": [
       {
-        "title": "Components",
-        "permalink": "/components/intro/"
+        "title": "FAQ Item",
+        "permalink": "/components/qitem/"
       },
       {
-        "title": "External content",
-        "permalink": "/content/ec/"
+        "title": "Alerts",
+        "permalink": "/components/alerts/"
       },
       {
-        "title": "Rich media",
-        "permalink": "/components/rich-media/"
+        "title": "Scroll Spy & Tabs",
+        "permalink": "/components/scrollspy/"
       }
     ]
   },
@@ -203,8 +224,8 @@
         "permalink": "/components/rich-media/"
       },
       {
-        "title": "Alerts",
-        "permalink": "/components/alerts/"
+        "title": "Content items",
+        "permalink": "/content/content-items/"
       }
     ]
   },
