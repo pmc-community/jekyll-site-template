@@ -222,10 +222,10 @@
         "content"
       ],
       "excerpt": "learn, add, blocks, content, alerts, types, colors",
-      "lastUpdate": "2025-07-29 01:34:01 +0300",
+      "lastUpdate": "2025-08-02 01:05:20 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-07-29 01:34:01 +0300",
-      "createTimeUTC": 1753742041,
+      "createTime": "2025-08-02 01:05:20 +0300",
+      "createTimeUTC": 1754085920,
       "relatedPages": [
         {
           "title": "FAQ Item",
@@ -266,10 +266,10 @@
         "gallery"
       ],
       "excerpt": "card, emphasise, piece, provide, relevant, visual, experience, images, references, detailed",
-      "lastUpdate": "2025-08-01 19:07:11 +0300",
+      "lastUpdate": "2025-08-02 01:05:20 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-08-01 19:07:11 +0300",
-      "createTimeUTC": 1754064431,
+      "createTime": "2025-08-02 01:05:20 +0300",
+      "createTimeUTC": 1754085920,
       "relatedPages": [
         {
           "title": "Image",
@@ -371,10 +371,10 @@
         "content"
       ],
       "excerpt": "learn, add, elements, documents, element, question, header, answer, body",
-      "lastUpdate": "2025-07-29 23:24:30 +0300",
+      "lastUpdate": "2025-08-02 01:05:20 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-07-29 23:24:30 +0300",
-      "createTimeUTC": 1753820670,
+      "createTime": "2025-08-02 01:05:20 +0300",
+      "createTimeUTC": 1754085920,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -407,10 +407,10 @@
         "gallery"
       ],
       "excerpt": "component, placing, images, content, captions, credits, copyright, compoenent, designed",
-      "lastUpdate": "2025-08-01 13:13:46 +0300",
+      "lastUpdate": "2025-08-02 01:05:20 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-08-01 13:13:46 +0300",
-      "createTimeUTC": 1754043226,
+      "createTime": "2025-08-02 01:05:20 +0300",
+      "createTimeUTC": 1754085920,
       "relatedPages": [
         {
           "title": "Card",
@@ -516,10 +516,10 @@
         "tabs"
       ],
       "excerpt": "and, are, great, ways, organising, information, inside, your, documents, made",
-      "lastUpdate": "2025-07-20 10:25:22 +0300",
+      "lastUpdate": "2025-08-02 01:05:20 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-07-20 10:25:22 +0300",
-      "createTimeUTC": 1752996322,
+      "createTime": "2025-08-02 01:05:20 +0300",
+      "createTimeUTC": 1754085920,
       "relatedPages": [
         {
           "title": "Content items",
@@ -822,7 +822,7 @@
         {
           "title": "Alerts",
           "permalink": "/components/alerts/",
-          "lastUpdate": "29-Jul-2025"
+          "lastUpdate": "02-Aug-2025"
         }
       ],
       "numPages": 1
@@ -842,7 +842,7 @@
         {
           "title": "Card",
           "permalink": "/components/card/",
-          "lastUpdate": "01-Aug-2025"
+          "lastUpdate": "02-Aug-2025"
         },
         {
           "title": "Downloads",
@@ -862,7 +862,7 @@
         {
           "title": "Card",
           "permalink": "/components/card/",
-          "lastUpdate": "01-Aug-2025"
+          "lastUpdate": "02-Aug-2025"
         }
       ],
       "numPages": 1
@@ -882,7 +882,7 @@
         {
           "title": "Image",
           "permalink": "/components/image/",
-          "lastUpdate": "01-Aug-2025"
+          "lastUpdate": "02-Aug-2025"
         }
       ],
       "numPages": 1
@@ -892,22 +892,22 @@
         {
           "title": "Alerts",
           "permalink": "/components/alerts/",
-          "lastUpdate": "29-Jul-2025"
+          "lastUpdate": "02-Aug-2025"
         },
         {
           "title": "Card",
           "permalink": "/components/card/",
-          "lastUpdate": "01-Aug-2025"
+          "lastUpdate": "02-Aug-2025"
         },
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/",
-          "lastUpdate": "29-Jul-2025"
+          "lastUpdate": "02-Aug-2025"
         },
         {
           "title": "Scroll Spy & Tabs",
           "permalink": "/components/scrollspy/",
-          "lastUpdate": "20-Jul-2025"
+          "lastUpdate": "02-Aug-2025"
         },
         {
           "title": "Content items",
@@ -967,12 +967,12 @@
         {
           "title": "Alerts",
           "permalink": "/components/alerts/",
-          "lastUpdate": "29-Jul-2025"
+          "lastUpdate": "02-Aug-2025"
         },
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/",
-          "lastUpdate": "29-Jul-2025"
+          "lastUpdate": "02-Aug-2025"
         },
         {
           "title": "Rich media",
@@ -992,7 +992,7 @@
         {
           "title": "Card",
           "permalink": "/components/card/",
-          "lastUpdate": "01-Aug-2025"
+          "lastUpdate": "02-Aug-2025"
         },
         {
           "title": "External content",
@@ -1007,7 +1007,7 @@
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/",
-          "lastUpdate": "29-Jul-2025"
+          "lastUpdate": "02-Aug-2025"
         }
       ],
       "numPages": 1
@@ -1037,12 +1037,12 @@
         {
           "title": "Card",
           "permalink": "/components/card/",
-          "lastUpdate": "01-Aug-2025"
+          "lastUpdate": "02-Aug-2025"
         },
         {
           "title": "Image",
           "permalink": "/components/image/",
-          "lastUpdate": "01-Aug-2025"
+          "lastUpdate": "02-Aug-2025"
         }
       ],
       "numPages": 2
@@ -1052,7 +1052,7 @@
         {
           "title": "Image",
           "permalink": "/components/image/",
-          "lastUpdate": "01-Aug-2025"
+          "lastUpdate": "02-Aug-2025"
         }
       ],
       "numPages": 1
@@ -1082,7 +1082,7 @@
         {
           "title": "Card",
           "permalink": "/components/card/",
-          "lastUpdate": "01-Aug-2025"
+          "lastUpdate": "02-Aug-2025"
         },
         {
           "title": "Downloads",
@@ -1122,7 +1122,7 @@
         {
           "title": "Scroll Spy & Tabs",
           "permalink": "/components/scrollspy/",
-          "lastUpdate": "20-Jul-2025"
+          "lastUpdate": "02-Aug-2025"
         }
       ],
       "numPages": 1
@@ -1147,7 +1147,7 @@
         {
           "title": "Scroll Spy & Tabs",
           "permalink": "/components/scrollspy/",
-          "lastUpdate": "20-Jul-2025"
+          "lastUpdate": "02-Aug-2025"
         }
       ],
       "numPages": 1
@@ -1189,12 +1189,12 @@
         {
           "title": "Alerts",
           "permalink": "/components/alerts/",
-          "lastUpdate": "29-Jul-2025"
+          "lastUpdate": "02-Aug-2025"
         },
         {
           "title": "Card",
           "permalink": "/components/card/",
-          "lastUpdate": "01-Aug-2025"
+          "lastUpdate": "02-Aug-2025"
         },
         {
           "title": "Components",
@@ -1209,12 +1209,12 @@
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/",
-          "lastUpdate": "29-Jul-2025"
+          "lastUpdate": "02-Aug-2025"
         },
         {
           "title": "Image",
           "permalink": "/components/image/",
-          "lastUpdate": "01-Aug-2025"
+          "lastUpdate": "02-Aug-2025"
         },
         {
           "title": "Link button",
@@ -1229,7 +1229,7 @@
         {
           "title": "Scroll Spy & Tabs",
           "permalink": "/components/scrollspy/",
-          "lastUpdate": "20-Jul-2025"
+          "lastUpdate": "02-Aug-2025"
         },
         {
           "title": "XLSX Charts",
