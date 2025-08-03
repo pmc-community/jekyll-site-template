@@ -750,7 +750,7 @@
       ],
       "autoSummary": "Getting started with docaroo requires, first of all, to design your documentation. Organising well your documentation (or blog) is crucial. This will involve defining the folder structure and also the taxonomies. Docaroo can take care of automatically generating other information about you documentation.",
       "similarByContent": [],
-      "readingTime": 2,
+      "readingTime": 3,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -1308,8 +1308,8 @@
     "/": {
       "sections": {
         "mostRecentAndPopular_section": {
-          "popularCatsToShow": 8,
-          "popularTagsToShow": 8
+          "popularCatsToShow": 5,
+          "popularTagsToShow": 5
         }
       }
     }

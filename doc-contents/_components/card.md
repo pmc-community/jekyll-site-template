@@ -58,6 +58,7 @@ Adding simple cards is easy, only add the code shown below. However, as visual e
 %}
 
 # Example
+Here is an exmple of a card with aside content. First, define the buttons to be rendered in the card footer. Second, create the card content and the card aside content as external files. Note that you can use any other Docaroo components to create these pieces of content. The code to include the card into a document is: 
 
 {% raw %}
 ```javascript
@@ -82,6 +83,8 @@ Adding simple cards is easy, only add the code shown below. However, as visual e
     title="Tip" 
 %}
 
+
+`CARD WITH ASIDE CONTENT`
 <!-- card definition -->
 {% capture buttons %}
     type=link|outline=true|border=true|text=Galleries|href="/components/image/#id_image_gallery"|newTab=true,
@@ -97,6 +100,7 @@ Adding simple cards is easy, only add the code shown below. However, as visual e
     buttons=buttons
 %}
 <!-- end card definition -->
+`END CARD WITH ASIDE CONTENT`
 
 {% include elements/alert.html class="primary" 
     content="As much as possible avoid using cards without link buton(s) in the footer. Apart from the purpose of focusing on short conclusions, the links to more detailed information which can be provided in the card footer are also important for the overall user experience" 

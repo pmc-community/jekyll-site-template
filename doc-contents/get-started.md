@@ -17,18 +17,24 @@ After you designed your documentaion, you need to install the local environment.
 - [install Ruby](https://www.ruby-lang.org/){: .text-primary target="_blank"}
 - [install Jekyll](https://jekyllrb.com/){: .text-primary target="_blank"}
 - [fork or clone or download](https://github.com/pmc-community/jekyll-site-template/tree/gh-pages){: .text-primary target="_blank"} and unzip the site framework. Rename it as you wish. 
-- (optional) install Python 3.9 to use the Python based features (keywords and summary generation, related and similar pages detection)
+- install Python 3.9 to use the Python based features (keywords and summary generation, related and similar pages detection) and some of the compoents (`XLSX Tables`, `XLSX Charts`)
 
-{% include elements/alert.html class="warning" content="Py 3.9 is necessary because of some incompatibility between the `transformers` py library and Python versions > 3.9 (as of May 2025). If you have already Py>3.9 installed, create a Py3.9 environment for your project. However, you may check periodically if the said incompatibility is still on or not" %}
+{% include elements/alert.html class="warning" content="Py 3.9 is necessary because of some incompatibility between the `transformers` py library and Python versions > 3.9 (as of May 2025). If you have already Py>3.9 installed (i.e. MacOS 15+ comes with Py 3.13), create a Py3.9 environment for your project. However, you may check periodically if the said incompatibility is still on or not" %}
 
 # Customise
-Use configuration files for customising your site as you need. 
+Use configuration files for customising your site as you need. These files are located in `_data` folder and are:
+- `siteConfig.yml`: contains settings that are used for building the site and are then sent to the browser to be used on client side
+- `buildConfig.yml`: contains settings that are used for building the site and are NOT sent to the browser to be used on client side
+- `pageConfig`: contains specific page settings that are used for building the site and are then sent to the browser to be used on client side
+- `pageBuildConfig`: contains specific page settings that are used for building the site and are NOT sent to the browser to be used on client side
+
+As in any Jekyll site, customisations can be added in `_config.yml` located in the root directory. However, we do not recommend this approach, the idea behind the customisation is to keep `_config.yml` for the minimum necessary configurations and use the other configuration files for detailed customisations. The only dynamic ocnfiguration we use inside `_config.yml` is related to the definition of the collections of documents.
 
 # Create
 Next, you need to transpose the documentation into `doc-contents` folder in your project folder. Create your content there as `markdown files` in free form and/or using the ready-made Docaroo components and re-usable content.
 
-# Test
-Deploy locally using one simple command launched from your project directory. Open a terminal window, navigate inside your project directory and type `./serve` (for Linux/MacOS) or the Windows bat equivalent.
+# Build & Test
+Build and deploy locally using one simple command launched from your project directory. Open a terminal window, navigate inside your project directory and type `./serve` (for Linux/MacOS) or the Windows bat equivalent. Use `http://<your_local_IP>:4000` from any computer in your intranet (or `http://localhost:4000` from the same machine) to open the site in browser. Use `./build` to only build the site, without deploying locally. 
 
 {% include elements/alert.html class="warning" content="Our strong recommendation is to buid and test incrementally, the build process is desigend to process only the changes from previous builds. Processing a large number of docs (more than 20) in a sigle batch may take time (mostly when you use the advanced Python based features)." %}
 
