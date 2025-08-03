@@ -130,10 +130,11 @@
  });
 
  $('#card-aside-container-go-to-card-top-{{cid}}, #card-aside-container-go-to-card-bottom-{{cid}}').on('click', function() {
-  $('#card-aside-container-{{cid}}').css('height',0).css('visibility', 'hidden');
+  const to = 50;
   $('html, body').animate({
    scrollTop: $('#card-whole-container-{{cid}}').offset().top - 100
-  }, 100);
+  }, to);
+  setTimeout(()=>$('#card-aside-container-{{cid}}').css('height',0).css('visibility', 'hidden'), 10 * to);
  });
 
 </script>
