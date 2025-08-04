@@ -1,5 +1,5 @@
 "/":
   sections:
     mostRecentAndPopular_section:
-      popularCatsToShow: 8
-      popularTagsToShow: 8
+      popularCatsToShow: 5
+      popularTagsToShow: 5
