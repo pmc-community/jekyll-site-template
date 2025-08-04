@@ -112,6 +112,6 @@ elements:
       - "https://embed.figma.com"
       - "https://figma.com"
   card:
-    cardWidth: "18rem"
-    cardImgHeight: "12rem"
+    cardWidth: "16rem"
+    cardImgHeight: "8rem"
     cardImgText: "0.775rem"

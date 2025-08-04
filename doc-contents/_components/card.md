@@ -64,8 +64,7 @@ Here is an exmple of a card with aside content. First, define the buttons to be 
 ```javascript
 {% capture buttons %}
     type=link|outline=true|border=true|text=Galleries|href="/components/image/#id_image_gallery"|newTab=true,
-    type=link|border=false|text=Content|href="/content/ec/#id_import_external_repo_content"|newTab=true,
-    type=link|border=false|text=Buttons|href="/components/link-button/#id_button_link_groups"|newTab=true
+    type=link|border=false|text=Content|href="/content/ec/#id_import_external_repo_content"|newTab=true
 {% endcapture %}
 
 {% include elements/card.html 
@@ -88,8 +87,7 @@ Here is an exmple of a card with aside content. First, define the buttons to be 
 <!-- card definition -->
 {% capture buttons %}
     type=link|outline=true|border=true|text=Galleries|href="/components/image/#id_image_gallery"|newTab=true,
-    type=link|border=false|text=Content|href="/content/ec/#id_import_external_repo_content"|newTab=true,
-    type=link|border=false|text=Buttons|href="/components/link-button/#id_button_link_groups"|newTab=true
+    type=link|border=false|text=Content|href="/content/ec/#id_import_external_repo_content"|newTab=true
 {% endcapture %}
 
 {% include elements/card.html 
