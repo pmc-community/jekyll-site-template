@@ -1,0 +1,1 @@
+This is a card in a card gallery with one link to external references.
