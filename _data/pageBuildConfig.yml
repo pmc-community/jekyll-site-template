@@ -10,7 +10,7 @@
     collections_section:
       enabledInHome: true
       except: ["posts"] # collection name must be the one from _config.yml[collections]
-      itemsToShow: 5
+      itemsToShow: 4
       collectionStartBtnText: "Start here"
       buttonsClass: "btn-primary"
       buttonsTextClass: "text-light"
