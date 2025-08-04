@@ -17,15 +17,19 @@
 {% assign title = include.title || default: "" %}
 {% assign contentAside = include.contentAside || default: "false" %}
 {% assign buttons = include.buttons || default: "" %}
+{% assign cardWidth = site.data["buildConfig"]["elements"]["card"]["cardWidth"] %}
+{% assign mobileCardWidth = cardWidth %}
 
-{% if file !="" %}
+{% if file !="" and title !="" %}
 
+{% assign cardContainerPaddingClass = "" %}
 {% if contentAside != "false" %}
- <div id="card-whole-container-{{cid}}" class="row d-flex py-4">
-  <div id="card-container-{{cid}}"  class="col-md-5 col-12 align-content-center">
+ {% assign cardWidth = "100%" %}
+ {% assign cardContainerPaddingClass = "px-2" %}  
+ <div id="card-whole-container-{{cid}}" class="row d-flex py-2">
+  <div id="card-container-{{cid}}" class="col-md-4 col-12 align-content-center {{cardContainerPaddingClass}}">
 {% endif %}
 
-{% assign cardWidth = site.data["buildConfig"]["elements"]["card"]["cardWidth"] %}
 <div id="card-{{cid}}" style="width: {{cardWidth}}" class="w-sm-auto mx-auto bg-transparent card border border-secondary border-opacity-25 rounded my-4">
     
  {% if imgFullPath != "" %}
@@ -79,9 +83,9 @@
 
 {% if contentAside != "false" %}
 
-  </div>
+  </div> <!-- closing card-container-... -->
 
-  <div id="card-aside-container-{{cid}}" class="col-md-7 col-12 p-2 align-content-center">
+  <div id="card-aside-container-{{cid}}" class="col-md-8 col-12 p-2 align-content-center">
    <div id="card-aside-container-go-to-card-top-{{cid}}" class="d-none d-flex py-1 bg-secondary bg-opacity-25 rounded mb-2 justify-content-center alwaysCursorPointer">
     <i class="bi bi-box-arrow-up fs-4 fw-medium text-secondary"></i>
    </div>
@@ -114,7 +118,7 @@
 
 {% endif %}
 
-<script>
+<script id="card-aside-handler-mobile-{{cid}}">
  $('#card-buttons-{{cid}}').find('div[id^="btn-lnk-group-"]').addClass('justify-content-between');
  
  if (preFlight.envInfo.device.deviceType !== 'desktop') {
@@ -130,12 +134,19 @@
  });
 
  $('#card-aside-container-go-to-card-top-{{cid}}, #card-aside-container-go-to-card-bottom-{{cid}}').on('click', function() {
-  $('#card-aside-container-{{cid}}').css('height',0).css('visibility', 'hidden');
+  const to = 50;
   $('html, body').animate({
    scrollTop: $('#card-whole-container-{{cid}}').offset().top - 100
-  }, 100);
+  }, to);
+  setTimeout(()=>$('#card-aside-container-{{cid}}').css('height',0).css('visibility', 'hidden'), 10 * to);
  });
 
+</script>
+
+<script id="card-sizing-mobile-{{cid}}">
+ if (preFlight.envInfo.device.deviceType !== 'desktop') {
+  $('#card-{{cid}}').css('width', '{{mobileCardWidth}}');
+ }
 </script>
 
 <style>
@@ -152,12 +163,12 @@
 
  {% assign cardImgText = site.data["buildConfig"]["elements"]["card"]["cardImgText"] %}
  #card-text-{{cid}} {
-  font-size: 0.875rem;
+  font-size: {{cardImgText}};
  }
 
 </style>
 
 {% else %}
- {% assign mess="Something went wrong when creating card. Source file is missing!" %}
+{% assign mess="Something went wrong when creating card from file: '" | append: file | append: "' with title: '" | append: title | append: "'. File and title parameters are mandatory!"%}
  {% include elements/alert.html class="danger" content=mess title="Error" %}
 {% endif %}
