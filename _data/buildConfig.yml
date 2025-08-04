@@ -113,5 +113,5 @@ elements:
       - "https://figma.com"
   card:
     cardWidth: "14rem"
-    cardImgHeight: "10rem"
+    cardImgHeight: "8rem"
     cardImgText: "0.775rem"
