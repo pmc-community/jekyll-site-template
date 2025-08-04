@@ -62,7 +62,7 @@
         },
         {
             "permalink": "/components/image/",
-            "summary": "This component allows placing images into your content. Images can have captions (lets say you need to show some credits or copyright information) or not. The compoenent is designed to work with responsive images."
+            "summary": "Write a concise, factual summary in English with no greetings or instructions, maximum 50 words, for the following text. This component allows placing images into your content. Images can have captions (lets say you need to show some credits or copyright information) or not."
         },
         {
             "permalink": "/content/content-items/",

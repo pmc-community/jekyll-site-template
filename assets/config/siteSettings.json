@@ -266,10 +266,10 @@
         "gallery"
       ],
       "excerpt": "card, emphasise, piece, provide, relevant, visual, experience, images, references, detailed",
-      "lastUpdate": "2025-08-02 01:05:20 +0300",
+      "lastUpdate": "2025-08-04 21:45:20 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-08-02 01:05:20 +0300",
-      "createTimeUTC": 1754085920,
+      "createTime": "2025-08-04 21:45:20 +0300",
+      "createTimeUTC": 1754333120,
       "relatedPages": [
         {
           "title": "Image",
@@ -286,7 +286,7 @@
       ],
       "autoSummary": "Cards can be included as single items or in galleries of cards.",
       "similarByContent": [],
-      "readingTime": 4,
+      "readingTime": 5,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -298,10 +298,10 @@
       ],
       "tags": [],
       "excerpt": "learn, add, pre, defined, content, elements, embedded, documents, tags, components",
-      "lastUpdate": "2025-07-27 14:25:46 +0300",
+      "lastUpdate": "2025-08-02 01:48:55 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-07-27 14:25:46 +0300",
-      "createTimeUTC": 1753615546,
+      "createTime": "2025-08-02 01:48:55 +0300",
+      "createTimeUTC": 1754088535,
       "relatedPages": [
         {
           "title": "FAQ Item",
@@ -406,11 +406,11 @@
         "component",
         "gallery"
       ],
-      "excerpt": "component, placing, images, content, captions, credits, copyright, compoenent, designed",
-      "lastUpdate": "2025-08-02 01:05:20 +0300",
+      "excerpt": "component, placing, images, content, captions, credits, copyright, designed",
+      "lastUpdate": "2025-08-03 22:53:47 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-08-02 01:05:20 +0300",
-      "createTimeUTC": 1754085920,
+      "createTime": "2025-08-03 22:53:47 +0300",
+      "createTimeUTC": 1754250827,
       "relatedPages": [
         {
           "title": "Card",
@@ -425,7 +425,7 @@
           "permalink": "/components/download-link/"
         }
       ],
-      "autoSummary": "This component allows placing images into your content. Images can have captions (lets say you need to show some credits or copyright information) or not. The compoenent is designed to work with responsive images.",
+      "autoSummary": "Write a concise, factual summary in English with no greetings or instructions, maximum 50 words, for the following text. This component allows placing images into your content. Images can have captions (lets say you need to show some credits or copyright information) or not.",
       "similarByContent": [],
       "readingTime": 3,
       "hasDynamicContent": false,
@@ -562,12 +562,12 @@
           "permalink": "/components/xlsx-tables/"
         },
         {
-          "title": "Downloads",
-          "permalink": "/components/download-link/"
-        },
-        {
           "title": "Image",
           "permalink": "/components/image/"
+        },
+        {
+          "title": "Downloads",
+          "permalink": "/components/download-link/"
         }
       ],
       "autoSummary": "This component allows importing excel charts into your documents. Currently we support only:. Line charts column and bar charts pie and doughnut charts. We do not support importing the colors you assign to the series in the excel chart.",
@@ -734,10 +734,10 @@
         "docs"
       ],
       "excerpt": "started, docaroo, requires, design, documentation, organising, blog, crucial, involve",
-      "lastUpdate": "2025-07-27 16:40:01 +0300",
+      "lastUpdate": "2025-08-03 23:55:49 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-07-27 16:40:01 +0300",
-      "createTimeUTC": 1753623601,
+      "createTime": "2025-08-03 23:55:49 +0300",
+      "createTimeUTC": 1754254549,
       "relatedPages": [
         {
           "title": "Introduction",
@@ -750,7 +750,7 @@
       ],
       "autoSummary": "Getting started with docaroo requires, first of all, to design your documentation. Organising well your documentation (or blog) is crucial. This will involve defining the folder structure and also the taxonomies. Docaroo can take care of automatically generating other information about you documentation.",
       "similarByContent": [],
-      "readingTime": 2,
+      "readingTime": 3,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -842,7 +842,7 @@
         {
           "title": "Card",
           "permalink": "/components/card/",
-          "lastUpdate": "02-Aug-2025"
+          "lastUpdate": "04-Aug-2025"
         },
         {
           "title": "Downloads",
@@ -862,7 +862,7 @@
         {
           "title": "Card",
           "permalink": "/components/card/",
-          "lastUpdate": "02-Aug-2025"
+          "lastUpdate": "04-Aug-2025"
         }
       ],
       "numPages": 1
@@ -882,7 +882,7 @@
         {
           "title": "Image",
           "permalink": "/components/image/",
-          "lastUpdate": "02-Aug-2025"
+          "lastUpdate": "03-Aug-2025"
         }
       ],
       "numPages": 1
@@ -897,7 +897,7 @@
         {
           "title": "Card",
           "permalink": "/components/card/",
-          "lastUpdate": "02-Aug-2025"
+          "lastUpdate": "04-Aug-2025"
         },
         {
           "title": "FAQ Item",
@@ -922,7 +922,7 @@
         {
           "title": "Get started",
           "permalink": "/get-started/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "03-Aug-2025"
         },
         {
           "title": "Introduction",
@@ -942,7 +942,7 @@
         {
           "title": "Get started",
           "permalink": "/get-started/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "03-Aug-2025"
         },
         {
           "title": "Introduction",
@@ -992,7 +992,7 @@
         {
           "title": "Card",
           "permalink": "/components/card/",
-          "lastUpdate": "02-Aug-2025"
+          "lastUpdate": "04-Aug-2025"
         },
         {
           "title": "External content",
@@ -1037,12 +1037,12 @@
         {
           "title": "Card",
           "permalink": "/components/card/",
-          "lastUpdate": "02-Aug-2025"
+          "lastUpdate": "04-Aug-2025"
         },
         {
           "title": "Image",
           "permalink": "/components/image/",
-          "lastUpdate": "02-Aug-2025"
+          "lastUpdate": "03-Aug-2025"
         }
       ],
       "numPages": 2
@@ -1052,7 +1052,7 @@
         {
           "title": "Image",
           "permalink": "/components/image/",
-          "lastUpdate": "02-Aug-2025"
+          "lastUpdate": "03-Aug-2025"
         }
       ],
       "numPages": 1
@@ -1082,7 +1082,7 @@
         {
           "title": "Card",
           "permalink": "/components/card/",
-          "lastUpdate": "02-Aug-2025"
+          "lastUpdate": "04-Aug-2025"
         },
         {
           "title": "Downloads",
@@ -1194,12 +1194,12 @@
         {
           "title": "Card",
           "permalink": "/components/card/",
-          "lastUpdate": "02-Aug-2025"
+          "lastUpdate": "04-Aug-2025"
         },
         {
           "title": "Components",
           "permalink": "/components/intro/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "02-Aug-2025"
         },
         {
           "title": "Downloads",
@@ -1214,7 +1214,7 @@
         {
           "title": "Image",
           "permalink": "/components/image/",
-          "lastUpdate": "02-Aug-2025"
+          "lastUpdate": "03-Aug-2025"
         },
         {
           "title": "Link button",
@@ -1269,7 +1269,7 @@
         {
           "title": "Get started",
           "permalink": "/get-started/",
-          "lastUpdate": "27-Jul-2025"
+          "lastUpdate": "03-Aug-2025"
         },
         {
           "title": "Introduction",
@@ -1308,8 +1308,8 @@
     "/": {
       "sections": {
         "mostRecentAndPopular_section": {
-          "popularCatsToShow": 8,
-          "popularTagsToShow": 8
+          "popularCatsToShow": 5,
+          "popularTagsToShow": 5
         }
       }
     }

@@ -1,0 +1,1 @@
+This is a card with in a card gallery, `without button links`. Links can be added inside the card **[`text`](/components/alerts/){: target="_blank" .fw-medium}** as demonstrated here.

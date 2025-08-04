@@ -58,13 +58,13 @@ Adding simple cards is easy, only add the code shown below. However, as visual e
 %}
 
 # Example
+Here is an exmple of a card with aside content. First, define the buttons to be rendered in the card footer. Second, create the card content and the card aside content as external files. Note that you can use any other Docaroo components to create these pieces of content. The code to include the card into a document is: 
 
 {% raw %}
 ```javascript
 {% capture buttons %}
     type=link|outline=true|border=true|text=Galleries|href="/components/image/#id_image_gallery"|newTab=true,
-    type=link|border=false|text=Content|href="/content/ec/#id_import_external_repo_content"|newTab=true,
-    type=link|border=false|text=Buttons|href="/components/link-button/#id_button_link_groups"|newTab=true
+    type=link|border=false|text=Content|href="/content/ec/#id_import_external_repo_content"|newTab=true
 {% endcapture %}
 
 {% include elements/card.html 
@@ -82,10 +82,12 @@ Adding simple cards is easy, only add the code shown below. However, as visual e
     title="Tip" 
 %}
 
+
+`CARD WITH ASIDE CONTENT`
+<!-- card definition -->
 {% capture buttons %}
     type=link|outline=true|border=true|text=Galleries|href="/components/image/#id_image_gallery"|newTab=true,
-    type=link|border=false|text=Content|href="/content/ec/#id_import_external_repo_content"|newTab=true,
-    type=link|border=false|text=Buttons|href="/components/link-button/#id_button_link_groups"|newTab=true
+    type=link|border=false|text=Content|href="/content/ec/#id_import_external_repo_content"|newTab=true
 {% endcapture %}
 
 {% include elements/card.html 
@@ -95,6 +97,8 @@ Adding simple cards is easy, only add the code shown below. However, as visual e
     contentAside="partials/external-content-demo/card-content-aside-demo.md"
     buttons=buttons
 %}
+<!-- end card definition -->
+`END CARD WITH ASIDE CONTENT`
 
 {% include elements/alert.html class="primary" 
     content="As much as possible avoid using cards without link buton(s) in the footer. Apart from the purpose of focusing on short conclusions, the links to more detailed information which can be provided in the card footer are also important for the overall user experience" 
@@ -107,3 +111,91 @@ Adding simple cards is easy, only add the code shown below. However, as visual e
 - `file`: path to the file for the content of the card
 - `contentAside`: path to the file for the aside content. Will be ignored when for card galleries
 - `buttons`: the link buttons to be rendered in the footer of the card
+
+# Card gallery
+Card gallery is a great way to list elements of the same type (such as projects or categories). The cards in card galleries doesn't accept `aside content`, thus we recommend to use link buttons to more detailed information or links inside the card text. Card galleries are always rendered on a single row with horizontal scroll on narrow screens (mobile devices). On desktop (large screens) card galleries are rendered based on `oneRow` parameter, on one row with horizaontal scroll or in rows of three cards.
+
+Building the card galleries is a bit more complex because it is necessary to define each card. It works as shown next. The following example build a card gallery made of 4 cards, having different link buttons configuration.
+
+First, define the link buttons for each card:
+
+{% raw %}
+```javascript
+{% capture b1 %}
+    type=link|outline=true|border=true|text=Galleries|href="/components/image/#id_image_gallery"|newTab=true,
+    type=link|border=false|text=Content|href="/content/ec/#id_import_external_repo_content"|newTab=true
+{% endcapture %}
+
+{% capture b3 %}
+    type=link|outline=true|border=true|text=Intro|href="/components/intro/"|newTab=true
+{% endcapture %}
+
+{% capture b4 %}
+    type=primary|outline=false|border=false|text=PMC|href="https://pmc-expert.com"|newTab=true,
+    type=success|outline=false|border=false|text=Intro|href="/intro/"|newTab=false,
+    type=warning|outline=false|border=false|text=Tables|href="/components/xlsx-tables/"|newTab=false
+{% endcapture %}
+```
+{% endraw %}
+
+Second, define the cards:
+{% raw %}
+```javascript
+{% capture cards %}
+    img="partials/media/joy-s.png"|title="Card gallery C1"|file="partials/external-content-demo/card-gallery-c1.md"|||{{ b1 }}~~~
+    img="partials/media/man-s.png"|title="Card gallery C2"|file="partials/external-content-demo/card-gallery-c2.md"~~~
+    img="partials/media/man-thinking.png"|title="Card gallery C3"|file="partials/external-content-demo/card-gallery-c3.md"|||{{ b3 }}~~~
+    img="partials/media/smile-600.png"|title="Card gallery C4"|file="partials/external-content-demo/card-gallery-c4.md"|||{{ b4 }}
+{% endcapture %}
+```
+{% endraw %}
+
+{% include elements/alert.html class="warning" 
+    content="Note the syntax for defining the cards, especially `~~` at the end of the rows and the `|||` separator. The syntax must be respected in very detail for obtaining a gallery rendered correctly." 
+%}
+
+
+Finally render the gallery:
+{% raw %}
+```javascript
+{% include elements/card-gallery.html 
+  cards=cards
+  oneRow=false
+%}
+```
+{% endraw %}
+
+# Example
+
+`CARD GALLERY`
+{% capture b1 %}
+    type=link|outline=true|border=true|text=Galleries|href="/components/image/#id_image_gallery"|newTab=true,
+    type=link|border=false|text=Content|href="/content/ec/#id_import_external_repo_content"|newTab=true
+{% endcapture %}
+
+{% capture b3 %}
+    type=link|outline=true|border=true|text=Intro|href="/components/intro/"|newTab=true
+{% endcapture %}
+
+{% capture b4 %}
+    type=primary|outline=false|border=false|text=PMC|href="https://pmc-expert.com"|newTab=true,
+    type=success|outline=false|border=false|text=Intro|href="/intro/"|newTab=false,
+    type=warning|outline=false|border=false|text=Tables|href="/components/xlsx-tables/"|newTab=false
+{% endcapture %}
+
+{% capture cards %}
+    img="partials/media/joy-s.png"|title="Card gallery C1"|file="partials/external-content-demo/card-gallery-c1.md"|||{{ b1 }}~~~
+    img="partials/media/man-s.png"|title="Card gallery C2"|file="partials/external-content-demo/card-gallery-c2.md"~~~
+    img="partials/media/man-thinking.png"|title="Card gallery C3"|file="partials/external-content-demo/card-gallery-c3.md"|||{{ b3 }}~~~
+    img="partials/media/smile-600.png"|title="Card gallery C4"|file="partials/external-content-demo/card-gallery-c4.md"|||{{ b4 }}
+{% endcapture %}
+
+{% include elements/card-gallery.html 
+  cards=cards
+  oneRow=false
+%}
+`END CARD GALLERY`
+
+# Parameters
+- `cards`: the list of cards from the gallery
+- `oneRow`: sets the display mode on desktop, rows of 3 cards or a single row with horizontal scroll. Note that, on mobile, the card galleries are always shown on a single row with horizontal scroll.

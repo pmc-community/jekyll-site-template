@@ -31,17 +31,20 @@ Different types of rich media such as videos or Figma files inside your docs.
 ## **[`FAQ item`](/components/qitem/){: target="_blank" }**
 The classical FAQ item, but with features like rich media in the answer. See also the **[`FAQ`](/faq){: target="_blank"}** page of this site.
 
-## **[`Link button`](/components/link-button/){: target="_blank" }** and **[`Anchor`](/components/link-button/#id_anchor_links){: target="_blank" }** 
+## **[`Link button`](/components/link-button/){: target="_blank" }** - **[`Anchor`](/components/link-button/#id_anchor_links){: target="_blank" }** 
 Different types of links to internal and external files/pages. Also, a very useful inline anchor to be used inside your docs.
 
-## **[`Scrollspy`](/components/scrollspy/){: target="_blank" }** and **[`Tabs`](/components/scrollspy/#id_tabs){: target="_blank" }** 
+## **[`Scrollspy`](/components/scrollspy/){: target="_blank" }** - **[`Tabs`](/components/scrollspy/#id_tabs){: target="_blank" }** 
 Great ways to organise your content inside a document in a logical structure.
 
 ## **[`Downloads`](/components/downloads/){: target="_blank" }**
 Create button link to download a file.
 
-## **[`Tables`](/components/xlsx-tables/){: target="_blank" }** and **[`Charts`](/components/xlsx-charts/){: target="_blank" }**
+## **[`Tables`](/components/xlsx-tables/){: target="_blank" }** - **[`Charts`](/components/xlsx-charts/){: target="_blank" }**
 Import Excel tables and charts into your docs.
 
-## **[`Images`](/components/image/){: target="_blank" }**
+## **[`Images`](/components/image/){: target="_blank" }** - **[`Image Gallery`](/components/image/#id_image_gallery){: target="_blank" }**
 Place images into your docs.
+
+## **[`Cards`](/components/card/){: target="_blank" }** - **[`Card Gallery`](/components/card/#id_card_gallery){: target="_blank" }**
+Create meaningful and good looking cards.

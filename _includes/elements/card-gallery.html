@@ -1,0 +1,95 @@
+{% capture uuid %}
+ {% UUID %}
+{% endcapture %}
+{% assign cgid = uuid | strip %}
+
+{% assign oneRow = include.oneRow || default: "false" %}
+
+<div id="card-gallery-container-{{cgid}}" class="row d-flex g-3">
+
+ {% assign card_defs = cards | split: "~~~" %}
+
+ {% for def in card_defs %}
+  {% assign def_parts = def | split: "|||" %}
+  {% assign meta = def_parts[0] | strip %}
+  {% assign buttons = def_parts[1] | strip %}
+
+  {% assign img = "" %}
+  {% assign title = "" %}
+  {% assign file = "" %}
+
+  {% assign parts = meta | split: "|" %}
+
+  {% for pair in parts %}
+   {% assign pair_parts = pair | split: "=" %}
+   {% assign key = pair_parts[0] | strip %}
+   {% assign val = pair_parts[1] | strip %}
+   {% assign val = val | remove: '"' %}
+
+   {% case key %}
+    {% when "img" %}
+     {% assign img = val %}
+    {% when "title" %}
+     {% assign title = val %}
+    {% when "file" %}
+     {% assign file = val %}
+   {% endcase %}
+  {% endfor %}
+
+  <div id="card-gallery-card-container-{{cgid}}" class="mx-1">
+   {% include elements/card.html
+    img=img
+    title=title
+    file=file
+    buttons=buttons
+   %}
+  </div>
+
+ {% endfor %}
+
+</div>
+
+<script id="card-gallery-container-arrange-{{cgid}}">
+ if (preFlight.envInfo.device.deviceType !== 'desktop') {
+  $('#card-gallery-container-{{cgid}}').addClass('flex-nowrap overflow-auto');
+ }
+ 
+ if ({{oneRow}} !== false) {
+  $('#card-gallery-container-{{cgid}}').addClass('flex-nowrap overflow-auto'); 
+ }
+
+ const getMaxCardHeight_{{cgid}} = (containerId) => {
+  const $container = $('#' + containerId);
+  if ($container.length === 0) return 0;
+
+  const $cards = $container.find('div[siteFunction^="card-outer-"]');
+  if ($cards.length === 0) return 0;
+
+  let maxHeight = 0;
+
+  $cards.each(function () {
+    const height = $(this).outerHeight();
+    if (height > maxHeight) maxHeight = height;
+  });
+
+  return maxHeight;
+};
+
+function setEqualHeights_{{cgid}}() {
+  const mH = getMaxCardHeight_{{cgid}}('card-gallery-container-{{cgid}}');
+  $('#card-gallery-container-{{cgid}}')
+    .find('div[siteFunction^="card-outer-"]')
+    .css('height', mH + 'px');
+}
+
+$(window).on('load resize', function () {
+  setTimeout(setEqualHeights_{{cgid}}, 50);
+});
+
+</script>
+
+<style>
+  #card-gallery-card-container-{{cgid}} {
+   width: fit-content;
+  }
+</style>
