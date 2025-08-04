@@ -1,0 +1,14 @@
+{% capture uuid %}
+  {% UUID %}
+{% endcapture %}
+{% assign cgid = uuid | strip %}
+
+<div id="card-gallery-container-{{cgid}}" class="row d-flex g-3 align-items-center justify-content-center">
+
+</div>
+
+<script id="card-gallery-mobile-container-{{cgid}}">
+  if (preFlight.envInfo.device.deviceType !== 'desktop') {
+   $('#card-gallery-container-{{cgid}}').addClass('flex-nowrap');
+  }
+</script>
