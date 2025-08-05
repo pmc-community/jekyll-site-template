@@ -57,7 +57,7 @@ Adding simple cards is easy, only add the code shown below. However, as visual e
     title="Tip" 
 %}
 
-# Example
+## Example
 Here is an exmple of a card with aside content. First, define the buttons to be rendered in the card footer. Second, create the card content and the card aside content as external files. Note that you can use any other Docaroo components to create these pieces of content. The code to include the card into a document is: 
 
 {% raw %}
@@ -105,7 +105,7 @@ Here is an exmple of a card with aside content. First, define the buttons to be 
     title="Tip" 
 %}
 
-# Parameters
+## Parameters
 - `img`: path to the image to be the rendered in the card header
 - `title`: the card title
 - `file`: path to the file for the content of the card
@@ -165,7 +165,7 @@ Finally render the gallery:
 ```
 {% endraw %}
 
-# Example
+## Example
 
 <!-- card link buttons definition -->
 {% capture b1 %}
@@ -200,7 +200,7 @@ Finally render the gallery:
 %}
 <!-- end card gallery rendering -->
 
-# Parameters
+## Parameters
 - `cards`: the list of cards from the gallery
 - `oneRow`: sets the display mode on desktop, rows of 3 cards or a single row with horizontal scroll. Note that, on mobile, the card galleries are always shown on a single row with horizontal scroll.
 
@@ -229,7 +229,7 @@ A card definition file looks like is shown below:
 %}
 ```
 
-# Example
+## Example
 
 {% raw %}
 ```javascript
@@ -245,6 +245,6 @@ A card definition file looks like is shown below:
   oneRow=true
 %}
 
-# Parameters
+## Parameters
 - `folder`: the folder where the cards definition files are located
 - `oneRow`: sets the display mode on desktop, rows of 3 cards or a single row with horizontal scroll. Note that, on mobile, the card galleries are always shown on a single row with horizontal scroll.
