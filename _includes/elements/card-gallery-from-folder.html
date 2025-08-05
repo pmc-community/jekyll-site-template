@@ -1,0 +1,79 @@
+{% capture uuid %}
+ {% UUID %}
+{% endcapture %}
+{% assign cgid = uuid | strip %}
+
+{% assign oneRow = include.oneRow || default: "false" %}
+{% assign folder = include.folder || default: "" %}
+
+{% capture cards %}
+    {% CardGalleryContent {{folder}} %}
+{% endcapture %}
+
+{% assign cardsObj = cards | replace: "=>", ":" | json_string_to_object %}
+
+{% if folder != "" and cards.size > 0 %}
+
+<div id="card-gallery-container-{{cgid}}" class="row d-flex g-3 my-4">
+
+ {% for card in cardsObj %}
+
+  <div id="card-gallery-card-container-{{cgid}}" class="mx-1">
+   {% include elements/card.html
+    img=card.img
+    title=card.title
+    file=card.file
+    buttons=card.buttons
+   %}
+  </div>
+
+ {% endfor %}
+
+</div>
+
+<script id="card-gallery-container-arrange-{{cgid}}">
+ if (preFlight.envInfo.device.deviceType !== 'desktop') {
+  $('#card-gallery-container-{{cgid}}').addClass('flex-nowrap overflow-auto');
+ }
+ 
+ if ({{oneRow}} !== false) {
+  $('#card-gallery-container-{{cgid}}').addClass('flex-nowrap overflow-auto'); 
+ }
+
+ const getMaxCardHeight_{{cgid}} = (containerId) => {
+  const $container = $('#' + containerId);
+  if ($container.length === 0) return 0;
+
+  const $cards = $container.find('div[siteFunction^="card-outer-"]');
+  if ($cards.length === 0) return 0;
+
+  let maxHeight = 0;
+
+  $cards.each(function () {
+    const height = $(this).outerHeight();
+    if (height > maxHeight) maxHeight = height;
+  });
+
+  return maxHeight;
+};
+
+function setEqualHeights_{{cgid}}() {
+  const mH = getMaxCardHeight_{{cgid}}('card-gallery-container-{{cgid}}');
+  $('#card-gallery-container-{{cgid}}')
+    .find('div[siteFunction^="card-outer-"]')
+    .css('height', mH + 'px');
+}
+
+$(window).on('load resize', function () {
+  setTimeout(setEqualHeights_{{cgid}}, 50);
+});
+
+</script>
+
+<style>
+  #card-gallery-card-container-{{cgid}} {
+   width: fit-content;
+  }
+</style>
+
+{% endif %}
