@@ -286,7 +286,7 @@
       ],
       "autoSummary": "Cards can be included as single items or in galleries of cards.",
       "similarByContent": [],
-      "readingTime": 5,
+      "readingTime": 6,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -665,6 +665,10 @@
         {
           "title": "Get started",
           "permalink": "/get-started/"
+        },
+        {
+          "title": "Introduction",
+          "permalink": "/intro/"
         }
       ],
       "autoSummary": "There are two types of content that you can use in your documents:. Content directly included in your document or content imported from. External sources are very important because allows you to create reusable pieces of content.",
@@ -773,6 +777,10 @@
         {
           "title": "Get started",
           "permalink": "/get-started/"
+        },
+        {
+          "title": "Content",
+          "permalink": "/content/intro/"
         }
       ],
       "autoSummary": "Documentation site builder guide is a comprehensive resource for learning how to create, build, and maintain high-quality documentation sites. This guide will walk you through everything you need to know about building a complete, maintainable, and professional documentation site.",

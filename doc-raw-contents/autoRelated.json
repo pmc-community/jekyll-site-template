@@ -209,6 +209,10 @@
       {
         "title": "Get started",
         "permalink": "/get-started/"
+      },
+      {
+        "title": "Introduction",
+        "permalink": "/intro/"
       }
     ]
   },
@@ -248,6 +252,10 @@
       {
         "title": "Get started",
         "permalink": "/get-started/"
+      },
+      {
+        "title": "Content",
+        "permalink": "/content/intro/"
       }
     ]
   }

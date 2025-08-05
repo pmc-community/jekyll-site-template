@@ -4,44 +4,26 @@
 {% assign cgid = uuid | strip %}
 
 {% assign oneRow = include.oneRow || default: "false" %}
+{% assign folder = include.folder || default: "" %}
+
+{% capture cards %}
+    {% CardGalleryContent {{folder}} %}
+{% endcapture %}
+
+{% assign cardsObj = cards | replace: "=>", ":" | json_string_to_object %}
+
+{% if folder != "" and cards.size > 0 %}
 
 <div id="card-gallery-container-{{cgid}}" class="row d-flex g-3 my-4">
 
- {% assign card_defs = cards | split: "~~~" %}
-
- {% for def in card_defs %}
-  {% assign def_parts = def | split: "|||" %}
-  {% assign meta = def_parts[0] | strip %}
-  {% assign buttons = def_parts[1] | strip %}
-
-  {% assign img = "" %}
-  {% assign title = "" %}
-  {% assign file = "" %}
-
-  {% assign parts = meta | split: "|" %}
-
-  {% for pair in parts %}
-   {% assign pair_parts = pair | split: "=" %}
-   {% assign key = pair_parts[0] | strip %}
-   {% assign val = pair_parts[1] | strip %}
-   {% assign val = val | remove: '"' %}
-
-   {% case key %}
-    {% when "img" %}
-     {% assign img = val %}
-    {% when "title" %}
-     {% assign title = val %}
-    {% when "file" %}
-     {% assign file = val %}
-   {% endcase %}
-  {% endfor %}
+ {% for card in cardsObj %}
 
   <div id="card-gallery-card-container-{{cgid}}" class="mx-1">
    {% include elements/card.html
-    img=img
-    title=title
-    file=file
-    buttons=buttons
+    img=card.img
+    title=card.title
+    file=card.file
+    buttons=card.buttons
    %}
   </div>
 
@@ -93,3 +75,5 @@ $(window).on('load resize', function () {
    width: fit-content;
   }
 </style>
+
+{% endif %}
