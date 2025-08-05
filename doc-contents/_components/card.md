@@ -15,20 +15,17 @@ Cards can be included as single items or in galleries of cards. As much as possi
 
 The size of the cards is based on the best practice in creating components able to ensure both readability and good visual effects. However, the card settings can be modified as per your preferences by changing the default values in `_data/buildConfig` file.
 
-```yaml
+```
 {% 
-    ExternalRepoContent  { 
+    ExternalSiteContent  {
         "markdown": true,
-        "owner":"pmc-community", 
-        "repo":"jekyll-site-template", 
-        "branch":"gh-pages", 
-        "file_path":"_data/buildConfig.yml", 
+        "file_path":"partials/card-gallery-demo/c4.md", 
         "ignore_wp_shortcodes": true, 
-        "start_marker": "card:",
-        "include_start_marker": true,
-        "end_marker": "0.775rem\"" ,
-        "include_end_marker": true,
-        "needAuth": true
+        "start_marker": "fullFile", 
+        "include_start_marker": false,
+        "end_marker": "fullFile",
+        "include_end_marker": false,
+        "needAuth": false 
     }
 %}
 ```

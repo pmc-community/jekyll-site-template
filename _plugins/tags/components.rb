@@ -126,7 +126,7 @@ module Jekyll
                     front_matter, buttons = FileUtilities.parse_front_matter(File.read(file))
                     cardObj = {
                         img: front_matter["img"],
-                        title: front_matter["title"],
+                        title: front_matter["cardTitle"],
                         file: front_matter["file"],
                         buttons: buttons
                     }
