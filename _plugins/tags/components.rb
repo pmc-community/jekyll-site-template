@@ -1,5 +1,6 @@
 require_relative "../../tools/modules/globals"
 require_relative "../../tools/modules/content-utilities"
+require_relative "../../tools/modules/file-utilities"
 
 require "shellwords"
 require 'uri'
@@ -110,6 +111,31 @@ module Jekyll
             
         end
 
+        class CardGalleryContent < Liquid::Tag
+  
+            def initialize(tag_name, input, context)
+                super
+                @input = input
+            end
+
+            def render(context)
+                param = Liquid::Template.parse(@input).render(context)
+                fullPath = "/#{Globals::DOCS_ROOT}/#{param.strip}"
+                cards=[]
+                Dir.glob(File.join(Dir.pwd + fullPath, "**", "*.md")).each do |file|
+                    front_matter, buttons = FileUtilities.parse_front_matter(File.read(file))
+                    cardObj = {
+                        img: front_matter["img"],
+                        title: front_matter["title"],
+                        file: front_matter["file"],
+                        buttons: buttons
+                    }
+                    cards << cardObj
+                end
+                JSON.generate(cards)
+            end
+            
+        end
 
     end
 
@@ -119,5 +145,6 @@ Liquid::Template.register_tag('ScrollSpy', Jekyll::Components::ScrollSpy)
 Liquid::Template.register_tag('XLSXToHtmlTable', Jekyll::Components::XLSXToHtmlTable)
 Liquid::Template.register_tag('XLSXToHtmlChart', Jekyll::Components::XLSXToHtmlChart)
 Liquid::Template.register_tag('ImgFullPath', Jekyll::Components::ImgFullPath)
+Liquid::Template.register_tag('CardGalleryContent', Jekyll::Components::CardGalleryContent)
 
 
