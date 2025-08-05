@@ -1,174 +1,95 @@
 {% capture uuid %}
-  {% UUID %}
+ {% UUID %}
 {% endcapture %}
-{% assign cid = uuid | strip %}
+{% assign cgid = uuid | strip %}
 
-{% assign img = include.img || default: "" %}
-{% if img == "" %}
-    {% assign imgFullPath = "" %}
-{% else %}
-    {% capture fullPath %}
-        {% ImgFullPath {{img}} %}
-    {% endcapture %}
-    {% assign imgFullPath = fullPath %}
-{% endif %}
+{% assign oneRow = include.oneRow || default: "false" %}
 
-{% assign file = include.file || default: "" %}
-{% assign title = include.title || default: "" %}
-{% assign contentAside = include.contentAside || default: "false" %}
-{% assign buttons = include.buttons || default: "" %}
-{% assign cardWidth = site.data["buildConfig"]["elements"]["card"]["cardWidth"] %}
-{% assign mobileCardWidth = cardWidth %}
+<div id="card-gallery-container-{{cgid}}" class="row d-flex g-3 my-4">
 
-{% if file !="" and title !="" %}
+ {% assign card_defs = cards | split: "~~~" %}
 
-{% assign cardContainerPaddingClass = "" %}
-{% if contentAside != "false" %}
- {% assign cardWidth = "100%" %}
- {% assign cardContainerPaddingClass = "px-2" %}  
- <div id="card-whole-container-{{cid}}" class="row d-flex py-2">
-  <div id="card-container-{{cid}}" class="col-md-4 col-12 align-content-center {{cardContainerPaddingClass}}">
-{% endif %}
+ {% for def in card_defs %}
+  {% assign def_parts = def | split: "|||" %}
+  {% assign meta = def_parts[0] | strip %}
+  {% assign buttons = def_parts[1] | strip %}
 
-<div id="card-{{cid}}" siteFunction="card-outer-{{cid}}" style="width: {{cardWidth}}" class="w-sm-auto mx-auto bg-transparent card border border-secondary border-opacity-25 rounded my-2">
-    
- {% if imgFullPath != "" %}
-  <img id="card-img-{{cid}}" src="{{imgFullPath}}" class="pt-2 card-img-top img-fluid">
- {% endif %}
+  {% assign img = "" %}
+  {% assign title = "" %}
+  {% assign file = "" %}
 
- <div id="card-body-{{cid}}" class="card-body">
-   
-   {% if title != "" %}
-    <div id="card-title-container-{{cid}}" class="d-flex justify-content-between">
-     <span class="fw-medium card-title text-primary" id="card-title-{{cid}}">{{title}}</span>
-     {% if contentAside != "false" %}
-      <i id="card-title-go-to-aside-content-{{cid}}" class="bi bi-box-arrow-down fs-4 fw-medium text-secondary alwaysCursorPointer d-none"></i>
-     {% endif %}
-    </div>
-   {% endif %}
+  {% assign parts = meta | split: "|" %}
 
-   <div id="card-text-{{cid}}" class="card-text">
-    <div class="text-secondary">
-            
-     {% capture content %} {% ExternalSiteContent {
-        "markdown": true,
-        "file_path":"{{file}}", 
-        "ignore_wp_shortcodes": true, 
-        "start_marker": "fullFile", 
-        "include_start_marker": false,
-        "end_marker": "fullFile",
-        "include_end_marker": false,
-        "needAuth": false 
-        } %}
-     {% endcapture %}
+  {% for pair in parts %}
+   {% assign pair_parts = pair | split: "=" %}
+   {% assign key = pair_parts[0] | strip %}
+   {% assign val = pair_parts[1] | strip %}
+   {% assign val = val | remove: '"' %}
 
-     {% capture rendered_content %}
-      {% DryRenderPage content %}
-     {% endcapture %}
-    
-     {{rendered_content | markdonify}}
+   {% case key %}
+    {% when "img" %}
+     {% assign img = val %}
+    {% when "title" %}
+     {% assign title = val %}
+    {% when "file" %}
+     {% assign file = val %}
+   {% endcase %}
+  {% endfor %}
 
-    </div>
-   </div>
-   
-   {% if buttons !="" %}
-   <div id="card-buttons-{{cid}}" class="border-top border-secondary border-opacity-25 pt-2 mt-1">
-     {% include elements/link-btn-group.html buttons=buttons %}
-   </div>
-   {% endif %}
-
+  <div id="card-gallery-card-container-{{cgid}}" class="mx-1">
+   {% include elements/card.html
+    img=img
+    title=title
+    file=file
+    buttons=buttons
+   %}
   </div>
+
+ {% endfor %}
 
 </div>
 
-{% if contentAside != "false" %}
-
-  </div> <!-- closing card-container-... -->
-
-  <div id="card-aside-container-{{cid}}" class="col-md-8 col-12 p-2 align-content-center">
-   <div id="card-aside-container-go-to-card-top-{{cid}}" class="d-none d-flex py-1 bg-secondary bg-opacity-25 rounded mb-2 justify-content-center alwaysCursorPointer">
-    <i class="bi bi-box-arrow-up fs-4 fw-medium text-secondary"></i>
-   </div>
-
-   {% capture content %} {% ExternalSiteContent {
-        "markdown": true,
-        "file_path":"{{contentAside}}", 
-        "ignore_wp_shortcodes": true, 
-        "start_marker": "fullFile", 
-        "include_start_marker": false,
-        "end_marker": "fullFile",
-        "include_end_marker": false,
-        "needAuth": false 
-    }%}
-   {% endcapture %}
-
-   {% capture rendered_content %}
-    {% DryRenderPage content %}
-   {% endcapture %}
-
-   {{rendered_content | markdonify}}
-  
-   <div id="card-aside-container-go-to-card-bottom-{{cid}}" class="d-none d-flex py-1 bg-secondary bg-opacity-25 rounded mt-2 justify-content-center alwaysCursorPointer">
-    <i class="bi bi-box-arrow-up fs-4 fw-medium text-secondary"></i>
-   </div>
-
-  </div>
-
- </div>
-
-{% endif %}
-
-<script id="card-aside-handler-mobile-{{cid}}">
- $('#card-buttons-{{cid}}').find('div[id^="btn-lnk-group-"]').addClass('justify-content-between');
+<script id="card-gallery-container-arrange-{{cgid}}">
+ if (preFlight.envInfo.device.deviceType !== 'desktop') {
+  $('#card-gallery-container-{{cgid}}').addClass('flex-nowrap overflow-auto');
+ }
  
- if (preFlight.envInfo.device.deviceType !== 'desktop') {
-    $('#card-title-go-to-aside-content-{{cid}}, #card-aside-container-go-to-card-top-{{cid}}, #card-aside-container-go-to-card-bottom-{{cid}}').removeClass('d-none');
-    $('#card-aside-container-{{cid}}').css('height',0).css('visibility', 'hidden');
+ if ({{oneRow}} !== false) {
+  $('#card-gallery-container-{{cgid}}').addClass('flex-nowrap overflow-auto'); 
  }
 
- $('#card-title-go-to-aside-content-{{cid}}').on('click', function() {
-  $('#card-aside-container-{{cid}}').css('height','fit-content').css('visibility', 'visible');
-  $('html, body').animate({
-   scrollTop: $('#card-aside-container-{{cid}}').offset().top - 100
-  }, 100);
- });
+ const getMaxCardHeight_{{cgid}} = (containerId) => {
+  const $container = $('#' + containerId);
+  if ($container.length === 0) return 0;
 
- $('#card-aside-container-go-to-card-top-{{cid}}, #card-aside-container-go-to-card-bottom-{{cid}}').on('click', function() {
-  const to = 50;
-  $('html, body').animate({
-   scrollTop: $('#card-whole-container-{{cid}}').offset().top - 100
-  }, to);
-  setTimeout(()=>$('#card-aside-container-{{cid}}').css('height',0).css('visibility', 'hidden'), 10 * to);
- });
+  const $cards = $container.find('div[siteFunction^="card-outer-"]');
+  if ($cards.length === 0) return 0;
 
-</script>
+  let maxHeight = 0;
 
-<script id="card-sizing-mobile-{{cid}}">
- if (preFlight.envInfo.device.deviceType !== 'desktop') {
-  $('#card-{{cid}}').css('width', '{{mobileCardWidth}}');
- }
+  $cards.each(function () {
+    const height = $(this).outerHeight();
+    if (height > maxHeight) maxHeight = height;
+  });
+
+  return maxHeight;
+};
+
+function setEqualHeights_{{cgid}}() {
+  const mH = getMaxCardHeight_{{cgid}}('card-gallery-container-{{cgid}}');
+  $('#card-gallery-container-{{cgid}}')
+    .find('div[siteFunction^="card-outer-"]')
+    .css('height', mH + 'px');
+}
+
+$(window).on('load resize', function () {
+  setTimeout(setEqualHeights_{{cgid}}, 50);
+});
+
 </script>
 
 <style>
- {% assign cardImgHeight = site.data["buildConfig"]["elements"]["card"]["cardImgHeight"] %}
- #card-img-{{cid}} {
-  margin-top: -3px;
-  border-top-left-radius: 10px !important;
-  border-top-right-radius: 10px !important;
-  max-height: {{cardImgHeight}} !important;
-  width:100% !important;
-  object-fit: cover;
-  object-position: top;
- }
-
- {% assign cardImgText = site.data["buildConfig"]["elements"]["card"]["cardImgText"] %}
- #card-text-{{cid}} {
-  font-size: {{cardImgText}};
- }
-
+  #card-gallery-card-container-{{cgid}} {
+   width: fit-content;
+  }
 </style>
-
-{% else %}
-{% assign mess="Something went wrong when creating card from file: '" | append: file | append: "' with title: '" | append: title | append: "'. File and title parameters are mandatory!"%}
- {% include elements/alert.html class="danger" content=mess title="Error" %}
-{% endif %}
