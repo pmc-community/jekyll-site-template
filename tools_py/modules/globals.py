@@ -4,6 +4,7 @@ import string
 import re
 import json
 import os
+import dotenv
 
 def detect_language_with_confidence(text, num_runs=5):
   detected_languages = []
@@ -67,3 +68,11 @@ def get_the_modified_files():
     return file_names
   except:
     return []
+
+def get_env_value(env_path, key):
+  try:
+      dotenv.load_dotenv(dotenv_path=env_path)
+      return os.getenv(key)
+  except Exception as e:
+      print(f"An error occurred: {e}")
+      return None
