@@ -14,6 +14,7 @@ from langdetect import detect, LangDetectException
 
 # === SUPPRESS WARNINGS/LOGS ===
 warnings.filterwarnings("ignore", message="resource_tracker: There appear to be")
+warnings.filterwarnings("ignore", category=FutureWarning, module="huggingface_hub.file_download")
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 os.environ["XLA_FLAGS"] = "--xla_cpu_enable_fast_math=false"
 logging.getLogger('absl').setLevel(logging.ERROR)
@@ -29,7 +30,10 @@ multiprocessing.set_start_method('spawn', force=True)
 tools_py_path = os.path.abspath(os.path.join('tools_py'))
 if tools_py_path not in sys.path:
     sys.path.append(tools_py_path)
-from modules.globals import get_key_value_from_yml, clean_up_text, get_the_modified_files
+from modules.globals import get_key_value_from_yml, clean_up_text, get_the_modified_files, get_env_value
+
+auth_token = get_env_value('.env', 'HUGGINGFACE_KEY')
+
 
 # === FIXED SEED FOR LANGDETECT ===
 langdetect.detector_factory.DetectorFactory.seed = 42
@@ -58,8 +62,8 @@ tokenizer = None
 # === INITIALIZER ===
 def init_worker():
     global model, tokenizer
-    model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
-    tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=False)
+    model = AutoModelForSeq2SeqLM.from_pretrained(model_name, token=auth_token)
+    tokenizer = AutoTokenizer.from_pretrained(model_name, token=auth_token, use_fast=False)
 
 # === HELPERS ===
 import string
@@ -248,7 +252,8 @@ def process_file_mp(file_name):
 
 def process_files(file_names, pageList=None):
     total_memory = psutil.virtual_memory().total
-    cpu_limit = max(1, int(cpu_count() * 0.6))
+    #cpu_limit = max(1, int(cpu_count() * 0.6))
+    cpu_limit = min(len(file_names), max(1, int(cpu_count() * 0.6)))
 
     with Manager() as manager:
         write_lock = manager.Lock()
