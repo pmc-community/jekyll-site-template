@@ -240,7 +240,7 @@
           "permalink": "/components/link-button/"
         }
       ],
-      "autoSummary": "Alerts can be of different types as shown by the colors (,,, and ). Alerts can contain content introduced in clear but also can refer. From other documents from your documentation or from external public or private repositories. There is no limit about how many external public repositories you refer.",
+      "autoSummary": "Alerts can contain content introduced in clear but also can refer. From other documents from your documentation or from external public or private repositories. There is no limit about how many external public repositories you refer. The number of external private repositories depends on the private access key type you.",
       "similarByContent": [
         {
           "permalink": "/content/ec/",
@@ -266,10 +266,10 @@
         "gallery"
       ],
       "excerpt": "card, emphasise, piece, provide, relevant, visual, experience, images, references, detailed",
-      "lastUpdate": "2025-08-05 15:17:05 +0300",
+      "lastUpdate": "2025-08-05 15:23:23 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-08-05 15:17:05 +0300",
-      "createTimeUTC": 1754396225,
+      "createTime": "2025-08-05 15:23:23 +0300",
+      "createTimeUTC": 1754396603,
       "relatedPages": [
         {
           "title": "Image",
@@ -714,10 +714,6 @@
       ],
       "autoSummary": "Documentaroo allows you to create. Of content and import these parts in multiple places in your documents. It is possible to import content from external public and private repositories. You must be sure that the content you want to import is available at the time when you build your site.",
       "similarByContent": [
-        {
-          "permalink": "/content/intro/",
-          "title": "Content"
-        },
         {
           "permalink": "/components/alerts/",
           "title": "Alerts"

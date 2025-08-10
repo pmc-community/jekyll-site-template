@@ -2,7 +2,7 @@
     "summaries": [
         {
             "permalink": "/components/alerts/",
-            "summary": "Alerts can be of different types as shown by the colors (,,, and ). Alerts can contain content introduced in clear but also can refer. From other documents from your documentation or from external public or private repositories. There is no limit about how many external public repositories you refer."
+            "summary": "Alerts can contain content introduced in clear but also can refer. From other documents from your documentation or from external public or private repositories. There is no limit about how many external public repositories you refer. The number of external private repositories depends on the private access key type you."
         },
         {
             "permalink": "/components/intro/",

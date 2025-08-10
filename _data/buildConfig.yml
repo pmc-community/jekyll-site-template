@@ -115,3 +115,6 @@ elements:
     cardWidth: "14rem"
     cardImgHeight: "8rem"
     cardImgText: "0.775rem"
+  extDocSummary:
+    word_sum_model: "facebook/bart-large-cnn"
+    pdf_sum_model: "facebook/bart-large-cnn"

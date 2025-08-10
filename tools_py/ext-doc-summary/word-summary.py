@@ -1,201 +1,405 @@
 import os
 import sys
-import torch
-import platform
-import multiprocessing
-import time
-import tempfile
-import textwrap
 import re
-import psutil
+import torch
+import warnings
+import multiprocessing as mp
+from collections import defaultdict
 from docx import Document
 from langdetect import detect
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
-from tqdm import tqdm
-import warnings
+from transformers.utils import logging as hf_logging
+from rich.progress import Progress, SpinnerColumn, BarColumn, TextColumn, TimeElapsedColumn, TimeRemainingColumn
+from rich.console import Console
+import datetime
 
-warnings.filterwarnings(
-    "ignore",
-    category=FutureWarning,
-    module=r"huggingface_hub\.file_download"
-)
 
-# ------------------- CONFIG -------------------
+hf_logging.set_verbosity_error()
+warnings.filterwarnings("ignore", category=FutureWarning)
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
-warnings.filterwarnings("ignore", category=UserWarning)
+# Device selection
+if torch.cuda.is_available():
+    DEVICE = "cuda"
+elif torch.backends.mps.is_available():
+    DEVICE = "mps"
+else:
+    DEVICE = "cpu"
 
-MODEL_NAME = "csebuetnlp/mT5_multilingual_XLSum"
-CHUNK_CHAR_LEN = 1000
-EXTRACTION_MAX_TOKENS = 256
-SYNTHESIS_MAX_TOKENS = 768
-MIN_FREE_MEM_GB = 6
-MAX_MEM_USAGE_PERCENT = 60
-MAX_PARALLEL_PROCESSES = 8
 
-DEVICE = "cpu"  # Force CPU
+# === CUSTOM MODULE IMPORT ===
+tools_py_path = os.path.abspath(os.path.join('tools_py'))
+#print(tools_py_path)
+if tools_py_path not in sys.path:
+    sys.path.append(tools_py_path)
+from modules.globals import get_key_value_from_yml, clean_up_text, get_the_modified_files, get_env_value
+auth_token = get_env_value('.env', 'HUGGINGFACE_KEY')
 
-# ------------------- TEXT UTILS -------------------
+# === SETTINGS ===
+build_settings_path = '_data/buildConfig.yml'
+MODEL_NAME = get_key_value_from_yml(build_settings_path, 'elements')['extDocSummary']['word_sum_model']
+SECTION_HEADING = "Heading 1"
+MAX_INPUT_TOKENS = 512
+SUMMARY_TOKENS = 200
 
-def extract_text_from_docx(path):
-    doc = Document(path)
-    return "\n".join(p.text for p in doc.paragraphs if p.text.strip())
+console = Console()
 
-def split_text(text, max_length):
+def is_probably_structural(text):
+    lines = text.splitlines()
+    if len(lines) <= 2 and len(text.split()) < 25:
+        return True
+    digit_lines = sum(1 for line in lines if re.search(r'\d{1,2}(\.\d{1,2}){0,3}$', line.strip()))
+    if digit_lines > len(lines) * 0.5:
+        return True
+    punctuation_ratio = sum(1 for c in text if not c.isalnum() and c not in ' \n') / max(1, len(text))
+    if punctuation_ratio > 0.2 and len(text) < 300:
+        return True
+    no_full_sentences = all(not re.search(r'\.\s|!\s|\?\s', line) for line in lines)
+    if no_full_sentences and len(text.split()) < 40:
+        return True
+    return False
+
+def is_probably_reference_section(text):
+    lines = [line.strip() for line in text.splitlines() if line.strip()]
+    if not lines:
+        return False
+    first_line = lines[0].lower()
+    if re.match(r'^(references|bibliography|works cited|citations)\s*$', first_line):
+        return True
+    citation_like_lines = 0
+    for line in lines:
+        if re.search(r'\[\d+\]', line):
+            citation_like_lines += 1
+        elif re.search(r'\(\d{4}\)', line):
+            citation_like_lines += 1
+        elif re.search(r'\d{4}\.\s+[A-Z]', line):
+            citation_like_lines += 1
+        elif re.search(r'doi:\s*10\.', line, re.I):
+            citation_like_lines += 1
+        elif re.match(r'^\d+\.\s+[A-Z]', line):
+            citation_like_lines += 1
+        elif re.match(r'^[A-Z][a-z]+,\s[A-Z]\.', line):
+            citation_like_lines += 1
+        elif re.search(r'Vol\.\s*\d+', line, re.I):
+            citation_like_lines += 1
+        elif re.search(r'pp\.\s*\d+', line, re.I):
+            citation_like_lines += 1
+    ratio = citation_like_lines / len(lines)
+    return ratio > 0.4
+
+def extract_structure(docx_path):
+    doc = Document(docx_path)
+    sections = []
+    current = {"title": "Introduction", "content": []}
+
+    def flush():
+        if current["content"]:
+            text = "\n".join(current["content"]).strip()
+            if text:
+                skip = (
+                    "SKIP_THIS_SECTION" in text or
+                    is_probably_structural(text) or
+                    is_probably_reference_section(text)
+                )
+                if not text.startswith("SKIP_THIS_SECTION"):
+                    sections.append({
+                        "title": current["title"],
+                        "text": text,
+                        "skip_summary": skip
+                    })
+            current["content"].clear()
+
+    for para in doc.paragraphs:
+        if para._element.xpath("ancestor::w:tbl"):
+            continue
+        style = para.style.name if para.style else ""
+        text = para.text.strip()
+        if not text:
+            continue
+        if style.startswith(SECTION_HEADING):
+            flush()
+            current["title"] = text
+            if text.strip().lower() in {"references", "bibliography", "works cited", "citations"}:
+                current["content"].append("SKIP_THIS_SECTION")
+        else:
+            if para.style.name.lower().startswith("list"):
+                list_symbol = "*" if "bullet" in para.style.name.lower() else "-"
+                current["content"].append(f"{list_symbol} {text}")
+            else:
+                current["content"].append(text)
+
+    flush()
+    return sections
+
+def chunk_text(text, tokenizer, max_tokens):
     sentences = re.split(r'(?<=[.!?]) +', text)
     chunks = []
     current = ""
-    for sentence in sentences:
-        if len(current) + len(sentence) < max_length:
-            current += sentence + " "
+    for sent in sentences:
+        token_count = len(tokenizer.tokenize(current + sent))
+        if token_count < max_tokens:
+            current += sent + " "
         else:
             chunks.append(current.strip())
-            current = sentence + " "
+            current = sent + " "
     if current:
         chunks.append(current.strip())
     return chunks
 
-def get_extraction_prompt(text, lang_code):
-    return (
-        f"Extract factual key points only from this {lang_code} document. "
-        f"Do not include opinions or unrelated info.\n\n"
-        f"Text:\n{text.strip()}\n\n"
-        "Bullet Points:\n-"
-    )
-
-def get_synthesis_prompt(bullets, lang_code):
-    return (
-        f"Using only the bullet points below (in {lang_code}), generate a structured summary "
-        f"of 300 to 500 words. Group ideas logically and keep content faithful to the source.\n\n"
-        f"Bullet Points:\n{bullets.strip()}\n\nSummary:"
-    )
-
-# ------------------- MEMORY CHECK -------------------
-
-def can_spawn_worker():
-    mem = psutil.virtual_memory()
-    free_gb = mem.available / (1024 ** 3)
-    return free_gb >= MIN_FREE_MEM_GB and mem.percent <= MAX_MEM_USAGE_PERCENT
-
-# ------------------- WORKER PROCESS -------------------
-
-def summarize_chunk_worker(text, lang_code, output_path):
-    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, legacy=False)
-    model = AutoModelForSeq2SeqLM.from_pretrained(MODEL_NAME)
-    model.eval()
-
-    prompt = get_extraction_prompt(text, lang_code)
-    inputs = tokenizer(prompt, return_tensors="pt", truncation=True, max_length=512)
-    inputs = {k: v.to(DEVICE) for k, v in inputs.items()}
-
+def summarize_chunk(text, tokenizer, model):
+    input_ids = tokenizer(
+        text, return_tensors="pt", truncation=True, max_length=MAX_INPUT_TOKENS
+    ).input_ids.to(DEVICE)
     with torch.no_grad():
-        outputs = model.generate(
-            inputs["input_ids"],
-            attention_mask=inputs.get("attention_mask"),
-            max_length=EXTRACTION_MAX_TOKENS,
+        output_ids = model.generate(
+            input_ids,
+            max_length=SUMMARY_TOKENS,
             num_beams=4,
-            no_repeat_ngram_size=2,
-            temperature=0.7,
-            early_stopping=True,
-            eos_token_id=tokenizer.eos_token_id,
-            pad_token_id=tokenizer.pad_token_id,
-        )
-    summary = tokenizer.decode(outputs[0], skip_special_tokens=True).strip()
-
-    with open(output_path, "w", encoding="utf-8") as f:
-        f.write(summary)
-
-# ------------------- SYNTHESIS -------------------
-
-def synthesize_summary(bullets, lang_code):
-    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, legacy=False)
-    model = AutoModelForSeq2SeqLM.from_pretrained(MODEL_NAME)
-    model.eval()
-
-    prompt = get_synthesis_prompt(bullets, lang_code)
-    inputs = tokenizer(prompt, return_tensors="pt", truncation=True, max_length=1024)
-    inputs = {k: v.to(DEVICE) for k, v in inputs.items()}
-
-    with torch.no_grad():
-        outputs = model.generate(
-            inputs["input_ids"],
-            attention_mask=inputs.get("attention_mask"),
-            max_length=SYNTHESIS_MAX_TOKENS,
-            num_beams=5,
             no_repeat_ngram_size=3,
-            temperature=0.7,
-            early_stopping=True,
-            eos_token_id=tokenizer.eos_token_id,
-            pad_token_id=tokenizer.pad_token_id,
+            repetition_penalty=2.0,
+            early_stopping=True
         )
-    summary = tokenizer.decode(outputs[0], skip_special_tokens=True).strip()
-    return summary
+    return tokenizer.decode(output_ids[0], skip_special_tokens=True)
 
-# ------------------- MAIN -------------------
+def format_summary_as_markdown(text):
+    text = re.sub(r'\)\s*-\s*', r')\n- ', text)
+    text = re.sub(r':\s*-\s*', r':\n- ', text)
+    text = re.sub(r'(?<!\n)-\s+', r'\n- ', text)
+    text = re.sub(r':\n\n', ':\n', text)
 
-def summarize_docx(path):
-    raw_text = extract_text_from_docx(path)
-    if not raw_text.strip():
-        raise ValueError("Empty document")
+    sentences = re.split(r'(?<=[.!?])\s+', text.strip())
+    paragraphs = []
+    buffer = []
+    for i, sentence in enumerate(sentences, 1):
+        if sentence:
+            buffer.append(sentence.strip())
+        if len(buffer) == 3 or i == len(sentences):
+            paragraphs.append(" ".join(buffer))
+            buffer = []
+    output = "\n\n".join(paragraphs)
+    output = re.sub(r'\n{3,}', '\n\n', output)
+    return output.strip()
 
-    lang_code = detect(raw_text[:2000])
-    print(f"🌍 Detected language: {lang_code}")
+def deduplicate_sentences_across_all(final_summary, section_summaries):
+    seen = set()
+    def unique_sentences(text):
+        result = []
+        sentences = re.split(r'(?<=[.!?])\s+', text)
+        for sentence in sentences:
+            normalized = sentence.strip().lower()
+            if normalized and normalized not in seen:
+                seen.add(normalized)
+                result.append(sentence.strip())
+        return result
+    dedup_final = unique_sentences(final_summary)
+    dedup_sections = []
+    for sec_text in section_summaries:
+        dedup_sec = []
+        for sentence in re.split(r'(?<=[.!?])\s+', sec_text):
+            normalized = sentence.strip().lower()
+            if normalized and normalized not in seen:
+                seen.add(normalized)
+                dedup_sec.append(sentence.strip())
+        dedup_sections.append(" ".join(dedup_sec))
+    return " ".join(dedup_final), dedup_sections
 
-    chunks = split_text(raw_text, CHUNK_CHAR_LEN)
-    print(f"📄 Split into {len(chunks)} chunks")
 
-    processes = []
-    temp_outputs = []
+def write_output(sections, final_summary, out_path, docx_path):
+    # Change extension to .md
+    base, _ = os.path.splitext(out_path)
+    out_path_md = base + ".md"
+    
+    section_summaries = [sec["summary"] for sec in sections if "summary" in sec]
+    dedup_final, dedup_section_summaries = deduplicate_sentences_across_all(final_summary, section_summaries)
 
-    progress_bar = tqdm(total=len(chunks), desc="Processing chunks")
+    # Extract filename and full path for front matter
+    file_name = os.path.basename(base)
+    now = datetime.datetime.now()
+    date_str = now.strftime("%Y-%m-%d %H:%M:%S")
+    timestamp = int(now.timestamp())
 
-    while chunks or processes:
-        # Clean finished processes
-        for p, output_path in processes[:]:
-            if not p.is_alive():
-                p.join()
-                processes.remove((p, output_path))
-                progress_bar.update(1)
+    # Prepare YAML front matter
+    front_matter = (
+        "---\n"
+        f"summaryType: autoWordSummary\n"
+        f"summaryFor: {file_name}\n"
+        f"fullPath: {docx_path}\n"
+        f"dateTime: {date_str}\n"
+        f"timestamp: {timestamp}\n"
+        "---\n\n"
+    )
 
-        # Spawn new processes if under the limit
-        while len(processes) < MAX_PARALLEL_PROCESSES and chunks and can_spawn_worker():
-            chunk = chunks.pop(0)
-            fd, output_path = tempfile.mkstemp(suffix=".txt")
-            os.close(fd)
-            temp_outputs.append(output_path)
+    # Write front matter + summaries
+    with open(out_path_md, "w", encoding="utf-8") as f:
+        f.write(front_matter)
+        f.write(format_summary_as_markdown(dedup_final.strip()))
+        f.write("\n\n")
+        for summary in dedup_section_summaries:
+            f.write(format_summary_as_markdown(summary.strip()))
+            f.write("\n\n")
 
-            p = multiprocessing.Process(target=summarize_chunk_worker, args=(chunk, lang_code, output_path))
-            p.start()
-            processes.append((p, output_path))
+    # Clean up extra blank lines in the output md file
+    with open(out_path_md, "r", encoding="utf-8") as f:
+        lines = f.readlines()
 
-        if processes:
-            time.sleep(0.5)
+    cleaned_lines = []
+    blank_line = False
+    for line in lines:
+        if line.strip() == "":
+            if not blank_line:
+                cleaned_lines.append("\n")
+                blank_line = True
         else:
-            time.sleep(1)
+            cleaned_lines.append(line.rstrip() + "\n")
+            blank_line = False
 
-    progress_bar.close()
+    with open(out_path_md, "w", encoding="utf-8") as f:
+        f.writelines(cleaned_lines)
 
-    # Combine summaries
-    bullets = ""
-    for path in temp_outputs:
-        with open(path, "r", encoding="utf-8") as f:
-            bullets += f.read().strip() + "\n"
-        os.remove(path)
+    print("\033[1A", end='')
+    console.print(f"\n📝 Summary written to {out_path_md}")
 
-    print("🧠 Synthesizing structured summary...")
-    final_summary = synthesize_summary(bullets, lang_code)
+def get_free_memory_gb():
+    try:
+        import psutil
+        mem = psutil.virtual_memory()
+        return mem.available / (1024 ** 3)
+    except ImportError:
+        return 10
 
-    print("\n✅ Final Summary:\n")
-    print(textwrap.fill(final_summary, width=100))
-    return final_summary
+def summarize_section_worker(section_idx, title, text, model_name, progress_queue):
+    tokenizer = AutoTokenizer.from_pretrained(model_name, use_auth_token=auth_token)
+    model = AutoModelForSeq2SeqLM.from_pretrained(model_name, use_auth_token=auth_token).to(DEVICE)
 
-# ------------------- ENTRY -------------------
+    chunks = chunk_text(text, tokenizer, MAX_INPUT_TOKENS)
+    total = len(chunks)
+    summaries = []
+
+    for i, chunk in enumerate(chunks, 1):
+        summary = summarize_chunk(chunk, tokenizer, model)
+        summaries.append(summary)
+        progress_queue.put((section_idx, i, total))
+
+    raw_summary = " ".join(summaries)
+    markdown_summary = format_summary_as_markdown(raw_summary)
+    progress_queue.put((section_idx, "done", markdown_summary))
+
+def summarize_docx(docx_path):
+    console.print(f"\n📂 Reading: {docx_path}")
+    sections = extract_structure(docx_path)
+    full_text = " ".join([s["text"] for s in sections if not s.get("skip_summary")])
+    lang = detect(full_text[:1000]) if full_text else "unknown"
+    console.print(f"🌍 Detected language: {lang}")
+
+    manager = mp.Manager()
+    progress_queue = manager.Queue()
+    running_workers = {}
+    results = {}
+
+    progress = Progress(
+        SpinnerColumn(),
+        TextColumn("[bold blue]{task.description}"),
+        BarColumn(),
+        TextColumn("[progress.percentage]{task.percentage:>3.0f}%"),
+        TimeElapsedColumn(),
+        TimeRemainingColumn(),
+        console=console,
+        transient=False,
+    )
+    progress.start()
+
+    task_ids = {}
+    task_progress = defaultdict(lambda: {"completed": 0, "total": None})
+
+    def start_worker(idx, section):
+        if get_free_memory_gb() < 4:
+            return False
+        task_id = progress.add_task(f"Section {idx+1}: {section['title'][:40]}...", total=None)
+        task_ids[idx] = task_id
+
+        p = mp.Process(target=summarize_section_worker,
+                       args=(idx, section["title"], section["text"], MODEL_NAME, progress_queue))
+        p.start()
+        running_workers[idx] = p
+        return True
+
+    idx = 0
+    while idx < len(sections):
+        sec = sections[idx]
+        if sec.get("skip_summary"):
+            idx += 1
+            continue
+        started = start_worker(idx, sec)
+        if started:
+            idx += 1
+        else:
+            for w_idx, proc in list(running_workers.items()):
+                if not proc.is_alive():
+                    proc.join()
+                    running_workers.pop(w_idx)
+                    task_id = task_ids.pop(w_idx, None)
+                    if task_id is not None:
+                        progress.remove_task(task_id)
+            if not running_workers:
+                import time
+                time.sleep(1)
+
+    while running_workers:
+        try:
+            while not progress_queue.empty():
+                idx, progress_val, total_or_summary = progress_queue.get_nowait()
+                task_id = task_ids.get(idx)
+
+                if progress_val == "done":
+                    results[idx] = total_or_summary
+                    if task_id is not None:
+                        progress.update(task_id, completed=task_progress[idx]["total"] or 1)
+                        progress.remove_task(task_id)
+                    proc = running_workers.pop(idx)
+                    proc.join()
+                    continue
+
+                if task_id is not None:
+                    if task_progress[idx]["total"] is None:
+                        task_progress[idx]["total"] = total_or_summary
+                        progress.update(task_id, total=total_or_summary)
+                    task_progress[idx]["completed"] += 1
+                    progress.update(task_id, completed=task_progress[idx]["completed"])
+        except Exception:
+            pass
+
+    progress.stop()
+
+    for idx, summary in results.items():
+        sections[idx]["summary"] = summary
+
+    print("\033[1A", end='')
+    print("\033[1A", end='')
+    console.print("\n🧠 Creating final document summary...")
+    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, use_auth_token=auth_token)
+    model = AutoModelForSeq2SeqLM.from_pretrained(MODEL_NAME, use_auth_token=auth_token).to(DEVICE)
+    all_text = " ".join([s["text"] for s in sections if not s.get("skip_summary")])
+    initial_summary = summarize_chunk(all_text, tokenizer, model)
+
+    combined_summary_text = initial_summary + "\n\n" + "\n\n".join(
+        s["summary"] for s in sections if "summary" in s
+    )
+
+    final_summary = summarize_chunk(combined_summary_text, tokenizer, model)
+
+    base_name = os.path.splitext(os.path.basename(docx_path))[0]
+    dir_name = os.path.dirname(docx_path)
+    out_path = os.path.join(dir_name, base_name + "__word_summary.txt")
+    write_output(sections, final_summary, out_path, docx_path)
+
 
 if __name__ == "__main__":
-    print(f"⏳ Platform: {platform.system()} {platform.machine()}, running on CPU")
-
     if len(sys.argv) < 2:
-        print("Usage: python summarize.py <file.docx>")
+        console.print("Usage: python summarize_docx.py file1.docx [file2.docx ...]")
         sys.exit(1)
 
-    summarize_docx(sys.argv[1])
-
+    for file_path in sys.argv[1:]:
+        if not os.path.exists(file_path):
+            console.print(f"[red]File not found:[/red] {file_path}")
+            continue
+        summarize_docx(file_path)
