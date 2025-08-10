@@ -13,6 +13,15 @@ import threading
 import time
 import signal
 
+# === CUSTOM MODULE IMPORT ===
+tools_py_path = os.path.abspath(os.path.join('tools_py'))
+if tools_py_path not in sys.path:
+    sys.path.append(tools_py_path)
+from modules.globals import get_key_value_from_yml, clean_up_text, get_the_modified_files, get_env_value
+
+auth_token = get_env_value('.env', 'HUGGINGFACE_KEY')
+
+
 if os.environ.get("PYTHONMALLOC") != "default":
     os.environ["PYTHONMALLOC"] = "default"
     os.execv(sys.executable, [sys.executable] + sys.argv)
@@ -85,14 +94,20 @@ warnings.filterwarnings("ignore", category=UserWarning, module="transformers")
 warnings.filterwarnings("ignore", category=FutureWarning, module="huggingface_hub")
 warnings.filterwarnings("ignore")
 
-DEVICE = "cpu"
+# Device selection
+if torch.cuda.is_available():
+    DEVICE = "cuda"
+elif torch.backends.mps.is_available():
+    DEVICE = "mps"
+else:
+    DEVICE = "cpu"
 
 # ─── INIT MODELS ─────────────────────────────────────────
-tokenizer = AutoTokenizer.from_pretrained(model_name, legacy=False)
-model = AutoModelForSeq2SeqLM.from_pretrained(model_name).to(DEVICE)
+tokenizer = AutoTokenizer.from_pretrained(model_name, token=auth_token, legacy=False)
+model = AutoModelForSeq2SeqLM.from_pretrained(model_name, token=auth_token).to(DEVICE)
 text_generator = pipeline("text2text-generation", model=model, tokenizer=tokenizer, device=-1)
 
-embedder = SentenceTransformer("intfloat/e5-base-v2", device=DEVICE)
+embedder = SentenceTransformer("intfloat/e5-base-v2", token=auth_token, device=DEVICE)
 embedder.max_seq_length = 256
 
 # ─── STANZA PATCHED INITIALIZATION ──────────────────────
