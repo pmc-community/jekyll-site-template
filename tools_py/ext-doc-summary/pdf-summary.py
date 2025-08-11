@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import os
 import re
 import sys
@@ -180,8 +182,10 @@ def summarize_section_worker(section_idx, title, text, model_name, device, auth_
 def write_output(sections, combined_summary, out_path, pdf_file_name, pdf_file_path):
     now = datetime.now(timezone.utc)
     front_matter = (
-        f"---\nsummaryType: autoPDFSummary\nsummaryFor: {pdf_file_name}\nfullPath: {pdf_file_path}\n"
-        f"dateTime: {now.strftime('%Y-%m-%d %H:%M:%S')}\ntimestamp: {int(time.time() * 1000)}\n---\n\n"
+        f"---\nsummaryType: autoPDFSummary\nsummaryFor: {pdf_file_name}\n"
+        f"fullPath: {pdf_file_path}\n"
+        f"summaryDateTime: {now.strftime('%Y-%m-%d %H:%M:%S')}\n"
+        f"summaryTimestamp: {int(time.time() * 1000)}\n---\n\n"
     )
 
     with open(out_path, "w", encoding="utf-8") as f:
@@ -255,4 +259,14 @@ if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: python3 script.py <pdf-file-path>")
         sys.exit(1)
-    main(sys.argv[1])
+
+    pdf_path = sys.argv[1]
+    try:
+        # Ensure the file exists before calling main
+        with open(pdf_path, "rb") as f:
+            pass
+        main(pdf_path)
+    except FileNotFoundError:
+        print(f"Error: File '{pdf_path}' not found.", file=sys.stderr)
+        sys.exit(1)
+

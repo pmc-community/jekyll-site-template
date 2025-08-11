@@ -8,3 +8,4 @@ tags: [pdf, summary, office]
 ---
 
 This component will summarise a given pdf file and will save the summary in the same folder as the source PDF.
+

@@ -265,7 +265,8 @@
         "save",
         "summary",
         "folder",
-        "source"
+        "source",
+        "doc"
       ]
     }
   ]

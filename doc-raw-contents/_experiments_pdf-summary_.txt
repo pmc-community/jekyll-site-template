@@ -1,1 +1,1 @@
-this component will summarise a given pdf file and will save the summary in the same folder as the source pdf.
+this component will summarise a given pdf file and will save the summary in the same folder as the source pdf. doc-contents/_experiments/pdf-summary/pr.pdf

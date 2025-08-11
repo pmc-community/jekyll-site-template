@@ -78,7 +78,7 @@
         },
         {
             "permalink": "/experiments/pdf-summary/",
-            "summary": "Write a concise, factual summary in English with no greetings or instructions, maximum 50 words, for the following text. This component will summarise a given pdf file and will save the summary in the same folder as the source pdf."
+            "summary": "Write a concise, factual summary in English with no greetings or instructions, maximum 50 words. This component will summarise a given pdf file and will save the summary in the same folder as the source pdf."
         }
     ]
 }

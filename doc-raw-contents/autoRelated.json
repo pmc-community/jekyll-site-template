@@ -160,12 +160,12 @@
         "permalink": "/components/xlsx-tables/"
       },
       {
-        "title": "PDF Summary",
-        "permalink": "/experiments/pdf-summary/"
-      },
-      {
         "title": "Image",
         "permalink": "/components/image/"
+      },
+      {
+        "title": "Downloads",
+        "permalink": "/components/download-link/"
       }
     ]
   },

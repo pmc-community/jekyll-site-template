@@ -83,6 +83,11 @@ favicon_ico: "favicon.png"
 # define the folder where jekyll will look for collection, otherwise will look in the root folder
 collections_dir: doc-contents
 
+# Explicitly permit the Time class for YAML parsing
+psych:
+  permitted_classes:
+    - Time
+
 # MARKER COLLECTIONS START
 collections:
 
