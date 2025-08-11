@@ -138,7 +138,30 @@ module Jekyll
             
         end
 
-        
+        class ExtPDFSummary < Liquid::Tag
+            def initialize(tag_name, input, tokens)
+                super
+                @input = input.strip
+            end
+
+            def render(context)
+                # Directly get the param string without parsing Liquid template to avoid YAML time deserialization
+                param = @input
+
+                fullPath = File.join(Globals::DOCS_ROOT, param)
+                script_path = File.expand_path("tools_py/ext-doc-summary/pdf-summary.py", Dir.pwd)
+
+                # Run the script safely without shell, passing arguments as separate params
+                system("python3", script_path, fullPath)
+
+                unless $?.success?
+                    warn "PDF summary script failed for #{fullPath}"
+                end
+
+                fullPath
+            end
+        end
+
     end
 
 end
@@ -148,6 +171,6 @@ Liquid::Template.register_tag('XLSXToHtmlTable', Jekyll::Components::XLSXToHtmlT
 Liquid::Template.register_tag('XLSXToHtmlChart', Jekyll::Components::XLSXToHtmlChart)
 Liquid::Template.register_tag('ImgFullPath', Jekyll::Components::ImgFullPath)
 Liquid::Template.register_tag('CardGalleryContent', Jekyll::Components::CardGalleryContent)
-#Liquid::Template.register_tag('ExtPDFSummary', Jekyll::Components::ExtPDFSummary)
+Liquid::Template.register_tag('ExtPDFSummary', Jekyll::Components::ExtPDFSummary)
 
 
