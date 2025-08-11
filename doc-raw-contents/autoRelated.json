@@ -160,12 +160,12 @@
         "permalink": "/components/xlsx-tables/"
       },
       {
-        "title": "Image",
-        "permalink": "/components/image/"
+        "title": "PDF Summary",
+        "permalink": "/experiments/pdf-summary/"
       },
       {
-        "title": "Downloads",
-        "permalink": "/components/download-link/"
+        "title": "Image",
+        "permalink": "/components/image/"
       }
     ]
   },
@@ -175,6 +175,10 @@
       {
         "title": "XLSX Charts",
         "permalink": "/components/xlsx-charts/"
+      },
+      {
+        "title": "Experiments",
+        "permalink": "/experiments/intro/"
       },
       {
         "title": "Link button",
@@ -211,8 +215,8 @@
         "permalink": "/get-started/"
       },
       {
-        "title": "Introduction",
-        "permalink": "/intro/"
+        "title": "Experiments",
+        "permalink": "/experiments/intro/"
       }
     ]
   },
@@ -230,6 +234,53 @@
       {
         "title": "Content items",
         "permalink": "/content/content-items/"
+      }
+    ]
+  },
+  {
+    "permalink": "/experiments/docx-summary/",
+    "related": [
+      {
+        "title": "PDF Summary",
+        "permalink": "/experiments/pdf-summary/"
+      },
+      {
+        "title": "Experiments",
+        "permalink": "/experiments/intro/"
+      }
+    ]
+  },
+  {
+    "permalink": "/experiments/intro/",
+    "related": [
+      {
+        "title": "DOCX Summary",
+        "permalink": "/experiments/docx-summary/"
+      },
+      {
+        "title": "PDF Summary",
+        "permalink": "/experiments/pdf-summary/"
+      },
+      {
+        "title": "XLSX Tables",
+        "permalink": "/components/xlsx-tables/"
+      }
+    ]
+  },
+  {
+    "permalink": "/experiments/pdf-summary/",
+    "related": [
+      {
+        "title": "DOCX Summary",
+        "permalink": "/experiments/docx-summary/"
+      },
+      {
+        "title": "Experiments",
+        "permalink": "/experiments/intro/"
+      },
+      {
+        "title": "XLSX Charts",
+        "permalink": "/components/xlsx-charts/"
       }
     ]
   },
@@ -252,10 +303,6 @@
       {
         "title": "Get started",
         "permalink": "/get-started/"
-      },
-      {
-        "title": "Content",
-        "permalink": "/content/intro/"
       }
     ]
   }

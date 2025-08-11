@@ -222,10 +222,10 @@
         "content"
       ],
       "excerpt": "learn, add, blocks, content, alerts, types, colors",
-      "lastUpdate": "2025-08-02 01:05:20 +0300",
+      "lastUpdate": "2025-08-10 18:16:39 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-08-02 01:05:20 +0300",
-      "createTimeUTC": 1754085920,
+      "createTime": "2025-08-10 18:16:39 +0300",
+      "createTimeUTC": 1754838999,
       "relatedPages": [
         {
           "title": "FAQ Item",
@@ -549,7 +549,8 @@
       "tags": [
         "table",
         "xls",
-        "chart"
+        "chart",
+        "office"
       ],
       "excerpt": "component, importing, excel, charts, documents, simple, create",
       "lastUpdate": "2025-07-26 15:54:49 +0300",
@@ -562,12 +563,12 @@
           "permalink": "/components/xlsx-tables/"
         },
         {
-          "title": "Image",
-          "permalink": "/components/image/"
+          "title": "PDF Summary",
+          "permalink": "/experiments/pdf-summary/"
         },
         {
-          "title": "Downloads",
-          "permalink": "/components/download-link/"
+          "title": "Image",
+          "permalink": "/components/image/"
         }
       ],
       "autoSummary": "This component allows importing excel charts into your documents. Currently we support only:. Line charts column and bar charts pie and doughnut charts. We do not support importing the colors you assign to the series in the excel chart.",
@@ -584,7 +585,8 @@
       ],
       "tags": [
         "table",
-        "xls"
+        "xls",
+        "office"
       ],
       "excerpt": "users, creating, table, markdown, challenge, merged, cells, crazy, quick, maintaining",
       "lastUpdate": "2025-07-25 15:09:17 +0300",
@@ -595,6 +597,10 @@
         {
           "title": "XLSX Charts",
           "permalink": "/components/xlsx-charts/"
+        },
+        {
+          "title": "Experiments",
+          "permalink": "/experiments/intro/"
         },
         {
           "title": "Link button",
@@ -667,8 +673,8 @@
           "permalink": "/get-started/"
         },
         {
-          "title": "Introduction",
-          "permalink": "/intro/"
+          "title": "Experiments",
+          "permalink": "/experiments/intro/"
         }
       ],
       "autoSummary": "There are two types of content that you can use in your documents:. Content directly included in your document or content imported from. External sources are very important because allows you to create reusable pieces of content.",
@@ -724,6 +730,117 @@
       "parent": ""
     },
     {
+      "title": "DOCX Summary",
+      "permalink": "/experiments/docx-summary/",
+      "categories": [
+        "Experiments",
+        "Content",
+        "Components"
+      ],
+      "tags": [
+        "docx",
+        "summary",
+        "office"
+      ],
+      "excerpt": "",
+      "lastUpdate": "2025-08-11 13:11:29 +0300",
+      "lastUpdateUTC": 0,
+      "createTime": "2025-08-11 13:11:29 +0300",
+      "createTimeUTC": 1754907089,
+      "relatedPages": [
+        {
+          "title": "PDF Summary",
+          "permalink": "/experiments/pdf-summary/"
+        },
+        {
+          "title": "Experiments",
+          "permalink": "/experiments/intro/"
+        }
+      ],
+      "autoSummary": "",
+      "similarByContent": [],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
+      "title": "Experiments",
+      "permalink": "/experiments/intro/",
+      "categories": [
+        "Experiments",
+        "Content",
+        "Components"
+      ],
+      "tags": [
+        "pdf",
+        "docx",
+        "summary",
+        "office"
+      ],
+      "excerpt": "series, features, life, easier, creating, content, experiments, encouraged, send",
+      "lastUpdate": "2025-08-11 13:46:20 +0300",
+      "lastUpdateUTC": 0,
+      "createTime": "2025-08-11 13:46:20 +0300",
+      "createTimeUTC": 1754909180,
+      "relatedPages": [
+        {
+          "title": "DOCX Summary",
+          "permalink": "/experiments/docx-summary/"
+        },
+        {
+          "title": "PDF Summary",
+          "permalink": "/experiments/pdf-summary/"
+        },
+        {
+          "title": "XLSX Tables",
+          "permalink": "/components/xlsx-tables/"
+        }
+      ],
+      "autoSummary": "We are working on a series of interesting features that will make your life much easier when creating content. We consider those features as experiments. You are encouraged to use them and to send us your feedback.",
+      "similarByContent": [],
+      "readingTime": 2,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
+      "title": "PDF Summary",
+      "permalink": "/experiments/pdf-summary/",
+      "categories": [
+        "Experiments",
+        "Content",
+        "Components"
+      ],
+      "tags": [
+        "pdf",
+        "summary",
+        "office"
+      ],
+      "excerpt": "component, summarise, pdf, file, save, summary, folder, source",
+      "lastUpdate": "2025-08-11 13:09:13 +0300",
+      "lastUpdateUTC": 0,
+      "createTime": "2025-08-11 13:09:13 +0300",
+      "createTimeUTC": 1754906953,
+      "relatedPages": [
+        {
+          "title": "DOCX Summary",
+          "permalink": "/experiments/docx-summary/"
+        },
+        {
+          "title": "Experiments",
+          "permalink": "/experiments/intro/"
+        },
+        {
+          "title": "XLSX Charts",
+          "permalink": "/components/xlsx-charts/"
+        }
+      ],
+      "autoSummary": "Write a concise, factual summary in English with no greetings or instructions, maximum 50 words, for the following text. This component will summarise a given pdf file and will save the summary in the same folder as the source pdf.",
+      "similarByContent": [],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
       "title": "Get started",
       "permalink": "/get-started/",
       "categories": [
@@ -773,10 +890,6 @@
         {
           "title": "Get started",
           "permalink": "/get-started/"
-        },
-        {
-          "title": "Content",
-          "permalink": "/content/intro/"
         }
       ],
       "autoSummary": "Documentation site builder guide is a comprehensive resource for learning how to create, build, and maintain high-quality documentation sites. This guide will walk you through everything you need to know about building a complete, maintainable, and professional documentation site.",
@@ -801,6 +914,7 @@
     "content",
     "docs",
     "documentation",
+    "docx",
     "download",
     "embed",
     "external",
@@ -813,8 +927,11 @@
     "items",
     "link",
     "lottie",
+    "office",
     "organise docs",
+    "pdf",
     "scrollspy",
+    "summary",
     "table",
     "tabs",
     "video",
@@ -826,7 +943,7 @@
         {
           "title": "Alerts",
           "permalink": "/components/alerts/",
-          "lastUpdate": "02-Aug-2025"
+          "lastUpdate": "10-Aug-2025"
         }
       ],
       "numPages": 1
@@ -896,7 +1013,7 @@
         {
           "title": "Alerts",
           "permalink": "/components/alerts/",
-          "lastUpdate": "02-Aug-2025"
+          "lastUpdate": "10-Aug-2025"
         },
         {
           "title": "Card",
@@ -956,6 +1073,21 @@
       ],
       "numPages": 3
     },
+    "docx": {
+      "pages": [
+        {
+          "title": "DOCX Summary",
+          "permalink": "/experiments/docx-summary/",
+          "lastUpdate": "11-Aug-2025"
+        },
+        {
+          "title": "Experiments",
+          "permalink": "/experiments/intro/",
+          "lastUpdate": "11-Aug-2025"
+        }
+      ],
+      "numPages": 2
+    },
     "download": {
       "pages": [
         {
@@ -971,7 +1103,7 @@
         {
           "title": "Alerts",
           "permalink": "/components/alerts/",
-          "lastUpdate": "02-Aug-2025"
+          "lastUpdate": "10-Aug-2025"
         },
         {
           "title": "FAQ Item",
@@ -1111,6 +1243,36 @@
       ],
       "numPages": 1
     },
+    "office": {
+      "pages": [
+        {
+          "title": "XLSX Charts",
+          "permalink": "/components/xlsx-charts/",
+          "lastUpdate": "26-Jul-2025"
+        },
+        {
+          "title": "XLSX Tables",
+          "permalink": "/components/xlsx-tables/",
+          "lastUpdate": "25-Jul-2025"
+        },
+        {
+          "title": "DOCX Summary",
+          "permalink": "/experiments/docx-summary/",
+          "lastUpdate": "11-Aug-2025"
+        },
+        {
+          "title": "Experiments",
+          "permalink": "/experiments/intro/",
+          "lastUpdate": "11-Aug-2025"
+        },
+        {
+          "title": "PDF Summary",
+          "permalink": "/experiments/pdf-summary/",
+          "lastUpdate": "11-Aug-2025"
+        }
+      ],
+      "numPages": 5
+    },
     "organise docs": {
       "pages": [
         {
@@ -1121,6 +1283,21 @@
       ],
       "numPages": 1
     },
+    "pdf": {
+      "pages": [
+        {
+          "title": "Experiments",
+          "permalink": "/experiments/intro/",
+          "lastUpdate": "11-Aug-2025"
+        },
+        {
+          "title": "PDF Summary",
+          "permalink": "/experiments/pdf-summary/",
+          "lastUpdate": "11-Aug-2025"
+        }
+      ],
+      "numPages": 2
+    },
     "scrollspy": {
       "pages": [
         {
@@ -1130,6 +1307,26 @@
         }
       ],
       "numPages": 1
+    },
+    "summary": {
+      "pages": [
+        {
+          "title": "DOCX Summary",
+          "permalink": "/experiments/docx-summary/",
+          "lastUpdate": "11-Aug-2025"
+        },
+        {
+          "title": "Experiments",
+          "permalink": "/experiments/intro/",
+          "lastUpdate": "11-Aug-2025"
+        },
+        {
+          "title": "PDF Summary",
+          "permalink": "/experiments/pdf-summary/",
+          "lastUpdate": "11-Aug-2025"
+        }
+      ],
+      "numPages": 3
     },
     "table": {
       "pages": [
@@ -1185,7 +1382,11 @@
   "catList": [
     "Components",
     "Content",
-    "General"
+    "Experiments",
+    "General",
+    "cat1",
+    "cat2",
+    "cat3"
   ],
   "catDetails": {
     "Components": {
@@ -1193,7 +1394,7 @@
         {
           "title": "Alerts",
           "permalink": "/components/alerts/",
-          "lastUpdate": "02-Aug-2025"
+          "lastUpdate": "10-Aug-2025"
         },
         {
           "title": "Card",
@@ -1249,9 +1450,24 @@
           "title": "Content items",
           "permalink": "/content/content-items/",
           "lastUpdate": "26-Jul-2025"
+        },
+        {
+          "title": "DOCX Summary",
+          "permalink": "/experiments/docx-summary/",
+          "lastUpdate": "11-Aug-2025"
+        },
+        {
+          "title": "Experiments",
+          "permalink": "/experiments/intro/",
+          "lastUpdate": "11-Aug-2025"
+        },
+        {
+          "title": "PDF Summary",
+          "permalink": "/experiments/pdf-summary/",
+          "lastUpdate": "11-Aug-2025"
         }
       ],
-      "numPages": 12
+      "numPages": 15
     },
     "Content": {
       "pages": [
@@ -1264,9 +1480,44 @@
           "title": "External content",
           "permalink": "/content/ec/",
           "lastUpdate": "20-Jul-2025"
+        },
+        {
+          "title": "DOCX Summary",
+          "permalink": "/experiments/docx-summary/",
+          "lastUpdate": "11-Aug-2025"
+        },
+        {
+          "title": "Experiments",
+          "permalink": "/experiments/intro/",
+          "lastUpdate": "11-Aug-2025"
+        },
+        {
+          "title": "PDF Summary",
+          "permalink": "/experiments/pdf-summary/",
+          "lastUpdate": "11-Aug-2025"
         }
       ],
-      "numPages": 2
+      "numPages": 5
+    },
+    "Experiments": {
+      "pages": [
+        {
+          "title": "DOCX Summary",
+          "permalink": "/experiments/docx-summary/",
+          "lastUpdate": "11-Aug-2025"
+        },
+        {
+          "title": "Experiments",
+          "permalink": "/experiments/intro/",
+          "lastUpdate": "11-Aug-2025"
+        },
+        {
+          "title": "PDF Summary",
+          "permalink": "/experiments/pdf-summary/",
+          "lastUpdate": "11-Aug-2025"
+        }
+      ],
+      "numPages": 3
     },
     "General": {
       "pages": [
@@ -1282,6 +1533,15 @@
         }
       ],
       "numPages": 2
+    },
+    "cat1": {
+      "pages": []
+    },
+    "cat2": {
+      "pages": []
+    },
+    "cat3": {
+      "pages": []
     }
   },
   "hsSettings": {

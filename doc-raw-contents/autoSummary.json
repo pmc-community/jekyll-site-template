@@ -71,6 +71,14 @@
         {
             "permalink": "/components/card/",
             "summary": "Cards can be included as single items or in galleries of cards."
+        },
+        {
+            "permalink": "/experiments/intro/",
+            "summary": "We are working on a series of interesting features that will make your life much easier when creating content. We consider those features as experiments. You are encouraged to use them and to send us your feedback."
+        },
+        {
+            "permalink": "/experiments/pdf-summary/",
+            "summary": "Write a concise, factual summary in English with no greetings or instructions, maximum 50 words, for the following text. This component will summarise a given pdf file and will save the summary in the same folder as the source pdf."
         }
     ]
 }

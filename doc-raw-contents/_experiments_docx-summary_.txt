@@ -1,0 +1,1 @@
+this component will summarise a given docx file and will save the summary in the same folder as the source docx.

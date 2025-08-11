@@ -3,7 +3,7 @@ layout: page
 title: XLSX Charts
 permalink: /components/xlsx-charts/
 categories: [Components]
-tags: [table, xls, chart]
+tags: [table, xls, chart, office]
 ---
 
 # Summary

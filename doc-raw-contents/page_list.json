@@ -11,10 +11,10 @@
       "content"
     ],
     "excerpt": "",
-    "lastUpdate": "2025-08-02 01:05:20 +0300",
-    "lastUpdateUTC": 1754085920,
-    "createTime": "2025-08-02 01:05:20 +0300",
-    "createTimeUTC": 1754085920,
+    "lastUpdate": "2025-08-10 18:16:39 +0300",
+    "lastUpdateUTC": 1754838999,
+    "createTime": "2025-08-10 18:16:39 +0300",
+    "createTimeUTC": 1754838999,
     "relatedPages": [],
     "autoSummary": "",
     "similarByContent": [],
@@ -216,7 +216,8 @@
     "tags": [
       "table",
       "xls",
-      "chart"
+      "chart",
+      "office"
     ],
     "excerpt": "",
     "lastUpdate": "2025-07-26 15:54:49 +0300",
@@ -238,7 +239,8 @@
     ],
     "tags": [
       "table",
-      "xls"
+      "xls",
+      "office"
     ],
     "excerpt": "",
     "lastUpdate": "2025-07-25 15:09:17 +0300",
@@ -317,6 +319,82 @@
     "similarByContent": [],
     "readingTime": 0,
     "hasDynamicContent": true,
+    "parent": ""
+  },
+  {
+    "title": "DOCX Summary",
+    "permalink": "/experiments/docx-summary/",
+    "categories": [
+      "Experiments",
+      "Content",
+      "Components"
+    ],
+    "tags": [
+      "docx",
+      "summary",
+      "office"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-08-11 13:11:29 +0300",
+    "lastUpdateUTC": 1754907089,
+    "createTime": "2025-08-11 13:11:29 +0300",
+    "createTimeUTC": 1754907089,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Experiments",
+    "permalink": "/experiments/intro/",
+    "categories": [
+      "Experiments",
+      "Content",
+      "Components"
+    ],
+    "tags": [
+      "pdf",
+      "docx",
+      "summary",
+      "office"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-08-11 13:46:20 +0300",
+    "lastUpdateUTC": 1754909180,
+    "createTime": "2025-08-11 13:46:20 +0300",
+    "createTimeUTC": 1754909180,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "PDF Summary",
+    "permalink": "/experiments/pdf-summary/",
+    "categories": [
+      "Experiments",
+      "Content",
+      "Components"
+    ],
+    "tags": [
+      "pdf",
+      "summary",
+      "office"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-08-11 13:09:13 +0300",
+    "lastUpdateUTC": 1754906953,
+    "createTime": "2025-08-11 13:09:13 +0300",
+    "createTimeUTC": 1754906953,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
     "parent": ""
   },
   {

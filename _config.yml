@@ -93,6 +93,9 @@ collections:
   components:
     permalink: "/:collection/:path"
     output: true
+  experiments:
+    permalink: "/:collection/:path"
+    output: true
   
 
   # default collections (last position(s))
@@ -113,6 +116,9 @@ just_the_docs:
       nav_fold: true
     components:
       name: Components
+      nav_fold: true
+    experiments:
+      name: Experiments
       nav_fold: true
 
     # default collections (last position(s))

@@ -2,8 +2,8 @@
 summaryType: autoWordSummary
 summaryFor: pr__word_summary
 fullPath: tools_py/ext-doc-summary/pr.docx
-dateTime: 2025-08-10 17:53:12
-timestamp: 1754837592
+dateTime: 2025-08-11 11:53:44
+timestamp: 1754902424
 ---
 
 This Progress Report was drafted in accordance with the provisions of the ToR (§7.1-Reporting Requirements) and with the Revised Organisation and Methodology. The reporting period is October – December (incl.) 2024, containing Quarter 8 of the implementation. The project status presented in this report will be the new reporting baseline as of January 2025.

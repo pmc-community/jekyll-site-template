@@ -248,6 +248,7 @@ def main(pdf_file_path):
     
     write_output(sections, combined_summary, out_file_path, pdf_file_name, pdf_file_path)
     
+    print("\033[1A", end='')
     console.print(f"\n📝 Summary written to [bold green]{out_file_path}[/bold green]")
 
 if __name__ == "__main__":
