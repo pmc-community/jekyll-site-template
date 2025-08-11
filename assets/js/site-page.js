@@ -421,7 +421,7 @@ const page__getPageInfo = () => {
                                 sitefunction="catBadgeOnPage" 
                                 class="fw-normal border px-2 rounded bg-warning-subtle text-dark"> 
                                 ${numPages} 
-                        </span>
+                            </span>
                         </a>
                     </div>
                     ${!isLast ? isNotLast : '' } 
@@ -500,7 +500,7 @@ const page__getPageInfo = () => {
         const catsHtml = siteCats + customCats === 0 ?
             '' :
             `
-                <div class="d-flex align-items-center">
+                <div class="d-flex flex-wrap align-items-center">
                     ${pageCategories(page)}
                 </div>
             `;
