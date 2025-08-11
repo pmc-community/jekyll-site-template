@@ -160,12 +160,12 @@
         "permalink": "/components/xlsx-tables/"
       },
       {
-        "title": "Image",
-        "permalink": "/components/image/"
+        "title": "DOCX Summary",
+        "permalink": "/experiments/docx-summary/"
       },
       {
-        "title": "Downloads",
-        "permalink": "/components/download-link/"
+        "title": "Image",
+        "permalink": "/components/image/"
       }
     ]
   },
@@ -241,12 +241,16 @@
     "permalink": "/experiments/docx-summary/",
     "related": [
       {
+        "title": "Experiments",
+        "permalink": "/experiments/intro/"
+      },
+      {
         "title": "PDF Summary",
         "permalink": "/experiments/pdf-summary/"
       },
       {
-        "title": "Experiments",
-        "permalink": "/experiments/intro/"
+        "title": "XLSX Charts",
+        "permalink": "/components/xlsx-charts/"
       }
     ]
   },
@@ -254,12 +258,12 @@
     "permalink": "/experiments/intro/",
     "related": [
       {
-        "title": "DOCX Summary",
-        "permalink": "/experiments/docx-summary/"
-      },
-      {
         "title": "PDF Summary",
         "permalink": "/experiments/pdf-summary/"
+      },
+      {
+        "title": "DOCX Summary",
+        "permalink": "/experiments/docx-summary/"
       },
       {
         "title": "XLSX Tables",
@@ -271,12 +275,12 @@
     "permalink": "/experiments/pdf-summary/",
     "related": [
       {
-        "title": "DOCX Summary",
-        "permalink": "/experiments/docx-summary/"
-      },
-      {
         "title": "Experiments",
         "permalink": "/experiments/intro/"
+      },
+      {
+        "title": "DOCX Summary",
+        "permalink": "/experiments/docx-summary/"
       },
       {
         "title": "XLSX Charts",

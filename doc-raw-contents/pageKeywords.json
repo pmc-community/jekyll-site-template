@@ -259,14 +259,28 @@
       "permalink": "/experiments/pdf-summary/",
       "keywords": [
         "component",
-        "summarise",
+        "helps",
+        "enhancing",
+        "content",
+        "auto",
+        "generated",
+        "summaries",
         "pdf",
+        "files",
+        "cmbined"
+      ]
+    },
+    {
+      "permalink": "/experiments/docx-summary/",
+      "keywords": [
+        "component",
+        "summarise",
+        "docx",
         "file",
         "save",
         "summary",
         "folder",
-        "source",
-        "doc"
+        "source"
       ]
     }
   ]

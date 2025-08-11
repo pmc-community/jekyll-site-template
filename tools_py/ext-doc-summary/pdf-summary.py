@@ -184,22 +184,28 @@ def write_output(sections, combined_summary, out_path, pdf_file_name, pdf_file_p
     front_matter = (
         f"---\nsummaryType: autoPDFSummary\nsummaryFor: {pdf_file_name}\n"
         f"fullPath: {pdf_file_path}\n"
-        f"summaryDateTime: {now.strftime('%Y-%m-%d %H:%M:%S')}\n"
-        f"summaryTimestamp: {int(time.time() * 1000)}\n---\n\n"
+        f"dateTime: \"{now.strftime('%Y-%m-%d %H:%M:%S')}\"\n" #ensure string, otherwise jekyll build go crazy
+        f"timestamp: {int(time.time() * 1000)}\n---\n\n"
     )
 
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(front_matter)
         f.write(combined_summary)
 
+def clear_line():
+    sys.stdout.write("\r\033[K")  # move to start of line & clear to end
+    sys.stdout.flush()
+
 # ---- Main ---- #
 def main(pdf_file_path):
     pdf_file_name = os.path.basename(pdf_file_path)
-    out_file_path = os.path.splitext(pdf_file_path)[0] + "__pdf_summary.md"
+    out_file_path = os.path.splitext(pdf_file_path)[0] + "__pdf_summary.txt"
 
+    clear_line()
     console.print(f"🔎 Extracting structure from [bold]{pdf_file_name}[/bold] ...")
     sections = extract_structure(pdf_file_path)
 
+    clear_line()
     console.print(f"⏳ Summarizing sections with model [bold]{MODEL_NAME}[/bold]: ")
     
     model_mem_estimate_gb = 8
@@ -210,7 +216,8 @@ def main(pdf_file_path):
     
     num_workers = max(1, min(max_processes_by_mem, max_processes_by_cpu))
     
-    console.print(f"Limiting to {num_workers} processes to stay within resource constraints.")
+    clear_line()
+    console.print(f"🧠 Limiting to {num_workers} processes to stay within resource constraints.")
     
     manager = mp.Manager()
     progress_queue = manager.Queue()
@@ -262,10 +269,16 @@ if __name__ == "__main__":
 
     pdf_path = sys.argv[1]
     try:
+        clear_line()
+        console.print(f"\n==================================================================")
+
         # Ensure the file exists before calling main
         with open(pdf_path, "rb") as f:
             pass
         main(pdf_path)
+        clear_line()
+        console.print(f"==================================================================\n\n")
+
     except FileNotFoundError:
         print(f"Error: File '{pdf_path}' not found.", file=sys.stderr)
         sys.exit(1)

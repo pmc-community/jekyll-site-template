@@ -60,6 +60,7 @@ exclude:
   - .env
   - assets/config/ # excluding from build because may generate infinite build loop. copied to _site with a site:post_write hook
   - unused/
+  - doc-contents/**/*.txt
 
 aux_links:
   "GitHub":
@@ -82,11 +83,6 @@ favicon_ico: "favicon.png"
 
 # define the folder where jekyll will look for collection, otherwise will look in the root folder
 collections_dir: doc-contents
-
-# Explicitly permit the Time class for YAML parsing
-psych:
-  permitted_classes:
-    - Time
 
 # MARKER COLLECTIONS START
 collections:

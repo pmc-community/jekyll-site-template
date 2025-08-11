@@ -64,7 +64,7 @@ module Jekyll
 
               Globals.clearLine
               if !permalink.empty?
-                Globals.putsColText(Globals::PURPLE, "- PERMALINK: #{permalink} ... done (#{pageNo})")
+                Globals.putsColText(Globals::GREEN, "- PERMALINK: #{permalink} ... done (#{pageNo})")
               else
                 Globals.putsColText(Globals::PURPLE, response.dig("payload", "message") || "(No message)")
               end

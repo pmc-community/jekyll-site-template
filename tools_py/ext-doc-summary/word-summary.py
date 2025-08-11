@@ -205,9 +205,8 @@ def deduplicate_sentences_across_all(final_summary, section_summaries):
 
 
 def write_output(sections, final_summary, out_path, docx_path):
-    # Change extension to .md
     base, _ = os.path.splitext(out_path)
-    out_path_md = base + ".md"
+    out_path_md = base + ".txt"
     
     section_summaries = [sec["summary"] for sec in sections if "summary" in sec]
     dedup_final, dedup_section_summaries = deduplicate_sentences_across_all(final_summary, section_summaries)
@@ -224,7 +223,7 @@ def write_output(sections, final_summary, out_path, docx_path):
         f"summaryType: autoWordSummary\n"
         f"summaryFor: {file_name}\n"
         f"fullPath: {docx_path}\n"
-        f"dateTime: {date_str}\n"
+        f"dateTime: \"{date_str}\"\n" #ensure string, otherwise jekyll build go crazy
         f"timestamp: {timestamp}\n"
         "---\n\n"
     )

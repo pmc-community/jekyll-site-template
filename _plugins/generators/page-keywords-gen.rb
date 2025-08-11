@@ -61,7 +61,8 @@ module Jekyll
                           existingPage = keywords.find { |obj| obj["permalink"] == crtPage["permalink"] }
                           if existingPage
                             existingPage["keywords"] = crtPage["keywords"]
-                            Globals.putsColText(Globals::PURPLE, " - #{front_matter["permalink"]}: done")
+                            #Globals.clearLine
+                            #Globals.putsColText(Globals::GREEN, " - PERMALINK: #{front_matter["permalink"]}: done")
                           else
                             keywords << crtPage
                           end
@@ -69,7 +70,7 @@ module Jekyll
 
                           # Output the permalink of the processed file
                           Globals.clearLine
-                          Globals.putsColText(Globals::PURPLE, "- PERMALINK: #{front_matter["permalink"]} ... done")
+                          Globals.putsColText(Globals::GREEN, "- PERMALINK: #{front_matter["permalink"]} ... done")
                         end
                       end
                     end

@@ -563,12 +563,12 @@
           "permalink": "/components/xlsx-tables/"
         },
         {
-          "title": "Image",
-          "permalink": "/components/image/"
+          "title": "DOCX Summary",
+          "permalink": "/experiments/docx-summary/"
         },
         {
-          "title": "Downloads",
-          "permalink": "/components/download-link/"
+          "title": "Image",
+          "permalink": "/components/image/"
         }
       ],
       "autoSummary": "This component allows importing excel charts into your documents. Currently we support only:. Line charts column and bar charts pie and doughnut charts. We do not support importing the colors you assign to the series in the excel chart.",
@@ -742,22 +742,26 @@
         "summary",
         "office"
       ],
-      "excerpt": "",
+      "excerpt": "component, summarise, docx, file, save, summary, folder, source",
       "lastUpdate": "2025-08-11 13:46:56 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-08-11 13:46:56 +0300",
       "createTimeUTC": 1754909216,
       "relatedPages": [
         {
+          "title": "Experiments",
+          "permalink": "/experiments/intro/"
+        },
+        {
           "title": "PDF Summary",
           "permalink": "/experiments/pdf-summary/"
         },
         {
-          "title": "Experiments",
-          "permalink": "/experiments/intro/"
+          "title": "XLSX Charts",
+          "permalink": "/components/xlsx-charts/"
         }
       ],
-      "autoSummary": "",
+      "autoSummary": "Write a concise, factual summary in English with no greetings or instructions, maximum 50 words. This component will summarise a given docx file and will save the summary in the same folder as the source docx.",
       "similarByContent": [],
       "readingTime": 1,
       "hasDynamicContent": false,
@@ -784,12 +788,12 @@
       "createTimeUTC": 1754909216,
       "relatedPages": [
         {
-          "title": "DOCX Summary",
-          "permalink": "/experiments/docx-summary/"
-        },
-        {
           "title": "PDF Summary",
           "permalink": "/experiments/pdf-summary/"
+        },
+        {
+          "title": "DOCX Summary",
+          "permalink": "/experiments/docx-summary/"
         },
         {
           "title": "XLSX Tables",
@@ -815,28 +819,28 @@
         "summary",
         "office"
       ],
-      "excerpt": "component, summarise, pdf, file, save, summary, folder, source, doc",
-      "lastUpdate": "2025-08-11 13:46:56 +0300",
+      "excerpt": "component, helps, enhancing, content, auto, generated, summaries, pdf, files, cmbined",
+      "lastUpdate": "2025-08-11 15:23:20 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-08-11 13:46:56 +0300",
-      "createTimeUTC": 1754909216,
+      "createTime": "2025-08-11 15:23:20 +0300",
+      "createTimeUTC": 1754915000,
       "relatedPages": [
-        {
-          "title": "DOCX Summary",
-          "permalink": "/experiments/docx-summary/"
-        },
         {
           "title": "Experiments",
           "permalink": "/experiments/intro/"
+        },
+        {
+          "title": "DOCX Summary",
+          "permalink": "/experiments/docx-summary/"
         },
         {
           "title": "XLSX Charts",
           "permalink": "/components/xlsx-charts/"
         }
       ],
-      "autoSummary": "Write a concise, factual summary in English with no greetings or instructions, maximum 50 words. This component will summarise a given pdf file and will save the summary in the same folder as the source pdf.",
+      "autoSummary": "This component helps enhancing your content with auto generated summaries of pdf files. It is cmbined with the download component, so the output rendered will be a summary of the pdf file and a download button to donload the original file. We cannot guarantee 100 the quality of the summary.",
       "similarByContent": [],
-      "readingTime": 1,
+      "readingTime": 8,
       "hasDynamicContent": false,
       "parent": ""
     },

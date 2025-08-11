@@ -38,6 +38,10 @@ module Globals
         puts col + text + RESET
     end
 
+    def self.printColText(col, text)
+        print col + text + RESET
+    end
+
     def self.clearLine()
         #print "\e[2K"
         print "\e[2K\e[G"
@@ -175,7 +179,9 @@ module Globals
                     # better to suppress warnings to be shown by py scripts and leave only errors
                     # otherwise the console may be "invaded" by warnings raised by any py script on traceback
                     stderr.each_line do |line|
+                        clearLine
                         puts "#{line}"
+                        #moveUpOneLine
                     end
 
                     callback.call({

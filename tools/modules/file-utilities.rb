@@ -189,6 +189,7 @@ module FileUtilities
                 page = Globals.find_object_by_multiple_key_value(JSON.parse(site.data['page_list']), {"permalink" => front_matter["permalink"]}) || {}
                 next if page.nil? || page == {}
                 Globals.moveUpOneLine
+                Globals.clearLine
                 Globals.putsColText(Globals::PURPLE,"Generating raw content ... #{front_matter["permalink"]}")
                 Globals.show_spinner do
                     rendered_content = FileUtilities.render_jekyll_page(site, file_path, front_matter, content)

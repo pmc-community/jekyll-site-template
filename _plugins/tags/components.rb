@@ -151,14 +151,19 @@ module Jekyll
                 fullPath = File.join(Globals::DOCS_ROOT, param)
                 script_path = File.expand_path("tools_py/ext-doc-summary/pdf-summary.py", Dir.pwd)
 
-                # Run the script safely without shell, passing arguments as separate params
-                system("python3", script_path, fullPath)
-
-                unless $?.success?
-                    warn "PDF summary script failed for #{fullPath}"
+                filename_no_ext = File.basename(fullPath, File.extname(fullPath))
+                dir_path = File.dirname(fullPath)
+                sum_file = "#{dir_path}/#{filename_no_ext}__pdf_summary.txt"
+                
+                if !File.exist?(File.expand_path(sum_file, Dir.pwd))
+                    # Run the script safely without shell, passing arguments as separate params
+                    system("python3", script_path, fullPath)
                 end
 
-                fullPath
+
+                #"fp: #{fullPath}  fn: #{sum_file} full: #{File.expand_path(sum_file, Dir.pwd)}"
+                front_matter, content = FileUtilities.parse_front_matter(File.read(sum_file))
+                content
             end
         end
 

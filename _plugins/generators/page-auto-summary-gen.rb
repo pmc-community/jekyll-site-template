@@ -16,10 +16,11 @@ module Jekyll
                 modified_files = FileUtilities.read_json_file("#{site.data['buildConfig']["rawContentFolder"]}/modified_files.json")["files"]
                 return if !modified_files
                 if (modified_files.length == 0)
+                    Globals.clearLine
                     Globals.putsColText(Globals::PURPLE,"Generating summaries ... nothing to do! (no content changes)")
                     
                 else
-
+                    Globals.clearLine
                     Globals.putsColText(Globals::PURPLE,"Generating summaries ... for #{modified_files.length} pages")
                     # SUMMARIES
                     Globals.show_spinner do
@@ -30,7 +31,7 @@ module Jekyll
                             permalink = python_script_response["payload"]["payload"]["permalink"]
                             pageNo = python_script_response["outputNo"]
                             Globals.clearLine
-                            Globals.putsColText( Globals::PURPLE, "- PERMALINK: #{permalink} ... done (#{pageNo})")
+                            Globals.printColText( Globals::GREEN, "- PERMALINK: #{permalink} ... done (#{pageNo})")
                         end
 
                         # the py script generates doc-raw-contents/autoSummary.json

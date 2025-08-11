@@ -86,5 +86,9 @@
     {
         "permalink": "/experiments/pdf-summary/",
         "similarFiles": []
+    },
+    {
+        "permalink": "/experiments/docx-summary/",
+        "similarFiles": []
     }
 ]
