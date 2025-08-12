@@ -11,7 +11,7 @@ module Globals
     RESET = "\e[0m"
     WHITE = "\e[37m"
     YELLOW = "\e[33m"
-    GREEN = "\e\n[32m"
+    GREEN = "\e[32m"
     PURPLE = "\e[35m"
     RED = "\e[31m"
     BACK_1_ROW = "\e[1A"
