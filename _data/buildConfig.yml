@@ -4,7 +4,7 @@ pyPageSummary:
   allInOneStep: true #enable/disable summary generation
   allInOneStepScript: "tools_py/page-summary/auto-summary.py"
   summaryLength: 50 #play with the min summary words for better summaries
-  usePrompt: true #some models doesn't need prompt, propmt may even reduce the quality of summary
+  usePrompt: false #some models doesn't need prompt, propmt may even reduce the quality of summary
   model: 
     # best option of pretrained model for summarizing multilingual texts
     # use a specific language pretrained model from huggingface if the documentation is a single language

@@ -62,7 +62,7 @@
         },
         {
             "permalink": "/components/image/",
-            "summary": "Write a concise, factual summary in English with no greetings or instructions, maximum 50 words, for the following text. This component allows placing images into your content. Images can have captions (lets say you need to show some credits or copyright information) or not."
+            "summary": "This component allows placing images into your content. Images can have captions (lets say you need to show some credits or copyright information) or not. The component is designed to work with responsive images."
         },
         {
             "permalink": "/content/content-items/",
@@ -78,7 +78,7 @@
         },
         {
             "permalink": "/experiments/pdf-summary/",
-            "summary": "This component helps enhancing your content with auto generated summaries of pdf files. It is combined with the download component, so the output rendered will be a summary of the pdf file and a download button to donload the original file."
+            "summary": "This component helps enhancing your content with auto generated summaries of pdf files. It is combined with the download component, so the output rendered will be a summary of the pdf file and a download button to download the original file."
         },
         {
             "permalink": "/experiments/docx-summary/",

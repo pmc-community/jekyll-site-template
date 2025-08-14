@@ -19,7 +19,8 @@ The following examples are based on a dedicated media folder:
 {% raw %}
 ```javascript
 {% include elements/image.html 
-  source="partials/media/home-600.png" 
+  source="partials/media/home-600.png"
+  mediaDir="true" 
   caption="Image caption"
   captionBorder="true"
   link="https://pmc-expert.com"
@@ -31,7 +32,7 @@ The following examples are based on a dedicated media folder:
 Observe that the `height` and `width` parameters were not provided to not break the responsiveness. If really needed, these parameters shall be provided like `h="...px"` and `w="...px"`. Any known unit is accepted (`px`, `vh`, `vw`, `%`, `auto`). When only one value is provided (`h` or `w`), the other one is automatically assigned with `auto` value.
 
 {% include elements/image.html 
-  source="partials/media/home-600.png" 
+  source="partials/media/home-600.png"
   caption="Image caption"
   captionBorder="true"
   link="https://pmc-expert.com"

@@ -1,0 +1,123 @@
+{% capture uuid %}
+  {% UUID %}
+{% endcapture %}
+{% assign sid = uuid | strip %}
+
+{% assign file = include.file || default: "" %}
+{% assign btnType = include.btnType || default: "primary" %}
+{% assign btnOutline = include.btnType || default: "false" %}
+{% assign btnText = include.btnText || default: "Download" %}
+{% assign sBorder = include.sBorder || default: "false" %}
+{% assign sh = include.sh || default: "" %}
+
+{% if file %}
+ <div id="pdf-summary-container-{{sid}}" class="row">
+ 
+<div class="col-2 d-flex align-items-center d-none" id="pdf-summary-img-col-{{sid}}">
+
+ <div id="pdf-summary-img-{{sid}}" class="d-none">
+
+   {% capture img %}
+    {% ExtPDFImg {{file}} %}
+   {% endcapture %}
+   
+   {% assign filename_with_ext = file | split: '/' | last %}
+
+   {% capture imgG %}
+    source={{img}}|caption={{filename_with_ext}}
+   {% endcapture %}
+    
+   {% include elements/image-gallery.html 
+    img=imgG 
+   %}
+
+ </div>
+</div>
+
+<div id="pdf-summary-text-col-{{sid}}" class="col-12">
+  {% if sBorder != "false" %}
+   {% assign borderClass = "border border-secondary border-opacity-25 rounded p-2" %}
+  {% else %}
+   {% assign borderClass = "" %}
+  {% endif %}
+  
+  <div id="pdf-summary-{{sid}}" class="mb-2 {{borderClass}}" >
+   {% capture c %}
+    {% ExtPDFSummary {{file}} %}
+   {% endcapture %}
+   {{c | markdonify}}
+  </div>
+
+  <div id="pdf-summary-buttons-{{sid}}" class="d-flex justify-content-between mb-4 align-items-center">
+  
+  <div>
+   <button id="pdf-summary-toggle-fp-{{sid}}" class="btn btn-sm btn-success"><i class="bi bi-arrow-right"></i></button>
+  </div>
+
+  <div id="pdf-summary-download-{{sid}}">
+   {% assign filename_with_ext = file | split: '/' | last %}
+   {% include elements/downloads.html 
+    type=btnType 
+    outline=btnOutline
+    text=btnText 
+    file=filename_with_ext
+    downloadName=filename_with_ext
+   %}
+  </div>
+
+  </div>
+
+</div>
+
+ </div>
+
+<script id="pdf-summary-settings-{{sid}}">
+
+  $('#pdf-summary-container-{{sid}}')
+  .find('div[id^="image-gallery-container-"]')
+  .addClass('mt-0 px-0');
+
+ $('#pdf-summary-container-{{sid}}')
+  .find('div[id^="image-gallery-container-"]')
+  .find('div[id^="image-gallery-"]')
+  .children().first().removeAttr('class');
+ $('#pdf-summary-container-{{sid}}').find('img').css('height', 'auto');
+ $('#pdf-summary-img-{{sid}}').removeClass('d-none');
+ 
+ if (preFlight.envInfo.device.deviceType === 'desktop') {
+  $('#pdf-summary-{{sid}}').addClass('ghBtnLink');
+ };
+ 
+ $('#pdf-summary-toggle-fp-{{sid}}').on('click', function() {
+    const colImgStatus = $('#pdf-summary-img-col-{{sid}}').hasClass('d-none');
+    if (colImgStatus) {
+     $('#pdf-summary-toggle-fp-{{sid}}').find('i').removeClass('bi-arrow-right').addClass('bi-arrow-left');
+     $('#pdf-summary-toggle-fp-{{sid}}').removeClass('btn-success').addClass('btn-danger');
+      
+      $('#pdf-summary-text-col-{{sid}}').removeClass('col-12').addClass('col-10');
+      $('#pdf-summary-img-col-{{sid}}').removeClass('d-none');
+
+    } else {
+     $('#pdf-summary-toggle-fp-{{sid}}').find('i').removeClass('bi-arrow-left').addClass('bi-arrow-right');
+     $('#pdf-summary-toggle-fp-{{sid}}').removeClass('btn-danger').addClass('btn-success');
+      
+      $('#pdf-summary-img-col-{{sid}}').addClass('d-none');
+      $('#pdf-summary-text-col-{{sid}}').removeClass('col-10').addClass('col-12');
+      
+    };
+
+ });
+
+</script>
+
+<style>
+ #pdf-summary-{{sid}} {
+  height: {{sh}} !important; 
+  overflow-y: auto !important;
+ }
+</style>
+
+{% else %}
+ {% assign mess="Something went wrong when rendering PDF summary. Maybe the source PDF was not provided!" %}
+ {% include elements/alert.html class="danger" content=mess title="Error" %}
+{% endif %}

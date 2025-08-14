@@ -15,13 +15,14 @@
 
 {% assign source = include.source %}
 {% assign caption = include.caption %}
-{% assign h = include.h || default: "" %}
-{% assign w = include.w || default: "" %}
+{% assign h = include.h || default: "auto" %}
+{% assign w = include.w || default: "auto" %}
 {% assign captionBorder = include.captionBorder || default: "false" %}
 {% assign link = include.link || default: "" %}
 {% assign newTab = include.newTab || default: "false" %}
 {% assign imgLink = include.imgLink || default: "" %}
 {% assign imgLinkNewTab = include.imgLinkNewTab || default: "false" %}
+{% assign mediaDir = include.mediaDir || default: "false" %}
 
 {% if h and w %}
   {% assign final_h = h %}
@@ -33,10 +34,9 @@
   {% assign final_w = w %}
   {% assign final_h = "auto" %}
 {% else %}
-  {% assign final_h = "" %}
-  {% assign final_w = "" %}
+  {% assign final_h = "auto" %}
+  {% assign final_w = "auto" %}
 {% endif %}
-
 
 {% if source %}
  {% capture fullPath %}

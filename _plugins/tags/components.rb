@@ -106,7 +106,19 @@ module Jekyll
 
             def render(context)
                 param = Liquid::Template.parse(@input).render(context)
-                fullPath = "/#{Globals::DOCS_ROOT}/#{param.strip}"
+                inputPath = param.strip
+                inputPath = "/#{param}"
+                inputPath = inputPath.gsub("//", "/")
+
+                if inputPath.downcase.start_with?("/partials")
+                    fullPath = "/#{Globals::DOCS_ROOT}/#{inputPath.strip}"
+                else
+                    fullPath = inputPath
+                end
+
+                fullPath = fullPath.gsub("//", "/").strip        
+                fullPath = Globals.remove_leading_underscore_from_path(fullPath)
+
                 fullPath
             end
             
@@ -141,12 +153,14 @@ module Jekyll
         class ExtPDFSummary < Liquid::Tag
             def initialize(tag_name, input, tokens)
                 super
-                @input = input.strip
+                @template_variable = Liquid::Template.parse("{{" + input + "}}")
             end
 
             def render(context)
-                # Directly get the param string without parsing Liquid template to avoid YAML time deserialization
-                param = @input
+                param = @template_variable.render(context)
+                param = param.gsub("{{", "")
+                param = param.gsub("}}", "")
+                param = param.strip
 
                 fullPath = File.join(Globals::DOCS_ROOT, param)
                 script_path = File.expand_path("tools_py/ext-doc-summary/pdf-summary.py", Dir.pwd)
@@ -160,10 +174,41 @@ module Jekyll
                     system("python3", script_path, fullPath)
                 end
 
-
                 #"fp: #{fullPath}  fn: #{sum_file} full: #{File.expand_path(sum_file, Dir.pwd)}"
                 front_matter, content = FileUtilities.parse_front_matter(File.read(sum_file))
                 content
+            end
+        end
+
+        class ExtPDFImg < Liquid::Tag
+            def initialize(tag_name, input, tokens)
+                super
+                @template_variable = Liquid::Template.parse("{{" + input + "}}")
+            end
+
+            def render(context)
+                param = @template_variable.render(context)
+                param = param.gsub("{{", "")
+                param = param.gsub("}}", "")
+                param = param.strip
+
+                fullPath = File.join(Globals::DOCS_ROOT, param)
+                script_path = File.expand_path("tools_py/ext-doc-summary/pdf-to-img.py", Dir.pwd)
+
+                filename_no_ext = File.basename(fullPath, File.extname(fullPath))
+                dir_path = File.dirname(fullPath)
+                img_file = "#{dir_path}/#{filename_no_ext}__pdf_firstpage.png"
+                
+                if !File.exist?(File.expand_path(img_file, Dir.pwd))
+                    # Run the script safely without shell, passing arguments as separate params
+                    system("python3", script_path, fullPath)
+                end
+                img_file = img_file.gsub(Globals::DOCS_ROOT,"")
+                img_file = img_file.sub(%r{^/}, "")
+                img_file.strip
+                img_file = Globals.remove_leading_underscore_from_path(img_file)
+
+                img_file
             end
         end
 
@@ -177,5 +222,6 @@ Liquid::Template.register_tag('XLSXToHtmlChart', Jekyll::Components::XLSXToHtmlC
 Liquid::Template.register_tag('ImgFullPath', Jekyll::Components::ImgFullPath)
 Liquid::Template.register_tag('CardGalleryContent', Jekyll::Components::CardGalleryContent)
 Liquid::Template.register_tag('ExtPDFSummary', Jekyll::Components::ExtPDFSummary)
+Liquid::Template.register_tag('ExtPDFImg', Jekyll::Components::ExtPDFImg)
 
 

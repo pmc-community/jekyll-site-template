@@ -244,4 +244,14 @@ module Globals
         File.dirname(clean_path)
     end
 
+    def self.remove_leading_underscore_from_path(path)
+        parts = path.split('/')
+        # Process all parts except the last (filename)
+        corrected_parts = parts[0..-2].map do |part|
+            part.start_with?('_') ? part[1..].strip : part.strip
+        end
+        corrected_parts << parts[-1] # add filename untouched
+        corrected_parts.join('/')
+    end
+
 end

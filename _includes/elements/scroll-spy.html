@@ -139,7 +139,7 @@
 
 
 {% else %}
-{% assign mess="Something went wrong when building scrollspy from source: " | append: source | append: ". Check if the source exits and if the scrollspy items are present in the right format." %}
+{% assign mess="Something went wrong when building scrollspy from source: " | append: source | append: ". Check if the source exists and if the scrollspy items are present in the right format." %}
  {% include elements/alert.html class="danger" content=mess title="Error" %}
 {% endif %}
 
