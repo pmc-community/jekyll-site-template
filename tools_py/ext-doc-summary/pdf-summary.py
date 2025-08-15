@@ -39,7 +39,7 @@ else:
 tools_py_path = os.path.abspath(os.path.join('tools_py'))
 if tools_py_path not in sys.path:
     sys.path.append(tools_py_path)
-from modules.globals import get_key_value_from_yml, clean_up_text, get_env_value
+from modules.globals import get_key_value_from_yml, clean_up_text, get_env_value, generate_random_string
 
 auth_token = get_env_value('.env', 'HUGGINGFACE_KEY')
 
@@ -84,6 +84,47 @@ def is_probably_reference_section(text):
             citation_like_lines += 1
     return (citation_like_lines / len(lines)) > 0.4
 
+# ---- Helpers ---- #
+import nltk
+import contextlib
+from nltk.tokenize.punkt import PunktSentenceTokenizer, PunktParameters
+
+# Make sure to download the pretrained tokenizer if not already done
+with contextlib.redirect_stdout(None), contextlib.redirect_stderr(None):
+    try:
+        nltk.data.find("tokenizers/punkt")
+    except LookupError:
+        nltk.download("punkt", quiet=True)
+
+def text_to_html_paragraphs(text, max_sentences=3):
+    punkt_param = PunktParameters()
+    # Add domain-specific abbreviations
+    abbreviations = ["U.S", "IMP", "TS", "D11"]
+    punkt_param.abbrev_types = set(abbreviations)
+    tokenizer = PunktSentenceTokenizer(punkt_param)
+
+    sentences = tokenizer.tokenize(text.strip())
+
+    paragraphs = []
+    current_paragraph = []
+
+    for sentence in sentences:
+        if len(sentence) < 20 and current_paragraph:
+            paragraphs.append(" ".join(current_paragraph))
+            current_paragraph = [sentence]
+        else:
+            current_paragraph.append(sentence)
+
+        if len(current_paragraph) >= max_sentences:
+            paragraphs.append(" ".join(current_paragraph))
+            current_paragraph = []
+
+    if current_paragraph:
+        paragraphs.append(" ".join(current_paragraph))
+
+    html_paragraphs = "\n\n".join(f"<p>{p}</p>" for p in paragraphs)
+    return html_paragraphs
+
 # ---- PDF Parsing ---- #
 def extract_structure(pdf_path):
     doc = fitz.open(pdf_path)
@@ -102,16 +143,40 @@ def extract_structure(pdf_path):
                 })
             current["content"].clear()
 
-    # Heuristic for table detection
+    # ---- Table detection ---- #
+    from collections import Counter
+
     def is_probably_table_block(block_text):
-        lines = block_text.splitlines()
-        # Check for multiple lines of text with tabs or multiple spaces, common in tables
-        if any('\t' in line for line in lines):
+        lines = [line.strip() for line in block_text.splitlines() if line.strip()]
+        if not lines:
+            return False
+
+        # Heuristic 1: tabs or pipes
+        if any('\t' in line or '|' in line for line in lines):
             return True
-        # Check for text blocks with a high ratio of non-alphanumeric characters
-        if len(block_text) > 100 and len(re.findall(r'[^a-zA-Z0-9\s]', block_text)) / len(block_text) > 0.2:
+
+        # Heuristic 2: consistent number of columns
+        delimiter_counts = [len(re.split(r'[\t|,;]', line)) for line in lines]
+        if len(set(delimiter_counts)) <= 2 and len(delimiter_counts) > 1:
             return True
+
+        # Heuristic 3: high density of non-alphanumeric chars
+        non_alnum_ratio = len(re.findall(r'[^a-zA-Z0-9\s]', block_text)) / max(len(block_text), 1)
+        if len(block_text) > 100 and non_alnum_ratio > 0.2:
+            return True
+
+        # Heuristic 4: many short tokens per line (like numbers or short words)
+        short_token_lines = sum(
+            1 for line in lines if all(len(tok) <= 6 for tok in line.split() if tok)
+        )
+        if short_token_lines / len(lines) > 0.5:
+            return True
+
         return False
+
+    # ---- Table detection ---- #
+
+
 
     for page in doc:
         blocks = page.get_text("blocks")
@@ -120,11 +185,8 @@ def extract_structure(pdf_path):
             text = block[4].strip()
             if not text:
                 continue
-
-            # NEW LOGIC: Skip blocks that are likely to be tables
             if is_probably_table_block(text):
                 continue
-                
             if re.match(r'^[A-Z][\w\s]{0,60}$', text) and len(text.split()) <= 10:
                 flush()
                 current["title"] = text
@@ -184,8 +246,8 @@ def write_output(sections, combined_summary, out_path, pdf_file_name, pdf_file_p
     front_matter = (
         f"---\nsummaryType: autoPDFSummary\nsummaryFor: {pdf_file_name}\n"
         f"fullPath: {pdf_file_path}\n"
-        f"dateTime: \"{now.strftime('%Y-%m-%d %H:%M:%S')}\"\n" #ensure string, otherwise jekyll build go crazy
-        f"timestamp: {int(time.time() * 1000)}\n---\n\n"
+        f"dateTime: \"{now.strftime('%Y-%m-%d %H:%M:%S')}\"\n"
+        f"timestamp: {int(time.time() * 1000)}\n---\n\n"  # extra blank line here
     )
 
     with open(out_path, "w", encoding="utf-8") as f:
@@ -193,7 +255,7 @@ def write_output(sections, combined_summary, out_path, pdf_file_name, pdf_file_p
         f.write(combined_summary)
 
 def clear_line():
-    sys.stdout.write("\r\033[K")  # move to start of line & clear to end
+    sys.stdout.write("\r\033[K")
     sys.stdout.flush()
 
 # ---- Main ---- #
@@ -253,10 +315,18 @@ def main(pdf_file_path):
         idx, title, summary = r.get()
         sections[idx]["summary"] = summary
 
-    combined_summary = "\n\n".join(sec.get("summary", "") for sec in sections if sec.get("summary", ""))
-    
-    combined_summary = clean_up_text(combined_summary)
-    
+    # Build combined summary: clean only summaries, keep HTML titles intact
+    combined_parts = []
+    for sec in sections:
+        summary_text = sec.get("summary", "").strip()
+        if summary_text:
+            cleaned_summary = text_to_html_paragraphs(clean_up_text(summary_text))
+            randomId = generate_random_string()
+            title_html = f'<div id="pdf_summary-section-title-{randomId}" class="pdf_summary-section-title my-2 fw-medium text-primary fs-6">{sec["title"]}</div>'
+            combined_parts.append(f"{title_html}\n{cleaned_summary}")
+
+    combined_summary = "\n\n".join(combined_parts)
+
     write_output(sections, combined_summary, out_file_path, pdf_file_name, pdf_file_path)
     
     print("\033[1A", end='')
@@ -272,7 +342,6 @@ if __name__ == "__main__":
         clear_line()
         console.print(f"\n==================================================================")
 
-        # Ensure the file exists before calling main
         with open(pdf_path, "rb") as f:
             pass
         main(pdf_path)
@@ -282,4 +351,7 @@ if __name__ == "__main__":
     except FileNotFoundError:
         print(f"Error: File '{pdf_path}' not found.", file=sys.stderr)
         sys.exit(1)
+
+
+
 

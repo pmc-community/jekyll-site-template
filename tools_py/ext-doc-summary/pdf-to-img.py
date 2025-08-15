@@ -27,7 +27,7 @@ def pdf_first_page_to_png(pdf_path):
     # Output filename: <pdf_file_name_no_extension>__pdf_firstPage.png
     output_path = pdf_path.with_name(pdf_path.stem + "__pdf_firstpage.png")
     pix.save(output_path)
-    print(f"Saved: {output_path}")
+    #print(f"Saved: {output_path}")
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:

@@ -13,7 +13,9 @@
 {% if file %}
  <div id="pdf-summary-container-{{sid}}" class="row">
  
-<div class="col-2 d-flex align-items-center d-none" id="pdf-summary-img-col-{{sid}}">
+<div class="col-4 col-md-3 d-none" id="pdf-summary-img-col-{{sid}}">
+ 
+ <div id="pdf-summary-img-toc-{{sid}}">
 
  <div id="pdf-summary-img-{{sid}}" class="d-none">
 
@@ -32,16 +34,22 @@
    %}
 
  </div>
+
+ <div id="pdf-summary-toc-{{sid}}" class="border-top border-secondary border-opacity-25">
+ </div>
+
+</div>
+
 </div>
 
 <div id="pdf-summary-text-col-{{sid}}" class="col-12">
   {% if sBorder != "false" %}
-   {% assign borderClass = "border border-secondary border-opacity-25 rounded p-2" %}
+   {% assign borderClass = "border-start border-secondary border-opacity-25 p-4" %}
   {% else %}
-   {% assign borderClass = "" %}
+   {% assign borderClass = "p-4" %}
   {% endif %}
   
-  <div id="pdf-summary-{{sid}}" class="mb-2 {{borderClass}}" >
+  <div id="pdf-summary-{{sid}}" class="ml-4 mb-2 {{borderClass}}" >
    {% capture c %}
     {% ExtPDFSummary {{file}} %}
    {% endcapture %}
@@ -94,7 +102,7 @@
      $('#pdf-summary-toggle-fp-{{sid}}').find('i').removeClass('bi-arrow-right').addClass('bi-arrow-left');
      $('#pdf-summary-toggle-fp-{{sid}}').removeClass('btn-success').addClass('btn-danger');
       
-      $('#pdf-summary-text-col-{{sid}}').removeClass('col-12').addClass('col-10');
+      $('#pdf-summary-text-col-{{sid}}').removeClass('col-12').addClass('col-8 col-md-9');
       $('#pdf-summary-img-col-{{sid}}').removeClass('d-none');
 
     } else {
@@ -102,7 +110,7 @@
      $('#pdf-summary-toggle-fp-{{sid}}').removeClass('btn-danger').addClass('btn-success');
       
       $('#pdf-summary-img-col-{{sid}}').addClass('d-none');
-      $('#pdf-summary-text-col-{{sid}}').removeClass('col-10').addClass('col-12');
+      $('#pdf-summary-text-col-{{sid}}').removeClass('col-8 col-md-9').addClass('col-12');
       
     };
 
@@ -110,11 +118,77 @@
 
 </script>
 
+<script id="pdf-summary-gen-toc-{{sid}}">
+
+ const pdf_summary_getTocItems_{{sid}} = () => {
+  const tocItems = $('#pdf-summary-{{sid}}').find('.pdf_summary-section-title');
+  let tocLinks = [];
+  tocItems.each((index, element) => {
+   const $el = $(element);
+   const tocLink = {
+    id: $el.attr('id'),
+    text: $el.text().trim()
+   };
+   tocLinks.push(tocLink);
+ });
+
+  return tocLinks;
+ };
+
+ pdf_summary_toc_items_{{sid}} = pdf_summary_getTocItems_{{sid}}();
+ 
+ const pdf_summary_renderTocItems_{{sid}} = (items) => {
+  let itemsHtml = '';
+  items.forEach( item => {
+   const itemHtml = `<div class="alwaysCursorPointer ghBtnLink text-primary my-2" id="pdf_summary_toc_item_${item.id}" target="${item.id}">${item.text}</div>`;
+   itemsHtml = itemsHtml + itemHtml;
+  });
+  itemsHtml = `<div id="pdf_summary_toc_content_{{sid}}">${itemsHtml}</div>`;
+  return itemsHtml;
+ };
+ 
+ if (pdf_summary_toc_items_{{sid}}.length > 0 ) {
+  const html = pdf_summary_renderTocItems_{{sid}}(pdf_summary_toc_items_{{sid}});
+  $('#pdf-summary-toc-{{sid}}').html(html);
+ };
+
+
+</script>
+
+<script id="pdf-summary-nav-toc-{{sid}}">
+
+ $('div[id^="pdf_summary_toc_item_pdf_summary-section-title-"]').on('click', function (e) {
+  e.preventDefault(); 
+  const targetId = $(this).attr('target');
+
+  const $container = $('#pdf-summary-{{sid}}');
+
+  const $target = $container.find(`#${targetId}`);
+  if ($target.length) {
+   const containerTop = $container.offset().top;
+   const targetTop = $target.offset().top;
+   const scrollTop = $container.scrollTop();
+   const offset = targetTop - containerTop + scrollTop - 20;
+
+   $container.animate({ scrollTop: offset }, 400);
+
+   setTimeout(() => clearTheUrl(), 0);
+  }
+ });
+</script>
+
 <style>
- #pdf-summary-{{sid}} {
+ #pdf-summary-{{sid}}, #pdf-summary-img-toc-{{sid}} {
   height: {{sh}} !important; 
-  overflow-y: auto !important;
+  overflow-y: scroll !important;
+  scrollbar-width: none;
+  overflow-x: hidden !important;
  }
+ 
+ #pdf-summary-{{sid}}::webkit-scrollbar, #pdf-summary-img-toc-{{sid}}::webkit-scrollbar {
+   display: none
+ }
+
 </style>
 
 {% else %}
