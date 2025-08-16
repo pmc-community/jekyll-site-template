@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import os
 import sys
 import re
@@ -32,7 +34,7 @@ tools_py_path = os.path.abspath(os.path.join('tools_py'))
 #print(tools_py_path)
 if tools_py_path not in sys.path:
     sys.path.append(tools_py_path)
-from modules.globals import get_key_value_from_yml, clean_up_text, get_the_modified_files, get_env_value
+from modules.globals import get_key_value_from_yml, clean_up_text, get_the_modified_files, get_env_value, generate_random_string
 auth_token = get_env_value('.env', 'HUGGINGFACE_KEY')
 
 # === SETTINGS ===
@@ -43,6 +45,10 @@ MAX_INPUT_TOKENS = 512
 SUMMARY_TOKENS = 200
 
 console = Console()
+
+def clear_line():
+    sys.stdout.write("\r\033[K")
+    sys.stdout.flush()
 
 def is_probably_structural(text):
     lines = text.splitlines()
@@ -193,14 +199,18 @@ def deduplicate_sentences_across_all(final_summary, section_summaries):
         return result
     dedup_final = unique_sentences(final_summary)
     dedup_sections = []
-    for sec_text in section_summaries:
+    for sec_data in section_summaries:
+        sec_text = sec_data["summary"]
         dedup_sec = []
         for sentence in re.split(r'(?<=[.!?])\s+', sec_text):
             normalized = sentence.strip().lower()
             if normalized and normalized not in seen:
                 seen.add(normalized)
                 dedup_sec.append(sentence.strip())
-        dedup_sections.append(" ".join(dedup_sec))
+        dedup_sections.append({
+            "title": sec_data["title"],
+            "summary": " ".join(dedup_sec)
+        })
     return " ".join(dedup_final), dedup_sections
 
 
@@ -208,7 +218,10 @@ def write_output(sections, final_summary, out_path, docx_path):
     base, _ = os.path.splitext(out_path)
     out_path_md = base + ".txt"
     
-    section_summaries = [sec["summary"] for sec in sections if "summary" in sec]
+    section_summaries = [
+        {"title": sec["title"], "summary": sec["summary"]}
+        for sec in sections if "summary" in sec
+    ]
     dedup_final, dedup_section_summaries = deduplicate_sentences_across_all(final_summary, section_summaries)
 
     # Extract filename and full path for front matter
@@ -233,7 +246,12 @@ def write_output(sections, final_summary, out_path, docx_path):
         f.write(front_matter)
         f.write(format_summary_as_markdown(dedup_final.strip()))
         f.write("\n\n")
-        for summary in dedup_section_summaries:
+        for summary_data in dedup_section_summaries:
+            title = summary_data["title"]
+            summary = summary_data["summary"]
+            randomId = generate_random_string()
+            title_tag = f'<div id="word_summary-section-title-{randomId}" class="word_summary-section-title my-2 fw-medium text-primary fs-6">{title}</div>\n'
+            f.write(title_tag)
             f.write(format_summary_as_markdown(summary.strip()))
             f.write("\n\n")
 
@@ -284,7 +302,7 @@ def summarize_section_worker(section_idx, title, text, model_name, progress_queu
     progress_queue.put((section_idx, "done", markdown_summary))
 
 def summarize_docx(docx_path):
-    console.print(f"\n📂 Reading: {docx_path}")
+    console.print(f"📂 Reading: {docx_path}")
     sections = extract_structure(docx_path)
     full_text = " ".join([s["text"] for s in sections if not s.get("skip_summary")])
     lang = detect(full_text[:1000]) if full_text else "unknown"
@@ -393,6 +411,10 @@ def summarize_docx(docx_path):
 
 
 if __name__ == "__main__":
+
+    clear_line()
+    console.print(f"\n==================================================================")
+    
     if len(sys.argv) < 2:
         console.print("Usage: python summarize_docx.py file1.docx [file2.docx ...]")
         sys.exit(1)
@@ -402,3 +424,6 @@ if __name__ == "__main__":
             console.print(f"[red]File not found:[/red] {file_path}")
             continue
         summarize_docx(file_path)
+    
+    clear_line()
+    console.print(f"==================================================================\n\n")

@@ -215,6 +215,69 @@ module Jekyll
             end
         end
 
+        class ExtDOCXSummary < Liquid::Tag
+            def initialize(tag_name, input, tokens)
+                super
+                @template_variable = Liquid::Template.parse("{{" + input + "}}")
+            end
+
+            def render(context)
+                param = @template_variable.render(context)
+                param = param.gsub("{{", "")
+                param = param.gsub("}}", "")
+                param = param.strip
+
+                fullPath = File.join(Globals::DOCS_ROOT, param)
+                script_path = File.expand_path("tools_py/ext-doc-summary/word-summary.py", Dir.pwd)
+
+                filename_no_ext = File.basename(fullPath, File.extname(fullPath))
+                dir_path = File.dirname(fullPath)
+                sum_file = "#{dir_path}/#{filename_no_ext}__word_summary.txt"
+                
+                if !File.exist?(File.expand_path(sum_file, Dir.pwd))
+                    # Run the script safely without shell, passing arguments as separate params
+                    system("python3", script_path, fullPath)
+                end
+
+                #"fp: #{fullPath}  fn: #{sum_file} full: #{File.expand_path(sum_file, Dir.pwd)}"
+                front_matter, content = FileUtilities.parse_front_matter(File.read(sum_file))
+                content
+            end
+        end
+
+        class ExtDOCXImg < Liquid::Tag
+            def initialize(tag_name, input, tokens)
+                super
+                @template_variable = Liquid::Template.parse("{{" + input + "}}")
+            end
+
+            def render(context)
+                param = @template_variable.render(context)
+                param = param.gsub("{{", "")
+                param = param.gsub("}}", "")
+                param = param.strip
+
+                fullPath = File.join(Globals::DOCS_ROOT, param)
+                script_path = File.expand_path("tools_py/ext-doc-summary/word-to-img.py", Dir.pwd)
+
+                filename_no_ext = File.basename(fullPath, File.extname(fullPath))
+                dir_path = File.dirname(fullPath)
+                img_file = "#{dir_path}/#{filename_no_ext}__word_firstpage.png"
+                
+                if !File.exist?(File.expand_path(img_file, Dir.pwd))
+                    # Run the script safely without shell, passing arguments as separate params
+                    system("python3", script_path, fullPath)
+                end
+                img_file = img_file.gsub(Globals::DOCS_ROOT,"")
+                img_file = img_file.sub(%r{^/}, "")
+                img_file.strip
+                site = context.registers[:site] 
+                img_file = Globals.remove_leading_underscore_from_path_if_collection(img_file, site)
+
+                img_file
+            end
+        end
+
     end
 
 end
@@ -226,5 +289,7 @@ Liquid::Template.register_tag('ImgFullPath', Jekyll::Components::ImgFullPath)
 Liquid::Template.register_tag('CardGalleryContent', Jekyll::Components::CardGalleryContent)
 Liquid::Template.register_tag('ExtPDFSummary', Jekyll::Components::ExtPDFSummary)
 Liquid::Template.register_tag('ExtPDFImg', Jekyll::Components::ExtPDFImg)
+Liquid::Template.register_tag('ExtDOCXSummary', Jekyll::Components::ExtDOCXSummary)
+Liquid::Template.register_tag('ExtDOCXImg', Jekyll::Components::ExtDOCXImg)
 
 

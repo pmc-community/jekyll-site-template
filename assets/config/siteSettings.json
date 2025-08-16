@@ -567,8 +567,8 @@
           "permalink": "/experiments/pdf-summary/"
         },
         {
-          "title": "DOCX Summary",
-          "permalink": "/experiments/docx-summary/"
+          "title": "Image",
+          "permalink": "/components/image/"
         }
       ],
       "autoSummary": "This component allows importing excel charts into your documents. Currently we support only:. Line charts column and bar charts pie and doughnut charts. We do not support importing the colors you assign to the series in the excel chart.",
@@ -742,28 +742,28 @@
         "summary",
         "office"
       ],
-      "excerpt": "component, summarise, docx, file, save, summary, folder, source",
+      "excerpt": "component, summarise, docx, file, save, summary, folder, source, progress",
       "lastUpdate": "2025-08-11 13:46:56 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-08-11 13:46:56 +0300",
       "createTimeUTC": 1754909216,
       "relatedPages": [
         {
-          "title": "Experiments",
-          "permalink": "/experiments/intro/"
-        },
-        {
           "title": "PDF Summary",
           "permalink": "/experiments/pdf-summary/"
+        },
+        {
+          "title": "Experiments",
+          "permalink": "/experiments/intro/"
         },
         {
           "title": "XLSX Charts",
           "permalink": "/components/xlsx-charts/"
         }
       ],
-      "autoSummary": "Write a concise, factual summary in English with no greetings or instructions, maximum 50 words. This component will summarise a given docx file and will save the summary in the same folder as the source docx.",
+      "autoSummary": "This progress report was drafted in accordance with the provisions of the tor (7.1-reporting requirements) and with the revised organisation and methodology. The reporting period is october – december (incl.). The project status presented in this report will be the new reporting baseline.",
       "similarByContent": [],
-      "readingTime": 1,
+      "readingTime": 4,
       "hasDynamicContent": false,
       "parent": ""
     },

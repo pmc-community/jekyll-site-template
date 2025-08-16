@@ -280,7 +280,8 @@
         "save",
         "summary",
         "folder",
-        "source"
+        "source",
+        "progress"
       ]
     }
   ]
