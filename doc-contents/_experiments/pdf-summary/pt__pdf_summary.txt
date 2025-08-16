@@ -1,0 +1,18 @@
+---
+summaryType: autoPDFSummary
+summaryFor: pt.pdf
+fullPath: doc-contents/_experiments/pdf-summary/pt.pdf
+dateTime: "2025-08-15 21:15:57"
+timestamp: 1755292557636
+---
+
+<div id="pdf_summary-section-title-tlHOYq9DOnxyxOv6" class="pdf_summary-section-title my-2 fw-medium text-primary fs-6">RonPub Journal Paper Template</div>
+<p>This article is not a scientific paper, but a template file and guidelines for helping authors prepare their scientific papers. A number of nice paper templates have been developed, like ACM templates [1] and IEEE templates[7] [8]. However, these templates and guidelines do not fit the features and needs of our journals.</p>
+
+<p>We encourage authors to have a look at an excellent handbook for science writing. Main text is a large as well as major part of a paper. Author's research work, e.g. the new techniques, is presented in this part. Application papers may include an implementation (sub-) section. Discussion and Conclusion should explore the significance of the research results.</p>
+
+<p>The main text should be divided into clearly defined and numbered sections. A separate section is needed to describe the structure and content guidelines for the main text. The formatting and styling has been setup for multiple sections, subsections and subsubsections in this template document.</p>
+
+<p>As a minimum for web references, the full URL should be given as well as the date when the reference was last accessed. Appendices are optional. They should be placed after the references and before the author biographies.</p>
+
+<p>If there is more than one appendix, they should be identified as A, B, etc. An example of a conference paper can be found at ICEIS 2008 in Barcelona, Spain.</p>

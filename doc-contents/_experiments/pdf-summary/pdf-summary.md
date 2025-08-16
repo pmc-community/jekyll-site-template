@@ -68,6 +68,23 @@ Note that the PDF summaries are saved in the same folder as the original pdf fil
 
 `END PDF SUMMARY`
 
+The quality of the summary depends very much on the way in which the original document is structured and written. The next example demonstrates a new generated summary, without any addtional correction, but applied on a document having a different structure and generating a better quality text.
+
+`START PDF SUMMARY`
+
+{% include elements/pdf-summary.html 
+    file="_experiments/pdf-summary/pt.pdf"
+    btnType="danger"
+    btnOutline="false"
+    btnText="Download PDF"
+    sBorder="true"
+    sh="300px"
+%}
+
+`END PDF SUMMARY`
+
+{% include elements/alert.html class="primary" content="There is no general rule to establish if a certain PDF will generate a better quality summary. The best way to use this experiment is to start with the auto-generated summary, review it with care and apply manual corrections where needed." %}
+
 # Corrections
 As described, corrections can be manually applied to the generated summaries for removing not relevant paragraphs or model hallucinations. The summarisation algorithm is set to generate rather detailed summaries to allow choosing the relevant parts for rendering to the document. However, pdf summarisation is usually less structured than docx ones because structure extraction from a pdf is looser than in docx where it can be hooked to the headings from the docx. On the other hand, pdf summaries may contain more relevant details.
 

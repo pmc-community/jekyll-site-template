@@ -94,7 +94,7 @@
 
 <script id="script-scale-images-gallery-{{igid}}">
 
-    const scaleImagesToSmallestHeight = (galleryId) => {
+    const scaleImagesToSmallestHeight_{{igid}} = (galleryId) => {
         const $images = $('#' + galleryId + ' img');
         if ($images.length === 0) return;
 
@@ -131,7 +131,7 @@
         }
     };
 
-    scaleImagesToSmallestHeight('image-gallery-{{igid}}');
+    scaleImagesToSmallestHeight_{{igid}}('image-gallery-{{igid}}');
 
 </script>
 

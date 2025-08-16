@@ -840,7 +840,7 @@
       ],
       "autoSummary": "This component helps enhancing your content with auto generated summaries of pdf files. It is combined with the download component, so the output rendered will be a summary of the pdf file and a download button to download the original file.",
       "similarByContent": [],
-      "readingTime": 6,
+      "readingTime": 7,
       "hasDynamicContent": false,
       "parent": ""
     },
