@@ -13,67 +13,68 @@
 {% if file %}
  <div id="pdf-summary-container-{{sid}}" class="row my-4">
  
-<div class="col-4 col-md-3 d-none" id="pdf-summary-img-col-{{sid}}">
+  <div class="col-4 col-md-3 d-none" id="pdf-summary-img-col-{{sid}}">
  
- <div id="pdf-summary-img-toc-{{sid}}">
+   <div id="pdf-summary-img-toc-{{sid}}">
 
- <div id="pdf-summary-img-{{sid}}" class="d-none">
+    <div id="pdf-summary-img-{{sid}}" class="d-none">
 
-   {% capture img %}
-    {% ExtPDFImg {{file}} %}
-   {% endcapture %}
+     {% capture img %}
+      {% ExtPDFImg {{file}} %}
+     {% endcapture %}
    
-   {% assign filename_with_ext = file | split: '/' | last %}
+     {% assign filename_with_ext = file | split: '/' | last %}
 
-   {% capture imgG %}
-    source={{img}}|caption={{filename_with_ext}}
-   {% endcapture %}
+     {% capture imgG %}
+      source={{img}}|caption={{filename_with_ext}}
+     {% endcapture %}
     
-   {% include elements/image-gallery.html 
-    img=imgG 
-   %}
+     {% include elements/image-gallery.html 
+      img=imgG 
+     %}
 
- </div>
+    </div>
 
- <div id="pdf-summary-toc-{{sid}}" class="border-top border-secondary border-opacity-25">
- </div>
+    <div id="pdf-summary-toc-{{sid}}" class="border-top border-secondary border-opacity-25">
+    </div>
 
-</div>
+   </div>
 
-</div>
+  </div>
 
-<div id="pdf-summary-text-col-{{sid}}" class="col-12">
-  {% if sBorder != "false" %}
-   {% assign borderClass = "border-start border-secondary border-opacity-25 p-4" %}
-  {% else %}
-   {% assign borderClass = "p-4" %}
-  {% endif %}
+  <div id="pdf-summary-text-col-{{sid}}" class="col-12">
   
-  <div id="pdf-summary-{{sid}}" class="ml-4 mb-2 {{borderClass}} position-relative" >
+   {% if sBorder != "false" %}
+    {% assign borderClass = "border-start border-secondary border-opacity-25 p-4" %}
+   {% else %}
+    {% assign borderClass = "p-4" %}
+   {% endif %}
+  
+   <div id="pdf-summary-{{sid}}" class="ml-4 mb-2 {{borderClass}} position-relative" >
    {% capture c %}
     {% ExtPDFSummary {{file}} %}
    {% endcapture %}
    {{c | markdonify}}
-  </div>
+   </div>
 
-  <div id="pdf-summary-buttons-{{sid}}" class="d-flex justify-content-between mb-4 align-items-center">
+   <div id="pdf-summary-buttons-{{sid}}" class="d-flex justify-content-between mb-4 align-items-center">
   
    <button id="pdf-summary-toggle-fp-{{sid}}" class="btn btn-sm btn-success"><i class="bi bi-arrow-right"></i></button>
 
-  <div id="pdf-summary-download-{{sid}}">
-   {% assign filename_with_ext = file | split: '/' | last %}
-   {% include elements/downloads.html 
-    type=btnType 
-    outline=btnOutline
-    text=btnText 
-    file=filename_with_ext
-    downloadName=filename_with_ext
-   %}
-  </div>
+   <div id="pdf-summary-download-{{sid}}">
+    {% assign filename_with_ext = file | split: '/' | last %}
+    {% include elements/downloads.html 
+     type=btnType 
+     outline=btnOutline
+     text=btnText 
+     file=filename_with_ext
+     downloadName=filename_with_ext
+    %}
+   </div>
+
+   </div>
 
   </div>
-
-</div>
 
  </div>
 
