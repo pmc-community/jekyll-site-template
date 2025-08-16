@@ -116,8 +116,10 @@ module Jekyll
                     fullPath = inputPath
                 end
 
+                site = context.registers[:site] 
+
                 fullPath = fullPath.gsub("//", "/").strip        
-                fullPath = Globals.remove_leading_underscore_from_path(fullPath)
+                fullPath = Globals.remove_leading_underscore_from_path_if_collection(fullPath, site)
 
                 fullPath
             end
@@ -206,7 +208,8 @@ module Jekyll
                 img_file = img_file.gsub(Globals::DOCS_ROOT,"")
                 img_file = img_file.sub(%r{^/}, "")
                 img_file.strip
-                img_file = Globals.remove_leading_underscore_from_path(img_file)
+                site = context.registers[:site] 
+                img_file = Globals.remove_leading_underscore_from_path_if_collection(img_file, site)
 
                 img_file
             end

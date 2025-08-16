@@ -78,7 +78,7 @@
         },
         {
             "permalink": "/experiments/pdf-summary/",
-            "summary": "This component helps enhancing your content with auto generated summaries of pdf files. It is combined with the download component, so the output rendered will be a summary of the pdf file and a download button to download the original file."
+            "summary": "This component helps enhancing your content with auto generated summaries from pdf files. It is combined with the download component, so the output rendered will be a summary of the pdf file and a download button."
         },
         {
             "permalink": "/experiments/docx-summary/",

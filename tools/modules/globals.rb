@@ -244,14 +244,29 @@ module Globals
         File.dirname(clean_path)
     end
 
-    def self.remove_leading_underscore_from_path(path)
-        parts = path.split('/')
-        # Process all parts except the last (filename)
-        corrected_parts = parts[0..-2].map do |part|
-            part.start_with?('_') ? part[1..].strip : part.strip
+    def self.remove_leading_underscore_from_path_if_collection(path, site)
+        # collections are located in folders having the name starting with '_'
+        # when generating the site, collections are copied in _site, directly in the root of _site, but in folders without '_'
+        # we need to process the relative path provided in the content or components because
+        # _collection/.... is used when building the site, but potential img or other elements will be accessible with /collection/... after build
+
+        collections = site.collections.keys.map { |el| "_#{el}" }
+
+        if path.start_with?(*collections)
+            returnPath = path.sub(/^_/, "").strip
+        else
+            returnPath = path
         end
-        corrected_parts << parts[-1] # add filename untouched
-        corrected_parts.join('/')
+
+        returnPath
+
+        #parts = path.split('/')
+        # Process all parts except the last (filename)
+        #corrected_parts = parts[0..-2].map do |part|
+        #    part.start_with?('_') ? part[1..].strip : part.strip
+        #end
+        #corrected_parts << parts[-1] # add filename untouched
+        #corrected_parts.join('/')
     end
 
 end
