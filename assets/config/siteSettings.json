@@ -563,12 +563,12 @@
           "permalink": "/components/xlsx-tables/"
         },
         {
-          "title": "DOCX Summary",
-          "permalink": "/experiments/docx-summary/"
-        },
-        {
           "title": "PDF Summary",
           "permalink": "/experiments/pdf-summary/"
+        },
+        {
+          "title": "DOCX Summary",
+          "permalink": "/experiments/docx-summary/"
         }
       ],
       "autoSummary": "This component allows importing excel charts into your documents. Currently we support only:. Line charts column and bar charts pie and doughnut charts. We do not support importing the colors you assign to the series in the excel chart.",
@@ -820,10 +820,10 @@
         "office"
       ],
       "excerpt": "component, helps, enhancing, content, auto, generated, summaries, pdf, files, combined",
-      "lastUpdate": "2025-08-16 10:45:14 +0300",
+      "lastUpdate": "2025-08-16 12:02:03 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-08-16 10:45:14 +0300",
-      "createTimeUTC": 1755330314,
+      "createTime": "2025-08-16 12:02:03 +0300",
+      "createTimeUTC": 1755334923,
       "relatedPages": [
         {
           "title": "Experiments",
@@ -840,7 +840,7 @@
       ],
       "autoSummary": "This component helps enhancing your content with auto generated summaries from pdf files. It is combined with the download component, so the output rendered will be a summary of the pdf file and a download button.",
       "similarByContent": [],
-      "readingTime": 8,
+      "readingTime": 10,
       "hasDynamicContent": false,
       "parent": ""
     },

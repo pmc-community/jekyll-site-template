@@ -160,12 +160,12 @@
         "permalink": "/components/xlsx-tables/"
       },
       {
-        "title": "DOCX Summary",
-        "permalink": "/experiments/docx-summary/"
-      },
-      {
         "title": "PDF Summary",
         "permalink": "/experiments/pdf-summary/"
+      },
+      {
+        "title": "DOCX Summary",
+        "permalink": "/experiments/docx-summary/"
       }
     ]
   },

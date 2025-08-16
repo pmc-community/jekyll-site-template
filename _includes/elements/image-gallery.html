@@ -136,6 +136,8 @@
 </script>
 
 <script id="script-open-img-gallery-{{igid}}">
+    $('#imageModal-{{igid}}').appendTo('body');
+
     $('#image-gallery-{{igid}} img').on('click', function() {
         const isrc = $(this).attr('src');
         const ialt = $(this).attr('alt');

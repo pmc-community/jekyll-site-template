@@ -11,7 +11,7 @@
 {% assign sh = include.sh || default: "" %}
 
 {% if file %}
- <div id="pdf-summary-container-{{sid}}" class="row">
+ <div id="pdf-summary-container-{{sid}}" class="row my-4">
  
 <div class="col-4 col-md-3 d-none" id="pdf-summary-img-col-{{sid}}">
  
@@ -49,7 +49,7 @@
    {% assign borderClass = "p-4" %}
   {% endif %}
   
-  <div id="pdf-summary-{{sid}}" class="ml-4 mb-2 {{borderClass}}" >
+  <div id="pdf-summary-{{sid}}" class="ml-4 mb-2 {{borderClass}} position-relative" >
    {% capture c %}
     {% ExtPDFSummary {{file}} %}
    {% endcapture %}
@@ -58,9 +58,7 @@
 
   <div id="pdf-summary-buttons-{{sid}}" class="d-flex justify-content-between mb-4 align-items-center">
   
-  <div>
    <button id="pdf-summary-toggle-fp-{{sid}}" class="btn btn-sm btn-success"><i class="bi bi-arrow-right"></i></button>
-  </div>
 
   <div id="pdf-summary-download-{{sid}}">
    {% assign filename_with_ext = file | split: '/' | last %}
@@ -80,6 +78,11 @@
  </div>
 
 <script id="pdf-summary-settings-{{sid}}">
+  const sh_{{sid}} = '{{sh}}';
+  if ( sh_{{sid}} == '') {
+   $('#pdf-summary-download-{{sid}}').appendTo($('#pdf-summary-img-toc-{{sid}}'));
+   $('#pdf-summary-buttons-{{sid}}').removeClass('d-flex');
+  };
 
   $('#pdf-summary-container-{{sid}}')
   .find('div[id^="image-gallery-container-"]')
@@ -160,8 +163,14 @@
  $('div[id^="pdf_summary_toc_item_pdf_summary-section-title-"]').on('click', function (e) {
   e.preventDefault(); 
   const targetId = $(this).attr('target');
-
-  const $container = $('#pdf-summary-{{sid}}');
+  const sh = '{{sh}}';
+  let $container;
+  
+  if (sh) {
+   $container = $('#pdf-summary-{{sid}}');
+  } else {
+     $container = $('html, body');
+  };
 
   const $target = $container.find(`#${targetId}`);
   if ($target.length) {
@@ -169,12 +178,78 @@
    const targetTop = $target.offset().top;
    const scrollTop = $container.scrollTop();
    const offset = targetTop - containerTop + scrollTop - 20;
-
-   $container.animate({ scrollTop: offset }, 400);
+    
+   if (sh) {
+    $container.animate({ scrollTop: offset }, 400);
+   } else {
+    $container.animate({
+     scrollTop: $target.offset().top - 100
+    }, 200);
+   }
 
    setTimeout(() => clearTheUrl(), 0);
   }
  });
+</script>
+
+<script id="pdf-summary-expand-toc-{{sid}}">
+
+ const $container_{{sid}} = $('#pdf-summary-{{sid}}');
+ const $buttonDiv_{{sid}} = $('#pdf-summary-buttons-{{sid}}');
+
+ $(window).on('scroll resize', checkButtonPosition_{{sid}});
+
+ function checkButtonPosition_{{sid}}() {
+  const sh = '{{sh}}';
+  if (sh !== '') return;
+
+  const $container = $container_{{sid}};
+  const $button = $buttonDiv_{{sid}};
+  const buttonHeight = $button.outerHeight(true);
+
+  const headerHeight = $('#header').outerHeight() || 0;
+  const offset = 100 + headerHeight;
+
+  const rect = $container[0].getBoundingClientRect();
+  const containerHeight = $container.outerHeight();
+
+  if (rect.bottom <= 0 || rect.top >= window.innerHeight) {
+    $button.css({ display: 'none' });
+    return;
+  }
+
+  const containerTop = rect.top;
+  const containerBottom = rect.bottom;
+
+  let fixedTop = offset;
+
+  if (fixedTop + buttonHeight > containerBottom) {
+    fixedTop = containerBottom - buttonHeight;
+  }
+
+  $button.css({ display: 'none' });
+
+  if (containerTop > offset) {
+    $button.css({
+      position: 'absolute',
+      top: '0px',
+      display: 'block'
+    });
+  } else if (containerBottom < offset + buttonHeight) {
+    $button.css({
+      position: 'absolute',
+      top: (containerHeight - buttonHeight) + 'px',
+      display: 'block' 
+    });
+  } else {
+    $button.css({
+      position: 'fixed',
+      top: fixedTop + 'px',
+      display: 'block'
+    });
+  }
+ }
+
 </script>
 
 <style>
@@ -188,6 +263,13 @@
  #pdf-summary-{{sid}}::webkit-scrollbar, #pdf-summary-img-toc-{{sid}}::webkit-scrollbar {
    display: none
  }
+ 
+ {% if sh %}
+ #pdf-summary-img-toc-{{sid}} {
+  position: sticky;
+  top: 80px
+ }
+ {% endif %}
 
 </style>
 
