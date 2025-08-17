@@ -108,6 +108,18 @@
       
       $('#pdf-summary-text-col-{{sid}}').removeClass('col-12').addClass('col-8 col-md-9');
       $('#pdf-summary-img-col-{{sid}}').removeClass('d-none');
+      
+      /* 
+        forcing img to reload. otherwise may not be shown. 
+        when the parent is hidden responsive img may be not loaded because size cannot be calculated 
+      */
+      $('#pdf-summary-img-{{sid}}').find('img[id^="figure-"]').each(function() {
+       const $img = $(this);
+       $img.attr('loading', 'eager');
+       const src = $img.attr('src');
+       $img.attr('src', ''); 
+       $img.attr('src', src);
+      });
 
     } else {
      $('#pdf-summary-toggle-fp-{{sid}}').find('i').removeClass('bi-arrow-left').addClass('bi-arrow-right');
