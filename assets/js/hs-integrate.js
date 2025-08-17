@@ -218,7 +218,7 @@ hsIntegrate = {
             .css('font-size', $('body').css('font-size'))
             .addClass('fw-medium');
 
-        $iframeBody.find('.actions').addClass('p-0 m-0');
+        $iframeBody.find('.actions').addClass('p-0 mt-2');
 
         $form.find('textarea')
             .css('background', $('body').css('background'))
