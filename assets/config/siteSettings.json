@@ -603,8 +603,8 @@
           "permalink": "/experiments/intro/"
         },
         {
-          "title": "Link button",
-          "permalink": "/components/link-button/"
+          "title": "DOCX Summary",
+          "permalink": "/experiments/docx-summary/"
         }
       ],
       "autoSummary": "Tables can be imported directly from excel. When a table contains merged cells, it will be rendered as table, regardless of the value of the.",
@@ -742,11 +742,11 @@
         "summary",
         "office"
       ],
-      "excerpt": "component, summarise, docx, file, save, summary, folder, source, progress",
-      "lastUpdate": "2025-08-16 21:37:53 +0300",
+      "excerpt": "component, helps, enhancing, content, auto, generated, summaries, docx, files, combined",
+      "lastUpdate": "2025-08-17 16:47:26 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-08-16 21:37:53 +0300",
-      "createTimeUTC": 1755369473,
+      "createTime": "2025-08-17 16:47:26 +0300",
+      "createTimeUTC": 1755438446,
       "relatedPages": [
         {
           "title": "PDF Summary",
@@ -761,9 +761,14 @@
           "permalink": "/components/xlsx-charts/"
         }
       ],
-      "autoSummary": "This component will summarise a given docx file and will save the summary in the same folder as the source docx. This progress report was drafted in accordance with the provisions of the tor (7.1-reporting requirements) and with the revised organisation and methodology. The reporting period is october – december.",
-      "similarByContent": [],
-      "readingTime": 9,
+      "autoSummary": "This component helps enhancing your content with auto generated summaries from docx files. It is combined with the download component, so the output rendered will be a summary of the docx file and a download button.",
+      "similarByContent": [
+        {
+          "permalink": "/experiments/pdf-summary/",
+          "title": "PDF Summary"
+        }
+      ],
+      "readingTime": 15,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -826,12 +831,12 @@
       "createTimeUTC": 1755362908,
       "relatedPages": [
         {
-          "title": "Experiments",
-          "permalink": "/experiments/intro/"
-        },
-        {
           "title": "DOCX Summary",
           "permalink": "/experiments/docx-summary/"
+        },
+        {
+          "title": "Experiments",
+          "permalink": "/experiments/intro/"
         },
         {
           "title": "XLSX Charts",
@@ -839,7 +844,12 @@
         }
       ],
       "autoSummary": "This component helps enhancing your content with auto generated summaries from pdf files. It is combined with the download component, so the output rendered will be a summary of the pdf file and a download button.",
-      "similarByContent": [],
+      "similarByContent": [
+        {
+          "permalink": "/experiments/docx-summary/",
+          "title": "DOCX Summary"
+        }
+      ],
       "readingTime": 10,
       "hasDynamicContent": false,
       "parent": ""
@@ -1082,7 +1092,7 @@
         {
           "title": "DOCX Summary",
           "permalink": "/experiments/docx-summary/",
-          "lastUpdate": "16-Aug-2025"
+          "lastUpdate": "17-Aug-2025"
         },
         {
           "title": "Experiments",
@@ -1262,7 +1272,7 @@
         {
           "title": "DOCX Summary",
           "permalink": "/experiments/docx-summary/",
-          "lastUpdate": "16-Aug-2025"
+          "lastUpdate": "17-Aug-2025"
         },
         {
           "title": "Experiments",
@@ -1317,7 +1327,7 @@
         {
           "title": "DOCX Summary",
           "permalink": "/experiments/docx-summary/",
-          "lastUpdate": "16-Aug-2025"
+          "lastUpdate": "17-Aug-2025"
         },
         {
           "title": "Experiments",
@@ -1455,7 +1465,7 @@
         {
           "title": "DOCX Summary",
           "permalink": "/experiments/docx-summary/",
-          "lastUpdate": "16-Aug-2025"
+          "lastUpdate": "17-Aug-2025"
         },
         {
           "title": "Experiments",
@@ -1485,7 +1495,7 @@
         {
           "title": "DOCX Summary",
           "permalink": "/experiments/docx-summary/",
-          "lastUpdate": "16-Aug-2025"
+          "lastUpdate": "17-Aug-2025"
         },
         {
           "title": "Experiments",
@@ -1505,7 +1515,7 @@
         {
           "title": "DOCX Summary",
           "permalink": "/experiments/docx-summary/",
-          "lastUpdate": "16-Aug-2025"
+          "lastUpdate": "17-Aug-2025"
         },
         {
           "title": "Experiments",

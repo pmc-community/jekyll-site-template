@@ -85,10 +85,14 @@
     },
     {
         "permalink": "/experiments/pdf-summary/",
-        "similarFiles": []
+        "similarFiles": [
+            "/experiments/docx-summary/"
+        ]
     },
     {
         "permalink": "/experiments/docx-summary/",
-        "similarFiles": []
+        "similarFiles": [
+            "/experiments/pdf-summary/"
+        ]
     }
 ]

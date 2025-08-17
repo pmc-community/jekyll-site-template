@@ -181,8 +181,8 @@
         "permalink": "/experiments/intro/"
       },
       {
-        "title": "Link button",
-        "permalink": "/components/link-button/"
+        "title": "DOCX Summary",
+        "permalink": "/experiments/docx-summary/"
       }
     ]
   },
@@ -275,12 +275,12 @@
     "permalink": "/experiments/pdf-summary/",
     "related": [
       {
-        "title": "Experiments",
-        "permalink": "/experiments/intro/"
-      },
-      {
         "title": "DOCX Summary",
         "permalink": "/experiments/docx-summary/"
+      },
+      {
+        "title": "Experiments",
+        "permalink": "/experiments/intro/"
       },
       {
         "title": "XLSX Charts",

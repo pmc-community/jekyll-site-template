@@ -82,7 +82,7 @@
         },
         {
             "permalink": "/experiments/docx-summary/",
-            "summary": "This component will summarise a given docx file and will save the summary in the same folder as the source docx. This progress report was drafted in accordance with the provisions of the tor (7.1-reporting requirements) and with the revised organisation and methodology. The reporting period is october \u2013 december."
+            "summary": "This component helps enhancing your content with auto generated summaries from docx files. It is combined with the download component, so the output rendered will be a summary of the docx file and a download button."
         }
     ]
 }
