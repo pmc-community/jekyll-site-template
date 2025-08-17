@@ -17,10 +17,15 @@
  
    <div id="word-summary-img-toc-{{sid}}">
 
-    <div id="word-summary-img-{{sid}}" class="d-none">
+    <div id="word-summary-img-{{sid}}" class="d-none"> 
+     {% assign parts = file | split: '/' %}
+     {% assign filename = parts | last %}
+     <div id="word-summary-file-name-{{sid}}" class="text-secondary fw-medium fs-5 mb-2">
+      {{filename}}
+     </div>
     </div>
 
-    <div id="word-summary-toc-{{sid}}">
+    <div id="word-summary-toc-{{sid}}" class="border-top border-secondary border-opacity-25">
     </div>
 
    </div>
