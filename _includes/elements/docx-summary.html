@@ -1,0 +1,270 @@
+{% capture uuid %}
+  {% UUID %}
+{% endcapture %}
+{% assign sid = uuid | strip %}
+
+{% assign file = include.file || default: "" %}
+{% assign btnType = include.btnType || default: "primary" %}
+{% assign btnOutline = include.btnType || default: "false" %}
+{% assign btnText = include.btnText || default: "Download" %}
+{% assign sBorder = include.sBorder || default: "false" %}
+{% assign sh = include.sh || default: "" %}
+
+{% if file %}
+ <div id="word-summary-container-{{sid}}" class="row my-4">
+ 
+  <div class="col-4 col-md-3 d-none" id="word-summary-img-col-{{sid}}">
+ 
+   <div id="word-summary-img-toc-{{sid}}">
+
+    <div id="word-summary-img-{{sid}}" class="d-none"> 
+     {% assign parts = file | split: '/' %}
+     {% assign filename = parts | last %}
+     <div id="word-summary-file-name-{{sid}}" class="text-secondary fw-medium fs-5 mb-2">
+      {{filename}}
+     </div>
+    </div>
+
+    <div id="word-summary-toc-{{sid}}" class="border-top border-secondary border-opacity-25">
+    </div>
+
+   </div>
+
+  </div>
+
+  <div id="word-summary-text-col-{{sid}}" class="col-12">
+  
+   {% if sBorder != "false" %}
+    {% assign borderClass = "border-start border-secondary border-opacity-25 p-4" %}
+   {% else %}
+    {% assign borderClass = "p-4" %}
+   {% endif %}
+  
+   <div id="word-summary-{{sid}}" class="ml-4 mb-2 {{borderClass}} position-relative" >
+   {% capture c %}
+    {% ExtDOCXSummary {{file}} %}
+   {% endcapture %}
+   {{c | markdonify}}
+   </div>
+
+   <div id="word-summary-buttons-{{sid}}" class="d-flex justify-content-between mb-4 align-items-center">
+  
+   <button id="word-summary-toggle-fp-{{sid}}" class="btn btn-sm btn-success"><i class="bi bi-arrow-right"></i></button>
+
+   <div id="word-summary-download-{{sid}}">
+    {% assign filename_with_ext = file | split: '/' | last %}
+    {% include elements/downloads.html 
+     type=btnType 
+     outline=btnOutline
+     text=btnText 
+     file=filename_with_ext
+     downloadName=filename_with_ext
+    %}
+   </div>
+
+   </div>
+
+  </div>
+
+ </div>
+
+<script id="word-summary-settings-{{sid}}">
+  const sh_{{sid}} = '{{sh}}';
+  if ( sh_{{sid}} == '') {
+   $('#word-summary-download-{{sid}}').appendTo($('#word-summary-img-toc-{{sid}}'));
+   $('#word-summary-buttons-{{sid}}').removeClass('d-flex');
+  };
+
+  $('#word-summary-container-{{sid}}')
+  .find('div[id^="image-gallery-container-"]')
+  .addClass('mt-0 px-0');
+
+ $('#word-summary-container-{{sid}}')
+  .find('div[id^="image-gallery-container-"]')
+  .find('div[id^="image-gallery-"]')
+  .children().first().removeAttr('class');
+ $('#word-summary-container-{{sid}}').find('img').css('height', 'auto');
+ $('#word-summary-img-{{sid}}').removeClass('d-none');
+ 
+ if (preFlight.envInfo.device.deviceType === 'desktop') {
+  $('#word-summary-{{sid}}').addClass('ghBtnLink');
+ };
+ 
+ $('#word-summary-toggle-fp-{{sid}}').on('click', function() {
+    const colImgStatus = $('#word-summary-img-col-{{sid}}').hasClass('d-none');
+    if (colImgStatus) {
+     $('#word-summary-toggle-fp-{{sid}}').find('i').removeClass('bi-arrow-right').addClass('bi-arrow-left');
+     $('#word-summary-toggle-fp-{{sid}}').removeClass('btn-success').addClass('btn-danger');
+      
+      $('#word-summary-text-col-{{sid}}').removeClass('col-12').addClass('col-8 col-md-9');
+      $('#word-summary-img-col-{{sid}}').removeClass('d-none');
+
+    } else {
+     $('#word-summary-toggle-fp-{{sid}}').find('i').removeClass('bi-arrow-left').addClass('bi-arrow-right');
+     $('#word-summary-toggle-fp-{{sid}}').removeClass('btn-danger').addClass('btn-success');
+      
+      $('#word-summary-img-col-{{sid}}').addClass('d-none');
+      $('#word-summary-text-col-{{sid}}').removeClass('col-8 col-md-9').addClass('col-12');
+      
+    };
+
+ });
+
+</script>
+
+<script id="word-summary-gen-toc-{{sid}}">
+
+ const word_summary_getTocItems_{{sid}} = () => {
+  const tocItems = $('#word-summary-{{sid}}').find('.word_summary-section-title');
+  let tocLinks = [];
+  tocItems.each((index, element) => {
+   const $el = $(element);
+   const tocLink = {
+    id: $el.attr('id'),
+    text: $el.text().trim()
+   };
+   tocLinks.push(tocLink);
+ });
+
+  return tocLinks;
+ };
+
+ word_summary_toc_items_{{sid}} = word_summary_getTocItems_{{sid}}();
+ 
+ const word_summary_renderTocItems_{{sid}} = (items) => {
+  let itemsHtml = '';
+  items.forEach( item => {
+   const itemHtml = `<div class="alwaysCursorPointer ghBtnLink text-primary my-2" id="word_summary_toc_item_${item.id}" target="${item.id}">${item.text}</div>`;
+   itemsHtml = itemsHtml + itemHtml;
+  });
+  itemsHtml = `<div id="word_summary_toc_content_{{sid}}">${itemsHtml}</div>`;
+  return itemsHtml;
+ };
+ 
+ if (word_summary_toc_items_{{sid}}.length > 0 ) {
+  const html = word_summary_renderTocItems_{{sid}}(word_summary_toc_items_{{sid}});
+  $('#word-summary-toc-{{sid}}').html(html);
+ };
+
+
+</script>
+
+<script id="word-summary-nav-toc-{{sid}}">
+
+ $('div[id^="word_summary_toc_item_word_summary-section-title-"]').on('click', function (e) {
+  e.preventDefault(); 
+  const targetId = $(this).attr('target');
+  const sh = '{{sh}}';
+  let $container;
+  
+  if (sh) {
+   $container = $('#word-summary-{{sid}}');
+  } else {
+     $container = $('html, body');
+  };
+
+  const $target = $container.find(`#${targetId}`);
+  if ($target.length) {
+   const containerTop = $container.offset().top;
+   const targetTop = $target.offset().top;
+   const scrollTop = $container.scrollTop();
+   const offset = targetTop - containerTop + scrollTop - 20;
+    
+   if (sh) {
+    $container.animate({ scrollTop: offset }, 400);
+   } else {
+    $container.animate({
+     scrollTop: $target.offset().top - 100
+    }, 200);
+   }
+
+   setTimeout(() => clearTheUrl(), 0);
+  }
+ });
+</script>
+
+<script id="word-summary-expand-toc-{{sid}}">
+
+ const $container_{{sid}} = $('#word-summary-{{sid}}');
+ const $buttonDiv_{{sid}} = $('#word-summary-buttons-{{sid}}');
+
+ $(window).on('scroll resize', checkButtonPosition_{{sid}});
+
+ function checkButtonPosition_{{sid}}() {
+  const sh = '{{sh}}';
+  if (sh !== '') return;
+
+  const $container = $container_{{sid}};
+  const $button = $buttonDiv_{{sid}};
+  const buttonHeight = $button.outerHeight(true);
+
+  const headerHeight = $('#header').outerHeight() || 0;
+  const offset = 100 + headerHeight;
+
+  const rect = $container[0].getBoundingClientRect();
+  const containerHeight = $container.outerHeight();
+
+  if (rect.bottom <= 0 || rect.top >= window.innerHeight) {
+    $button.css({ display: 'none' });
+    return;
+  }
+
+  const containerTop = rect.top;
+  const containerBottom = rect.bottom;
+
+  let fixedTop = offset;
+
+  if (fixedTop + buttonHeight > containerBottom) {
+    fixedTop = containerBottom - buttonHeight;
+  }
+
+  $button.css({ display: 'none' });
+
+  if (containerTop > offset) {
+    $button.css({
+      position: 'absolute',
+      top: '0px',
+      display: 'block'
+    });
+  } else if (containerBottom < offset + buttonHeight) {
+    $button.css({
+      position: 'absolute',
+      top: (containerHeight - buttonHeight) + 'px',
+      display: 'block' 
+    });
+  } else {
+    $button.css({
+      position: 'fixed',
+      top: fixedTop + 'px',
+      display: 'block'
+    });
+  }
+ }
+
+</script>
+
+<style>
+ #word-summary-{{sid}}, #word-summary-img-toc-{{sid}} {
+  height: {{sh}} !important; 
+  overflow-y: scroll !important;
+  scrollbar-width: none;
+  overflow-x: hidden !important;
+ }
+ 
+ #word-summary-{{sid}}::webkit-scrollbar, #word-summary-img-toc-{{sid}}::webkit-scrollbar {
+   display: none
+ }
+ 
+ {% if sh %}
+ #word-summary-img-toc-{{sid}} {
+  position: sticky;
+  top: 80px
+ }
+ {% endif %}
+
+</style>
+
+{% else %}
+ {% assign mess="Something went wrong when rendering PDF summary. Maybe the source PDF was not provided!" %}
+ {% include elements/alert.html class="danger" content=mess title="Error" %}
+{% endif %}

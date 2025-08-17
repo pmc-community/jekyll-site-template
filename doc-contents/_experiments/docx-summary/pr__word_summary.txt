@@ -1,0 +1,56 @@
+---
+summaryType: autoWordSummary
+summaryFor: pr__word_summary
+fullPath: doc-contents/_experiments/docx-summary/pr.docx
+dateTime: "2025-08-17 16:44:19"
+timestamp: 1755438259
+---
+
+<p>This Progress Report was drafted in accordance with the provisions of the ToR (§7.1-Reporting Requirements) and with the Revised Organisation and Methodology (ANNEX 6 to the Inception Report). The reporting period is October – December (incl.) 2024, containing Quarter 8 of the implementation.</p>
+
+<p>Within the reporting period the scope of the work was extended with the activities that will allow us to assist the beneficiary for achieving the operational readiness.</p>
+
+<div id="word_summary-section-title-qeEW8j5DLb38iy6F" class="word_summary-section-title my-2 fw-medium text-primary fs-6">Executive summary</div>
+<p>This Progress Report was drafted in accordance with the provisions of the ToR (§7.1-Reporting Requirements) and with the Revised Organisation and Methodology. The project status presented in this report will be the new reporting baseline as of 1st January 2025.</p>
+
+<div id="word_summary-section-title-abZtxaUI9k5Gm9sh" class="word_summary-section-title my-2 fw-medium text-primary fs-6">Reporting period</div>
+<p>The reporting period for this Progress Report is 01 October 2024 – 31 December 2024. The new end date of the contract is 16 July 2026. Sections 5, 6 and 7 will present the full scope together with the overall planning and log frame.</p>
+
+<div id="word_summary-section-title-nNPF88MzDILG25JA" class="word_summary-section-title my-2 fw-medium text-primary fs-6">Activities in the reporting period</div>
+<p>The team mobilisation was performed after the contract signature. The focus was to appoint the roles that will enter implementation in the on-going phases of the project. For the other roles, we created a pool of experts to be presented to the Beneficiary. Steering Committee Meeting took place in Birnin Zana on 02 October 2024.</p>
+
+<p>The Beneficiary was informed about the risks of switching later to an official Google developer account belonging to a public administration entity from Wakanda. We informed the Steering Committee that the other comments and findings from the first SAT session (all of them being no blocking issues, cosmetic issues, UX issues) were incorporated in the final version of the eID system.</p>
+
+<p>eID API is to be used by third parties for integrating eID features in external systems. The Government must know at any time (and, when the case, must be able to immediately react and restrict/block any potential wrong usage of APIs) who, how, why and using what means has access to API. Final Site Acceptance Testing session was carried out in Birnin Zana, on 6th and 7th of November 2024.</p>
+
+<p>Technical difficulties described in the Installation and Configuration Report drafted for the previous SAT session (July 2024) were solved. The conclusion is that the eID system is fully operable from the technical point of view. A dedicated API workshop and testing session was organised in Birnin Zana on 4th and 5th of December 2024.</p>
+
+<p>The conclusion is that the eID system provides all needed API for integrating eID features into third party systems. Wakanda received through this project a fully featured electronic wallet together with the possibility to use it for the use cases related to eID.</p>
+
+<p>It was clear that a well-defined formal and technical API control and monitoring framework must be put in place to provide, at any time, the information about who, why, how and when uses the APIs. eID features (authentication, signature, seal) are all supported by the APIs and allow the implementation of a wide range of use cases.</p>
+
+<p>The Full plan for achieving Operational Readiness (IMP.OR.D10) identifies the gaps between the situation at the end of the technical implementation (technical readiness) and the TO-BE situation now when the operational readiness will be achieved. The eID system is hosted by the Agency for Informational Society (WISA) which activates under the Ministry of Interior (WMI).</p>
+
+<p>The main internal users are the Registration Officers who belongs to the Civil Registration Agency (WKCA) for issuing the digital certificates for citizens. There is no single body to coordinate all these stakeholders and to properly maintain the eIDs system. The needed resources (human and material) necessary for providing the support services to the end-users (citizens and RAO) are not identified. The necessary procedures and tools are not in place.</p>
+
+<p>WKBR employees, issuing digital certificates (eSeal) is a new task and their offices across the country are not equipped to provide such services.</p>
+
+<div id="word_summary-section-title-uxt4aMOodVestzty" class="word_summary-section-title my-2 fw-medium text-primary fs-6">Risks and Assumptions</div>
+<p>Even from the Steering Committee Meeting held in Birnin Zana we raised the issue of eID “ownership” which means the formal appointment of the eID operator. It is illustrated in the above-mentioned table that we will carry out some design activities in the first quarter of 2025. In any case, the risk impact on achieving the Operational Readiness is H (high), even blocking for some activities.</p>
+
+<div id="word_summary-section-title-ocAz3b2DJz0lYjQO" class="word_summary-section-title my-2 fw-medium text-primary fs-6">Work Breakdown Structure</div>
+<p>During the reporting period the scope of the work was extended. This generated modifications of the Work Breakdown Structure in the sense of adding phases/implementation chapters/deliverables. The new WBS is presented in this section. For the updated Work Break down Structure, we used the following colour convention:</p>
+
+<div id="word_summary-section-title-du5gQih2y8qpwyQY" class="word_summary-section-title my-2 fw-medium text-primary fs-6">Log Frame</div>
+<p>For the different log frame components (objectives, outputs activities), we use the following colour convention to mark the vertical bars for identifying the mentioned components. For the updated status of indicators/means of verification on the Log Frame we used the following colours to highlight the progress. At the date of this report, the progress on the log frame is shown in the table below:Table 3: Log frame progress.</p>
+
+<div id="word_summary-section-title-F83g4ktmE9gW2pph" class="word_summary-section-title my-2 fw-medium text-primary fs-6">Workplan</div>
+<p>The summary of the workplan is: Technical readiness was achieved in December 2024. The contract was extended until July 2026. L2 and L3 support will be provided to the Beneficiary by the end of the contract. Operational readiness will be achieved in 2025.</p>
+
+<p>The eID operator will be able to operate the system under all aspects.</p>
+
+<div id="word_summary-section-title-CKbOHyEpbKnmhJn2" class="word_summary-section-title my-2 fw-medium text-primary fs-6">Next steps</div>
+<p>The next reporting period is Q9 (January, February, March 2025) Next reporting period will include also the period necessary for drafting the next Progress Report (MC.PR-9) The expected new deliverables will be:.- Design of the Support Organisation (IMP.TS.D11-1)- Full design of the Tools for Technical Support (as part of IMP.</p>
+
+<p>TS. D11-2)- Implementation of the tools needed by the eID operator to provide technical support to the end-users (citizens and RAO)</p>
+

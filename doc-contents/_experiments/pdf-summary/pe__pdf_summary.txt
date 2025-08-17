@@ -1,0 +1,29 @@
+---
+summaryType: autoPDFSummary
+summaryFor: pe.pdf
+fullPath: doc-contents/_experiments/pdf-summary/pe.pdf
+dateTime: "2025-08-16 09:18:33"
+timestamp: 1755335913058
+---
+
+<div id="pdf_summary-section-title-BHnRG8VeUTPl5HdV" class="pdf_summary-section-title my-2 fw-medium text-primary fs-6">Intro</div>
+<p>Paper must be in one Columns after Authors Name. All Sub Heading must be in Title Case, Left 0.25 cm, Italic, and Alphabet Numbering (A, B, C…etc.) Paper Title must be in Font Size 20 with Single Line Spacing.</p>
+
+<p>Submit your manuscript electronically for review. Use words rather than symbols. Put units in parentheses.</p>
+
+<p>Do not label axes only with units. When you submit your final version, after your paper has been accepted, prepare it in two-column format. For example, to insert images in Word, position the cursor at C.</p>
+
+<div id="pdf_summary-section-title-fhmqoCx5RoDBNoW7" class="pdf_summary-section-title my-2 fw-medium text-primary fs-6">Units</div>
+<p>Write “ temperature (K),” not “Temperature/K.” Write “Magnetization (kA/m)” or “ magnetization [103 A/m]” Figure labels should be legible, approximately 8 to 12 point type. Abbreviations such as SI, ac, and dc do not have to be defined. Use a zero before decimal points: “0.25,” not “.25.” Use one space between number and unit: 0.1 cm, not 0.1cm. When expressing a range of values, write “7 to 9” or ‘7-9’. Not mix complete spellings and abbreviations of units. Avoid contractions; for example, write “do not” instead of “don’t.” The serial comma is preferred: “A, B, and C” instead of ‘a, B and C’</p>
+
+<div id="pdf_summary-section-title-kO5hHFfqaC6eNFzR" class="pdf_summary-section-title my-2 fw-medium text-primary fs-6">Wording</div>
+<p>The word “data” is plural, not singular. The term for residual magnetization is “remanence”. Do not use the word ‘essentially’ to mean “approximately” or “effectively” A graph within a graph is an “inset,” not an “insert”. Authors should expect to be challenged by reviewers if the results are not supported by adequate data and critical details. Be aware of the different meanings of the homophones “affect” (usually a verb) and “effect”. Do not confuse “imply” and “infer”. Prefixes such as “non,” “sub“‚ “micro“, “multi“, and “ultra“ are not independent words.</p>
+
+<div id="pdf_summary-section-title-DGwSMO2CTHhhKPSW" class="pdf_summary-section-title my-2 fw-medium text-primary fs-6">Author bio</div>
+<p>The first paragraph should contain a place and/or date of birth. The second paragraph uses the pronoun of the person (he or she) and not the author’s last name. It lists military and work experience, including summer and fellowship jobs.</p>
+
+<p>Current and previous research interests end the third paragraph. The third paragraph begins with the author’s title and last name (e.g., Dr.Smith, Prof. Jones, Mr. Kajor, Ms.Hunter).</p> 
+
+<p>List any memberships in professional societies other than the IAENG. If a photograph is provided, the biography will be indented around it.</p>
+
+<p>The photograph is placed at the top of the biography. Personal hobbies will be deleted from the biography if they are listed.</p>

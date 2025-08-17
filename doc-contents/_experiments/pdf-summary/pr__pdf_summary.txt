@@ -1,0 +1,39 @@
+---
+summaryType: autoPDFSummary
+summaryFor: pr.pdf
+fullPath: doc-contents/_experiments/pdf-summary/pr.pdf
+dateTime: "2025-08-15 15:06:40"
+timestamp: 1755270400858
+---
+
+<div id="pdf_summary-section-title-oHefXhVY5AGCbvPk" class="pdf_summary-section-title my-2 fw-medium text-primary fs-6">List of figures</div>
+<p>A dedicated API workshop was organised in the first week of December 2024. All APIs were tested and there were no errors found. Comments about potential improvements related to the API documentation were well received.</p>
+
+<p>In October 2024 we produced the first version of the IMPOR.OR.D10 - Full plan for achieving Operational Readiness. The final SAT was scheduled in the first half of November 2024 (and was carried out in Birnin Zana on 6th and 7th of Nov 2024) The stakeholders were informed that an annex to the initial assignment was already signed by CAO and the Contactor. The annex extends the contract duration with 18 months.</p>
+
+<p>The topic of eID API (to be used by third parties for integrating eID features in external systems) was raised by some stakeholders. Based on the expert opinion from a parallel AVENGERS-AID project, it was strongly demanded to make the API public as soon as possible. It is still not clear if the needed material and human resources can be allocated and used starting with 2025.</p>
+
+<p>The final Site Acceptance Testing session was carried out in Birnin Zana, on 6th and 7th of November 2024. The conclusion is that the eID system provides all needed API for integrating eID features into third party systems. Any other use case is possible but must be subject to other projects (coming both from public administration area or from private sector) It was clear that, considering the features made available through APIs, a well-defined formal and technical API control and monitoring framework must be put in place.</p>
+
+<p>It was useful to brainstorm the most probable integration use cases (strong authentication for eWakanda or strong authentication and moving the whole public notary document signing flow into eNotary by implementing digital signature API) There is no single body to coordinate all these stakeholders and to properly maintain the eID system. The needed resources (human and material) necessary for providing the support services to the end-users (citizens and RAO) are not identified (sized) and provisioned. The necessary procedures and tools are not in place.</p>
+
+<div id="pdf_summary-section-title-OhUYGCCy74yfPKRP" class="pdf_summary-section-title my-2 fw-medium text-primary fs-6">Contractor</div>
+<p>eID system will be close to the moment when will be released for operations. Human resources involved must understand that eID will be part of their day-by-day duties. The risk probability is still M (medium) since there is still one quarter available for appointing the eID operator.</p>
+
+<p>In any case, the risk impact on achieving the Operational Readiness is H (high), even blocking for some activities. IMP.5 Work Breakdown Structureo IMP.BDIS = Build Digital Identity Service Implementation Chapter (design, development, and implementation) For more information, or to get involved in a project of your own, go to: http://www.ibm.com/digitalidentity.</p>
+
+<div id="pdf_summary-section-title-MQtjFrQwcfdocnhh" class="pdf_summary-section-title my-2 fw-medium text-primary fs-6">WBS Codes for Project Deliverables</div>
+<p>The WBS codes used for deliverables are D(1-12), PR, ORR, MOM, DFR and FR. The code is derived from the deliverable name (PR = Progress; ORR = On-Request Report; DFR = Draft Final Report; FR = Final Report) If a complex deliverable must be split in several distinct parts (such as Deliverable 9 – D9), the code contains also a numeric identifier.</p>
+
+<div id="pdf_summary-section-title-4C9n6U6TWcQWbaDD" class="pdf_summary-section-title my-2 fw-medium text-primary fs-6">Specific Objectives</div>
+<p>• Specific Objective 1: To ensure availability of relevant information. The inventory of existing information systems collaborate for the implementation. The system is installed and configured in the appropriate way.</p>
+
+<p>Adequate and sufficient beneficiary resources have been provided. All potential non-conformities (from FATtesting) were corrected.</p>
+
+<div id="pdf_summary-section-title-8kHJ4i7qvQfuvWHv" class="pdf_summary-section-title my-2 fw-medium text-primary fs-6">Acceptance Testing</div>
+<p>• All potential non-conformities (from Functionalproduction environment) are considered. The planning of the training sessions is also considered. Adequate and sufficient beneficiary protections are in place.</p>
+
+<p>A workplan has been drawn up for the project. The summary of the workplan is:Table 4: Workplan.</p>
+
+<div id="pdf_summary-section-title-WBxCwUF6VVv24kvA" class="pdf_summary-section-title my-2 fw-medium text-primary fs-6">Provision Technical Support L2 and L3</div>
+<p>The next reporting period is Q9 (January, February, March 2025) This is the period necessary for drafting the next Progress Report (MCPR-9) The expected new deliverables will be:At the end of the next reportingperiod, the expected work in progress will be.</p>

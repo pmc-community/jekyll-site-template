@@ -60,6 +60,10 @@ exclude:
   - .env
   - assets/config/ # excluding from build because may generate infinite build loop. copied to _site with a site:post_write hook
   - unused/
+  - doc-contents/**/*.txt
+  - doc-contents/**/*.pdf
+  - doc-contents/**/*.docx
+  - doc-contents/**/*.xlsx
 
 aux_links:
   "GitHub":
@@ -93,6 +97,9 @@ collections:
   components:
     permalink: "/:collection/:path"
     output: true
+  experiments:
+    permalink: "/:collection/:path"
+    output: true
   
 
   # default collections (last position(s))
@@ -113,6 +120,9 @@ just_the_docs:
       nav_fold: true
     components:
       name: Components
+      nav_fold: true
+    experiments:
+      name: Experiments
       nav_fold: true
 
     # default collections (last position(s))

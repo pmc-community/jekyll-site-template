@@ -3,7 +3,7 @@ layout: page
 title: XLSX Tables
 permalink: /components/xlsx-tables/
 categories: [Components]
-tags: [table, xls]
+tags: [table, xls, office]
 ---
 
 # Summary

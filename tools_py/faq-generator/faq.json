@@ -1,260 +1,578 @@
 [
   {
-    "q": "What are the general functionalities of the innohub support center?",
-    "a": "The general functionalities of innohub support center are the search form and the innohub issues support form.",
-    "f": "/collection-1/g11/",
-    "t": 1749221762390
+    "q": "What are settings that are used for building the site?",
+    "a": "These files are located in. Folder and are:. : contains settings that are used for building the site and are then sent to the browser to be used on client side :. : contains specific page settings that are used for building the site and are then sent to the browser to be used on client side :. : contains specific page settings that are used for building the site and are then sent to the browser to be used on client side :. : contains specific page settings that are used for building the site and are then sent to the browser to be used on client side :. : contains specific page settings that are used for building the site and are then sent to the browser to be used on client side :.",
+    "f": "/get-started/",
+    "t": 1754448256368
   },
   {
-    "q": "What are the general terms of service for innohub.space?",
-    "a": "These terms of service are applicable from the date shown on this page.",
-    "f": "/terms/",
-    "t": 1749221762390
+    "q": "What is the title of the download link?",
+    "a": "Download link is the title of the download link.",
+    "f": "/components/download-link/",
+    "t": 1754448256368
   },
   {
-    "q": "What are the general functionalities of innohub support center?",
-    "a": "The general functionalities of innohub support center are the search form and the innohub issues support form.",
-    "f": "/collection-1/g11/",
-    "t": 1749221762390
+    "q": "What is the title of the download link 1?",
+    "a": "\"Download Link 1\" is the title of the download link.",
+    "f": "/components/download-link/",
+    "t": 1754448256368
   },
   {
-    "q": "What are the general terms of service for using innohub.space?",
-    "a": "These terms of service are applicable from the date shown on this page.",
-    "f": "/terms/",
-    "t": 1749221762390
+    "q": "What is the default value for the table head?",
+    "a": ": specify if the table is rendered as simple table. If the table contains merged cells, this parameter will not have any influence. Its default value is, but is ignored in the case of detecting merged cells.",
+    "f": "/components/xlsx-tables/",
+    "t": 1754448256368
   },
   {
-    "q": "What is the first line of lorem ipsum?",
-    "a": "The first line of lorem ipsum is lorem dolor sit amet.",
-    "f": "/collection-2/y/y/",
-    "t": 1749221762390
-  },
-  {
-    "q": "What do you agree to be bound by?",
-    "a": "By accessing or using our sites and our services, you agree to be bound by the terms and all terms incorporated herein by reference.",
-    "f": "/terms/",
-    "t": 1749221762390
-  },
-  {
-    "q": "What is the meaning of lorem ipsum?",
-    "a": "Lorem ipsum has roots in a piece of classical latin literature from 45 bc, making it over 2000 years old.",
-    "f": "/collection-2/y/y/",
-    "t": 1749221762390
-  },
-  {
-    "q": "What is the origin of lorem ipsum?",
-    "a": "It has roots in a piece of classical latin literature from 45 bc.",
+    "q": "What is the purpose of the documentation site builder guide?",
+    "a": "Your comprehensive resource for learning how to create, build, and maintain high-quality documentation sites.",
     "f": "/intro/",
-    "t": 1749221762390
+    "t": 1754448256368
   },
   {
-    "q": "What is the first line of lorem dolor sit amet?",
-    "a": "The first line of lorem ipsum, \u201clorem ipsum dolor sit amet.\u201d, comes from a line in section 1.10.32.",
+    "q": "What is the default value of the table head?",
+    "a": "If the table contains merged cells, this parameter will not have any influence. Its default value is, but is ignored in the case of detecting merged cells.",
+    "f": "/components/xlsx-tables/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What is the title of download link 1?",
+    "a": "\"Download Link 1\" is the title of the song \"Download Link 2\".",
+    "f": "/components/download-link/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What type of content can be imported from a source?",
+    "a": "We recommend to use this type of content for short pieces of content that are not very relevant to the core subject of the documentation. This type of content can be imported from any source that returns markdown and follows the same logic of selecting the content between start and end markers. This type of content can be imported only from.",
+    "f": "/content/ec/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What type of content can be imported from any source?",
+    "a": "This type of content can be imported from any source that returns markdown and follows the same logic of selecting the content between start and end markers. This type of content can be imported only from. As we currently do not support custom authentication on client side. Import content from another file from your site, between start and end markers.",
+    "f": "/content/ec/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What type of content can be imported from external repositories?",
+    "a": "It is possible to import content from external public and private github repositories but you must be sure that the content you want to import is available at the time when you build your site.",
+    "f": "/content/ec/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What is the best way to publish information from figma?",
+    "a": "We support design, boards (fig jam), slides and deck files.",
+    "f": "/components/rich-media/",
+    "t": 1754448256368
+  },
+  {
+    "q": "How do you create tables and charts?",
+    "a": "Excel is the best tool for creating tables and charts.",
+    "f": "/content/content-items/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What is the default value of a button?",
+    "a": "The default value of a button is link to be targeted when click on the button.",
+    "f": "/components/link-button/",
+    "t": 1754448256368
+  },
+  {
+    "q": "How can you import content from external repositories?",
+    "a": "You can import multiple parts from a source file from you documentation. Each part should be found bewteen a start and end markers.",
+    "f": "/content/ec/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What is the name of documentation site builder guide?",
+    "a": "Welcome to the documentation site builder guide \u2014 your comprehensive resource for learning how to create, build, and maintain high-quality documentation sites.",
     "f": "/intro/",
-    "t": 1749221762390
-  },
-  {
-    "q": "What is a file that loads some external content?",
-    "a": "This file loads some external content from another repo.",
-    "f": "/collection-2/Z/z/",
-    "t": 1749221762390
-  },
-  {
-    "q": "What does innohub.space services mean?",
-    "a": "PMc and our subsidiaries, officers, employees, agents, partners and licensors make no such warranties that (i) innohub.space services or software will meet your requirements; (ii) innohub.space services or software shall be uninterrupted, timely, secure or error-free; (iii) that such results which may be obtained from the use of the innohub.space services or software will be accurate or reliable; (iv) that any such errors contained in the software shall be corrected.",
-    "f": "/terms/",
-    "t": 1749221762390
-  },
-  {
-    "q": "What is the original format of lorem ipsum?",
-    "a": "The standard chunk of lorem ipsum used since the 1500s is reproduced below for those interested.",
-    "f": "/intro/",
-    "t": 1749221762390
-  },
-  {
-    "q": "What does a file load external content from another repo?",
-    "a": "This file loads some external content from another repo.",
-    "f": "/collection-1/g1/",
-    "t": 1749221762390
-  },
-  {
-    "q": "What could damage your computer, internet access, downloading and/or displaying?",
-    "a": "Any information or material downloaded or otherwise obtained by way of innohub.space services or software shall be accessed by your sole discretion and sole risk.",
-    "f": "/terms/",
-    "t": 1749221762390
+    "t": 1754448256368
   },
   {
     "q": "What is the answer to a question?",
-    "a": "This file loads some external content from another repo.",
-    "f": "/collection-1/g1/",
-    "t": 1749221762390
+    "a": "Markdown syntax for text format can be used.",
+    "f": "/components/qitem/",
+    "t": 1754448256368
   },
   {
-    "q": "What type of text does lorem ipsum come from?",
-    "a": "Lorem ipsum comes from sections 1.10.32 and 1.10.33 of \u201cde finibus bonorum et malorum\u201d by cicero.",
-    "f": "/intro/",
-    "t": 1749221762390
+    "q": "How can a card be used with aside content?",
+    "a": "The card settings can be modified as per your preferences by changing the default values in. File. These are global settings. Changing them will affect all cards used in your documents.",
+    "f": "/components/card/",
+    "t": 1754448256368
   },
   {
-    "q": "How can you register to innohub?",
-    "a": "The initial registration to innohub does not require more than your email address.",
-    "f": "/collection-1/g1/",
-    "t": 1749221762390
+    "q": "What is the tip of a card with aside content?",
+    "a": "Best experience is achieved when using images with transparent background.",
+    "f": "/components/card/",
+    "t": 1754448256368
   },
   {
-    "q": "How can innohub.space be used?",
-    "a": "Innohub.space can be used both in anonymous and registered ways.",
-    "f": "/ec/",
-    "t": 1749221762390
+    "q": "What is the default value for a chart?",
+    "a": "Specify if the chart will be wrapped into a container having a thin border.",
+    "f": "/components/xlsx-charts/",
+    "t": 1754448256368
   },
   {
-    "q": "Do not allow enumerations in the question text?",
-    "a": "Registration to innohub will grant you with access to the protected content and to innohub services.",
-    "f": "/collection-1/g1/",
-    "t": 1749221762390
+    "q": "What is the default value for a border?",
+    "a": "Specify if the chart will be wrapped into a container having a thin border.",
+    "f": "/components/xlsx-charts/",
+    "t": 1754448256368
   },
   {
-    "q": "What can you use the chat functionality?",
-    "a": "You cannot expect us to respond on a different email address and we will not do that.",
-    "f": "/collection-1/g11/",
-    "t": 1749221762390
+    "q": "What is the component designed to work with responsive images?",
+    "a": "This component allows placing images into your content.",
+    "f": "/components/image/",
+    "t": 1754448256368
   },
   {
-    "q": "What do you agree to protect from copyrights, trademarks, patents?",
-    "a": "Content published on this website (included but not limited to digital downloads, texts, graphics, logos, applications) is the property of pmc and/or its content creators and protected by international copyright laws. You do hereby acknowledge and agree that innohub.space services and any essential software that may be used in connection with our services (\u201csoftware\u201d) shall contain proprietary and confidential material that is protected by applicable intellectual property rights and other laws.",
-    "f": "/terms/",
-    "t": 1749221762390
+    "q": "What is the default value of a chart?",
+    "a": "Specify if the chart will be wrapped into a container having a thin border.",
+    "f": "/components/xlsx-charts/",
+    "t": 1754448256368
   },
   {
-    "q": "How can you use innohub.space?",
-    "a": "As an anonymous user you can browse for free all sections of innohub.space although some services are free to be used.",
-    "f": "/ec/",
-    "t": 1749221762390
+    "q": "What type of content is not indexed for search?",
+    "a": "Docaroo allows. To your documents. It is possible to import content from external public and private github repositories but you must be sure that the content you want to import is available at the time when you build your site, as the imported content is added at build time.",
+    "f": "/content/ec/",
+    "t": 1754448256368
   },
   {
-    "q": "What do you need to know about innohub?",
-    "a": "We strongly advise you to read our privacy policy and our terms of service.",
-    "f": "/ec/",
-    "t": 1749221762390
+    "q": "How can you import documents from external repositories?",
+    "a": "You can import multiple parts from a source file from you documentation. Each part should be found bewteen a start and end markers.",
+    "f": "/content/ec/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What is the default value of a downloadable file?",
+    "a": "The default value of a downloadable file is the text rendered on the link button.",
+    "f": "/components/download-link/",
+    "t": 1754448256368
   },
   {
     "q": "What should not be based on the following text?",
-    "a": "Ihsutilities.broadcastmessage(3, process.env.react_app_app_name); can not connect to the store. . Export default _listener;.",
-    "f": "/collection-1/g1/",
-    "t": 1749221762390
+    "a": "Image 1. Image 2. Image 3. Modal title.",
+    "f": "/components/card/",
+    "t": 1754448256368
   },
   {
-    "q": "What type of text is lorem ipsum?",
-    "a": "It has roots in a piece of classical latin literature from 45 bc.",
+    "q": "What is the default value for bootstap buttons?",
+    "a": "If type=,.",
+    "f": "/components/link-button/",
+    "t": 1754448256368
+  },
+  {
+    "q": "How can you create a card gallery from a folder?",
+    "a": "The easiest way to create a card gallery is to create it from a folder.",
+    "f": "/components/card/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What should be based on the following text?",
+    "a": "You should create cards that are meaningful and good looking.",
+    "f": "/components/intro/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What is the default value of bootstap buttons?",
+    "a": "The default value of bootstap buttons is.",
+    "f": "/components/link-button/",
+    "t": 1754448256368
+  },
+  {
+    "q": "How can tables from excel be imported in docs?",
+    "a": "Here is an example of a table without head, having merged cels on rows and columns and having rotated text.",
+    "f": "/components/xlsx-tables/",
+    "t": 1754448256368
+  },
+  {
+    "q": "How to create cards with other docaroo components?",
+    "a": "Cards can be included as single items or in galleries of cards. As much as possible avoid using single simple cards.",
+    "f": "/components/card/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What is an anchor in the document?",
+    "a": "Anchors are placed anywhere in the document.",
+    "f": "/components/link-button/",
+    "t": 1754448256368
+  },
+  {
+    "q": "How is the gallery rendered on a single row?",
+    "a": "Horizontal scroll is enabled.",
+    "f": "/components/image/",
+    "t": 1754448256368
+  },
+  {
+    "q": "How can you build a complete documentation site from scratch?",
+    "a": "Welcome to the documentation site builder guide \u2014 your comprehensive resource for learning how to create, build, and maintain high-quality documentation sites for any kind of project, product, or organization.",
     "f": "/intro/",
-    "t": 1749221762390
-  },
-  {
-    "q": "What is a file from a collection?",
-    "a": "This file loads some external content from another repo and place it inline.",
-    "f": "/collection-2/Z/z/",
-    "t": 1749221762390
-  },
-  {
-    "q": "How can you access innohub?",
-    "a": "Sections 1.10.32 and 1.10.33 from \u201cde finibus bonorum et malorum\u201d by cicero are also reproduced in their exact original form.",
-    "f": "/collection-1/g1/",
-    "t": 1749221762390
+    "t": 1754448256368
   },
   {
     "q": "How do questions be based on the following text?",
-    "a": "Are the services that are provided to you through the sub-sites do not have their own technical support functionalities.",
-    "f": "/collection-1/g11/",
-    "t": 1749221762390
+    "a": "Create meaningful and good looking cards.",
+    "f": "/components/intro/",
+    "t": 1754448256368
   },
   {
-    "q": "What is lorem ipsum?",
-    "a": "It has roots in a piece of classical latin literature from 45 bc.",
-    "f": "/sf/f1/",
-    "t": 1749221762390
+    "q": "How are cards rendered on a single row?",
+    "a": "Card galleries are always rendered on a single row with horizontal scroll.",
+    "f": "/components/card/",
+    "t": 1754448256368
+  },
+  {
+    "q": "How can a table from excel be imported?",
+    "a": "Tables from Excel can be imported in your docs.",
+    "f": "/components/xlsx-tables/",
+    "t": 1754448256368
+  },
+  {
+    "q": "How can you import multiple parts from a source file?",
+    "a": "You can import multiple parts from a source file from you documentation. Each part should be found bewteen a start and end markers. Parts can overlap.",
+    "f": "/content/ec/",
+    "t": 1754448256368
+  },
+  {
+    "q": "How can you create a button link?",
+    "a": "The button link component generates a button link for downloading files from your documentation site.",
+    "f": "/components/download-link/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What does the download-link component generate?",
+    "a": "The download-link component generates a button link.",
+    "f": "/components/download-link/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What does the download link component generate?",
+    "a": "The download-link component generates a button link for downloading files from your documentation site.",
+    "f": "/components/download-link/",
+    "t": 1754448256368
+  },
+  {
+    "q": "How can you create as many relevant questions as possible?",
+    "a": "Import content from other sources into your docs import content.",
+    "f": "/content/content-items/",
+    "t": 1754448256368
   },
   {
     "q": "What must be strictly based on the following text?",
-    "a": "Import multipleloader from './helpers/multipleloader'.",
-    "f": "/collection-1/g1/",
-    "t": 1749221762390
+    "a": "This is a card in a card gallery with one link to external references.",
+    "f": "/components/card/",
+    "t": 1754448256368
   },
   {
-    "q": "What does innohub support center have?",
-    "a": "Information about the issues that you experience when using our services.",
-    "f": "/collection-1/g11/",
-    "t": 1749221762390
+    "q": "How can tables from excel be imported?",
+    "a": "Here is an example of a table without head, having merged cels on rows and columns and having rotated text.",
+    "f": "/components/xlsx-tables/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What do you need to follow along with this guide?",
+    "a": "Basic familiarity with git and github a working knowledge of markdown.",
+    "f": "/intro/",
+    "t": 1754448256368
+  },
+  {
+    "q": "Docaroo gives you a series of content items?",
+    "a": "Docaroo gives you a series of content items.",
+    "f": "/components/intro/",
+    "t": 1754448256368
+  },
+  {
+    "q": "How can you create charts in excel?",
+    "a": "This component allows importing excel charts into your documents.",
+    "f": "/components/xlsx-charts/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What is a component designed to work with responsive images?",
+    "a": "This component allows placing images into your content.",
+    "f": "/components/image/",
+    "t": 1754448256368
+  },
+  {
+    "q": "How can you organise documentation?",
+    "a": "These beeing said, it becomes clear that it is very important the way in which you organise your documentation. As example, we will use the structure of docaroo documentation.",
+    "f": "/content/intro/",
+    "t": 1754448256368
+  },
+  {
+    "q": "How do you create as many relevant questions as possible?",
+    "a": "Import content from other sources into your docs import content.",
+    "f": "/content/content-items/",
+    "t": 1754448256368
+  },
+  {
+    "q": "How do you import code from external repositories?",
+    "a": "From the main menu, select myinnohub and you will easily find the register option. This will direct you to the registration page where you can input the email address and password. Follow the link provided by the confirmation email and that\u2019s all. Import code from external repositories is exactly as importing any other content (as earlier explained).",
+    "f": "/content/ec/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What is a card gallery made of 4 cards?",
+    "a": "It works as shown next. The following example build a card gallery made of 4 cards, having different link buttons configuration.",
+    "f": "/components/card/",
+    "t": 1754448256368
+  },
+  {
+    "q": "How can you create a card gallery?",
+    "a": "The easiest way to create a card gallery is to create it from a folder.",
+    "f": "/components/card/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What is a component that works with responsive images?",
+    "a": "This component allows placing images into your content. Images can have captions. Images can be stored in any place inside the documents root folder.",
+    "f": "/components/image/",
+    "t": 1754448256368
+  },
+  {
+    "q": "How can alerts contain content introduced in clear?",
+    "a": "Alerts can contain content introduced in clear but also can refer from other documents from your documentation or from external public or private repositories.",
+    "f": "/components/alerts/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What can alerts contain content introduced in clear?",
+    "a": "Alerts can contain content introduced in clear but also can refer. From other documents.",
+    "f": "/components/alerts/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What is the title warning alert?",
+    "a": "Aptent taciti sociosqu ad litora torquent per conubia nostra.",
+    "f": "/components/alerts/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What must not be based or inspired from this prompt?",
+    "a": "Image 1. Image 2. Image 3. Modal title.",
+    "f": "/components/card/",
+    "t": 1754448256368
+  },
+  {
+    "q": "How can fig jam files be opened in figma?",
+    "a": "We support design, boards (fig jam), slides and deck files.",
+    "f": "/components/rich-media/",
+    "t": 1754448256368
+  },
+  {
+    "q": "Do not allow enumerations in the question text?",
+    "a": "Creating meaningful and good looking cards.",
+    "f": "/components/intro/",
+    "t": 1754448256368
+  },
+  {
+    "q": "How do you create charts in excel?",
+    "a": "This component allows importing excel charts into your documents.",
+    "f": "/components/xlsx-charts/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What is the title danger alert?",
+    "a": "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per subtiltos himenaeos.",
+    "f": "/components/alerts/",
+    "t": 1754448256368
+  },
+  {
+    "q": "Why not create a table in markdown in excel?",
+    "a": "When. Parameter is set to true, the table will be rendered as table.",
+    "f": "/components/xlsx-tables/",
+    "t": 1754448256368
+  },
+  {
+    "q": "How can fig jam file be opened in figma?",
+    "a": "This is the best way to publish information from figma since you can maintain your design and boards private.",
+    "f": "/components/rich-media/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What is not accepted by elements/figma.html component?",
+    "a": "Elements/figma.html component is not accepted by elements.",
+    "f": "/components/rich-media/",
+    "t": 1754448256368
+  },
+  {
+    "q": "How do you create cards with other docaroo components?",
+    "a": "Card supports embedding external content through other docaroo components.",
+    "f": "/components/card/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What do you need to know about git?",
+    "a": "No prior experience with documentation systems is required.",
+    "f": "/intro/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What is the only dynamic ocnfiguration we use inside?",
+    "a": "These files are located in. Folder and are:. : contains settings that are used for building the site and are then sent to the browser to be used on client side :. : contains specific page settings that are used for building the site and are then sent to the browser to be used on client side :. : contains specific page settings that are used for building the site and are then sent to the browser to be used on client side :. : contains specific page settings that are used for building the site and are then sent to the browser to be used on client side :.",
+    "f": "/get-started/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What does the table above contain merged cells?",
+    "a": "It is imported from the same folder as the parent document.",
+    "f": "/components/xlsx-tables/",
+    "t": 1754448256368
+  },
+  {
+    "q": "How does docaroo support 2 types of text search?",
+    "a": "Docaroo supports 2 types of text search:. Native search algolia docs search.",
+    "f": "/components/qitem/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What does docaroo support 2 types of text search?",
+    "a": "Docaroo supports 2 types of text search:. Native search algolia docs.",
+    "f": "/components/qitem/",
+    "t": 1754448256368
+  },
+  {
+    "q": "How can a document be found?",
+    "a": "Put each document on it\u2019s own folder together with the media files.",
+    "f": "/content/intro/",
+    "t": 1754448256368
+  },
+  {
+    "q": "How do you create a card gallery?",
+    "a": "The easiest way to create a card gallery is to create it from a folder.",
+    "f": "/components/card/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What type of question must not be based or inspired?",
+    "a": "Card galleries are a great way to list elements of the same type (such as projects or categories).",
+    "f": "/components/card/",
+    "t": 1754448256368
+  },
+  {
+    "q": "How can a card's card width be altered?",
+    "a": "The card settings can be modified as per your preferences by changing the default values in. File. These are global settings. Changing them will affect all cards used in your documents.",
+    "f": "/components/card/",
+    "t": 1754448256368
+  },
+  {
+    "q": "How can a card's card width be changed?",
+    "a": "The card settings can be modified as per your preferences by changing the default values in. File.",
+    "f": "/components/card/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What permissions do visitors grant to embed a figma file?",
+    "a": "Post comments which can be viewed and replied to by any other visitor.",
+    "f": "/components/rich-media/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What do docaroo documents contain?",
+    "a": "Main tools made available by docaroo for easy work documents and taxonomies.",
+    "f": "/content/intro/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What is excel?",
+    "a": "Excel is a tool for creating tables and charts.",
+    "f": "/content/content-items/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What is an anchor in an document?",
+    "a": "Anchors are placed anywhere in a document.",
+    "f": "/components/link-button/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What is a basic knowledge of git?",
+    "a": "No prior experience with documentation systems is required.",
+    "f": "/intro/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What does docaroo provide link buttons?",
+    "a": "Docaroo provides link buttons in. Style. Check. For more details.",
+    "f": "/components/link-button/",
+    "t": 1754448256368
+  },
+  {
+    "q": "How do questions be based on a new line?",
+    "a": "Import content at run time.",
+    "f": "/content/ec/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What does importing code from external repositories mean?",
+    "a": "The only addition is that you need to wrap the import in markdown code block ticks.",
+    "f": "/content/ec/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What does innohub support center allow for?",
+    "a": "Innohub support center is the single point of contact for notifying us about the issues that you experience when using our services.",
+    "f": "/content/ec/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What is an anchor inside a document?",
+    "a": "Anchors are placed anywhere in a document.",
+    "f": "/components/link-button/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What does element/figma.html component not accept?",
+    "a": "Elements/figma.html component does not accept elements.",
+    "f": "/components/rich-media/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What does docaroo support?",
+    "a": "Docaroo supports 2 types of text search:. Native search algolia docs search. Additionally, we provide an advanced search based on different parameters such as the taxonomies.",
+    "f": "/components/qitem/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What does docaroo document contain?",
+    "a": "These beeing said, it becomes clear that it is very important the way in which you organise your documentation. As example, we will use the structure of docaroo documentation. The documents are located in. Folder inside the project folder. We name. As the. Following the structure of docaroo documents, you can organise your documentation based on the next recommendations:. Do not rename, it has to be always named. Do not remove the following sub-folders:. : it contains some mandatory html files (currently 404.html, which you can customise as you need) : it contains the main tools made available by docaroo for easy work documents and taxonomies as well as. Page.",
+    "f": "/content/intro/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What is not a logical sentence?",
+    "a": "Image captions can be added to documents as further shown.",
+    "f": "/components/image/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What is a title warning alert?",
+    "a": "Aptent taciti sociosqu ad litora torquent per conubia nostra.",
+    "f": "/components/alerts/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What does element/figma.html component accept?",
+    "a": "Is not accepted by elements/figma.html component.",
+    "f": "/components/rich-media/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What does docaroo do?",
+    "a": "Gives you a series. Content items to enrich your content.",
+    "f": "/components/intro/",
+    "t": 1754448256368
+  },
+  {
+    "q": "What does markdown syntax mean?",
+    "a": "Markdown syntax means that the content of a faq item is a rich media content.",
+    "f": "/components/qitem/",
+    "t": 1754448256368
   },
   {
     "q": "What does innohub support center mean?",
     "a": "Innohub support center is the single point of contact for notifying us about the issues that you experience when using our services.",
-    "f": "/collection-1/g11/",
-    "t": 1749221762390
-  },
-  {
-    "q": "What type of question is not a logical sentence?",
-    "a": "The grandchild's name is the grandchild's name.",
-    "f": "/intro/introChild/introGrandChild/",
-    "t": 1749221762390
-  },
-  {
-    "q": "How can you register with innohub?",
-    "a": "The initial registration to innohub does not require more than your email address.",
-    "f": "/collection-1/g1/",
-    "t": 1749221762390
-  },
-  {
-    "q": "What could damage your computer or internet access?",
-    "a": "Any information or material downloaded or otherwise obtained by way of innohub.space services or software.",
-    "f": "/terms/",
-    "t": 1749221762390
-  },
-  {
-    "q": "What does innohub support center offer?",
-    "a": "A number of functionalities that will allow you to find a solution to your issue.",
-    "f": "/collection-1/g11/",
-    "t": 1749221762390
-  },
-  {
-    "q": "What can you do with a chat session?",
-    "a": "The information that we collect through the chat session will automatically raise a support ticket.",
-    "f": "/collection-1/g11/",
-    "t": 1749221762390
-  },
-  {
-    "q": "What does lorem ipsum dolor sit amet?",
-    "a": "The first line of lorem ipsum comes from a line in section 1.10.32.",
-    "f": "/collection-2/y/y/",
-    "t": 1749221762390
-  },
-  {
-    "q": "How can you use chat functionality?",
-    "a": "You can always use the direct chat functionality by clicking the chat bubble shown on the right-bottom corner of the page.",
-    "f": "/collection-1/g11/",
-    "t": 1749221762390
-  },
-  {
-    "q": "What does lorem ipsum dolor sit amet mean?",
-    "a": "Lorem ipsum comes from sections 1.10.32 and 1.10.33 of \u201cde finibus bonorum et malorum\u201d by cicero.",
-    "f": "/sf/f1/",
-    "t": 1749221762390
-  },
-  {
-    "q": "What does lorem ipsum mean?",
-    "a": "It has roots in a piece of classical latin literature from 45 bc.",
-    "f": "/sf/f1/",
-    "t": 1749221762390
-  },
-  {
-    "q": "What is a logical sentence for a question?",
-    "a": "Content has to be free of software viruses, political campaign, and commercial solicitation.",
-    "f": "/terms/",
-    "t": 1749221762390
-  },
-  {
-    "q": "What is a logical sentence?",
-    "a": "You also agree not to access or attempt to access our services through any means other than through the interface which is provided by innohub.space.",
-    "f": "/terms/",
-    "t": 1749221762390
+    "f": "/content/ec/",
+    "t": 1754448256368
   }
 ]

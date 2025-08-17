@@ -11,10 +11,10 @@
       "content"
     ],
     "excerpt": "",
-    "lastUpdate": "2025-08-02 01:05:20 +0300",
-    "lastUpdateUTC": 1754085920,
-    "createTime": "2025-08-02 01:05:20 +0300",
-    "createTimeUTC": 1754085920,
+    "lastUpdate": "2025-08-10 18:16:39 +0300",
+    "lastUpdateUTC": 1754838999,
+    "createTime": "2025-08-10 18:16:39 +0300",
+    "createTimeUTC": 1754838999,
     "relatedPages": [],
     "autoSummary": "",
     "similarByContent": [],
@@ -37,10 +37,10 @@
       "gallery"
     ],
     "excerpt": "",
-    "lastUpdate": "2025-08-04 21:45:20 +0300",
-    "lastUpdateUTC": 1754333120,
-    "createTime": "2025-08-04 21:45:20 +0300",
-    "createTimeUTC": 1754333120,
+    "lastUpdate": "2025-08-05 15:23:23 +0300",
+    "lastUpdateUTC": 1754396603,
+    "createTime": "2025-08-05 15:23:23 +0300",
+    "createTimeUTC": 1754396603,
     "relatedPages": [],
     "autoSummary": "",
     "similarByContent": [],
@@ -126,10 +126,10 @@
       "gallery"
     ],
     "excerpt": "",
-    "lastUpdate": "2025-08-03 22:53:47 +0300",
-    "lastUpdateUTC": 1754250827,
-    "createTime": "2025-08-03 22:53:47 +0300",
-    "createTimeUTC": 1754250827,
+    "lastUpdate": "2025-08-14 18:04:50 +0300",
+    "lastUpdateUTC": 1755183890,
+    "createTime": "2025-08-14 18:04:50 +0300",
+    "createTimeUTC": 1755183890,
     "relatedPages": [],
     "autoSummary": "",
     "similarByContent": [],
@@ -216,13 +216,14 @@
     "tags": [
       "table",
       "xls",
-      "chart"
+      "chart",
+      "office"
     ],
     "excerpt": "",
-    "lastUpdate": "2025-07-26 15:54:49 +0300",
-    "lastUpdateUTC": 1753534489,
-    "createTime": "2025-07-26 15:54:49 +0300",
-    "createTimeUTC": 1753534489,
+    "lastUpdate": "2025-08-11 13:46:56 +0300",
+    "lastUpdateUTC": 1754909216,
+    "createTime": "2025-08-11 13:46:56 +0300",
+    "createTimeUTC": 1754909216,
     "relatedPages": [],
     "autoSummary": "",
     "similarByContent": [],
@@ -238,13 +239,14 @@
     ],
     "tags": [
       "table",
-      "xls"
+      "xls",
+      "office"
     ],
     "excerpt": "",
-    "lastUpdate": "2025-07-25 15:09:17 +0300",
-    "lastUpdateUTC": 1753445357,
-    "createTime": "2025-07-25 15:09:17 +0300",
-    "createTimeUTC": 1753445357,
+    "lastUpdate": "2025-08-11 13:46:56 +0300",
+    "lastUpdateUTC": 1754909216,
+    "createTime": "2025-08-11 13:46:56 +0300",
+    "createTimeUTC": 1754909216,
     "relatedPages": [],
     "autoSummary": "",
     "similarByContent": [],
@@ -317,6 +319,82 @@
     "similarByContent": [],
     "readingTime": 0,
     "hasDynamicContent": true,
+    "parent": ""
+  },
+  {
+    "title": "DOCX Summary",
+    "permalink": "/experiments/docx-summary/",
+    "categories": [
+      "Experiments",
+      "Content",
+      "Components"
+    ],
+    "tags": [
+      "docx",
+      "summary",
+      "office"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-08-17 22:52:59 +0300",
+    "lastUpdateUTC": 1755460379,
+    "createTime": "2025-08-17 22:52:59 +0300",
+    "createTimeUTC": 1755460379,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Experiments",
+    "permalink": "/experiments/intro/",
+    "categories": [
+      "Experiments",
+      "Content",
+      "Components"
+    ],
+    "tags": [
+      "pdf",
+      "docx",
+      "summary",
+      "office"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-08-11 23:46:44 +0300",
+    "lastUpdateUTC": 1754945204,
+    "createTime": "2025-08-11 23:46:44 +0300",
+    "createTimeUTC": 1754945204,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "PDF Summary",
+    "permalink": "/experiments/pdf-summary/",
+    "categories": [
+      "Experiments",
+      "Content",
+      "Components"
+    ],
+    "tags": [
+      "pdf",
+      "summary",
+      "office"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-08-17 22:52:59 +0300",
+    "lastUpdateUTC": 1755460379,
+    "createTime": "2025-08-17 22:52:59 +0300",
+    "createTimeUTC": 1755460379,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
     "parent": ""
   },
   {

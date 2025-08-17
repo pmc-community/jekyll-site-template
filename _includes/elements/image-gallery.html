@@ -57,6 +57,7 @@
         <div class="col-md-4 col-6 mx-auto">
             {% include elements/image.html
                 source=source
+                mediaDir=mediaDir
                 caption=caption
                 captionBorder=captionBorder
                 imgLink=imgLink
@@ -93,7 +94,7 @@
 
 <script id="script-scale-images-gallery-{{igid}}">
 
-    const scaleImagesToSmallestHeight = (galleryId) => {
+    const scaleImagesToSmallestHeight_{{igid}} = (galleryId) => {
         const $images = $('#' + galleryId + ' img');
         if ($images.length === 0) return;
 
@@ -130,11 +131,13 @@
         }
     };
 
-    scaleImagesToSmallestHeight('image-gallery-{{igid}}');
+    scaleImagesToSmallestHeight_{{igid}}('image-gallery-{{igid}}');
 
 </script>
 
 <script id="script-open-img-gallery-{{igid}}">
+    $('#imageModal-{{igid}}').appendTo('body');
+
     $('#image-gallery-{{igid}} img').on('click', function() {
         const isrc = $(this).attr('src');
         const ialt = $(this).attr('alt');

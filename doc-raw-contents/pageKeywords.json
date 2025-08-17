@@ -240,6 +240,50 @@
         "references",
         "detailed"
       ]
+    },
+    {
+      "permalink": "/experiments/intro/",
+      "keywords": [
+        "series",
+        "features",
+        "life",
+        "easier",
+        "creating",
+        "content",
+        "experiments",
+        "encouraged",
+        "send"
+      ]
+    },
+    {
+      "permalink": "/experiments/pdf-summary/",
+      "keywords": [
+        "component",
+        "helps",
+        "enhancing",
+        "content",
+        "auto",
+        "generated",
+        "summaries",
+        "pdf",
+        "files",
+        "combined"
+      ]
+    },
+    {
+      "permalink": "/experiments/docx-summary/",
+      "keywords": [
+        "component",
+        "helps",
+        "enhancing",
+        "content",
+        "auto",
+        "generated",
+        "summaries",
+        "docx",
+        "files",
+        "combined"
+      ]
     }
   ]
 }

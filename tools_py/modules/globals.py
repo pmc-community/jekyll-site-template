@@ -4,6 +4,8 @@ import string
 import re
 import json
 import os
+import dotenv
+import secrets
 
 def detect_language_with_confidence(text, num_runs=5):
   detected_languages = []
@@ -67,3 +69,19 @@ def get_the_modified_files():
     return file_names
   except:
     return []
+
+def get_env_value(env_path, key):
+  try:
+      dotenv.load_dotenv(dotenv_path=env_path)
+      return os.getenv(key)
+  except Exception as e:
+      print(f"An error occurred: {e}")
+      return None
+  
+def generate_random_string(length=16):
+    """
+    Generates a random string of a specified length using only
+    letters (A-Z, a-z) and digits (0-9).
+    """
+    alphabet = string.ascii_letters + string.digits
+    return ''.join(secrets.choice(alphabet) for i in range(length))

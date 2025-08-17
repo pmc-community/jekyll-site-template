@@ -30,7 +30,6 @@
     {
         "permalink": "/content/ec/",
         "similarFiles": [
-            "/content/intro/",
             "/components/alerts/"
         ]
     },
@@ -79,5 +78,21 @@
     {
         "permalink": "/components/card/",
         "similarFiles": []
+    },
+    {
+        "permalink": "/experiments/intro/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/experiments/pdf-summary/",
+        "similarFiles": [
+            "/experiments/docx-summary/"
+        ]
+    },
+    {
+        "permalink": "/experiments/docx-summary/",
+        "similarFiles": [
+            "/experiments/pdf-summary/"
+        ]
     }
 ]

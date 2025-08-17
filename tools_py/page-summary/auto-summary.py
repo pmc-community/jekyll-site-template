@@ -30,7 +30,10 @@ multiprocessing.set_start_method('spawn', force=True)
 tools_py_path = os.path.abspath(os.path.join('tools_py'))
 if tools_py_path not in sys.path:
     sys.path.append(tools_py_path)
-from modules.globals import get_key_value_from_yml, clean_up_text, get_the_modified_files
+from modules.globals import get_key_value_from_yml, clean_up_text, get_the_modified_files, get_env_value
+
+auth_token = get_env_value('.env', 'HUGGINGFACE_KEY')
+
 
 # === FIXED SEED FOR LANGDETECT ===
 langdetect.detector_factory.DetectorFactory.seed = 42
@@ -59,8 +62,8 @@ tokenizer = None
 # === INITIALIZER ===
 def init_worker():
     global model, tokenizer
-    model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
-    tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=False)
+    model = AutoModelForSeq2SeqLM.from_pretrained(model_name, token=auth_token)
+    tokenizer = AutoTokenizer.from_pretrained(model_name, token=auth_token, use_fast=False)
 
 # === HELPERS ===
 import string

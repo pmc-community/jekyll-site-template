@@ -2,7 +2,7 @@
     "summaries": [
         {
             "permalink": "/components/alerts/",
-            "summary": "Alerts can be of different types as shown by the colors (,,, and ). Alerts can contain content introduced in clear but also can refer. From other documents from your documentation or from external public or private repositories. There is no limit about how many external public repositories you refer."
+            "summary": "Alerts can contain content introduced in clear but also can refer. From other documents from your documentation or from external public or private repositories. There is no limit about how many external public repositories you refer. The number of external private repositories depends on the private access key type you."
         },
         {
             "permalink": "/components/intro/",
@@ -62,7 +62,7 @@
         },
         {
             "permalink": "/components/image/",
-            "summary": "Write a concise, factual summary in English with no greetings or instructions, maximum 50 words, for the following text. This component allows placing images into your content. Images can have captions (lets say you need to show some credits or copyright information) or not."
+            "summary": "This component allows placing images into your content. Images can have captions (lets say you need to show some credits or copyright information) or not. The component is designed to work with responsive images."
         },
         {
             "permalink": "/content/content-items/",
@@ -71,6 +71,18 @@
         {
             "permalink": "/components/card/",
             "summary": "Cards can be included as single items or in galleries of cards."
+        },
+        {
+            "permalink": "/experiments/intro/",
+            "summary": "We are working on a series of interesting features that will make your life much easier when creating content. We consider those features as experiments. You are encouraged to use them and to send us your feedback."
+        },
+        {
+            "permalink": "/experiments/pdf-summary/",
+            "summary": "This component helps enhancing your content with auto generated summaries from pdf files. It is combined with the download component, so the output rendered will be a summary of the pdf file and a download button."
+        },
+        {
+            "permalink": "/experiments/docx-summary/",
+            "summary": "This component helps enhancing your content with auto generated summaries from docx files. It is combined with the download component, so the output rendered will be a summary of the docx file and a download button."
         }
     ]
 }

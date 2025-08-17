@@ -15,7 +15,7 @@ Cards can be included as single items or in galleries of cards. As much as possi
 
 The size of the cards is based on the best practice in creating components able to ensure both readability and good visual effects. However, the card settings can be modified as per your preferences by changing the default values in `_data/buildConfig` file.
 
-```yaml
+```yml
 {% 
     ExternalRepoContent  { 
         "markdown": true,
@@ -57,7 +57,7 @@ Adding simple cards is easy, only add the code shown below. However, as visual e
     title="Tip" 
 %}
 
-# Example
+## Example
 Here is an exmple of a card with aside content. First, define the buttons to be rendered in the card footer. Second, create the card content and the card aside content as external files. Note that you can use any other Docaroo components to create these pieces of content. The code to include the card into a document is: 
 
 {% raw %}
@@ -105,7 +105,7 @@ Here is an exmple of a card with aside content. First, define the buttons to be 
     title="Tip" 
 %}
 
-# Parameters
+## Parameters
 - `img`: path to the image to be the rendered in the card header
 - `title`: the card title
 - `file`: path to the file for the content of the card
@@ -165,9 +165,9 @@ Finally render the gallery:
 ```
 {% endraw %}
 
-# Example
+## Example
 
-`CARD GALLERY`
+<!-- card link buttons definition -->
 {% capture b1 %}
     type=link|outline=true|border=true|text=Galleries|href="/components/image/#id_image_gallery"|newTab=true,
     type=link|border=false|text=Content|href="/content/ec/#id_import_external_repo_content"|newTab=true
@@ -182,20 +182,69 @@ Finally render the gallery:
     type=success|outline=false|border=false|text=Intro|href="/intro/"|newTab=false,
     type=warning|outline=false|border=false|text=Tables|href="/components/xlsx-tables/"|newTab=false
 {% endcapture %}
+<!-- end card link buttons definition -->
 
+<!-- card gallery definition -->
 {% capture cards %}
     img="partials/media/joy-s.png"|title="Card gallery C1"|file="partials/external-content-demo/card-gallery-c1.md"|||{{ b1 }}~~~
     img="partials/media/man-s.png"|title="Card gallery C2"|file="partials/external-content-demo/card-gallery-c2.md"~~~
     img="partials/media/man-thinking.png"|title="Card gallery C3"|file="partials/external-content-demo/card-gallery-c3.md"|||{{ b3 }}~~~
     img="partials/media/smile-600.png"|title="Card gallery C4"|file="partials/external-content-demo/card-gallery-c4.md"|||{{ b4 }}
 {% endcapture %}
+<!-- end card gallery definition -->
 
+<!-- card gallery rendering -->
 {% include elements/card-gallery.html 
   cards=cards
   oneRow=false
 %}
-`END CARD GALLERY`
+<!-- end card gallery rendering -->
 
-# Parameters
+## Parameters
 - `cards`: the list of cards from the gallery
+- `oneRow`: sets the display mode on desktop, rows of 3 cards or a single row with horizontal scroll. Note that, on mobile, the card galleries are always shown on a single row with horizontal scroll.
+
+# Gallery from folder
+The easiest way to create a card gallery is to create it from a folder. The source folder must contain the card definitions, one file per card. The following example is based on the following folder:
+
+{% DirStructure doc-contents/partials/card-gallery-demo %}
+
+A card definition file looks like is shown below:
+
+```javascript
+{% 
+    ExternalRepoContent  { 
+        "markdown": true,
+        "owner":"pmc-community", 
+        "repo":"jekyll-site-template", 
+        "branch":"gh-pages", 
+        "file_path":"doc-contents/partials/card-gallery-demo/c4.md", 
+        "ignore_wp_shortcodes": true, 
+        "start_marker": "fullFile",
+        "include_start_marker": false,
+        "end_marker": "fullFile" ,
+        "include_end_marker": false,
+        "needAuth": true
+    }
+%}
+```
+
+## Example
+
+{% raw %}
+```javascript
+{% include elements/card-gallery-from-folder.html 
+  folder="partials/card-gallery-demo/"
+  oneRow=true
+%}
+```
+{% endraw %}
+
+{% include elements/card-gallery-from-folder.html 
+  folder="partials/card-gallery-demo/"
+  oneRow=true
+%}
+
+## Parameters
+- `folder`: the folder where the cards definition files are located
 - `oneRow`: sets the display mode on desktop, rows of 3 cards or a single row with horizontal scroll. Note that, on mobile, the card galleries are always shown on a single row with horizontal scroll.

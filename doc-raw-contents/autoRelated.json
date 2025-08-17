@@ -160,12 +160,12 @@
         "permalink": "/components/xlsx-tables/"
       },
       {
-        "title": "Image",
-        "permalink": "/components/image/"
+        "title": "PDF Summary",
+        "permalink": "/experiments/pdf-summary/"
       },
       {
-        "title": "Downloads",
-        "permalink": "/components/download-link/"
+        "title": "DOCX Summary",
+        "permalink": "/experiments/docx-summary/"
       }
     ]
   },
@@ -177,8 +177,12 @@
         "permalink": "/components/xlsx-charts/"
       },
       {
-        "title": "Link button",
-        "permalink": "/components/link-button/"
+        "title": "Experiments",
+        "permalink": "/experiments/intro/"
+      },
+      {
+        "title": "DOCX Summary",
+        "permalink": "/experiments/docx-summary/"
       }
     ]
   },
@@ -209,6 +213,10 @@
       {
         "title": "Get started",
         "permalink": "/get-started/"
+      },
+      {
+        "title": "Experiments",
+        "permalink": "/experiments/intro/"
       }
     ]
   },
@@ -226,6 +234,57 @@
       {
         "title": "Content items",
         "permalink": "/content/content-items/"
+      }
+    ]
+  },
+  {
+    "permalink": "/experiments/docx-summary/",
+    "related": [
+      {
+        "title": "PDF Summary",
+        "permalink": "/experiments/pdf-summary/"
+      },
+      {
+        "title": "Experiments",
+        "permalink": "/experiments/intro/"
+      },
+      {
+        "title": "XLSX Charts",
+        "permalink": "/components/xlsx-charts/"
+      }
+    ]
+  },
+  {
+    "permalink": "/experiments/intro/",
+    "related": [
+      {
+        "title": "PDF Summary",
+        "permalink": "/experiments/pdf-summary/"
+      },
+      {
+        "title": "DOCX Summary",
+        "permalink": "/experiments/docx-summary/"
+      },
+      {
+        "title": "XLSX Tables",
+        "permalink": "/components/xlsx-tables/"
+      }
+    ]
+  },
+  {
+    "permalink": "/experiments/pdf-summary/",
+    "related": [
+      {
+        "title": "DOCX Summary",
+        "permalink": "/experiments/docx-summary/"
+      },
+      {
+        "title": "Experiments",
+        "permalink": "/experiments/intro/"
+      },
+      {
+        "title": "XLSX Charts",
+        "permalink": "/components/xlsx-charts/"
       }
     ]
   },

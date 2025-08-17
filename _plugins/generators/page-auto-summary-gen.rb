@@ -30,7 +30,7 @@ module Jekyll
                             permalink = python_script_response["payload"]["payload"]["permalink"]
                             pageNo = python_script_response["outputNo"]
                             Globals.clearLine
-                            Globals.putsColText( Globals::PURPLE, "- PERMALINK: #{permalink} ... done (#{pageNo})")
+                            Globals.putsColText( Globals::GREEN, "- PERMALINK: #{permalink} ... done (#{pageNo})")
                         end
 
                         # the py script generates doc-raw-contents/autoSummary.json
