@@ -89,7 +89,7 @@ The next example demonstrates a generated summary without any subsequent manual 
 
 {% include elements/link-btn.html 
     type="warning" 
-    text="PDF Summary" 
+    text="PDF 1" 
     href="/experiments/pdf-summary/#id_pdf_1" 
 %}
 
@@ -125,7 +125,7 @@ The quality of the summary depends very much on the way in which the original do
 
 {% include elements/link-btn.html 
     type="warning" 
-    text="PDF Summary" 
+    text="PDF 2" 
     href="/experiments/pdf-summary/#id_pdf_2" 
 %}
 
@@ -160,7 +160,7 @@ The next example demonstrates a new generated summary, without any additional co
 
 {% include elements/link-btn.html 
     type="warning" 
-    text="PDF Summary" 
+    text="PDF 3" 
     href="/experiments/pdf-summary/#id_pdf_3" 
 %}
 

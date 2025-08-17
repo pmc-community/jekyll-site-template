@@ -78,8 +78,8 @@ The next example demonstrates a generated summary without any subsequent manual 
 
 {% include elements/link-btn.html 
     type="warning" 
-    text="DOCX Summary" 
-    href="/experiments/pdf-summary/#id_docx_1" 
+    text="DOCX 1" 
+    href="/experiments/docx-summary/#id_docx_1" 
 %}
 
 ## PDF 2
@@ -104,7 +104,7 @@ The quality of the summary depends very much on the way in which the original do
     file="_experiments/pdf-summary/pt.pdf"
     btnType="danger"
     btnOutline="false"
-    btnText="Download PDF"
+    btnText="Download"
     sBorder="true"
     sh="300px"
 %}
@@ -113,8 +113,8 @@ The quality of the summary depends very much on the way in which the original do
 
 {% include elements/link-btn.html 
     type="warning" 
-    text="DOCX Summary" 
-    href="/experiments/pdf-summary/#id_docx_2" 
+    text="DOCX 2" 
+    href="/experiments/docx-summary/#id_docx_2" 
 %}
 
 ## PDF 3
@@ -139,7 +139,7 @@ The next example is based on a generated summary followed by manual corrections 
     file="_experiments/pdf-summary/pe.pdf"
     btnType="danger"
     btnOutline="false"
-    btnText="Download PDF"
+    btnText="Download"
     sBorder="true"
     sh="300px"
 %}
@@ -148,8 +148,8 @@ The next example is based on a generated summary followed by manual corrections 
 
 {% include elements/link-btn.html 
     type="warning" 
-    text="DOCX Summary" 
-    href="/experiments/pdf-summary/#id_docx_3" 
+    text="DOCX 3" 
+    href="/experiments/docx-summary/#id_docx_3" 
 %}
 
 {% include elements/alert.html class="primary" content="There is no general rule to establish if a certain PDF will generate a better quality summary. The best way to use this experiment is to start with the auto-generated summary, review it with care and apply manual corrections where needed." %}
