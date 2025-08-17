@@ -1,0 +1,30 @@
+---
+summaryType: autoWordSummary
+summaryFor: pt__word_summary
+fullPath: doc-contents/_experiments/docx-summary/pt.docx
+dateTime: "2025-08-17 16:45:35"
+timestamp: 1755438335
+---
+
+<p>This article is not a scientific paper, but a template file and guidelines for helping authors prepare their scientific papers. As illustrated in this article, the structure of manuscripts is: Paper header, title, authors, affiliations, abstract, type of paper and keywords, main text, acknowledgements, references, appendix and biographies.</p>
+
+<div id="word_summary-section-title-PpX965Rz1VpMtFvq" class="word_summary-section-title my-2 fw-medium text-primary fs-6">Introduction</div>
+<p>The RonPub Journal Paper Template can be used to help you with your writing. For more information on the RonPub journal, visit: http://www.ronpub.org/.</p>
+
+<div id="word_summary-section-title-BIx7B4aOOLD9O7My" class="word_summary-section-title my-2 fw-medium text-primary fs-6">2	Structure of Article</div>
+<p>Paper header, title, authors, affiliations, abstract, type of paper and keywords, main text, acknowledgements, references, appendix and biographies. Main text is a large as well as major part of a paper. A separate section is needed to describe the structure and content guidelines for the main text. Subsections should be divided into clearly defined and numbered sections.</p>
+
+<p>The main text consists of multiple sections, and typically includes: Introduction, related work, own contribution, discussion and conclusion. The formatting and styling has been setup for sections, subsections and subsubsections in this template document. For further subdivided subsections is the same as one for subsubsection.</p>
+
+<div id="word_summary-section-title-wkiuXzPFDbeBZRoe" class="word_summary-section-title my-2 fw-medium text-primary fs-6">3	Formatting</div>
+<p>This template has been tailored for output on the A4 paper size (8.3in x 11.7in/210mm x 297mm) The columns on the last page should be as close as possible to equal length. Authors should follow the formatting and styling which have been set up in this template.</p>
+
+<p>Citation of a reference in the text should be identified by its number in square brackets. The actual authors can be referred to, but the reference numbers must always be given. Necessary footnotes should be numbered using Arabic numerals. As a minimum for web references and online documents, the full URL should be given and the date when the reference was last accessed.</p>
+
+<div id="word_summary-section-title-s1LCYK8EpVDBaVsw" class="word_summary-section-title my-2 fw-medium text-primary fs-6">4	Summary and Conclusions</div>
+<p>This template document prescribes the format, style and structure of scientific papers. All manuscripts for RonPub journals should comply with this template. Appendices are optional. They should be placed after the references and before the author biographies.</p>
+
+<p>If there is more than one appendix, they should be identified as A, B, etc. Author Biographies. A biography for each author should be supplied here. Each author please provide a photograph in her or his biography.</p>
+
+<p>The author photograph should have a width of 3 cm. The biography should not be less than 70 words. For more information, visit the Author Biographies page.</p>
+

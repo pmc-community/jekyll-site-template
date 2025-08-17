@@ -1,0 +1,57 @@
+---
+summaryType: autoWordSummary
+summaryFor: pe__word_summary
+fullPath: doc-contents/_experiments/docx-summary/pe.docx
+dateTime: "2025-08-17 16:45:09"
+timestamp: 1755438309
+---
+
+<p>Paper setup must be in A4 size with Margin: Top 1.78 cm, Bottom 1.74 cm, Left 1.65 cm, Right 1.66 cm, Gutter 0.63 cm.</p>
+
+<p>Paper must be one Columns after Authors Name. Whole paper must be with: Font Name Times New Roman, Font Size 10, Line Spacing 1.05, indentation 0.36 cm first line EXCEPT Abstract, Keywords, Paper Title, References, Author Profile and Manuscript Details.</p>
+
+<div id="word_summary-section-title-kI2pdbAjV1k4oNMS" class="word_summary-section-title my-2 fw-medium text-primary fs-6">Introduction</div>
+<p>Highlight a section that you want to designate with a certain style, then select the appropriate name on the style menu. The style will adjust your fonts and line spacing. Do not change the font sizes or line spacing to squeeze more text into a limited number of pages. Use italics for emphasis; do not underline.</p>
+
+<div id="word_summary-section-title-GKKuPyV8o5JEKghO" class="word_summary-section-title my-2 fw-medium text-primary fs-6">Procedure for Paper Submission</div>
+<p>When you submit your final version, after your paper has been accepted, prepare it in two-column format. The authors of the accepted manuscripts will be given a copyright form and the form should accompany your final submission. To insert images in Word, position the cursor at the insertion point and either use Insert | Picture | From File or copy the image to the Windows clipboard.</p>
+
+<div id="word_summary-section-title-VXf0MlCgo2D0pW5b" class="word_summary-section-title my-2 fw-medium text-primary fs-6">Math</div>
+<p>If you are using Word, use either the Microsoft Equation Editor or the MathType add-on (http://www.mathtype.com) “Float over text” should not be selected. For more information on how to write equations in your paper, visit: www.pennlive.com/how-to-write-equations.</p>
+
+<div id="word_summary-section-title-32v3zTKvXKQbxPEF" class="word_summary-section-title my-2 fw-medium text-primary fs-6">Units</div>
+<p>Use either SI (MKS) or CGS as primary units. English units may be used as secondary units (in parentheses) Avoid combining SI and CGS units, such as current in amperes and magnetic field in oersteds. If you must use mixed units, clearly state the units for each quantity in an equation.</p>
+
+<div id="word_summary-section-title-ku0ZyVTHPTd9FKV6" class="word_summary-section-title my-2 fw-medium text-primary fs-6">Helpful Hints</div>
+<p>Use the abbreviation “Fig.” even at the beginning of a sentence. Place figure captions below the figures; place table titles above the tables. Do not use color unless it is necessary for the proper interpretation of your figures.</p>
+
+<p>Figure axis labels are often a source of confusion. Use APA reference style. The in-text citation can take two forms: parenthetical and narrative. Papers that have not been published should be cited as “unpublished” Papers that are submitted for publication should be citing as ‘submitted for publication’ Please give affiliations and addresses for private communications.</p>
+
+<p>Number equations consecutively with equation numbers in parentheses flush with the right margin, as in (1) Do not use abbreviations in the title unless they are unavoidable. Hyphenate complex modifiers: “zero-field-cooled magnetization.” Indicate sample dimensions as “0.1 cm  0.2 cm,” not ‘0.10.2cm2’ A parenthetical statement at the end of a sentence is punctuated outside of the closing parenthesis.</p>
+
+<p>In American English, periods and commas are within quotation marks. Avoid contractions; for example, write “do not” instead of “don’t” If you wish, you may write in the first person singular or plural.</p>
+
+<div id="word_summary-section-title-C2U7y9c7hJ4R5aSs" class="word_summary-section-title my-2 fw-medium text-primary fs-6">Some Common Mistakes</div>
+<p>The word “data” is plural, not singular. The term for residual magnetization is “remanence” Do not confuse “imply” and “infer” There is no period after the ‘et’ in the Latin abbreviation “et al.” An excellent style manual and source of information for science writers is [9]. The abbreviation “i.e.,” means ‘that is,’ and the abbreviation "e.g.,’ means “for example” (these abbreviations are not italicized).</p>
+
+<div id="word_summary-section-title-fTiO27Dj5cj44siE" class="word_summary-section-title my-2 fw-medium text-primary fs-6">Editorial Policy</div>
+<p>The submitting author is responsible for obtaining the agreement of all coauthors and any consent required from sponsors before submitting a paper. It is the obligation of the authors to cite relevant prior work. Authors of rejected papers may revise and resubmit them to the journal again. For confidential support call the Samaritans on 08457 90 90 90, visit a local Samaritans branch or see www.samaritans.org.</p>
+
+<div id="word_summary-section-title-aGdbU0Wm6ClOSi9L" class="word_summary-section-title my-2 fw-medium text-primary fs-6">Publication Principles</div>
+<p>Technical papers submitted for publication must advance the state of knowledge and must cite relevant prior work. The length of a submitted paper should be commensurate with the importance, or appropriate to the complexity, of the work. Authors must convince both peer reviewers and the editors of the scientific and technical merit of a paper.</p>
+
+<div id="word_summary-section-title-qBmVRzSgMDZ3G0aU" class="word_summary-section-title my-2 fw-medium text-primary fs-6">Conclusion</div>
+<p>The preferred spelling of the word ‘acknowledgment’ in American English is without an “e” after the “g” Use the singular heading even if you have many acknowledgments. Authors declare that they do not have any conflict of interest. (2002), Auditing in Australia: an integrated approach. 5th ed.</p>
+
+<p>Frenchs Forest: Pearson Education Australia. Simons, N.E., Menzies, B., Matthews, M. A.</p>
+
+<p>(2001). Short Course in Soil and Rock Slope Engineering. London: Thomas Telford Publishing. Dillard, J. P. (2020).</p>
+
+<p>Currents in the study of persuasion. In M. Oliver, A. Raney, & J. Bryant (Eds), Media effects: Advances in theory and research.</p>
+
+<p>Routledge. Forneau, E., Bovet, D. (1933).</p>
+
+<p>Recherches sur l'action sympathicolytique d'un nouveau dérivé du dioxane. Arch Int Pharmacodyn 46:178–191 French. Wikipedia (2021, May 28). Introduction to general relativity.</p>
+
+<p>National Institute of Mental Health (2018, July). Anxiety disorders.</p>
+

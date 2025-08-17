@@ -19,3 +19,22 @@ This component will summarise a given docx file and will save the summary in the
     sBorder="true"
     sh="300px" 
 %}
+
+
+{% include elements/docx-summary.html 
+    file="_experiments/docx-summary/pe.docx"
+    btnType="danger"
+    btnOutline="false"
+    btnText="Download"
+    sBorder="true"
+    sh="300px" 
+%}
+
+{% include elements/docx-summary.html 
+    file="_experiments/docx-summary/pt.docx"
+    btnType="danger"
+    btnOutline="false"
+    btnText="Download"
+    sBorder="true"
+    sh="300px" 
+%}

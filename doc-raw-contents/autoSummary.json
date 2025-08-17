@@ -82,7 +82,7 @@
         },
         {
             "permalink": "/experiments/docx-summary/",
-            "summary": "This progress report was drafted in accordance with the provisions of the tor (7.1-reporting requirements) and with the revised organisation and methodology. The reporting period is october \u2013 december (incl.). The project status presented in this report will be the new reporting baseline."
+            "summary": "This component will summarise a given docx file and will save the summary in the same folder as the source docx. This progress report was drafted in accordance with the provisions of the tor (7.1-reporting requirements) and with the revised organisation and methodology. The reporting period is october \u2013 december."
         }
     ]
 }
