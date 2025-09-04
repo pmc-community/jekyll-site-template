@@ -353,7 +353,7 @@
           "permalink": "/components/xlsx-charts/"
         }
       ],
-      "autoSummary": "The download-link component generates a button link for downloading files from your documentation site. Only downloading from your site is allowed, for security reasons it is not allowed to create download links targeting files hosted on external sites.",
+      "autoSummary": "Download-link component generates a button link for downloading files from your documentation site. Only downloading from your site is allowed, for security reasons it is not allowed to create download links targeting files hosted on external sites. Two prossible approaches for placing the downloadable files into the doc-contents root documentation.",
       "similarByContent": [],
       "readingTime": 2,
       "hasDynamicContent": false,

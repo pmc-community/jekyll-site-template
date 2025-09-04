@@ -60,10 +60,10 @@ exclude:
   - .env
   - assets/config/ # excluding from build because may generate infinite build loop. copied to _site with a site:post_write hook
   - unused/
-  - doc-contents/**/*.txt
-  - doc-contents/**/*.pdf
-  - doc-contents/**/*.docx
-  - doc-contents/**/*.xlsx
+  #- doc-contents/**/*.txt
+  #- doc-contents/**/*.pdf
+  #- doc-contents/**/*.docx
+  #- doc-contents/**/*.xlsx
 
 aux_links:
   "GitHub":
