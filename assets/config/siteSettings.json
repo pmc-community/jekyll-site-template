@@ -866,10 +866,10 @@
         "docs"
       ],
       "excerpt": "doc, contents, root, folder, documents, collections, organised, stricly, depending",
-      "lastUpdate": "2025-09-06 16:41:34 +0300",
+      "lastUpdate": "2025-09-06 16:52:21 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-09-06 16:41:34 +0300",
-      "createTimeUTC": 1757166094,
+      "createTime": "2025-09-06 16:52:21 +0300",
+      "createTimeUTC": 1757166741,
       "relatedPages": [
         {
           "title": "Get started",
@@ -884,7 +884,7 @@
           "permalink": "/content/intro/"
         }
       ],
-      "autoSummary": "Doc-contents is the root folder of the documents and collections. The way in which this folder is organised is stricly depending on the structure you want to have for your documentation.",
+      "autoSummary": "Doc-contents is the root folder of the documents and collections. The way in which this folder is organised is stricly depending on the structure you want to have for your documentation, there is no limitation in this matter.",
       "similarByContent": [],
       "readingTime": 1,
       "hasDynamicContent": false,
@@ -902,10 +902,10 @@
         "docs"
       ],
       "excerpt": "started, docaroo, requires, design, documentation, organising, blog, crucial, involve",
-      "lastUpdate": "2025-08-03 23:55:49 +0300",
+      "lastUpdate": "2025-09-06 16:52:21 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-08-03 23:55:49 +0300",
-      "createTimeUTC": 1754254549,
+      "createTime": "2025-09-06 16:52:21 +0300",
+      "createTimeUTC": 1757166741,
       "relatedPages": [
         {
           "title": "Introduction",
@@ -1107,7 +1107,7 @@
         {
           "title": "Get started",
           "permalink": "/get-started/",
-          "lastUpdate": "03-Aug-2025"
+          "lastUpdate": "06-Sep-2025"
         },
         {
           "title": "Introduction",
@@ -1132,7 +1132,7 @@
         {
           "title": "Get started",
           "permalink": "/get-started/",
-          "lastUpdate": "03-Aug-2025"
+          "lastUpdate": "06-Sep-2025"
         },
         {
           "title": "Introduction",
@@ -1596,7 +1596,7 @@
         {
           "title": "Get started",
           "permalink": "/get-started/",
-          "lastUpdate": "03-Aug-2025"
+          "lastUpdate": "06-Sep-2025"
         },
         {
           "title": "Introduction",
@@ -1616,7 +1616,7 @@
         {
           "title": "Get started",
           "permalink": "/get-started/",
-          "lastUpdate": "03-Aug-2025"
+          "lastUpdate": "06-Sep-2025"
         }
       ],
       "numPages": 2
