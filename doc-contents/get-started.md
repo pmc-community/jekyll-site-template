@@ -2,8 +2,9 @@
 layout: page
 title: Get started
 permalink: /get-started/
-categories: [General]
+categories: [General, Start]
 tags: [documentation,docs]
+has_children: true
 nav_order: 2
 ---
 

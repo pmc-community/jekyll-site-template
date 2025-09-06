@@ -211,12 +211,12 @@
         "permalink": "/content/ec/"
       },
       {
-        "title": "Get started",
-        "permalink": "/get-started/"
+        "title": "Documents",
+        "permalink": "/get-started/doc-contents/"
       },
       {
-        "title": "Experiments",
-        "permalink": "/experiments/intro/"
+        "title": "Get started",
+        "permalink": "/get-started/"
       }
     ]
   },
@@ -289,11 +289,32 @@
     ]
   },
   {
+    "permalink": "/get-started/doc-contents/",
+    "related": [
+      {
+        "title": "Get started",
+        "permalink": "/get-started/"
+      },
+      {
+        "title": "Introduction",
+        "permalink": "/intro/"
+      },
+      {
+        "title": "Content",
+        "permalink": "/content/intro/"
+      }
+    ]
+  },
+  {
     "permalink": "/get-started/",
     "related": [
       {
         "title": "Introduction",
         "permalink": "/intro/"
+      },
+      {
+        "title": "Documents",
+        "permalink": "/get-started/doc-contents/"
       },
       {
         "title": "Content",
@@ -307,6 +328,10 @@
       {
         "title": "Get started",
         "permalink": "/get-started/"
+      },
+      {
+        "title": "Documents",
+        "permalink": "/get-started/doc-contents/"
       }
     ]
   }

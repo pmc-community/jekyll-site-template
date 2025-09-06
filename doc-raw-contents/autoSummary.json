@@ -83,6 +83,10 @@
         {
             "permalink": "/experiments/docx-summary/",
             "summary": "This component helps enhancing your content with auto generated summaries from docx files. It is combined with the download component, so the output rendered will be a summary of the docx file and a download button."
+        },
+        {
+            "permalink": "/get-started/doc-contents/",
+            "summary": "Doc-contents is the root folder of the documents and collections. The way in which this folder is organised is stricly depending on the structure you want to have for your documentation."
         }
     ]
 }

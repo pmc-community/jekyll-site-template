@@ -669,12 +669,12 @@
           "permalink": "/content/ec/"
         },
         {
-          "title": "Get started",
-          "permalink": "/get-started/"
+          "title": "Documents",
+          "permalink": "/get-started/doc-contents/"
         },
         {
-          "title": "Experiments",
-          "permalink": "/experiments/intro/"
+          "title": "Get started",
+          "permalink": "/get-started/"
         }
       ],
       "autoSummary": "There are two types of content that you can use in your documents:. Content directly included in your document or content imported from. External sources are very important because allows you to create reusable pieces of content.",
@@ -855,10 +855,47 @@
       "parent": ""
     },
     {
+      "title": "Documents",
+      "permalink": "/get-started/doc-contents/",
+      "categories": [
+        "General",
+        "Start"
+      ],
+      "tags": [
+        "documentation",
+        "docs"
+      ],
+      "excerpt": "doc, contents, root, folder, documents, collections, organised, stricly, depending",
+      "lastUpdate": "2025-09-06 16:41:34 +0300",
+      "lastUpdateUTC": 0,
+      "createTime": "2025-09-06 16:41:34 +0300",
+      "createTimeUTC": 1757166094,
+      "relatedPages": [
+        {
+          "title": "Get started",
+          "permalink": "/get-started/"
+        },
+        {
+          "title": "Introduction",
+          "permalink": "/intro/"
+        },
+        {
+          "title": "Content",
+          "permalink": "/content/intro/"
+        }
+      ],
+      "autoSummary": "Doc-contents is the root folder of the documents and collections. The way in which this folder is organised is stricly depending on the structure you want to have for your documentation.",
+      "similarByContent": [],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": "Get started"
+    },
+    {
       "title": "Get started",
       "permalink": "/get-started/",
       "categories": [
-        "General"
+        "General",
+        "Start"
       ],
       "tags": [
         "documentation",
@@ -873,6 +910,10 @@
         {
           "title": "Introduction",
           "permalink": "/intro/"
+        },
+        {
+          "title": "Documents",
+          "permalink": "/get-started/doc-contents/"
         },
         {
           "title": "Content",
@@ -904,6 +945,10 @@
         {
           "title": "Get started",
           "permalink": "/get-started/"
+        },
+        {
+          "title": "Documents",
+          "permalink": "/get-started/doc-contents/"
         }
       ],
       "autoSummary": "Documentation site builder guide is a comprehensive resource for learning how to create, build, and maintain high-quality documentation sites. This guide will walk you through everything you need to know about building a complete, maintainable, and professional documentation site.",
@@ -1055,24 +1100,9 @@
     "docs": {
       "pages": [
         {
-          "title": "Get started",
-          "permalink": "/get-started/",
-          "lastUpdate": "03-Aug-2025"
-        },
-        {
-          "title": "Introduction",
-          "permalink": "/intro/",
-          "lastUpdate": "26-Jul-2025"
-        }
-      ],
-      "numPages": 2
-    },
-    "documentation": {
-      "pages": [
-        {
-          "title": "Content",
-          "permalink": "/content/intro/",
-          "lastUpdate": "16-Jul-2025"
+          "title": "Documents",
+          "permalink": "/get-started/doc-contents/",
+          "lastUpdate": "06-Sep-2025"
         },
         {
           "title": "Get started",
@@ -1086,6 +1116,31 @@
         }
       ],
       "numPages": 3
+    },
+    "documentation": {
+      "pages": [
+        {
+          "title": "Content",
+          "permalink": "/content/intro/",
+          "lastUpdate": "16-Jul-2025"
+        },
+        {
+          "title": "Documents",
+          "permalink": "/get-started/doc-contents/",
+          "lastUpdate": "06-Sep-2025"
+        },
+        {
+          "title": "Get started",
+          "permalink": "/get-started/",
+          "lastUpdate": "03-Aug-2025"
+        },
+        {
+          "title": "Introduction",
+          "permalink": "/intro/",
+          "lastUpdate": "26-Jul-2025"
+        }
+      ],
+      "numPages": 4
     },
     "docx": {
       "pages": [
@@ -1397,7 +1452,8 @@
     "Components",
     "Content",
     "Experiments",
-    "General"
+    "General",
+    "Start"
   ],
   "catDetails": {
     "Components": {
@@ -1533,6 +1589,11 @@
     "General": {
       "pages": [
         {
+          "title": "Documents",
+          "permalink": "/get-started/doc-contents/",
+          "lastUpdate": "06-Sep-2025"
+        },
+        {
           "title": "Get started",
           "permalink": "/get-started/",
           "lastUpdate": "03-Aug-2025"
@@ -1541,6 +1602,21 @@
           "title": "Introduction",
           "permalink": "/intro/",
           "lastUpdate": "26-Jul-2025"
+        }
+      ],
+      "numPages": 3
+    },
+    "Start": {
+      "pages": [
+        {
+          "title": "Documents",
+          "permalink": "/get-started/doc-contents/",
+          "lastUpdate": "06-Sep-2025"
+        },
+        {
+          "title": "Get started",
+          "permalink": "/get-started/",
+          "lastUpdate": "03-Aug-2025"
         }
       ],
       "numPages": 2
