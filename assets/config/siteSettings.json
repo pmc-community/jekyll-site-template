@@ -886,7 +886,7 @@
       ],
       "autoSummary": "Doc-contents is the root folder of the documents and collections. The way in which this folder is organised is stricly depending on the structure you want to have for your documentation, there is no limitation in this matter.",
       "similarByContent": [],
-      "readingTime": 1,
+      "readingTime": 2,
       "hasDynamicContent": false,
       "parent": "Get started"
     },
