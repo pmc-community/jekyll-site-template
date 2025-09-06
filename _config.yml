@@ -52,6 +52,7 @@ exclude:
   - config.ru
   - .github/
   - doc-raw-contents/
+  - start-up/
   - doc-change-log/
   - _data/
   - _plugins/
