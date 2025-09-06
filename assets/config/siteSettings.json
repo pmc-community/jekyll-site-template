@@ -865,11 +865,11 @@
         "documentation",
         "docs"
       ],
-      "excerpt": "doc, contents, root, folder, documents, collections, organised, stricly, depending",
-      "lastUpdate": "2025-09-06 16:52:21 +0300",
+      "excerpt": "doc, contents, root, folder, documents, collections, organised, strictly, depending",
+      "lastUpdate": "2025-09-06 17:24:25 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-09-06 16:52:21 +0300",
-      "createTimeUTC": 1757166741,
+      "createTime": "2025-09-06 17:24:25 +0300",
+      "createTimeUTC": 1757168665,
       "relatedPages": [
         {
           "title": "Get started",
@@ -884,9 +884,9 @@
           "permalink": "/content/intro/"
         }
       ],
-      "autoSummary": "Doc-contents is the root folder of the documents and collections. The way in which this folder is organised is stricly depending on the structure you want to have for your documentation, there is no limitation in this matter.",
+      "autoSummary": "Doc-contents is the root folder of the documents and collections. The way in which this folder is organised is strictly depending on the structure you want to have for your documentation. Some sub-folders are necessary to be present: the collection folder where the qa files must be placed if a.",
       "similarByContent": [],
-      "readingTime": 2,
+      "readingTime": 3,
       "hasDynamicContent": false,
       "parent": "Get started"
     },
