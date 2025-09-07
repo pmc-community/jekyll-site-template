@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Documents
+title: Documentation root
 permalink: /get-started/doc-contents/
 categories: [General, Start]
 tags: [documentation,docs]
@@ -21,7 +21,7 @@ However, some sub-folders are necessary to be present:
 {% include elements/alert.html class="warning" content="These folders must not be removed as they are used for specific purposes when building the site." %}
 
 # Doc init
-After cloning or downloading **[Docaroo repository](https://github.com/pmc-community/jekyll-site-template){: target="_blank" }** it is needed to setup your documentation roor folder (`doc-contents`). Remove the default one (which contains this documentation) and replace it with the one found in the `start-up` folder, having the structure shown below. 
+After cloning or downloading **[Docaroo repository](https://github.com/pmc-community/jekyll-site-template){: target="_blank" }** it is needed to setup your documentation root folder (`doc-contents`). Remove the default one (which contains this documentation) and replace it with the one found in the `start-up` folder, having the structure shown below. 
 
 {% DirStructure start-up/doc-contents %}
 
