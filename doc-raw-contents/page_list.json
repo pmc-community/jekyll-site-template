@@ -398,7 +398,7 @@
     "parent": ""
   },
   {
-    "title": "Documents",
+    "title": "Docs root",
     "permalink": "/get-started/doc-contents/",
     "categories": [
       "General",
@@ -406,13 +406,14 @@
     ],
     "tags": [
       "documentation",
-      "docs"
+      "docs",
+      "collections"
     ],
     "excerpt": "",
-    "lastUpdate": "2025-09-06 17:59:01 +0300",
-    "lastUpdateUTC": 1757170741,
-    "createTime": "2025-09-06 17:59:01 +0300",
-    "createTimeUTC": 1757170741,
+    "lastUpdate": "2025-09-07 11:27:05 +0300",
+    "lastUpdateUTC": 1757233625,
+    "createTime": "2025-09-07 11:27:05 +0300",
+    "createTimeUTC": 1757233625,
     "relatedPages": [],
     "autoSummary": "",
     "similarByContent": [],
@@ -464,5 +465,30 @@
     "readingTime": 0,
     "hasDynamicContent": false,
     "parent": ""
+  },
+  {
+    "title": "Configs",
+    "permalink": "/get-started/site-config/",
+    "categories": [
+      "General",
+      "Start"
+    ],
+    "tags": [
+      "documentation",
+      "docs",
+      "collections",
+      "configuration"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-09-07 12:38:56 +0300",
+    "lastUpdateUTC": 1757237936,
+    "createTime": "2025-09-07 12:38:56 +0300",
+    "createTimeUTC": 1757237936,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": "Get started"
   }
 ]

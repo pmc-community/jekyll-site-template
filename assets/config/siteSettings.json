@@ -669,12 +669,12 @@
           "permalink": "/content/ec/"
         },
         {
-          "title": "Documents",
-          "permalink": "/get-started/doc-contents/"
-        },
-        {
           "title": "Get started",
           "permalink": "/get-started/"
+        },
+        {
+          "title": "Experiments",
+          "permalink": "/experiments/intro/"
         }
       ],
       "autoSummary": "There are two types of content that you can use in your documents:. Content directly included in your document or content imported from. External sources are very important because allows you to create reusable pieces of content.",
@@ -855,7 +855,7 @@
       "parent": ""
     },
     {
-      "title": "Documents",
+      "title": "Docs root",
       "permalink": "/get-started/doc-contents/",
       "categories": [
         "General",
@@ -863,14 +863,19 @@
       ],
       "tags": [
         "documentation",
-        "docs"
+        "docs",
+        "collections"
       ],
       "excerpt": "doc, contents, root, folder, documents, collections, organised, strictly, depending",
-      "lastUpdate": "2025-09-06 17:59:01 +0300",
+      "lastUpdate": "2025-09-07 11:27:05 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-09-06 17:59:01 +0300",
-      "createTimeUTC": 1757170741,
+      "createTime": "2025-09-07 11:27:05 +0300",
+      "createTimeUTC": 1757233625,
       "relatedPages": [
+        {
+          "title": "Configs",
+          "permalink": "/get-started/site-config/"
+        },
         {
           "title": "Get started",
           "permalink": "/get-started/"
@@ -878,10 +883,6 @@
         {
           "title": "Introduction",
           "permalink": "/intro/"
-        },
-        {
-          "title": "Content",
-          "permalink": "/content/intro/"
         }
       ],
       "autoSummary": "Doc-contents is the root folder of the documents and collections. The way in which this folder is organised is strictly depending on the structure you want to have for your documentation. Some sub-folders are necessary to be present: the collection folder where the qa files must be placed if a.",
@@ -912,12 +913,12 @@
           "permalink": "/intro/"
         },
         {
-          "title": "Documents",
-          "permalink": "/get-started/doc-contents/"
+          "title": "Configs",
+          "permalink": "/get-started/site-config/"
         },
         {
-          "title": "Content",
-          "permalink": "/content/intro/"
+          "title": "Docs root",
+          "permalink": "/get-started/doc-contents/"
         }
       ],
       "autoSummary": "Getting started with docaroo requires, first of all, to design your documentation. Organising well your documentation (or blog) is crucial. This will involve defining the folder structure and also the taxonomies. Docaroo can take care of automatically generating other information about you documentation.",
@@ -947,8 +948,12 @@
           "permalink": "/get-started/"
         },
         {
-          "title": "Documents",
+          "title": "Docs root",
           "permalink": "/get-started/doc-contents/"
+        },
+        {
+          "title": "Configs",
+          "permalink": "/get-started/site-config/"
         }
       ],
       "autoSummary": "Documentation site builder guide is a comprehensive resource for learning how to create, build, and maintain high-quality documentation sites. This guide will walk you through everything you need to know about building a complete, maintainable, and professional documentation site.",
@@ -961,6 +966,44 @@
       "readingTime": 3,
       "hasDynamicContent": false,
       "parent": ""
+    },
+    {
+      "title": "Configs",
+      "permalink": "/get-started/site-config/",
+      "categories": [
+        "General",
+        "Start"
+      ],
+      "tags": [
+        "documentation",
+        "docs",
+        "collections",
+        "configuration"
+      ],
+      "excerpt": "docaroo, provide, multiple, options, configure, functionality, appearence, configurations, _config, yml",
+      "lastUpdate": "2025-09-07 12:38:56 +0300",
+      "lastUpdateUTC": 0,
+      "createTime": "2025-09-07 12:38:56 +0300",
+      "createTimeUTC": 1757237936,
+      "relatedPages": [
+        {
+          "title": "Docs root",
+          "permalink": "/get-started/doc-contents/"
+        },
+        {
+          "title": "Get started",
+          "permalink": "/get-started/"
+        },
+        {
+          "title": "Introduction",
+          "permalink": "/intro/"
+        }
+      ],
+      "autoSummary": "Docaroo provide multiple options to configure the the site functionality and appearence. Each time when a configuration is changed, it is necessary to re-build the site to make the configuration effective.",
+      "similarByContent": [],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": "Get started"
     }
   ],
   "tagList": [
@@ -969,7 +1012,9 @@
     "button",
     "card",
     "chart",
+    "collections",
     "component",
+    "configuration",
     "content",
     "docs",
     "documentation",
@@ -1057,12 +1102,37 @@
       ],
       "numPages": 1
     },
+    "collections": {
+      "pages": [
+        {
+          "title": "Docs root",
+          "permalink": "/get-started/doc-contents/",
+          "lastUpdate": "07-Sep-2025"
+        },
+        {
+          "title": "Configs",
+          "permalink": "/get-started/site-config/",
+          "lastUpdate": "07-Sep-2025"
+        }
+      ],
+      "numPages": 2
+    },
     "component": {
       "pages": [
         {
           "title": "Image",
           "permalink": "/components/image/",
           "lastUpdate": "14-Aug-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "configuration": {
+      "pages": [
+        {
+          "title": "Configs",
+          "permalink": "/get-started/site-config/",
+          "lastUpdate": "07-Sep-2025"
         }
       ],
       "numPages": 1
@@ -1100,9 +1170,9 @@
     "docs": {
       "pages": [
         {
-          "title": "Documents",
+          "title": "Docs root",
           "permalink": "/get-started/doc-contents/",
-          "lastUpdate": "06-Sep-2025"
+          "lastUpdate": "07-Sep-2025"
         },
         {
           "title": "Get started",
@@ -1113,9 +1183,14 @@
           "title": "Introduction",
           "permalink": "/intro/",
           "lastUpdate": "26-Jul-2025"
+        },
+        {
+          "title": "Configs",
+          "permalink": "/get-started/site-config/",
+          "lastUpdate": "07-Sep-2025"
         }
       ],
-      "numPages": 3
+      "numPages": 4
     },
     "documentation": {
       "pages": [
@@ -1125,9 +1200,9 @@
           "lastUpdate": "16-Jul-2025"
         },
         {
-          "title": "Documents",
+          "title": "Docs root",
           "permalink": "/get-started/doc-contents/",
-          "lastUpdate": "06-Sep-2025"
+          "lastUpdate": "07-Sep-2025"
         },
         {
           "title": "Get started",
@@ -1138,9 +1213,14 @@
           "title": "Introduction",
           "permalink": "/intro/",
           "lastUpdate": "26-Jul-2025"
+        },
+        {
+          "title": "Configs",
+          "permalink": "/get-started/site-config/",
+          "lastUpdate": "07-Sep-2025"
         }
       ],
-      "numPages": 4
+      "numPages": 5
     },
     "docx": {
       "pages": [
@@ -1589,9 +1669,9 @@
     "General": {
       "pages": [
         {
-          "title": "Documents",
+          "title": "Docs root",
           "permalink": "/get-started/doc-contents/",
-          "lastUpdate": "06-Sep-2025"
+          "lastUpdate": "07-Sep-2025"
         },
         {
           "title": "Get started",
@@ -1602,24 +1682,34 @@
           "title": "Introduction",
           "permalink": "/intro/",
           "lastUpdate": "26-Jul-2025"
+        },
+        {
+          "title": "Configs",
+          "permalink": "/get-started/site-config/",
+          "lastUpdate": "07-Sep-2025"
         }
       ],
-      "numPages": 3
+      "numPages": 4
     },
     "Start": {
       "pages": [
         {
-          "title": "Documents",
+          "title": "Docs root",
           "permalink": "/get-started/doc-contents/",
-          "lastUpdate": "06-Sep-2025"
+          "lastUpdate": "07-Sep-2025"
         },
         {
           "title": "Get started",
           "permalink": "/get-started/",
           "lastUpdate": "06-Sep-2025"
+        },
+        {
+          "title": "Configs",
+          "permalink": "/get-started/site-config/",
+          "lastUpdate": "07-Sep-2025"
         }
       ],
-      "numPages": 2
+      "numPages": 3
     }
   },
   "hsSettings": {

@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Documentation root
+title: Docs root
 permalink: /get-started/doc-contents/
 categories: [General, Start]
-tags: [documentation,docs]
+tags: [documentation, docs, collections]
 parent: Get started
 nav_order: 1
 ---
@@ -114,7 +114,7 @@ Collections are shown on the home page in a dedicated collection section (after 
 - `buttonsClass`: the type of the button link to the collection entry document (see **[Bootstrap buttons](https://getbootstrap.com/docs/5.3/components/buttons/){: target="_blank" }**)
 - `buttonsTextClass`: the type of the text shown on he button link to the collection entry document (see **[Text colors](https://getbootstrap.com/docs/5.3/utilities/colors/){: target="_blank" }**)
 
-## Collection entry point
+## Entry point
 A collection can have (or not) a document which is its entry point. In case if this document is defined, when building the side and creating the collection section of the home page, a link button is added to the list of the documents from the collection and points to the collection entry document. The `collection entry point configuration` is defined in the `front_matter` of the document which needs to be such an entry point, as shown below, as example:
 
 ```javascript

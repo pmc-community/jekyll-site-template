@@ -211,12 +211,12 @@
         "permalink": "/content/ec/"
       },
       {
-        "title": "Documents",
-        "permalink": "/get-started/doc-contents/"
-      },
-      {
         "title": "Get started",
         "permalink": "/get-started/"
+      },
+      {
+        "title": "Experiments",
+        "permalink": "/experiments/intro/"
       }
     ]
   },
@@ -292,16 +292,16 @@
     "permalink": "/get-started/doc-contents/",
     "related": [
       {
+        "title": "Configs",
+        "permalink": "/get-started/site-config/"
+      },
+      {
         "title": "Get started",
         "permalink": "/get-started/"
       },
       {
         "title": "Introduction",
         "permalink": "/intro/"
-      },
-      {
-        "title": "Content",
-        "permalink": "/content/intro/"
       }
     ]
   },
@@ -313,12 +313,12 @@
         "permalink": "/intro/"
       },
       {
-        "title": "Documents",
-        "permalink": "/get-started/doc-contents/"
+        "title": "Configs",
+        "permalink": "/get-started/site-config/"
       },
       {
-        "title": "Content",
-        "permalink": "/content/intro/"
+        "title": "Docs root",
+        "permalink": "/get-started/doc-contents/"
       }
     ]
   },
@@ -330,8 +330,29 @@
         "permalink": "/get-started/"
       },
       {
-        "title": "Documents",
+        "title": "Docs root",
         "permalink": "/get-started/doc-contents/"
+      },
+      {
+        "title": "Configs",
+        "permalink": "/get-started/site-config/"
+      }
+    ]
+  },
+  {
+    "permalink": "/get-started/site-config/",
+    "related": [
+      {
+        "title": "Docs root",
+        "permalink": "/get-started/doc-contents/"
+      },
+      {
+        "title": "Get started",
+        "permalink": "/get-started/"
+      },
+      {
+        "title": "Introduction",
+        "permalink": "/intro/"
       }
     ]
   }
