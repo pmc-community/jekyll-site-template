@@ -785,7 +785,7 @@ const setSearchList = (
 }
 
 // DATATABLES
-const tableResizeCols = (tableSelector, tableObject) => {
+const activateTableResizeCols = (tableSelector, tableObject) => {
     /* columns resizing */
     const $table = $(tableSelector);
 
@@ -950,7 +950,7 @@ const setDataTable = async (
             
             // callback to be personalised for each table
             // for post processing the table (i.e. adding buttons based on context)
-
+            if (additionalSettings.resizeColumns) activateTableResizeCols(tableSelector, table);
             if (callback) callback(table);
         },
         serverSide: false,

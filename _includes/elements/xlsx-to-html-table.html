@@ -89,15 +89,13 @@
 
             table.columns.adjust().draw();
 
-            /* columns resizing (from utilities.js)*/
-            tableResizeCols('#xlsx-table-{{tid}}', table);
-
           },
           null,
           {
             ignoreSaveState: true,
             autoWidth: true,
             scrollCollapse: false,
+            resizeColumns: true /* activate column resizing, without saving the sizes */ 
           },
           null,
           preFlight.envInfo,
