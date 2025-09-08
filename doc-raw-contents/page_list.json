@@ -410,10 +410,10 @@
       "collections"
     ],
     "excerpt": "",
-    "lastUpdate": "2025-09-07 11:27:05 +0300",
-    "lastUpdateUTC": 1757233625,
-    "createTime": "2025-09-07 11:27:05 +0300",
-    "createTimeUTC": 1757233625,
+    "lastUpdate": "2025-09-07 12:50:47 +0300",
+    "lastUpdateUTC": 1757238647,
+    "createTime": "2025-09-07 12:50:47 +0300",
+    "createTimeUTC": 1757238647,
     "relatedPages": [],
     "autoSummary": "",
     "similarByContent": [],
@@ -467,11 +467,12 @@
     "parent": ""
   },
   {
-    "title": "Configs",
-    "permalink": "/get-started/site-config/",
+    "title": "Config Files",
+    "permalink": "/get-started/config-files/",
     "categories": [
       "General",
-      "Start"
+      "Start",
+      "Site config"
     ],
     "tags": [
       "documentation",
@@ -480,10 +481,37 @@
       "configuration"
     ],
     "excerpt": "",
-    "lastUpdate": "2025-09-07 12:38:56 +0300",
-    "lastUpdateUTC": 1757237936,
-    "createTime": "2025-09-07 12:38:56 +0300",
-    "createTimeUTC": 1757237936,
+    "lastUpdate": "2025-09-08 10:29:08 +0300",
+    "lastUpdateUTC": 1757316548,
+    "createTime": "2025-09-08 10:29:08 +0300",
+    "createTimeUTC": 1757316548,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": "Get started"
+  },
+  {
+    "title": "Config Options",
+    "permalink": "/get-started/config-options/",
+    "categories": [
+      "General",
+      "Start",
+      "Site config"
+    ],
+    "tags": [
+      "documentation",
+      "docs",
+      "collections",
+      "configuration",
+      "options"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-09-08 11:05:24 +0300",
+    "lastUpdateUTC": 1757318724,
+    "createTime": "2025-09-08 11:05:24 +0300",
+    "createTimeUTC": 1757318724,
     "relatedPages": [],
     "autoSummary": "",
     "similarByContent": [],

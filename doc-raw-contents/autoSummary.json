@@ -91,6 +91,14 @@
         {
             "permalink": "/get-started/site-config/",
             "summary": "Docaroo provide multiple options to configure the the site functionality and appearence. Each time when a configuration is changed, it is necessary to re-build the site to make the configuration effective."
+        },
+        {
+            "permalink": "/get-started/config-files/",
+            "summary": "Docaroo provide multiple options to configure the the site functionality and appearence. Each time when a configuration is changed, it is necessary to re-build the site to make the configuration effective."
+        },
+        {
+            "permalink": "/get-started/config-options/",
+            "summary": "All the options available for site appearance and functionalities are shown in the next table. These options are available in _config.yml or in the configuration files and will allow personalisation of the documentation site."
         }
     ]
 }

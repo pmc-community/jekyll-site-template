@@ -1,0 +1,1 @@
+all the options available for site appearance and functionalities are shown in the next table. these options are available in _config.yml or in the configuration files and will allow personalisation of the documentation site. if a key from a file is not shown in the next table, it means that. show. 5 10 25 50. config files

@@ -867,22 +867,22 @@
         "collections"
       ],
       "excerpt": "doc, contents, root, folder, documents, collections, organised, strictly, depending",
-      "lastUpdate": "2025-09-07 11:27:05 +0300",
+      "lastUpdate": "2025-09-07 12:50:47 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-09-07 11:27:05 +0300",
-      "createTimeUTC": 1757233625,
+      "createTime": "2025-09-07 12:50:47 +0300",
+      "createTimeUTC": 1757238647,
       "relatedPages": [
-        {
-          "title": "Configs",
-          "permalink": "/get-started/site-config/"
-        },
         {
           "title": "Get started",
           "permalink": "/get-started/"
         },
         {
-          "title": "Introduction",
-          "permalink": "/intro/"
+          "title": "Config Files",
+          "permalink": "/get-started/config-files/"
+        },
+        {
+          "title": "Config Options",
+          "permalink": "/get-started/config-options/"
         }
       ],
       "autoSummary": "Doc-contents is the root folder of the documents and collections. The way in which this folder is organised is strictly depending on the structure you want to have for your documentation. Some sub-folders are necessary to be present: the collection folder where the qa files must be placed if a.",
@@ -913,12 +913,12 @@
           "permalink": "/intro/"
         },
         {
-          "title": "Configs",
-          "permalink": "/get-started/site-config/"
-        },
-        {
           "title": "Docs root",
           "permalink": "/get-started/doc-contents/"
+        },
+        {
+          "title": "Config Files",
+          "permalink": "/get-started/config-files/"
         }
       ],
       "autoSummary": "Getting started with docaroo requires, first of all, to design your documentation. Organising well your documentation (or blog) is crucial. This will involve defining the folder structure and also the taxonomies. Docaroo can take care of automatically generating other information about you documentation.",
@@ -952,8 +952,8 @@
           "permalink": "/get-started/doc-contents/"
         },
         {
-          "title": "Configs",
-          "permalink": "/get-started/site-config/"
+          "title": "Config Files",
+          "permalink": "/get-started/config-files/"
         }
       ],
       "autoSummary": "Documentation site builder guide is a comprehensive resource for learning how to create, build, and maintain high-quality documentation sites. This guide will walk you through everything you need to know about building a complete, maintainable, and professional documentation site.",
@@ -968,11 +968,12 @@
       "parent": ""
     },
     {
-      "title": "Configs",
-      "permalink": "/get-started/site-config/",
+      "title": "Config Files",
+      "permalink": "/get-started/config-files/",
       "categories": [
         "General",
-        "Start"
+        "Start",
+        "Site config"
       ],
       "tags": [
         "documentation",
@@ -981,11 +982,15 @@
         "configuration"
       ],
       "excerpt": "docaroo, provide, multiple, options, configure, functionality, appearence, configurations, _config, yml",
-      "lastUpdate": "2025-09-07 12:38:56 +0300",
+      "lastUpdate": "2025-09-08 10:29:08 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-09-07 12:38:56 +0300",
-      "createTimeUTC": 1757237936,
+      "createTime": "2025-09-08 10:29:08 +0300",
+      "createTimeUTC": 1757316548,
       "relatedPages": [
+        {
+          "title": "Config Options",
+          "permalink": "/get-started/config-options/"
+        },
         {
           "title": "Docs root",
           "permalink": "/get-started/doc-contents/"
@@ -993,13 +998,49 @@
         {
           "title": "Get started",
           "permalink": "/get-started/"
-        },
-        {
-          "title": "Introduction",
-          "permalink": "/intro/"
         }
       ],
       "autoSummary": "Docaroo provide multiple options to configure the the site functionality and appearence. Each time when a configuration is changed, it is necessary to re-build the site to make the configuration effective.",
+      "similarByContent": [],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": "Get started"
+    },
+    {
+      "title": "Config Options",
+      "permalink": "/get-started/config-options/",
+      "categories": [
+        "General",
+        "Start",
+        "Site config"
+      ],
+      "tags": [
+        "documentation",
+        "docs",
+        "collections",
+        "configuration",
+        "options"
+      ],
+      "excerpt": "options, appearance, functionalities, table, _config, yml, configuration, files, personalisation",
+      "lastUpdate": "2025-09-08 11:05:24 +0300",
+      "lastUpdateUTC": 0,
+      "createTime": "2025-09-08 11:05:24 +0300",
+      "createTimeUTC": 1757318724,
+      "relatedPages": [
+        {
+          "title": "Config Files",
+          "permalink": "/get-started/config-files/"
+        },
+        {
+          "title": "Docs root",
+          "permalink": "/get-started/doc-contents/"
+        },
+        {
+          "title": "Get started",
+          "permalink": "/get-started/"
+        }
+      ],
+      "autoSummary": "All the options available for site appearance and functionalities are shown in the next table. These options are available in _config.yml or in the configuration files and will allow personalisation of the documentation site.",
       "similarByContent": [],
       "readingTime": 1,
       "hasDynamicContent": false,
@@ -1032,6 +1073,7 @@
     "link",
     "lottie",
     "office",
+    "options",
     "organise docs",
     "pdf",
     "scrollspy",
@@ -1110,12 +1152,17 @@
           "lastUpdate": "07-Sep-2025"
         },
         {
-          "title": "Configs",
-          "permalink": "/get-started/site-config/",
-          "lastUpdate": "07-Sep-2025"
+          "title": "Config Files",
+          "permalink": "/get-started/config-files/",
+          "lastUpdate": "08-Sep-2025"
+        },
+        {
+          "title": "Config Options",
+          "permalink": "/get-started/config-options/",
+          "lastUpdate": "08-Sep-2025"
         }
       ],
-      "numPages": 2
+      "numPages": 3
     },
     "component": {
       "pages": [
@@ -1130,12 +1177,17 @@
     "configuration": {
       "pages": [
         {
-          "title": "Configs",
-          "permalink": "/get-started/site-config/",
-          "lastUpdate": "07-Sep-2025"
+          "title": "Config Files",
+          "permalink": "/get-started/config-files/",
+          "lastUpdate": "08-Sep-2025"
+        },
+        {
+          "title": "Config Options",
+          "permalink": "/get-started/config-options/",
+          "lastUpdate": "08-Sep-2025"
         }
       ],
-      "numPages": 1
+      "numPages": 2
     },
     "content": {
       "pages": [
@@ -1185,12 +1237,17 @@
           "lastUpdate": "26-Jul-2025"
         },
         {
-          "title": "Configs",
-          "permalink": "/get-started/site-config/",
-          "lastUpdate": "07-Sep-2025"
+          "title": "Config Files",
+          "permalink": "/get-started/config-files/",
+          "lastUpdate": "08-Sep-2025"
+        },
+        {
+          "title": "Config Options",
+          "permalink": "/get-started/config-options/",
+          "lastUpdate": "08-Sep-2025"
         }
       ],
-      "numPages": 4
+      "numPages": 5
     },
     "documentation": {
       "pages": [
@@ -1215,12 +1272,17 @@
           "lastUpdate": "26-Jul-2025"
         },
         {
-          "title": "Configs",
-          "permalink": "/get-started/site-config/",
-          "lastUpdate": "07-Sep-2025"
+          "title": "Config Files",
+          "permalink": "/get-started/config-files/",
+          "lastUpdate": "08-Sep-2025"
+        },
+        {
+          "title": "Config Options",
+          "permalink": "/get-started/config-options/",
+          "lastUpdate": "08-Sep-2025"
         }
       ],
-      "numPages": 5
+      "numPages": 6
     },
     "docx": {
       "pages": [
@@ -1422,6 +1484,16 @@
       ],
       "numPages": 5
     },
+    "options": {
+      "pages": [
+        {
+          "title": "Config Options",
+          "permalink": "/get-started/config-options/",
+          "lastUpdate": "08-Sep-2025"
+        }
+      ],
+      "numPages": 1
+    },
     "organise docs": {
       "pages": [
         {
@@ -1533,6 +1605,7 @@
     "Content",
     "Experiments",
     "General",
+    "Site config",
     "Start"
   ],
   "catDetails": {
@@ -1684,12 +1757,32 @@
           "lastUpdate": "26-Jul-2025"
         },
         {
-          "title": "Configs",
-          "permalink": "/get-started/site-config/",
-          "lastUpdate": "07-Sep-2025"
+          "title": "Config Files",
+          "permalink": "/get-started/config-files/",
+          "lastUpdate": "08-Sep-2025"
+        },
+        {
+          "title": "Config Options",
+          "permalink": "/get-started/config-options/",
+          "lastUpdate": "08-Sep-2025"
         }
       ],
-      "numPages": 4
+      "numPages": 5
+    },
+    "Site config": {
+      "pages": [
+        {
+          "title": "Config Files",
+          "permalink": "/get-started/config-files/",
+          "lastUpdate": "08-Sep-2025"
+        },
+        {
+          "title": "Config Options",
+          "permalink": "/get-started/config-options/",
+          "lastUpdate": "08-Sep-2025"
+        }
+      ],
+      "numPages": 2
     },
     "Start": {
       "pages": [
@@ -1704,12 +1797,17 @@
           "lastUpdate": "06-Sep-2025"
         },
         {
-          "title": "Configs",
-          "permalink": "/get-started/site-config/",
-          "lastUpdate": "07-Sep-2025"
+          "title": "Config Files",
+          "permalink": "/get-started/config-files/",
+          "lastUpdate": "08-Sep-2025"
+        },
+        {
+          "title": "Config Options",
+          "permalink": "/get-started/config-options/",
+          "lastUpdate": "08-Sep-2025"
         }
       ],
-      "numPages": 3
+      "numPages": 4
     }
   },
   "hsSettings": {

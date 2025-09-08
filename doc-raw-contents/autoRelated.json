@@ -292,16 +292,16 @@
     "permalink": "/get-started/doc-contents/",
     "related": [
       {
-        "title": "Configs",
-        "permalink": "/get-started/site-config/"
-      },
-      {
         "title": "Get started",
         "permalink": "/get-started/"
       },
       {
-        "title": "Introduction",
-        "permalink": "/intro/"
+        "title": "Config Files",
+        "permalink": "/get-started/config-files/"
+      },
+      {
+        "title": "Config Options",
+        "permalink": "/get-started/config-options/"
       }
     ]
   },
@@ -313,12 +313,12 @@
         "permalink": "/intro/"
       },
       {
-        "title": "Configs",
-        "permalink": "/get-started/site-config/"
-      },
-      {
         "title": "Docs root",
         "permalink": "/get-started/doc-contents/"
+      },
+      {
+        "title": "Config Files",
+        "permalink": "/get-started/config-files/"
       }
     ]
   },
@@ -334,14 +334,18 @@
         "permalink": "/get-started/doc-contents/"
       },
       {
-        "title": "Configs",
-        "permalink": "/get-started/site-config/"
+        "title": "Config Files",
+        "permalink": "/get-started/config-files/"
       }
     ]
   },
   {
-    "permalink": "/get-started/site-config/",
+    "permalink": "/get-started/config-files/",
     "related": [
+      {
+        "title": "Config Options",
+        "permalink": "/get-started/config-options/"
+      },
       {
         "title": "Docs root",
         "permalink": "/get-started/doc-contents/"
@@ -349,10 +353,23 @@
       {
         "title": "Get started",
         "permalink": "/get-started/"
+      }
+    ]
+  },
+  {
+    "permalink": "/get-started/config-options/",
+    "related": [
+      {
+        "title": "Config Files",
+        "permalink": "/get-started/config-files/"
       },
       {
-        "title": "Introduction",
-        "permalink": "/intro/"
+        "title": "Docs root",
+        "permalink": "/get-started/doc-contents/"
+      },
+      {
+        "title": "Get started",
+        "permalink": "/get-started/"
       }
     ]
   }

@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Configs
-permalink: /get-started/site-config/
-categories: [General, Start]
+title: Config Files
+permalink: /get-started/config-files/
+categories: [General, Start, Site config]
 tags: [documentation, docs, collections, configuration]
 parent: Get started
 nav_order: 2

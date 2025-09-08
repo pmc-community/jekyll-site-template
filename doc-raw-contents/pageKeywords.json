@@ -313,6 +313,35 @@
         "_config",
         "yml"
       ]
+    },
+    {
+      "permalink": "/get-started/config-files/",
+      "keywords": [
+        "docaroo",
+        "provide",
+        "multiple",
+        "options",
+        "configure",
+        "functionality",
+        "appearence",
+        "configurations",
+        "_config",
+        "yml"
+      ]
+    },
+    {
+      "permalink": "/get-started/config-options/",
+      "keywords": [
+        "options",
+        "appearance",
+        "functionalities",
+        "table",
+        "_config",
+        "yml",
+        "configuration",
+        "files",
+        "personalisation"
+      ]
     }
   ]
 }

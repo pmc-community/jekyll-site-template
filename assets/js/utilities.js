@@ -785,6 +785,51 @@ const setSearchList = (
 }
 
 // DATATABLES
+const tableResizeCols = (tableSelector, tableObject) => {
+    /* columns resizing */
+    const $table = $(tableSelector);
+
+    if ($table.find('colgroup').length === 0) {
+        const colgroup = $('<colgroup/>');
+        $table.find('thead th').each(() => colgroup.append('<col>'));
+        $table.prepend(colgroup);
+    }
+
+    $table.find('thead tr:first-child th').each(function (index) {
+        const th = $(this);
+
+        th.resizable({
+        handles: 'e',
+
+        resize: function (e, ui) {
+        const newWidth = ui.size.width;
+        th.css({
+            width: newWidth + 'px',
+            'max-width': newWidth + 'px'
+        });
+
+        tableObject.column(index).nodes().to$().css({
+            width: newWidth + 'px',
+            'max-width': newWidth + 'px'
+        });
+
+        $table.find('col').eq(index).css({
+            width: newWidth + 'px',
+            'max-width': newWidth + 'px'
+        });
+        },
+
+        stop: function () {
+        setTimeout(function () {
+        tableObject.draw(false);
+        }, 10);
+        }
+    });
+    });
+
+    tableObject.columns.adjust().draw();
+}
+
 // columnsConfig is set in the caller, to be fit to the specific table
 // callback and callbackClickRow are set in the caller to do specific processing after the table is initialized
 const setDataTable = async (
@@ -905,6 +950,7 @@ const setDataTable = async (
             
             // callback to be personalised for each table
             // for post processing the table (i.e. adding buttons based on context)
+
             if (callback) callback(table);
         },
         serverSide: false,

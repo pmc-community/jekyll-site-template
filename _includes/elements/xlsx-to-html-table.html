@@ -88,6 +88,10 @@
             $('.tab-features-button-{{tid}} span').addClass('text-light');
 
             table.columns.adjust().draw();
+
+            /* columns resizing (from utilities.js)*/
+            tableResizeCols('#xlsx-table-{{tid}}', table);
+
           },
           null,
           {
@@ -110,6 +114,8 @@
         applyColorSchemaCorrections();
 
       },200); 
+
+
     }
   </script>
 
@@ -220,7 +226,10 @@
     #xlsx-table-pagination-nav-{{tid}} .pagination {
       list-style: none !important;
     }
-
+   
+    #xlsx-table-{{tid}} {
+     table-layout: fixed !important;  
+   }
   </style>
 
 {% else %}
