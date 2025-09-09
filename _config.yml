@@ -103,7 +103,7 @@ collections:
     output: true
   
 
-  # default collections (last position(s))
+  # default collections (last position(s)) --- do not modify
   tools:
     permalink: "/:collection/:path"
     output: true
@@ -126,7 +126,7 @@ just_the_docs:
       name: Experiments
       nav_fold: true
 
-    # default collections (last position(s))
+    # default collections (last position(s)) --- do not modify
     tools:
       name: Tools
       nav_fold: true
