@@ -145,7 +145,7 @@ dataTables:
   TO_rebuildTableAfterUIInteration: 200 # i.e. after closing an offcanvas
   TO_afterAutoApplySearchPanesCurrentFilter: 500 # used in utilities.js, in $(document).ready(...) when creating datatable
   TO_resolveAutoApplySearchPanesCurrentFilter: 500 # used in utilities.js, createTable_ASYNC(...), helpers, autoApplyActiveFilter
-  TO_doStuffAfterInitComplete: 100 # used in initComplete callback used in utilities.js, setDataTable(...), defaultSettings prop
+  TO_doStuffAfterInitComplete: 100 # used in initComplete callback in utilities.js, setDataTable(...), defaultSettings prop
   TO_forceSearchPanesToLoseFocus: 200 # used in utilities.js, createTable_ASYNC(...), helpers, clearActiveFilter
   TO_doStuffAfterSearchPanesContainerOpen: 100 # used in utilities.js, createTable_ASYNC, PROCESSING WHEN SEARCH PANES CONTAINER IS OPEN
   TO_doStuffAfterSearchPanesContainerClosed: 100 # used in utilities.js, createTable_ASYNC, PROCESSING WHEN SEARCH PANES CONTAINER IS CLOSED
