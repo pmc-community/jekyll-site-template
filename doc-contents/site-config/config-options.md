@@ -11,7 +11,7 @@ nav_order: 3
 All the options available for site appearance and functionalities are shown in the next table. These options are available in _config.yml or in the configuration files and will allow personalisation of the documentation site. 
 
 {% include elements/alert.html class="warning" 
-    content="If a key from a file is not shown in the next table, it means that `it must not be changed because is not a configuration option`" 
+    content="If a key from a file is not shown in the next table, it means that **`it must not be changed because is not a configuration option`**. Changing other keys/values except for the ones listed on this page may cause site build fail." 
 %}
 
 {% include elements/xlsx-to-html-table.html 
