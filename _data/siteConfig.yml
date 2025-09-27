@@ -153,3 +153,5 @@ dataTables:
   TO_showLengthSearchInfoPagination: 0 # not used
   tableContainerFixedHeightWhenLoading: "200px"
   possibleDataTableParents: [".table-wrapper", ".card-body"] # used in utilities.js, setDataTable/defaultSettings/initComplete
+  paginationButtons: 5
+  rowsPerPage: 5

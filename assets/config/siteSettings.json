@@ -121,7 +121,7 @@
         },
         "submisionSource": {
           "propName": "source",
-          "propValue": "figmares_doc_site"
+          "propValue": "docaroo"
         },
         "prefLang": {
           "propName": "hs_language"
@@ -205,7 +205,9 @@
       "possibleDataTableParents": [
         ".table-wrapper",
         ".card-body"
-      ]
+      ],
+      "paginationButtons": 5,
+      "rowsPerPage": 5
     },
     "siteTitle": "Docaroo"
   },
@@ -881,8 +883,8 @@
           "permalink": "/get-started/config-files/"
         },
         {
-          "title": "Config Options",
-          "permalink": "/get-started/config-options/"
+          "title": "Introduction",
+          "permalink": "/intro/"
         }
       ],
       "autoSummary": "Doc-contents is the root folder of the documents and collections. The way in which this folder is organised is strictly depending on the structure you want to have for your documentation. Some sub-folders are necessary to be present: the collection folder where the qa files must be placed if a.",
@@ -1022,10 +1024,10 @@
         "options"
       ],
       "excerpt": "options, appearance, functionalities, table, _config, yml, configuration, files, personalisation",
-      "lastUpdate": "2025-09-08 18:26:42 +0300",
+      "lastUpdate": "2025-09-25 11:36:26 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-09-08 18:26:42 +0300",
-      "createTimeUTC": 1757345202,
+      "createTime": "2025-09-25 11:36:26 +0300",
+      "createTimeUTC": 1758789386,
       "relatedPages": [
         {
           "title": "Config Files",
@@ -1040,7 +1042,7 @@
           "permalink": "/get-started/"
         }
       ],
-      "autoSummary": "All the options available for site appearance and functionalities are shown in the next table. These options are available in _config.yml or in the configuration files and will allow personalisation of the documentation site.",
+      "autoSummary": "All the options available for site appearance and functionalities are shown in the next table. These options are available in _config.yml or in the configuration files. Changing other keys except for the ones listed on this page may cause site build fail or unexpected behavior.",
       "similarByContent": [],
       "readingTime": 1,
       "hasDynamicContent": false,
@@ -1159,7 +1161,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "08-Sep-2025"
+          "lastUpdate": "25-Sep-2025"
         }
       ],
       "numPages": 3
@@ -1184,7 +1186,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "08-Sep-2025"
+          "lastUpdate": "25-Sep-2025"
         }
       ],
       "numPages": 2
@@ -1244,7 +1246,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "08-Sep-2025"
+          "lastUpdate": "25-Sep-2025"
         }
       ],
       "numPages": 5
@@ -1279,7 +1281,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "08-Sep-2025"
+          "lastUpdate": "25-Sep-2025"
         }
       ],
       "numPages": 6
@@ -1489,7 +1491,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "08-Sep-2025"
+          "lastUpdate": "25-Sep-2025"
         }
       ],
       "numPages": 1
@@ -1764,7 +1766,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "08-Sep-2025"
+          "lastUpdate": "25-Sep-2025"
         }
       ],
       "numPages": 5
@@ -1779,7 +1781,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "08-Sep-2025"
+          "lastUpdate": "25-Sep-2025"
         }
       ],
       "numPages": 2
@@ -1804,7 +1806,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "08-Sep-2025"
+          "lastUpdate": "25-Sep-2025"
         }
       ],
       "numPages": 4

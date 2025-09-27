@@ -13,6 +13,6 @@ begin
     puts "An error occurred: #{e.message}"
 end
 
-print (Globals::BACK_1_ROW)
+#print (Globals::BACK_1_ROW)
 Globals.putsColText(Globals::GREEN,"-----------------------\n")
   

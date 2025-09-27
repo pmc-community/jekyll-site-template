@@ -17,7 +17,7 @@ Pre-defined content items are pieces of content that can be used directly in you
 # Items
 Docaroo gives you a series `pre-defined` content items to enrich your content. Content items are helpful liquid tags generating pieces of content.
 
-## **[`Content items`](/components/content-items/){: target="_blank" }** 
+## **[`Content items`](/content/content-items/){: target="_blank" }** 
 
 # Components
 Docaroo gives you the following `pre-defined` components:
@@ -37,7 +37,7 @@ Different types of links to internal and external files/pages. Also, a very usef
 ## **[`Scrollspy`](/components/scrollspy/){: target="_blank" }** - **[`Tabs`](/components/scrollspy/#id_tabs){: target="_blank" }** 
 Great ways to organise your content inside a document in a logical structure.
 
-## **[`Downloads`](/components/downloads/){: target="_blank" }**
+## **[`Downloads`](/components/download-link/){: target="_blank" }**
 Create button link to download a file.
 
 ## **[`Tables`](/components/xlsx-tables/){: target="_blank" }** - **[`Charts`](/components/xlsx-charts/){: target="_blank" }**

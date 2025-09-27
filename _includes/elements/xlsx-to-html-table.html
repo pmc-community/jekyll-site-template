@@ -87,15 +87,16 @@
             $('.dt-buttons').find('button').removeClass('btn-sm btn-secondary mb-2').addClass('border-0 mb-0 btn-primary');
             $('.tab-features-button-{{tid}} span').addClass('text-light');
 
-            table.columns.adjust().draw();
-
           },
           null,
           {
             ignoreSaveState: true,
             autoWidth: true,
-            scrollCollapse: false,
-            resizeColumns: true /* activate column resizing, without saving the sizes */ 
+            columnDefs: [
+              { targets: '_all', className: 'dt-wrap' }
+            ],
+            scrollCollapse: true,
+            resizeColumns: true /* activate column resizing, without saving the sizes */
           },
           null,
           preFlight.envInfo,
@@ -112,7 +113,6 @@
         applyColorSchemaCorrections();
 
       },200); 
-
 
     }
   </script>
@@ -217,6 +217,7 @@
   </script>
 
   <style>
+  
     #xlsx-table-{{tid}}_wrapper .pagination {
       list-style: none !important;
     }
@@ -225,9 +226,22 @@
       list-style: none !important;
     }
    
+    #xlsx-table-container-{{tid}} .table-wrapper {
+     overflow-x: hidden !important;  
+    }
+
     #xlsx-table-{{tid}} {
      table-layout: fixed !important;  
+    }
+
+    /* do not break words when wrap */
+    table.dataTable td {
+     white-space: normal !important;
+     word-wrap: normal !important;
+     word-break: normal !important;
+     overflow-wrap: break-word;
    }
+
   </style>
 
 {% else %}

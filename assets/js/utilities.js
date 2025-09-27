@@ -219,6 +219,10 @@ if (pagePermalink !== '/') {
         }
         return data;
     };
+
+    // limit the number of pagination buttons to fit into container width even for many pages
+    $.fn.DataTable.ext.pager.numbers_length = settings.dataTables.paginationButtons;
+
 }
 
 /* SOME GENERAL PURPOSE UTILITIES */
@@ -799,36 +803,41 @@ const activateTableResizeCols = (tableSelector, tableObject) => {
         const th = $(this);
 
         th.resizable({
-        handles: 'e',
+            handles: 'e',
 
-        resize: function (e, ui) {
-        const newWidth = ui.size.width;
-        th.css({
-            width: newWidth + 'px',
-            'max-width': newWidth + 'px'
+            resize: function (e, ui) {
+                const newWidth = ui.size.width;
+
+                // setting width for col header
+                th.css({
+                    width: newWidth + 'px',
+                    'max-width': newWidth + 'px'
+                });
+
+                // setting width for cells
+                tableObject.column(index).nodes().to$().css({
+                    width: newWidth + 'px',
+                    'max-width': newWidth + 'px'
+                });
+
+                // setting width inside datatable colgroup tag
+                $table.find('col').eq(index).css({
+                    width: newWidth + 'px',
+                    'max-width': newWidth + 'px'
+                });
+            },
+
+            stop: function () {
+                setTimeout(function () {
+                    tableObject.draw(false);
+                 }, 10);
+            }
         });
-
-        tableObject.column(index).nodes().to$().css({
-            width: newWidth + 'px',
-            'max-width': newWidth + 'px'
-        });
-
-        $table.find('col').eq(index).css({
-            width: newWidth + 'px',
-            'max-width': newWidth + 'px'
-        });
-        },
-
-        stop: function () {
-        setTimeout(function () {
-        tableObject.draw(false);
-        }, 10);
-        }
-    });
     });
 
     tableObject.columns.adjust().draw();
 }
+
 
 // columnsConfig is set in the caller, to be fit to the specific table
 // callback and callbackClickRow are set in the caller to do specific processing after the table is initialized
@@ -955,11 +964,10 @@ const setDataTable = async (
         },
         serverSide: false,
         paging: true,
-        pageLength: 5,
+        pageLength: settings.dataTables.rowsPerPage,
         ordering: true,
         searching: true,
         processing: true,
-        fixedHeader: true,
         deferRender: true, // Defer rendering for speed up
         layout: {
             topStart: {
@@ -1417,6 +1425,7 @@ const setDataTable = async (
                 afterSearchApplied
             )
                 .then( (result) => {
+
                     const timeout = settings.dataTables.TO_afterAutoApplySearchPanesCurrentFilter;
                     setTimeout(() => {
                         if (result.table.helpers && result.table.helpers !== 'undefined') 

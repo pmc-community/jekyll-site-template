@@ -1,5 +1,6 @@
 require_relative 'file-utilities'
 require 'net/http'
+require 'uri'
 
 module LinkUtilities
 
@@ -93,8 +94,9 @@ module LinkUtilities
             linkPos = 0
             links.each do |link|
                 unless link.start_with?("#") # we don't check internal anchors
-                    linkToCheck = Globals.removeFirstAndLastSlash(link)
-                    found_value = spl.find { |value| value == linkToCheck }
+                    linkToCheck = Globals.removeFirstAndLastSlash(URI.parse(link).path)
+                    puts linkToCheck
+                    found_value = spl.find { |value| Globals.removeFirstAndLastSlash(value) == linkToCheck }
                     if (!found_value)
                         result = "#{file}: Broken link: #{link}"
                         Globals.putsColText(Globals::YELLOW, " - #{result}") if !silent
