@@ -24,12 +24,12 @@
         "permalink": "/content/content-items/"
       },
       {
-        "title": "FAQ Item",
-        "permalink": "/components/qitem/"
+        "title": "Downloads",
+        "permalink": "/components/download-link/"
       },
       {
-        "title": "Alerts",
-        "permalink": "/components/alerts/"
+        "title": "FAQ Item",
+        "permalink": "/components/qitem/"
       }
     ]
   },
@@ -62,8 +62,8 @@
         "permalink": "/components/card/"
       },
       {
-        "title": "Rich media",
-        "permalink": "/components/rich-media/"
+        "title": "XLSX Charts",
+        "permalink": "/components/xlsx-charts/"
       }
     ]
   },
@@ -122,16 +122,16 @@
     "permalink": "/components/rich-media/",
     "related": [
       {
-        "title": "Downloads",
-        "permalink": "/components/download-link/"
-      },
-      {
         "title": "External content",
         "permalink": "/content/ec/"
       },
       {
         "title": "FAQ Item",
         "permalink": "/components/qitem/"
+      },
+      {
+        "title": "Alerts",
+        "permalink": "/components/alerts/"
       }
     ]
   },
@@ -164,8 +164,8 @@
         "permalink": "/components/scrollspy/"
       },
       {
-        "title": "PDF Summary",
-        "permalink": "/experiments/pdf-summary/"
+        "title": "DOCX Summary",
+        "permalink": "/experiments/docx-summary/"
       }
     ]
   },
@@ -181,8 +181,8 @@
         "permalink": "/experiments/docx-summary/"
       },
       {
-        "title": "PDF Summary",
-        "permalink": "/experiments/pdf-summary/"
+        "title": "Experiments",
+        "permalink": "/experiments/intro/"
       }
     ]
   },
@@ -241,12 +241,12 @@
     "permalink": "/experiments/docx-summary/",
     "related": [
       {
-        "title": "PDF Summary",
-        "permalink": "/experiments/pdf-summary/"
-      },
-      {
         "title": "Experiments",
         "permalink": "/experiments/intro/"
+      },
+      {
+        "title": "PDF Summary",
+        "permalink": "/experiments/pdf-summary/"
       },
       {
         "title": "XLSX Tables",
@@ -275,12 +275,12 @@
     "permalink": "/experiments/pdf-summary/",
     "related": [
       {
-        "title": "DOCX Summary",
-        "permalink": "/experiments/docx-summary/"
-      },
-      {
         "title": "Experiments",
         "permalink": "/experiments/intro/"
+      },
+      {
+        "title": "DOCX Summary",
+        "permalink": "/experiments/docx-summary/"
       },
       {
         "title": "XLSX Tables",
@@ -296,12 +296,12 @@
         "permalink": "/intro/"
       },
       {
-        "title": "Get started",
-        "permalink": "/get-started/"
-      },
-      {
         "title": "Content",
         "permalink": "/content/intro/"
+      },
+      {
+        "title": "Config Files",
+        "permalink": "/get-started/config-files/"
       }
     ]
   },
@@ -347,12 +347,12 @@
         "permalink": "/get-started/doc-contents/"
       },
       {
-        "title": "Get started",
-        "permalink": "/get-started/"
-      },
-      {
         "title": "Config Options",
         "permalink": "/get-started/config-options/"
+      },
+      {
+        "title": "Get started",
+        "permalink": "/get-started/"
       }
     ]
   },

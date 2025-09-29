@@ -132,6 +132,7 @@ module FileUtilities
 
         # Render the page with the assigned layout
         page.render(site.layouts, site.site_payload)
+
         extract_main_content(site, page.output)
     end
 

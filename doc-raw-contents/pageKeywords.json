@@ -83,21 +83,25 @@
     {
       "permalink": "/get-started/",
       "keywords": [
+        "started",
+        "docaroo",
+        "requires",
+        "design",
         "documentation",
-        "browser",
-        "settings",
-        "incompatibility",
-        "docaroo"
+        "organising",
+        "blog",
+        "crucial",
+        "involve"
       ]
     },
     {
       "permalink": "/components/scrollspy/",
       "keywords": [
+        "scroll spy",
         "folder",
         "documents",
         "document",
-        "content",
-        "regular"
+        "content"
       ]
     },
     {
@@ -123,11 +127,14 @@
     {
       "permalink": "/components/download-link/",
       "keywords": [
-        "directory",
         "download",
-        "file",
-        "document",
-        "default"
+        "link",
+        "component",
+        "generates",
+        "button",
+        "downloading",
+        "files",
+        "documentation"
       ]
     },
     {
@@ -193,11 +200,16 @@
     {
       "permalink": "/experiments/pdf-summary/",
       "keywords": [
-        "summary",
         "component",
-        "models",
-        "huggingface",
-        "corrections"
+        "helps",
+        "enhancing",
+        "content",
+        "auto",
+        "generated",
+        "summaries",
+        "pdf",
+        "files",
+        "combined"
       ]
     },
     {
