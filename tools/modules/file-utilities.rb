@@ -94,14 +94,23 @@ module FileUtilities
 
     def self.extract_main_content(site, rendered_content)
         doc = Nokogiri::HTML(rendered_content)
-        tags_to_remove = site.data['buildConfig']["tagsToRemoveOnDryRender"]
-        tags_to_remove.each do |tag|
-            doc.search(tag).remove
-        end
-        main_content = doc.css('main').xpath('.//text()').map(&:text).join(" ").gsub(/\s+/, ' ').strip
-        #main_content = doc.css('main').text
-        main_content.strip
+
+        # Remove unwanted tags
+        tags_to_remove = site.data['buildConfig']["tagsToRemoveOnDryRender"] || []
+        tags_to_remove.each { |tag| doc.search(tag).remove }
+
+        # Select the div with id="main-content"
+        #main_element = doc.at_css('div#main-content')
+        main_element = doc.at_css('main')
+        return "" unless main_element
+
+        # Extract all text nodes inside, including table cells
+        texts = main_element.xpath('.//text()').map(&:text)
+
+        # Join and normalize whitespace
+        texts.join(" ").gsub(/\s*\n\s*/, " ").gsub(/\s+/, ' ').strip
     end
+
 
     def self.render_jekyll_page(site, file_path, front_matter, content_body)
         # Create a temporary page to render
@@ -125,17 +134,17 @@ module FileUtilities
     end
 
     def self.render_liquid_string(site, liquid_string, additional_context = {})
-    # Build the context similar to what Jekyll would provide
-    registers = { site: site, page: {} }
+        # Build the context similar to what Jekyll would provide
+        registers = { site: site, page: {} }
 
-    context = Liquid::Context.new(
-        [site.site_payload, additional_context],
-        {}, # assigns
-        registers
-    )
+        context = Liquid::Context.new(
+            [site.site_payload, additional_context],
+            {}, # assigns
+            registers
+        )
 
-    template = Liquid::Template.parse(liquid_string)
-    template.render!(context)
+        template = Liquid::Template.parse(liquid_string)
+        template.render!(context)
     end
 
   

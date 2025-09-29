@@ -230,16 +230,16 @@
       "createTimeUTC": 1754838999,
       "relatedPages": [
         {
+          "title": "FAQ Item",
+          "permalink": "/components/qitem/"
+        },
+        {
           "title": "Scroll Spy & Tabs",
           "permalink": "/components/scrollspy/"
         },
         {
           "title": "Content items",
           "permalink": "/content/content-items/"
-        },
-        {
-          "title": "FAQ Item",
-          "permalink": "/components/qitem/"
         }
       ],
       "autoSummary": "Learn how to add blocks to your content. You can add both and alerts. Alerts can contain content introduced in clear but also can refer from other documents from your documentation or from external public or private repositories.",
@@ -278,12 +278,12 @@
           "permalink": "/content/content-items/"
         },
         {
-          "title": "Downloads",
-          "permalink": "/components/download-link/"
+          "title": "FAQ Item",
+          "permalink": "/components/qitem/"
         },
         {
-          "title": "Image",
-          "permalink": "/components/image/"
+          "title": "Alerts",
+          "permalink": "/components/alerts/"
         }
       ],
       "autoSummary": "Cards can be included as single items or in galleries of cards.",
@@ -299,19 +299,19 @@
         "Components"
       ],
       "tags": [],
-      "excerpt": "learn, add, pre, defined, content, elements, embedded, documents, tags, components",
+      "excerpt": "content, docs, components, documents, docaroo",
       "lastUpdate": "2025-09-27 18:12:23 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-09-27 18:12:23 +0300",
       "createTimeUTC": 1758985943,
       "relatedPages": [
         {
-          "title": "FAQ Item",
-          "permalink": "/components/qitem/"
-        },
-        {
           "title": "Content items",
           "permalink": "/content/content-items/"
+        },
+        {
+          "title": "FAQ Item",
+          "permalink": "/components/qitem/"
         },
         {
           "title": "Scroll Spy & Tabs",
@@ -335,6 +335,10 @@
         {
           "permalink": "/content/ec/",
           "title": "External content"
+        },
+        {
+          "permalink": "/components/qitem/",
+          "title": "FAQ Item"
         }
       ],
       "readingTime": 1,
@@ -353,7 +357,7 @@
         "link",
         "button"
       ],
-      "excerpt": "download, link, component, generates, button, downloading, files, documentation",
+      "excerpt": "directory, download, file, document, default",
       "lastUpdate": "2025-07-22 17:26:26 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-07-22 17:26:26 +0300",
@@ -368,8 +372,8 @@
           "permalink": "/components/card/"
         },
         {
-          "title": "XLSX Charts",
-          "permalink": "/components/xlsx-charts/"
+          "title": "Rich media",
+          "permalink": "/components/rich-media/"
         }
       ],
       "autoSummary": "Download-link component generates a button link for downloading files from your documentation site. Only downloading from your site is allowed, for security reasons it is not allowed to create download links targeting files hosted on external sites.",
@@ -389,23 +393,23 @@
         "faq",
         "content"
       ],
-      "excerpt": "learn, add, elements, documents, element, question, header, answer, body",
+      "excerpt": "answer, content, time, header, docaroo",
       "lastUpdate": "2025-08-02 01:05:20 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-08-02 01:05:20 +0300",
       "createTimeUTC": 1754085920,
       "relatedPages": [
         {
-          "title": "Components",
-          "permalink": "/components/intro/"
+          "title": "Alerts",
+          "permalink": "/components/alerts/"
         },
         {
           "title": "Content items",
           "permalink": "/content/content-items/"
         },
         {
-          "title": "Alerts",
-          "permalink": "/components/alerts/"
+          "title": "Components",
+          "permalink": "/components/intro/"
         }
       ],
       "autoSummary": "The question should always be a text. The answer to the question can be simple text or any rich content that is allowed in markdown. Docaroo suports 2 types of text search: native search and algolia docs search.",
@@ -430,23 +434,23 @@
         "component",
         "gallery"
       ],
-      "excerpt": "component, placing, images, content, captions, credits, copyright, designed",
+      "excerpt": "images, image, path, gallery, folder",
       "lastUpdate": "2025-08-14 18:04:50 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-08-14 18:04:50 +0300",
       "createTimeUTC": 1755183890,
       "relatedPages": [
         {
+          "title": "XLSX Charts",
+          "permalink": "/components/xlsx-charts/"
+        },
+        {
           "title": "Card",
           "permalink": "/components/card/"
         },
         {
-          "title": "Experiments",
-          "permalink": "/experiments/intro/"
-        },
-        {
-          "title": "XLSX Charts",
-          "permalink": "/components/xlsx-charts/"
+          "title": "Scroll Spy & Tabs",
+          "permalink": "/components/scrollspy/"
         }
       ],
       "autoSummary": "This component allows placing images into your content. Images can have captions (lets say you need to show some credits or copyright information) or not. The component is designed to work with responsive images.",
@@ -510,16 +514,16 @@
       "createTimeUTC": 1753097467,
       "relatedPages": [
         {
+          "title": "Downloads",
+          "permalink": "/components/download-link/"
+        },
+        {
           "title": "External content",
           "permalink": "/content/ec/"
         },
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/"
-        },
-        {
-          "title": "Alerts",
-          "permalink": "/components/alerts/"
         }
       ],
       "autoSummary": "Learn how to use docaroo components to embed rich media into your content. Currently we support design, boards (fig jam), slides and deck files. Prototypes are not supported for the moment, we are working on this.",
@@ -550,12 +554,12 @@
           "permalink": "/content/content-items/"
         },
         {
-          "title": "Alerts",
-          "permalink": "/components/alerts/"
+          "title": "Content",
+          "permalink": "/content/intro/"
         },
         {
-          "title": "FAQ Item",
-          "permalink": "/components/qitem/"
+          "title": "Alerts",
+          "permalink": "/components/alerts/"
         }
       ],
       "autoSummary": "Scroll spies are great ways of organising information inside your documents. We made them flexible and easy to be included in the documents. Any docaroo component, including importing esternal content or rich content ones, can be used to populate scroll spies and tabs.",
@@ -576,7 +580,7 @@
         "chart",
         "office"
       ],
-      "excerpt": "component, importing, excel, charts, documents, simple, create",
+      "excerpt": "component, folder, documents, colors, excel",
       "lastUpdate": "2025-08-11 13:46:56 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-08-11 13:46:56 +0300",
@@ -587,8 +591,8 @@
           "permalink": "/components/xlsx-tables/"
         },
         {
-          "title": "Content items",
-          "permalink": "/content/content-items/"
+          "title": "Scroll Spy & Tabs",
+          "permalink": "/components/scrollspy/"
         },
         {
           "title": "PDF Summary",
@@ -617,7 +621,7 @@
         "xls",
         "office"
       ],
-      "excerpt": "users, creating, table, markdown, challenge, merged, cells, crazy, quick, maintaining",
+      "excerpt": "table, tables, cells, component, parameter",
       "lastUpdate": "2025-08-11 13:46:56 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-08-11 13:46:56 +0300",
@@ -658,11 +662,15 @@
         "content"
       ],
       "excerpt": "content, documentation, charts, docs, documents",
-      "lastUpdate": "2025-07-26 22:43:40 +0300",
+      "lastUpdate": "2025-09-29 12:11:57 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-07-26 22:43:40 +0300",
-      "createTimeUTC": 1753559020,
+      "createTime": "2025-09-29 12:11:57 +0300",
+      "createTimeUTC": 1759137117,
       "relatedPages": [
+        {
+          "title": "Components",
+          "permalink": "/components/intro/"
+        },
         {
           "title": "Scroll Spy & Tabs",
           "permalink": "/components/scrollspy/"
@@ -670,10 +678,6 @@
         {
           "title": "Card",
           "permalink": "/components/card/"
-        },
-        {
-          "title": "Alerts",
-          "permalink": "/components/alerts/"
         }
       ],
       "autoSummary": "Docaroo makes available a series of content items that can be used to enrich your documents. Content items are, usually, designed to provide smaller pieces of content. They can be incorporated directly in your documents or are used in components.",
@@ -709,23 +713,23 @@
         "documentation",
         "organise docs"
       ],
-      "excerpt": "learn, structure, content, efficient, secret, maximum, extent, features, importing, external",
+      "excerpt": "content, documents, documentation, document, folder",
       "lastUpdate": "2025-07-16 17:59:04 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-07-16 17:59:04 +0300",
       "createTimeUTC": 1752677944,
       "relatedPages": [
         {
-          "title": "Introduction",
-          "permalink": "/intro/"
-        },
-        {
           "title": "Docs root",
           "permalink": "/get-started/doc-contents/"
         },
         {
-          "title": "External content",
-          "permalink": "/content/ec/"
+          "title": "Scroll Spy & Tabs",
+          "permalink": "/components/scrollspy/"
+        },
+        {
+          "title": "Introduction",
+          "permalink": "/intro/"
         }
       ],
       "autoSummary": "Learn how to structure and use the content in the most efficient way. The secret is to use to the maximum extent the features made available. Importing external content (at build time or at run time) is the most powerful.",
@@ -745,6 +749,10 @@
         {
           "permalink": "/intro/",
           "title": "Introduction"
+        },
+        {
+          "permalink": "/get-started/doc-contents/",
+          "title": "Docs root"
         }
       ],
       "readingTime": 2,
@@ -773,12 +781,12 @@
           "permalink": "/components/alerts/"
         },
         {
-          "title": "Rich media",
-          "permalink": "/components/rich-media/"
-        },
-        {
           "title": "Content",
           "permalink": "/content/intro/"
+        },
+        {
+          "title": "FAQ Item",
+          "permalink": "/components/qitem/"
         }
       ],
       "autoSummary": "Docaroo allows to your documents. External content is important because it allows you to create of content and import these parts in multiple places. It is possible to import content from external public and private GitHub repositories.",
@@ -792,8 +800,16 @@
           "title": "Content items"
         },
         {
+          "permalink": "/components/alerts/",
+          "title": "Alerts"
+        },
+        {
           "permalink": "/components/intro/",
           "title": "Components"
+        },
+        {
+          "permalink": "/get-started/",
+          "title": "Get started"
         }
       ],
       "readingTime": 4,
@@ -828,8 +844,8 @@
           "permalink": "/experiments/intro/"
         },
         {
-          "title": "XLSX Charts",
-          "permalink": "/components/xlsx-charts/"
+          "title": "XLSX Tables",
+          "permalink": "/components/xlsx-tables/"
         }
       ],
       "autoSummary": "This component helps enhancing your content with auto generated summaries from docx files. It is combined with the download component, so the output rendered will be a summary of the docx file and a download button.",
@@ -872,8 +888,8 @@
           "permalink": "/experiments/docx-summary/"
         },
         {
-          "title": "XLSX Charts",
-          "permalink": "/components/xlsx-charts/"
+          "title": "XLSX Tables",
+          "permalink": "/components/xlsx-tables/"
         }
       ],
       "autoSummary": "We are working on a series of interesting features that will make your life much easier when creating content. We consider those features as experiments. You are encouraged to use them and to send us your feedback.",
@@ -895,7 +911,7 @@
         "summary",
         "office"
       ],
-      "excerpt": "summary, component, models, huggingface, manual corrections",
+      "excerpt": "summary, component, models, huggingface, corrections",
       "lastUpdate": "2025-08-17 22:52:59 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-08-17 22:52:59 +0300",
@@ -910,8 +926,8 @@
           "permalink": "/experiments/intro/"
         },
         {
-          "title": "XLSX Charts",
-          "permalink": "/components/xlsx-charts/"
+          "title": "XLSX Tables",
+          "permalink": "/components/xlsx-tables/"
         }
       ],
       "autoSummary": "This component helps enhancing your content with auto generated summaries from pdf files. It is combined with the download component, so the output rendered will be a summary of the pdf file and a download button.",
@@ -938,10 +954,10 @@
         "collections"
       ],
       "excerpt": "documentation, folder, collections, documents, structure",
-      "lastUpdate": "2025-09-07 12:50:47 +0300",
+      "lastUpdate": "2025-09-29 12:11:57 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-09-07 12:50:47 +0300",
-      "createTimeUTC": 1757238647,
+      "createTime": "2025-09-29 12:11:57 +0300",
+      "createTimeUTC": 1759137117,
       "relatedPages": [
         {
           "title": "Introduction",
@@ -952,8 +968,8 @@
           "permalink": "/get-started/"
         },
         {
-          "title": "Config Files",
-          "permalink": "/get-started/config-files/"
+          "title": "Content",
+          "permalink": "/content/intro/"
         }
       ],
       "autoSummary": "Doc-contents is the root folder of the documents and collections. The way in which this folder is organised is strictly depending on the structure you want to have for your documentation. Some sub-folders are necessary to be present: the collection folder where the qa files must be placed if a.",
@@ -978,7 +994,7 @@
         "documentation",
         "docs"
       ],
-      "excerpt": "started, docaroo, requires, design, documentation, organising, blog, crucial, involve",
+      "excerpt": "documentation, browser, settings, incompatibility, docaroo",
       "lastUpdate": "2025-09-06 16:52:21 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-09-06 16:52:21 +0300",
@@ -1070,16 +1086,12 @@
         "collections",
         "configuration"
       ],
-      "excerpt": "docaroo, provide, multiple, options, configure, functionality, appearence, configurations, _config, yml",
+      "excerpt": "configuration, time, docaroo, configurations, folder",
       "lastUpdate": "2025-09-08 18:26:42 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-09-08 18:26:42 +0300",
       "createTimeUTC": 1757345202,
       "relatedPages": [
-        {
-          "title": "Config Options",
-          "permalink": "/get-started/config-options/"
-        },
         {
           "title": "Docs root",
           "permalink": "/get-started/doc-contents/"
@@ -1087,6 +1099,10 @@
         {
           "title": "Get started",
           "permalink": "/get-started/"
+        },
+        {
+          "title": "Config Options",
+          "permalink": "/get-started/config-options/"
         }
       ],
       "autoSummary": "Docaroo provide multiple options to configure the the site functionality and appearence. Each time when a configuration is changed, it is necessary to re-build the site to make the configuration effective. Docaroo configurations are of two categories: necessary at build time necessary at run time.",
@@ -1111,10 +1127,10 @@
         "options"
       ],
       "excerpt": "functionalities, personalisation, appearance, options, _config.yml",
-      "lastUpdate": "2025-09-27 18:12:23 +0300",
+      "lastUpdate": "2025-09-29 12:11:57 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-09-27 18:12:23 +0300",
-      "createTimeUTC": 1758985943,
+      "createTime": "2025-09-29 12:11:57 +0300",
+      "createTimeUTC": 1759137117,
       "relatedPages": [
         {
           "title": "Config Files",
@@ -1238,7 +1254,7 @@
         {
           "title": "Docs root",
           "permalink": "/get-started/doc-contents/",
-          "lastUpdate": "07-Sep-2025"
+          "lastUpdate": "29-Sep-2025"
         },
         {
           "title": "Config Files",
@@ -1248,7 +1264,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "27-Sep-2025"
+          "lastUpdate": "29-Sep-2025"
         }
       ],
       "numPages": 3
@@ -1273,7 +1289,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "27-Sep-2025"
+          "lastUpdate": "29-Sep-2025"
         }
       ],
       "numPages": 2
@@ -1303,7 +1319,7 @@
         {
           "title": "Content items",
           "permalink": "/content/content-items/",
-          "lastUpdate": "26-Jul-2025"
+          "lastUpdate": "29-Sep-2025"
         }
       ],
       "numPages": 5
@@ -1313,7 +1329,7 @@
         {
           "title": "Docs root",
           "permalink": "/get-started/doc-contents/",
-          "lastUpdate": "07-Sep-2025"
+          "lastUpdate": "29-Sep-2025"
         },
         {
           "title": "Get started",
@@ -1333,7 +1349,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "27-Sep-2025"
+          "lastUpdate": "29-Sep-2025"
         }
       ],
       "numPages": 5
@@ -1348,7 +1364,7 @@
         {
           "title": "Docs root",
           "permalink": "/get-started/doc-contents/",
-          "lastUpdate": "07-Sep-2025"
+          "lastUpdate": "29-Sep-2025"
         },
         {
           "title": "Get started",
@@ -1368,7 +1384,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "27-Sep-2025"
+          "lastUpdate": "29-Sep-2025"
         }
       ],
       "numPages": 6
@@ -1508,7 +1524,7 @@
         {
           "title": "Content items",
           "permalink": "/content/content-items/",
-          "lastUpdate": "26-Jul-2025"
+          "lastUpdate": "29-Sep-2025"
         }
       ],
       "numPages": 1
@@ -1578,7 +1594,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "27-Sep-2025"
+          "lastUpdate": "29-Sep-2025"
         }
       ],
       "numPages": 1
@@ -1758,7 +1774,7 @@
         {
           "title": "Content items",
           "permalink": "/content/content-items/",
-          "lastUpdate": "26-Jul-2025"
+          "lastUpdate": "29-Sep-2025"
         },
         {
           "title": "DOCX Summary",
@@ -1833,7 +1849,7 @@
         {
           "title": "Docs root",
           "permalink": "/get-started/doc-contents/",
-          "lastUpdate": "07-Sep-2025"
+          "lastUpdate": "29-Sep-2025"
         },
         {
           "title": "Get started",
@@ -1853,7 +1869,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "27-Sep-2025"
+          "lastUpdate": "29-Sep-2025"
         }
       ],
       "numPages": 5
@@ -1868,7 +1884,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "27-Sep-2025"
+          "lastUpdate": "29-Sep-2025"
         }
       ],
       "numPages": 2
@@ -1878,7 +1894,7 @@
         {
           "title": "Docs root",
           "permalink": "/get-started/doc-contents/",
-          "lastUpdate": "07-Sep-2025"
+          "lastUpdate": "29-Sep-2025"
         },
         {
           "title": "Get started",
@@ -1893,7 +1909,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "27-Sep-2025"
+          "lastUpdate": "29-Sep-2025"
         }
       ],
       "numPages": 4

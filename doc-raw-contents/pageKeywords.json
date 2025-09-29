@@ -3,15 +3,11 @@
     {
       "permalink": "/components/qitem/",
       "keywords": [
-        "learn",
-        "add",
-        "elements",
-        "documents",
-        "element",
-        "question",
-        "header",
         "answer",
-        "body"
+        "content",
+        "time",
+        "header",
+        "docaroo"
       ]
     },
     {
@@ -27,16 +23,11 @@
     {
       "permalink": "/content/intro/",
       "keywords": [
-        "learn",
-        "structure",
         "content",
-        "efficient",
-        "secret",
-        "maximum",
-        "extent",
-        "features",
-        "importing",
-        "external"
+        "documents",
+        "documentation",
+        "document",
+        "folder"
       ]
     },
     {
@@ -82,30 +73,21 @@
     {
       "permalink": "/components/intro/",
       "keywords": [
-        "learn",
-        "add",
-        "pre",
-        "defined",
         "content",
-        "elements",
-        "embedded",
+        "docs",
+        "components",
         "documents",
-        "tags",
-        "components"
+        "docaroo"
       ]
     },
     {
       "permalink": "/get-started/",
       "keywords": [
-        "started",
-        "docaroo",
-        "requires",
-        "design",
         "documentation",
-        "organising",
-        "blog",
-        "crucial",
-        "involve"
+        "browser",
+        "settings",
+        "incompatibility",
+        "docaroo"
       ]
     },
     {
@@ -141,54 +123,41 @@
     {
       "permalink": "/components/download-link/",
       "keywords": [
+        "directory",
         "download",
-        "link",
-        "component",
-        "generates",
-        "button",
-        "downloading",
-        "files",
-        "documentation"
+        "file",
+        "document",
+        "default"
       ]
     },
     {
       "permalink": "/components/xlsx-tables/",
       "keywords": [
-        "users",
-        "creating",
         "table",
-        "markdown",
-        "challenge",
-        "merged",
+        "tables",
         "cells",
-        "crazy",
-        "quick",
-        "maintaining"
+        "component",
+        "parameter"
       ]
     },
     {
       "permalink": "/components/xlsx-charts/",
       "keywords": [
         "component",
-        "importing",
-        "excel",
-        "charts",
+        "folder",
         "documents",
-        "simple",
-        "create"
+        "colors",
+        "excel"
       ]
     },
     {
       "permalink": "/components/image/",
       "keywords": [
-        "component",
-        "placing",
         "images",
-        "content",
-        "captions",
-        "credits",
-        "copyright",
-        "designed"
+        "image",
+        "path",
+        "gallery",
+        "folder"
       ]
     },
     {
@@ -228,7 +197,7 @@
         "component",
         "models",
         "huggingface",
-        "manual corrections"
+        "corrections"
       ]
     },
     {
@@ -269,16 +238,11 @@
     {
       "permalink": "/get-started/config-files/",
       "keywords": [
+        "configuration",
+        "time",
         "docaroo",
-        "provide",
-        "multiple",
-        "options",
-        "configure",
-        "functionality",
-        "appearence",
         "configurations",
-        "_config",
-        "yml"
+        "folder"
       ]
     },
     {

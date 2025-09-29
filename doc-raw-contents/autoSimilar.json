@@ -11,7 +11,8 @@
             "/content/content-items/",
             "/content/intro/",
             "/intro/",
-            "/content/ec/"
+            "/content/ec/",
+            "/components/qitem/"
         ]
     },
     {
@@ -34,7 +35,8 @@
             "/content/content-items/",
             "/components/intro/",
             "/content/ec/",
-            "/intro/"
+            "/intro/",
+            "/get-started/doc-contents/"
         ]
     },
     {
@@ -42,7 +44,9 @@
         "similarFiles": [
             "/content/intro/",
             "/content/content-items/",
-            "/components/intro/"
+            "/components/alerts/",
+            "/components/intro/",
+            "/get-started/"
         ]
     },
     {
