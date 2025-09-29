@@ -2,35 +2,35 @@
     "summaries": [
         {
             "permalink": "/components/alerts/",
-            "summary": "Alerts can contain content introduced in clear but also can refer. From other documents from your documentation or from external public or private repositories. There is no limit about how many external public repositories you refer. The number of external private repositories depends on the private access key type you."
+            "summary": "Learn how to add blocks to your content. You can add both and alerts. Alerts can contain content introduced in clear but also can refer from other documents from your documentation or from external public or private repositories."
         },
         {
             "permalink": "/components/intro/",
-            "summary": "Learn how to add different pre-defined. Content items to your content. These are elements that can be embedded in your documents using. As it will be shown for each of the next components."
+            "summary": "Learn how to add different pre-defined and to your content. These are elements that can be embedded in your documents using tags. Pre- defined components represents the most efficient way to create complex and easy to maintain quality content. Content items are helpful liquid tags generating pieces of content."
         },
         {
             "permalink": "/components/qitem/",
-            "summary": "The question should always be a text. The answer to the question can be simple text or any rich content that is allowed in markdown. Docaroo suports 2 types of text search."
+            "summary": "The question should always be a text. The answer to the question can be simple text or any rich content that is allowed in markdown. Docaroo suports 2 types of text search: native search and algolia docs search."
         },
         {
             "permalink": "/components/link-button/",
-            "summary": "Link buttons helps users to navigate inside your documentation or access external sites. Docaroo provides link buttons in style. You can add individual link buttons or group link buttons."
+            "summary": "Link buttons helps users to navigate inside your documentation or access external sites. Docaroo provides link buttons in style. You can add individual link buttons or group link buttons. You can place anchors anywhere in the document and references to them."
         },
         {
             "permalink": "/components/rich-media/",
-            "summary": "Use docaroo components to embed rich media into your content. Currently we support design, boards (fig jam), slides and deck files. Prototypes are not supported for the moment."
+            "summary": "Learn how to use docaroo components to embed rich media into your content. Currently we support design, boards (fig jam), slides and deck files. Prototypes are not supported for the moment, we are working on this."
         },
         {
             "permalink": "/content/intro/",
-            "summary": "There are two types of content that you can use in your documents:. Content directly included in your document or content imported from. External sources are very important because allows you to create reusable pieces of content."
+            "summary": "Learn how to structure and use the content in the most efficient way. The secret is to use to the maximum extent the features made available. Importing external content (at build time or at run time) is the most powerful."
         },
         {
             "permalink": "/content/ec/",
-            "summary": "Documentaroo allows you to create. Of content and import these parts in multiple places in your documents. It is possible to import content from external public and private repositories. You must be sure that the content you want to import is available at the time when you build your site."
+            "summary": "Docaroo allows to your documents. External content is important because it allows you to create of content and import these parts in multiple places. It is possible to import content from external public and private GitHub repositories."
         },
         {
             "permalink": "/intro/",
-            "summary": "Documentation site builder guide is a comprehensive resource for learning how to create, build, and maintain high-quality documentation sites. This guide will walk you through everything you need to know about building a complete, maintainable, and professional documentation site."
+            "summary": "Documentation site builder guide for any kind of project, product, or organization. Walk you through everything you need to know about building a complete, maintainable, and professional documentation site from scratch."
         },
         {
             "permalink": "/get-started/",
@@ -50,15 +50,15 @@
         },
         {
             "permalink": "/components/download-link/",
-            "summary": "Download-link component generates a button link for downloading files from your documentation site. Only downloading from your site is allowed, for security reasons it is not allowed to create download links targeting files hosted on external sites. Two prossible approaches for placing the downloadable files into the doc-contents root documentation."
+            "summary": "Download-link component generates a button link for downloading files from your documentation site. Only downloading from your site is allowed, for security reasons it is not allowed to create download links targeting files hosted on external sites."
         },
         {
             "permalink": "/components/xlsx-tables/",
-            "summary": "Tables can be imported directly from excel. When a table contains merged cells, it will be rendered as table, regardless of the value of the."
+            "summary": "This component lets users create tables in excel and load them in our docs. It offers two types of tables: fully featured and without some features."
         },
         {
             "permalink": "/components/xlsx-charts/",
-            "summary": "This component allows importing excel charts into your documents. Currently we support only:. Line charts column and bar charts pie and doughnut charts. We do not support importing the colors you assign to the series in the excel chart."
+            "summary": "This component allows importing excel charts into your documents. Combined with component, this one provides the full support to share structured data in a professional way. Currently we support only: line charts column and bar charts pie and doughnut charts we do not support importing the colors you assign to."
         },
         {
             "permalink": "/components/image/",
@@ -66,7 +66,7 @@
         },
         {
             "permalink": "/content/content-items/",
-            "summary": "Docaroo makes available a series of content items that can be used to enrich your documents and to be very efficient when wanting to incorporate piecers of content in a fast and robust way."
+            "summary": "Docaroo makes available a series of content items that can be used to enrich your documents. Content items are, usually, designed to provide smaller pieces of content. They can be incorporated directly in your documents or are used in components."
         },
         {
             "permalink": "/components/card/",
@@ -94,7 +94,7 @@
         },
         {
             "permalink": "/get-started/config-files/",
-            "summary": "Docaroo provide multiple options to configure the the site functionality and appearence. Each time when a configuration is changed, it is necessary to re-build the site to make the configuration effective."
+            "summary": "Docaroo provide multiple options to configure the the site functionality and appearence. Each time when a configuration is changed, it is necessary to re-build the site to make the configuration effective. Docaroo configurations are of two categories: necessary at build time necessary at run time."
         },
         {
             "permalink": "/get-started/config-options/",

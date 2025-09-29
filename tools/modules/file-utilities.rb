@@ -97,8 +97,9 @@ module FileUtilities
         tags_to_remove = site.data['buildConfig']["tagsToRemoveOnDryRender"]
         tags_to_remove.each do |tag|
             doc.search(tag).remove
-          end
-        main_content = doc.css('main').text
+        end
+        main_content = doc.css('main').xpath('.//text()').map(&:text).join(" ").gsub(/\s+/, ' ').strip
+        #main_content = doc.css('main').text
         main_content.strip
     end
 

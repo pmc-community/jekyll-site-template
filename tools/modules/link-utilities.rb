@@ -95,7 +95,7 @@ module LinkUtilities
             links.each do |link|
                 unless link.start_with?("#") # we don't check internal anchors
                     linkToCheck = Globals.removeFirstAndLastSlash(URI.parse(link).path)
-                    puts linkToCheck
+                    #puts linkToCheck
                     found_value = spl.find { |value| Globals.removeFirstAndLastSlash(value) == linkToCheck }
                     if (!found_value)
                         result = "#{file}: Broken link: #{link}"

@@ -17,14 +17,11 @@
     {
       "permalink": "/components/link-button/",
       "keywords": [
-        "learn",
-        "add",
+        "document",
         "link",
         "buttons",
-        "content",
-        "helps",
-        "users",
-        "navigate"
+        "button",
+        "links"
       ]
     },
     {
@@ -45,54 +42,41 @@
     {
       "permalink": "/content/ec/",
       "keywords": [
-        "docaroo",
-        "documents",
-        "external",
         "content",
-        "create",
-        "import",
-        "multiple"
+        "source",
+        "file",
+        "type",
+        "markers"
       ]
     },
     {
       "permalink": "/components/rich-media/",
       "keywords": [
-        "learn",
-        "docaroo",
-        "components",
-        "embed",
-        "rich",
-        "media",
-        "content",
-        "encourage",
-        "store"
+        "figma",
+        "public",
+        "design",
+        "file",
+        "permissions"
       ]
     },
     {
       "permalink": "/components/alerts/",
       "keywords": [
-        "learn",
-        "add",
-        "blocks",
         "content",
         "alerts",
-        "types",
-        "colors"
+        "private",
+        "repo",
+        "key"
       ]
     },
     {
       "permalink": "/intro/",
       "keywords": [
-        "documentation",
-        "builder",
         "guide",
-        "comprehensive",
-        "resource",
-        "learning",
-        "create",
-        "build",
-        "maintain",
-        "quality"
+        "documentation",
+        "content",
+        "structure",
+        "markdown"
       ]
     },
     {
@@ -127,16 +111,11 @@
     {
       "permalink": "/components/scrollspy/",
       "keywords": [
-        "and",
-        "are",
-        "great",
-        "ways",
-        "organising",
-        "information",
-        "inside",
-        "your",
+        "folder",
         "documents",
-        "made"
+        "document",
+        "content",
+        "regular"
       ]
     },
     {
@@ -215,88 +194,61 @@
     {
       "permalink": "/content/content-items/",
       "keywords": [
-        "docaroo",
-        "series",
         "content",
-        "items",
-        "enrich",
-        "documents",
-        "efficient",
-        "incorporate",
-        "piecers"
+        "documentation",
+        "charts",
+        "docs",
+        "documents"
       ]
     },
     {
       "permalink": "/components/card/",
       "keywords": [
+        "cards",
         "card",
-        "emphasise",
-        "piece",
-        "provide",
-        "relevant",
-        "visual",
-        "experience",
-        "images",
-        "references",
-        "detailed"
+        "content",
+        "documentation",
+        "readability"
       ]
     },
     {
       "permalink": "/experiments/intro/",
       "keywords": [
-        "series",
-        "features",
-        "life",
-        "easier",
-        "creating",
-        "content",
         "experiments",
-        "encouraged",
-        "send"
+        "production",
+        "content",
+        "component",
+        "subject"
       ]
     },
     {
       "permalink": "/experiments/pdf-summary/",
       "keywords": [
+        "summary",
         "component",
-        "helps",
-        "enhancing",
-        "content",
-        "auto",
-        "generated",
-        "summaries",
-        "pdf",
-        "files",
-        "combined"
+        "models",
+        "huggingface",
+        "manual corrections"
       ]
     },
     {
       "permalink": "/experiments/docx-summary/",
       "keywords": [
+        "summary",
         "component",
-        "helps",
-        "enhancing",
-        "content",
-        "auto",
-        "generated",
-        "summaries",
-        "docx",
-        "files",
-        "combined"
+        "models",
+        "huggingface",
+        "corrections"
       ]
     },
     {
       "permalink": "/get-started/doc-contents/",
       "keywords": [
-        "doc",
-        "contents",
-        "root",
+        "documentation",
         "folder",
-        "documents",
         "collections",
-        "organised",
-        "strictly",
-        "depending"
+        "documents",
+        "structure"
       ]
     },
     {
@@ -332,15 +284,11 @@
     {
       "permalink": "/get-started/config-options/",
       "keywords": [
-        "options",
-        "appearance",
         "functionalities",
-        "table",
-        "_config",
-        "yml",
-        "configuration",
-        "files",
-        "personalisation"
+        "personalisation",
+        "appearance",
+        "options",
+        "_config.yml"
       ]
     }
   ]

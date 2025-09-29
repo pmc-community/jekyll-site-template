@@ -3,16 +3,16 @@
     "permalink": "/components/alerts/",
     "related": [
       {
+        "title": "Scroll Spy & Tabs",
+        "permalink": "/components/scrollspy/"
+      },
+      {
+        "title": "Content items",
+        "permalink": "/content/content-items/"
+      },
+      {
         "title": "FAQ Item",
         "permalink": "/components/qitem/"
-      },
-      {
-        "title": "Rich media",
-        "permalink": "/components/rich-media/"
-      },
-      {
-        "title": "Link button",
-        "permalink": "/components/link-button/"
       }
     ]
   },
@@ -20,16 +20,16 @@
     "permalink": "/components/card/",
     "related": [
       {
-        "title": "Image",
-        "permalink": "/components/image/"
-      },
-      {
-        "title": "Link button",
-        "permalink": "/components/link-button/"
+        "title": "Content items",
+        "permalink": "/content/content-items/"
       },
       {
         "title": "Downloads",
         "permalink": "/components/download-link/"
+      },
+      {
+        "title": "Image",
+        "permalink": "/components/image/"
       }
     ]
   },
@@ -41,12 +41,12 @@
         "permalink": "/components/qitem/"
       },
       {
-        "title": "Link button",
-        "permalink": "/components/link-button/"
+        "title": "Content items",
+        "permalink": "/content/content-items/"
       },
       {
-        "title": "Alerts",
-        "permalink": "/components/alerts/"
+        "title": "Scroll Spy & Tabs",
+        "permalink": "/components/scrollspy/"
       }
     ]
   },
@@ -71,16 +71,16 @@
     "permalink": "/components/qitem/",
     "related": [
       {
-        "title": "Alerts",
-        "permalink": "/components/alerts/"
-      },
-      {
         "title": "Components",
         "permalink": "/components/intro/"
       },
       {
         "title": "Content items",
         "permalink": "/content/content-items/"
+      },
+      {
+        "title": "Alerts",
+        "permalink": "/components/alerts/"
       }
     ]
   },
@@ -92,12 +92,12 @@
         "permalink": "/components/card/"
       },
       {
-        "title": "XLSX Charts",
-        "permalink": "/components/xlsx-charts/"
+        "title": "Experiments",
+        "permalink": "/experiments/intro/"
       },
       {
-        "title": "Downloads",
-        "permalink": "/components/download-link/"
+        "title": "XLSX Charts",
+        "permalink": "/components/xlsx-charts/"
       }
     ]
   },
@@ -109,12 +109,12 @@
         "permalink": "/components/download-link/"
       },
       {
-        "title": "Alerts",
-        "permalink": "/components/alerts/"
+        "title": "Card",
+        "permalink": "/components/card/"
       },
       {
-        "title": "Components",
-        "permalink": "/components/intro/"
+        "title": "Scroll Spy & Tabs",
+        "permalink": "/components/scrollspy/"
       }
     ]
   },
@@ -122,16 +122,16 @@
     "permalink": "/components/rich-media/",
     "related": [
       {
-        "title": "Alerts",
-        "permalink": "/components/alerts/"
-      },
-      {
-        "title": "Components",
-        "permalink": "/components/intro/"
+        "title": "External content",
+        "permalink": "/content/ec/"
       },
       {
         "title": "FAQ Item",
         "permalink": "/components/qitem/"
+      },
+      {
+        "title": "Alerts",
+        "permalink": "/components/alerts/"
       }
     ]
   },
@@ -143,12 +143,12 @@
         "permalink": "/content/content-items/"
       },
       {
-        "title": "FAQ Item",
-        "permalink": "/components/qitem/"
-      },
-      {
         "title": "Alerts",
         "permalink": "/components/alerts/"
+      },
+      {
+        "title": "FAQ Item",
+        "permalink": "/components/qitem/"
       }
     ]
   },
@@ -160,12 +160,12 @@
         "permalink": "/components/xlsx-tables/"
       },
       {
-        "title": "PDF Summary",
-        "permalink": "/experiments/pdf-summary/"
+        "title": "Content items",
+        "permalink": "/content/content-items/"
       },
       {
-        "title": "DOCX Summary",
-        "permalink": "/experiments/docx-summary/"
+        "title": "PDF Summary",
+        "permalink": "/experiments/pdf-summary/"
       }
     ]
   },
@@ -177,12 +177,12 @@
         "permalink": "/components/xlsx-charts/"
       },
       {
-        "title": "Experiments",
-        "permalink": "/experiments/intro/"
-      },
-      {
         "title": "DOCX Summary",
         "permalink": "/experiments/docx-summary/"
+      },
+      {
+        "title": "PDF Summary",
+        "permalink": "/experiments/pdf-summary/"
       }
     ]
   },
@@ -190,16 +190,16 @@
     "permalink": "/content/content-items/",
     "related": [
       {
-        "title": "FAQ Item",
-        "permalink": "/components/qitem/"
+        "title": "Scroll Spy & Tabs",
+        "permalink": "/components/scrollspy/"
+      },
+      {
+        "title": "Card",
+        "permalink": "/components/card/"
       },
       {
         "title": "Alerts",
         "permalink": "/components/alerts/"
-      },
-      {
-        "title": "Scroll Spy & Tabs",
-        "permalink": "/components/scrollspy/"
       }
     ]
   },
@@ -207,16 +207,16 @@
     "permalink": "/content/intro/",
     "related": [
       {
+        "title": "Introduction",
+        "permalink": "/intro/"
+      },
+      {
+        "title": "Docs root",
+        "permalink": "/get-started/doc-contents/"
+      },
+      {
         "title": "External content",
         "permalink": "/content/ec/"
-      },
-      {
-        "title": "Get started",
-        "permalink": "/get-started/"
-      },
-      {
-        "title": "Experiments",
-        "permalink": "/experiments/intro/"
       }
     ]
   },
@@ -224,16 +224,16 @@
     "permalink": "/content/ec/",
     "related": [
       {
-        "title": "Content",
-        "permalink": "/content/intro/"
+        "title": "Alerts",
+        "permalink": "/components/alerts/"
       },
       {
         "title": "Rich media",
         "permalink": "/components/rich-media/"
       },
       {
-        "title": "Content items",
-        "permalink": "/content/content-items/"
+        "title": "Content",
+        "permalink": "/content/intro/"
       }
     ]
   },
@@ -266,8 +266,8 @@
         "permalink": "/experiments/docx-summary/"
       },
       {
-        "title": "XLSX Tables",
-        "permalink": "/components/xlsx-tables/"
+        "title": "XLSX Charts",
+        "permalink": "/components/xlsx-charts/"
       }
     ]
   },
@@ -292,16 +292,16 @@
     "permalink": "/get-started/doc-contents/",
     "related": [
       {
+        "title": "Introduction",
+        "permalink": "/intro/"
+      },
+      {
         "title": "Get started",
         "permalink": "/get-started/"
       },
       {
         "title": "Config Files",
         "permalink": "/get-started/config-files/"
-      },
-      {
-        "title": "Introduction",
-        "permalink": "/intro/"
       }
     ]
   },
@@ -326,16 +326,16 @@
     "permalink": "/intro/",
     "related": [
       {
-        "title": "Get started",
-        "permalink": "/get-started/"
-      },
-      {
         "title": "Docs root",
         "permalink": "/get-started/doc-contents/"
       },
       {
-        "title": "Config Files",
-        "permalink": "/get-started/config-files/"
+        "title": "Get started",
+        "permalink": "/get-started/"
+      },
+      {
+        "title": "Content",
+        "permalink": "/content/intro/"
       }
     ]
   },
