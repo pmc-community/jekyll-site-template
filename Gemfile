@@ -80,3 +80,6 @@ gem 'whatlanguage'
 # force a version for em-websocket greater than 0.5.3
 # because 0.5.3 installs very slow on GHP
 gem 'em-websocket', '>= 0.5.3'
+
+gem 'ferrum' # for full dry rendering
+gem 'timeout'

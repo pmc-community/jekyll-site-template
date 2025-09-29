@@ -4,6 +4,10 @@ require 'jekyll'
 require 'fileutils'
 require 'liquid'
 
+require 'ferrum'
+require 'nokogiri'
+require 'timeout'
+
 module FileUtilities
 
     def self.clear_and_create_empty_folder (folder_path)             
@@ -132,6 +136,50 @@ module FileUtilities
         page.render(site.layouts, site.site_payload)
         extract_main_content(site, page.output)
     end
+
+
+    def self.render_jekyll_full_page(site, file_path, front_matter, content_body)
+    # Build Jekyll page in memory
+    page = Jekyll::PageWithoutAFile.new(site, site.source, File.dirname(file_path), File.basename(file_path))
+    page.content = content_body
+    page.data = front_matter
+
+    layout_name = front_matter['layout'] || 'default'
+    layout = find_layout(site, layout_name)
+    raise "Layout '#{layout_name}' not found." unless layout
+
+    page.data['layout'] = layout_name
+    page.render(site.layouts, site.site_payload)
+
+    browser = Ferrum::Browser.new(headless: true)
+
+    begin
+        browser.go_to("about:blank")
+        browser.execute("document.write(#{page.output.to_json});")
+
+        # Try waiting for network idle, but with timeout safeguard
+        begin
+        Timeout.timeout(5) { browser.network.wait_for_idle }
+        rescue Timeout::Error
+        # Ignore endless long-polling
+        end
+
+        # Retry loop: wait up to 5 seconds for #main-content
+        start = Time.now
+        element = nil
+        until element || Time.now - start > 5
+        element = browser.at_css("#main-content")
+        sleep 0.1 unless element
+        end
+
+        rendered_with_js = browser.body
+    ensure
+        browser.quit
+    end
+
+    extract_main_content(site, rendered_with_js)
+    end
+
 
     def self.render_liquid_string(site, liquid_string, additional_context = {})
         # Build the context similar to what Jekyll would provide
