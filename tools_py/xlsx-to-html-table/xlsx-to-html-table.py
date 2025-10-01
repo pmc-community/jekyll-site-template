@@ -6,6 +6,8 @@ from openpyxl import load_workbook
 from openpyxl.utils import range_boundaries, get_column_letter
 from zipfile import BadZipFile
 
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning, module="openpyxl")
 
 def table_range_to_html(ws, cell_range):
     min_col, min_row, max_col, max_row = range_boundaries(cell_range)

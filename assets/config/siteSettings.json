@@ -621,7 +621,7 @@
         "xls",
         "office"
       ],
-      "excerpt": "table, tables, cells, component, parameter",
+      "excerpt": "table, tables, excel, cells, component",
       "lastUpdate": "2025-08-11 13:46:56 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-08-11 13:46:56 +0300",
@@ -640,14 +640,14 @@
           "permalink": "/experiments/intro/"
         }
       ],
-      "autoSummary": "This component lets users create tables in excel and load them in our docs. It offers two types of tables: fully featured and without some features.",
+      "autoSummary": "This component allows users to create tables in markdown and load them in excel. It offers two types of tables: fully featured and without some features.",
       "similarByContent": [
         {
           "permalink": "/components/xlsx-charts/",
           "title": "XLSX Charts"
         }
       ],
-      "readingTime": 3,
+      "readingTime": 4,
       "hasDynamicContent": false,
       "parent": ""
     },

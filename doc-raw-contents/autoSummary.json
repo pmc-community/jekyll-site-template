@@ -54,7 +54,7 @@
         },
         {
             "permalink": "/components/xlsx-tables/",
-            "summary": "This component lets users create tables in excel and load them in our docs. It offers two types of tables: fully featured and without some features."
+            "summary": "This component allows users to create tables in markdown and load them in excel. It offers two types of tables: fully featured and without some features."
         },
         {
             "permalink": "/components/xlsx-charts/",
