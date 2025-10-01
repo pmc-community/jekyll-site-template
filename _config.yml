@@ -52,6 +52,7 @@ exclude:
   - config.ru
   - .github/
   - doc-raw-contents/
+  - start-up/
   - doc-change-log/
   - _data/
   - _plugins/
@@ -61,9 +62,9 @@ exclude:
   - assets/config/ # excluding from build because may generate infinite build loop. copied to _site with a site:post_write hook
   - unused/
   - doc-contents/**/*.txt
-  - doc-contents/**/*.pdf
-  - doc-contents/**/*.docx
-  - doc-contents/**/*.xlsx
+  #- doc-contents/**/*.pdf
+  #- doc-contents/**/*.docx
+  #- doc-contents/**/*.xlsx
 
 aux_links:
   "GitHub":
@@ -102,7 +103,7 @@ collections:
     output: true
   
 
-  # default collections (last position(s))
+  # default collections (last position(s)) --- do not modify
   tools:
     permalink: "/:collection/:path"
     output: true
@@ -125,7 +126,7 @@ just_the_docs:
       name: Experiments
       nav_fold: true
 
-    # default collections (last position(s))
+    # default collections (last position(s)) --- do not modify
     tools:
       name: Tools
       nav_fold: true

@@ -27,11 +27,11 @@ pageToc:
 colSchemaCorrections:
   elementsWithBackgroundAffected: "html, body, #category-menu-more-list, table, tbody, thead, tr, td, th, td[class=\"child\"], .offcanvas, .ck-editor__main, .side-bar, #hs-eu-cookie-confirmation, #toc_mobile, .accordion-item, .accordion-header, .accordion-button"
   backgroundColorOnElementsAffected:
-    light: "#fff"
+    light: "#fff"  # HERE TO CHANGE LIGHT THEME BACKGROUND
     dark: "#0d1117" # HERE TO CHANGE DARK THEME BACKGROUND
   elementsWithTextAffected: "body, p, ul li, ol li, li a, h1, h2, span, .dt-info, label[for^=\"dt-length-\"], label[for^=\"dt-search-\"], #category-menu-more-list li a, .offcanvas-title, td, div[siteFunction=\"labelForPageSearchList\"], label[for=\"offcanvasPageFullInfoPageGeneralCustomNotesEdit\"], #toc_mobile, .accordion-item, .accordion-header, .accordion-button"
   textColorOnElementsAffected:
-    light: "#212529"
+    light: "#212529" # HERE TO CHANGE LIGHT THEME TEXT COLOR
     dark: "rgb(108, 117, 125)"  # HERE TO CHANGE DARK THEME TEXT COLOR
   elementsWithBorderTopAffected: ".site-footer"
   borderTopOnElementsAffected:
@@ -93,7 +93,7 @@ hsIntegration:
       submittedMessage: ".submitted-message"
     submisionSource: 
       propName: "source"
-      propValue: "figmares_doc_site"
+      propValue: "docaroo"
     prefLang:
       propName: "hs_language"
     userToken:
@@ -145,7 +145,7 @@ dataTables:
   TO_rebuildTableAfterUIInteration: 200 # i.e. after closing an offcanvas
   TO_afterAutoApplySearchPanesCurrentFilter: 500 # used in utilities.js, in $(document).ready(...) when creating datatable
   TO_resolveAutoApplySearchPanesCurrentFilter: 500 # used in utilities.js, createTable_ASYNC(...), helpers, autoApplyActiveFilter
-  TO_doStuffAfterInitComplete: 100 # used in initComplete callback used in utilities.js, setDataTable(...), defaultSettings prop
+  TO_doStuffAfterInitComplete: 100 # used in initComplete callback in utilities.js, setDataTable(...), defaultSettings prop
   TO_forceSearchPanesToLoseFocus: 200 # used in utilities.js, createTable_ASYNC(...), helpers, clearActiveFilter
   TO_doStuffAfterSearchPanesContainerOpen: 100 # used in utilities.js, createTable_ASYNC, PROCESSING WHEN SEARCH PANES CONTAINER IS OPEN
   TO_doStuffAfterSearchPanesContainerClosed: 100 # used in utilities.js, createTable_ASYNC, PROCESSING WHEN SEARCH PANES CONTAINER IS CLOSED
@@ -153,3 +153,5 @@ dataTables:
   TO_showLengthSearchInfoPagination: 0 # not used
   tableContainerFixedHeightWhenLoading: "200px"
   possibleDataTableParents: [".table-wrapper", ".card-body"] # used in utilities.js, setDataTable/defaultSettings/initComplete
+  paginationButtons: 5
+  rowsPerPage: 5

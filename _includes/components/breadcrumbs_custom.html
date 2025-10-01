@@ -22,6 +22,16 @@
 <!-- Loop through parents -->
 {% for i in (1..max_loops) %}
     {% if current_page.parent %}
+        {%- comment -%}
+            HEADS UP!!!
+            Breadcrumbs are created by searching parents based on current page name.
+            
+            BE CAREFUL WHEN GIVING TITLES TO PAGES TO NOT USE ONE FOR A PAGE HAVING PARENTS (THUS HAVING BREADCRUMBS)
+            THIS MAY CAUSE SHOWING FAKE BREADCRUMBS. IN ANY CASE, USING SAME TITLE FOR MULTIPLE PAGES IS NOT A GOOD PRACTICE.
+
+            For example, the title of /site-pages is "Documents". If you give the same title to a page which has parents,
+            breadcrumbs will be shown on both pages, which is not correct.
+        {%- endcomment -%}
         {% assign parent_page = pageList | where: "title", current_page.parent | first %}
         
         {% if parent_page %}

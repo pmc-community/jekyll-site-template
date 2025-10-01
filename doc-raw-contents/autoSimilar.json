@@ -7,11 +7,19 @@
     },
     {
         "permalink": "/components/intro/",
-        "similarFiles": []
+        "similarFiles": [
+            "/content/content-items/",
+            "/content/intro/",
+            "/intro/",
+            "/content/ec/",
+            "/components/qitem/"
+        ]
     },
     {
         "permalink": "/components/qitem/",
-        "similarFiles": []
+        "similarFiles": [
+            "/components/intro/"
+        ]
     },
     {
         "permalink": "/components/link-button/",
@@ -24,24 +32,36 @@
     {
         "permalink": "/content/intro/",
         "similarFiles": [
-            "/content/ec/"
+            "/content/content-items/",
+            "/components/intro/",
+            "/content/ec/",
+            "/intro/",
+            "/get-started/doc-contents/"
         ]
     },
     {
         "permalink": "/content/ec/",
         "similarFiles": [
-            "/components/alerts/"
+            "/content/intro/",
+            "/content/content-items/",
+            "/components/alerts/",
+            "/components/intro/",
+            "/get-started/"
         ]
     },
     {
         "permalink": "/intro/",
         "similarFiles": [
+            "/content/content-items/",
+            "/components/intro/",
             "/content/intro/"
         ]
     },
     {
         "permalink": "/get-started/",
-        "similarFiles": []
+        "similarFiles": [
+            "/content/ec/"
+        ]
     },
     {
         "permalink": "/components/scrollspy/",
@@ -61,11 +81,15 @@
     },
     {
         "permalink": "/components/xlsx-tables/",
-        "similarFiles": []
+        "similarFiles": [
+            "/components/xlsx-charts/"
+        ]
     },
     {
         "permalink": "/components/xlsx-charts/",
-        "similarFiles": []
+        "similarFiles": [
+            "/components/xlsx-tables/"
+        ]
     },
     {
         "permalink": "/components/image/",
@@ -73,7 +97,12 @@
     },
     {
         "permalink": "/content/content-items/",
-        "similarFiles": []
+        "similarFiles": [
+            "/components/intro/",
+            "/content/intro/",
+            "/content/ec/",
+            "/intro/"
+        ]
     },
     {
         "permalink": "/components/card/",
@@ -94,5 +123,23 @@
         "similarFiles": [
             "/experiments/pdf-summary/"
         ]
+    },
+    {
+        "permalink": "/get-started/doc-contents/",
+        "similarFiles": [
+            "/content/intro/"
+        ]
+    },
+    {
+        "permalink": "/get-started/site-config/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/get-started/config-options/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/get-started/config-files/",
+        "similarFiles": []
     }
 ]

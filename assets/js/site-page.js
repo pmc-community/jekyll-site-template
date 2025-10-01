@@ -51,7 +51,7 @@ const page__getRelatedPages = () => {
             `
                 <a siteFunction="pageRelatedPageLink" href="${relatedPage.permalink.indexOf('/') === 0 ? langPrefix + relatedPage.permalink : langPrefix + '/'+relatedPage.permalink}" class="${relatedPageLinkWidth} p-2">
                     <div siteFunction="pageRelatedPage" class="border-0 border-top rounded-0 border-secondary border-opacity-25 my-2 card h-100 py-3 px-0 bg-body rounded bg-transparent shadow-none">
-                        <div class="h-100 align-top mb-2">
+                        <div class="align-top mb-2">
                             <span siteFunction="pageRelatedPageLinkPageTitle" class="fw-medium text-primary">${relatedPage.title}</span>
                         </div>
                         <div class="h-100 align-top mb-2">

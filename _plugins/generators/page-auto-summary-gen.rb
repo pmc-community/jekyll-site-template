@@ -20,7 +20,7 @@ module Jekyll
                     
                 else
 
-                    Globals.putsColText(Globals::PURPLE,"Generating summaries ... for #{modified_files.length} pages")
+                    Globals.putsColText(Globals::PURPLE,"Generating summaries ... for #{modified_files.length} page(s)")
                     # SUMMARIES
                     Globals.show_spinner do
                         json_input = { "pageList" => site.data['page_list'] }

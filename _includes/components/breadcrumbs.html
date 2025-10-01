@@ -9,7 +9,7 @@
     nav_breadcrumb_link, nav_list_end_less, nav_list_end_count, nav_end_index, nav_breadcrumb.
 {%- endcomment -%}
 
-{%- if page.url != "/" and page.parent and page.title -%}
+{%- if page.url != "/" and page.parent and page.title - %}
 
 {%- capture nav_list_link -%}
 <a href="{{ page.url | relative_url }}" class="nav-list-link">

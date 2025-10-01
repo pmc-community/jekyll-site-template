@@ -219,6 +219,10 @@ if (pagePermalink !== '/') {
         }
         return data;
     };
+
+    // limit the number of pagination buttons to fit into container width even for many pages
+    $.fn.DataTable.ext.pager.numbers_length = settings.dataTables.paginationButtons;
+
 }
 
 /* SOME GENERAL PURPOSE UTILITIES */
@@ -784,7 +788,219 @@ const setSearchList = (
         
 }
 
-// DATATABLES
+// TABLES AND DATATABLES
+
+// col resize for datatables
+const activateTableResizeCols = (tableSelector, tableObject) => {
+    /* columns resizing */
+    const $table = $(tableSelector);
+
+    if ($table.find('colgroup').length === 0) {
+        const colgroup = $('<colgroup/>');
+        $table.find('thead th').each(() => colgroup.append('<col>'));
+        $table.prepend(colgroup);
+    }
+
+    $table.find('thead tr:first-child th').each(function (index) {
+        const th = $(this);
+
+        th.resizable({
+            handles: 'e',
+
+            resize: function (e, ui) {
+                const newWidth = ui.size.width;
+
+                // setting width for col header
+                th.css({
+                    width: newWidth + 'px',
+                    'max-width': newWidth + 'px'
+                });
+
+                // setting width for cells
+                tableObject.column(index).nodes().to$().css({
+                    width: newWidth + 'px',
+                    'max-width': newWidth + 'px'
+                });
+
+                // setting width inside datatable colgroup tag
+                $table.find('col').eq(index).css({
+                    width: newWidth + 'px',
+                    'max-width': newWidth + 'px'
+                });
+
+                const freezedCols = getMaxStickyThIndex(tableSelector);
+                if (freezedCols !== -1 ) freezeTableColumns(tableSelector, freezedCols+1);
+            },
+
+            stop: function () {
+                setTimeout(function () {
+                    tableObject.draw(false);
+                 }, 10);
+            }
+        });
+    });
+
+    tableObject.columns.adjust().draw();
+}
+
+// col resize for simple tables
+const activateSimpleTableResizeCols = (tableSelector) => {
+    const $table = $(tableSelector);
+
+    // Add resizable handles to each header cell
+    $table.find('thead tr:first-child th').each(function (index) {
+        const th = $(this);
+
+        th.resizable({
+            handles: 'e',
+
+            resize: function (e, ui) {
+                const newWidth = ui.size.width;
+
+                // Update header cell
+                th.css({
+                    width: newWidth + 'px',
+                    'max-width': newWidth + 'px'
+                });
+
+                // Update all cells in the same column
+                $table.find('tbody tr').each(function () {
+                    $(this).find('td').eq(index).css({
+                        width: newWidth + 'px',
+                        'max-width': newWidth + 'px'
+                    });
+                });
+
+                // Update <colgroup>
+                $table.find('col').eq(index).css({
+                    width: newWidth + 'px',
+                    'max-width': newWidth + 'px'
+                });
+                const freezedCols = getMaxStickyThIndex(tableSelector);
+                if (freezedCols !== -1 ) freezeTableColumns(tableSelector, freezedCols+1);
+            }
+        });
+    });
+};
+
+function autoResizeTable($table) {
+    var colWidths = [];
+
+    // Measure max width for each column
+    $table.find("tr").each(function () {
+        $(this).children("th, td").each(function (i) {
+            var $cell = $(this);
+
+            var $test = $("<span/>").css({
+                visibility: "hidden",
+                whiteSpace: "nowrap",
+                font: $cell.css("font"),
+                "font-weight": $cell.css("font-weight"),
+                "font-size": $cell.css("font-size"),
+                "font-family": $cell.css("font-family")
+            }).text($cell.text());
+
+            $("body").append($test);
+            var width = $test.width() + 20;
+            $test.remove();
+
+            colWidths[i] = Math.max(colWidths[i] || 0, width);
+        });
+    });
+
+    // Calculate total width
+    var totalWidth = colWidths.reduce((a, b) => a + b, 0);
+
+    // Convert to percentages
+    var percents = colWidths.map(w => (w / totalWidth) * 100);
+
+    // Smart adjustment:
+    var MIN_WIDTH = 10;  // min % per column
+    var MAX_WIDTH = 40;  // max % per column (avoid huge text columns)
+
+    // First pass: clamp values
+    percents = percents.map(p => Math.min(Math.max(p, MIN_WIDTH), MAX_WIDTH));
+
+    // Normalize so total = 100%
+    var sum = percents.reduce((a, b) => a + b, 0);
+    percents = percents.map(p => p / sum * 100);
+
+    // Apply widths to th/td
+    $table.find("tr").each(function () {
+        $(this).children("th, td").each(function (i) {
+            var percent = percents[i].toFixed(2) + "%";
+            $(this).css("width", percent);
+        });
+    });
+}
+
+const getMaxStickyThIndex = (tableSelector) => {
+  let maxIndex = -1;
+
+  $(tableSelector).find("tr:first th").each(function(i) {
+    if ($(this).css("position") === "sticky") {
+      if (i > maxIndex) {
+        maxIndex = i;
+      }
+    }
+  });
+
+  return maxIndex; // -1 if none found
+}
+
+const freezeTableColumns = (tableSelector, numCols) => {
+  const $table = $(tableSelector);
+  const colWidths = [];
+
+  // Measure column widths
+  $table.find("tr:first th, tr:first td").each(function(i) {
+    colWidths[i] = $(this).outerWidth();
+  });
+
+  // Apply sticky + left offset for first numCols
+  for (let i = 0; i < numCols; i++) {
+    let offset = 0;
+    for (let j = 0; j < i; j++) {
+      offset += colWidths[j];
+    }
+    $table.find("tr").each(function() {
+      $(this).find("th:eq(" + i + ")")
+        .css({
+            position: "sticky",
+            left: offset + "px",
+            'z-index': 1,
+            'will-change': 'transform',
+            //background: $(this).css('background')
+        })
+        .removeClass('bg-opacity-25 border-opacity-25 border border-secondary')
+        .addClass('border-0')
+        
+    });
+
+    $table.find("tr").each(function() {
+      $(this).find("td:eq(" + i + ")")
+        .css({
+            position: "sticky",
+            left: offset + "px",
+            'z-index': 1,
+            'will-change': 'transform',
+            'box-shadow': 'inset -1px 0 0 #cccccc49, inset 1px 0 0 #cccccc49', 
+            background: $(this).css('background')
+        })
+        .removeClass('border border-secondary')
+        .addClass('border-0')
+        
+    });
+
+    $table.find("tr").each(function() {
+      $(this).find("th:eq(" + i + ")")
+        .removeClass('bg-secondary text-primary')
+        .addClass('bg-dark-subtle')
+    });
+    
+  }
+}
+
 // columnsConfig is set in the caller, to be fit to the specific table
 // callback and callbackClickRow are set in the caller to do specific processing after the table is initialized
 const setDataTable = async (
@@ -905,15 +1121,15 @@ const setDataTable = async (
             
             // callback to be personalised for each table
             // for post processing the table (i.e. adding buttons based on context)
+            if (additionalSettings.resizeColumns) activateTableResizeCols(tableSelector, table);
             if (callback) callback(table);
         },
         serverSide: false,
         paging: true,
-        pageLength: 5,
+        pageLength: settings.dataTables.rowsPerPage,
         ordering: true,
         searching: true,
         processing: true,
-        fixedHeader: true,
         deferRender: true, // Defer rendering for speed up
         layout: {
             topStart: {
@@ -1371,6 +1587,7 @@ const setDataTable = async (
                 afterSearchApplied
             )
                 .then( (result) => {
+
                     const timeout = settings.dataTables.TO_afterAutoApplySearchPanesCurrentFilter;
                     setTimeout(() => {
                         if (result.table.helpers && result.table.helpers !== 'undefined') 

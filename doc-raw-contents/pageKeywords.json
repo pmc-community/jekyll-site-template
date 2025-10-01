@@ -3,111 +3,81 @@
     {
       "permalink": "/components/qitem/",
       "keywords": [
-        "learn",
-        "add",
-        "elements",
-        "documents",
-        "element",
-        "question",
-        "header",
         "answer",
-        "body"
+        "content",
+        "time",
+        "header",
+        "docaroo"
       ]
     },
     {
       "permalink": "/components/link-button/",
       "keywords": [
-        "learn",
-        "add",
+        "document",
         "link",
         "buttons",
-        "content",
-        "helps",
-        "users",
-        "navigate"
+        "button",
+        "links"
       ]
     },
     {
       "permalink": "/content/intro/",
       "keywords": [
-        "learn",
-        "structure",
         "content",
-        "efficient",
-        "secret",
-        "maximum",
-        "extent",
-        "features",
-        "importing",
-        "external"
+        "documents",
+        "documentation",
+        "document",
+        "folder"
       ]
     },
     {
       "permalink": "/content/ec/",
       "keywords": [
-        "docaroo",
-        "documents",
-        "external",
         "content",
-        "create",
-        "import",
-        "multiple"
+        "source",
+        "file",
+        "type",
+        "markers"
       ]
     },
     {
       "permalink": "/components/rich-media/",
       "keywords": [
-        "learn",
-        "docaroo",
-        "components",
-        "embed",
-        "rich",
-        "media",
-        "content",
-        "encourage",
-        "store"
+        "figma",
+        "public",
+        "design",
+        "file",
+        "permissions"
       ]
     },
     {
       "permalink": "/components/alerts/",
       "keywords": [
-        "learn",
-        "add",
-        "blocks",
         "content",
         "alerts",
-        "types",
-        "colors"
+        "private",
+        "repo",
+        "key"
       ]
     },
     {
       "permalink": "/intro/",
       "keywords": [
-        "documentation",
-        "builder",
         "guide",
-        "comprehensive",
-        "resource",
-        "learning",
-        "create",
-        "build",
-        "maintain",
-        "quality"
+        "documentation",
+        "content",
+        "structure",
+        "markdown"
       ]
     },
     {
       "permalink": "/components/intro/",
       "keywords": [
-        "learn",
-        "add",
-        "pre",
-        "defined",
         "content",
-        "elements",
-        "embedded",
+        "docs",
+        "components",
         "documents",
-        "tags",
-        "components"
+        "docaroo"
       ]
     },
     {
@@ -127,16 +97,11 @@
     {
       "permalink": "/components/scrollspy/",
       "keywords": [
-        "and",
-        "are",
-        "great",
-        "ways",
-        "organising",
-        "information",
-        "inside",
-        "your",
+        "scroll spy",
+        "folder",
         "documents",
-        "made"
+        "document",
+        "content"
       ]
     },
     {
@@ -175,84 +140,61 @@
     {
       "permalink": "/components/xlsx-tables/",
       "keywords": [
-        "users",
-        "creating",
         "table",
-        "markdown",
-        "challenge",
-        "merged",
+        "tables",
+        "excel",
         "cells",
-        "crazy",
-        "quick",
-        "maintaining"
+        "component"
       ]
     },
     {
       "permalink": "/components/xlsx-charts/",
       "keywords": [
         "component",
-        "importing",
-        "excel",
-        "charts",
+        "folder",
         "documents",
-        "simple",
-        "create"
+        "colors",
+        "excel"
       ]
     },
     {
       "permalink": "/components/image/",
       "keywords": [
-        "component",
-        "placing",
         "images",
-        "content",
-        "captions",
-        "credits",
-        "copyright",
-        "designed"
+        "image",
+        "path",
+        "gallery",
+        "folder"
       ]
     },
     {
       "permalink": "/content/content-items/",
       "keywords": [
-        "docaroo",
-        "series",
         "content",
-        "items",
-        "enrich",
-        "documents",
-        "efficient",
-        "incorporate",
-        "piecers"
+        "documentation",
+        "charts",
+        "docs",
+        "documents"
       ]
     },
     {
       "permalink": "/components/card/",
       "keywords": [
+        "cards",
         "card",
-        "emphasise",
-        "piece",
-        "provide",
-        "relevant",
-        "visual",
-        "experience",
-        "images",
-        "references",
-        "detailed"
+        "content",
+        "documentation",
+        "readability"
       ]
     },
     {
       "permalink": "/experiments/intro/",
       "keywords": [
-        "series",
-        "features",
-        "life",
-        "easier",
-        "creating",
-        "content",
         "experiments",
-        "encouraged",
-        "send"
+        "production",
+        "content",
+        "component",
+        "subject"
       ]
     },
     {
@@ -273,16 +215,56 @@
     {
       "permalink": "/experiments/docx-summary/",
       "keywords": [
+        "summary",
         "component",
-        "helps",
-        "enhancing",
-        "content",
-        "auto",
-        "generated",
-        "summaries",
-        "docx",
-        "files",
-        "combined"
+        "models",
+        "huggingface",
+        "corrections"
+      ]
+    },
+    {
+      "permalink": "/get-started/doc-contents/",
+      "keywords": [
+        "documentation",
+        "folder",
+        "collections",
+        "documents",
+        "structure"
+      ]
+    },
+    {
+      "permalink": "/get-started/site-config/",
+      "keywords": [
+        "docaroo",
+        "provide",
+        "multiple",
+        "options",
+        "configure",
+        "functionality",
+        "appearence",
+        "configurations",
+        "_config",
+        "yml"
+      ]
+    },
+    {
+      "permalink": "/get-started/config-files/",
+      "keywords": [
+        "configuration",
+        "time",
+        "docaroo",
+        "configurations",
+        "folder"
+      ]
+    },
+    {
+      "permalink": "/get-started/config-options/",
+      "keywords": [
+        "functionalities",
+        "personalisation",
+        "appearance",
+        "options",
+        "_config.yml"
       ]
     }
   ]

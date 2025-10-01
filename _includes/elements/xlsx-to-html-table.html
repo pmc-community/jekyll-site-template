@@ -10,7 +10,9 @@
 {% assign source = include.source %}
 {% assign simple = include.simple || default: "true" %}
 {% assign showHead = include.showHead || default: "true" %}
-{% assign defaultRowsPerPage = 5 %}
+{% assign defaultRowsPerPage = site.data.siteConfig.dataTables.rowsPerPage %}
+{% assign h = include.h || default: ""%}
+{% assign freeze = include.freeze || default: 0%}
 
 {% if file and range and sheet and source %}
   <div class="d-flex justify-content-start align-items-center" id="xlsx-table-length-container-{{tid}}">
@@ -49,6 +51,8 @@
   </script>
 
   <script id="xlsx-table-create-script-{{tid}}">
+    /* creating datatable */
+
     if (!checkForMergedCells($('#xlsx-table-{{tid}}')) && {{simple}} !== true) {
 
       setTimeout(async ()=>{
@@ -87,13 +91,24 @@
             $('.dt-buttons').find('button').removeClass('btn-sm btn-secondary mb-2').addClass('border-0 mb-0 btn-primary');
             $('.tab-features-button-{{tid}} span').addClass('text-light');
 
-            table.columns.adjust().draw();
+            /* correct change theme and switch page issue, the wrong theme may be shown for the table */
+            table.on('page.dt', function () {
+             requestAnimationFrame(() => {
+              applyColorSchemaCorrections();
+             });
+            });
+
           },
           null,
           {
             ignoreSaveState: true,
             autoWidth: true,
+            columnDefs: [
+              { targets: '_all', className: 'dt-wrap' }
+            ],
+
             scrollCollapse: false,
+            resizeColumns: true /* activate column resizing, without saving the sizes */
           },
           null,
           preFlight.envInfo,
@@ -106,14 +121,37 @@
 
         $('#xlsx-table-controls-{{tid}}').remove();
         $('#xlsx-table-length-container-{{tid}}').remove();
-        $('#xlsx-table-pagination-script-{{tid}}').remove();
-        applyColorSchemaCorrections();
+        $('#xlsx-simple-table-script-{{tid}}').remove();
+        
+        setTimeout(()=>applyColorSchemaCorrections(), 200);
 
-      },200); 
+        /* sticky header if fixed height specified */
+        const h__{{tid}} = '{{h}}';
+        if ( h__{{tid}} !== '' ) {
+         setTimeout(()=>$('#xlsx-table-{{tid}}').parent().css('height', '{{h}}'), 500);
+         $('#xlsx-table-{{tid}}').find('thead').css('position', 'sticky').css('top', '0px').css('z-index','2');
+         requestAnimationFrame(() => { applyColorSchemaCorrections(); });
+       }
+
+      },200);
+      
     }
   </script>
+  
+  <script id="xlsx-table-format-script-{{tid}}">
+    autoResizeTable($('#xlsx-table-{{tid}}'));
+    const freeze_{{tid}} = {{freeze}};
+    if (preFlight.envInfo.device.deviceType === 'desktop' && freeze_{{tid}} > 0 ) 
+     freezeTableColumns('#xlsx-table-{{tid}}', freeze_{{tid}});
+  </script>
 
-  <script id="xlsx-table-pagination-script-{{tid}}">
+  <script id="xlsx-simple-table-script-{{tid}}">
+   /* 
+    * if is a simple table:
+    *  - add pagination and col resizing
+    *  - fixed height and header if specified
+    */
+
     if (checkForMergedCells($('#xlsx-table-{{tid}}')) || {{simple}} === true) {
 
       $('#xlsx-table-pagination-{{tid}}').removeClass('d-none');
@@ -198,7 +236,10 @@
               }
             });
         } else {
-          $('#xlsx-table-pagination-{{tid}}').addClass('d-none');
+          /*
+           * uncomment the next line to hide the pagination if there is only one page
+           * $('#xlsx-table-pagination-{{tid}}').addClass('d-none');
+           */
         }
 
         refreshPage();
@@ -209,10 +250,21 @@
       });
 
       applyPagination__{{tid}}();
+
+      activateSimpleTableResizeCols('#xlsx-table-{{tid}}');
+      $('#xlsx-table-container-{{tid}}').find('.table-wrapper').attr('style', 'overflow-x: auto !important');
+      $('#xlsx-table-{{tid}}').css('width','max-content');
+
+      const h__{{tid}} = '{{h}}';
+      if ( h__{{tid}} !== '' ) {
+       setTimeout(()=>$('#xlsx-table-container-{{tid}} .table-wrapper').attr('style', 'height: {{h}}; overflow: auto !important'), 2000);
+       $('#xlsx-table-{{tid}}').find('thead').css('position', 'sticky').css('top', '-10px').css('z-index','2');    
+      }
     }
   </script>
 
   <style>
+
     #xlsx-table-{{tid}}_wrapper .pagination {
       list-style: none !important;
     }
@@ -220,6 +272,22 @@
     #xlsx-table-pagination-nav-{{tid}} .pagination {
       list-style: none !important;
     }
+   
+    #xlsx-table-container-{{tid}} .table-wrapper {
+     overflow-x: hidden !important;  
+    }
+
+    #xlsx-table-{{tid}} {
+     table-layout: fixed !important;  
+    }
+
+    /* do not break words when wrap */
+    table.dataTable td {
+     white-space: normal !important;
+     word-wrap: normal !important;
+     word-break: normal !important;
+     overflow-wrap: break-word;
+   }
 
   </style>
 
