@@ -108,6 +108,7 @@
 
             /* 
              * freeze cols after automatically cols resizing
+             * cannot do this earlier because may cause gaps between frozen cols since left sticky position is caluculated before resizing
              */
             const freeze_{{tid}} = {{freeze}};
             if (preFlight.envInfo.device.deviceType === 'desktop' && freeze_{{tid}} > 0 ) {
