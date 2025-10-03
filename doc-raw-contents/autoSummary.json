@@ -98,7 +98,7 @@
         },
         {
             "permalink": "/get-started/config-options/",
-            "summary": "All the options available for site appearance and functionalities are shown in the next table. These options are available in _config.yml or in the configuration files. Changing other keys except for the ones listed on this page may cause site build fail or unexpected behavior."
+            "summary": "All the options available for site appearance and functionalities are shown in the next table. These options are available in _config.yml or in the configuration files and will allow personalisation of the documentation site. Changing other keys except for the ones listed on this page may cause site build fail."
         }
     ]
 }

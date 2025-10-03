@@ -14,14 +14,18 @@ All the options available for site appearance and functionalities are shown in t
     content="If a key from a file is not shown in the next table, it means that **`it must not be changed because is not a configuration option`**. Changing other keys/values except for the ones listed on this page may cause site build fail or unexpected behavior/appearance of the site." 
 %}
 
+{% include elements/alert.html class="primary" 
+    content="The site must be built and deployed (where applicable) in order to make new config options to be visible. If the site runs in dev mode, it has to be stopped and served again (using `serve` script)." title="Note" 
+%}
+
 {% include elements/xlsx-to-html-table.html 
     file="config-files.xlsx" 
-    range="B2:G63" 
+    range="B2:G48" 
     sheet="Options"
     source=page.path
     simple="false"
     showHead="true"
-    h="400px"
+    h="300px"
     freeze=2
 %}
 

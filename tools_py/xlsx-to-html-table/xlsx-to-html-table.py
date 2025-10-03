@@ -11,7 +11,7 @@ warnings.filterwarnings("ignore", category=UserWarning, module="openpyxl")
 
 def table_range_to_html(ws, cell_range):
     min_col, min_row, max_col, max_row = range_boundaries(cell_range)
-    html_rows = ['<table cellspacing="0" cellpadding="4" style="border-collapse: collapse; border: 1px solid #000;">']
+    html_rows = ['<table cellspacing="0" cellpadding="4" style="border-collapse: collapse">']
 
     # Map merged cells
     merged_cells = ws.merged_cells.ranges
@@ -60,7 +60,7 @@ def table_range_to_html(ws, cell_range):
         return f'<div style="{style}">{content}</div>'
 
     def get_style(cell):
-        styles = ['border: 1px solid #000;']
+        styles = []
 
         # Horizontal alignment
         align = cell.alignment.horizontal
@@ -72,7 +72,7 @@ def table_range_to_html(ws, cell_range):
         if valign:
             styles.append(f'vertical-align: {valign};')
 
-        styles.append('max-width: 150px; max-height: 100px; overflow: hidden;')
+        styles.append('overflow: hidden;')
 
         return f' style="{" ".join(styles)}"' if styles else ''
 

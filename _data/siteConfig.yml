@@ -155,3 +155,4 @@ dataTables:
   possibleDataTableParents: [".table-wrapper", ".card-body"] # used in utilities.js, setDataTable/defaultSettings/initComplete
   paginationButtons: 5
   rowsPerPage: 5
+  maxRowHeight: 50 #in px, used to automatically size columns

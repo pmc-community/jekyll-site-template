@@ -55,9 +55,17 @@
 
     if (!checkForMergedCells($('#xlsx-table-{{tid}}')) && {{simple}} !== true) {
 
-      setTimeout(async ()=>{
-        await waitForI18Next();
+      let widths__{{tid}} = [];
+      async function getBestWidths__{{tid}}() {
+       widths__{{tid}} = await calculateBestColWidths($("#xlsx-table-{{tid}}"));
+      }
 
+      getBestWidths__{{tid}}().then(()=>{
+       const cols__{{tid}} = widths__{{tid}}.map(w => ({ width: `${w}px` }));
+       const resize__{{tid}} = !cols__{{tid}}.includes(0);
+
+       setTimeout(async ()=>{
+        await waitForI18Next();
         setDataTable (
           '#xlsx-table-{{tid}}',
           'DataTables-xlsx-table-{{tid}}',
@@ -98,15 +106,23 @@
              });
             });
 
+            /* 
+             * freeze cols after automatically cols resizing
+             */
+            const freeze_{{tid}} = {{freeze}};
+            if (preFlight.envInfo.device.deviceType === 'desktop' && freeze_{{tid}} > 0 ) {
+             freezeTableColumns('#xlsx-table-{{tid}}', {{freeze}});
+             table.on('draw.dt', function() {
+              freezeTableColumns('#xlsx-table-{{tid}}', {{freeze}});
+             });
+            }   
+
           },
           null,
           {
+            autoWidth: resize__{{tid}} ? false : true,
+            columns: cols__{{tid}},
             ignoreSaveState: true,
-            autoWidth: true,
-            columnDefs: [
-              { targets: '_all', className: 'dt-wrap' }
-            ],
-
             scrollCollapse: false,
             resizeColumns: true /* activate column resizing, without saving the sizes */
           },
@@ -127,22 +143,17 @@
 
         /* sticky header if fixed height specified */
         const h__{{tid}} = '{{h}}';
-        if ( h__{{tid}} !== '' ) {
-         setTimeout(()=>$('#xlsx-table-{{tid}}').parent().css('height', '{{h}}'), 500);
-         $('#xlsx-table-{{tid}}').find('thead').css('position', 'sticky').css('top', '0px').css('z-index','2');
-         requestAnimationFrame(() => { applyColorSchemaCorrections(); });
-       }
+         if ( h__{{tid}} !== '' ) {
+          setTimeout(()=>$('#xlsx-table-{{tid}}').parent().css('height', '{{h}}'), 500);
+          $('#xlsx-table-{{tid}}').find('thead').css('position', 'sticky').css('top', '0').css('z-index','2');
+          requestAnimationFrame(() => { applyColorSchemaCorrections(); });
+        }
 
-      },200);
+       },200);
+
+      });
       
     }
-  </script>
-  
-  <script id="xlsx-table-format-script-{{tid}}">
-    autoResizeTable($('#xlsx-table-{{tid}}'));
-    const freeze_{{tid}} = {{freeze}};
-    if (preFlight.envInfo.device.deviceType === 'desktop' && freeze_{{tid}} > 0 ) 
-     freezeTableColumns('#xlsx-table-{{tid}}', freeze_{{tid}});
   </script>
 
   <script id="xlsx-simple-table-script-{{tid}}">
@@ -150,6 +161,7 @@
     * if is a simple table:
     *  - add pagination and col resizing
     *  - fixed height and header if specified
+    *  - smart col resizing (row height must not be more than siteConfig.yml/datatables/maxRowHeight
     */
 
     if (checkForMergedCells($('#xlsx-table-{{tid}}')) || {{simple}} === true) {
@@ -260,7 +272,13 @@
        setTimeout(()=>$('#xlsx-table-container-{{tid}} .table-wrapper').attr('style', 'height: {{h}}; overflow: auto !important'), 2000);
        $('#xlsx-table-{{tid}}').find('thead').css('position', 'sticky').css('top', '-10px').css('z-index','2');    
       }
-    }
+
+      autoResizeSimpleTable($("#xlsx-table-{{tid}}"));
+
+      const freeze_{{tid}} = {{freeze}};
+      if (preFlight.envInfo.device.deviceType === 'desktop' && freeze_{{tid}} > 0 ) 
+       freezeTableColumns('#xlsx-table-{{tid}}', freeze_{{tid}});
+      }
   </script>
 
   <style>

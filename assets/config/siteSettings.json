@@ -207,7 +207,8 @@
         ".card-body"
       ],
       "paginationButtons": 5,
-      "rowsPerPage": 5
+      "rowsPerPage": 5,
+      "maxRowHeight": 50
     },
     "siteTitle": "Docaroo"
   },
@@ -622,10 +623,10 @@
         "office"
       ],
       "excerpt": "table, tables, excel, cells, component",
-      "lastUpdate": "2025-08-11 13:46:56 +0300",
+      "lastUpdate": "2025-10-01 20:46:55 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-08-11 13:46:56 +0300",
-      "createTimeUTC": 1754909216,
+      "createTime": "2025-10-01 20:46:55 +0300",
+      "createTimeUTC": 1759340815,
       "relatedPages": [
         {
           "title": "XLSX Charts",
@@ -1127,10 +1128,10 @@
         "options"
       ],
       "excerpt": "functionalities, personalisation, appearance, options, _config.yml",
-      "lastUpdate": "2025-09-29 12:11:57 +0300",
+      "lastUpdate": "2025-10-01 20:46:55 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-09-29 12:11:57 +0300",
-      "createTimeUTC": 1759137117,
+      "createTime": "2025-10-01 20:46:55 +0300",
+      "createTimeUTC": 1759340815,
       "relatedPages": [
         {
           "title": "Config Files",
@@ -1145,7 +1146,7 @@
           "permalink": "/get-started/"
         }
       ],
-      "autoSummary": "All the options available for site appearance and functionalities are shown in the next table. These options are available in _config.yml or in the configuration files. Changing other keys except for the ones listed on this page may cause site build fail or unexpected behavior.",
+      "autoSummary": "All the options available for site appearance and functionalities are shown in the next table. These options are available in _config.yml or in the configuration files and will allow personalisation of the documentation site. Changing other keys except for the ones listed on this page may cause site build fail.",
       "similarByContent": [],
       "readingTime": 1,
       "hasDynamicContent": false,
@@ -1264,7 +1265,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "29-Sep-2025"
+          "lastUpdate": "01-Oct-2025"
         }
       ],
       "numPages": 3
@@ -1289,7 +1290,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "29-Sep-2025"
+          "lastUpdate": "01-Oct-2025"
         }
       ],
       "numPages": 2
@@ -1349,7 +1350,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "29-Sep-2025"
+          "lastUpdate": "01-Oct-2025"
         }
       ],
       "numPages": 5
@@ -1384,7 +1385,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "29-Sep-2025"
+          "lastUpdate": "01-Oct-2025"
         }
       ],
       "numPages": 6
@@ -1569,7 +1570,7 @@
         {
           "title": "XLSX Tables",
           "permalink": "/components/xlsx-tables/",
-          "lastUpdate": "11-Aug-2025"
+          "lastUpdate": "01-Oct-2025"
         },
         {
           "title": "DOCX Summary",
@@ -1594,7 +1595,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "29-Sep-2025"
+          "lastUpdate": "01-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1664,7 +1665,7 @@
         {
           "title": "XLSX Tables",
           "permalink": "/components/xlsx-tables/",
-          "lastUpdate": "11-Aug-2025"
+          "lastUpdate": "01-Oct-2025"
         }
       ],
       "numPages": 2
@@ -1699,7 +1700,7 @@
         {
           "title": "XLSX Tables",
           "permalink": "/components/xlsx-tables/",
-          "lastUpdate": "11-Aug-2025"
+          "lastUpdate": "01-Oct-2025"
         }
       ],
       "numPages": 2
@@ -1769,7 +1770,7 @@
         {
           "title": "XLSX Tables",
           "permalink": "/components/xlsx-tables/",
-          "lastUpdate": "11-Aug-2025"
+          "lastUpdate": "01-Oct-2025"
         },
         {
           "title": "Content items",
@@ -1869,7 +1870,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "29-Sep-2025"
+          "lastUpdate": "01-Oct-2025"
         }
       ],
       "numPages": 5
@@ -1884,7 +1885,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "29-Sep-2025"
+          "lastUpdate": "01-Oct-2025"
         }
       ],
       "numPages": 2
@@ -1909,7 +1910,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "29-Sep-2025"
+          "lastUpdate": "01-Oct-2025"
         }
       ],
       "numPages": 4
