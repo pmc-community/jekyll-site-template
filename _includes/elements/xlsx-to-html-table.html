@@ -112,9 +112,9 @@
              */
             const freeze_{{tid}} = {{freeze}};
             if (preFlight.envInfo.device.deviceType === 'desktop' && freeze_{{tid}} > 0 ) {
-             freezeTableColumns('#xlsx-table-{{tid}}', {{freeze}});
+             freezeTableColumns('#xlsx-table-{{tid}}', {{freeze}}); /* initial freeze */
              table.on('draw.dt', function() {
-              freezeTableColumns('#xlsx-table-{{tid}}', {{freeze}});
+              freezeTableColumns('#xlsx-table-{{tid}}', {{freeze}}); /* freeze always when the table is (re)rendered (such as switch pages) */
              });
             }   
 
