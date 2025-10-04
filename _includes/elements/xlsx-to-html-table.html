@@ -73,7 +73,11 @@
           (table) => {
             $('#xlsx-table-{{tid}}').find('.dt-column-title').addClass('text-primary fw-medium');
             $('.dt-buttons').prependTo($('.dt-info').parent());
-            $('.dt-info').remove();
+            /*$('.dt-info').remove();*/
+            $('#xlsx-table-{{tid}}_info')
+             .insertAfter($('#xlsx-table-{{tid}}_info').parent().parent())
+             .addClass('ghBtnLink fw-medium text-primary');
+            $('#xlsx-table-{{tid}}_info').insertBefore($('#xlsx-table-{{tid}}_info').prev());
             $('.dt-buttons').parent().addClass('d-flex align-items-center mt-auto');
             $('.dt-buttons').find('button').removeClass('btn-sm btn-secondary').addClass('btn-primary');
             $('.dt-buttons').removeClass('btn-group');
@@ -100,7 +104,7 @@
             $('.tab-features-button-{{tid}} span').addClass('text-light');
 
             /* correct change theme and switch page issue, the wrong theme may be shown for the table */
-            table.on('page.dt', function () {
+            table.on('page.dt, search.dt', function () {
              requestAnimationFrame(() => {
               applyColorSchemaCorrections();
              });
@@ -154,6 +158,36 @@
 
       });
       
+      /* 
+       * search builder is draggable only on desktop 
+       * also we do some styling
+      */
+       removeObservers('body (class=dt-button-collection dtb-collection-closeable)');
+       setElementCreatedByClassObserver('dt-button-collection dtb-collection-closeable', () => {
+        if (preFlight.envInfo.device.deviceType === 'desktop') {
+         $('.dtb-collection-closeable').draggable({
+          containment: "window"
+         });
+        }
+
+        /* search builder full width on mobile */
+        if (preFlight.envInfo.device.deviceType === 'mobile') {
+         $('.dtb-collection-closeable')
+          .css({
+           left: 0
+          })
+          .addClass('w-100');
+        }
+
+        $('.dtb-collection-closeable, .dtb-collection-closeable *').css('font-size', '14px');
+        setTimeout(() => {
+         $('.dtb-popover-close').remove();
+         $('.dtsb-titleRow').css('padding-right','0');
+         $('.dtsb-clearAll').removeClass('btn-secondary').addClass('btn-danger');
+         $('.dtsb-title').addClass('text-primary fw-medium');
+        }, 0);
+       });
+
     }
   </script>
 

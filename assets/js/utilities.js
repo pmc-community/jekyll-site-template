@@ -28,7 +28,6 @@ $(window).on('scroll', () => {
     
 });
 
-
 const goToAnchor = () => {
     const hash = window.location.hash;
     if (!hash || !$(hash).length) return;
@@ -139,7 +138,7 @@ $.fn.sizeChanged = function (handleFunction) {
     return element;
 };
 
-// add also some datatables enhancements if not home page
+// add some datatables enhancements if not home page
 // such as ordering by datetime cols
 if (pagePermalink !== '/') {
     // init page toc

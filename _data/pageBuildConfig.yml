@@ -22,7 +22,7 @@
       buttonsClass: "btn-warning"
       buttonsTextClass: "text-dark"
     stats_section:
-      allDocsBtnText: "All docs"
+      allDocsBtnText: "Total docs"
       savedDocsBtnText: "Saved docs"
       catsBtnText: "Categories"
       pagesWithCustomsCatsBtnText: "Documents"
