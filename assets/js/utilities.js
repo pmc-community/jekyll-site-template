@@ -28,7 +28,6 @@ $(window).on('scroll', () => {
     
 });
 
-
 const goToAnchor = () => {
     const hash = window.location.hash;
     if (!hash || !$(hash).length) return;
@@ -139,7 +138,7 @@ $.fn.sizeChanged = function (handleFunction) {
     return element;
 };
 
-// add also some datatables enhancements if not home page
+// add some datatables enhancements if not home page
 // such as ordering by datetime cols
 if (pagePermalink !== '/') {
     // init page toc
@@ -828,8 +827,8 @@ const activateTableResizeCols = (tableSelector, tableObject) => {
                     'max-width': newWidth + 'px'
                 });
 
-                const freezedCols = getMaxStickyThIndex(tableSelector);
-                if (freezedCols !== -1 ) freezeTableColumns(tableSelector, freezedCols+1);
+                const frozenCols = getMaxStickyThIndex(tableSelector);
+                if (frozenCols !== -1 ) freezeTableColumns(tableSelector, frozenCols+1);
             },
 
             stop: function () {
@@ -876,63 +875,195 @@ const activateSimpleTableResizeCols = (tableSelector) => {
                     width: newWidth + 'px',
                     'max-width': newWidth + 'px'
                 });
-                const freezedCols = getMaxStickyThIndex(tableSelector);
-                if (freezedCols !== -1 ) freezeTableColumns(tableSelector, freezedCols+1);
+                const frozenCols = getMaxStickyThIndex(tableSelector);
+                if (frozenCols !== -1 ) freezeTableColumns(tableSelector, frozenCols+1);
             }
         });
     });
 };
 
-function autoResizeTable($table) {
-    var colWidths = [];
+const autoResizeSimpleTable = ($table) => {
+    // Run only after rendering/styles applied
+    requestAnimationFrame(() => {
+        const MAX_ROW_HEIGHT = settings.dataTables.maxRowHeight; // px
+        let colWidths = [];
 
-    // Measure max width for each column
-    $table.find("tr").each(function () {
-        $(this).children("th, td").each(function (i) {
-            var $cell = $(this);
+        // --- Measure max width for each column ---
+        $table.find("tr").each(function () {
+            $(this).children("th, td").each(function (i) {
+                const $cell = $(this);
 
-            var $test = $("<span/>").css({
+                const textContent = $cell.text(); // includes all nested elements
+
+                const $test = $("<span/>").css({
+                    visibility: "hidden",
+                    whiteSpace: "nowrap",
+                    font: $cell.css("font"),
+                    "font-weight": $cell.css("font-weight"),
+                    "font-size": $cell.css("font-size"),
+                    "font-family": $cell.css("font-family")
+                }).text(textContent);
+
+                $("body").append($test);
+                let width = $test.outerWidth(true) + 20; // padding buffer
+
+                // --- Limit width to avoid row height > 50px ---
+                const lineHeight = parseFloat($cell.css("line-height")) || parseFloat($cell.css("font-size")) * 1.2;
+                const maxLines = Math.floor(MAX_ROW_HEIGHT / lineHeight) || 1;
+                const approxWidthPerLine = width / Math.ceil(width / $cell.width());
+                const maxWidth = approxWidthPerLine * maxLines;
+                if (width > maxWidth) width = maxWidth;
+
+                $test.remove();
+
+                colWidths[i] = Math.max(colWidths[i] || 0, width);
+            });
+        });
+
+        // --- Ensure <th> in <thead> is also considered ---
+        $table.find("thead th").each(function (i) {
+            const $cell = $(this);
+            const textContent = $cell.text(); // includes all nested elements
+
+            const $test = $("<span/>").css({
                 visibility: "hidden",
                 whiteSpace: "nowrap",
                 font: $cell.css("font"),
                 "font-weight": $cell.css("font-weight"),
                 "font-size": $cell.css("font-size"),
                 "font-family": $cell.css("font-family")
-            }).text($cell.text());
+            }).text(textContent);
 
             $("body").append($test);
-            var width = $test.width() + 20;
+            let width = $test.outerWidth(true) + 20;
+
+            const lineHeight = parseFloat($cell.css("line-height")) || parseFloat($cell.css("font-size")) * 1.2;
+            const maxLines = Math.floor(MAX_ROW_HEIGHT / lineHeight) || 1;
+            const approxWidthPerLine = width / Math.ceil(width / $cell.width());
+            const maxWidth = approxWidthPerLine * maxLines;
+            if (width > maxWidth) width = maxWidth;
+
             $test.remove();
 
             colWidths[i] = Math.max(colWidths[i] || 0, width);
         });
+
+        if (colWidths.length === 0) return;
+
+        // --- Calculate proportional widths ---
+        const totalContentWidth = colWidths.reduce((a, b) => a + b, 0);
+        const tableWidth = Math.max($table.outerWidth(), totalContentWidth);
+        colWidths = colWidths.map(w => (w / totalContentWidth) * tableWidth);
+
+        // --- Use only a single <colgroup> ---
+        let $colgroups = $table.children("colgroup");
+        if ($colgroups.length === 0) {
+            $colgroups = $("<colgroup/>").prependTo($table);
+        } else if ($colgroups.length > 1) {
+            $colgroups.not(":first").remove();
+            $colgroups = $colgroups.first();
+        } else {
+            $colgroups = $colgroups.first();
+        }
+
+        // --- Normalize <col> count ---
+        let $cols = $colgroups.find("col");
+        if ($cols.length < colWidths.length) {
+            for (let i = $cols.length; i < colWidths.length; i++) {
+                $colgroups.append("<col>");
+            }
+        } else if ($cols.length > colWidths.length) {
+            $cols.slice(colWidths.length).remove();
+        }
+
+        // --- Apply widths ---
+        $colgroups.find("col").each(function (i) {
+            if (colWidths[i] !== undefined) {
+                const w = colWidths[i].toFixed(2) + "px";
+                $(this).css("width", w);
+
+                // Also apply directly to header + body cells
+                $table.find("tr").each(function () {
+                    const $cells = $(this).children("th, td").eq(i);
+                    $cells.css({
+                        "width": w,
+                        "max-height": MAX_ROW_HEIGHT + "px",
+                        "overflow": "hidden"
+                    });
+                });
+            }
+        });
+        
     });
 
-    // Calculate total width
-    var totalWidth = colWidths.reduce((a, b) => a + b, 0);
+    setTimeout(() => {
+        let $colgroups = $table.children("colgroup");
+        if ($colgroups.length > 1) $colgroups.first().remove();
+    
+        const tableSelector = `#${$table.attr('id')}`;
+        const frozenCols = getMaxStickyThIndex(tableSelector);
+        if (frozenCols !== -1 ) freezeTableColumns(tableSelector, frozenCols+1);
 
-    // Convert to percentages
-    var percents = colWidths.map(w => (w / totalWidth) * 100);
+    }, 0);
+};
 
-    // Smart adjustment:
-    var MIN_WIDTH = 10;  // min % per column
-    var MAX_WIDTH = 40;  // max % per column (avoid huge text columns)
+// for datatables we need to calculate the best widths
+// and use them in table init to set the columns
+// using columns or columnDefs props
+const calculateBestColWidths = ($table) => {
+    return new Promise((resolve) => {
+        requestAnimationFrame(() => {
+            const MAX_ROW_HEIGHT = settings.dataTables.maxRowHeight; // px
+            let colWidths = [];
 
-    // First pass: clamp values
-    percents = percents.map(p => Math.min(Math.max(p, MIN_WIDTH), MAX_WIDTH));
+            // --- Measure max width from data cells ---
+            $table.find("tbody tr").each(function () {
+                $(this).children("td").each(function (i) {
+                    const $cell = $(this);
+                    const textContent = $cell.text();
 
-    // Normalize so total = 100%
-    var sum = percents.reduce((a, b) => a + b, 0);
-    percents = percents.map(p => p / sum * 100);
+                    const $test = $("<span/>").css({
+                        visibility: "hidden",
+                        whiteSpace: "nowrap",
+                        font: $cell.css("font"),
+                        "font-weight": $cell.css("font-weight"),
+                        "font-size": $cell.css("font-size"),
+                        "font-family": $cell.css("font-family")
+                    }).text(textContent);
 
-    // Apply widths to th/td
-    $table.find("tr").each(function () {
-        $(this).children("th, td").each(function (i) {
-            var percent = percents[i].toFixed(2) + "%";
-            $(this).css("width", percent);
+                    $("body").append($test);
+                    let width = $test.outerWidth(true) + 20; // padding buffer
+
+                    // --- Apply max row height restriction ---
+                    const lineHeight = parseFloat($cell.css("line-height")) || parseFloat($cell.css("font-size")) * 1.2;
+                    const maxLines = Math.floor(MAX_ROW_HEIGHT / lineHeight) || 1;
+                    const approxWidthPerLine = width / Math.ceil(width / $cell.width());
+                    const maxWidth = approxWidthPerLine * maxLines;
+                    if (width > maxWidth) width = maxWidth;
+
+                    $test.remove();
+
+                    colWidths[i] = Math.max(colWidths[i] || 0, width);
+                });
+            });
+
+            // --- Ensure <th> in <thead> is fully considered (including nested elements) ---
+            $table.find("thead th").each(function (i) {
+                const $cell = $(this);
+
+                // Use actual rendered width instead of text-only
+                let headerWidth = $cell.prop("scrollWidth") + 20;
+
+                // Do NOT apply row height restriction to headers
+                colWidths[i] = Math.max(colWidths[i] || 0, headerWidth);
+            });
+
+            if (colWidths.length === 0) resolve([]);
+
+            resolve(colWidths);
         });
     });
-}
+};
 
 const getMaxStickyThIndex = (tableSelector) => {
   let maxIndex = -1;
@@ -963,39 +1094,39 @@ const freezeTableColumns = (tableSelector, numCols) => {
     for (let j = 0; j < i; j++) {
       offset += colWidths[j];
     }
-    $table.find("tr").each(function() {
-      $(this).find("th:eq(" + i + ")")
+    $table.find('tr').each(function() {
+      $(this).find('th:eq(' + i + ')')
         .css({
-            position: "sticky",
-            left: offset + "px",
+            position: 'sticky',
+            left: offset-1 + 'px', 
             'z-index': 1,
             'will-change': 'transform',
-            //background: $(this).css('background')
+            background: $(this).css('background')
         })
         .removeClass('bg-opacity-25 border-opacity-25 border border-secondary')
         .addClass('border-0')
         
     });
 
-    $table.find("tr").each(function() {
-      $(this).find("td:eq(" + i + ")")
+    $table.find('tr').each(function() {
+      $(this).find('td:eq(' + i + ')')
         .css({
-            position: "sticky",
-            left: offset + "px",
+            position: 'sticky',
+            left: offset-1 + 'px',
             'z-index': 1,
             'will-change': 'transform',
-            'box-shadow': 'inset -1px 0 0 #cccccc49, inset 1px 0 0 #cccccc49', 
-            background: $(this).css('background')
+            'box-shadow': 'inset -0.5px 0 0 #cccccc49, inset 1px 0 0 #cccccc49', 
+            background: $table.css('background')
         })
         .removeClass('border border-secondary')
         .addClass('border-0')
         
     });
 
-    $table.find("tr").each(function() {
-      $(this).find("th:eq(" + i + ")")
+    $table.find('tr').each(function() {
+      $(this).find('th:eq(' + i + ')')
         .removeClass('bg-secondary text-primary')
-        .addClass('bg-dark-subtle')
+        .addClass('bg-dark-subtle');
     });
     
   }
