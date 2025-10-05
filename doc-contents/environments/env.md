@@ -43,16 +43,20 @@ Environment variables are mostly used to store values that should never be expos
 - `Huggingface`: for accessing the open source models used to provide various features of Docaroo (such as auto summaries, PDF/DOCX summarisation, similar docs identification)
 
 {% capture c %}
-  {% ExternalSiteContent  {
+  {% 
+    ExternalRepoContent  { 
         "markdown": true,
-        "file_path":"partials/environments/integration-alert-content.md", 
+        "owner":"pmc-community", 
+        "repo":"jekyll-site-template", 
+        "branch":"gh-pages", 
+        "file_path":"doc-contents/environments/integration-alert-content.md", 
         "ignore_wp_shortcodes": true, 
-        "start_marker": "fullFile", 
+        "start_marker": "fullFile",
         "include_start_marker": false,
-        "end_marker": "fullFile",
+        "end_marker": "fullFile" ,
         "include_end_marker": false,
-        "needAuth": false 
-    } 
-  %}
+        "needAuth": false
+    }
+%}
 {% endcapture %}
 {% include elements/alert.html class="primary" content=c title="Note!" %}

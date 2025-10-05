@@ -225,10 +225,10 @@
         "content"
       ],
       "excerpt": "content, alerts, private, repo, key",
-      "lastUpdate": "2025-08-10 18:16:39 +0300",
+      "lastUpdate": "2025-10-05 17:01:55 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-08-10 18:16:39 +0300",
-      "createTimeUTC": 1754838999,
+      "createTime": "2025-10-05 17:01:55 +0300",
+      "createTimeUTC": 1759672915,
       "relatedPages": [
         {
           "title": "FAQ Item",
@@ -983,19 +983,15 @@
         "environment",
         "variable"
       ],
-      "excerpt": "variables, tokens, note, time, features",
-      "lastUpdate": "2025-10-05 15:43:56 +0300",
+      "excerpt": "variables, note, time, https://raw.githubusercontent.com/pmc-community/jekyll-site-template/gh-pages/doc-contents/environments/integration-alert-content.md, features",
+      "lastUpdate": "2025-10-05 17:01:55 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-05 15:43:56 +0300",
-      "createTimeUTC": 1759668236,
+      "createTime": "2025-10-05 17:01:55 +0300",
+      "createTimeUTC": 1759672915,
       "relatedPages": [
         {
           "title": "Config Files",
           "permalink": "/get-started/config-files/"
-        },
-        {
-          "title": "Config Options",
-          "permalink": "/get-started/config-options/"
         }
       ],
       "autoSummary": "Environment variables are used only at build time. At run time (in dev or production environments) the environment variables are not used anymore. They are mostly used to store values that should never be exposed, such as access keys and tokens that are used to integrate some external features and.",
@@ -1218,7 +1214,7 @@
         {
           "title": "Alerts",
           "permalink": "/components/alerts/",
-          "lastUpdate": "10-Aug-2025"
+          "lastUpdate": "05-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1328,7 +1324,7 @@
         {
           "title": "Alerts",
           "permalink": "/components/alerts/",
-          "lastUpdate": "10-Aug-2025"
+          "lastUpdate": "05-Oct-2025"
         },
         {
           "title": "Card",
@@ -1448,7 +1444,7 @@
         {
           "title": "Alerts",
           "permalink": "/components/alerts/",
-          "lastUpdate": "10-Aug-2025"
+          "lastUpdate": "05-Oct-2025"
         },
         {
           "title": "FAQ Item",
@@ -1779,7 +1775,7 @@
         {
           "title": "Alerts",
           "permalink": "/components/alerts/",
-          "lastUpdate": "10-Aug-2025"
+          "lastUpdate": "05-Oct-2025"
         },
         {
           "title": "Card",
