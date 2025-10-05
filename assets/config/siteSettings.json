@@ -983,15 +983,19 @@
         "environment",
         "variable"
       ],
-      "excerpt": "variables, note, time, https://raw.githubusercontent.com/pmc-community/jekyll-site-template/gh-pages/doc-contents/environments/integration-alert-content.md, features",
-      "lastUpdate": "2025-10-05 17:01:55 +0300",
+      "excerpt": "variables, tokens, note, time, features",
+      "lastUpdate": "2025-10-05 17:18:15 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-05 17:01:55 +0300",
-      "createTimeUTC": 1759672915,
+      "createTime": "2025-10-05 17:18:15 +0300",
+      "createTimeUTC": 1759673895,
       "relatedPages": [
         {
           "title": "Config Files",
           "permalink": "/get-started/config-files/"
+        },
+        {
+          "title": "Config Options",
+          "permalink": "/get-started/config-options/"
         }
       ],
       "autoSummary": "Environment variables are used only at build time. At run time (in dev or production environments) the environment variables are not used anymore. They are mostly used to store values that should never be exposed, such as access keys and tokens that are used to integrate some external features and.",
@@ -1038,6 +1042,33 @@
         }
       ],
       "readingTime": 3,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
+      "title": "Integrate",
+      "permalink": "/integrate/",
+      "categories": [
+        "General",
+        "Start"
+      ],
+      "tags": [
+        "integrations",
+        "log",
+        "monitor",
+        "feedback",
+        "measure",
+        "search"
+      ],
+      "excerpt": "integrations, performance, integration, mandatory, feedback",
+      "lastUpdate": "2025-10-05 18:10:50 +0300",
+      "lastUpdateUTC": 0,
+      "createTime": "2025-10-05 18:10:50 +0300",
+      "createTimeUTC": 1759677050,
+      "relatedPages": [],
+      "autoSummary": "Docaroo provides out-of-the-box a series of integrations. The purpose of the integrations is to make available in a no-codelow-code mode some important features.",
+      "similarByContent": [],
+      "readingTime": 1,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -1187,19 +1218,25 @@
     "environment",
     "external",
     "faq",
+    "feedback",
     "figma",
     "file",
     "gallery",
     "image",
     "import",
+    "integrations",
     "items",
     "link",
+    "log",
     "lottie",
+    "measure",
+    "monitor",
     "office",
     "options",
     "organise docs",
     "pdf",
     "scrollspy",
+    "search",
     "start",
     "summary",
     "table",
@@ -1499,6 +1536,16 @@
       ],
       "numPages": 1
     },
+    "feedback": {
+      "pages": [
+        {
+          "title": "Integrate",
+          "permalink": "/integrate/",
+          "lastUpdate": "05-Oct-2025"
+        }
+      ],
+      "numPages": 1
+    },
     "figma": {
       "pages": [
         {
@@ -1554,6 +1601,16 @@
       ],
       "numPages": 1
     },
+    "integrations": {
+      "pages": [
+        {
+          "title": "Integrate",
+          "permalink": "/integrate/",
+          "lastUpdate": "05-Oct-2025"
+        }
+      ],
+      "numPages": 1
+    },
     "items": {
       "pages": [
         {
@@ -1584,12 +1641,42 @@
       ],
       "numPages": 3
     },
+    "log": {
+      "pages": [
+        {
+          "title": "Integrate",
+          "permalink": "/integrate/",
+          "lastUpdate": "05-Oct-2025"
+        }
+      ],
+      "numPages": 1
+    },
     "lottie": {
       "pages": [
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
           "lastUpdate": "21-Jul-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "measure": {
+      "pages": [
+        {
+          "title": "Integrate",
+          "permalink": "/integrate/",
+          "lastUpdate": "05-Oct-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "monitor": {
+      "pages": [
+        {
+          "title": "Integrate",
+          "permalink": "/integrate/",
+          "lastUpdate": "05-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1665,6 +1752,16 @@
           "title": "Scroll Spy & Tabs",
           "permalink": "/components/scrollspy/",
           "lastUpdate": "02-Aug-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "search": {
+      "pages": [
+        {
+          "title": "Integrate",
+          "permalink": "/integrate/",
+          "lastUpdate": "05-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1928,6 +2025,11 @@
           "lastUpdate": "06-Sep-2025"
         },
         {
+          "title": "Integrate",
+          "permalink": "/integrate/",
+          "lastUpdate": "05-Oct-2025"
+        },
+        {
           "title": "Introduction",
           "permalink": "/intro/",
           "lastUpdate": "26-Jul-2025"
@@ -1943,7 +2045,7 @@
           "lastUpdate": "05-Oct-2025"
         }
       ],
-      "numPages": 6
+      "numPages": 7
     },
     "Site config": {
       "pages": [
@@ -1983,6 +2085,11 @@
           "lastUpdate": "06-Sep-2025"
         },
         {
+          "title": "Integrate",
+          "permalink": "/integrate/",
+          "lastUpdate": "05-Oct-2025"
+        },
+        {
           "title": "Config Files",
           "permalink": "/get-started/config-files/",
           "lastUpdate": "08-Sep-2025"
@@ -1993,7 +2100,7 @@
           "lastUpdate": "05-Oct-2025"
         }
       ],
-      "numPages": 5
+      "numPages": 6
     }
   },
   "hsSettings": {

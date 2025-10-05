@@ -271,10 +271,20 @@
       "permalink": "/get-started/env/",
       "keywords": [
         "variables",
+        "tokens",
         "note",
         "time",
-        "https://raw.githubusercontent.com/pmc-community/jekyll-site-template/gh-pages/doc-contents/environments/integration-alert-content.md",
         "features"
+      ]
+    },
+    {
+      "permalink": "/integrate/",
+      "keywords": [
+        "integrations",
+        "performance",
+        "integration",
+        "mandatory",
+        "feedback"
       ]
     }
   ]

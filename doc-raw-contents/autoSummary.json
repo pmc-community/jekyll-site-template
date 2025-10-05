@@ -103,6 +103,10 @@
         {
             "permalink": "/get-started/env/",
             "summary": "Environment variables are used only at build time. At run time (in dev or production environments) the environment variables are not used anymore. They are mostly used to store values that should never be exposed, such as access keys and tokens that are used to integrate some external features and."
+        },
+        {
+            "permalink": "/integrate/",
+            "summary": "Docaroo provides out-of-the-box a series of integrations. The purpose of the integrations is to make available in a no-codelow-code mode some important features."
         }
     ]
 }
