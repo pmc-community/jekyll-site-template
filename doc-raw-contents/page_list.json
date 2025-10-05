@@ -422,6 +422,33 @@
     "parent": "Get started"
   },
   {
+    "title": "Environments",
+    "permalink": "/get-started/env/",
+    "categories": [
+      "General",
+      "Start",
+      "Site config",
+      "Environment"
+    ],
+    "tags": [
+      "start",
+      "configuration",
+      "environment",
+      "variable"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-10-05 15:43:56 +0300",
+    "lastUpdateUTC": 1759668236,
+    "createTime": "2025-10-05 15:43:56 +0300",
+    "createTimeUTC": 1759668236,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": "Get started"
+  },
+  {
     "title": "Get started",
     "permalink": "/get-started/",
     "categories": [
@@ -508,10 +535,10 @@
       "options"
     ],
     "excerpt": "",
-    "lastUpdate": "2025-10-03 12:37:48 +0300",
-    "lastUpdateUTC": 1759484268,
-    "createTime": "2025-10-03 12:37:48 +0300",
-    "createTimeUTC": 1759484268,
+    "lastUpdate": "2025-10-05 00:44:28 +0300",
+    "lastUpdateUTC": 1759614268,
+    "createTime": "2025-10-05 00:44:28 +0300",
+    "createTimeUTC": 1759614268,
     "relatedPages": [],
     "autoSummary": "",
     "similarByContent": [],

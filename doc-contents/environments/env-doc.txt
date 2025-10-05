@@ -1,7 +1,7 @@
 # General
 DEPLOY_PROD_BASE_URL = <base url for live/production site, in this case https://docaroo.innohub.space>
-DEPLOY_ENV = dev <should not br modified>
-CONSOLE_BLANK_SPINNER_CHARS = <true/false, enable/disable the spinner shown for longer tasks whrn building the site>
+DEPLOY_ENV = dev <!!!!should not be modified>
+CONSOLE_BLANK_SPINNER_CHARS = <true/false, enable/disable the spinner shown for longer tasks when building the site>
 
 # New Relic
 NR_ENABLED = <true/false, enable/disable New Relic integration>

@@ -42,11 +42,7 @@
     {
         "permalink": "/content/ec/",
         "similarFiles": [
-            "/content/intro/",
-            "/content/content-items/",
-            "/components/alerts/",
-            "/components/intro/",
-            "/get-started/"
+            "/components/alerts/"
         ]
     },
     {
@@ -140,6 +136,10 @@
     },
     {
         "permalink": "/get-started/config-files/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/get-started/env/",
         "similarFiles": []
     }
 ]

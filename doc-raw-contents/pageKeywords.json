@@ -266,6 +266,16 @@
         "options",
         "_config.yml"
       ]
+    },
+    {
+      "permalink": "/get-started/env/",
+      "keywords": [
+        "variables",
+        "tokens",
+        "note",
+        "time",
+        "features"
+      ]
     }
   ]
 }
