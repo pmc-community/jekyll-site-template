@@ -106,7 +106,7 @@
         },
         {
             "permalink": "/integrate/",
-            "summary": "Docaroo provides out-of-the-box a series of integrations. The purpose of the integrations is to make available in a no-codelow-code mode some important features."
+            "summary": "Docaroo provides out-of-the-box a series of integrations. The purpose of the integrations is to make available in a no-code or low-code mode some important features. Each integration can be independently enabled and configured or disabled."
         }
     ]
 }
