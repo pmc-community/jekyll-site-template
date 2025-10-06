@@ -326,20 +326,12 @@
           "title": "Content items"
         },
         {
-          "permalink": "/content/intro/",
-          "title": "Content"
-        },
-        {
           "permalink": "/intro/",
           "title": "Introduction"
         },
         {
           "permalink": "/content/ec/",
           "title": "External content"
-        },
-        {
-          "permalink": "/components/qitem/",
-          "title": "FAQ Item"
         }
       ],
       "readingTime": 1,
@@ -688,10 +680,6 @@
           "title": "Components"
         },
         {
-          "permalink": "/content/intro/",
-          "title": "Content"
-        },
-        {
           "permalink": "/content/ec/",
           "title": "External content"
         },
@@ -734,28 +722,7 @@
         }
       ],
       "autoSummary": "Learn how to structure and use the content in the most efficient way. The secret is to use to the maximum extent the features made available. Importing external content (at build time or at run time) is the most powerful.",
-      "similarByContent": [
-        {
-          "permalink": "/content/content-items/",
-          "title": "Content items"
-        },
-        {
-          "permalink": "/components/intro/",
-          "title": "Components"
-        },
-        {
-          "permalink": "/content/ec/",
-          "title": "External content"
-        },
-        {
-          "permalink": "/intro/",
-          "title": "Introduction"
-        },
-        {
-          "permalink": "/get-started/doc-contents/",
-          "title": "Docs root"
-        }
-      ],
+      "similarByContent": [],
       "readingTime": 2,
       "hasDynamicContent": false,
       "parent": ""
@@ -793,8 +760,12 @@
       "autoSummary": "Docaroo allows to your documents. External content is important because it allows you to create of content and import these parts in multiple places. It is possible to import content from external public and private GitHub repositories.",
       "similarByContent": [
         {
-          "permalink": "/components/alerts/",
-          "title": "Alerts"
+          "permalink": "/content/content-items/",
+          "title": "Content items"
+        },
+        {
+          "permalink": "/components/intro/",
+          "title": "Components"
         }
       ],
       "readingTime": 4,
@@ -958,12 +929,7 @@
         }
       ],
       "autoSummary": "Doc-contents is the root folder of the documents and collections. The way in which this folder is organised is strictly depending on the structure you want to have for your documentation. Some sub-folders are necessary to be present: the collection folder where the qa files must be placed if a.",
-      "similarByContent": [
-        {
-          "permalink": "/content/intro/",
-          "title": "Content"
-        }
-      ],
+      "similarByContent": [],
       "readingTime": 3,
       "hasDynamicContent": false,
       "parent": "Get started"
@@ -1060,7 +1026,7 @@
         "measure",
         "search"
       ],
-      "excerpt": "integrations, performance, integration, mandatory, feedback",
+      "excerpt": "integrations, performance, feedback, integration, mandatory",
       "lastUpdate": "2025-10-05 18:41:56 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-10-05 18:41:56 +0300",
@@ -1110,10 +1076,6 @@
         {
           "permalink": "/components/intro/",
           "title": "Components"
-        },
-        {
-          "permalink": "/content/intro/",
-          "title": "Content"
         }
       ],
       "readingTime": 3,

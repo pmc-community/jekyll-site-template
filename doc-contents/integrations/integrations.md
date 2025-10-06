@@ -27,9 +27,8 @@ However, it is not mandatory to use the integrations, thus each integration can 
     range="B2:H8" 
     sheet="integrations"
     source=page.path
-    simple="false"
+    simple="true"
     showHead="true"
-    h="300px"
     freeze=1
 %}
 
@@ -40,6 +39,20 @@ However, it is not mandatory to use the integrations, thus each integration can 
 ## HubSpot
 
 ## New Relic
+
+
+{% capture img %}
+    source="integrations/nr-img/nr-logs-s.png"|caption="Logs"|captionBorder="true",
+    source="integrations/nr-img/nr-web-app-s.png"|caption="Performance"|captionBorder="true"|imgLink="https://www.newrelic.com"|imgLinkNewTab="true",
+    source="integrations/nr-img/nr-web-app-1-s.png"|caption="Performance"|captionBorder="true"|imgLink="https://www.newrelic.com"|imgLinkNewTab="true"
+{% endcapture %}
+
+{% include elements/image-gallery.html 
+  img=img 
+  border="true" 
+  hg="400px"
+  oneRow="all" 
+%}
 
 ## GitHub
 
