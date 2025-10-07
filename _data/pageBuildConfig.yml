@@ -9,7 +9,7 @@
       featuredMedia: "<img width=\"600\" height=\"auto\" src=\"assets/img/home.webp\" alt=\"Docaroo by PMC\">"
     collections_section:
       enabledInHome: true
-      except: ["posts"] # collection name must be the one from _config.yml[collections]
+      except: ["posts", "tools"] # collection name must be the one from _config.yml[collections]
       itemsToShow: 4
       collectionStartBtnText: "Start here"
       buttonsClass: "btn-primary"

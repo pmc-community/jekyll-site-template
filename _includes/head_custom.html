@@ -93,9 +93,7 @@
 {% assign pageObj = pg | replace: "=>", ":" | json_string_to_object %}
 
 <meta name="description" content="{{site.title}} - {{page.title}} ({{pageObj[0].excerpt}})">
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 
 <!-- necessary for deployments in multiple domains -->
 <!-- mandatory if using Algolia search the crawler rejects url which does not match its allowed domains -->
