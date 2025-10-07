@@ -13,7 +13,7 @@ layout: table_wrappers
   {% assign lang_prefix = '/' | append: lang_path %}
 {% endunless %}
 
-<html lang="{{ lang_prefix | default: 'en' }}">
+<html lang="{{ lang_path | default: 'en' }}">
 
   {% include head.html %}
   <body>
