@@ -20,6 +20,20 @@ This content item renders the structure of any folder/directory from your docume
 
 {% DirStructure doc-contents/partials/scroll-spy %}
 
+{% include elements/alert.html class="primary" 
+    content="If is needed to show a complex and long directory structure, using the content item as previously shown may not be the right way to do. In this case is better to use it with a limited height, as shown below." 
+    title="Note" 
+%}
+
+{% raw %}
+```javascript
+{% include elements/dir-structure.html 
+  dir="doc-contents" 
+  h="400px"
+%}
+```
+{% endraw %}
+
 # External content
 This content item renders parts of the content from other documents form your documentation. It renders the content found between defined markers or the full external file content. It also can render content from multiple sets of markers from the external file. This feature is very important for at least several reasons.
 

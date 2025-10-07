@@ -177,12 +177,12 @@
         "permalink": "/components/xlsx-charts/"
       },
       {
-        "title": "DOCX Summary",
-        "permalink": "/experiments/docx-summary/"
+        "title": "Content items",
+        "permalink": "/content/content-items/"
       },
       {
-        "title": "PDF Summary",
-        "permalink": "/experiments/pdf-summary/"
+        "title": "DOCX Summary",
+        "permalink": "/experiments/docx-summary/"
       }
     ]
   },
@@ -190,12 +190,12 @@
     "permalink": "/content/content-items/",
     "related": [
       {
-        "title": "Components",
-        "permalink": "/components/intro/"
-      },
-      {
         "title": "Scroll Spy & Tabs",
         "permalink": "/components/scrollspy/"
+      },
+      {
+        "title": "Components",
+        "permalink": "/components/intro/"
       },
       {
         "title": "Content",
@@ -228,12 +228,12 @@
         "permalink": "/components/alerts/"
       },
       {
-        "title": "Content",
-        "permalink": "/content/intro/"
+        "title": "Content items",
+        "permalink": "/content/content-items/"
       },
       {
-        "title": "FAQ Item",
-        "permalink": "/components/qitem/"
+        "title": "Content",
+        "permalink": "/content/intro/"
       }
     ]
   },

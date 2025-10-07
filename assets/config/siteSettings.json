@@ -625,12 +625,12 @@
           "permalink": "/components/xlsx-charts/"
         },
         {
-          "title": "DOCX Summary",
-          "permalink": "/experiments/docx-summary/"
+          "title": "Content items",
+          "permalink": "/content/content-items/"
         },
         {
-          "title": "PDF Summary",
-          "permalink": "/experiments/pdf-summary/"
+          "title": "DOCX Summary",
+          "permalink": "/experiments/docx-summary/"
         }
       ],
       "autoSummary": "This component allows users to create tables in markdown and load them in excel. It offers two types of tables: fully featured and without some features.",
@@ -654,26 +654,26 @@
         "items",
         "content"
       ],
-      "excerpt": "content, documentation, charts, docs, documents",
+      "excerpt": "content, documentation, documents, markdown, markers",
       "lastUpdate": "2025-09-29 12:11:57 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-09-29 12:11:57 +0300",
       "createTimeUTC": 1759137117,
       "relatedPages": [
         {
-          "title": "Components",
-          "permalink": "/components/intro/"
-        },
-        {
           "title": "Scroll Spy & Tabs",
           "permalink": "/components/scrollspy/"
+        },
+        {
+          "title": "Components",
+          "permalink": "/components/intro/"
         },
         {
           "title": "Content",
           "permalink": "/content/intro/"
         }
       ],
-      "autoSummary": "Docaroo makes available a series of content items that can be used to enrich your documents. Content items are, usually, designed to provide smaller pieces of content. They can be incorporated directly in your documents or are used in components.",
+      "autoSummary": "Docaroo makes available a series of content items that can be used to enrich your documents and to be very efficient when wanting to incorporate pieces of content in a fast and robust way.",
       "similarByContent": [
         {
           "permalink": "/components/intro/",
@@ -749,12 +749,12 @@
           "permalink": "/components/alerts/"
         },
         {
-          "title": "Content",
-          "permalink": "/content/intro/"
+          "title": "Content items",
+          "permalink": "/content/content-items/"
         },
         {
-          "title": "FAQ Item",
-          "permalink": "/components/qitem/"
+          "title": "Content",
+          "permalink": "/content/intro/"
         }
       ],
       "autoSummary": "Docaroo allows to your documents. External content is important because it allows you to create of content and import these parts in multiple places. It is possible to import content from external public and private GitHub repositories.",
@@ -1070,12 +1070,12 @@
       "autoSummary": "Documentation site builder guide for any kind of project, product, or organization. Walk you through everything you need to know about building a complete, maintainable, and professional documentation site from scratch.",
       "similarByContent": [
         {
-          "permalink": "/content/content-items/",
-          "title": "Content items"
-        },
-        {
           "permalink": "/components/intro/",
           "title": "Components"
+        },
+        {
+          "permalink": "/content/content-items/",
+          "title": "Content items"
         }
       ],
       "readingTime": 3,

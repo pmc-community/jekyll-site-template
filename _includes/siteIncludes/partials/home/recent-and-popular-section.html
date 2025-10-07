@@ -34,28 +34,29 @@
                     {% assign recentFilesToShow = site.data.pageBuildConfig["/"].sections.mostRecentAndPopular_section.recentFilesToShow %}
                     {% assign showPageList = sortedPageList_desc | slice: 0, recentFilesToShow %}
                     {% for page in showPageList %}
-                        <a href="{{lang_prefix}}{{page.permalink}}">
-                            <li 
-                                siteFunction="homeCollection_page" 
-                                class="py-2 my-0 bg-transparent border-top border-secondary border-opacity-25">
-                                <div class="px-md-2">
-                                    <div class="text-primary">
-                                        {{page.title}}
-                                    </div>
-                                    <div class="text-secondary pageExcerptInListItems">
-                                        {{page.excerpt}}
-                                    </div>
-                                    {% assign separator = site.data.siteConfig.multilang.dateFieldSeparator %}
-                                    <div 
-                                        class="text-secondary mt-2 fw-medium {{site.data.siteConfig.multilang.dateFieldClass}}"
-                                        data-i18n="[text]formatted_date"
-                                        data-original-date="{{ page.lastUpdate | date: '%d-%B-%Y' | replace: '-', separator }}"
-                                        data-month-name="long">
-                                        {{ page.lastUpdate | date: '%d-%B-%Y' | replace: '-', separator }}
+                        <li siteFunction="homeCollection_page"> 
+                            <a href="{{lang_prefix}}{{page.permalink}}">
+                                <div 
+                                    class="py-2 my-0 bg-transparent border-top border-secondary border-opacity-25">
+                                    <div class="px-md-2">
+                                        <div class="text-primary">
+                                            {{page.title}}
+                                        </div>
+                                        <div class="text-secondary pageExcerptInListItems">
+                                            {{page.excerpt}}
+                                        </div>
+                                        {% assign separator = site.data.siteConfig.multilang.dateFieldSeparator %}
+                                        <div 
+                                            class="text-secondary mt-2 fw-medium {{site.data.siteConfig.multilang.dateFieldClass}}"
+                                            data-i18n="[text]formatted_date"
+                                            data-original-date="{{ page.lastUpdate | date: '%d-%B-%Y' | replace: '-', separator }}"
+                                            data-month-name="long">
+                                            {{ page.lastUpdate | date: '%d-%B-%Y' | replace: '-', separator }}
+                                        </div>
                                     </div>
                                 </div>
-                            </li>
-                        </a>
+                            </a>
+                        </li>
                     {% endfor %}
 
                 </ul>
