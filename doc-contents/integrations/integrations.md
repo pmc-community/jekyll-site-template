@@ -35,8 +35,8 @@ However, it is not mandatory to use the integrations, thus each integration can 
 ## GA/GTM
 
 {% capture img %}
-    source="partials/media/integrations/ga/ga-1.png"|caption="GA custom events"|captionBorder="true"|imgLink="https://analytics.google.com/"|imgLinkNewTab="true",
-    source="partials/media/integrations/ga/gtm-1.png"|caption="GTM custom tags"|captionBorder="true"|imgLink="https://tagmanager.google.com/"|imgLinkNewTab="true"
+    source="partials/media/integrations/ga/ga-1.png"|caption="Custom events"|captionBorder="true"|imgLink="https://analytics.google.com/"|imgLinkNewTab="true",
+    source="partials/media/integrations/ga/gtm-1.png"|caption="Custom tags"|captionBorder="true"|imgLink="https://tagmanager.google.com/"|imgLinkNewTab="true"
 {% endcapture %}
 
 {% include elements/image-gallery.html 

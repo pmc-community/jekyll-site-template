@@ -375,7 +375,26 @@ module FileUtilities
         end
 
         traverse.call(root_path, "")
-         "```\n" + lines.join("\n") + "\n```"
+        #"```\n" + lines.join("\n") + "\n```"
+
+        # Hybrid HTML block styled like fenced code
+        escaped = ERB::Util.html_escape(lines.join("\n"))
+        <<~HTML
+        <div class="highlighter-rouge dir-structure">
+            <div class="highlight">
+            <pre class="highlight"><code class="language-plaintext fw-normal">#{escaped}</code></pre>
+            </div>
+        </div>
+        <style>
+            .dir-structure pre.highlight code {
+            font-size: 1em;
+            line-height: 1.22em;
+            white-space: pre;
+            display: block;
+            }
+        </style>
+        HTML
+
     end
 
     def self.git_last_commit_time(file_path)

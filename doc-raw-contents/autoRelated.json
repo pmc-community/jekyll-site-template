@@ -20,16 +20,16 @@
     "permalink": "/components/card/",
     "related": [
       {
-        "title": "Content items",
-        "permalink": "/content/content-items/"
+        "title": "Image",
+        "permalink": "/components/image/"
+      },
+      {
+        "title": "Link button",
+        "permalink": "/components/link-button/"
       },
       {
         "title": "Downloads",
         "permalink": "/components/download-link/"
-      },
-      {
-        "title": "FAQ Item",
-        "permalink": "/components/qitem/"
       }
     ]
   },
@@ -62,8 +62,8 @@
         "permalink": "/components/card/"
       },
       {
-        "title": "XLSX Charts",
-        "permalink": "/components/xlsx-charts/"
+        "title": "Rich media",
+        "permalink": "/components/rich-media/"
       }
     ]
   },
@@ -88,12 +88,12 @@
     "permalink": "/components/image/",
     "related": [
       {
-        "title": "XLSX Charts",
-        "permalink": "/components/xlsx-charts/"
-      },
-      {
         "title": "Card",
         "permalink": "/components/card/"
+      },
+      {
+        "title": "XLSX Charts",
+        "permalink": "/components/xlsx-charts/"
       },
       {
         "title": "Scroll Spy & Tabs",
@@ -122,16 +122,16 @@
     "permalink": "/components/rich-media/",
     "related": [
       {
+        "title": "Downloads",
+        "permalink": "/components/download-link/"
+      },
+      {
         "title": "External content",
         "permalink": "/content/ec/"
       },
       {
         "title": "FAQ Item",
         "permalink": "/components/qitem/"
-      },
-      {
-        "title": "Alerts",
-        "permalink": "/components/alerts/"
       }
     ]
   },
@@ -164,8 +164,8 @@
         "permalink": "/components/scrollspy/"
       },
       {
-        "title": "DOCX Summary",
-        "permalink": "/experiments/docx-summary/"
+        "title": "PDF Summary",
+        "permalink": "/experiments/pdf-summary/"
       }
     ]
   },
@@ -181,8 +181,8 @@
         "permalink": "/experiments/docx-summary/"
       },
       {
-        "title": "Experiments",
-        "permalink": "/experiments/intro/"
+        "title": "PDF Summary",
+        "permalink": "/experiments/pdf-summary/"
       }
     ]
   },
@@ -198,8 +198,8 @@
         "permalink": "/components/scrollspy/"
       },
       {
-        "title": "Card",
-        "permalink": "/components/card/"
+        "title": "Content",
+        "permalink": "/content/intro/"
       }
     ]
   },
@@ -249,8 +249,8 @@
         "permalink": "/experiments/pdf-summary/"
       },
       {
-        "title": "XLSX Tables",
-        "permalink": "/components/xlsx-tables/"
+        "title": "XLSX Charts",
+        "permalink": "/components/xlsx-charts/"
       }
     ]
   },
@@ -258,16 +258,16 @@
     "permalink": "/experiments/intro/",
     "related": [
       {
-        "title": "PDF Summary",
-        "permalink": "/experiments/pdf-summary/"
-      },
-      {
         "title": "DOCX Summary",
         "permalink": "/experiments/docx-summary/"
       },
       {
-        "title": "XLSX Tables",
-        "permalink": "/components/xlsx-tables/"
+        "title": "PDF Summary",
+        "permalink": "/experiments/pdf-summary/"
+      },
+      {
+        "title": "XLSX Charts",
+        "permalink": "/components/xlsx-charts/"
       }
     ]
   },
@@ -283,8 +283,8 @@
         "permalink": "/experiments/docx-summary/"
       },
       {
-        "title": "XLSX Tables",
-        "permalink": "/components/xlsx-tables/"
+        "title": "XLSX Charts",
+        "permalink": "/components/xlsx-charts/"
       }
     ]
   },
