@@ -69,7 +69,8 @@
                     </div>
                     <a 
                         href="{{lang_prefix}}/cat-info"
-                        class="btn btn-sm rounded-circle {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsTextClass}} {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsClass}}">
+                        class="btn btn-sm rounded-circle {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsTextClass}} {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsClass}}"
+                        aria-label="Category information">
                         <i class="bi {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsIcon}}"></i>
                     </a>  
                 </div>
@@ -99,7 +100,8 @@
                     {% assign unix_timestamp = 'now' | date: '%s' %}
                     <a 
                         href="{{lang_prefix}}/site-pages?showPages=1&showCustomCats=1&nocache={{ unix_timestamp }}"
-                        class="btn btn-sm rounded-circle {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsTextClass}} {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsClass}}">
+                        class="btn btn-sm rounded-circle {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsTextClass}} {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsClass}}"
+                        aria-label="Docs. with custom categories">
                         <i class="bi {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsIcon}}"></i>
                     </a> 
                     
