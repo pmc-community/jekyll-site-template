@@ -68,9 +68,23 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://static.hsappstatic.net" crossorigin>
 
+{% assign cloudflare = site.data.buildConfig.cloudflare.enabled %}
+{% if cloudflare %}
+    {% assign workerBase = site.data.buildConfig.cloudflare.workerBase %}
+    {% capture siteBase %}
+        {% SiteBaseUrl %}
+    {% endcapture %}
+{% else %}
+    {% assign workerBase = "" %}
+    {% assign siteBase = "" %}
+{% endif %}
 
 {% if site.data.siteConfig.scripts.fontFamily and site.data.siteConfig.scripts.fontFamily != "" %}
-    <link href="{{ site.data.siteConfig.scripts.fontFamily }}" rel="stylesheet">
+    {% if cloudflare %}
+        <link href="{{workerBase}}{{site.data.siteConfig.scripts.fontFamily | url_encode}}" rel="stylesheet">
+    {% else %}
+        <link href="{{site.data.siteConfig.scripts.fontFamily }}" rel="stylesheet">
+    {% endif %}
 {% endif %}
 
 <!-- make settings available asap -->
