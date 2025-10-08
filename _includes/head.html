@@ -79,9 +79,9 @@
   {% endif %}
   
   {% if cloudflare %}
-        <script fetchpriority="high" src="{{workerBase}}{{sB | strip}}{{'/assets/js/just-the-docs.js' | relative_url | url_encode}}"></script>
+        <script fetchpriority="high" src="{{workerBase}}{{sB | strip}}{{'/assets/js/just-the-docs.js' | relative_url | url_encode}}" async></script>
   {% else %}
-        <script fetchpriority="high" src="{{'/assets/js/just-the-docs.js' | relative_url}}"></script>
+        <script fetchpriority="high" src="{{'/assets/js/just-the-docs.js' | relative_url}}" async></script>
   {% endif %}
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
