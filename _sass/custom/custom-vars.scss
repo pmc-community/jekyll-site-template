@@ -24,6 +24,7 @@ $gen-unset: unset;
 // colors
 $c-neutral: #eaeaea;
 $c-black: #000;
+$c-dark-blue: #101124;
 $c-close-to-black: #00000033;
 $c-bright-black: #0d1117;
 $c-heavy-dark: #010409;
@@ -63,7 +64,7 @@ $fs-0-60: 0.6rem;
 $fs-0-90em: 0.9em; // used for DocSearch hit details
 $fs-docSearchStandard: $fs-0-90em;
 
-$siteHeaderBackground: $c-black; // HERE TO CHANGE SITE HEADER COLOR (ABOVE SIDE-BAR, ABOVE CONTENT, ETC.)
+$siteHeaderBackground: $c-dark-blue; // HERE TO CHANGE SITE HEADER COLOR (ABOVE SIDE-BAR, ABOVE CONTENT, ETC.)
 $siteHeaderTextColor: $c-white; // HERE TO CHANGE SITE HEADER TEXT COLOR (ABOVE SIDE-BAR, ABOVE CONTENT, ETC.)
 
 // spaces
