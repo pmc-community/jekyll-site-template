@@ -310,7 +310,6 @@ document.addEventListener('DOMContentLoaded', function() {
             // HEADS UP!!!! BODY VISIBILITY IS HIDDEN HERE (from _includes/head_custom.html)
             $('html').append($loading);
             $('#contentLoading').removeClass('d-none');
-            $('body').attr('data-instant-intensity', 'viewport').attr('data-instant-vary-accept');
         }
         else {
             console.log(jQuery)
