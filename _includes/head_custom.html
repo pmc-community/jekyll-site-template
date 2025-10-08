@@ -1,25 +1,25 @@
 <script id="hs-correct-leadflow-404">
-/*
- as of 15 August 2025, pop up forms were retired by HubSpot
- for some reasons, leadflows.js is still loaded by //js.hs-scripts.com/portalId.js
- but leadflows.js seems to not exist anymore, so loading HS scripts returns an annoying 404 in console
- it doesn't affect functionality, but doesn't look good to have errors in console
-*/
-(function() {
-  const scriptDesc = Object.getOwnPropertyDescriptor(HTMLScriptElement.prototype, 'src');
-  Object.defineProperty(HTMLScriptElement.prototype, 'src', {
-    set: function(value) {
-      if (value && value.includes('js.hsleadflows.net/leadflows.js')) {
-        /*console.log('Blocked retired HubSpot leadflows.js');*/
-        return;
-      }
-      return scriptDesc.set.call(this, value);
-    },
-    get: function() {
-      return scriptDesc.get.call(this);
-    }
-  });
-})();
+    /*
+    as of 15 August 2025, pop up forms were retired by HubSpot
+    for some reasons, leadflows.js is still loaded by //js.hs-scripts.com/portalId.js
+    but leadflows.js seems to not exist anymore, so loading HS scripts returns an annoying 404 in console
+    it doesn't affect functionality, but doesn't look good to have errors in console
+    */
+    (function() {
+    const scriptDesc = Object.getOwnPropertyDescriptor(HTMLScriptElement.prototype, 'src');
+    Object.defineProperty(HTMLScriptElement.prototype, 'src', {
+        set: function(value) {
+        if (value && value.includes('js.hsleadflows.net/leadflows.js')) {
+            /*console.log('Blocked retired HubSpot leadflows.js');*/
+            return;
+        }
+        return scriptDesc.set.call(this, value);
+        },
+        get: function() {
+        return scriptDesc.get.call(this);
+        }
+    });
+    })();
 </script>
 
 {% assign dark = site.data["siteConfig"].colSchemaCorrections.backgroundColorOnElementsAffected.dark %}
