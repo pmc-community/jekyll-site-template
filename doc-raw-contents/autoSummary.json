@@ -66,7 +66,7 @@
         },
         {
             "permalink": "/content/content-items/",
-            "summary": "Docaroo makes available a series of content items that can be used to enrich your documents. Content items are, usually, designed to provide smaller pieces of content. They can be incorporated directly in your documents or are used in components."
+            "summary": "Docaroo makes available a series of content items that can be used to enrich your documents and to be very efficient when wanting to incorporate pieces of content in a fast and robust way."
         },
         {
             "permalink": "/components/card/",
@@ -99,6 +99,14 @@
         {
             "permalink": "/get-started/config-options/",
             "summary": "All the options available for site appearance and functionalities are shown in the next table. These options are available in _config.yml or in the configuration files and will allow personalisation of the documentation site. Note the site must be built and deployed (where applicable) in order to make new config."
+        },
+        {
+            "permalink": "/get-started/env/",
+            "summary": "Environment variables are used only at build time. At run time (in dev or production environments) the environment variables are not used anymore. They are mostly used to store values that should never be exposed, such as access keys and tokens that are used to integrate some external features and."
+        },
+        {
+            "permalink": "/integrate/",
+            "summary": "Docaroo provides out-of-the-box a series of integrations. The purpose of the integrations is to make available in a no-code or low-code mode some important features. Each integration can be independently enabled and configured or disabled."
         }
     ]
 }

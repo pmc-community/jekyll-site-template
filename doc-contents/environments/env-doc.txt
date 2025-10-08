@@ -1,0 +1,32 @@
+# General
+DEPLOY_PROD_BASE_URL = <base url for live/production site, in this case https://docaroo.innohub.space>
+DEPLOY_ENV = dev <!!!!should not be modified>
+CONSOLE_BLANK_SPINNER_CHARS = <true/false, enable/disable the spinner shown for longer tasks when building the site>
+
+# New Relic
+NR_ENABLED = <true/false, enable/disable New Relic integration>
+NR_BROWSER_ENABLED = true
+NR_ACCOUNT_ID = <New Relic account ID, see New Relic documentation>
+NR_BROWSER_APP_ID = <New Relic browser app ID, see New Relic documentation>
+NR_BROWSER_APP_LICENSE_KEY = <New Relic browser app license key, see New Relic documentation>
+NR_BROWSER_BEACON = <New Relic browser app beacon, see New Relic documentation>
+
+# External content
+JEKYLL_ACCESS_TOKEN = <GitHub personal access token to get content from private repositories>
+JEKYLL_GIT_USER = <GitHub user corresponding to the personal access token>
+
+# Algolia
+ALGOLIA_SEARCH_ENABLED = <true/false, enable/disable Algolia DocSearch>
+ALGOLIA_APP_ID = <Algolia DocSearch app ID, see Algolia documentation>
+ALGOLIA_INDEX = <Algolia DocSearch index, see Algolia documentation>
+ALGOLIA_WRITE_API_KEY = <Algolia DocSearch app write key, see Algolia documentation>
+ALGOLIA_PUBLIC_API_KEY = <Algolia DocSearch read(public) key, see Algolia documentation>
+
+ALGOLIA_CUSTOM_ENABLED = <true/false, enable/disable Algolia search>
+ALGOLIA_CUSTOM_APP_ID = <Algolia search app ID, see Algolia documentation>
+ALGOLIA_CUSTOM_INDEX = <Algolia search, see Algolia documentation>
+ALGOLIA_CUSTOM_WRITE_API_KEY = <Algolia search app write key, see Algolia documentation>
+ALGOLIA_CUSTOM_ADMIN_API_KEY = <Algolia DocSearch admin key, see Algolia documentation>
+
+# Huggingface
+HUGGINGFACE_KEY = <Huggingface access key>

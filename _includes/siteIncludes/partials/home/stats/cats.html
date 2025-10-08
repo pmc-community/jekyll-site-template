@@ -22,89 +22,94 @@
     <ul 
         siteFunction="homeStats_cats_items_list"
         class="pl-0">
-
-        <div siteFunction="homeStats_cats_allCats">
-            {% assign catsNo = cats | size %}
-            
-            <li 
-                siteFunction="homeStats_cats_list_item"
-                class="list-group-item d-flex align-items-center justify-content-between align-items-start py-2 px-0 px-md-2 my-0 bg-transparent border-top border-secondary border-opacity-25 text-secondary">
-                <div>
-                    <div class="d-flex align-items-center">
-                        <span
-                            data-i18n="home_page_stats_section_cats_col_total_cats"
-                            class="text-secondary">
-                            Total categories:
-                        </span>
-                        <span 
-                            class="ml-1 fw-medium text-primary"
-                            siteFunction="homeStats_cats_total_cats">
-                            0
-                        </span>
+        
+        <li siteFunction="homeStats_pages_list_item" class="list-unstyled">
+            <div siteFunction="homeStats_cats_allCats">
+                {% assign catsNo = cats | size %}
+                
+                <div 
+                    class="list-group-item d-flex align-items-center justify-content-between align-items-start py-2 px-0 px-md-2 my-0 bg-transparent border-top border-secondary border-opacity-25 text-secondary">
+                    <div>
+                        <div class="d-flex align-items-center">
+                            <span
+                                data-i18n="home_page_stats_section_cats_col_total_cats"
+                                class="text-secondary">
+                                Total categories:
+                            </span>
+                            <span 
+                                class="ml-1 fw-medium text-primary"
+                                siteFunction="homeStats_cats_total_cats">
+                                0
+                            </span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <span
+                                data-i18n="home_page_stats_section_cats_col_site_cats"
+                                class="text-secondary">
+                                Site categories:
+                            </span>
+                            <span 
+                                class="ml-1 fw-medium text-danger"
+                                siteFunction="homeStats_cats_site_cats">
+                                {{catsNo}}
+                            </span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <span 
+                                class="text-secondary" 
+                                data-i18n="home_page_stats_section_cats_col_custom_cats">
+                                Custom categories:
+                            </span>
+                            <span 
+                                class="ml-1 fw-medium text-success"
+                                siteFunction="homeStats_cats_custom_cats">
+                                0
+                            </span>
+                        </div>
                     </div>
-                    <div class="d-flex align-items-center">
-                        <span
-                            data-i18n="home_page_stats_section_cats_col_site_cats"
-                            class="text-secondary">
-                            Site categories:
-                        </span>
-                        <span 
-                            class="ml-1 fw-medium text-danger"
-                            siteFunction="homeStats_cats_site_cats">
-                            {{catsNo}}
-                        </span>
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <span 
-                            class="text-secondary" 
-                            data-i18n="home_page_stats_section_cats_col_custom_cats">
-                            Custom categories:
-                        </span>
-                        <span 
-                            class="ml-1 fw-medium text-success"
-                            siteFunction="homeStats_cats_custom_cats">
-                            0
-                        </span>
-                    </div>
+                    <a 
+                        href="{{lang_prefix}}/cat-info"
+                        class="btn btn-sm rounded-circle {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsTextClass}} {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsClass}}"
+                        aria-label="Category information">
+                        <i class="bi {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsIcon}}"></i>
+                    </a>  
                 </div>
-                <a 
-                    href="{{lang_prefix}}/cat-info"
-                    class="btn btn-sm rounded-circle {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsTextClass}} {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsClass}}">
-                    <i class="bi {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsIcon}}"></i>
-                </a>  
-            </li>
 
-        </div>
-
-        <div siteFunction="homeStats_cats_allCustomCats">
-            
-            <li 
-                siteFunction="homeStats_cats_list_item"
-                class="list-group-item d-flex align-items-center justify-content-between align-items-start py-2 px-md-2 px-0 my-0 bg-transparent border-top border-secondary border-opacity-25 text-secondary">
-                <div>
-                    <div class="d-flex align-items-center">
-                        <span 
-                            class="text-secondary" 
-                            data-i18n="home_page_stats_section_cats_col_docs_with_custom_cats">
-                            Docs with custom cats:
-                        </span>
-                        <span 
-                            class="ml-1 fw-medium text-primary"
-                            siteFunction="homeStats_cats_pages_with_customCats">
-                            0
-                        </span>
+            </div>
+        </li>
+        
+        <li siteFunction="homeStats_pages_list_item" class="list-unstyled">
+            <div siteFunction="homeStats_cats_allCustomCats">
+                
+                <div 
+                    class="list-group-item d-flex align-items-center justify-content-between align-items-start py-2 px-md-2 px-0 my-0 bg-transparent border-top border-secondary border-opacity-25 text-secondary">
+                    <div>
+                        <div class="d-flex align-items-center">
+                            <span 
+                                class="text-secondary" 
+                                data-i18n="home_page_stats_section_cats_col_docs_with_custom_cats">
+                                Docs with custom cats:
+                            </span>
+                            <span 
+                                class="ml-1 fw-medium text-primary"
+                                siteFunction="homeStats_cats_pages_with_customCats">
+                                0
+                            </span>
+                        </div>
                     </div>
+                    {% assign unix_timestamp = 'now' | date: '%s' %}
+                    <a 
+                        href="{{lang_prefix}}/site-pages?showPages=1&showCustomCats=1&nocache={{ unix_timestamp }}"
+                        class="btn btn-sm rounded-circle {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsTextClass}} {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsClass}}"
+                        aria-label="Docs. with custom categories">
+                        <i class="bi {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsIcon}}"></i>
+                    </a> 
+                    
                 </div>
-                {% assign unix_timestamp = 'now' | date: '%s' %}
-                <a 
-                    href="{{lang_prefix}}/site-pages?showPages=1&showCustomCats=1&nocache={{ unix_timestamp }}"
-                    class="btn btn-sm rounded-circle {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsTextClass}} {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsClass}}">
-                    <i class="bi {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsIcon}}"></i>
-                </a> 
-                 
-            </li>
 
-        </div>
+            </div>
+        </li>
+
 
     </ul>
 </div>

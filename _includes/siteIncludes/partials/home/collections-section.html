@@ -42,20 +42,21 @@
                                     siteFunction="homeCollection_docs" 
                                     class="pl-0">
                                     {% for doc in collectionDocs %}
-                                        <a href="{{lang_prefix}}{{doc.permalink}}">
-                                            <li 
-                                                siteFunction="homeCollection_doc" 
-                                                class="py-2 my-0 bg-transparent border-top border-secondary border-opacity-25">
-                                                <div class="px-md-2">
-                                                    <div class="text-primary">
-                                                        {{doc.title}}
-                                                    </div>
-                                                    <div class="text-secondary pageExcerptInListItems">
-                                                        {{doc.excerpt}}
+                                        <li siteFunction="homeCollection_doc" >
+                                            <a href="{{lang_prefix}}{{doc.permalink}}">
+                                                <div 
+                                                    class="py-2 my-0 bg-transparent border-top border-secondary border-opacity-25">
+                                                    <div class="px-md-2">
+                                                        <div class="text-primary">
+                                                            {{doc.title}}
+                                                        </div>
+                                                        <div class="text-secondary pageExcerptInListItems">
+                                                            {{doc.excerpt}}
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </li>
-                                        </a>
+                                            </a>
+                                        </li>
                                     {% endfor %}
                                 </ul>
 

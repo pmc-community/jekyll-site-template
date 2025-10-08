@@ -3,8 +3,18 @@ layout: table_wrappers
 ---
 
 <!DOCTYPE html>
+{% capture siteLanguage %}
+    {% SiteLanguage %}
+{% endcapture %}
 
-<html lang="{{ site.lang | default: 'en-US' }}">
+{% assign lang_path = siteLanguage | strip %}
+{% assign lang_prefix = '' %}
+{% unless lang_path == '' %}
+  {% assign lang_prefix = '/' | append: lang_path %}
+{% endunless %}
+
+<html lang="{{ lang_path | default: 'en' }}">
+
   {% include head.html %}
   <body>
     <a class="skip-to-main" href="#main-content">Skip to main content</a>

@@ -9,10 +9,8 @@
         "permalink": "/components/intro/",
         "similarFiles": [
             "/content/content-items/",
-            "/content/intro/",
             "/intro/",
-            "/content/ec/",
-            "/components/qitem/"
+            "/content/ec/"
         ]
     },
     {
@@ -31,30 +29,20 @@
     },
     {
         "permalink": "/content/intro/",
-        "similarFiles": [
-            "/content/content-items/",
-            "/components/intro/",
-            "/content/ec/",
-            "/intro/",
-            "/get-started/doc-contents/"
-        ]
+        "similarFiles": []
     },
     {
         "permalink": "/content/ec/",
         "similarFiles": [
-            "/content/intro/",
             "/content/content-items/",
-            "/components/alerts/",
-            "/components/intro/",
-            "/get-started/"
+            "/components/intro/"
         ]
     },
     {
         "permalink": "/intro/",
         "similarFiles": [
-            "/content/content-items/",
             "/components/intro/",
-            "/content/intro/"
+            "/content/content-items/"
         ]
     },
     {
@@ -99,7 +87,6 @@
         "permalink": "/content/content-items/",
         "similarFiles": [
             "/components/intro/",
-            "/content/intro/",
             "/content/ec/",
             "/intro/"
         ]
@@ -126,9 +113,7 @@
     },
     {
         "permalink": "/get-started/doc-contents/",
-        "similarFiles": [
-            "/content/intro/"
-        ]
+        "similarFiles": []
     },
     {
         "permalink": "/get-started/site-config/",
@@ -140,6 +125,14 @@
     },
     {
         "permalink": "/get-started/config-files/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/get-started/env/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/integrate/",
         "similarFiles": []
     }
 ]

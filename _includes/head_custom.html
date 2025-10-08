@@ -1,25 +1,25 @@
 <script id="hs-correct-leadflow-404">
-/*
- as of 15 August 2025, pop up forms were retired by HubSpot
- for some reasons, leadflows.js is still loaded by //js.hs-scripts.com/portalId.js
- but leadflows.js seems to not exist anymore, so loading HS scripts returns an annoying 404 in console
- it doesn't affect functionality, but doesn't look good to have errors in console
-*/
-(function() {
-  const scriptDesc = Object.getOwnPropertyDescriptor(HTMLScriptElement.prototype, 'src');
-  Object.defineProperty(HTMLScriptElement.prototype, 'src', {
-    set: function(value) {
-      if (value && value.includes('js.hsleadflows.net/leadflows.js')) {
-        /*console.log('Blocked retired HubSpot leadflows.js');*/
-        return;
-      }
-      return scriptDesc.set.call(this, value);
-    },
-    get: function() {
-      return scriptDesc.get.call(this);
-    }
-  });
-})();
+    /*
+    as of 15 August 2025, pop up forms were retired by HubSpot
+    for some reasons, leadflows.js is still loaded by //js.hs-scripts.com/portalId.js
+    but leadflows.js seems to not exist anymore, so loading HS scripts returns an annoying 404 in console
+    it doesn't affect functionality, but doesn't look good to have errors in console
+    */
+    (function() {
+    const scriptDesc = Object.getOwnPropertyDescriptor(HTMLScriptElement.prototype, 'src');
+    Object.defineProperty(HTMLScriptElement.prototype, 'src', {
+        set: function(value) {
+        if (value && value.includes('js.hsleadflows.net/leadflows.js')) {
+            /*console.log('Blocked retired HubSpot leadflows.js');*/
+            return;
+        }
+        return scriptDesc.set.call(this, value);
+        },
+        get: function() {
+        return scriptDesc.get.call(this);
+        }
+    });
+    })();
 </script>
 
 {% assign dark = site.data["siteConfig"].colSchemaCorrections.backgroundColorOnElementsAffected.dark %}
@@ -50,6 +50,7 @@
         userIP = json.ip;
     }
 </script>
+<link href="https://api.ipify.org?format=jsonp&callback=getIP" rel="preload" as="script">
 <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 
 <!-- New Relic if applicable -->
@@ -65,9 +66,25 @@
 <link rel="preconnect" href="https://js.hsforms.net" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://static.hsappstatic.net" crossorigin>
+
+{% assign cloudflare = site.data.buildConfig.cloudflare.enabled %}
+{% if cloudflare %}
+    {% assign workerBase = site.data.buildConfig.cloudflare.workerBase %}
+    {% capture siteBase %}
+        {% SiteBaseUrl %}
+    {% endcapture %}
+{% else %}
+    {% assign workerBase = "" %}
+    {% assign siteBase = "" %}
+{% endif %}
 
 {% if site.data.siteConfig.scripts.fontFamily and site.data.siteConfig.scripts.fontFamily != "" %}
-    <link href="{{ site.data.siteConfig.scripts.fontFamily }}" rel="stylesheet">
+    {% if cloudflare %}
+        <link href="{{workerBase}}{{site.data.siteConfig.scripts.fontFamily | url_encode}}" rel="stylesheet">
+    {% else %}
+        <link href="{{site.data.siteConfig.scripts.fontFamily }}" rel="stylesheet">
+    {% endif %}
 {% endif %}
 
 <!-- make settings available asap -->
@@ -93,6 +110,7 @@
 {% assign pageObj = pg | replace: "=>", ":" | json_string_to_object %}
 
 <meta name="description" content="{{site.title}} - {{page.title}} ({{pageObj[0].excerpt}})">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- necessary for deployments in multiple domains -->
 <!-- mandatory if using Algolia search the crawler rejects url which does not match its allowed domains -->
@@ -350,7 +368,6 @@
 {% endif %}
     
 <!-- site js assets -->
-
 {% capture faq %}
     {% FAQExists %}
 {% endcapture %}
@@ -434,9 +451,9 @@
 {% endif %}
 
 <!-- preloading heavy assets -->
-<link rel="preload" as="image" href="{{lang_prefix}}/assets/img/logo.png" type="image/png">
+<link rel="preload" as="image" href="{{lang_prefix}}/assets/img/logo.webp">
 {% if page.permalink == "/" %}
-    <link rel="preload" as="image" href="{{lang_prefix}}/assets/img/home.png" type="image/webp">
+    <link rel="preload" as="image" href="{{lang_prefix}}/assets/img/home.webp">
 {% endif %}
 
 <!-- post-hooks are last to allow hooking everywhere -->
@@ -445,17 +462,8 @@
 
 <!-- end site js assets -->
 
-<script 
-    src="//instant.page/5.2.0" 
-    type="module"> 
-</script>
-
 <!-- GA tag if applicable -->
 {% include siteIncludes/partials/ga-tag.html %}
 
 <!-- GTM tag if applicable -->
 {% include siteIncludes/partials/gtm-head.html %}
-
-
-
-

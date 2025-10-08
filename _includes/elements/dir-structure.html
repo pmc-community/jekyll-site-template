@@ -1,0 +1,26 @@
+{% capture uuid %}
+  {% UUID %}
+{% endcapture %}
+{% assign dstrid = uuid | strip %}
+
+{% assign dir = include.dir || default: "" %}
+{% assign h = include.h || default: "" %}
+
+{% if dir != "" %}
+ <div id="dirStructure-container-{{dstrid}}" class="my-4">
+  {% capture rendered_content %}
+    {% DirStructure {{dir}} %}
+  {% endcapture %}
+  {{rendered_content | markdonify}}
+ </div>
+
+ <style>
+  {% if h!="" %}
+    #dirStructure-container-{{dstrid}} {
+     height: {{h}};
+     overflow-y: auto
+    }
+  {% endif %}
+ </style>
+
+{% endif %}

@@ -118,3 +118,6 @@ elements:
   extDocSummary:
     word_sum_model: "facebook/bart-large-cnn"
     pdf_sum_model: "facebook/bart-large-cnn"
+cloudflare:
+  enabled: true
+  workerBase: https://docaroo-scripts.innohub-space.workers.dev/cdn-proxy/

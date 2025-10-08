@@ -71,14 +71,14 @@
 
 <!-- Modal -->
 <div class="modal fade p-4" id="imageModal-{{igid}}" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-sm modal-dialog-scrollable">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
         <div class="modal-header">
             <span class="modal-title mt-0 text-primary fw-medium" id="modal-title-{{igid}}">Modal title</span>
             <button id="imageModal-btn-close-{{igid}}" type="button" class="btn-close" data-bs-theme="dark" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body p-2">
-            <img src="" id="modalImage-{{igid}}" class="img-fluid w-100" alt="Large view">
+        <div class="modal-body p-4 d-flex justify-content-center align-items-center">
+            <img src="" id="modalImage-{{igid}}" class="img-fluid" alt="Large view">
         </div>
         <div class="d-none modal-footer d-flex justify-content-start" id="modal-footer-{{igid}}">
             <a id="modal-link-{{igid}}" class="btn btn-primary">Info</a>
@@ -196,6 +196,21 @@
     if (h_{{igid}} !== '' && oneRow_{{igid}} === 'mobile' && device_{{igid}} !== 'mobile') $('#image-gallery-container-{{igid}}').css('height', h_{{igid}}).css('overflow-y', 'auto');
     if (h_{{igid}} !== '' && oneRow_{{igid}} === 'desktop' && device_{{igid}} !== 'desktop') $('#image-gallery-container-{{igid}}').css('height', h_{{igid}}).css('overflow-y', 'auto');
   
+</script>
+
+<script id="script-accessibility-img-gallery-{{igid}}">
+ const $mainContent__{{igid}} = $('main');
+ const $modal__{{igid}} = $('#imageModal-{{igid}}');
+
+ $modal__{{igid}}.on('shown.bs.modal', function() {
+  requestAnimationFrame(() => {
+   $mainContent__{{igid}}.attr('inert', '');
+  });
+ });
+
+ $modal__{{igid}}.on('hidden.bs.modal', function() {
+  $mainContent__{{igid}}.removeAttr('inert');
+ });
 </script>
 
 <style>

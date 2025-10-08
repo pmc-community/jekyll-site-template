@@ -127,24 +127,26 @@
     {
       "permalink": "/components/download-link/",
       "keywords": [
+        "directory",
         "download",
-        "link",
-        "component",
-        "generates",
-        "button",
-        "downloading",
-        "files",
-        "documentation"
+        "file",
+        "document",
+        "default"
       ]
     },
     {
       "permalink": "/components/xlsx-tables/",
       "keywords": [
+        "users",
+        "creating",
         "table",
-        "tables",
-        "excel",
+        "markdown",
+        "challenge",
+        "merged",
         "cells",
-        "component"
+        "crazy",
+        "quick",
+        "maintaining"
       ]
     },
     {
@@ -172,19 +174,24 @@
       "keywords": [
         "content",
         "documentation",
-        "charts",
-        "docs",
-        "documents"
+        "documents",
+        "markdown",
+        "markers"
       ]
     },
     {
       "permalink": "/components/card/",
       "keywords": [
-        "cards",
         "card",
-        "content",
-        "documentation",
-        "readability"
+        "emphasise",
+        "piece",
+        "provide",
+        "relevant",
+        "visual",
+        "experience",
+        "images",
+        "references",
+        "detailed"
       ]
     },
     {
@@ -200,6 +207,16 @@
     {
       "permalink": "/experiments/pdf-summary/",
       "keywords": [
+        "summary",
+        "component",
+        "models",
+        "huggingface",
+        "corrections"
+      ]
+    },
+    {
+      "permalink": "/experiments/docx-summary/",
+      "keywords": [
         "component",
         "helps",
         "enhancing",
@@ -207,19 +224,9 @@
         "auto",
         "generated",
         "summaries",
-        "pdf",
+        "docx",
         "files",
         "combined"
-      ]
-    },
-    {
-      "permalink": "/experiments/docx-summary/",
-      "keywords": [
-        "summary",
-        "component",
-        "models",
-        "huggingface",
-        "corrections"
       ]
     },
     {
@@ -265,6 +272,26 @@
         "appearance",
         "options",
         "_config.yml"
+      ]
+    },
+    {
+      "permalink": "/get-started/env/",
+      "keywords": [
+        "variables",
+        "tokens",
+        "note",
+        "time",
+        "features"
+      ]
+    },
+    {
+      "permalink": "/integrate/",
+      "keywords": [
+        "integrations",
+        "feedback",
+        "performance",
+        "integration",
+        "mandatory"
       ]
     }
   ]

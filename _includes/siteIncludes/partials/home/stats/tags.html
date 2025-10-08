@@ -22,88 +22,92 @@
         siteFunction="homeStats_tags_items_list"
         class="pl-0">
 
-        <div siteFunction="homeStats_tags_allTags">
-            {% assign tagsNo = tags | size %}
-            
-            <li 
-                siteFunction="homeStats_tags_list_item"
-                class="list-group-item d-flex align-items-center justify-content-between align-items-start py-2 px-md-2 px-0 my-0 bg-transparent border-top border-secondary border-opacity-25 text-secondary">
-                <div>
-                    <div class="d-flex align-items-center">
-                        <span
-                            data-i18n="home_page_stats_section_tags_col_total_tags"
-                            class="text-secondary">
-                            Total tags:
-                        </span>
-                        <span 
-                            class="ml-1 fw-medium text-primary"
-                            siteFunction="homeStats_tags_total_tags">
-                            0
-                        </span>
+        <li siteFunction="homeStats_pages_list_item" class="list-unstyled">
+            <div siteFunction="homeStats_tags_allTags">
+                {% assign tagsNo = tags | size %}
+                
+                <div 
+                    class="list-group-item d-flex align-items-center justify-content-between align-items-start py-2 px-md-2 px-0 my-0 bg-transparent border-top border-secondary border-opacity-25 text-secondary">
+                    <div>
+                        <div class="d-flex align-items-center">
+                            <span
+                                data-i18n="home_page_stats_section_tags_col_total_tags"
+                                class="text-secondary">
+                                Total tags:
+                            </span>
+                            <span 
+                                class="ml-1 fw-medium text-primary"
+                                siteFunction="homeStats_tags_total_tags">
+                                0
+                            </span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <span
+                                data-i18n="home_page_stats_section_tags_col_site_tags"
+                                class="text-secondary">
+                                Site tags:
+                            </span>
+                            <span 
+                                class="ml-1 fw-medium text-primary"
+                                siteFunction="homeStats_tags_site_tags">
+                                {{tagsNo}}
+                            </span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <span 
+                                class="text-secondary" 
+                                data-i18n="home_page_stats_section_tags_col_custom_tags">
+                                Custom tags:
+                            </span>
+                            <span 
+                                class="ml-1 fw-medium text-success"
+                                siteFunction="homeStats_tags_custom_tags">
+                                0
+                            </span>
+                        </div>
                     </div>
-                    <div class="d-flex align-items-center">
-                        <span
-                            data-i18n="home_page_stats_section_tags_col_site_tags"
-                            class="text-secondary">
-                            Site tags:
-                        </span>
-                        <span 
-                            class="ml-1 fw-medium text-primary"
-                            siteFunction="homeStats_tags_site_tags">
-                            {{tagsNo}}
-                        </span>
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <span 
-                            class="text-secondary" 
-                            data-i18n="home_page_stats_section_tags_col_custom_tags">
-                            Custom tags:
-                        </span>
-                        <span 
-                            class="ml-1 fw-medium text-success"
-                            siteFunction="homeStats_tags_custom_tags">
-                            0
-                        </span>
-                    </div>
+                    <a 
+                        href="{{lang_prefix}}/tag-info"
+                        class="btn btn-sm rounded-circle {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsTextClass}} {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsClass}}"
+                        aria-label="Tags information">
+                        <i class="bi {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsIcon}}"></i>
+                    </a>  
                 </div>
-                <a 
-                    href="{{lang_prefix}}/tag-info"
-                    class="btn btn-sm rounded-circle {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsTextClass}} {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsClass}}">
-                    <i class="bi {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsIcon}}"></i>
-                </a>  
-            </li>
 
-        </div>
+            </div>
+        </li>
 
-        <div siteFunction="homeStats_tags_allCustomTags">
-            
-            <li 
-                siteFunction="homeStats_tags_list_item"
-                class="list-group-item d-flex align-items-center justify-content-between align-items-start py-2 px-md-2 px-0 my-0 bg-transparent border-top border-secondary border-opacity-25 text-secondary">
-                <div>
-                    <div class="d-flex align-items-center">
-                        <span 
-                            class="text-secondary" 
-                            data-i18n="home_page_stats_section_tags_col_docs_with_custom_tags">
-                            Docs with custom tags:
-                        </span>
-                        <span 
-                            class="ml-1 fw-medium text-primary"
-                            siteFunction="homeStats_tags_pages_with_customTags">
-                            0
-                        </span>
+        <li siteFunction="homeStats_pages_list_item" class="list-unstyled">
+            <div siteFunction="homeStats_tags_allCustomTags">
+                
+                <div 
+                    class="list-group-item d-flex align-items-center justify-content-between align-items-start py-2 px-md-2 px-0 my-0 bg-transparent border-top border-secondary border-opacity-25 text-secondary">
+                    <div>
+                        <div class="d-flex align-items-center">
+                            <span 
+                                class="text-secondary" 
+                                data-i18n="home_page_stats_section_tags_col_docs_with_custom_tags">
+                                Docs with custom tags:
+                            </span>
+                            <span 
+                                class="ml-1 fw-medium text-primary"
+                                siteFunction="homeStats_tags_pages_with_customTags">
+                                0
+                            </span>
+                        </div>
                     </div>
+                    {% assign unix_timestamp = 'now' | date: '%s' %}
+                    <a 
+                        href="{{lang_prefix}}/site-pages?showPages=1&showCustomTags=1&nocache={{ unix_timestamp }}"
+                        class="btn btn-sm rounded-circle {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsTextClass}} {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsClass}}"
+                        aria-label="Docs with custom tags">
+                        <i class="bi {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsIcon}}"></i>
+                    </a> 
+                    
                 </div>
-                {% assign unix_timestamp = 'now' | date: '%s' %}
-                <a 
-                    href="{{lang_prefix}}/site-pages?showPages=1&showCustomTags=1&nocache={{ unix_timestamp }}"
-                    class="btn btn-sm rounded-circle {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsTextClass}} {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsClass}}">
-                    <i class="bi {{site.data.pageBuildConfig["/"].sections.stats_section.buttonsIcon}}"></i>
-                </a> 
-                 
-            </li>
 
-        </div>
+            </div>
+        </li>
 
     </ul>
 </div>
