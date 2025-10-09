@@ -27,7 +27,8 @@
   {% endif %}
 
   {% if cloudflare %}
-    <link rel="stylesheet" 
+    <link 
+        rel="stylesheet" 
         href="{{workerBase}}{{sB | strip}}{{'/assets/css/just-the-docs-default.css' | relative_url | url_encode }}"  
         media="print" 
         onload="this.media='all'">
@@ -41,15 +42,17 @@
   {% if cloudflare %}
     <link 
         fetchpriority="high" 
-        rel="stylesheet" 
+        rel="preload" 
         href="{{workerBase}}{{sB | strip }}{{'/assets/css/just-the-docs-head-nav.css' | relative_url | url_encode}}" 
-        id="jtd-head-nav-stylesheet">
+        id="jtd-head-nav-stylesheet"
+        onload="this.rel='stylesheet'">
   {% else %}
      <link 
         fetchpriority="high" 
-        rel="stylesheet" 
+        rel="preload" 
         href="{{'/assets/css/just-the-docs-head-nav.css' | relative_url}}" 
-        id="jtd-head-nav-stylesheet">
+        id="jtd-head-nav-stylesheet"
+        onload="this.rel='stylesheet'">
   {% endif %}
 
   <style id="jtd-nav-activation">
