@@ -74,9 +74,10 @@
     {% capture siteBase %}
         {% SiteBaseUrl %}
     {% endcapture %}
+    {% assign sB = siteBase | strip | url_encode %}
 {% else %}
     {% assign workerBase = "" %}
-    {% assign siteBase = "" %}
+    {% assign sB = "" %}
 {% endif %}
 
 {% if site.data.siteConfig.scripts.fontFamily and site.data.siteConfig.scripts.fontFamily != "" %}
