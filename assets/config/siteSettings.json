@@ -104,9 +104,6 @@
     ],
     "catMenu": false,
     "catMenuMoreBtn": "category-menu-more",
-    "siteVars": {
-      "siteTestBadge": "xxx"
-    },
     "similarByContent": {
       "maxPages": 4
     },
@@ -124,7 +121,7 @@
         },
         "submisionSource": {
           "propName": "source",
-          "propValue": "figmares_doc_site"
+          "propValue": "docaroo"
         },
         "prefLang": {
           "propName": "hs_language"
