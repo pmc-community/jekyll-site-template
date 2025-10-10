@@ -95,7 +95,7 @@ hsIntegration:
       submittedMessage: ".submitted-message"
     submisionSource: 
       propName: "source"
-      propValue: "figmares_doc_site"
+      propValue: "docaroo"
     prefLang:
       propName: "hs_language"
     userToken:
