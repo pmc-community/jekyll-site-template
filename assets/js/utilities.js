@@ -28,7 +28,6 @@ $(window).on('scroll', () => {
     
 });
 
-
 const goToAnchor = () => {
     const hash = window.location.hash;
     if (!hash || !$(hash).length) return;
@@ -118,6 +117,25 @@ $.fn.is_on_screen = function () {
     return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
 };
 
+const isElementVisible = (id) => {
+  const el = document.getElementById(id);
+  if (!el) return false;
+
+  const style = window.getComputedStyle(el);
+  if (style.display === 'none' || style.visibility === 'hidden' || style.opacity === '0') {
+    return false;
+  }
+
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.bottom > 0 &&
+    rect.right > 0 &&
+    rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.left < (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+
 // usage: $().sizeChanged(function(){})
 $.fn.sizeChanged = function (handleFunction) {
     var element = this;
@@ -139,7 +157,7 @@ $.fn.sizeChanged = function (handleFunction) {
     return element;
 };
 
-// add also some datatables enhancements if not home page
+// add some datatables enhancements if not home page
 // such as ordering by datetime cols
 if (pagePermalink !== '/') {
     // init page toc
@@ -219,6 +237,10 @@ if (pagePermalink !== '/') {
         }
         return data;
     };
+
+    // limit the number of pagination buttons to fit into container width even for many pages
+    $.fn.DataTable.ext.pager.numbers_length = settings.dataTables.paginationButtons;
+
 }
 
 /* SOME GENERAL PURPOSE UTILITIES */
@@ -784,7 +806,351 @@ const setSearchList = (
         
 }
 
-// DATATABLES
+// TABLES AND DATATABLES
+
+// col resize for datatables
+const activateTableResizeCols = (tableSelector, tableObject) => {
+    /* columns resizing */
+    const $table = $(tableSelector);
+
+    if ($table.find('colgroup').length === 0) {
+        const colgroup = $('<colgroup/>');
+        $table.find('thead th').each(() => colgroup.append('<col>'));
+        $table.prepend(colgroup);
+    }
+
+    $table.find('thead tr:first-child th').each(function (index) {
+        const th = $(this);
+
+        th.resizable({
+            handles: 'e',
+
+            resize: function (e, ui) {
+                const newWidth = ui.size.width;
+
+                // setting width for col header
+                th.css({
+                    width: newWidth + 'px',
+                    'max-width': newWidth + 'px'
+                });
+
+                // setting width for cells
+                tableObject.column(index).nodes().to$().css({
+                    width: newWidth + 'px',
+                    'max-width': newWidth + 'px'
+                });
+
+                // setting width inside datatable colgroup tag
+                $table.find('col').eq(index).css({
+                    width: newWidth + 'px',
+                    'max-width': newWidth + 'px'
+                });
+
+                const frozenCols = getMaxStickyThIndex(tableSelector);
+                if (frozenCols !== -1 ) freezeTableColumns(tableSelector, frozenCols+1);
+            },
+
+            stop: function () {
+                setTimeout(function () {
+                    tableObject.draw(false);
+                 }, 10);
+            }
+        });
+    });
+
+    tableObject.columns.adjust().draw();
+}
+
+// col resize for simple tables
+const activateSimpleTableResizeCols = (tableSelector) => {
+    const $table = $(tableSelector);
+
+    // Add resizable handles to each header cell
+    $table.find('thead tr:first-child th').each(function (index) {
+        const th = $(this);
+
+        th.resizable({
+            handles: 'e',
+
+            resize: function (e, ui) {
+                const newWidth = ui.size.width;
+
+                // Update header cell
+                th.css({
+                    width: newWidth + 'px',
+                    'max-width': newWidth + 'px'
+                });
+
+                // Update all cells in the same column
+                $table.find('tbody tr').each(function () {
+                    $(this).find('td').eq(index).css({
+                        width: newWidth + 'px',
+                        'max-width': newWidth + 'px'
+                    });
+                });
+
+                // Update <colgroup>
+                $table.find('col').eq(index).css({
+                    width: newWidth + 'px',
+                    'max-width': newWidth + 'px'
+                });
+                const frozenCols = getMaxStickyThIndex(tableSelector);
+                if (frozenCols !== -1 ) freezeTableColumns(tableSelector, frozenCols+1);
+            }
+        });
+    });
+};
+
+const autoResizeSimpleTable = ($table) => {
+    // Run only after rendering/styles applied
+    requestAnimationFrame(() => {
+        const MAX_ROW_HEIGHT = settings.dataTables.maxRowHeight; // px
+        let colWidths = [];
+
+        // --- Measure max width for each column ---
+        $table.find("tr").each(function () {
+            $(this).children("th, td").each(function (i) {
+                const $cell = $(this);
+
+                const textContent = $cell.text(); // includes all nested elements
+
+                const $test = $("<span/>").css({
+                    visibility: "hidden",
+                    whiteSpace: "nowrap",
+                    font: $cell.css("font"),
+                    "font-weight": $cell.css("font-weight"),
+                    "font-size": $cell.css("font-size"),
+                    "font-family": $cell.css("font-family")
+                }).text(textContent);
+
+                $("body").append($test);
+                let width = $test.outerWidth(true) + 20; // padding buffer
+
+                // --- Limit width to avoid row height > 50px ---
+                const lineHeight = parseFloat($cell.css("line-height")) || parseFloat($cell.css("font-size")) * 1.2;
+                const maxLines = Math.floor(MAX_ROW_HEIGHT / lineHeight) || 1;
+                const approxWidthPerLine = width / Math.ceil(width / $cell.width());
+                const maxWidth = approxWidthPerLine * maxLines;
+                if (width > maxWidth) width = maxWidth;
+
+                $test.remove();
+
+                colWidths[i] = Math.max(colWidths[i] || 0, width);
+            });
+        });
+
+        // --- Ensure <th> in <thead> is also considered ---
+        $table.find("thead th").each(function (i) {
+            const $cell = $(this);
+            const textContent = $cell.text(); // includes all nested elements
+
+            const $test = $("<span/>").css({
+                visibility: "hidden",
+                whiteSpace: "nowrap",
+                font: $cell.css("font"),
+                "font-weight": $cell.css("font-weight"),
+                "font-size": $cell.css("font-size"),
+                "font-family": $cell.css("font-family")
+            }).text(textContent);
+
+            $("body").append($test);
+            let width = $test.outerWidth(true) + 20;
+
+            const lineHeight = parseFloat($cell.css("line-height")) || parseFloat($cell.css("font-size")) * 1.2;
+            const maxLines = Math.floor(MAX_ROW_HEIGHT / lineHeight) || 1;
+            const approxWidthPerLine = width / Math.ceil(width / $cell.width());
+            const maxWidth = approxWidthPerLine * maxLines;
+            if (width > maxWidth) width = maxWidth;
+
+            $test.remove();
+
+            colWidths[i] = Math.max(colWidths[i] || 0, width);
+        });
+
+        if (colWidths.length === 0) return;
+
+        // --- Calculate proportional widths ---
+        const totalContentWidth = colWidths.reduce((a, b) => a + b, 0);
+        const tableWidth = Math.max($table.outerWidth(), totalContentWidth);
+        colWidths = colWidths.map(w => (w / totalContentWidth) * tableWidth);
+
+        // --- Use only a single <colgroup> ---
+        let $colgroups = $table.children("colgroup");
+        if ($colgroups.length === 0) {
+            $colgroups = $("<colgroup/>").prependTo($table);
+        } else if ($colgroups.length > 1) {
+            $colgroups.not(":first").remove();
+            $colgroups = $colgroups.first();
+        } else {
+            $colgroups = $colgroups.first();
+        }
+
+        // --- Normalize <col> count ---
+        let $cols = $colgroups.find("col");
+        if ($cols.length < colWidths.length) {
+            for (let i = $cols.length; i < colWidths.length; i++) {
+                $colgroups.append("<col>");
+            }
+        } else if ($cols.length > colWidths.length) {
+            $cols.slice(colWidths.length).remove();
+        }
+
+        // --- Apply widths ---
+        $colgroups.find("col").each(function (i) {
+            if (colWidths[i] !== undefined) {
+                const w = colWidths[i].toFixed(2) + "px";
+                $(this).css("width", w);
+
+                // Also apply directly to header + body cells
+                $table.find("tr").each(function () {
+                    const $cells = $(this).children("th, td").eq(i);
+                    $cells.css({
+                        "width": w,
+                        "max-height": MAX_ROW_HEIGHT + "px",
+                        "overflow": "hidden"
+                    });
+                });
+            }
+        });
+        
+    });
+
+    setTimeout(() => {
+        let $colgroups = $table.children("colgroup");
+        if ($colgroups.length > 1) $colgroups.first().remove();
+    
+        const tableSelector = `#${$table.attr('id')}`;
+        const frozenCols = getMaxStickyThIndex(tableSelector);
+        if (frozenCols !== -1 ) freezeTableColumns(tableSelector, frozenCols+1);
+
+    }, 0);
+};
+
+// for datatables we need to calculate the best widths
+// and use them in table init to set the columns
+// using columns or columnDefs props
+const calculateBestColWidths = ($table) => {
+    return new Promise((resolve) => {
+        requestAnimationFrame(() => {
+            const MAX_ROW_HEIGHT = settings.dataTables.maxRowHeight; // px
+            let colWidths = [];
+
+            // --- Measure max width from data cells ---
+            $table.find("tbody tr").each(function () {
+                $(this).children("td").each(function (i) {
+                    const $cell = $(this);
+                    const textContent = $cell.text();
+
+                    const $test = $("<span/>").css({
+                        visibility: "hidden",
+                        whiteSpace: "nowrap",
+                        font: $cell.css("font"),
+                        "font-weight": $cell.css("font-weight"),
+                        "font-size": $cell.css("font-size"),
+                        "font-family": $cell.css("font-family")
+                    }).text(textContent);
+
+                    $("body").append($test);
+                    let width = $test.outerWidth(true) + 20; // padding buffer
+
+                    // --- Apply max row height restriction ---
+                    const lineHeight = parseFloat($cell.css("line-height")) || parseFloat($cell.css("font-size")) * 1.2;
+                    const maxLines = Math.floor(MAX_ROW_HEIGHT / lineHeight) || 1;
+                    const approxWidthPerLine = width / Math.ceil(width / $cell.width());
+                    const maxWidth = approxWidthPerLine * maxLines;
+                    if (width > maxWidth) width = maxWidth;
+
+                    $test.remove();
+
+                    colWidths[i] = Math.max(colWidths[i] || 0, width);
+                });
+            });
+
+            // --- Ensure <th> in <thead> is fully considered (including nested elements) ---
+            $table.find("thead th").each(function (i) {
+                const $cell = $(this);
+
+                // Use actual rendered width instead of text-only
+                let headerWidth = $cell.prop("scrollWidth") + 20;
+
+                // Do NOT apply row height restriction to headers
+                colWidths[i] = Math.max(colWidths[i] || 0, headerWidth);
+            });
+
+            if (colWidths.length === 0) resolve([]);
+
+            resolve(colWidths);
+        });
+    });
+};
+
+const getMaxStickyThIndex = (tableSelector) => {
+  let maxIndex = -1;
+
+  $(tableSelector).find("tr:first th").each(function(i) {
+    if ($(this).css("position") === "sticky") {
+      if (i > maxIndex) {
+        maxIndex = i;
+      }
+    }
+  });
+
+  return maxIndex; // -1 if none found
+}
+
+const freezeTableColumns = (tableSelector, numCols) => {
+  const $table = $(tableSelector);
+  const colWidths = [];
+
+  // Measure column widths
+  $table.find("tr:first th, tr:first td").each(function(i) {
+    colWidths[i] = $(this).outerWidth();
+  });
+
+  // Apply sticky + left offset for first numCols
+  for (let i = 0; i < numCols; i++) {
+    let offset = 0;
+    for (let j = 0; j < i; j++) {
+      offset += colWidths[j];
+    }
+    $table.find('tr').each(function() {
+      $(this).find('th:eq(' + i + ')')
+        .css({
+            position: 'sticky',
+            left: offset-1 + 'px', 
+            'z-index': 1,
+            'will-change': 'transform',
+            background: $(this).css('background')
+        })
+        .removeClass('bg-opacity-25 border-opacity-25 border border-secondary')
+        .addClass('border-0')
+        
+    });
+
+    $table.find('tr').each(function() {
+      $(this).find('td:eq(' + i + ')')
+        .css({
+            position: 'sticky',
+            left: offset-1 + 'px',
+            'z-index': 1,
+            'will-change': 'transform',
+            'box-shadow': 'inset -0.5px 0 0 #cccccc49, inset 1px 0 0 #cccccc49', 
+            background: $table.css('background')
+        })
+        .removeClass('border border-secondary')
+        .addClass('border-0')
+        
+    });
+
+    $table.find('tr').each(function() {
+      $(this).find('th:eq(' + i + ')')
+        .removeClass('bg-secondary text-primary')
+        .addClass('bg-dark-subtle');
+    });
+    
+  }
+}
+
 // columnsConfig is set in the caller, to be fit to the specific table
 // callback and callbackClickRow are set in the caller to do specific processing after the table is initialized
 const setDataTable = async (
@@ -905,15 +1271,15 @@ const setDataTable = async (
             
             // callback to be personalised for each table
             // for post processing the table (i.e. adding buttons based on context)
+            if (additionalSettings.resizeColumns) activateTableResizeCols(tableSelector, table);
             if (callback) callback(table);
         },
         serverSide: false,
         paging: true,
-        pageLength: 5,
+        pageLength: settings.dataTables.rowsPerPage,
         ordering: true,
         searching: true,
         processing: true,
-        fixedHeader: true,
         deferRender: true, // Defer rendering for speed up
         layout: {
             topStart: {
@@ -1371,6 +1737,7 @@ const setDataTable = async (
                 afterSearchApplied
             )
                 .then( (result) => {
+
                     const timeout = settings.dataTables.TO_afterAutoApplySearchPanesCurrentFilter;
                     setTimeout(() => {
                         if (result.table.helpers && result.table.helpers !== 'undefined') 
@@ -2534,7 +2901,7 @@ const iframe__addCustomScriptsToIFrames = ($elementInsideIFrame, cssScripts = []
         $($iframeHead).append(`<link rel="stylesheet" href="/assets/css/${script}">`);
     })
     jsScripts.forEach( script => {
-        $($iframeBody).append(`<script src="/assets/js/${script}"></script>`);
+        $($iframeHead).append(`<script src="/assets/js/${script}"></script>`);
     })
 }
 
@@ -2545,11 +2912,24 @@ const iframe__utilities =  () => {
         hsSettings: hsSettings,
         anonymousUserToken: setAnonymousUserToken(),
         i18next: i18next,
+        $: $,
         func: {
             showToast: showToast,
             doTranslation: doTranslation,
+            formAccessibiltyCorrections: formAccessibiltyCorrections
         }
     }
+}
+
+const formAccessibiltyCorrections = (formContainer) => {
+    // sometimes embedded forms like HS forms don't add "for" attr to label tags
+    // this triggers accessibility warnings in Chrome
+    let forAttr='';
+    formContainer.find('input').each(function() {
+        if ($(this).attr('id') === 'undefined') return true;
+        else { forAttr = $(this).attr('id'); return false; }
+    });
+    formContainer.find('label').each( function() { $(this).attr('for', forAttr) });
 }
 
 const isValidEmail = (email) => {
