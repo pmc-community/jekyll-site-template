@@ -74,16 +74,17 @@
     {% capture siteBase %}
         {% SiteBaseUrl %}
     {% endcapture %}
+    {% assign sB = siteBase | strip | url_encode %}
 {% else %}
     {% assign workerBase = "" %}
-    {% assign siteBase = "" %}
+    {% assign sB = "" %}
 {% endif %}
 
 {% if site.data.siteConfig.scripts.fontFamily and site.data.siteConfig.scripts.fontFamily != "" %}
     {% if cloudflare %}
-        <link href="{{workerBase}}{{site.data.siteConfig.scripts.fontFamily | url_encode}}" rel="stylesheet">
+        <link href="{{workerBase}}{{site.data.siteConfig.scripts.fontFamily | url_encode}}" rel="preload" as="style" onload="this.rel='stylesheet'">
     {% else %}
-        <link href="{{site.data.siteConfig.scripts.fontFamily }}" rel="stylesheet">
+        <link href="{{site.data.siteConfig.scripts.fontFamily }}" rel="preload" as="style" onload="this.rel='stylesheet'">
     {% endif %}
 {% endif %}
 
@@ -178,7 +179,7 @@
     <link 
     rel="stylesheet" 
     href="{{site.data.siteConfig.hsIntegration.bootstrapCSS}}"
-    referrerpolicy="no-referrer"/>
+    referrerpolicy="no-referrer">
 </noscript>
 
 <link 
@@ -188,21 +189,30 @@
     onload="this.rel='stylesheet'">
 <noscript>
     <link 
-        rel="stylesheet" href="{{site.data.siteConfig.hsIntegration.bootstrapIconsCSS}}" 
-        referrerpolicy="no-referrer" />
+        rel="stylesheet" 
+        href="{{site.data.siteConfig.hsIntegration.bootstrapIconsCSS}}" 
+        referrerpolicy="no-referrer">
 </noscript>
 
 {% if page.permalink != "/" %}
 
     <link href="{{lang_prefix}}/assets/js/bootstrap-toc.js" rel="preload" as="script">
     <script src="{{lang_prefix}}/assets/js/bootstrap-toc.js"></script>
-    <link rel="stylesheet" href="{{lang_prefix}}/assets/css/bootstrap-toc.min.css" async defer>
+    <link href="{{lang_prefix}}/assets/css/bootstrap-toc.min.css" rel="preload" as="style" onload="this.rel='stylesheet'">
 
     <!-- md to html converter -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js" rel="preload" as="script">
     <script 
         src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"
         referrerpolicy="no-referrer">
+    </script>
+
+    <link 
+        href="https://cdn.datatables.net/v/bs5/jq-3.7.0/jszip-3.10.1/dt-2.0.5/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.1/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/rr-1.5.0/sc-2.4.1/sb-1.7.1/sp-2.3.1/sl-2.0.1/sr-1.4.1/cc-1.0.7/datatables.min.js" rel="preload" 
+        as="script">
+
+    <script 
+        src="https://cdn.datatables.net/v/bs5/jq-3.7.0/jszip-3.10.1/dt-2.0.5/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.1/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/rr-1.5.0/sc-2.4.1/sb-1.7.1/sp-2.3.1/sl-2.0.1/sr-1.4.1/cc-1.0.7/datatables.min.js">
     </script>
 
    <link 
@@ -213,13 +223,6 @@
             rel="stylesheet" 
             href="https://cdn.datatables.net/v/bs5/jq-3.7.0/jszip-3.10.1/dt-2.0.5/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.1/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/rr-1.5.0/sc-2.4.1/sb-1.7.1/sp-2.3.1/sl-2.0.1/sr-1.4.1/cc-1.0.7/datatables.min.css">
     </noscript>
-
-    <link 
-        href="https://cdn.datatables.net/v/bs5/jq-3.7.0/jszip-3.10.1/dt-2.0.5/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.1/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/rr-1.5.0/sc-2.4.1/sb-1.7.1/sp-2.3.1/sl-2.0.1/sr-1.4.1/cc-1.0.7/datatables.min.js" rel="preload" 
-        as="script">
-    <script 
-        src="https://cdn.datatables.net/v/bs5/jq-3.7.0/jszip-3.10.1/dt-2.0.5/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.1/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/rr-1.5.0/sc-2.4.1/sb-1.7.1/sp-2.3.1/sl-2.0.1/sr-1.4.1/cc-1.0.7/datatables.min.js">
-    </script>
 
     {% assign hasCharts = false %}
 
@@ -271,7 +274,7 @@
     <link 
         rel="stylesheet" 
         href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.0/themes/base/jquery-ui.min.css" 
-        referrerpolicy="no-referrer" />
+        referrerpolicy="no-referrer">
 </noscript>
 <link 
     href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.0/jquery-ui.min.js" 
@@ -450,12 +453,6 @@
     <script src="{{lang_prefix}}/assets/js/algolia-integrate.js" async defer></script>
 {% endif %}
 
-<!-- preloading heavy assets -->
-<link rel="preload" as="image" href="{{lang_prefix}}/assets/img/logo.webp">
-{% if page.permalink == "/" %}
-    <link rel="preload" as="image" href="{{lang_prefix}}/assets/img/home.webp">
-{% endif %}
-
 <!-- post-hooks are last to allow hooking everywhere -->
 <link href="{{lang_prefix}}/assets/js/post-hooks.js" rel="preload" as="script">
 <script src="{{lang_prefix}}/assets/js/post-hooks.js"></script>
@@ -467,3 +464,4 @@
 
 <!-- GTM tag if applicable -->
 {% include siteIncludes/partials/gtm-head.html %}
+

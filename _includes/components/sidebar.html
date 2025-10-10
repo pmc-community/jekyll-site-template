@@ -9,9 +9,19 @@
     Should not be cached, because nav_footer_custom.html might depend on page.
   {%- endcomment -%}
   
+  {% capture siteLanguage %}
+    {% SiteLanguage %}
+  {% endcapture %}
+
+  {% assign lang_path = siteLanguage | strip %}
+  {% assign lang_prefix = '' %}
+  {% unless lang_path == '' %}
+    {% assign lang_prefix = '/' | append: lang_path %}
+  {% endunless %}
+
   <div class="side-bar">
     <div class="site-header px-3 px-md-5" role="banner">
-      <a href="/"><img class = "site_logo" width="25px" height="25px" src="/assets/img/logo.webp" alt="{{site.title}} by PMC"/></a>
+      <a href="/"><img class = "site_logo" width="25px" height="25px" src="{{lang_prefix}}/assets/img/logo-s.webp" alt="{{site.title}} by PMC"/></a>
       <a href="{{ '/' | relative_url }}" class="site-title lh-tight fs-6 fw-medium">{% include title.html %}</a>
       <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
         <svg viewBox="0 0 24 24" class="icon site-button-icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>

@@ -117,6 +117,25 @@ $.fn.is_on_screen = function () {
     return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
 };
 
+const isElementVisible = (id) => {
+  const el = document.getElementById(id);
+  if (!el) return false;
+
+  const style = window.getComputedStyle(el);
+  if (style.display === 'none' || style.visibility === 'hidden' || style.opacity === '0') {
+    return false;
+  }
+
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.bottom > 0 &&
+    rect.right > 0 &&
+    rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.left < (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+
 // usage: $().sizeChanged(function(){})
 $.fn.sizeChanged = function (handleFunction) {
     var element = this;
@@ -2882,7 +2901,7 @@ const iframe__addCustomScriptsToIFrames = ($elementInsideIFrame, cssScripts = []
         $($iframeHead).append(`<link rel="stylesheet" href="/assets/css/${script}">`);
     })
     jsScripts.forEach( script => {
-        $($iframeBody).append(`<script src="/assets/js/${script}"></script>`);
+        $($iframeHead).append(`<script src="/assets/js/${script}"></script>`);
     })
 }
 
@@ -2893,11 +2912,24 @@ const iframe__utilities =  () => {
         hsSettings: hsSettings,
         anonymousUserToken: setAnonymousUserToken(),
         i18next: i18next,
+        $: $,
         func: {
             showToast: showToast,
             doTranslation: doTranslation,
+            formAccessibiltyCorrections: formAccessibiltyCorrections
         }
     }
+}
+
+const formAccessibiltyCorrections = (formContainer) => {
+    // sometimes embedded forms like HS forms don't add "for" attr to label tags
+    // this triggers accessibility warnings in Chrome
+    let forAttr='';
+    formContainer.find('input').each(function() {
+        if ($(this).attr('id') === 'undefined') return true;
+        else { forAttr = $(this).attr('id'); return false; }
+    });
+    formContainer.find('label').each( function() { $(this).attr('for', forAttr) });
 }
 
 const isValidEmail = (email) => {

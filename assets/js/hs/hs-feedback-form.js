@@ -1,10 +1,13 @@
-const {settings, pageSettings, hsSettings, i18next} = window.parent.utilities;
-const { showToast, doTranslation } = window.parent.utilities.func;
+const {settings, pageSettings, hsSettings, i18next, $ } = window.parent.utilities;
+const { showToast, doTranslation, formAccessibiltyCorrections } = window.parent.utilities.func;
+
+const iframeWindow = window;
+const iframeDocument = iframeWindow.document;
 
 hsFeedbackForm = {
     doTheWork: () => {
         // mainJQuery is defined in iframe-global.js
-        if (!mainJQuery || mainJQuery === 'undefined') {
+        if (!$ || typeof $ === 'undefined') {
             iframeDocument.body.innerHTML = '';
             setTimeout(() => {
                 showToast(i18next.t('toast_hs_integrate_js_jquery_error'), 'bg-danger', 'text-light');
@@ -14,6 +17,7 @@ hsFeedbackForm = {
         } else {
             $(hsFeedbackForm.iframeDocument).ready(function() {
                 hsFeedbackForm.addMarkersForTranslation();
+
 
                 hsFeedbackForm.prettyRadioButtons();
                 hsFeedbackForm.fixMessageTextareaHeight(); // should be fixed to a certain height, otherwise has the tendency to grow
@@ -41,7 +45,6 @@ hsFeedbackForm = {
             .find('div.hs-fieldtype-radio')
             .find('span.hsFieldLabel').first()
             .attr('data-i18n', 'hs_feedback_form_message_was_this_useful_radio_btn_label');
-
     },
 
     hideFormExtraControls: () => {
@@ -194,6 +197,7 @@ hsFeedbackForm = {
     }
 };
 
-hsFeedbackForm.doTheWork();
+formAccessibiltyCorrections($(iframeDocument));
+setTimeout(()=>hsFeedbackForm.doTheWork(), 0);
 
 

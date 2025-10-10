@@ -236,6 +236,7 @@ hsIntegrate = {
             .css('background', $('body').css('background'))
             .css('color', $('body').css('color'))
             .addClass('border border-secondary border-opacity-25 inputField');
+
     },
 
     setFormObservers: ($form) => {

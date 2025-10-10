@@ -27,7 +27,8 @@
   {% endif %}
 
   {% if cloudflare %}
-    <link rel="stylesheet" 
+    <link 
+        rel="stylesheet" 
         href="{{workerBase}}{{sB | strip}}{{'/assets/css/just-the-docs-default.css' | relative_url | url_encode }}"  
         media="print" 
         onload="this.media='all'">
@@ -41,15 +42,19 @@
   {% if cloudflare %}
     <link 
         fetchpriority="high" 
-        rel="stylesheet" 
+        rel="preload"
+        as="style" 
         href="{{workerBase}}{{sB | strip }}{{'/assets/css/just-the-docs-head-nav.css' | relative_url | url_encode}}" 
-        id="jtd-head-nav-stylesheet">
+        id="jtd-head-nav-stylesheet"
+        onload="this.rel='stylesheet'">
   {% else %}
      <link 
         fetchpriority="high" 
-        rel="stylesheet" 
+        rel="preload"
+        as="style" 
         href="{{'/assets/css/just-the-docs-head-nav.css' | relative_url}}" 
-        id="jtd-head-nav-stylesheet">
+        id="jtd-head-nav-stylesheet"
+        onload="this.rel='stylesheet'">
   {% endif %}
 
   <style id="jtd-nav-activation">
@@ -70,6 +75,7 @@
     </script>
   {% endif %}
 
+  {% assign algolia = site.data.algolia_integration | json_string_to_object %}
   {% if site.search_enabled != false %}
     {% if cloudflare %}
         <script src="{{workerBase}}{{sB | strip}}{{'/assets/js/vendor/lunr.min.js' | relative_url | url_encode}}" defer></script>

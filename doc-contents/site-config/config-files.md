@@ -27,6 +27,6 @@ Except for `_config.yml`, Docaroo configuration files are located in `_data` fol
     range="B2:D7" 
     sheet="Tables"
     source=page.path
-    simple="false"
+    simple="true"
     showHead="true"
 %}
