@@ -132,8 +132,11 @@
 
 <script id="error-interceptor">
     (function() {
+        /* ----------------------------
+        * console.error wrapper
+        * ----------------------------
+        */
         const originalConsoleError = console.error;
-
         console.error = function(...args) {
             nrLog(
                 'error', 
@@ -146,7 +149,6 @@
                     argsExtra: '', 
                 }
             );
-
             originalConsoleError.apply(console, args);
         };
 
@@ -208,7 +210,21 @@
         };
 
         const originalOpen = XMLHttpRequest.prototype.open;
-        XMLHttpRequest.prototype.open = function(method, url, ...args) {
+        const originalSend = XMLHttpRequest.prototype.send;
+
+        XMLHttpRequest.prototype.open = function(method, url, async = true, ...args) {
+            if (async === false) {
+                /*console.warn(`Synchronous XHR converted to async: ${method} ${url}`);*/
+                async = true; 
+            }
+
+            this._xhrMethod = method;
+            this._xhrUrl = url;
+
+            return originalOpen.apply(this, [method, url, async, ...args]);
+        };
+
+        XMLHttpRequest.prototype.send = function(...args) {
             this.addEventListener("readystatechange", function() {
                 if (this.readyState === 4 && (this.status === 401 || this.status === 403)) {
                     nrLog(
@@ -218,7 +234,7 @@
                         {
                             functionName: 'XMLHttpRequest',
                             result: '',
-                            args: [method, url],
+                            args: [this._xhrMethod, this._xhrUrl],
                             argsExtra: {
                                 status: this.status,
                                 statusText: this.statusText
@@ -233,7 +249,7 @@
                         {
                             functionName: 'XMLHttpRequest',
                             result: '',
-                            args: [method, url],
+                            args: [this._xhrMethod, this._xhrUrl],
                             argsExtra: {
                                 status: this.status,
                                 statusText: this.statusText
@@ -242,92 +258,94 @@
                     );
                 }
             });
-            return originalOpen.apply(this, [method, url, ...args]);
+
+            return originalSend.apply(this, args);
         };
 
-        
-        const originalJQueryAjax = $.ajax;
-        $.ajax = function(...args) {
-            const [options] = args;
-            const successHandler = options.success;
-            const errorHandler = options.error;
+        if (window.$ && $.ajax) {
+            const originalJQueryAjax = $.ajax;
+            $.ajax = function(...args) {
+                const [options] = args;
+                const successHandler = options.success;
+                const errorHandler = options.error;
 
-            options.success = function(data, textStatus, jqXHR) {
-                if (jqXHR.status === 401 || jqXHR.status === 403) {
-                    nrLog(
-                        'error',
-                        'ajax success 401/403 error',
-                        'error',
-                        {
-                            functionName: 'jQuery.ajax',
-                            result: '',
-                            args: args, 
-                            argsExtra: {
-                                status: jqXHR.status,
-                                statusText: jqXHR.statusText,
-                                url: options.url
+                options.success = function(data, textStatus, jqXHR) {
+                    if (jqXHR.status === 401 || jqXHR.status === 403) {
+                        nrLog(
+                            'error',
+                            'ajax success 401/403 error',
+                            'error',
+                            {
+                                functionName: 'jQuery.ajax',
+                                result: '',
+                                args: args, 
+                                argsExtra: {
+                                    status: jqXHR.status,
+                                    statusText: jqXHR.statusText,
+                                    url: options.url
+                                }
                             }
-                        }
-                    );
-                } else if (jqXHR.status >= 400 && jqXHR.status < 500) {
-                    nrLog(
-                        'error',
-                        'ajax success 4XX error',
-                        'error',
-                        {
-                            functionName: 'jQuery.ajax',
-                            result: '',
-                            args: args, 
-                            argsExtra: {
-                                status: jqXHR.status,
-                                statusText: jqXHR.statusText,
-                                url: options.url
+                        );
+                    } else if (jqXHR.status >= 400 && jqXHR.status < 500) {
+                        nrLog(
+                            'error',
+                            'ajax success 4XX error',
+                            'error',
+                            {
+                                functionName: 'jQuery.ajax',
+                                result: '',
+                                args: args, 
+                                argsExtra: {
+                                    status: jqXHR.status,
+                                    statusText: jqXHR.statusText,
+                                    url: options.url
+                                }
                             }
-                        }
-                    );
-                }
-                if (successHandler) successHandler.apply(this, arguments);
+                        );
+                    }
+                    if (successHandler) successHandler.apply(this, arguments);
+                };
+
+                options.error = function(jqXHR, textStatus, errorThrown) {
+                    if (jqXHR.status === 401 || jqXHR.status === 403) {
+                        nrLog(
+                            'error',
+                            'ajax error 401/403 error',
+                            'error',
+                            {
+                                functionName: 'jQuery.ajax',
+                                result: '',
+                                args: args,
+                                argsExtra: {
+                                    status: jqXHR.status,
+                                    statusText: jqXHR.statusText,
+                                    url: options.url
+                                }
+                            }
+                        );
+                    } else if (jqXHR.status >= 400 && jqXHR.status < 500) {
+                        nrLog(
+                            'error',
+                            'ajax error 4XX error',
+                            'error',
+                            {
+                                functionName: 'jQuery.ajax',
+                                result: '',
+                                args: args,
+                                argsExtra: {
+                                    status: jqXHR.status,
+                                    statusText: jqXHR.statusText,
+                                    url: options.url
+                                }
+                            }
+                        );
+                    }
+                    if (errorHandler) errorHandler.apply(this, arguments);
+                };
+
+                return originalJQueryAjax.apply(this, args);
             };
+        }
+    })();
 
-            options.error = function(jqXHR, textStatus, errorThrown) {
-                if (jqXHR.status === 401 || jqXHR.status === 403) {
-                    nrLog(
-                        'error',
-                        'ajax error 401/403 error',
-                        'error',
-                        {
-                            functionName: 'jQuery.ajax',
-                            result: '',
-                            args: args,
-                            argsExtra: {
-                                status: jqXHR.status,
-                                statusText: jqXHR.statusText,
-                                url: options.url
-                            }
-                        }
-                    );
-                } else if (jqXHR.status >= 400 && jqXHR.status < 500) {
-                    nrLog(
-                        'error',
-                        'ajax error 4XX error',
-                        'error',
-                        {
-                            functionName: 'jQuery.ajax',
-                            result: '',
-                            args: args,
-                            argsExtra: {
-                                status: jqXHR.status,
-                                statusText: jqXHR.statusText,
-                                url: options.url
-                            }
-                        }
-                    );
-                }
-                if (errorHandler) errorHandler.apply(this, arguments);
-            };
-
-            return originalJQueryAjax.apply(this, args);
-        };
-    })(); 
 </script>
-
