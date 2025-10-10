@@ -220,8 +220,7 @@ const page__getPageFeedbackForm = () => {
                             submitText: 'Send your rating!',
                             submitButtonClass: 'btn btn-sm btn-outline-secondary border border-secondary border-opacity-25',
                             css: ['hs/hs.css'],
-                            // iframe-global.js makes jQuery, lodash and a bunch of globals and functions available inside iFrame
-                            js: ['iframe-global.js','hs/hs-feedback-form.js']        
+                            js: ['hs/hs-feedback-form.js']        
                         },
 
                         // onFormReady callback
