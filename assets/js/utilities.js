@@ -2882,7 +2882,7 @@ const iframe__addCustomScriptsToIFrames = ($elementInsideIFrame, cssScripts = []
         $($iframeHead).append(`<link rel="stylesheet" href="/assets/css/${script}">`);
     })
     jsScripts.forEach( script => {
-        $($iframeBody).append(`<script src="/assets/js/${script}"></script>`);
+        $($iframeHead).append(`<script src="/assets/js/${script}"></script>`);
     })
 }
 
@@ -2896,8 +2896,20 @@ const iframe__utilities =  () => {
         func: {
             showToast: showToast,
             doTranslation: doTranslation,
+            formAccessibiltyCorrections: formAccessibiltyCorrections
         }
     }
+}
+
+const formAccessibiltyCorrections = (formContainer) => {
+    // sometimes embedded forms like HS forms don't add "for" attr to label tags
+    // this triggers accessibility warnings in Chrome
+    let forAttr='';
+    formContainer.find('input').each(function() {
+        if ($(this).attr('id') === 'undefined') return true;
+        else { forAttr = $(this).attr('id'); return false; }
+    });
+    formContainer.find('label').each( function() { $(this).attr('for', forAttr) });
 }
 
 const isValidEmail = (email) => {
