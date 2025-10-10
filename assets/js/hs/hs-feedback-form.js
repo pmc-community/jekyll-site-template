@@ -1,10 +1,13 @@
-const {settings, pageSettings, hsSettings, i18next} = window.parent.utilities;
+const {settings, pageSettings, hsSettings, i18next, $ } = window.parent.utilities;
 const { showToast, doTranslation, formAccessibiltyCorrections } = window.parent.utilities.func;
+
+const iframeWindow = window;
+const iframeDocument = iframeWindow.document;
 
 hsFeedbackForm = {
     doTheWork: () => {
         // mainJQuery is defined in iframe-global.js
-        if (!mainJQuery || mainJQuery === 'undefined') {
+        if (!$ || typeof $ === 'undefined') {
             iframeDocument.body.innerHTML = '';
             setTimeout(() => {
                 showToast(i18next.t('toast_hs_integrate_js_jquery_error'), 'bg-danger', 'text-light');
@@ -14,14 +17,13 @@ hsFeedbackForm = {
         } else {
             $(hsFeedbackForm.iframeDocument).ready(function() {
                 hsFeedbackForm.addMarkersForTranslation();
-                formAccessibiltyCorrections($(iframeDocument));
+
+
                 hsFeedbackForm.prettyRadioButtons();
                 hsFeedbackForm.fixMessageTextareaHeight(); // should be fixed to a certain height, otherwise has the tendency to grow
                 hsFeedbackForm.setWasThisUsefullFunction();
                 hsFeedbackForm.setChangeRatingFunction();
                 hsFeedbackForm.hideFormExtraControls();
-
-                
 
                 hsFeedbackForm.translateForm();
             });
@@ -195,6 +197,7 @@ hsFeedbackForm = {
     }
 };
 
+formAccessibiltyCorrections($(iframeDocument));
 setTimeout(()=>hsFeedbackForm.doTheWork(), 0);
 
 

@@ -289,7 +289,6 @@ let siteObservers = new Map();
 let pageInfo = {}; // used for full page info canvas
 let hsForms = [];
 let docSearchHitPageToc = [];
-window.mainJQuery = jQuery; // exposing jQuery to be able to use it in iFrames
 
 document.addEventListener('DOMContentLoaded', function() {
 

@@ -2893,6 +2893,7 @@ const iframe__utilities =  () => {
         hsSettings: hsSettings,
         anonymousUserToken: setAnonymousUserToken(),
         i18next: i18next,
+        $: $,
         func: {
             showToast: showToast,
             doTranslation: doTranslation,
