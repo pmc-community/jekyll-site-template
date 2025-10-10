@@ -117,6 +117,25 @@ $.fn.is_on_screen = function () {
     return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
 };
 
+const isElementVisible = (id) => {
+  const el = document.getElementById(id);
+  if (!el) return false;
+
+  const style = window.getComputedStyle(el);
+  if (style.display === 'none' || style.visibility === 'hidden' || style.opacity === '0') {
+    return false;
+  }
+
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.bottom > 0 &&
+    rect.right > 0 &&
+    rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.left < (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+
 // usage: $().sizeChanged(function(){})
 $.fn.sizeChanged = function (handleFunction) {
     var element = this;

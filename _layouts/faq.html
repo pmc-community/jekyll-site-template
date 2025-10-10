@@ -87,7 +87,20 @@ layout: default
 
 </div>
 
-<script>
+<script id="faq-pagination-helpers">
+    /* only visible faq must be in ToC 
+    * ToC must be updated when changing faq page
+    */
+    const syncToc = () => {
+        setTimeout( () => {
+            $('#toc').find('.nav-link').each(function() {
+                const anchor = $(this).attr('href').trim();
+                const status = $(anchor).closest('div[id^="faq-container-"]').css('display');
+                if ( status === 'none' ) $(this).closest('li').addClass('d-none');
+                else $(this).closest('li').removeClass('d-none');
+            });
+        }, 0);
+    };
     const FAQPaginate = () => {
 
         if ({{faqConfig["pagination"]}}) {
@@ -123,11 +136,16 @@ layout: default
                 $('#faq-pagination-container').addClass('d-none');
             }
         }
+        syncToc();    
     }
 </script>
 
-<script>
+<script id="faq-pagination-init">
+    syncToc();
+
     $('#toc').on('click', '.nav-link', function() {
         setTimeout(()=>history.replaceState({}, document.title, location.pathname + location.search), 0);
     });
+
+    $(document).on('click', '.page-link', syncToc);
 </script>
