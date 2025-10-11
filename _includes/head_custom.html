@@ -6,19 +6,22 @@
     it doesn't affect functionality, but doesn't look good to have errors in console
     */
     (function() {
-    const scriptDesc = Object.getOwnPropertyDescriptor(HTMLScriptElement.prototype, 'src');
-    Object.defineProperty(HTMLScriptElement.prototype, 'src', {
-        set: function(value) {
-        if (value && value.includes('js.hsleadflows.net/leadflows.js')) {
-            /*console.log('Blocked retired HubSpot leadflows.js');*/
-            return;
-        }
-        return scriptDesc.set.call(this, value);
-        },
-        get: function() {
-        return scriptDesc.get.call(this);
-        }
-    });
+        const scriptDesc = Object.getOwnPropertyDescriptor(HTMLScriptElement.prototype, 'src');
+        Object.defineProperty(HTMLScriptElement.prototype, 'src', {
+            set: function(value) {
+            const srcValue = (typeof value === 'string') ? value : String(value || '');
+
+            if (srcValue.includes('js.hsleadflows.net/leadflows.js')) {
+                /*console.log('Blocked retired HubSpot leadflows.js');*/
+                return;
+            }
+
+            return scriptDesc.set.call(this, value);
+            },
+            get: function() {
+            return scriptDesc.get.call(this);
+            }
+        });
     })();
 </script>
 
