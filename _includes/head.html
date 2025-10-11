@@ -86,7 +86,7 @@
   {% endif %}
 
   {% assign algolia = site.data.algolia_integration | json_string_to_object %}
-  {% if site.search_enabled != false %}
+  {% if site.search_enabled != false and algolia.algolia.algoliaDocSearchEnabled == false and algolia.algoliaCustomEnabled == false %}
     {% if cloudflare %}
         <script src="{{workerBase}}{{sB | strip}}{{'/assets/js/vendor/lunr.min.js' | relative_url | url_encode}}" defer></script>
     {% else %}
