@@ -135,7 +135,6 @@ const isElementVisible = (id) => {
   );
 }
 
-
 // usage: $().sizeChanged(function(){})
 $.fn.sizeChanged = function (handleFunction) {
     var element = this;
