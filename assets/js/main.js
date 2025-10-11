@@ -126,9 +126,8 @@ window.customiseTheme = (pageObj = null) => {
             goToAnchor();
         }, settings.colSchemaCorrections.hideBodyUntilLoadTimeout);
 
-    
-    //setTimeout(()=>clearTheUrl(),500);
-});
+        //setTimeout(()=>clearTheUrl(),500);
+    });
 
 }
 
