@@ -39,12 +39,12 @@
   {% if cloudflare %}
     <link 
         rel="stylesheet" 
-        href="{{workerBase}}{{sB | strip}}/{{lang_prefix}}{{'/assets/css/just-the-docs-default.css' | relative_url | url_encode }}"  
+        href="{{workerBase}}{{sB | strip}}{{'/assets/css/just-the-docs-default.css' | relative_url | url_encode }}"  
         media="print" 
         onload="this.media='all'">
   {% else %}
     <link rel="stylesheet" 
-        href="{{lang_prefix}}{{'/assets/css/just-the-docs-default.css' | relative_url }}"  
+        href="{{'/assets/css/just-the-docs-default.css' | relative_url }}"  
         media="print" 
         onload="this.media='all'">
   {% endif %}
