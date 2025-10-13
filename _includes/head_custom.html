@@ -48,12 +48,11 @@
 </style>
 
 <script type="application/javascript">
-    let userIP = undefined;
-    const getIP = (json) => {
-        userIP = json.ip;
-    }
+  let userIP;
+  function getIP(json) {
+    userIP = json.ip;
+  }
 </script>
-<link href="https://api.ipify.org?format=jsonp&callback=getIP" rel="preload" as="script">
 <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 
 <!-- New Relic if applicable -->
