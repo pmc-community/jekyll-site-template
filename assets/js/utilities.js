@@ -2019,37 +2019,37 @@ const keepTextInputLimits = (textInputSelector, maxWords, maxChars, wordCountSel
 // resize observer
 // observes when an element change its height and execute callback
 const setResizeObserver_height = (elSelector, callback) => {
-    const $element = $(elSelector); 
+    const $elements = $(elSelector); 
+
+    $elements.each(function() {
+        const el = this;
         let isAdjusting = false; 
+        let previousHeight = el.getBoundingClientRect().height;
 
-        let previousHeight = $element.outerHeight(true);
-
-        const resizeObserver = new ResizeObserver(function(entries) {
+        const resizeObserver = new ResizeObserver(entries => {
             if (isAdjusting) return;
 
-            entries.forEach(function(entry) {
+            entries.forEach(entry => {
                 const newHeight = entry.contentRect.height;
 
-                // Only react to actual height changes
                 if (newHeight !== previousHeight) {
-                    
-                    // Set the flag to avoid recursive triggering
                     isAdjusting = true;
 
-                    if (callback) callback();
+                    if (callback) callback(newHeight, previousHeight);
 
-                    // Reset the flag after a short delay (enough for adjustments to complete)
-                    setTimeout(function() {
+                    // Use requestAnimationFrame for next frame instead of fixed timeout
+                    requestAnimationFrame(() => {
                         isAdjusting = false;
-                    }, 50);
-
-                    previousHeight = newHeight;
+                        previousHeight = newHeight;
+                    });
                 }
             });
         });
 
-        resizeObserver.observe($element[0]);
+        resizeObserver.observe(el);
+    });
 }
+
 
 // observes when elementSelector receive class cls (getClass=true) or lose class cls (getClass=false)
 // and executes callback function
