@@ -56,6 +56,7 @@ headerAboveContent:
 layouts:
   headerArea:
     mobileMenuButton: "#menu-button"
+    siteLogo: "logo-s.webp"
   contentArea:
     mainContainer: ".main-content-wrap"
     contentContainer: ".main-content main"

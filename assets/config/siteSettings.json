@@ -70,7 +70,8 @@
     },
     "layouts": {
       "headerArea": {
-        "mobileMenuButton": "#menu-button"
+        "mobileMenuButton": "#menu-button",
+        "siteLogo": "logo-s.webp"
       },
       "contentArea": {
         "mainContainer": ".main-content-wrap",
