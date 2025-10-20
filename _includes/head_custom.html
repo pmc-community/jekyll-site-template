@@ -25,6 +25,8 @@
     })();
 </script>
 
+<link href="{{site.data.siteConfig.scripts.fontFamily }}" rel="stylesheet">
+
 {% assign dark = site.data["siteConfig"].colSchemaCorrections.backgroundColorOnElementsAffected.dark %}
 {% assign light = site.data["siteConfig"].colSchemaCorrections.backgroundColorOnElementsAffected.light %}
 {% assign themeCookie = site.data["siteConfig"].themeSwitch.cookie %}
@@ -80,14 +82,6 @@
 {% else %}
     {% assign workerBase = "" %}
     {% assign sB = "" %}
-{% endif %}
-
-{% if site.data.siteConfig.scripts.fontFamily and site.data.siteConfig.scripts.fontFamily != "" %}
-    {% if cloudflare %}
-        <link href="{{workerBase}}{{site.data.siteConfig.scripts.fontFamily | url_encode}}" rel="preload" as="style" onload="this.rel='stylesheet'">
-    {% else %}
-        <link href="{{site.data.siteConfig.scripts.fontFamily }}" rel="preload" as="style" onload="this.rel='stylesheet'">
-    {% endif %}
 {% endif %}
 
 <!-- make settings available asap -->

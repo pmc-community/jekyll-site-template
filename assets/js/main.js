@@ -454,7 +454,7 @@ const setFullPageToc = () => {
 
 const initPageToc = () => {
     $(settings.pageToc.toc).empty();
-    $(`#nav[data-toggle=${settings.pageToc.toc.substring(1)}] .nav-link.active+ul`).css('font-family','poppins');
+    //$(`#nav[data-toggle=${settings.pageToc.toc.substring(1)}] .nav-link.active+ul`).css('font-family','poppins');
     $(settings.pageToc.tocContainer)
         .css(
             'top', 
