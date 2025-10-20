@@ -20,7 +20,7 @@ All the options available for site appearance and functionalities are shown in t
 
 {% include elements/xlsx-to-html-table.html 
     file="config-files.xlsx" 
-    range="C2:G119" 
+    range="C2:G120" 
     sheet="Options"
     source=page.path
     simple="false"
