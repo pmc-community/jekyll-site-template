@@ -2019,37 +2019,41 @@ const keepTextInputLimits = (textInputSelector, maxWords, maxChars, wordCountSel
 // resize observer
 // observes when an element change its height and execute callback
 const setResizeObserver_height = (elSelector, callback) => {
-    const $elements = $(elSelector); 
-
-    $elements.each(function() {
-        const el = this;
+    const $element = $(elSelector); 
         let isAdjusting = false; 
-        let previousHeight = el.getBoundingClientRect().height;
 
-        const resizeObserver = new ResizeObserver(entries => {
+        let previousHeight = $element.outerHeight(true);
+
+        const resizeObserver = new ResizeObserver(function(entries) {
             if (isAdjusting) return;
 
-            entries.forEach(entry => {
-                const newHeight = entry.contentRect.height;
+            requestAnimationFrame(() => {
+               entries.forEach(function(entry) {
+                    const newHeight = entry.contentRect.height;
 
-                if (newHeight !== previousHeight) {
-                    isAdjusting = true;
+                     // Only react to actual height changes
+                    if (newHeight !== previousHeight) {
+                        
+                        // Set the flag to avoid recursive triggering
+                        isAdjusting = true;
 
-                    if (callback) callback(newHeight, previousHeight);
+                        if (callback) callback();
 
-                    // Use requestAnimationFrame for next frame instead of fixed timeout
-                    requestAnimationFrame(() => {
-                        isAdjusting = false;
+                        // Reset the flag after a short delay (enough for adjustments to complete)
+                        setTimeout(function() {
+                            isAdjusting = false;
+                        }, 0);
+
                         previousHeight = newHeight;
-                    });
-                }
+                    }
+                });
+
             });
+            
         });
 
-        resizeObserver.observe(el);
-    });
+        resizeObserver.observe($element[0]);
 }
-
 
 // observes when elementSelector receive class cls (getClass=true) or lose class cls (getClass=false)
 // and executes callback function
