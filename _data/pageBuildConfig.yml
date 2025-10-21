@@ -4,9 +4,11 @@
   sections:
     header_section:
       title: "Documentation site framework"
-      text: "Build your own documentation site without breaking a sweat! Let your users play boss and organize info however they want — neat, messy, or somewhere in between. And with lightning-fast search tools, finding what they need is quicker than you can say “Where’s that doc again?” Making docs easy, fun, and seriously powerful — all wrapped up in one neat package."
+      text: > 
+        Build your own documentation site without breaking a sweat! Let your users play boss and organize info however they want — neat, messy, or somewhere in between. And with lightning-fast search tools, finding what they need is quicker than you can say “Where’s that doc again?” Making docs easy, fun, and seriously powerful — all wrapped up in one neat package.
       startBtnText: "Overview"
-      featuredMedia: "<img fetchpriority=\"high\" width=\"600\" height=\"400\" src=\"assets/img/home.webp\" alt=\"Docaroo by PMC\" decoding=\"async\" loading=\"eager\" style=\"display:block;\" loading=\"lazy\">"
+      featuredMedia: >
+        <img fetchpriority="high" width="600" height="400" src="assets/img/home.webp" alt="Docaroo by PMC" decoding="async" loading="eager" style="display:block;" loading="lazy">
     collections_section:
       enabledInHome: true
       except: ["posts", "tools"] # collection name must be the one from _config.yml[collections]

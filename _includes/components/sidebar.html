@@ -40,7 +40,7 @@
     {% else %}
       <footer class="site-footer">
         {% for footerRow in site.data["buildConfig"]["siteFooter"]["rows"] %}
-          {{footerRow["content"]}}
+          <div class="footer_row px-2 px-md-0">{{footerRow["content"]}}</div>
         {% endfor %}
       </footer>
     {% endif %}
