@@ -44,7 +44,7 @@ Jekyll::Hooks.register :site, :post_write do |site|
             # default language is the fallbackLang in _data/siteConfig.yml, multilang section
             
             validUrl = LinkUtilities.check_link(site.data["buildConfig"]["prodBaseUrl"] + permalink)
-            if (validUrl == 0)
+            #if (validUrl == 0)
                 Globals.putsColText(Globals::YELLOW,"#{numPages}. Adding to sitemap.xml: #{site.data["buildConfig"]["prodBaseUrl"] + permalink}")
                 sitemap << {
                     'url' => site.data["buildConfig"]["prodBaseUrl"] + permalink,
@@ -52,7 +52,7 @@ Jekyll::Hooks.register :site, :post_write do |site|
                     'changefreq' => front_matter['changefreq'] || 'weekly',
                     'priority' => front_matter['priority'] || '0.5'
                 }
-            end
+            #end
 
             # add language pages to sitemap
             # need to read the siteConfig.yml because at the moment of :after_init the site var is not known yet
@@ -70,7 +70,7 @@ Jekyll::Hooks.register :site, :post_write do |site|
 
                     if (language["lang"] != siteLangCode)
                         validUrl = LinkUtilities.check_link(site.data["buildConfig"]["prodBaseUrl"] + "/#{language["lang"]}" + permalink)
-                        if (validUrl == 0 )
+                        #if (validUrl == 0 )
                             Globals.putsColText(Globals::YELLOW,"#{numPages}. Adding to sitemap.xml: #{site.data["buildConfig"]["prodBaseUrl"]+"/#{language["lang"]}" + permalink}")
                             sitemap << {
                                 'url' => site.data["buildConfig"]["prodBaseUrl"] + "/#{language["lang"]}" + permalink,
@@ -78,7 +78,7 @@ Jekyll::Hooks.register :site, :post_write do |site|
                                 'changefreq' => front_matter['changefreq'] || 'weekly',
                                 'priority' => front_matter['priority'] || '0.5'
                             }
-                        end
+                        #end
                     end
                 end
             end
