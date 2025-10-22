@@ -43,7 +43,7 @@ Jekyll::Hooks.register :site, :post_write do |site|
             # these are without language code in the url
             # default language is the fallbackLang in _data/siteConfig.yml, multilang section
             validUrl = LinkUtilities.check_link(ENV["DEPLOY_PROD_BASE_URL"] + permalink)
-            #if (validUrl == 0)
+            if (validUrl == 0)
                 Globals.putsColText(Globals::YELLOW,"#{numPages}. Adding to sitemap.xml: #{ENV["DEPLOY_PROD_BASE_URL"] + permalink}")
                 sitemap << {
                     'url' => ENV["DEPLOY_PROD_BASE_URL"] + permalink,
@@ -51,7 +51,7 @@ Jekyll::Hooks.register :site, :post_write do |site|
                     'changefreq' => front_matter['changefreq'] || 'weekly',
                     'priority' => front_matter['priority'] || '0.5'
                 }
-            #end
+            end
 
             # add language pages to sitemap
             # need to read the siteConfig.yml because at the moment of :after_init the site var is not known yet
