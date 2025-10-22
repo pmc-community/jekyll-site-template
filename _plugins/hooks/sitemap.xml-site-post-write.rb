@@ -72,14 +72,14 @@ Jekyll::Hooks.register :site, :post_write do |site|
                         url = ENV["DEPLOY_PROD_BASE_URL"] + "/#{language["lang"]}" + permalink
                         validUrl = LinkUtilities.check_link(url)
                         #puts "#{url} ... #{validUrl}"
-                        if (validUrl == 0 )
-                            sitemap << {
-                                'url' => ENV["DEPLOY_PROD_BASE_URL"] + "/#{language["lang"]}" + permalink,
-                                'lastmod' => front_matter['lastmod'] || File.mtime(file_path).strftime('%Y-%m-%d'),
-                                'changefreq' => front_matter['changefreq'] || 'weekly',
-                                'priority' => front_matter['priority'] || '0.5'
-                            }
-                        end
+                        #if (validUrl == 0 )
+                        sitemap << {
+                            'url' => ENV["DEPLOY_PROD_BASE_URL"] + "/#{language["lang"]}" + permalink,
+                            'lastmod' => front_matter['lastmod'] || File.mtime(file_path).strftime('%Y-%m-%d'),
+                            'changefreq' => front_matter['changefreq'] || 'weekly',
+                            'priority' => front_matter['priority'] || '0.5'
+                        }
+                        #end
                     end
                 end
             end
