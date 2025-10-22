@@ -44,8 +44,8 @@ Jekyll::Hooks.register :site, :post_write do |site|
             # default language is the fallbackLang in _data/siteConfig.yml, multilang section
             url = ENV["DEPLOY_PROD_BASE_URL"] + permalink
             validUrl = LinkUtilities.check_link(url)
+            puts "url=#{url} valid=#{validUrl}"
             if (validUrl == 0)
-                puts url
                 sitemap << {
                     'url' => ENV["DEPLOY_PROD_BASE_URL"] + permalink,
                     'lastmod' => front_matter['lastmod'] || File.mtime(file_path).strftime('%Y-%m-%d'),
