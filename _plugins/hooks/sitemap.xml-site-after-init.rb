@@ -42,7 +42,8 @@ Jekyll::Hooks.register :site, :post_write do |site|
             # adding default language pages to sitemap.xml
             # these are without language code in the url
             # default language is the fallbackLang in _data/siteConfig.yml, multilang section
-            url = ENV["DEPLOY_PROD_BASE_URL"] + permalink
+            #url = ENV["DEPLOY_PROD_BASE_URL"] + permalink
+            url = "https://docaroo.innohub.space#{permalink}"
             validUrl = LinkUtilities.check_link(url)
             puts "url=#{url} valid=#{validUrl}"
             if (validUrl == 0)
