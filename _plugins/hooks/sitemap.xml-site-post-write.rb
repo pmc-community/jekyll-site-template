@@ -10,7 +10,7 @@ require 'dotenv'
 
 Dotenv.load
 
-Jekyll::Hooks.register :site, :after_init do |site|
+Jekyll::Hooks.register :site, :post_write do |site|
     Globals.putsColText(Globals::PURPLE,"Generating sitemap.xml ...")
     numPages = 0
     doc_contents_dir = File.join(site.source, Globals::DOCS_ROOT)
@@ -32,6 +32,7 @@ Jekyll::Hooks.register :site, :after_init do |site|
         end
 
         if front_matter != {}
+            #puts "after frontmatter check: #{file_path}"
             numPages += 1
             url = file_path.sub(site.source, '').sub(/\.md$/, '.html').sub(/\.html$/, '')
             url = url.chomp('index') if url.end_with?('index')
@@ -42,15 +43,16 @@ Jekyll::Hooks.register :site, :after_init do |site|
             # these are without language code in the url
             # default language is the fallbackLang in _data/siteConfig.yml, multilang section
             url = ENV["DEPLOY_PROD_BASE_URL"] + permalink
+            #url = "https://docaroo.innohub.space#{permalink}"
             validUrl = LinkUtilities.check_link(url)
-            if (validUrl == 0)
-                sitemap << {
-                    'url' => ENV["DEPLOY_PROD_BASE_URL"] + permalink,
-                    'lastmod' => front_matter['lastmod'] || File.mtime(file_path).strftime('%Y-%m-%d'),
-                    'changefreq' => front_matter['changefreq'] || 'weekly',
-                    'priority' => front_matter['priority'] || '0.5'
-                }
-            end
+            #if (validUrl == 0)
+            sitemap << {
+                'url' => ENV["DEPLOY_PROD_BASE_URL"] + permalink,
+                'lastmod' => front_matter['lastmod'] || File.mtime(file_path).strftime('%Y-%m-%d'),
+                'changefreq' => front_matter['changefreq'] || 'weekly',
+                'priority' => front_matter['priority'] || '0.5'
+            }
+            #end
 
             # add language pages to sitemap
             # need to read the siteConfig.yml because at the moment of :after_init the site var is not known yet
@@ -68,7 +70,7 @@ Jekyll::Hooks.register :site, :after_init do |site|
 
                     if (language["lang"] != siteLangCode)
                         url = ENV["DEPLOY_PROD_BASE_URL"] + "/#{language["lang"]}" + permalink
-                        validUrl = LinkUtilities.check_link(url)
+                        #validUrl = LinkUtilities.check_link(url)
                         #puts "#{url} ... #{validUrl}"
                         if (validUrl == 0 )
                             sitemap << {
@@ -94,7 +96,9 @@ Jekyll::Hooks.register :site, :after_init do |site|
         #{sitemap.map { |page| generate_sitemap_entry(page) }.join("\n")}
         </urlset>
     XML
-    File.write(File.join(Globals::ROOT_DIR, 'sitemap.xml'), sitemap_content)
+    #File.write(File.join(Globals::ROOT_DIR, 'sitemap.xml'), sitemap_content)
+    sitemap_path = File.join(site.dest, 'sitemap.xml')
+    File.write(sitemap_path, sitemap_content)
     Globals.moveUpOneLine
     Globals.clearLine
     Globals.putsColText(Globals::PURPLE,"Generating sitemap.xml ... done (#{numPages} pages)")
