@@ -1,4 +1,3 @@
-prodBaseUrl: "https://docaroo.innohub.space"
 pyEnable: true #enable/disable all PY based features (Related Pages, Autosummary, Keywords, Similar Pages)
 pyLaunch: "python3"
 pyPageSummary:
