@@ -1028,10 +1028,10 @@
         "search"
       ],
       "excerpt": "integrations, gtm, integration, event, configurations",
-      "lastUpdate": "2025-10-07 12:47:55 +0300",
+      "lastUpdate": "2025-10-22 19:04:46 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-07 12:47:55 +0300",
-      "createTimeUTC": 1759830475,
+      "createTime": "2025-10-22 19:04:46 +0300",
+      "createTimeUTC": 1761149086,
       "relatedPages": [
         {
           "title": "Config Files",
@@ -1040,7 +1040,7 @@
       ],
       "autoSummary": "Docaroo provides out-of-the-box a series of integrations. The purpose of the integrations is to make available in a no-code or low-code mode some important features. Each integration can be independently enabled and configured or disabled.",
       "similarByContent": [],
-      "readingTime": 2,
+      "readingTime": 3,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -1509,7 +1509,7 @@
         {
           "title": "Integrate",
           "permalink": "/integrate/",
-          "lastUpdate": "07-Oct-2025"
+          "lastUpdate": "22-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1574,7 +1574,7 @@
         {
           "title": "Integrate",
           "permalink": "/integrate/",
-          "lastUpdate": "07-Oct-2025"
+          "lastUpdate": "22-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1614,7 +1614,7 @@
         {
           "title": "Integrate",
           "permalink": "/integrate/",
-          "lastUpdate": "07-Oct-2025"
+          "lastUpdate": "22-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1634,7 +1634,7 @@
         {
           "title": "Integrate",
           "permalink": "/integrate/",
-          "lastUpdate": "07-Oct-2025"
+          "lastUpdate": "22-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1644,7 +1644,7 @@
         {
           "title": "Integrate",
           "permalink": "/integrate/",
-          "lastUpdate": "07-Oct-2025"
+          "lastUpdate": "22-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1729,7 +1729,7 @@
         {
           "title": "Integrate",
           "permalink": "/integrate/",
-          "lastUpdate": "07-Oct-2025"
+          "lastUpdate": "22-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1995,7 +1995,7 @@
         {
           "title": "Integrate",
           "permalink": "/integrate/",
-          "lastUpdate": "07-Oct-2025"
+          "lastUpdate": "22-Oct-2025"
         },
         {
           "title": "Introduction",
@@ -2055,7 +2055,7 @@
         {
           "title": "Integrate",
           "permalink": "/integrate/",
-          "lastUpdate": "07-Oct-2025"
+          "lastUpdate": "22-Oct-2025"
         },
         {
           "title": "Config Files",

@@ -70,8 +70,8 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade p-4" id="imageModal-{{igid}}" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
+<div class="modal fade p-0" id="imageModal-{{igid}}" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-fullscreen">
     <div class="modal-content">
         <div class="modal-header">
             <span class="modal-title mt-0 text-primary fw-medium" id="modal-title-{{igid}}">Modal title</span>
@@ -206,6 +206,14 @@
   requestAnimationFrame(() => {
    $mainContent__{{igid}}.attr('inert', '');
   });
+ });
+
+ $modal__{{igid}}.on('show.bs.modal', function() {
+   $('#imageModal-{{igid}}').find('.modal-content').css('background', $('body').css('background'));
+   $('#imageModal-{{igid}}').find('.modal-header').css('border-bottom', '').addClass('border border-bottom border-secondary border-opacity-25');
+   $('#imageModal-{{igid}}').find('.modal-footer').css('border-top', '').addClass('border border-top border-secondary border-opacity-25');
+   if (Cookies.get(settings.themeSwitch.cookie) !== '0' ) $('#imageModal-btn-close-{{igid}}').parent().attr('data-bs-theme', 'dark');
+   else $('#imageModal-btn-close-{{igid}}').parent().attr('data-bs-theme', '');   
  });
 
  $modal__{{igid}}.on('hidden.bs.modal', function() {
