@@ -69,7 +69,6 @@ Jekyll::Hooks.register :site, :post_write do |site|
                     # because those pages were already added before
 
                     if (language["lang"] != siteLangCode)
-                        url = site.data["buildConfig"]["prodBaseUrl"] + "/#{language["lang"]}" + permalink
                         validUrl = LinkUtilities.check_link(site.data["buildConfig"]["prodBaseUrl"] + "/#{language["lang"]}" + permalink)
                         if (validUrl == 0 )
                             Globals.putsColText(Globals::YELLOW,"#{numPages}. Adding to sitemap.xml: #{site.data["buildConfig"]["prodBaseUrl"]+"/#{language["lang"]}" + permalink}")
