@@ -42,16 +42,17 @@ Jekyll::Hooks.register :site, :post_write do |site|
             # adding default language pages to sitemap.xml
             # these are without language code in the url
             # default language is the fallbackLang in _data/siteConfig.yml, multilang section
-            validUrl = LinkUtilities.check_link(ENV["DEPLOY_PROD_BASE_URL"] + permalink)
-            if (validUrl == 0)
-                Globals.putsColText(Globals::YELLOW,"#{numPages}. Adding to sitemap.xml: #{ENV["DEPLOY_PROD_BASE_URL"] + permalink}")
+            
+            #validUrl = LinkUtilities.check_link(ENV["DEPLOY_PROD_BASE_URL"] + permalink)
+            #if (validUrl == 0)
+                #Globals.putsColText(Globals::YELLOW,"#{numPages}. Adding to sitemap.xml: #{permalink}")
                 sitemap << {
                     'url' => ENV["DEPLOY_PROD_BASE_URL"] + permalink,
                     'lastmod' => front_matter['lastmod'] || File.mtime(file_path).strftime('%Y-%m-%d'),
                     'changefreq' => front_matter['changefreq'] || 'weekly',
                     'priority' => front_matter['priority'] || '0.5'
                 }
-            end
+            #end
 
             # add language pages to sitemap
             # need to read the siteConfig.yml because at the moment of :after_init the site var is not known yet
@@ -69,16 +70,16 @@ Jekyll::Hooks.register :site, :post_write do |site|
 
                     if (language["lang"] != siteLangCode)
                         url = ENV["DEPLOY_PROD_BASE_URL"] + "/#{language["lang"]}" + permalink
-                        validUrl = LinkUtilities.check_link(ENV["DEPLOY_PROD_BASE_URL"] + "/#{language["lang"]}" + permalink)
-                        if (validUrl == 0 )
-                            Globals.putsColText(Globals::YELLOW,"#{numPages}. Adding to sitemap.xml: #{ENV["DEPLOY_PROD_BASE_URL"] + "/#{language["lang"]}" + permalink}")
+                        #validUrl = LinkUtilities.check_link(ENV["DEPLOY_PROD_BASE_URL"] + "/#{language["lang"]}" + permalink)
+                        #if (validUrl == 0 )
+                            #Globals.putsColText(Globals::YELLOW,"#{numPages}. Adding to sitemap.xml: #{"/#{language["lang"]}" + permalink}")
                             sitemap << {
                                 'url' => ENV["DEPLOY_PROD_BASE_URL"] + "/#{language["lang"]}" + permalink,
                                 'lastmod' => front_matter['lastmod'] || File.mtime(file_path).strftime('%Y-%m-%d'),
                                 'changefreq' => front_matter['changefreq'] || 'weekly',
                                 'priority' => front_matter['priority'] || '0.5'
                             }
-                        end
+                        #end
                     end
                 end
             end
