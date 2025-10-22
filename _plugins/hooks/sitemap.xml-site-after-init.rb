@@ -94,7 +94,9 @@ Jekyll::Hooks.register :site, :post_write do |site|
         #{sitemap.map { |page| generate_sitemap_entry(page) }.join("\n")}
         </urlset>
     XML
-    File.write(File.join(Globals::ROOT_DIR, 'sitemap.xml'), sitemap_content)
+    #File.write(File.join(Globals::ROOT_DIR, 'sitemap.xml'), sitemap_content)
+    sitemap_path = File.join(site.dest, 'sitemap.xml')
+    File.write(sitemap_path, sitemap_content)
     Globals.moveUpOneLine
     Globals.clearLine
     Globals.putsColText(Globals::PURPLE,"Generating sitemap.xml ... done (#{numPages} pages)")
