@@ -44,7 +44,7 @@ Jekyll::Hooks.register :site, :post_write do |site|
             # default language is the fallbackLang in _data/siteConfig.yml, multilang section
             validUrl = LinkUtilities.check_link(ENV["DEPLOY_PROD_BASE_URL"] + permalink)
             if (validUrl == 0)
-                Globals.putsColText(Globals::YELLOW,"#{numPages}. Adding to sitemap.xml: #{ENV["DEPLOY_PROD_BASE_URL"] + permalink}")
+                Globals.putsColText(Globals::YELLOW,"#{numPages}. Adding to sitemap.xml: #{permalink}")
                 sitemap << {
                     'url' => ENV["DEPLOY_PROD_BASE_URL"] + permalink,
                     'lastmod' => front_matter['lastmod'] || File.mtime(file_path).strftime('%Y-%m-%d'),
@@ -71,7 +71,7 @@ Jekyll::Hooks.register :site, :post_write do |site|
                         url = ENV["DEPLOY_PROD_BASE_URL"] + "/#{language["lang"]}" + permalink
                         validUrl = LinkUtilities.check_link(ENV["DEPLOY_PROD_BASE_URL"] + "/#{language["lang"]}" + permalink)
                         if (validUrl == 0 )
-                            Globals.putsColText(Globals::YELLOW,"#{numPages}. Adding to sitemap.xml: #{ENV["DEPLOY_PROD_BASE_URL"] + "/#{language["lang"]}" + permalink}")
+                            Globals.putsColText(Globals::YELLOW,"#{numPages}. Adding to sitemap.xml: #{"/#{language["lang"]}" + permalink}")
                             sitemap << {
                                 'url' => ENV["DEPLOY_PROD_BASE_URL"] + "/#{language["lang"]}" + permalink,
                                 'lastmod' => front_matter['lastmod'] || File.mtime(file_path).strftime('%Y-%m-%d'),
