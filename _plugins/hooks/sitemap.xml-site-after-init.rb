@@ -10,7 +10,7 @@ require 'dotenv'
 
 Dotenv.load
 
-Jekyll::Hooks.register :site, :after_init do |site|
+Jekyll::Hooks.register :site, :post_write do |site|
     Globals.putsColText(Globals::PURPLE,"Generating sitemap.xml ...")
     numPages = 0
     doc_contents_dir = File.join(site.source, Globals::DOCS_ROOT)
