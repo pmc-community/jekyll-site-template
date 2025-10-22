@@ -32,6 +32,7 @@ Jekyll::Hooks.register :site, :post_write do |site|
         end
 
         if front_matter != {}
+            #puts "after frontmatter check: #{file_path}"
             numPages += 1
             url = file_path.sub(site.source, '').sub(/\.md$/, '.html').sub(/\.html$/, '')
             url = url.chomp('index') if url.end_with?('index')
@@ -44,6 +45,7 @@ Jekyll::Hooks.register :site, :post_write do |site|
             url = ENV["DEPLOY_PROD_BASE_URL"] + permalink
             validUrl = LinkUtilities.check_link(url)
             if (validUrl == 0)
+                puts url
                 sitemap << {
                     'url' => ENV["DEPLOY_PROD_BASE_URL"] + permalink,
                     'lastmod' => front_matter['lastmod'] || File.mtime(file_path).strftime('%Y-%m-%d'),
