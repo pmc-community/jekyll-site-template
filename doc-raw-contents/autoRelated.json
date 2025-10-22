@@ -337,7 +337,12 @@
   },
   {
     "permalink": "/integrate/",
-    "related": []
+    "related": [
+      {
+        "title": "Config Files",
+        "permalink": "/get-started/config-files/"
+      }
+    ]
   },
   {
     "permalink": "/intro/",
