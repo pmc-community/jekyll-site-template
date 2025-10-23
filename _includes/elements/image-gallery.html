@@ -77,8 +77,8 @@
             <span class="modal-title mt-0 text-primary fw-medium" id="modal-title-{{igid}}">Modal title</span>
             <button id="imageModal-btn-close-{{igid}}" type="button" class="btn-close" data-bs-theme="dark" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body p-4 d-flex justify-content-center align-items-center">
-            <img src="" id="modalImage-{{igid}}" class="img-fluid" alt="Large view">
+        <div id="modalImage-container-{{igid}}" class="modal-body p-4 d-flex justify-content-center align-items-center">
+            <img src="" id="modalImage-{{igid}}" class="d-none" alt="Large view">
         </div>
         <div class="d-none modal-footer d-flex justify-content-start" id="modal-footer-{{igid}}">
             <a id="modal-link-{{igid}}" class="btn btn-primary">Info</a>
@@ -206,6 +206,41 @@
   requestAnimationFrame(() => {
    $mainContent__{{igid}}.attr('inert', '');
   });
+
+
+  const image = $('#modalImage-{{igid}}')[0];
+  const container = $('#modalImage-container-{{igid}}')[0];
+  
+  if (image.viewer) {
+    image.viewer.destroy();
+  }
+  
+  const viewer = new Viewer(image, {
+    inline: true,
+    container: container,  
+    toolbar: {
+      zoomIn: 1,
+      zoomOut: 1,
+      oneToOne: 1,
+      reset: 1,
+      rotateLeft: 1,
+      rotateRight: 1,
+      flipHorizontal: 1,
+      flipVertical: 1,
+    },
+    navbar: false,
+    title: false,
+    movable: true,
+    zoomable: true,
+    rotatable: true,
+    scalable: true,
+    fullscreen: false, 
+    zIndex: 9999,
+    ready() {
+     $('.viewer-fullscreen').remove();
+    },     
+  });
+
  });
 
  $modal__{{igid}}.on('show.bs.modal', function() {
@@ -218,6 +253,11 @@
 
  $modal__{{igid}}.on('hidden.bs.modal', function() {
   $mainContent__{{igid}}.removeAttr('inert');
+  const image = $('#modalImage-{{igid}}')[0];
+  if (image.viewer) {
+    image.viewer.destroy();
+    image.viewer = null;
+  }
  });
 </script>
 
