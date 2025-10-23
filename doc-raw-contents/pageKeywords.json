@@ -296,10 +296,56 @@
       "permalink": "/integrate/",
       "keywords": [
         "integrations",
-        "gtm",
+        "performance",
         "integration",
+        "mandatory",
+        "feedback"
+      ]
+    },
+    {
+      "permalink": "/integrations/ga-gtm/",
+      "keywords": [
         "event",
-        "configurations"
+        "hook",
+        "gtm",
+        "configurations",
+        "integration"
+      ]
+    },
+    {
+      "permalink": "/integrations/algolia/",
+      "keywords": [
+        "crawler",
+        "modal",
+        "title",
+        "info",
+        "close"
+      ]
+    },
+    {
+      "permalink": "/integrations/hubspot/",
+      "keywords": [
+        "hubspot",
+        "tracking",
+        "code",
+        "installed",
+        "default",
+        "integration",
+        "enabled",
+        "enable",
+        "features"
+      ]
+    },
+    {
+      "permalink": "/integrations/new-relic/",
+      "keywords": [
+        "logs",
+        "vitals",
+        "performance",
+        "modal",
+        "title",
+        "info",
+        "close"
       ]
     }
   ]

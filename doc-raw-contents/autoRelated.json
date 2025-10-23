@@ -92,12 +92,12 @@
         "permalink": "/components/card/"
       },
       {
-        "title": "Experiments",
-        "permalink": "/experiments/intro/"
-      },
-      {
         "title": "XLSX Charts",
         "permalink": "/components/xlsx-charts/"
+      },
+      {
+        "title": "Experiments",
+        "permalink": "/experiments/intro/"
       }
     ]
   },
@@ -130,8 +130,8 @@
         "permalink": "/content/ec/"
       },
       {
-        "title": "FAQ Item",
-        "permalink": "/components/qitem/"
+        "title": "Alerts",
+        "permalink": "/components/alerts/"
       }
     ]
   },
@@ -336,11 +336,79 @@
     ]
   },
   {
+    "permalink": "/integrations/algolia/",
+    "related": [
+      {
+        "title": "New Relic",
+        "permalink": "/integrations/new-relic/"
+      },
+      {
+        "title": "HubSpot",
+        "permalink": "/integrations/hubspot/"
+      }
+    ]
+  },
+  {
+    "permalink": "/integrations/ga-gtm/",
+    "related": [
+      {
+        "title": "HubSpot",
+        "permalink": "/integrations/hubspot/"
+      },
+      {
+        "title": "Integrate",
+        "permalink": "/integrate/"
+      }
+    ]
+  },
+  {
+    "permalink": "/integrations/github/",
+    "related": []
+  },
+  {
+    "permalink": "/integrations/hubspot/",
+    "related": [
+      {
+        "title": "GA/GTM",
+        "permalink": "/integrations/ga-gtm/"
+      },
+      {
+        "title": "Integrate",
+        "permalink": "/integrate/"
+      },
+      {
+        "title": "Algolia",
+        "permalink": "/integrations/algolia/"
+      }
+    ]
+  },
+  {
     "permalink": "/integrate/",
     "related": [
       {
-        "title": "Config Files",
-        "permalink": "/get-started/config-files/"
+        "title": "New Relic",
+        "permalink": "/integrations/new-relic/"
+      },
+      {
+        "title": "GA/GTM",
+        "permalink": "/integrations/ga-gtm/"
+      },
+      {
+        "title": "HubSpot",
+        "permalink": "/integrations/hubspot/"
+      }
+    ]
+  },
+  {
+    "permalink": "/integrations/new-relic/",
+    "related": [
+      {
+        "title": "Algolia",
+        "permalink": "/integrations/algolia/"
+      },
+      {
+        "title": "Integrate",
+        "permalink": "/integrate/"
       }
     ]
   },

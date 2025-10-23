@@ -134,5 +134,25 @@
     {
         "permalink": "/integrate/",
         "similarFiles": []
+    },
+    {
+        "permalink": "/integrations/ga-gtm/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/integrations/algolia/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/integrations/github/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/integrations/hubspot/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/integrations/new-relic/",
+        "similarFiles": []
     }
 ]
