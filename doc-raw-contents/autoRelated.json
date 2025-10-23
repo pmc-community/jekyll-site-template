@@ -354,12 +354,29 @@
       {
         "title": "Integrate",
         "permalink": "/integrate/"
+      },
+      {
+        "title": "GitHub",
+        "permalink": "/integrations/github/"
       }
     ]
   },
   {
     "permalink": "/integrations/github/",
-    "related": []
+    "related": [
+      {
+        "title": "Content items",
+        "permalink": "/content/content-items/"
+      },
+      {
+        "title": "Alerts",
+        "permalink": "/components/alerts/"
+      },
+      {
+        "title": "FAQ Item",
+        "permalink": "/components/qitem/"
+      }
+    ]
   },
   {
     "permalink": "/integrations/hubspot/",
@@ -367,6 +384,10 @@
       {
         "title": "GA/GTM",
         "permalink": "/integrations/ga-gtm/"
+      },
+      {
+        "title": "GitHub",
+        "permalink": "/integrations/github/"
       }
     ]
   },

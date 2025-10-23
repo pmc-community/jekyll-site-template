@@ -1067,6 +1067,10 @@
         {
           "title": "Integrate",
           "permalink": "/integrate/"
+        },
+        {
+          "title": "GitHub",
+          "permalink": "/integrations/github/"
         }
       ],
       "autoSummary": "Google analytics and google tag manager are installed by default if enabled and configured in _databuildconfig.yml. This will enable the collection of data about the site. When ga and gtm are connected, ga collects the information available when a gtm tag fires. However, the most important feature of the integration.",
@@ -1088,15 +1092,28 @@
         "code",
         "content"
       ],
-      "excerpt": "",
+      "excerpt": "content, netlify, github, repositories, deployment",
       "lastUpdate": "2025-10-23 13:35:49 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-10-23 13:35:49 +0300",
       "createTimeUTC": 1761215749,
-      "relatedPages": [],
-      "autoSummary": "CNN.com will feature iReporter photos in a weekly Travel Snapshots gallery. Please submit your best shots for next week. Visit CNN.com/Travel next Wednesday for a new gallery of snapshots.",
+      "relatedPages": [
+        {
+          "title": "Content items",
+          "permalink": "/content/content-items/"
+        },
+        {
+          "title": "Alerts",
+          "permalink": "/components/alerts/"
+        },
+        {
+          "title": "FAQ Item",
+          "permalink": "/components/qitem/"
+        }
+      ],
+      "autoSummary": "Docaroo offers out-of-the-box the possibility to integrate with github and to import content from public and private repositories. For the private repositories, content can be imported only from the repositories within the scope of the personal access token that must be configured. Content from external public github repositories can be.",
       "similarByContent": [],
-      "readingTime": 0,
+      "readingTime": 1,
       "hasDynamicContent": false,
       "parent": "Integrate"
     },
@@ -1122,6 +1139,10 @@
         {
           "title": "GA/GTM",
           "permalink": "/integrations/ga-gtm/"
+        },
+        {
+          "title": "GitHub",
+          "permalink": "/integrations/github/"
         }
       ],
       "autoSummary": "Hubspot tracking code is installed by default if hubspot integration is enabled in . This will enable the features that are related to the tracking code such as monitoring the visits on the site. The feedback form can be located on the right-bottom corner of each page.",

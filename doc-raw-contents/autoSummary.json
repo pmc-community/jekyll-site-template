@@ -118,7 +118,7 @@
         },
         {
             "permalink": "/integrations/github/",
-            "summary": "CNN.com will feature iReporter photos in a weekly Travel Snapshots gallery. Please submit your best shots for next week. Visit CNN.com/Travel next Wednesday for a new gallery of snapshots."
+            "summary": "Docaroo offers out-of-the-box the possibility to integrate with github and to import content from public and private repositories. For the private repositories, content can be imported only from the repositories within the scope of the personal access token that must be configured. Content from external public github repositories can be."
         },
         {
             "permalink": "/integrations/hubspot/",

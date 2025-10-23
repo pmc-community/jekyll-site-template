@@ -343,6 +343,16 @@
         "info",
         "close"
       ]
+    },
+    {
+      "permalink": "/integrations/github/",
+      "keywords": [
+        "content",
+        "netlify",
+        "github",
+        "repositories",
+        "deployment"
+      ]
     }
   ]
 }
