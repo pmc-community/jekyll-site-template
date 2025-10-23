@@ -1,2 +1,2 @@
 # Site pentru documentatie
-Va rugam sa consultati `Readme` disponibil in brach-ul `main` sau `gh-pages`.
+Va rugam sa consultati `Readme` disponibil in branch-ul `main` sau in branch-ul `gh-pages`.
