@@ -48,3 +48,20 @@ HubSpot forms integration is not limited to the feedback form which is provided 
 - a very easy to understand model to style and adjust the form to your needs and preferences: see `assets/js/hs/hs-feedback-form.js` and `assets/css/hs`
 - the easiest way to activate your form in a page, and to apply the custom features and styles: see `assets/js/site-page.js`, function `page__getPageFeedbackForm`
 
+When using the pattern above, embedding a HubSpot form into the documents means:
+1. design your form in HubSpot forms designer
+2. create your own style for the form, to fit the design of the site and save it in `assets/css/hs` directory
+3. add features (such as translations) as a js script and save it in `assets/js/hs` directory
+4. create the form activation function and call it where you need it
+
+{% include elements/alert.html 
+  class="primary" 
+  content="You may use the HubSpot multilanguage support for forms, but, usually, this may require to create a different instance of form for each language which leads to the necessity to monitor multiple forms submissions for consolidated submission reports. Adding custom translation features (as the feedback form has) makes that all submissions to be consolidated under a single HubSpot form, having also a language identifier."
+  title="Translations" 
+%}
+
+{% include elements/alert.html 
+  class="primary" 
+  content="There is no limitations to the number of style and js scripts to can use to customise your form. Feel free to split your code in as many files as you need, but do not forget to include them all in the form activation function. You may also use SASS/SCSS to generate your styles, but be aware that only CSS files cand be sent to the form for styling"
+  title="Style/Customisations" 
+%}

@@ -516,8 +516,8 @@
           "permalink": "/content/ec/"
         },
         {
-          "title": "Alerts",
-          "permalink": "/components/alerts/"
+          "title": "FAQ Item",
+          "permalink": "/components/qitem/"
         }
       ],
       "autoSummary": "Learn how to use docaroo components to embed rich media into your content. Currently we support design, boards (fig jam), slides and deck files. Prototypes are not supported for the moment, we are working on this.",
@@ -1113,11 +1113,11 @@
         "analytics",
         "forms"
       ],
-      "excerpt": "docaroo, object, type=, hubspot, form",
-      "lastUpdate": "2025-10-23 13:35:49 +0300",
+      "excerpt": "form, hubspot, docaroo, object, type=",
+      "lastUpdate": "2025-10-23 13:58:56 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-23 13:35:49 +0300",
-      "createTimeUTC": 1761215749,
+      "createTime": "2025-10-23 13:58:56 +0300",
+      "createTimeUTC": 1761217136,
       "relatedPages": [
         {
           "title": "GA/GTM",
@@ -1126,7 +1126,7 @@
       ],
       "autoSummary": "Hubspot tracking code is installed by default if hubspot integration is enabled in . This will enable the features that are related to the tracking code such as monitoring the visits on the site. The feedback form can be located on the right-bottom corner of each page.",
       "similarByContent": [],
-      "readingTime": 2,
+      "readingTime": 3,
       "hasDynamicContent": false,
       "parent": "Integrate"
     },
@@ -1146,10 +1146,10 @@
         "search"
       ],
       "excerpt": "integrations, performance, integration, mandatory, feedback",
-      "lastUpdate": "2025-10-23 13:35:49 +0300",
+      "lastUpdate": "2025-10-23 13:58:56 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-23 13:35:49 +0300",
-      "createTimeUTC": 1761215749,
+      "createTime": "2025-10-23 13:58:56 +0300",
+      "createTimeUTC": 1761217136,
       "relatedPages": [
         {
           "title": "New Relic",
