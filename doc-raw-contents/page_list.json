@@ -1,0 +1,702 @@
+[
+  {
+    "title": "Alerts",
+    "permalink": "/components/alerts/",
+    "categories": [
+      "Components"
+    ],
+    "tags": [
+      "embed",
+      "alert",
+      "content"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-10-05 17:01:55 +0300",
+    "lastUpdateUTC": 1759672915,
+    "createTime": "2025-10-05 17:01:55 +0300",
+    "createTimeUTC": 1759672915,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Card",
+    "permalink": "/components/card/",
+    "categories": [
+      "Components"
+    ],
+    "tags": [
+      "card",
+      "content",
+      "external",
+      "button",
+      "link",
+      "gallery"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-08-05 15:23:23 +0300",
+    "lastUpdateUTC": 1754396603,
+    "createTime": "2025-08-05 15:23:23 +0300",
+    "createTimeUTC": 1754396603,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Components",
+    "permalink": "/components/intro/",
+    "categories": [
+      "Components"
+    ],
+    "tags": [],
+    "excerpt": "",
+    "lastUpdate": "2025-09-27 18:12:23 +0300",
+    "lastUpdateUTC": 1758985943,
+    "createTime": "2025-09-27 18:12:23 +0300",
+    "createTimeUTC": 1758985943,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Downloads",
+    "permalink": "/components/download-link/",
+    "categories": [
+      "Components"
+    ],
+    "tags": [
+      "download",
+      "file",
+      "link",
+      "button"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-07-22 17:26:26 +0300",
+    "lastUpdateUTC": 1753194386,
+    "createTime": "2025-07-22 17:26:26 +0300",
+    "createTimeUTC": 1753194386,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "FAQ Item",
+    "permalink": "/components/qitem/",
+    "categories": [
+      "Components"
+    ],
+    "tags": [
+      "embed",
+      "faq",
+      "content"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-08-02 01:05:20 +0300",
+    "lastUpdateUTC": 1754085920,
+    "createTime": "2025-08-02 01:05:20 +0300",
+    "createTimeUTC": 1754085920,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Image",
+    "permalink": "/components/image/",
+    "categories": [
+      "Components"
+    ],
+    "tags": [
+      "image",
+      "component",
+      "gallery"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-08-14 18:04:50 +0300",
+    "lastUpdateUTC": 1755183890,
+    "createTime": "2025-08-14 18:04:50 +0300",
+    "createTimeUTC": 1755183890,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Link button",
+    "permalink": "/components/link-button/",
+    "categories": [
+      "Components"
+    ],
+    "tags": [
+      "button",
+      "link",
+      "anchor"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-07-31 18:50:45 +0300",
+    "lastUpdateUTC": 1753977045,
+    "createTime": "2025-07-31 18:50:45 +0300",
+    "createTimeUTC": 1753977045,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Rich media",
+    "permalink": "/components/rich-media/",
+    "categories": [
+      "Components"
+    ],
+    "tags": [
+      "embed",
+      "figma",
+      "lottie",
+      "video"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-07-21 14:31:07 +0300",
+    "lastUpdateUTC": 1753097467,
+    "createTime": "2025-07-21 14:31:07 +0300",
+    "createTimeUTC": 1753097467,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Scroll Spy & Tabs",
+    "permalink": "/components/scrollspy/",
+    "categories": [
+      "Components"
+    ],
+    "tags": [
+      "scrollspy",
+      "content",
+      "tabs"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-08-02 01:05:20 +0300",
+    "lastUpdateUTC": 1754085920,
+    "createTime": "2025-08-02 01:05:20 +0300",
+    "createTimeUTC": 1754085920,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "XLSX Charts",
+    "permalink": "/components/xlsx-charts/",
+    "categories": [
+      "Components"
+    ],
+    "tags": [
+      "table",
+      "xls",
+      "chart",
+      "office"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-08-11 13:46:56 +0300",
+    "lastUpdateUTC": 1754909216,
+    "createTime": "2025-08-11 13:46:56 +0300",
+    "createTimeUTC": 1754909216,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "XLSX Tables",
+    "permalink": "/components/xlsx-tables/",
+    "categories": [
+      "Components"
+    ],
+    "tags": [
+      "table",
+      "xls",
+      "office"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-10-01 20:46:55 +0300",
+    "lastUpdateUTC": 1759340815,
+    "createTime": "2025-10-01 20:46:55 +0300",
+    "createTimeUTC": 1759340815,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Content items",
+    "permalink": "/content/content-items/",
+    "categories": [
+      "Components"
+    ],
+    "tags": [
+      "items",
+      "content"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-10-07 18:39:32 +0300",
+    "lastUpdateUTC": 1759851572,
+    "createTime": "2025-10-07 18:39:32 +0300",
+    "createTimeUTC": 1759851572,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Content",
+    "permalink": "/content/intro/",
+    "categories": [
+      "Content"
+    ],
+    "tags": [
+      "documentation",
+      "organise docs"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-10-07 12:49:03 +0300",
+    "lastUpdateUTC": 1759830543,
+    "createTime": "2025-10-07 12:49:03 +0300",
+    "createTimeUTC": 1759830543,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "External content",
+    "permalink": "/content/ec/",
+    "categories": [
+      "Content"
+    ],
+    "tags": [
+      "embed",
+      "external",
+      "import"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-07-20 10:25:22 +0300",
+    "lastUpdateUTC": 1752996322,
+    "createTime": "2025-07-20 10:25:22 +0300",
+    "createTimeUTC": 1752996322,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": true,
+    "parent": ""
+  },
+  {
+    "title": "DOCX Summary",
+    "permalink": "/experiments/docx-summary/",
+    "categories": [
+      "Experiments",
+      "Content",
+      "Components"
+    ],
+    "tags": [
+      "docx",
+      "summary",
+      "office"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-08-17 22:52:59 +0300",
+    "lastUpdateUTC": 1755460379,
+    "createTime": "2025-08-17 22:52:59 +0300",
+    "createTimeUTC": 1755460379,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Experiments",
+    "permalink": "/experiments/intro/",
+    "categories": [
+      "Experiments",
+      "Content",
+      "Components"
+    ],
+    "tags": [
+      "pdf",
+      "docx",
+      "summary",
+      "office"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-08-11 23:46:44 +0300",
+    "lastUpdateUTC": 1754945204,
+    "createTime": "2025-08-11 23:46:44 +0300",
+    "createTimeUTC": 1754945204,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "PDF Summary",
+    "permalink": "/experiments/pdf-summary/",
+    "categories": [
+      "Experiments",
+      "Content",
+      "Components"
+    ],
+    "tags": [
+      "pdf",
+      "summary",
+      "office"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-08-17 22:52:59 +0300",
+    "lastUpdateUTC": 1755460379,
+    "createTime": "2025-08-17 22:52:59 +0300",
+    "createTimeUTC": 1755460379,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Docs root",
+    "permalink": "/get-started/doc-contents/",
+    "categories": [
+      "General",
+      "Start"
+    ],
+    "tags": [
+      "documentation",
+      "docs",
+      "collections"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-09-29 12:11:57 +0300",
+    "lastUpdateUTC": 1759137117,
+    "createTime": "2025-09-29 12:11:57 +0300",
+    "createTimeUTC": 1759137117,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": "Get started"
+  },
+  {
+    "title": "Environments",
+    "permalink": "/get-started/env/",
+    "categories": [
+      "General",
+      "Start",
+      "Site config",
+      "Environment"
+    ],
+    "tags": [
+      "start",
+      "configuration",
+      "environment",
+      "variable"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-10-05 17:18:15 +0300",
+    "lastUpdateUTC": 1759673895,
+    "createTime": "2025-10-05 17:18:15 +0300",
+    "createTimeUTC": 1759673895,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": "Get started"
+  },
+  {
+    "title": "Get started",
+    "permalink": "/get-started/",
+    "categories": [
+      "General",
+      "Start"
+    ],
+    "tags": [
+      "documentation",
+      "docs"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-09-06 16:52:21 +0300",
+    "lastUpdateUTC": 1757166741,
+    "createTime": "2025-09-06 16:52:21 +0300",
+    "createTimeUTC": 1757166741,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Algolia",
+    "permalink": "/integrations/algolia/",
+    "categories": [
+      "Integrations",
+      "Start"
+    ],
+    "tags": [
+      "integration",
+      "algolia",
+      "search"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-10-23 13:35:49 +0300",
+    "lastUpdateUTC": 1761215749,
+    "createTime": "2025-10-23 13:35:49 +0300",
+    "createTimeUTC": 1761215749,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": "Integrate"
+  },
+  {
+    "title": "GA/GTM",
+    "permalink": "/integrations/ga-gtm/",
+    "categories": [
+      "Integrations",
+      "Start"
+    ],
+    "tags": [
+      "integration",
+      "google",
+      "analytics",
+      "tag manager"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-10-23 13:35:49 +0300",
+    "lastUpdateUTC": 1761215749,
+    "createTime": "2025-10-23 13:35:49 +0300",
+    "createTimeUTC": 1761215749,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": "Integrate"
+  },
+  {
+    "title": "GitHub",
+    "permalink": "/integrations/github/",
+    "categories": [
+      "Integrations",
+      "Start"
+    ],
+    "tags": [
+      "integration",
+      "github",
+      "code",
+      "content"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-10-23 13:35:49 +0300",
+    "lastUpdateUTC": 1761215749,
+    "createTime": "2025-10-23 13:35:49 +0300",
+    "createTimeUTC": 1761215749,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": "Integrate"
+  },
+  {
+    "title": "HubSpot",
+    "permalink": "/integrations/hubspot/",
+    "categories": [
+      "Integrations",
+      "Start"
+    ],
+    "tags": [
+      "integration",
+      "hubspot",
+      "analytics",
+      "forms"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-10-23 13:35:49 +0300",
+    "lastUpdateUTC": 1761215749,
+    "createTime": "2025-10-23 13:35:49 +0300",
+    "createTimeUTC": 1761215749,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": "Integrate"
+  },
+  {
+    "title": "Integrate",
+    "permalink": "/integrate/",
+    "categories": [
+      "General",
+      "Start"
+    ],
+    "tags": [
+      "integration",
+      "log",
+      "monitor",
+      "feedback",
+      "measure",
+      "search"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-10-23 13:35:49 +0300",
+    "lastUpdateUTC": 1761215749,
+    "createTime": "2025-10-23 13:35:49 +0300",
+    "createTimeUTC": 1761215749,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "New Relic",
+    "permalink": "/integrations/new-relic/",
+    "categories": [
+      "Integrations",
+      "Start"
+    ],
+    "tags": [
+      "integration",
+      "new relic",
+      "log",
+      "monitor",
+      "measure",
+      "performance"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-10-23 13:35:49 +0300",
+    "lastUpdateUTC": 1761215749,
+    "createTime": "2025-10-23 13:35:49 +0300",
+    "createTimeUTC": 1761215749,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": "Integrate"
+  },
+  {
+    "title": "Introduction",
+    "permalink": "/intro/",
+    "categories": [
+      "General"
+    ],
+    "tags": [
+      "documentation",
+      "docs"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-07-26 17:29:03 +0300",
+    "lastUpdateUTC": 1753540143,
+    "createTime": "2025-07-26 17:29:03 +0300",
+    "createTimeUTC": 1753540143,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Config Files",
+    "permalink": "/get-started/config-files/",
+    "categories": [
+      "General",
+      "Start",
+      "Site config"
+    ],
+    "tags": [
+      "documentation",
+      "docs",
+      "collections",
+      "configuration"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-10-09 00:27:46 +0300",
+    "lastUpdateUTC": 1759958866,
+    "createTime": "2025-10-09 00:27:46 +0300",
+    "createTimeUTC": 1759958866,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": "Get started"
+  },
+  {
+    "title": "Config Options",
+    "permalink": "/get-started/config-options/",
+    "categories": [
+      "General",
+      "Start",
+      "Site config"
+    ],
+    "tags": [
+      "documentation",
+      "docs",
+      "collections",
+      "configuration",
+      "options"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-10-20 18:45:48 +0300",
+    "lastUpdateUTC": 1760975148,
+    "createTime": "2025-10-20 18:45:48 +0300",
+    "createTimeUTC": 1760975148,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": "Get started"
+  }
+]
