@@ -74,7 +74,7 @@
   <div class="modal-dialog modal-dialog-centered modal-fullscreen">
     <div class="modal-content">
         <div class="modal-header">
-            <span class="modal-title mt-0 text-primary fw-medium" id="modal-title-{{igid}}">Modal title</span>
+            <span class="modal-title mt-0 text-primary fw-medium fs-5" id="modal-title-{{igid}}">Modal title</span>
             <button id="imageModal-btn-close-{{igid}}" type="button" class="btn-close" data-bs-theme="dark" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div id="modalImage-container-{{igid}}" class="modal-body p-4 d-flex justify-content-center align-items-center">
@@ -214,7 +214,6 @@
    $mainContent__{{igid}}.attr('inert', '');
   });
 
-
   const image = $('#modalImage-{{igid}}')[0];
   const container = $('#modalImage-container-{{igid}}')[0];
   
@@ -226,14 +225,14 @@
     inline: true,
     container: container,  
     toolbar: {
-      zoomIn: 1,
-      zoomOut: 1,
-      oneToOne: 1,
-      reset: 1,
-      rotateLeft: 1,
-      rotateRight: 1,
-      flipHorizontal: 1,
-      flipVertical: 1,
+      zoomIn: { show: 1, size: 'large' },
+      zoomOut: { show: 1, size: 'large' },
+      oneToOne: { show: 1, size: 'large' },
+      reset: { show: 1, size: 'large' },
+      rotateLeft: { show: 1, size: 'large' },
+      rotateRight: { show: 1, size: 'large' },
+      flipHorizontal: { show: 1, size: 'large' },
+      flipVertical: { show: 1, size: 'large' },
     },
     navbar: false,
     title: false,
@@ -245,6 +244,7 @@
     zIndex: 9999,
     ready() {
      $('.viewer-fullscreen').remove();
+     $('.viewer-title').addClass('fs-5');
     },     
   });
 
