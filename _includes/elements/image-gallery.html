@@ -80,8 +80,9 @@
         <div id="modalImage-container-{{igid}}" class="modal-body p-4 d-flex justify-content-center align-items-center">
             <img src="" id="modalImage-{{igid}}" class="d-none" alt="Large view">
         </div>
-        <div class="d-none modal-footer d-flex justify-content-start" id="modal-footer-{{igid}}">
+        <div class="modal-footer d-flex justify-content-between" id="modal-footer-{{igid}}">
             <a id="modal-link-{{igid}}" class="btn btn-primary">Info</a>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
     </div>
   </div>
@@ -137,7 +138,6 @@
 
 <script id="script-open-img-gallery-{{igid}}">
     $('#imageModal-{{igid}}').appendTo('body');
-
     $('#image-gallery-{{igid}} img').on('click', function() {
         const isrc = $(this).attr('src');
         const ialt = $(this).attr('alt');
@@ -162,6 +162,10 @@
     });
 
     $('#imageModal-{{igid}}').on('show.bs.modal', function() {
+        setTimeout(() => {
+         $('#modal-link-{{igid}}').removeClass('d-none');
+         $('#modal-footer-{{igid}}').addClass('justify-content-between').removeClass('justify-content-end');
+        }, 0);
         const link = $('#imageModal-{{igid}}').attr('img-link');
         const newTab = $('#imageModal-{{igid}}').attr('img-newTab');
         const target = newTab !== 'false'
@@ -170,10 +174,13 @@
         if (link !== '') {
             $('#modal-footer-{{igid}}').find('a').attr('href', link);
             $('#modal-footer-{{igid}}').find('a').attr('target', target);
-            $('#modal-footer-{{igid}}').removeClass('d-none');
+            
         }
         else {
-            $('#modal-footer-{{igid}}').addClass('d-none');
+            setTimeout (() => {
+             $('#modal-link-{{igid}}').addClass('d-none');
+             $('#modal-footer-{{igid}}').removeClass('justify-content-between').addClass('justify-content-end');
+            }, 0);
         }
     });
 

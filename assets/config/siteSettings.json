@@ -428,7 +428,7 @@
         "component",
         "gallery"
       ],
-      "excerpt": "images, image, path, gallery, folder",
+      "excerpt": "component, placing, images, content, captions, credits, copyright, designed",
       "lastUpdate": "2025-08-14 18:04:50 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-08-14 18:04:50 +0300",
@@ -439,12 +439,12 @@
           "permalink": "/components/card/"
         },
         {
-          "title": "XLSX Charts",
-          "permalink": "/components/xlsx-charts/"
+          "title": "Experiments",
+          "permalink": "/experiments/intro/"
         },
         {
-          "title": "Scroll Spy & Tabs",
-          "permalink": "/components/scrollspy/"
+          "title": "XLSX Charts",
+          "permalink": "/components/xlsx-charts/"
         }
       ],
       "autoSummary": "This component allows placing images into your content. Images can have captions (lets say you need to show some credits or copyright information) or not. The component is designed to work with responsive images.",
@@ -589,8 +589,8 @@
           "permalink": "/components/scrollspy/"
         },
         {
-          "title": "PDF Summary",
-          "permalink": "/experiments/pdf-summary/"
+          "title": "Experiments",
+          "permalink": "/experiments/intro/"
         }
       ],
       "autoSummary": "This component allows importing excel charts into your documents. Combined with component, this one provides the full support to share structured data in a professional way. Currently we support only: line charts column and bar charts pie and doughnut charts we do not support importing the colors you assign to.",
@@ -793,12 +793,12 @@
       "createTimeUTC": 1755460379,
       "relatedPages": [
         {
-          "title": "Experiments",
-          "permalink": "/experiments/intro/"
-        },
-        {
           "title": "PDF Summary",
           "permalink": "/experiments/pdf-summary/"
+        },
+        {
+          "title": "Experiments",
+          "permalink": "/experiments/intro/"
         },
         {
           "title": "XLSX Charts",
@@ -837,12 +837,12 @@
       "createTimeUTC": 1754945204,
       "relatedPages": [
         {
-          "title": "DOCX Summary",
-          "permalink": "/experiments/docx-summary/"
-        },
-        {
           "title": "PDF Summary",
           "permalink": "/experiments/pdf-summary/"
+        },
+        {
+          "title": "DOCX Summary",
+          "permalink": "/experiments/docx-summary/"
         },
         {
           "title": "XLSX Charts",
@@ -868,19 +868,19 @@
         "summary",
         "office"
       ],
-      "excerpt": "summary, component, models, huggingface, corrections",
+      "excerpt": "component, helps, enhancing, content, auto, generated, summaries, pdf, files, combined",
       "lastUpdate": "2025-08-17 22:52:59 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-08-17 22:52:59 +0300",
       "createTimeUTC": 1755460379,
       "relatedPages": [
         {
-          "title": "Experiments",
-          "permalink": "/experiments/intro/"
-        },
-        {
           "title": "DOCX Summary",
           "permalink": "/experiments/docx-summary/"
+        },
+        {
+          "title": "Experiments",
+          "permalink": "/experiments/intro/"
         },
         {
           "title": "XLSX Charts",

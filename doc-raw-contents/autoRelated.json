@@ -92,12 +92,12 @@
         "permalink": "/components/card/"
       },
       {
-        "title": "XLSX Charts",
-        "permalink": "/components/xlsx-charts/"
+        "title": "Experiments",
+        "permalink": "/experiments/intro/"
       },
       {
-        "title": "Scroll Spy & Tabs",
-        "permalink": "/components/scrollspy/"
+        "title": "XLSX Charts",
+        "permalink": "/components/xlsx-charts/"
       }
     ]
   },
@@ -164,8 +164,8 @@
         "permalink": "/components/scrollspy/"
       },
       {
-        "title": "PDF Summary",
-        "permalink": "/experiments/pdf-summary/"
+        "title": "Experiments",
+        "permalink": "/experiments/intro/"
       }
     ]
   },
@@ -241,12 +241,12 @@
     "permalink": "/experiments/docx-summary/",
     "related": [
       {
-        "title": "Experiments",
-        "permalink": "/experiments/intro/"
-      },
-      {
         "title": "PDF Summary",
         "permalink": "/experiments/pdf-summary/"
+      },
+      {
+        "title": "Experiments",
+        "permalink": "/experiments/intro/"
       },
       {
         "title": "XLSX Charts",
@@ -258,12 +258,12 @@
     "permalink": "/experiments/intro/",
     "related": [
       {
-        "title": "DOCX Summary",
-        "permalink": "/experiments/docx-summary/"
-      },
-      {
         "title": "PDF Summary",
         "permalink": "/experiments/pdf-summary/"
+      },
+      {
+        "title": "DOCX Summary",
+        "permalink": "/experiments/docx-summary/"
       },
       {
         "title": "XLSX Charts",
@@ -275,12 +275,12 @@
     "permalink": "/experiments/pdf-summary/",
     "related": [
       {
-        "title": "Experiments",
-        "permalink": "/experiments/intro/"
-      },
-      {
         "title": "DOCX Summary",
         "permalink": "/experiments/docx-summary/"
+      },
+      {
+        "title": "Experiments",
+        "permalink": "/experiments/intro/"
       },
       {
         "title": "XLSX Charts",

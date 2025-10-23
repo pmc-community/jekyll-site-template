@@ -162,11 +162,14 @@
     {
       "permalink": "/components/image/",
       "keywords": [
+        "component",
+        "placing",
         "images",
-        "image",
-        "path",
-        "gallery",
-        "folder"
+        "content",
+        "captions",
+        "credits",
+        "copyright",
+        "designed"
       ]
     },
     {
@@ -207,11 +210,16 @@
     {
       "permalink": "/experiments/pdf-summary/",
       "keywords": [
-        "summary",
         "component",
-        "models",
-        "huggingface",
-        "corrections"
+        "helps",
+        "enhancing",
+        "content",
+        "auto",
+        "generated",
+        "summaries",
+        "pdf",
+        "files",
+        "combined"
       ]
     },
     {
