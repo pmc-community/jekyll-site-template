@@ -349,9 +349,9 @@
       "keywords": [
         "content",
         "netlify",
+        "deployment",
         "github",
-        "repositories",
-        "deployment"
+        "repositories"
       ]
     }
   ]
