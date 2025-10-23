@@ -24,7 +24,7 @@ However, it is not mandatory to use the integrations, thus each integration can 
 
 {% include elements/xlsx-to-html-table.html 
     file="integrations.xlsx" 
-    range="B2:H8" 
+    range="B2:I8" 
     sheet="integrations"
     source=page.path
     simple="true"

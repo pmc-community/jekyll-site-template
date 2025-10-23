@@ -1025,18 +1025,14 @@
         "search"
       ],
       "excerpt": "crawler, modal, title, info, close",
-      "lastUpdate": "2025-10-23 13:21:52 +0300",
+      "lastUpdate": "2025-10-23 13:35:49 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-23 13:21:52 +0300",
-      "createTimeUTC": 1761214912,
+      "createTime": "2025-10-23 13:35:49 +0300",
+      "createTimeUTC": 1761215749,
       "relatedPages": [
         {
           "title": "New Relic",
           "permalink": "/integrations/new-relic/"
-        },
-        {
-          "title": "HubSpot",
-          "permalink": "/integrations/hubspot/"
         }
       ],
       "autoSummary": "Index crawler crawler test modal title info close. Index crawler crawller test Modal title Info close.",
@@ -1059,10 +1055,10 @@
         "tag manager"
       ],
       "excerpt": "event, hook, gtm, configurations, integration",
-      "lastUpdate": "2025-10-23 13:14:24 +0300",
+      "lastUpdate": "2025-10-23 13:35:49 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-23 13:14:24 +0300",
-      "createTimeUTC": 1761214464,
+      "createTime": "2025-10-23 13:35:49 +0300",
+      "createTimeUTC": 1761215749,
       "relatedPages": [
         {
           "title": "HubSpot",
@@ -1093,10 +1089,10 @@
         "content"
       ],
       "excerpt": "",
-      "lastUpdate": "2025-10-23 13:26:28 +0300",
+      "lastUpdate": "2025-10-23 13:35:49 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-23 13:26:28 +0300",
-      "createTimeUTC": 1761215188,
+      "createTime": "2025-10-23 13:35:49 +0300",
+      "createTimeUTC": 1761215749,
       "relatedPages": [],
       "autoSummary": "CNN.com will feature iReporter photos in a weekly Travel Snapshots gallery. Please submit your best shots for next week. Visit CNN.com/Travel next Wednesday for a new gallery of snapshots.",
       "similarByContent": [],
@@ -1117,23 +1113,15 @@
         "analytics",
         "forms"
       ],
-      "excerpt": "hubspot, tracking, code, installed, default, integration, enabled, enable, features",
-      "lastUpdate": "2025-10-23 13:21:14 +0300",
+      "excerpt": "docaroo, object, type=, hubspot, form",
+      "lastUpdate": "2025-10-23 13:35:49 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-23 13:21:14 +0300",
-      "createTimeUTC": 1761214874,
+      "createTime": "2025-10-23 13:35:49 +0300",
+      "createTimeUTC": 1761215749,
       "relatedPages": [
         {
           "title": "GA/GTM",
           "permalink": "/integrations/ga-gtm/"
-        },
-        {
-          "title": "Integrate",
-          "permalink": "/integrate/"
-        },
-        {
-          "title": "Algolia",
-          "permalink": "/integrations/algolia/"
         }
       ],
       "autoSummary": "Hubspot tracking code is installed by default if hubspot integration is enabled in . This will enable the features that are related to the tracking code such as monitoring the visits on the site. The feedback form can be located on the right-bottom corner of each page.",
@@ -1158,10 +1146,10 @@
         "search"
       ],
       "excerpt": "integrations, performance, integration, mandatory, feedback",
-      "lastUpdate": "2025-10-23 00:44:48 +0300",
+      "lastUpdate": "2025-10-23 13:35:49 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-23 00:44:48 +0300",
-      "createTimeUTC": 1761169488,
+      "createTime": "2025-10-23 13:35:49 +0300",
+      "createTimeUTC": 1761215749,
       "relatedPages": [
         {
           "title": "New Relic",
@@ -1170,10 +1158,6 @@
         {
           "title": "GA/GTM",
           "permalink": "/integrations/ga-gtm/"
-        },
-        {
-          "title": "HubSpot",
-          "permalink": "/integrations/hubspot/"
         }
       ],
       "autoSummary": "Docaroo provides out-of-the-box a series of integrations. The purpose of the integrations is to make available in a no-code or low-code mode some important features.",
@@ -1198,10 +1182,10 @@
         "performance"
       ],
       "excerpt": "logs, vitals, performance, modal, title, info, close",
-      "lastUpdate": "2025-10-23 13:23:38 +0300",
+      "lastUpdate": "2025-10-23 13:35:49 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-23 13:23:38 +0300",
-      "createTimeUTC": 1761215018,
+      "createTime": "2025-10-23 13:35:49 +0300",
+      "createTimeUTC": 1761215749,
       "relatedPages": [
         {
           "title": "Algolia",

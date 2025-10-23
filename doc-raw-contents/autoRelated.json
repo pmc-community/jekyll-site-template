@@ -341,10 +341,6 @@
       {
         "title": "New Relic",
         "permalink": "/integrations/new-relic/"
-      },
-      {
-        "title": "HubSpot",
-        "permalink": "/integrations/hubspot/"
       }
     ]
   },
@@ -371,14 +367,6 @@
       {
         "title": "GA/GTM",
         "permalink": "/integrations/ga-gtm/"
-      },
-      {
-        "title": "Integrate",
-        "permalink": "/integrate/"
-      },
-      {
-        "title": "Algolia",
-        "permalink": "/integrations/algolia/"
       }
     ]
   },
@@ -392,10 +380,6 @@
       {
         "title": "GA/GTM",
         "permalink": "/integrations/ga-gtm/"
-      },
-      {
-        "title": "HubSpot",
-        "permalink": "/integrations/hubspot/"
       }
     ]
   },

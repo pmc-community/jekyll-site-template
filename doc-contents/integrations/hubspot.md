@@ -41,3 +41,10 @@ The second out-of-the-box HubSpot integration feature offered by Docaroo is the 
   hg="400px"
   oneRow="all" 
 %}
+
+# Advanced
+HubSpot forms integration is not limited to the feedback form which is provided out-of-the-box and in a no-code way. Docaroo offers the possibility to embed any HubSpot form created in the HubSpot forms designer, but htis requires a bit more advanced coding skills. Even in this case, it is not necessary to start everything from scratch, Docaroo assists you with:
+- a framework to embed any form: see `assets/js/hs-integrate.js`
+- a very easy to understand model to style and adjust the form to your needs and preferences: see `assets/js/hs/hs-feedback-form.js` and `assets/css/hs`
+- the easiest way to activate your form in a page, and to apply the custom features and styles: see `assets/js/site-page.js`, function `page__getPageFeedbackForm`
+
