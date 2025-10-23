@@ -22,6 +22,14 @@ We provide a hooking mechanism (normally used for logging or for custom GTM tags
 
 We provide dedicated CI/CD actions to deploy your site (for GitHub pages and Netlify). There are some limitations for multilanguage as will be further described. However, the build process may consume some time and resources because it self-generates some information by running some models. For this reason, we highly recommend to build locally your site (including each language version) and then run the deployment action(s) if you use a cloud environment such as GitHub pages. The deployment process is made in such way that it does not run complex tasks if the conntent was not changed from the previous deployment. Otherwise, the deployment process may take long, consuming your build minutes or your pay-as-you-go build time/resources. Nevertheless, the deployment actions are able build the site directly on the deployment environment.
 
+# Integrations
+We provide out-of-the-box a series of integrations that will enhance the functionality of your documentation site. Integrations are available as `no-code` or `low-code` in most of the cases. However, through the extensions possibilities offered by Docaroo, `advanced` integrations requiring development skills are also available. Among the most important integrations we offer are:
+- Google Analytics/Google Tag Manager
+- HubSpot
+- New Relic
+- Algolia (DocSearch) and Algolia search
+- Github 
+
 # Multilanguage
 This documentation site template fully supports multilanguage when deployed with GitHub pages. Each language version must reside in its own branch named with the language code. The GitHub deployment action (currently configured to be manually triggered, but you can easily make it automatically triggered and/or include it in larger CI/CD piplelines) will deploy all language versions, there is nothing expected form your side in order to achieve this (of course, except for actually creating each language version and put it in a separate branch).
 For other deployments (such as Netlify or custom deployment), you have to handle on your own the multilanguage deployment. Wehat we fully support is building the site in the language you configure to be built. Then, deployment of each language version is your task, based on the specifics of your deployment environment.
