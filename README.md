@@ -17,8 +17,8 @@ Other integrations that can be configured (or disabled):
 We provide a hooking mechanism (normally used for logging or for custom GTM tags). In any moment, for any executed function, you can extend the functionality as needed. Just hook to the function you want, add extra args to it (if applicable) and extend the functionality.
 
 # Deployment
-- from main: deployed with Netlify on [dst.innohub.space](https://dst.innohub.space){: target="_blank" }. 
-- from gh-pages: deployed to GitHub pages on [docaroo.innohub.space](https://docaroo.innohub.space){: target="_blank" }.
+- from main: deployed with Netlify on [dst.innohub.space](https://dst.innohub.space). 
+- from gh-pages: deployed to GitHub pages on [docaroo.innohub.space](https://docaroo.innohub.space).
 
 We provide dedicated CI/CD actions to deploy your site (for GitHub pages and Netlify). There are some limitations for multilanguage as will be further described. However, the build process may consume some time and resources because it self-generates some information by running some models. For this reason, we highly recommend to build locally your site (including each language version) and then run the deployment action(s) if you use a cloud environment such as GitHub pages. The deployment process is made in such way that it does not run complex tasks if the conntent was not changed from the previous deployment. Otherwise, the deployment process may take long, consuming your build minutes or your pay-as-you-go build time/resources. Nevertheless, the deployment actions are able build the site directly on the deployment environment.
 
