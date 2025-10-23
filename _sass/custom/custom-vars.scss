@@ -48,15 +48,15 @@ $c-inherit: $gen-inherit;
 $c-bootstrap-sec-opacity-25: rgba(108, 117, 125, 0.25);
 
 // typography
-$siteFontFamily: 'Poppins';
+$siteFontFamily: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Segoe UI Emoji";
 $textColor: $c-black;
 $siteTitleFontWeight: 600;
 $f-light:300;
 $f-thin:400;
 $f-medium:500;
 $f-semiBold: 600;
-$fs-body:15px;
-$fs-small: 14px;
+$fs-body:16px;
+$fs-small: 16px;
 $fs-0-90: 0.9rem;
 $fs-btn-sm: 0.875rem;
 $fs-0-75: 0.75rem;

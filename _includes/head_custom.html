@@ -6,21 +6,26 @@
     it doesn't affect functionality, but doesn't look good to have errors in console
     */
     (function() {
-    const scriptDesc = Object.getOwnPropertyDescriptor(HTMLScriptElement.prototype, 'src');
-    Object.defineProperty(HTMLScriptElement.prototype, 'src', {
-        set: function(value) {
-        if (value && value.includes('js.hsleadflows.net/leadflows.js')) {
-            /*console.log('Blocked retired HubSpot leadflows.js');*/
-            return;
-        }
-        return scriptDesc.set.call(this, value);
-        },
-        get: function() {
-        return scriptDesc.get.call(this);
-        }
-    });
+        const scriptDesc = Object.getOwnPropertyDescriptor(HTMLScriptElement.prototype, 'src');
+        Object.defineProperty(HTMLScriptElement.prototype, 'src', {
+            set: function(value) {
+            const srcValue = (typeof value === 'string') ? value : String(value || '');
+
+            if (srcValue.includes('js.hsleadflows.net/leadflows.js')) {
+                /*console.log('Blocked retired HubSpot leadflows.js');*/
+                return;
+            }
+
+            return scriptDesc.set.call(this, value);
+            },
+            get: function() {
+            return scriptDesc.get.call(this);
+            }
+        });
     })();
 </script>
+
+<link href="{{site.data.siteConfig.scripts.fontFamily }}" rel="stylesheet">
 
 {% assign dark = site.data["siteConfig"].colSchemaCorrections.backgroundColorOnElementsAffected.dark %}
 {% assign light = site.data["siteConfig"].colSchemaCorrections.backgroundColorOnElementsAffected.light %}
@@ -45,28 +50,24 @@
 </style>
 
 <script type="application/javascript">
-    let userIP = undefined;
-    const getIP = (json) => {
-        userIP = json.ip;
-    }
+  let userIP;
+  function getIP(json) {
+    userIP = json.ip;
+  }
 </script>
-<link href="https://api.ipify.org?format=jsonp&callback=getIP" rel="preload" as="script">
 <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 
 <!-- New Relic if applicable -->
 {% include siteIncludes/partials/new-relic.html %}
 
 <!-- preconnect some things to speed up loading -->
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 <link rel="preconnect" href="https://cdn.datatables.net" crossorigin>
 <link rel="preconnect" href="https://cdn.ckeditor.com" crossorigin>
 <link rel="preconnect" href="https://buttons.github.io" crossorigin>
-<link rel="preconnect" href="https://js.hs-scripts.com" crossorigin>
-<link rel="preconnect" href="https://js.hsforms.net" crossorigin>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-<link rel="preconnect" href="https://static.hsappstatic.net" crossorigin>
 
 {% assign cloudflare = site.data.buildConfig.cloudflare.enabled %}
 {% if cloudflare %}
@@ -78,14 +79,6 @@
 {% else %}
     {% assign workerBase = "" %}
     {% assign sB = "" %}
-{% endif %}
-
-{% if site.data.siteConfig.scripts.fontFamily and site.data.siteConfig.scripts.fontFamily != "" %}
-    {% if cloudflare %}
-        <link href="{{workerBase}}{{site.data.siteConfig.scripts.fontFamily | url_encode}}" rel="preload" as="style" onload="this.rel='stylesheet'">
-    {% else %}
-        <link href="{{site.data.siteConfig.scripts.fontFamily }}" rel="preload" as="style" onload="this.rel='stylesheet'">
-    {% endif %}
 {% endif %}
 
 <!-- make settings available asap -->
@@ -293,6 +286,12 @@
 
 {% if page_ok %}
     {% if site.data.siteConfig.hsIntegration.enabled %}
+        <link rel="preconnect" href="https://js.hs-scripts.com" crossorigin>
+        <link rel="preconnect" href="https://js.hsforms.net" crossorigin>
+        <link rel="preconnect" href="https://forms-{{site.data.buildConfig.hubspot.region | strip}}.hsforms.net" crossorigin>
+        <link rel="preconnect" href="https://static.hsappstatic.net" crossorigin>
+
+        {% comment %} HubSpot tracking code {% endcomment %}
         <link 
             href="//js.hs-scripts.com/{{site.data.hs_portal_id}}.js" 
             rel="preload" 
@@ -303,6 +302,8 @@
             async defer 
             src="//js.hs-scripts.com/{{site.data.hs_portal_id}}.js">
         </script>
+
+        {% comment %} HubSpot forms {% endcomment %}
         <link 
             href="//js.hsforms.net/forms/embed/v2.js" 
             rel="preload" 
@@ -369,6 +370,23 @@
     <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.24.0/dist/algoliasearch.umd.js"></script>
     
 {% endif %}
+
+ <!-- Viewer.js -->
+<link rel="preload" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.6/viewer.min.css" 
+    as="style" 
+    onload="this.rel='stylesheet'">
+<noscript>
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.6/viewer.min.css">
+</noscript>
+
+<link 
+    href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.6/viewer.min.js" 
+    rel="preload" 
+    as="script">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.6/viewer.min.js" defer async></script>
     
 <!-- site js assets -->
 {% capture faq %}

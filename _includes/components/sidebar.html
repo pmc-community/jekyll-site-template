@@ -21,8 +21,8 @@
 
   <div class="side-bar">
     <div class="site-header px-3 px-md-5" role="banner">
-      <a href="/"><img class = "site_logo" width="25px" height="25px" src="{{lang_prefix}}/assets/img/logo-s.webp" alt="{{site.title}} by PMC"/></a>
-      <a href="{{ '/' | relative_url }}" class="site-title lh-tight fs-6 fw-medium">{% include title.html %}</a>
+      <a href="/"><img class = "site_logo" width="25px" height="25px" src="{{lang_prefix}}/assets/img/{{site.data.siteConfig.layouts.headerArea.siteLogo | strip}}" alt="{{site.title}} by PMC" loading="lazy"/></a>
+      <a href="{{ '/' | relative_url }}" class="site-title lh-tight fs-4 fw-medium">{% include title.html %}</a>
       <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
         <svg viewBox="0 0 24 24" class="icon site-button-icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
       </button>
@@ -40,7 +40,7 @@
     {% else %}
       <footer class="site-footer">
         {% for footerRow in site.data["buildConfig"]["siteFooter"]["rows"] %}
-          {{footerRow["content"]}}
+          <div class="footer_row px-2 px-md-0">{{footerRow["content"]}}</div>
         {% endfor %}
       </footer>
     {% endif %}

@@ -70,7 +70,8 @@
     },
     "layouts": {
       "headerArea": {
-        "mobileMenuButton": "#menu-button"
+        "mobileMenuButton": "#menu-button",
+        "siteLogo": "logo-s.webp"
       },
       "contentArea": {
         "mainContainer": ".main-content-wrap",
@@ -427,7 +428,7 @@
         "component",
         "gallery"
       ],
-      "excerpt": "images, image, path, gallery, folder",
+      "excerpt": "component, placing, images, content, captions, credits, copyright, designed",
       "lastUpdate": "2025-08-14 18:04:50 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-08-14 18:04:50 +0300",
@@ -442,8 +443,8 @@
           "permalink": "/components/xlsx-charts/"
         },
         {
-          "title": "Scroll Spy & Tabs",
-          "permalink": "/components/scrollspy/"
+          "title": "Experiments",
+          "permalink": "/experiments/intro/"
         }
       ],
       "autoSummary": "This component allows placing images into your content. Images can have captions (lets say you need to show some credits or copyright information) or not. The component is designed to work with responsive images.",
@@ -588,8 +589,8 @@
           "permalink": "/components/scrollspy/"
         },
         {
-          "title": "PDF Summary",
-          "permalink": "/experiments/pdf-summary/"
+          "title": "Experiments",
+          "permalink": "/experiments/intro/"
         }
       ],
       "autoSummary": "This component allows importing excel charts into your documents. Combined with component, this one provides the full support to share structured data in a professional way. Currently we support only: line charts column and bar charts pie and doughnut charts we do not support importing the colors you assign to.",
@@ -792,12 +793,12 @@
       "createTimeUTC": 1755460379,
       "relatedPages": [
         {
-          "title": "Experiments",
-          "permalink": "/experiments/intro/"
-        },
-        {
           "title": "PDF Summary",
           "permalink": "/experiments/pdf-summary/"
+        },
+        {
+          "title": "Experiments",
+          "permalink": "/experiments/intro/"
         },
         {
           "title": "XLSX Charts",
@@ -836,12 +837,12 @@
       "createTimeUTC": 1754945204,
       "relatedPages": [
         {
-          "title": "DOCX Summary",
-          "permalink": "/experiments/docx-summary/"
-        },
-        {
           "title": "PDF Summary",
           "permalink": "/experiments/pdf-summary/"
+        },
+        {
+          "title": "DOCX Summary",
+          "permalink": "/experiments/docx-summary/"
         },
         {
           "title": "XLSX Charts",
@@ -867,19 +868,19 @@
         "summary",
         "office"
       ],
-      "excerpt": "summary, component, models, huggingface, corrections",
+      "excerpt": "component, helps, enhancing, content, auto, generated, summaries, pdf, files, combined",
       "lastUpdate": "2025-08-17 22:52:59 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-08-17 22:52:59 +0300",
       "createTimeUTC": 1755460379,
       "relatedPages": [
         {
-          "title": "Experiments",
-          "permalink": "/experiments/intro/"
-        },
-        {
           "title": "DOCX Summary",
           "permalink": "/experiments/docx-summary/"
+        },
+        {
+          "title": "Experiments",
+          "permalink": "/experiments/intro/"
         },
         {
           "title": "XLSX Charts",
@@ -1012,6 +1013,145 @@
       "parent": ""
     },
     {
+      "title": "Algolia",
+      "permalink": "/integrations/algolia/",
+      "categories": [
+        "Integrations",
+        "Start"
+      ],
+      "tags": [
+        "integration",
+        "algolia",
+        "search"
+      ],
+      "excerpt": "crawler, modal, title, info, close",
+      "lastUpdate": "2025-10-23 13:35:49 +0300",
+      "lastUpdateUTC": 0,
+      "createTime": "2025-10-23 13:35:49 +0300",
+      "createTimeUTC": 1761215749,
+      "relatedPages": [
+        {
+          "title": "New Relic",
+          "permalink": "/integrations/new-relic/"
+        }
+      ],
+      "autoSummary": "Index crawler crawler test modal title info close. Index crawler crawller test Modal title Info close.",
+      "similarByContent": [],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": "Integrate"
+    },
+    {
+      "title": "GA/GTM",
+      "permalink": "/integrations/ga-gtm/",
+      "categories": [
+        "Integrations",
+        "Start"
+      ],
+      "tags": [
+        "integration",
+        "google",
+        "analytics",
+        "tag manager"
+      ],
+      "excerpt": "event, hook, gtm, configurations, integration",
+      "lastUpdate": "2025-10-23 13:35:49 +0300",
+      "lastUpdateUTC": 0,
+      "createTime": "2025-10-23 13:35:49 +0300",
+      "createTimeUTC": 1761215749,
+      "relatedPages": [
+        {
+          "title": "HubSpot",
+          "permalink": "/integrations/hubspot/"
+        },
+        {
+          "title": "Integrate",
+          "permalink": "/integrate/"
+        },
+        {
+          "title": "GitHub",
+          "permalink": "/integrations/github/"
+        }
+      ],
+      "autoSummary": "Google analytics and google tag manager are installed by default if enabled and configured in _databuildconfig.yml. This will enable the collection of data about the site. When ga and gtm are connected, ga collects the information available when a gtm tag fires. However, the most important feature of the integration.",
+      "similarByContent": [],
+      "readingTime": 2,
+      "hasDynamicContent": false,
+      "parent": "Integrate"
+    },
+    {
+      "title": "GitHub",
+      "permalink": "/integrations/github/",
+      "categories": [
+        "Integrations",
+        "Start"
+      ],
+      "tags": [
+        "integration",
+        "github",
+        "code",
+        "content"
+      ],
+      "excerpt": "content, netlify, deployment, github, repositories",
+      "lastUpdate": "2025-10-23 20:50:58 +0300",
+      "lastUpdateUTC": 0,
+      "createTime": "2025-10-23 20:50:58 +0300",
+      "createTimeUTC": 1761241858,
+      "relatedPages": [
+        {
+          "title": "Content items",
+          "permalink": "/content/content-items/"
+        },
+        {
+          "title": "Alerts",
+          "permalink": "/components/alerts/"
+        },
+        {
+          "title": "FAQ Item",
+          "permalink": "/components/qitem/"
+        }
+      ],
+      "autoSummary": "Docaroo offers out-of-the-box the possibility to integrate with github and to import content from public and private repositories. For the private repositories, content can be imported only from the repositories within the scope of the personal access token that must be configured. Content from external public github repositories can be.",
+      "similarByContent": [],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": "Integrate"
+    },
+    {
+      "title": "HubSpot",
+      "permalink": "/integrations/hubspot/",
+      "categories": [
+        "Integrations",
+        "Start"
+      ],
+      "tags": [
+        "integration",
+        "hubspot",
+        "analytics",
+        "forms"
+      ],
+      "excerpt": "form, hubspot, docaroo, object, type=",
+      "lastUpdate": "2025-10-23 14:16:11 +0300",
+      "lastUpdateUTC": 0,
+      "createTime": "2025-10-23 14:16:11 +0300",
+      "createTimeUTC": 1761218171,
+      "relatedPages": [
+        {
+          "title": "GA/GTM",
+          "permalink": "/integrations/ga-gtm/"
+        },
+        {
+          "title": "GitHub",
+          "permalink": "/integrations/github/"
+        }
+      ],
+      "autoSummary": "Hubspot tracking code is installed by default if hubspot integration is enabled in . This will enable the features that are related to the tracking code such as monitoring the visits on the site. The feedback form can be located on the right-bottom corner of each page.",
+      "similarByContent": [],
+      "readingTime": 3,
+      "hasDynamicContent": false,
+      "parent": "Integrate"
+    },
+    {
       "title": "Integrate",
       "permalink": "/integrate/",
       "categories": [
@@ -1019,24 +1159,69 @@
         "Start"
       ],
       "tags": [
-        "integrations",
+        "integration",
         "log",
         "monitor",
         "feedback",
         "measure",
         "search"
       ],
-      "excerpt": "integrations, feedback, performance, integration, mandatory",
-      "lastUpdate": "2025-10-07 12:47:55 +0300",
+      "excerpt": "integrations, performance, integration, mandatory, feedback",
+      "lastUpdate": "2025-10-23 13:58:56 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-07 12:47:55 +0300",
-      "createTimeUTC": 1759830475,
-      "relatedPages": [],
-      "autoSummary": "Docaroo provides out-of-the-box a series of integrations. The purpose of the integrations is to make available in a no-code or low-code mode some important features. Each integration can be independently enabled and configured or disabled.",
+      "createTime": "2025-10-23 13:58:56 +0300",
+      "createTimeUTC": 1761217136,
+      "relatedPages": [
+        {
+          "title": "New Relic",
+          "permalink": "/integrations/new-relic/"
+        },
+        {
+          "title": "GA/GTM",
+          "permalink": "/integrations/ga-gtm/"
+        }
+      ],
+      "autoSummary": "Docaroo provides out-of-the-box a series of integrations. The purpose of the integrations is to make available in a no-code or low-code mode some important features.",
       "similarByContent": [],
       "readingTime": 1,
       "hasDynamicContent": false,
       "parent": ""
+    },
+    {
+      "title": "New Relic",
+      "permalink": "/integrations/new-relic/",
+      "categories": [
+        "Integrations",
+        "Start"
+      ],
+      "tags": [
+        "integration",
+        "new relic",
+        "log",
+        "monitor",
+        "measure",
+        "performance"
+      ],
+      "excerpt": "logs, vitals, performance, modal, title, info, close",
+      "lastUpdate": "2025-10-23 13:35:49 +0300",
+      "lastUpdateUTC": 0,
+      "createTime": "2025-10-23 13:35:49 +0300",
+      "createTimeUTC": 1761215749,
+      "relatedPages": [
+        {
+          "title": "Algolia",
+          "permalink": "/integrations/algolia/"
+        },
+        {
+          "title": "Integrate",
+          "permalink": "/integrate/"
+        }
+      ],
+      "autoSummary": "Logs.logs web vitals performance modal title info close. Logs.Logs web.vitals performance Modal Title info.",
+      "similarByContent": [],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": "Integrate"
     },
     {
       "title": "Introduction",
@@ -1137,10 +1322,10 @@
         "options"
       ],
       "excerpt": "functionalities, personalisation, appearance, options, _config.yml",
-      "lastUpdate": "2025-10-05 00:44:28 +0300",
+      "lastUpdate": "2025-10-20 18:45:48 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-05 00:44:28 +0300",
-      "createTimeUTC": 1759614268,
+      "createTime": "2025-10-20 18:45:48 +0300",
+      "createTimeUTC": 1760975148,
       "relatedPages": [
         {
           "title": "Config Files",
@@ -1164,10 +1349,13 @@
   ],
   "tagList": [
     "alert",
+    "algolia",
+    "analytics",
     "anchor",
     "button",
     "card",
     "chart",
+    "code",
     "collections",
     "component",
     "configuration",
@@ -1183,26 +1371,33 @@
     "feedback",
     "figma",
     "file",
+    "forms",
     "gallery",
+    "github",
+    "google",
+    "hubspot",
     "image",
     "import",
-    "integrations",
+    "integration",
     "items",
     "link",
     "log",
     "lottie",
     "measure",
     "monitor",
+    "new relic",
     "office",
     "options",
     "organise docs",
     "pdf",
+    "performance",
     "scrollspy",
     "search",
     "start",
     "summary",
     "table",
     "tabs",
+    "tag manager",
     "variable",
     "video",
     "xls"
@@ -1217,6 +1412,31 @@
         }
       ],
       "numPages": 1
+    },
+    "algolia": {
+      "pages": [
+        {
+          "title": "Algolia",
+          "permalink": "/integrations/algolia/",
+          "lastUpdate": "23-Oct-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "analytics": {
+      "pages": [
+        {
+          "title": "GA/GTM",
+          "permalink": "/integrations/ga-gtm/",
+          "lastUpdate": "23-Oct-2025"
+        },
+        {
+          "title": "HubSpot",
+          "permalink": "/integrations/hubspot/",
+          "lastUpdate": "23-Oct-2025"
+        }
+      ],
+      "numPages": 2
     },
     "anchor": {
       "pages": [
@@ -1268,6 +1488,16 @@
       ],
       "numPages": 1
     },
+    "code": {
+      "pages": [
+        {
+          "title": "GitHub",
+          "permalink": "/integrations/github/",
+          "lastUpdate": "23-Oct-2025"
+        }
+      ],
+      "numPages": 1
+    },
     "collections": {
       "pages": [
         {
@@ -1283,7 +1513,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "05-Oct-2025"
+          "lastUpdate": "20-Oct-2025"
         }
       ],
       "numPages": 3
@@ -1313,7 +1543,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "05-Oct-2025"
+          "lastUpdate": "20-Oct-2025"
         }
       ],
       "numPages": 3
@@ -1344,9 +1574,14 @@
           "title": "Content items",
           "permalink": "/content/content-items/",
           "lastUpdate": "07-Oct-2025"
+        },
+        {
+          "title": "GitHub",
+          "permalink": "/integrations/github/",
+          "lastUpdate": "23-Oct-2025"
         }
       ],
-      "numPages": 5
+      "numPages": 6
     },
     "docs": {
       "pages": [
@@ -1373,7 +1608,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "05-Oct-2025"
+          "lastUpdate": "20-Oct-2025"
         }
       ],
       "numPages": 5
@@ -1408,7 +1643,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "05-Oct-2025"
+          "lastUpdate": "20-Oct-2025"
         }
       ],
       "numPages": 6
@@ -1503,7 +1738,7 @@
         {
           "title": "Integrate",
           "permalink": "/integrate/",
-          "lastUpdate": "07-Oct-2025"
+          "lastUpdate": "23-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1528,6 +1763,16 @@
       ],
       "numPages": 1
     },
+    "forms": {
+      "pages": [
+        {
+          "title": "HubSpot",
+          "permalink": "/integrations/hubspot/",
+          "lastUpdate": "23-Oct-2025"
+        }
+      ],
+      "numPages": 1
+    },
     "gallery": {
       "pages": [
         {
@@ -1542,6 +1787,36 @@
         }
       ],
       "numPages": 2
+    },
+    "github": {
+      "pages": [
+        {
+          "title": "GitHub",
+          "permalink": "/integrations/github/",
+          "lastUpdate": "23-Oct-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "google": {
+      "pages": [
+        {
+          "title": "GA/GTM",
+          "permalink": "/integrations/ga-gtm/",
+          "lastUpdate": "23-Oct-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "hubspot": {
+      "pages": [
+        {
+          "title": "HubSpot",
+          "permalink": "/integrations/hubspot/",
+          "lastUpdate": "23-Oct-2025"
+        }
+      ],
+      "numPages": 1
     },
     "image": {
       "pages": [
@@ -1563,15 +1838,40 @@
       ],
       "numPages": 1
     },
-    "integrations": {
+    "integration": {
       "pages": [
+        {
+          "title": "Algolia",
+          "permalink": "/integrations/algolia/",
+          "lastUpdate": "23-Oct-2025"
+        },
+        {
+          "title": "GA/GTM",
+          "permalink": "/integrations/ga-gtm/",
+          "lastUpdate": "23-Oct-2025"
+        },
+        {
+          "title": "GitHub",
+          "permalink": "/integrations/github/",
+          "lastUpdate": "23-Oct-2025"
+        },
+        {
+          "title": "HubSpot",
+          "permalink": "/integrations/hubspot/",
+          "lastUpdate": "23-Oct-2025"
+        },
         {
           "title": "Integrate",
           "permalink": "/integrate/",
-          "lastUpdate": "07-Oct-2025"
+          "lastUpdate": "23-Oct-2025"
+        },
+        {
+          "title": "New Relic",
+          "permalink": "/integrations/new-relic/",
+          "lastUpdate": "23-Oct-2025"
         }
       ],
-      "numPages": 1
+      "numPages": 6
     },
     "items": {
       "pages": [
@@ -1608,10 +1908,15 @@
         {
           "title": "Integrate",
           "permalink": "/integrate/",
-          "lastUpdate": "07-Oct-2025"
+          "lastUpdate": "23-Oct-2025"
+        },
+        {
+          "title": "New Relic",
+          "permalink": "/integrations/new-relic/",
+          "lastUpdate": "23-Oct-2025"
         }
       ],
-      "numPages": 1
+      "numPages": 2
     },
     "lottie": {
       "pages": [
@@ -1628,17 +1933,37 @@
         {
           "title": "Integrate",
           "permalink": "/integrate/",
-          "lastUpdate": "07-Oct-2025"
+          "lastUpdate": "23-Oct-2025"
+        },
+        {
+          "title": "New Relic",
+          "permalink": "/integrations/new-relic/",
+          "lastUpdate": "23-Oct-2025"
         }
       ],
-      "numPages": 1
+      "numPages": 2
     },
     "monitor": {
       "pages": [
         {
           "title": "Integrate",
           "permalink": "/integrate/",
-          "lastUpdate": "07-Oct-2025"
+          "lastUpdate": "23-Oct-2025"
+        },
+        {
+          "title": "New Relic",
+          "permalink": "/integrations/new-relic/",
+          "lastUpdate": "23-Oct-2025"
+        }
+      ],
+      "numPages": 2
+    },
+    "new relic": {
+      "pages": [
+        {
+          "title": "New Relic",
+          "permalink": "/integrations/new-relic/",
+          "lastUpdate": "23-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1678,7 +2003,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "05-Oct-2025"
+          "lastUpdate": "20-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1708,6 +2033,16 @@
       ],
       "numPages": 2
     },
+    "performance": {
+      "pages": [
+        {
+          "title": "New Relic",
+          "permalink": "/integrations/new-relic/",
+          "lastUpdate": "23-Oct-2025"
+        }
+      ],
+      "numPages": 1
+    },
     "scrollspy": {
       "pages": [
         {
@@ -1721,12 +2056,17 @@
     "search": {
       "pages": [
         {
+          "title": "Algolia",
+          "permalink": "/integrations/algolia/",
+          "lastUpdate": "23-Oct-2025"
+        },
+        {
           "title": "Integrate",
           "permalink": "/integrate/",
-          "lastUpdate": "07-Oct-2025"
+          "lastUpdate": "23-Oct-2025"
         }
       ],
-      "numPages": 1
+      "numPages": 2
     },
     "start": {
       "pages": [
@@ -1783,6 +2123,16 @@
       ],
       "numPages": 1
     },
+    "tag manager": {
+      "pages": [
+        {
+          "title": "GA/GTM",
+          "permalink": "/integrations/ga-gtm/",
+          "lastUpdate": "23-Oct-2025"
+        }
+      ],
+      "numPages": 1
+    },
     "variable": {
       "pages": [
         {
@@ -1825,6 +2175,7 @@
     "Environment",
     "Experiments",
     "General",
+    "Integrations",
     "Site config",
     "Start"
   ],
@@ -1989,7 +2340,7 @@
         {
           "title": "Integrate",
           "permalink": "/integrate/",
-          "lastUpdate": "07-Oct-2025"
+          "lastUpdate": "23-Oct-2025"
         },
         {
           "title": "Introduction",
@@ -2004,10 +2355,40 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "05-Oct-2025"
+          "lastUpdate": "20-Oct-2025"
         }
       ],
       "numPages": 7
+    },
+    "Integrations": {
+      "pages": [
+        {
+          "title": "Algolia",
+          "permalink": "/integrations/algolia/",
+          "lastUpdate": "23-Oct-2025"
+        },
+        {
+          "title": "GA/GTM",
+          "permalink": "/integrations/ga-gtm/",
+          "lastUpdate": "23-Oct-2025"
+        },
+        {
+          "title": "GitHub",
+          "permalink": "/integrations/github/",
+          "lastUpdate": "23-Oct-2025"
+        },
+        {
+          "title": "HubSpot",
+          "permalink": "/integrations/hubspot/",
+          "lastUpdate": "23-Oct-2025"
+        },
+        {
+          "title": "New Relic",
+          "permalink": "/integrations/new-relic/",
+          "lastUpdate": "23-Oct-2025"
+        }
+      ],
+      "numPages": 5
     },
     "Site config": {
       "pages": [
@@ -2024,7 +2405,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "05-Oct-2025"
+          "lastUpdate": "20-Oct-2025"
         }
       ],
       "numPages": 3
@@ -2047,9 +2428,34 @@
           "lastUpdate": "06-Sep-2025"
         },
         {
+          "title": "Algolia",
+          "permalink": "/integrations/algolia/",
+          "lastUpdate": "23-Oct-2025"
+        },
+        {
+          "title": "GA/GTM",
+          "permalink": "/integrations/ga-gtm/",
+          "lastUpdate": "23-Oct-2025"
+        },
+        {
+          "title": "GitHub",
+          "permalink": "/integrations/github/",
+          "lastUpdate": "23-Oct-2025"
+        },
+        {
+          "title": "HubSpot",
+          "permalink": "/integrations/hubspot/",
+          "lastUpdate": "23-Oct-2025"
+        },
+        {
           "title": "Integrate",
           "permalink": "/integrate/",
-          "lastUpdate": "07-Oct-2025"
+          "lastUpdate": "23-Oct-2025"
+        },
+        {
+          "title": "New Relic",
+          "permalink": "/integrations/new-relic/",
+          "lastUpdate": "23-Oct-2025"
         },
         {
           "title": "Config Files",
@@ -2059,10 +2465,10 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "05-Oct-2025"
+          "lastUpdate": "20-Oct-2025"
         }
       ],
-      "numPages": 6
+      "numPages": 11
     }
   },
   "hsSettings": {

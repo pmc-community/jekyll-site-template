@@ -135,7 +135,6 @@ const isElementVisible = (id) => {
   );
 }
 
-
 // usage: $().sizeChanged(function(){})
 $.fn.sizeChanged = function (handleFunction) {
     var element = this;
@@ -2028,25 +2027,29 @@ const setResizeObserver_height = (elSelector, callback) => {
         const resizeObserver = new ResizeObserver(function(entries) {
             if (isAdjusting) return;
 
-            entries.forEach(function(entry) {
-                const newHeight = entry.contentRect.height;
+            requestAnimationFrame(() => {
+               entries.forEach(function(entry) {
+                    const newHeight = entry.contentRect.height;
 
-                // Only react to actual height changes
-                if (newHeight !== previousHeight) {
-                    
-                    // Set the flag to avoid recursive triggering
-                    isAdjusting = true;
+                     // Only react to actual height changes
+                    if (newHeight !== previousHeight) {
+                        
+                        // Set the flag to avoid recursive triggering
+                        isAdjusting = true;
 
-                    if (callback) callback();
+                        if (callback) callback();
 
-                    // Reset the flag after a short delay (enough for adjustments to complete)
-                    setTimeout(function() {
-                        isAdjusting = false;
-                    }, 50);
+                        // Reset the flag after a short delay (enough for adjustments to complete)
+                        setTimeout(function() {
+                            isAdjusting = false;
+                        }, 0);
 
-                    previousHeight = newHeight;
-                }
+                        previousHeight = newHeight;
+                    }
+                });
+
             });
+            
         });
 
         resizeObserver.observe($element[0]);

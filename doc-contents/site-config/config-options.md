@@ -20,13 +20,13 @@ All the options available for site appearance and functionalities are shown in t
 
 {% include elements/xlsx-to-html-table.html 
     file="config-files.xlsx" 
-    range="C2:G119" 
+    range="B2:G120" 
     sheet="Options"
     source=page.path
     simple="false"
     showHead="true"
     h="300px"
-    freeze=1
+    freeze=2
 %}
 
 {% include elements/link-btn.html type="warning" outline="false" text="Config files" href="/get-started/config-files/" newTab="true" %}

@@ -162,11 +162,14 @@
     {
       "permalink": "/components/image/",
       "keywords": [
+        "component",
+        "placing",
         "images",
-        "image",
-        "path",
-        "gallery",
-        "folder"
+        "content",
+        "captions",
+        "credits",
+        "copyright",
+        "designed"
       ]
     },
     {
@@ -207,11 +210,16 @@
     {
       "permalink": "/experiments/pdf-summary/",
       "keywords": [
-        "summary",
         "component",
-        "models",
-        "huggingface",
-        "corrections"
+        "helps",
+        "enhancing",
+        "content",
+        "auto",
+        "generated",
+        "summaries",
+        "pdf",
+        "files",
+        "combined"
       ]
     },
     {
@@ -288,10 +296,62 @@
       "permalink": "/integrate/",
       "keywords": [
         "integrations",
-        "feedback",
         "performance",
         "integration",
-        "mandatory"
+        "mandatory",
+        "feedback"
+      ]
+    },
+    {
+      "permalink": "/integrations/ga-gtm/",
+      "keywords": [
+        "event",
+        "hook",
+        "gtm",
+        "configurations",
+        "integration"
+      ]
+    },
+    {
+      "permalink": "/integrations/algolia/",
+      "keywords": [
+        "crawler",
+        "modal",
+        "title",
+        "info",
+        "close"
+      ]
+    },
+    {
+      "permalink": "/integrations/hubspot/",
+      "keywords": [
+        "form",
+        "hubspot",
+        "docaroo",
+        "object",
+        "type="
+      ]
+    },
+    {
+      "permalink": "/integrations/new-relic/",
+      "keywords": [
+        "logs",
+        "vitals",
+        "performance",
+        "modal",
+        "title",
+        "info",
+        "close"
+      ]
+    },
+    {
+      "permalink": "/integrations/github/",
+      "keywords": [
+        "content",
+        "netlify",
+        "deployment",
+        "github",
+        "repositories"
       ]
     }
   ]

@@ -3,7 +3,7 @@ layout: page
 title: Integrate
 permalink: /integrate/
 categories: [General, Start]
-tags: [integrations, log, monitor, feedback, measure, search]
+tags: [integration, log, monitor, feedback, measure, search]
 has_children: true
 nav_order: 3
 ---
@@ -24,71 +24,10 @@ However, it is not mandatory to use the integrations, thus each integration can 
 
 {% include elements/xlsx-to-html-table.html 
     file="integrations.xlsx" 
-    range="B2:H8" 
+    range="B2:I8" 
     sheet="integrations"
     source=page.path
     simple="true"
     showHead="true"
     freeze=1
-%}
-
-## GA/GTM
-
-{% capture img %}
-    source="partials/media/integrations/ga/ga-1.png"|caption="Custom events"|captionBorder="true"|imgLink="https://analytics.google.com/"|imgLinkNewTab="true",
-    source="partials/media/integrations/ga/gtm-1.png"|caption="Custom tags"|captionBorder="true"|imgLink="https://tagmanager.google.com/"|imgLinkNewTab="true"
-{% endcapture %}
-
-{% include elements/image-gallery.html 
-  img=img 
-  border="true" 
-  hg="400px"
-  oneRow="all" 
-%}
-
-## HubSpot
-
-{% capture img %}
-    source="partials/media/integrations/hs/hs-1.png"|caption="Sessions"|captionBorder="true"|imgLink="https://www.hubspot.com"|imgLinkNewTab="true",
-    source="partials/media/integrations/hs/hs-2.png"|caption="Feedback form"|captionBorder="true"|imgLink="https://www.hubspot.com"|imgLinkNewTab="true",
-    source="partials/media/integrations/hs/hs-3.png"|caption="Submissions"|captionBorder="true"|imgLink="https://www.hubspot.com"|imgLinkNewTab="true"
-{% endcapture %}
-
-{% include elements/image-gallery.html 
-  img=img 
-  border="true" 
-  hg="400px"
-  oneRow="all" 
-%}
-
-## New Relic
-
-{% capture img %}
-    source="partials/media/integrations/nr-img/nr-logs.png"|caption="Logs"|captionBorder="true"|imgLink="https://www.newrelic.com"|imgLinkNewTab="true",
-    source="partials/media/integrations/nr-img/nr-web-app.png"|caption="Web Vitals"|captionBorder="true"|imgLink="https://www.newrelic.com"|imgLinkNewTab="true",
-    source="partials/media/integrations/nr-img/nr-web-app-1.png"|caption="Performance"|captionBorder="true"|imgLink="https://www.newrelic.com"|imgLinkNewTab="true"
-{% endcapture %}
-
-{% include elements/image-gallery.html 
-  img=img 
-  border="true" 
-  hg="400px"
-  oneRow="all" 
-%}
-
-## GitHub
-
-## Algolia
-
-{% capture img %}
-    source="partials/media/integrations/algolia/alg-1.png"|caption="Index"|captionBorder="true"|imgLink="https://www.algolia.com"|imgLinkNewTab="true",
-    source="partials/media/integrations/algolia/alg-2.png"|caption="Crawler"|captionBorder="true"|imgLink="https://www.algolia.com"|imgLinkNewTab="true",
-    source="partials/media/integrations/algolia/alg-3.png"|caption="Crawler test"|captionBorder="true"|imgLink="https://www.algolia.com"|imgLinkNewTab="true"
-{% endcapture %}
-
-{% include elements/image-gallery.html 
-  img=img 
-  border="true" 
-  hg="400px"
-  oneRow="all" 
 %}

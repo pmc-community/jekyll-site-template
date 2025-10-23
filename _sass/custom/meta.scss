@@ -251,7 +251,7 @@ $sidebarLogo, $sideBarFooter, $sideBarHeader, $sideBarDocLink,$sideBarCategoryBt
         }
     }
 
-    #{$sidebarCustomFooter} #footer_first_row {
+    #{$sidebarCustomFooter} .footer_row {
         margin-bottom:$sidebarFooterFirstRowMarginBottom;
     }
 
@@ -266,7 +266,6 @@ $sidebarLogo, $sideBarFooter, $sideBarHeader, $sideBarDocLink,$sideBarCategoryBt
     #{$sideBarFooter} {
         border-top:$sidebarFooterBorderTop;
     }
-
 
 }
 

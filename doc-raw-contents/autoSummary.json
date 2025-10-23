@@ -106,7 +106,27 @@
         },
         {
             "permalink": "/integrate/",
-            "summary": "Docaroo provides out-of-the-box a series of integrations. The purpose of the integrations is to make available in a no-code or low-code mode some important features. Each integration can be independently enabled and configured or disabled."
+            "summary": "Docaroo provides out-of-the-box a series of integrations. The purpose of the integrations is to make available in a no-code or low-code mode some important features."
+        },
+        {
+            "permalink": "/integrations/ga-gtm/",
+            "summary": "Google analytics and google tag manager are installed by default if enabled and configured in _databuildconfig.yml. This will enable the collection of data about the site. When ga and gtm are connected, ga collects the information available when a gtm tag fires. However, the most important feature of the integration."
+        },
+        {
+            "permalink": "/integrations/algolia/",
+            "summary": "Index crawler crawler test modal title info close. Index crawler crawller test Modal title Info close."
+        },
+        {
+            "permalink": "/integrations/github/",
+            "summary": "Docaroo offers out-of-the-box the possibility to integrate with github and to import content from public and private repositories. For the private repositories, content can be imported only from the repositories within the scope of the personal access token that must be configured. Content from external public github repositories can be."
+        },
+        {
+            "permalink": "/integrations/hubspot/",
+            "summary": "Hubspot tracking code is installed by default if hubspot integration is enabled in . This will enable the features that are related to the tracking code such as monitoring the visits on the site. The feedback form can be located on the right-bottom corner of each page."
+        },
+        {
+            "permalink": "/integrations/new-relic/",
+            "summary": "Logs.logs web vitals performance modal title info close. Logs.Logs web.vitals performance Modal Title info."
         }
     ]
 }

@@ -80,8 +80,13 @@ changeLog:
 siteFooter:
   container: ".site-footer"
   rows:
-    - content: "<div class=\"footer_first_row px-4 px-md-0\"><a href=\"https://innohub.space/eng/terms-of-service/\" target=_blank>Terms</a> | <a href=\"https://innohub.space/eng/privacy/\" target=_blank>Privacy</a> | <a href=\"https://innohub.space/eng/cookie-policy/\" target=_blank>Cookies</a></div>"
-    - content: "<div class=\"footer_first_row  px-4 px-md-0\">Copyright <i class=\"bi bi-c-circle\"></i> <a href=\"https://pmc-expert.com\" target=_blank>PMC</a></div>"
+    - content: >
+        <a href="https://innohub.space/eng/terms-of-service/" target=_blank>Terms</a> |
+        <a href="https://innohub.space/eng/privacy/" target=_blank>Privacy</a> |
+        <a href="https://innohub.space/eng/cookie-policy/" target=_blank>Cookies</a>
+    - content: > 
+        Copyright <i class="bi bi-c-circle"></i> | 
+        <a href="https://pmc-expert.com" target=_blank>PMC</a>
 googleAnalytics:
   enabled: true #enable/disable GA integration
   ga: "G-T86D5YQ5WF"

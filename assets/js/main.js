@@ -126,9 +126,8 @@ window.customiseTheme = (pageObj = null) => {
             goToAnchor();
         }, settings.colSchemaCorrections.hideBodyUntilLoadTimeout);
 
-    
-    //setTimeout(()=>clearTheUrl(),500);
-});
+        //setTimeout(()=>clearTheUrl(),500);
+    });
 
 }
 
@@ -455,7 +454,6 @@ const setFullPageToc = () => {
 
 const initPageToc = () => {
     $(settings.pageToc.toc).empty();
-    $(`#nav[data-toggle=${settings.pageToc.toc.substring(1)}] .nav-link.active+ul`).css('font-family','poppins');
     $(settings.pageToc.tocContainer)
         .css(
             'top', 

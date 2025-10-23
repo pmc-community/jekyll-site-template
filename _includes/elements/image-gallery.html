@@ -70,18 +70,19 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade p-4" id="imageModal-{{igid}}" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
+<div class="modal fade p-0" id="imageModal-{{igid}}" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-fullscreen">
     <div class="modal-content">
         <div class="modal-header">
-            <span class="modal-title mt-0 text-primary fw-medium" id="modal-title-{{igid}}">Modal title</span>
+            <span class="modal-title mt-0 text-primary fw-medium fs-5" id="modal-title-{{igid}}">Modal title</span>
             <button id="imageModal-btn-close-{{igid}}" type="button" class="btn-close" data-bs-theme="dark" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body p-4 d-flex justify-content-center align-items-center">
-            <img src="" id="modalImage-{{igid}}" class="img-fluid" alt="Large view">
+        <div id="modalImage-container-{{igid}}" class="modal-body p-4 d-flex justify-content-center align-items-center">
+            <img src="" id="modalImage-{{igid}}" class="d-none" alt="Large view">
         </div>
-        <div class="d-none modal-footer d-flex justify-content-start" id="modal-footer-{{igid}}">
+        <div class="modal-footer d-flex justify-content-between" id="modal-footer-{{igid}}">
             <a id="modal-link-{{igid}}" class="btn btn-primary">Info</a>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
     </div>
   </div>
@@ -137,7 +138,6 @@
 
 <script id="script-open-img-gallery-{{igid}}">
     $('#imageModal-{{igid}}').appendTo('body');
-
     $('#image-gallery-{{igid}} img').on('click', function() {
         const isrc = $(this).attr('src');
         const ialt = $(this).attr('alt');
@@ -162,6 +162,10 @@
     });
 
     $('#imageModal-{{igid}}').on('show.bs.modal', function() {
+        setTimeout(() => {
+         $('#modal-link-{{igid}}').removeClass('d-none');
+         $('#modal-footer-{{igid}}').addClass('justify-content-between').removeClass('justify-content-end');
+        }, 0);
         const link = $('#imageModal-{{igid}}').attr('img-link');
         const newTab = $('#imageModal-{{igid}}').attr('img-newTab');
         const target = newTab !== 'false'
@@ -170,10 +174,13 @@
         if (link !== '') {
             $('#modal-footer-{{igid}}').find('a').attr('href', link);
             $('#modal-footer-{{igid}}').find('a').attr('target', target);
-            $('#modal-footer-{{igid}}').removeClass('d-none');
+            
         }
         else {
-            $('#modal-footer-{{igid}}').addClass('d-none');
+            setTimeout (() => {
+             $('#modal-link-{{igid}}').addClass('d-none');
+             $('#modal-footer-{{igid}}').removeClass('justify-content-between').addClass('justify-content-end');
+            }, 0);
         }
     });
 
@@ -206,10 +213,58 @@
   requestAnimationFrame(() => {
    $mainContent__{{igid}}.attr('inert', '');
   });
+
+  const image = $('#modalImage-{{igid}}')[0];
+  const container = $('#modalImage-container-{{igid}}')[0];
+  
+  if (image.viewer) {
+    image.viewer.destroy();
+  }
+  
+  const viewer = new Viewer(image, {
+    inline: true,
+    container: container,  
+    toolbar: {
+      zoomIn: { show: 1, size: 'large' },
+      zoomOut: { show: 1, size: 'large' },
+      oneToOne: { show: 1, size: 'large' },
+      reset: { show: 1, size: 'large' },
+      rotateLeft: { show: 1, size: 'large' },
+      rotateRight: { show: 1, size: 'large' },
+      flipHorizontal: { show: 1, size: 'large' },
+      flipVertical: { show: 1, size: 'large' },
+    },
+    navbar: false,
+    title: false,
+    movable: true,
+    zoomable: true,
+    rotatable: true,
+    scalable: true,
+    fullscreen: false, 
+    zIndex: 9999,
+    ready() {
+     $('.viewer-fullscreen').remove();
+     $('.viewer-title').addClass('fs-5');
+    },     
+  });
+
+ });
+
+ $modal__{{igid}}.on('show.bs.modal', function() {
+   $('#imageModal-{{igid}}').find('.modal-content').css('background', $('body').css('background'));
+   $('#imageModal-{{igid}}').find('.modal-header').css('border-bottom', '').addClass('border border-bottom border-secondary border-opacity-25');
+   $('#imageModal-{{igid}}').find('.modal-footer').css('border-top', '').addClass('border border-top border-secondary border-opacity-25');
+   if (Cookies.get(settings.themeSwitch.cookie) !== '0' ) $('#imageModal-btn-close-{{igid}}').parent().attr('data-bs-theme', 'dark');
+   else $('#imageModal-btn-close-{{igid}}').parent().attr('data-bs-theme', '');   
  });
 
  $modal__{{igid}}.on('hidden.bs.modal', function() {
   $mainContent__{{igid}}.removeAttr('inert');
+  const image = $('#modalImage-{{igid}}')[0];
+  if (image.viewer) {
+    image.viewer.destroy();
+    image.viewer = null;
+  }
  });
 </script>
 
