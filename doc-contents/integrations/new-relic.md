@@ -39,6 +39,11 @@ Using this integration requires a little bit of code and New Relic knowledge. Fi
 {% endcapture %}
 {% include elements/alert.html class="primary" content=c title="Use hooks" %}
 
+{% include elements/alert.html 
+  class="warning" 
+  content="Don't forget to re-build and re-deploy the site after doing code modifications!!!"
+%}
+
 The New Relic integration is based on the next parameters:
 
 ```javascript
@@ -64,6 +69,31 @@ When the deployment is on `Github pages` or `Netlify`, then the Github integrati
   class="primary" 
   content="You may need to consult the Github documentation or the Netlify documentation to find out how to create your personal access token and how to define action secrets (Github) or environment variables (Netlify)."
 %}
+
+Using New Relic integration requires:
+1. configure the `New Relic browser app`, retrieve the integration parameters and configure them in the `.env` file or as `Github actions secrets` or as `Netlify build environment variables`. This would be enough for monitoring and measurint the performance of the site.
+2. bring into global scope the target functions that you want to log
+3. hook into the target functions executions, use the `nrLog` function inside the hooks and activate the hooks
+
+Here is an example of a logging hook that logs `createAutoSummaryPageContainer` function:
+
+```javascript
+{% 
+    ExternalRepoContent  { 
+        "markdown": true,
+        "owner":"pmc-community", 
+        "repo":"jekyll-site-template", 
+        "branch":"gh-pages", 
+        "file_path":"assets/js/post-hooks.js", 
+        "ignore_wp_shortcodes": true, 
+        "start_marker": "hooks.addAction('createAutoSummaryPageContainer'",
+        "include_start_marker": true,
+        "end_marker": "'post');" ,
+        "include_end_marker": true,
+        "needAuth": false
+    }
+%}
+```
 
 Here is an example about the outcome of New Relic integration:
 
