@@ -39,6 +39,7 @@ Using this integration requires a little bit of code and New Relic knowledge. Fi
 {% endcapture %}
 {% include elements/alert.html class="primary" content=c title="Use hooks" %}
 
+The New Relic integration is based on the next parameters:
 
 ```javascript
 {% 
@@ -57,6 +58,14 @@ Using this integration requires a little bit of code and New Relic knowledge. Fi
     }
 %}
 ```
+When the deployment is on `Github pages` or `Netlify`, then the Github integration parameters should be configured in as `action secrets` in Github or `environment variables` in Netlify. The names of the integration parameters is the same, regardless of the deployment environment (local, custom, Github pages or Netlify).
+
+{% include elements/alert.html 
+  class="primary" 
+  content="You may need to consult the Github documentation or the Netlify documentation to find out how to create your personal access token and how to define action secrets (Github) or environment variables (Netlify)."
+%}
+
+Here is an example about the outcome of New Relic integration:
 
 {% capture img %}
     source="partials/media/integrations/nr-img/nr-logs.png"|caption="Logs"|captionBorder="true"|imgLink="https://www.newrelic.com"|imgLinkNewTab="true",
