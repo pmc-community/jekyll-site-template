@@ -114,7 +114,7 @@
         },
         {
             "permalink": "/integrations/algolia/",
-            "summary": "Docaroo provides out-of-the-box full integration with algolia docsearch. It is free for ever as long as you meet algolia docsearch eligibility."
+            "summary": "Docaroo provides out-of-the-box full integration with algolia docsearch. The search experience has multilanguage support by default. The ui experience is provided by default once this integration is enabled and properly configured."
         },
         {
             "permalink": "/integrations/github/",
