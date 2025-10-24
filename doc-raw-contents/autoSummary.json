@@ -126,7 +126,7 @@
         },
         {
             "permalink": "/integrations/new-relic/",
-            "summary": "New relic integration is provided out-of-the-box once this integration is enabled. This integration allows monitoring and measuring the perfomance of the site."
+            "summary": "New relic integration is provided out-of-the-box once this integration is enabled. This integration allows monitoring and measuring the perfomance of the site. Used in combination with the extension capabilities, it provides a robust way to log the user interactions with site."
         }
     ]
 }

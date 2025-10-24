@@ -1198,10 +1198,10 @@
         "performance"
       ],
       "excerpt": "integration, function, netlify, github, hooks",
-      "lastUpdate": "2025-10-24 12:16:26 +0300",
+      "lastUpdate": "2025-10-24 12:37:56 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-24 12:16:26 +0300",
-      "createTimeUTC": 1761297386,
+      "createTime": "2025-10-24 12:37:56 +0300",
+      "createTimeUTC": 1761298676,
       "relatedPages": [
         {
           "title": "GitHub",
@@ -1216,7 +1216,7 @@
           "permalink": "/integrations/ga-gtm/"
         }
       ],
-      "autoSummary": "New relic integration is provided out-of-the-box once this integration is enabled. This integration allows monitoring and measuring the perfomance of the site.",
+      "autoSummary": "New relic integration is provided out-of-the-box once this integration is enabled. This integration allows monitoring and measuring the perfomance of the site. Used in combination with the extension capabilities, it provides a robust way to log the user interactions with site.",
       "similarByContent": [],
       "readingTime": 2,
       "hasDynamicContent": false,
@@ -2491,8 +2491,11 @@
     "algoliaTextHighlightPrefixTag": "<mark>",
     "algoliaTextHighlightPostfixTag": "</mark>",
     "algoliaRaiseIssueLink": "https://github.com/pmc-community/jekyll-site-template/issues/new?title=",
-    "algoliaDocSearchEnabled": true,
-    "algoliaCustomEnabled": false
+    "algoliaDocSearchEnabled": false,
+    "algoliaCustomEnabled": true,
+    "algoliaCustomAppID": "0L8S7XNZUC",
+    "algoliaCustomIndex": "figmares-custom-index",
+    "algoliaCustomPublicApiKey": null
   },
   "pageSettings": {
     "/": {
