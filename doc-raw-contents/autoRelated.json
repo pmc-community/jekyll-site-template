@@ -341,7 +341,20 @@
   },
   {
     "permalink": "/integrations/algolia/",
-    "related": []
+    "related": [
+      {
+        "title": "HubSpot",
+        "permalink": "/integrations/hubspot/"
+      },
+      {
+        "title": "GitHub",
+        "permalink": "/integrations/github/"
+      },
+      {
+        "title": "Integrate",
+        "permalink": "/integrate/"
+      }
+    ]
   },
   {
     "permalink": "/integrations/ga-gtm/",
@@ -381,16 +394,16 @@
     "permalink": "/integrations/hubspot/",
     "related": [
       {
+        "title": "Algolia",
+        "permalink": "/integrations/algolia/"
+      },
+      {
         "title": "GA/GTM",
         "permalink": "/integrations/ga-gtm/"
       },
       {
         "title": "GitHub",
         "permalink": "/integrations/github/"
-      },
-      {
-        "title": "New Relic",
-        "permalink": "/integrations/new-relic/"
       }
     ]
   },
@@ -404,6 +417,10 @@
       {
         "title": "GA/GTM",
         "permalink": "/integrations/ga-gtm/"
+      },
+      {
+        "title": "Algolia",
+        "permalink": "/integrations/algolia/"
       }
     ]
   },

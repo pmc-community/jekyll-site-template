@@ -1020,13 +1020,26 @@
         "algolia",
         "search"
       ],
-      "excerpt": "crawler, modal, title, info, close",
-      "lastUpdate": "2025-10-23 13:35:49 +0300",
+      "excerpt": "docaroo, powerful, moment",
+      "lastUpdate": "2025-10-24 15:21:18 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-23 13:35:49 +0300",
-      "createTimeUTC": 1761215749,
-      "relatedPages": [],
-      "autoSummary": "Index crawler crawler test modal title info close. Index crawler crawller test Modal title Info close.",
+      "createTime": "2025-10-24 15:21:18 +0300",
+      "createTimeUTC": 1761308478,
+      "relatedPages": [
+        {
+          "title": "HubSpot",
+          "permalink": "/integrations/hubspot/"
+        },
+        {
+          "title": "GitHub",
+          "permalink": "/integrations/github/"
+        },
+        {
+          "title": "Integrate",
+          "permalink": "/integrate/"
+        }
+      ],
+      "autoSummary": "Docaroo provides out-of-the-box full integration with algolia docsearch. It is free for ever as long as you meet algolia docsearch eligibility.",
       "similarByContent": [],
       "readingTime": 1,
       "hasDynamicContent": false,
@@ -1128,16 +1141,16 @@
       "createTimeUTC": 1761218171,
       "relatedPages": [
         {
+          "title": "Algolia",
+          "permalink": "/integrations/algolia/"
+        },
+        {
           "title": "GA/GTM",
           "permalink": "/integrations/ga-gtm/"
         },
         {
           "title": "GitHub",
           "permalink": "/integrations/github/"
-        },
-        {
-          "title": "New Relic",
-          "permalink": "/integrations/new-relic/"
         }
       ],
       "autoSummary": "Hubspot tracking code is installed by default if hubspot integration is enabled in . This will enable the features that are related to the tracking code such as monitoring the visits on the site. The feedback form can be located on the right-bottom corner of each page.",
@@ -1174,6 +1187,10 @@
         {
           "title": "GA/GTM",
           "permalink": "/integrations/ga-gtm/"
+        },
+        {
+          "title": "Algolia",
+          "permalink": "/integrations/algolia/"
         }
       ],
       "autoSummary": "Docaroo provides out-of-the-box a series of integrations. The purpose of the integrations is to make available in a no-code or low-code mode some important features.",
@@ -1198,10 +1215,10 @@
         "performance"
       ],
       "excerpt": "integration, function, netlify, github, hooks",
-      "lastUpdate": "2025-10-24 12:37:56 +0300",
+      "lastUpdate": "2025-10-24 15:21:18 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-24 12:37:56 +0300",
-      "createTimeUTC": 1761298676,
+      "createTime": "2025-10-24 15:21:18 +0300",
+      "createTimeUTC": 1761308478,
       "relatedPages": [
         {
           "title": "GitHub",
@@ -1417,7 +1434,7 @@
         {
           "title": "Algolia",
           "permalink": "/integrations/algolia/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "24-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1842,7 +1859,7 @@
         {
           "title": "Algolia",
           "permalink": "/integrations/algolia/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "24-Oct-2025"
         },
         {
           "title": "GA/GTM",
@@ -2057,7 +2074,7 @@
         {
           "title": "Algolia",
           "permalink": "/integrations/algolia/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "24-Oct-2025"
         },
         {
           "title": "Integrate",
@@ -2364,7 +2381,7 @@
         {
           "title": "Algolia",
           "permalink": "/integrations/algolia/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "24-Oct-2025"
         },
         {
           "title": "GA/GTM",
@@ -2429,7 +2446,7 @@
         {
           "title": "Algolia",
           "permalink": "/integrations/algolia/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "24-Oct-2025"
         },
         {
           "title": "GA/GTM",
@@ -2491,11 +2508,8 @@
     "algoliaTextHighlightPrefixTag": "<mark>",
     "algoliaTextHighlightPostfixTag": "</mark>",
     "algoliaRaiseIssueLink": "https://github.com/pmc-community/jekyll-site-template/issues/new?title=",
-    "algoliaDocSearchEnabled": false,
-    "algoliaCustomEnabled": true,
-    "algoliaCustomAppID": "0L8S7XNZUC",
-    "algoliaCustomIndex": "figmares-custom-index",
-    "algoliaCustomPublicApiKey": null
+    "algoliaDocSearchEnabled": true,
+    "algoliaCustomEnabled": false
   },
   "pageSettings": {
     "/": {
