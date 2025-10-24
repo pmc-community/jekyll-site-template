@@ -34,10 +34,10 @@
       "permalink": "/content/ec/",
       "keywords": [
         "content",
-        "source",
-        "file",
         "type",
-        "markers"
+        "aware",
+        "time",
+        "documents"
       ]
     },
     {
@@ -348,10 +348,10 @@
       "permalink": "/integrations/github/",
       "keywords": [
         "content",
-        "netlify",
-        "deployment",
         "github",
-        "repositories"
+        "time",
+        "netlify",
+        "deployment"
       ]
     }
   ]

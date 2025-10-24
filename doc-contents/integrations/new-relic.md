@@ -10,7 +10,26 @@ nav_order: 3
 
 # Summary
 
+
 # Usage
+
+```javascript
+{% 
+    ExternalRepoContent  { 
+        "markdown": true,
+        "owner":"pmc-community", 
+        "repo":"jekyll-site-template", 
+        "branch":"gh-pages", 
+        "file_path":"doc-contents/environments/env-doc.txt", 
+        "ignore_wp_shortcodes": true, 
+        "start_marker": "# New Relic",
+        "include_start_marker": true,
+        "end_marker": "app beacon, see New Relic documentation>" ,
+        "include_end_marker": true,
+        "needAuth": false
+    }
+%}
+```
 
 {% capture img %}
     source="partials/media/integrations/nr-img/nr-logs.png"|caption="Logs"|captionBorder="true"|imgLink="https://www.newrelic.com"|imgLinkNewTab="true",

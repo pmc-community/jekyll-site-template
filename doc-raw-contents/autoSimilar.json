@@ -9,7 +9,6 @@
         "permalink": "/components/intro/",
         "similarFiles": [
             "/content/content-items/",
-            "/intro/",
             "/content/ec/"
         ]
     },
@@ -87,8 +86,7 @@
         "permalink": "/content/content-items/",
         "similarFiles": [
             "/components/intro/",
-            "/content/ec/",
-            "/intro/"
+            "/content/ec/"
         ]
     },
     {

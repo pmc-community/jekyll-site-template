@@ -118,7 +118,7 @@
         },
         {
             "permalink": "/integrations/github/",
-            "summary": "Docaroo offers out-of-the-box the possibility to integrate with github and to import content from public and private repositories. For the private repositories, content can be imported only from the repositories within the scope of the personal access token that must be configured. Content from external public github repositories can be."
+            "summary": "Docaroo integration allows you to import content from public and private repositories. For the private repositories, content can be imported only from the repositories within the scope of the personal access token that must be configured. At the moment, we do not support importing content from private repositories at run."
         },
         {
             "permalink": "/integrations/hubspot/",

@@ -13,6 +13,12 @@ It is also possible to `import content at run time`, but be aware this type of c
 
 This type of content can be imported from any source that returns markdown and follows the same logic of selecting the content between start and end markers. This type of content can be imported only from `public sources` as we currently do not support custom authentication on client side. It is also important to be aware of the API limitations of the source and to not abuse of the usage of run time imported content since this content is loaded each time when the page containing it is loaded (for example, Github has some limits related to raw content reading API). Currently we do not support run time content caching yet.
 
+{% include elements/alert.html 
+  class="warning" 
+  content="Observe the **`ignore_wp_shortcodes`** setting below. This setting makes that potential Wordpress shortcodes that may be present in the content imported from external sources (in the case if that content is also used on a Wordpress site) to be ignored, thus to not produce non-sense texts on your docs. If you are sure that the imported content does not contain Wordpress shortcodes, you can set it to `false`. Be aware that when set to `true`, texts in the form `[...]` may not appear in your imported content"
+  title="Wordpress" 
+%}
+
 # Import site content
 Import content from another file from your site, between start and end markers. Markers can be set by you (in which case it must be in the from of HTML comments to not affect the rendering of the source file), or can be any placeholders (existing text) of the source file. The path to the source file should be given as relative path from the root documents directory. 
 

@@ -126,12 +126,12 @@
         "permalink": "/components/download-link/"
       },
       {
-        "title": "External content",
-        "permalink": "/content/ec/"
-      },
-      {
         "title": "FAQ Item",
         "permalink": "/components/qitem/"
+      },
+      {
+        "title": "Alerts",
+        "permalink": "/components/alerts/"
       }
     ]
   },
@@ -224,16 +224,16 @@
     "permalink": "/content/ec/",
     "related": [
       {
-        "title": "Alerts",
-        "permalink": "/components/alerts/"
-      },
-      {
-        "title": "Content items",
-        "permalink": "/content/content-items/"
-      },
-      {
         "title": "Content",
         "permalink": "/content/intro/"
+      },
+      {
+        "title": "FAQ Item",
+        "permalink": "/components/qitem/"
+      },
+      {
+        "title": "GitHub",
+        "permalink": "/integrations/github/"
       }
     ]
   },
@@ -313,6 +313,10 @@
         "permalink": "/get-started/config-files/"
       },
       {
+        "title": "GitHub",
+        "permalink": "/integrations/github/"
+      },
+      {
         "title": "Config Options",
         "permalink": "/get-started/config-options/"
       }
@@ -365,16 +369,16 @@
     "permalink": "/integrations/github/",
     "related": [
       {
-        "title": "Content items",
-        "permalink": "/content/content-items/"
-      },
-      {
-        "title": "Alerts",
-        "permalink": "/components/alerts/"
-      },
-      {
         "title": "FAQ Item",
         "permalink": "/components/qitem/"
+      },
+      {
+        "title": "External content",
+        "permalink": "/content/ec/"
+      },
+      {
+        "title": "Content items",
+        "permalink": "/content/content-items/"
       }
     ]
   },

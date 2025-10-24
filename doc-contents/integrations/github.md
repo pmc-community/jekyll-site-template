@@ -23,6 +23,20 @@ Content from external public Github repositories can be also imported at run tim
 # Usage
 Using the Github integration depends on the deployment type. When testing on local dev environment or when the deployment is on a custom infrastructure, the settings from `.env` file are used as shown next.
 
+{% include elements/alert.html 
+  class="warning" 
+  content="When using this integration, please note the Github API limits, mostly when using content imported at run time. At the moment Docaroo does not have a request caching mechanism, thus overusing the run time imported content may reach the limits of Github API. Reaching Github API limits for content imported at build time is less probable but still possible if this feature is heavily used (like imported content on each document). However, for content imported at build-time, once the site is built, there wii be no more requests to Github."
+  title="GitHub API Limits" 
+%}
+
+{% include elements/alert.html 
+  class="primary" 
+  content="When importing multiple parts from the same external file, avoid making requests to Github for each part, you can get all in one request. See details [here](/content/ec/#id_import_multiple_external_repo_content){: target=\"_blank\"}."
+  title="Tip!!!" 
+%}
+
+Github integration is based on some parameters shown below.
+
 ```javascript
 {% 
     ExternalRepoContent  { 
