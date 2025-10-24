@@ -9,9 +9,36 @@ nav_order: 3
 ---
 
 # Summary
-
+New Relic integration is provided out-of-the-box once this integration is enabled. This integration allows monitoring and measuring the perfomance of the site. Used in combination with the `hooks` extension capabilities of Docaroo, it provides a robust way to log the user interactions with site. We provide a function that logs to new Relic the execution of any target function used as part of the code base of the site. Hooking the logging function to the target function will send to New Relic the context information of the target function execution (timestamp, target function arguments, execution result, the page on which the target funtion was executed, user anonymous id, device and browser information). Using the logs brings valuable information about how the site is functioning and can lead to important optimisations and fixes.
 
 # Usage
+Using this integration requires a little bit of code and New Relic knowledge. First, it is needed to do the needed configurations in New Relic and get the integration parameters to be configured as environment variables. Second, locate the function which you want to log and bring it into global scope. Then, define the hook and, finally, activate it. 
+
+{% include elements/alert.html 
+  class="primary" 
+  content="You may need to consult New Relic documentation. Folow the instructions from that documentation to create and configure a `browser app` which must be used for this integration."
+  title="New Relic"
+%}
+
+{% capture c %}
+  {% 
+    ExternalRepoContent  { 
+        "markdown": true,
+        "owner":"pmc-community", 
+        "repo":"jekyll-site-template", 
+        "branch":"gh-pages", 
+        "file_path":"doc-contents/integrations/how-to-use-hooks-alert.md", 
+        "ignore_wp_shortcodes": true, 
+        "start_marker": "fullFile",
+        "include_start_marker": false,
+        "end_marker": "fullFile" ,
+        "include_end_marker": false,
+        "needAuth": false
+    }
+%}
+{% endcapture %}
+{% include elements/alert.html class="primary" content=c title="Use hooks" %}
+
 
 ```javascript
 {% 
