@@ -335,13 +335,11 @@
     {
       "permalink": "/integrations/new-relic/",
       "keywords": [
-        "logs",
-        "vitals",
-        "performance",
-        "modal",
-        "title",
-        "info",
-        "close"
+        "integration",
+        "function",
+        "netlify",
+        "github",
+        "hooks"
       ]
     },
     {

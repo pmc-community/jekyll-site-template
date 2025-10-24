@@ -126,7 +126,7 @@
         },
         {
             "permalink": "/integrations/new-relic/",
-            "summary": "Logs.logs web vitals performance modal title info close. Logs.Logs web.vitals performance Modal Title info."
+            "summary": "New relic integration is provided out-of-the-box once this integration is enabled. This integration allows monitoring and measuring the perfomance of the site."
         }
     ]
 }

@@ -126,12 +126,12 @@
         "permalink": "/components/download-link/"
       },
       {
-        "title": "FAQ Item",
-        "permalink": "/components/qitem/"
-      },
-      {
         "title": "Alerts",
         "permalink": "/components/alerts/"
+      },
+      {
+        "title": "FAQ Item",
+        "permalink": "/components/qitem/"
       }
     ]
   },
@@ -341,16 +341,15 @@
   },
   {
     "permalink": "/integrations/algolia/",
-    "related": [
-      {
-        "title": "New Relic",
-        "permalink": "/integrations/new-relic/"
-      }
-    ]
+    "related": []
   },
   {
     "permalink": "/integrations/ga-gtm/",
     "related": [
+      {
+        "title": "New Relic",
+        "permalink": "/integrations/new-relic/"
+      },
       {
         "title": "HubSpot",
         "permalink": "/integrations/hubspot/"
@@ -358,10 +357,6 @@
       {
         "title": "Integrate",
         "permalink": "/integrate/"
-      },
-      {
-        "title": "GitHub",
-        "permalink": "/integrations/github/"
       }
     ]
   },
@@ -369,16 +364,16 @@
     "permalink": "/integrations/github/",
     "related": [
       {
+        "title": "New Relic",
+        "permalink": "/integrations/new-relic/"
+      },
+      {
         "title": "FAQ Item",
         "permalink": "/components/qitem/"
       },
       {
         "title": "External content",
         "permalink": "/content/ec/"
-      },
-      {
-        "title": "Content items",
-        "permalink": "/content/content-items/"
       }
     ]
   },
@@ -392,6 +387,10 @@
       {
         "title": "GitHub",
         "permalink": "/integrations/github/"
+      },
+      {
+        "title": "New Relic",
+        "permalink": "/integrations/new-relic/"
       }
     ]
   },
@@ -412,12 +411,16 @@
     "permalink": "/integrations/new-relic/",
     "related": [
       {
-        "title": "Algolia",
-        "permalink": "/integrations/algolia/"
+        "title": "GitHub",
+        "permalink": "/integrations/github/"
       },
       {
         "title": "Integrate",
         "permalink": "/integrate/"
+      },
+      {
+        "title": "GA/GTM",
+        "permalink": "/integrations/ga-gtm/"
       }
     ]
   },
