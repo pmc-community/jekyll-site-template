@@ -9,6 +9,7 @@ nav_order: 3
 ---
 
 # Summary
+Docaroo provides out-of-the-box full integration with Algolia DocSearch. Full integration means that we provide both Algolia index cusotmisation as well as a very powerful and extended UI experience. For Algolia search, at the moment, we provide full indexing and index update during site build, but we do not provide (yet) the UI experience. However, for most of the potential use cases of Docaroo, Algolia DocSearch covers any search need. Also it is free for ever as long as you meet Algolia DocSearch eligibility.  
 
 # Usage
 

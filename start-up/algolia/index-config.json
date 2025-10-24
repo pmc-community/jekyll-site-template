@@ -1,0 +1,189 @@
+{
+  "settings": {
+    "minWordSizefor1Typo": 0,
+    "minWordSizefor2Typos": 0,
+    "hitsPerPage": 20,
+    "maxValuesPerFacet": 100,
+    "minProximity": 1,
+    "searchableAttributes": [
+      "hierarchy.lvl1",
+      "hierarchy.lvl2",
+      "hierarchy.lvl3",
+      "hierarchy.lvl4",
+      "hierarchy.lvl5",
+      "hierarchy.lvl6",
+      "content",
+      "unordered(pageExcerpt)",
+      "unordered(pageSummary)",
+      "pageTags",
+      "pageCats"
+    ],
+    "numericAttributesToIndex": null,
+    "attributesToRetrieve": [
+      "anchor",
+      "hierarchy",
+      "lang",
+      "pageCats",
+      "pageCollection",
+      "pageCreateTime",
+      "pageCreateTimestamp",
+      "pageExcerpt",
+      "pageHasDynamicContent",
+      "pageLang",
+      "pageLastUpdate",
+      "pageLastUpdateTimestamp",
+      "pagePermalink",
+      "pageReadTime",
+      "pageRelatedPages",
+      "pageSimilarPages",
+      "pageSummary",
+      "pageTags",
+      "pageTitle",
+      "type",
+      "url",
+      "url_without_anchor",
+      "url_without_variables"
+    ],
+    "allowTyposOnNumericTokens": false,
+    "ignorePlurals": true,
+    "camelCaseAttributes": [
+      "hierarchy",
+      "content"
+    ],
+    "advancedSyntax": true,
+    "attributeCriteriaComputedByMinProximity": true,
+    "removeStopWords": [
+      "en"
+    ],
+    "replaceSynonymsInHighlight": true,
+    "distinct": true,
+    "unretrievableAttributes": null,
+    "optionalWords": [
+      "of"
+    ],
+    "attributesForFaceting": [
+      "afterDistinct(searchable(lang))",
+      "afterDistinct(searchable(pageCats))",
+      "afterDistinct(searchable(pageCollection))",
+      "afterDistinct(searchable(pageHasDynamicContent))",
+      "afterDistinct(searchable(pageRelatedPages.title))",
+      "afterDistinct(searchable(pageSimilarPages.title))",
+      "afterDistinct(searchable(pageTags))"
+    ],
+    "attributesToSnippet": [
+      "content:10",
+      "hierarchy.lvl0:10",
+      "hierarchy.lvl1:10",
+      "hierarchy.lvl2:10",
+      "hierarchy.lvl3:10",
+      "hierarchy.lvl4:10",
+      "hierarchy.lvl5:10",
+      "hierarchy.lvl6:10",
+      "lang:10",
+      "pageCats:10",
+      "pageCollection:10",
+      "pageCreateTime:10",
+      "pageExcerpt:10",
+      "pageLastUpdate:10",
+      "pageRelatedPages.title:10",
+      "pageSimilarPages:10",
+      "pageSummary:10",
+      "pageTags:10",
+      "pageTitle:10"
+    ],
+    "attributesToHighlight": [
+      "content",
+      "hierarchy",
+      "hierarchy.lvl0",
+      "hierarchy.lvl1",
+      "hierarchy.lvl2",
+      "hierarchy.lvl3",
+      "hierarchy.lvl4",
+      "hierarchy.lvl5",
+      "hierarchy.lvl6",
+      "lang",
+      "pageCats",
+      "pageExcerpt",
+      "pageHasDynamicContent",
+      "pagePermalink",
+      "pageSummary",
+      "pageTags",
+      "pageTitle"
+    ],
+    "paginationLimitedTo": 1000,
+    "attributeForDistinct": "url",
+    "exactOnSingleWordQuery": "word",
+    "ranking": [
+      "desc(weight.pageRank)",
+      "desc(pageLastUpdateTimestamp)",
+      "desc(pageReadTime)",
+      "desc(pageExcerpt)",
+      "desc(pageSummary)",
+      "exact",
+      "words",
+      "attribute",
+      "proximity",
+      "filters",
+      "typo",
+      "custom"
+    ],
+    "customRanking": [
+      "desc(weight.level)",
+      "asc(weight.position)"
+    ],
+    "separatorsToIndex": "",
+    "removeWordsIfNoResults": "allOptional",
+    "queryType": "prefixLast",
+    "highlightPreTag": "<mark>",
+    "highlightPostTag": "</mark>",
+    "typoTolerance": "false",
+    "alternativesAsExact": [
+      "ignorePlurals",
+      "singleWordSynonym"
+    ],
+    "indexLanguages": [
+      "en",
+      "ro"
+    ],
+    "renderingContent": {
+      "facetOrdering": {
+        "facets": {
+          "order": [
+            "pageCats",
+            "pageTags",
+            "pageCollection",
+            "pageHasDynamicContent",
+            "pageRelatedPages.title",
+            "pageSimilarPages.title",
+            "lang"
+          ]
+        },
+        "values": {
+          "lang": {
+            "sortRemainingBy": "count"
+          },
+          "pageCats": {
+            "sortRemainingBy": "count"
+          },
+          "pageCollection": {
+            "sortRemainingBy": "count"
+          },
+          "pageHasDynamicContent": {
+            "sortRemainingBy": "count"
+          },
+          "pageRelatedPages.title": {
+            "sortRemainingBy": "count"
+          },
+          "pageSimilarPages.title": {
+            "sortRemainingBy": "count"
+          },
+          "pageTags": {
+            "sortRemainingBy": "count"
+          }
+        }
+      }
+    }
+  },
+  "rules": [],
+  "synonyms": []
+}

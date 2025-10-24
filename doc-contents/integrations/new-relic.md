@@ -9,7 +9,9 @@ nav_order: 3
 ---
 
 # Summary
-New Relic integration is provided out-of-the-box once this integration is enabled. This integration allows monitoring and measuring the perfomance of the site. Used in combination with the `hooks` extension capabilities, it provides a robust way to log the user interactions with site. We provide a function that logs to new Relic the execution of any target function used as part of the code base of the site. Hooking the logging function to the target function will send to New Relic the context information of the target function execution (timestamp, target function arguments, execution result, the page on which the target funtion was executed, user anonymous id, device and browser information). Using the logs brings valuable information about how the site is functioning and can lead to important optimisations and fixes.
+New Relic integration is provided out-of-the-box once this integration is enabled. This integration allows monitoring and measuring the perfomance of the site. Used in combination with the `hooks` extension capabilities, it provides a robust way to log the user interactions with site. We provide a function that logs to new Relic the execution of any target function used as part of the code base of the site. 
+
+Hooking the logging function to the target function will send to New Relic the context information of the target function execution (timestamp, target function arguments, execution result, the page on which the target funtion was executed, user anonymous id, device and browser information). Using the logs brings valuable information about how the site is functioning and can lead to important optimisations and fixes.
 
 # Usage
 Using this integration requires a little bit of code and New Relic knowledge. First, it is needed to do the needed configurations in New Relic and get the integration parameters to be configured as environment variables. Second, locate the function which you want to log and bring it into global scope. Then, define the hook and, finally, activate it. 
