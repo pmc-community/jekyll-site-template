@@ -106,7 +106,7 @@
         },
         {
             "permalink": "/integrate/",
-            "summary": "Docaroo provides out-of-the-box a series of integrations. The purpose of the integrations is to make available in a no-code or low-code mode some important features."
+            "summary": "Docaroo provides out-of-the-box a series of integrations. The main purpose is to enhance the functionalities of the site. Each integration can be independently enabled and configured or disabled."
         },
         {
             "permalink": "/integrations/ga-gtm/",

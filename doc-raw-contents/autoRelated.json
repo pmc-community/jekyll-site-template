@@ -419,8 +419,8 @@
         "permalink": "/integrations/algolia/"
       },
       {
-        "title": "GA/GTM",
-        "permalink": "/integrations/ga-gtm/"
+        "title": "Config Options",
+        "permalink": "/get-started/config-options/"
       }
     ]
   },
@@ -436,8 +436,8 @@
         "permalink": "/integrations/github/"
       },
       {
-        "title": "Integrate",
-        "permalink": "/integrate/"
+        "title": "GA/GTM",
+        "permalink": "/integrations/ga-gtm/"
       }
     ]
   },

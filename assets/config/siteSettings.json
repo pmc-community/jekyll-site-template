@@ -1021,10 +1021,10 @@
         "search"
       ],
       "excerpt": "algolia, integration, netlify, configuration, docaroo",
-      "lastUpdate": "2025-10-24 18:51:11 +0300",
+      "lastUpdate": "2025-10-25 17:39:39 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-24 18:51:11 +0300",
-      "createTimeUTC": 1761321071,
+      "createTime": "2025-10-25 17:39:39 +0300",
+      "createTimeUTC": 1761403179,
       "relatedPages": [
         {
           "title": "New Relic",
@@ -1174,7 +1174,7 @@
         "measure",
         "search"
       ],
-      "excerpt": "integrations, performance, integration, mandatory, feedback",
+      "excerpt": "integrations, performance, feedback, users, functionalities",
       "lastUpdate": "2025-10-23 13:58:56 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-10-23 13:58:56 +0300",
@@ -1189,13 +1189,13 @@
           "permalink": "/integrations/algolia/"
         },
         {
-          "title": "GA/GTM",
-          "permalink": "/integrations/ga-gtm/"
+          "title": "Config Options",
+          "permalink": "/get-started/config-options/"
         }
       ],
-      "autoSummary": "Docaroo provides out-of-the-box a series of integrations. The purpose of the integrations is to make available in a no-code or low-code mode some important features.",
+      "autoSummary": "Docaroo provides out-of-the-box a series of integrations. The main purpose is to enhance the functionalities of the site. Each integration can be independently enabled and configured or disabled.",
       "similarByContent": [],
-      "readingTime": 1,
+      "readingTime": 2,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -1229,8 +1229,8 @@
           "permalink": "/integrations/github/"
         },
         {
-          "title": "Integrate",
-          "permalink": "/integrate/"
+          "title": "GA/GTM",
+          "permalink": "/integrations/ga-gtm/"
         }
       ],
       "autoSummary": "New relic integration is provided out-of-the-box once this integration is enabled. This integration allows monitoring and measuring the perfomance of the site. Used in combination with the extension capabilities, it provides a robust way to log the user interactions with site.",
@@ -1434,7 +1434,7 @@
         {
           "title": "Algolia",
           "permalink": "/integrations/algolia/",
-          "lastUpdate": "24-Oct-2025"
+          "lastUpdate": "25-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1859,7 +1859,7 @@
         {
           "title": "Algolia",
           "permalink": "/integrations/algolia/",
-          "lastUpdate": "24-Oct-2025"
+          "lastUpdate": "25-Oct-2025"
         },
         {
           "title": "GA/GTM",
@@ -2074,7 +2074,7 @@
         {
           "title": "Algolia",
           "permalink": "/integrations/algolia/",
-          "lastUpdate": "24-Oct-2025"
+          "lastUpdate": "25-Oct-2025"
         },
         {
           "title": "Integrate",
@@ -2381,7 +2381,7 @@
         {
           "title": "Algolia",
           "permalink": "/integrations/algolia/",
-          "lastUpdate": "24-Oct-2025"
+          "lastUpdate": "25-Oct-2025"
         },
         {
           "title": "GA/GTM",
@@ -2446,7 +2446,7 @@
         {
           "title": "Algolia",
           "permalink": "/integrations/algolia/",
-          "lastUpdate": "24-Oct-2025"
+          "lastUpdate": "25-Oct-2025"
         },
         {
           "title": "GA/GTM",
