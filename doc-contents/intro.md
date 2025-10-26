@@ -78,7 +78,7 @@ By the end of this guide, you will understand:
 
 # 🛠️ Prerequisites
 
-To follow along with this guide, you’ll need:
+To follow along with this guide, you will need:
 
 - Basic familiarity with Git and GitHub 
 - A working knowledge of Markdown  

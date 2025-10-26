@@ -7,11 +7,11 @@ tags: [card, content, external, button, link, gallery]
 ---
 
 # Summary
-A card is a great way to emphasise a piece of information and provide also relevant visual experience with images as well as references to more detailed sources (internal or external), while a card gallery is a great way to list elements of the same type (such as projects or categories). This component is designed to allow including cards and card galeries into your documents. A card is made of an image header, a title, some content and a footer with links to more detailed sources.
+A card is a great way to emphasise a piece of information and provide also relevant visual experience with images as well as references to more detailed sources (internal or external), while a card gallery is a great way to list elements of the same type (such as projects or categories). This component is designed to allow including cards and card galleries into your documents. A card is made of an image header, a title, some content and a footer with links to more detailed sources.
 
-As many other Docaroo components, card supports embedding external content through other docaroo components. This a very powerful way of creating cards but shoud be used with care since cards should have a very short and relevant content. The next examples shows how to create cards with other Docaroo components.
+As many other Docaroo components, card supports embedding external content through other docaroo components. This a very powerful way of creating cards but should be used with care since cards should have a very short and relevant content. The next examples shows how to create cards with other Docaroo components.
 
-Cards can be included as single items or in galleries of cards. As much as possible avoid using single simple cards. Use them only when you want to break the monotony of a text or to emphahis something really important. Try to use cards with aside content or galleries of cards
+Cards can be included as single items or in galleries of cards. As much as possible avoid using single simple cards. Use them only when you want to break the monotony of a text or to emphasise something really important. Try to use cards with aside content or galleries of cards
 
 The size of the cards is based on the best practice in creating components able to ensure both readability and good visual effects. However, the card settings can be modified as per your preferences by changing the default values in `_data/buildConfig` file.
 
@@ -46,7 +46,7 @@ The default size of the card is optimised for best readability and for using asi
 The card width can be increased up to `20rem` while keeping the same aspect ratio between the card and its aside content. or it can be set to `100%` to fill in the whole available space. Note that a card without aside content and having the width set to 100% will fill the whole viewport (page) width.
 
 # Simple card
-Adding simple cards is easy, only add the code shown below. However, as visual effect on a page, a simple card in a document section may not look quite well and can unbalance the aspect of the document. For this reason we added the option to put some aside content near to the card. This aside content can be simple text or build from other Docaroo components as the next example illustrates. If `contentAside` parameter is not set, the card is rendered as single element in the midle of its section, all further content will be rendered under the card and the space around the card will remain empty.
+Adding simple cards is easy, only add the code shown below. However, as visual effect on a page, a simple card in a document section may not look quite well and can unbalance the aspect of the document. For this reason we added the option to put some aside content near to the card. This aside content can be simple text or build from other Docaroo components as the next example illustrates. If `contentAside` parameter is not set, the card is rendered as single element in the middle of its section, all further content will be rendered under the card and the space around the card will remain empty.
 
 {% include elements/alert.html class="warning" 
     content="Note that the aside content will be shown under the card on narrow screens (mobile devices) and, normally, stays hidden until made visible using the small icon button on the right of the card title." 
@@ -58,7 +58,7 @@ Adding simple cards is easy, only add the code shown below. However, as visual e
 %}
 
 ## Example
-Here is an exmple of a card with aside content. First, define the buttons to be rendered in the card footer. Second, create the card content and the card aside content as external files. Note that you can use any other Docaroo components to create these pieces of content. The code to include the card into a document is: 
+Here is an example of a card with aside content. First, define the buttons to be rendered in the card footer. Second, create the card content and the card aside content as external files. Note that you can use any other Docaroo components to create these pieces of content. The code to include the card into a document is: 
 
 {% raw %}
 ```javascript
@@ -101,7 +101,7 @@ Here is an exmple of a card with aside content. First, define the buttons to be 
 `END CARD WITH ASIDE CONTENT`
 
 {% include elements/alert.html class="primary" 
-    content="As much as possible avoid using cards without link buton(s) in the footer. Apart from the purpose of focusing on short conclusions, the links to more detailed information which can be provided in the card footer are also important for the overall user experience" 
+    content="As much as possible avoid using cards without link button(s) in the footer. Apart from the purpose of focusing on short conclusions, the links to more detailed information which can be provided in the card footer are also important for the overall user experience" 
     title="Tip" 
 %}
 
@@ -113,7 +113,7 @@ Here is an exmple of a card with aside content. First, define the buttons to be 
 - `buttons`: the link buttons to be rendered in the footer of the card
 
 # Card gallery
-Card gallery is a great way to list elements of the same type (such as projects or categories). The cards in card galleries doesn't accept `aside content`, thus we recommend to use link buttons to more detailed information or links inside the card text. Card galleries are always rendered on a single row with horizontal scroll on narrow screens (mobile devices). On desktop (large screens) card galleries are rendered based on `oneRow` parameter, on one row with horizaontal scroll or in rows of three cards.
+Card gallery is a great way to list elements of the same type (such as projects or categories). The cards in card galleries does not accept `aside content`, thus we recommend to use link buttons to more detailed information or links inside the card text. Card galleries are always rendered on a single row with horizontal scroll on narrow screens (mobile devices). On desktop (large screens) card galleries are rendered based on `oneRow` parameter, on one row with horizontal scroll or in rows of three cards.
 
 Building the card galleries is a bit more complex because it is necessary to define each card. It works as shown next. The following example build a card gallery made of 4 cards, having different link buttons configuration.
 

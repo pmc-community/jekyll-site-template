@@ -20,16 +20,16 @@
     "permalink": "/components/card/",
     "related": [
       {
+        "title": "Content items",
+        "permalink": "/content/content-items/"
+      },
+      {
         "title": "Image",
         "permalink": "/components/image/"
       },
       {
-        "title": "Link button",
-        "permalink": "/components/link-button/"
-      },
-      {
-        "title": "Downloads",
-        "permalink": "/components/download-link/"
+        "title": "FAQ Item",
+        "permalink": "/components/qitem/"
       }
     ]
   },
@@ -194,12 +194,12 @@
         "permalink": "/components/scrollspy/"
       },
       {
-        "title": "Components",
-        "permalink": "/components/intro/"
+        "title": "Card",
+        "permalink": "/components/card/"
       },
       {
-        "title": "Content",
-        "permalink": "/content/intro/"
+        "title": "Components",
+        "permalink": "/components/intro/"
       }
     ]
   },
