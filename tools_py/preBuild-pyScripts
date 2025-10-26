@@ -2,6 +2,3 @@
 
  source ~/py-dev-env-392/bin/activate
  python3 tools_py/intro.py
-
- #echo "📋 Spell checking ..."
- #python3 tools_py/spell-check/spell-check.py doc-raw-contents

@@ -108,7 +108,7 @@ Well-written documentation is more than just a user manual:
 - It enables contribution and collaboration  
 - It preserves institutional knowledge  
 
-Good documentation isn't just nice to have — it's a **core part of product success**.
+Good documentation is not just nice to have — it's a **core part of product success**.
 
 # ✅ Let’s Get Started
 

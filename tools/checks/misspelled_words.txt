@@ -83,5 +83,5 @@ Permalink: /integrations/new-relic/ (Language detected: en)
 Misspelled words: folow, funtion, ga, github, gtm, hookable, measurint, netlify, perfomance
 
 Permalink: /intro/ (Language detected: en)
-Misspelled words: analytics, changelogs, ci, docaroo, figma, github, isn, netlify, onboarding, pre, seo, vs
+Misspelled words: analytics, changelogs, ci, docaroo, figma, github, netlify, onboarding, pre, seo, vs
 

@@ -270,10 +270,10 @@
         "gallery"
       ],
       "excerpt": "cards, card, content, documentation, readability",
-      "lastUpdate": "2025-08-05 15:23:23 +0300",
+      "lastUpdate": "2025-10-26 13:40:14 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-08-05 15:23:23 +0300",
-      "createTimeUTC": 1754396603,
+      "createTime": "2025-10-26 13:40:14 +0200",
+      "createTimeUTC": 1761478814,
       "relatedPages": [
         {
           "title": "Content items",
@@ -327,8 +327,8 @@
           "title": "Content items"
         },
         {
-          "permalink": "/content/ec/",
-          "title": "External content"
+          "permalink": "/intro/",
+          "title": "Introduction"
         }
       ],
       "readingTime": 1,
@@ -677,8 +677,8 @@
           "title": "Components"
         },
         {
-          "permalink": "/content/ec/",
-          "title": "External content"
+          "permalink": "/intro/",
+          "title": "Introduction"
         }
       ],
       "readingTime": 2,
@@ -1250,10 +1250,10 @@
         "docs"
       ],
       "excerpt": "guide, documentation, content, structure, markdown",
-      "lastUpdate": "2025-07-26 17:29:03 +0300",
+      "lastUpdate": "2025-10-26 13:40:14 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-07-26 17:29:03 +0300",
-      "createTimeUTC": 1753540143,
+      "createTime": "2025-10-26 13:40:14 +0200",
+      "createTimeUTC": 1761478814,
       "relatedPages": [
         {
           "title": "Docs root",
@@ -1469,7 +1469,7 @@
         {
           "title": "Card",
           "permalink": "/components/card/",
-          "lastUpdate": "05-Aug-2025"
+          "lastUpdate": "26-Oct-2025"
         },
         {
           "title": "Downloads",
@@ -1489,7 +1489,7 @@
         {
           "title": "Card",
           "permalink": "/components/card/",
-          "lastUpdate": "05-Aug-2025"
+          "lastUpdate": "26-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1574,7 +1574,7 @@
         {
           "title": "Card",
           "permalink": "/components/card/",
-          "lastUpdate": "05-Aug-2025"
+          "lastUpdate": "26-Oct-2025"
         },
         {
           "title": "FAQ Item",
@@ -1614,7 +1614,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "26-Jul-2025"
+          "lastUpdate": "26-Oct-2025"
         },
         {
           "title": "Config Files",
@@ -1649,7 +1649,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "26-Jul-2025"
+          "lastUpdate": "26-Oct-2025"
         },
         {
           "title": "Config Files",
@@ -1729,7 +1729,7 @@
         {
           "title": "Card",
           "permalink": "/components/card/",
-          "lastUpdate": "05-Aug-2025"
+          "lastUpdate": "26-Oct-2025"
         },
         {
           "title": "External content",
@@ -1794,7 +1794,7 @@
         {
           "title": "Card",
           "permalink": "/components/card/",
-          "lastUpdate": "05-Aug-2025"
+          "lastUpdate": "26-Oct-2025"
         },
         {
           "title": "Image",
@@ -1904,7 +1904,7 @@
         {
           "title": "Card",
           "permalink": "/components/card/",
-          "lastUpdate": "05-Aug-2025"
+          "lastUpdate": "26-Oct-2025"
         },
         {
           "title": "Downloads",
@@ -2206,7 +2206,7 @@
         {
           "title": "Card",
           "permalink": "/components/card/",
-          "lastUpdate": "05-Aug-2025"
+          "lastUpdate": "26-Oct-2025"
         },
         {
           "title": "Components",
@@ -2361,7 +2361,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "26-Jul-2025"
+          "lastUpdate": "26-Oct-2025"
         },
         {
           "title": "Config Files",

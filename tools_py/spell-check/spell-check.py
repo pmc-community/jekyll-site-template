@@ -71,7 +71,7 @@ def process_file(file_path, out_f):
         out_f.write("\n")
         out_f.flush()
 
-        #print(f"✅ Processed: {os.path.basename(file_path)} ({lang})")
+        print(f"🔸 Processed: {transformed_path} ({lang})")
 
     except Exception as e:
         out_f.write(f"Error processing {file_path}: {e}\n\n")
