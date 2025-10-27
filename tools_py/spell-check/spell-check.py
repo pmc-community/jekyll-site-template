@@ -5,41 +5,106 @@ import yaml
 from langdetect import detect
 from symspellpy import SymSpell, Verbosity
 import pkg_resources
+from rich.console import Console
+from rich.table import Table, Column
+from rich.live import Live
+from rich import box
+import tempfile
+
+console = Console()
+
+output_table = Table(
+    # --- 1. POSITIONAL ARGUMENTS (Column definitions FIRST) ---
+    Column(header="", min_width=2, style="yellow"),
+    Column(header="No.", min_width=4, style="yellow"),
+    Column(header="Permalink", min_width=30, overflow="fold", style="yellow"), # Handles wrapping
+    Column(header="File", min_width=40, overflow="fold", style="yellow"), # Handles wrapping
+    Column(header="Misspellings", min_width=5, justify="right", style="yellow"),
+    Column(header="Lang", min_width=4, style="yellow"),
+
+    # --- 2. KEYWORD ARGUMENTS (title, show_header, etc. LAST) ---
+    title=f"",
+    show_header=True,        # Meets "no headers" requirement
+    caption="",
+
+    # ------------------ ADDED STYLING ------------------
+    box=box.HEAVY_HEAD,      # Sets the style of the box/borders (HEAVY_HEAD shows all lines)
+    show_lines=True,         # Ensures lines are drawn between rows
+    border_style="purple",   # Sets the color of the entire border/box structure
+    # ---------------------------------------------------
+)
+
 
 # --- Supported languages and dictionary files ---
 SUPPORTED_LANGS = {
     "en": "frequency_dictionary_en_82_765.txt",
+    "ca": "ca.txt",
 }
 
 # --- Cache for SymSpell instances ---
 symspell_cache = {}
 
-def load_symspell_for_language(lang_code):
-    """Load (or reuse) a SymSpell instance for the given language code."""
-    lang_code = lang_code.lower()
+def load_symspell_for_lang(lang_code):
     if lang_code in symspell_cache:
         return symspell_cache[lang_code]
 
     if lang_code not in SUPPORTED_LANGS:
-        print(f"🚩 Unsupported language '{lang_code}'. Skipping spellcheck.")
+        print(f"❌ Unsupported language code: {lang_code}")
         return None
 
     dictionary_filename = SUPPORTED_LANGS[lang_code]
+
+    # Use pkg_resources to get the path to the file inside the package
     try:
         dictionary_path = pkg_resources.resource_filename("symspellpy", dictionary_filename)
     except Exception as e:
-        print(f"❌ Failed to find resource file for {lang_code}. Error: {e}")
+        print(f"❌ Failed to find resource file for {lang_code}: {e}")
+        return None
+
+    if not os.path.exists(dictionary_path):
+        print(f"❌ Dictionary file does not exist for {lang_code}: {dictionary_path}")
+        return None
+
+    # Check if the dictionary has a frequency column
+    try:
+        with open(dictionary_path, "r", encoding="utf-8") as f:
+            first_line = f.readline().strip().split()
+            has_freq_col = len(first_line) >= 2
+    except Exception as e:
+        print(f"❌ Error reading dictionary file for {lang_code}: {e}")
         return None
 
     sym_spell = SymSpell(max_dictionary_edit_distance=2, prefix_length=7)
-    if not sym_spell.load_dictionary(dictionary_path, term_index=0, count_index=1):
+
+    if has_freq_col:
+        success = sym_spell.load_dictionary(dictionary_path, term_index=0, count_index=1)
+    else:
+        #print(f"⚠️ No frequency column found for {lang_code}. Assigning frequency=1 to all words...")
+        temp_path = None
+        try:
+            # create a temporary file with frequency column
+            with tempfile.NamedTemporaryFile(mode="w+", delete=False, encoding="utf-8") as tmp:
+                temp_path = tmp.name
+                with open(dictionary_path, "r", encoding="utf-8") as f:
+                    for line in f:
+                        word = line.strip().split()[0]
+                        if word:
+                            tmp.write(f"{word} 1\n")
+            success = sym_spell.load_dictionary(temp_path, term_index=0, count_index=1)
+        except Exception as e:
+            print(f"❌ Failed to prepare temporary frequency file for {lang_code}: {e}")
+            return None
+        finally:
+            if temp_path and os.path.exists(temp_path):
+                os.remove(temp_path)
+
+    if not success:
         print(f"❌ Failed to load dictionary for {lang_code}: {dictionary_path}")
         return None
 
     symspell_cache[lang_code] = sym_spell
-    print(f"📚 Loaded dictionary for {lang_code}")
+    print(f"✅ Loaded SymSpell dictionary for {lang_code} ({'with' if has_freq_col else 'without'} frequencies).")
     return sym_spell
-
 
 def get_txt_files(folder):
     txt_files = []
@@ -107,7 +172,7 @@ def process_file(file_path, out_f, file_index, total_files, md_root_folder):
             text = f.read()
 
         if not text.strip():
-            print(f"⚪ Skipping empty file: {file_path}")
+            # print(f"❌ Skipping empty file: {file_path}")
             return
 
         # --- Detect language ---
@@ -116,7 +181,7 @@ def process_file(file_path, out_f, file_index, total_files, md_root_folder):
         except Exception:
             lang = "unknown"
 
-        sym_spell = load_symspell_for_language(lang)
+        sym_spell = load_symspell_for_lang(lang)
         misspelled = detect_misspellings(text, sym_spell)
 
         filename = os.path.basename(file_path)
@@ -131,8 +196,8 @@ def process_file(file_path, out_f, file_index, total_files, md_root_folder):
         out_f.write(f"Language detected: {lang}\n")
 
         if not sym_spell:
-            out_f.write("Language not supported for spellcheck.\n\n")
-            status_icon = "🚩"
+            out_f.write("Language not supported for spellcheck (possible missing dictionary).\n\n")
+            status_icon = "❌"
         elif misspelled:
             out_f.write(f"Misspelled words: {', '.join(misspelled)}\n\n")
             status_icon = "🔸"
@@ -141,7 +206,23 @@ def process_file(file_path, out_f, file_index, total_files, md_root_folder):
             status_icon = "🔹"
 
         out_f.flush()
-        print(f"{status_icon} Processed {file_index}/{total_files}: {transformed_path} ({lang})")
+        #print(f"{status_icon} Processed {file_index}/{total_files}: {transformed_path} ({md_rel_path}) ({lang}): {len(misspelled)} possible misspelled word(s)")
+
+        with Live(output_table, console=console, screen=True) as live:
+            status = status_icon
+            progress = f"{file_index}/{total_files}"
+            misspelled_count = str(len(misspelled))
+            language = lang
+
+            # Add the new row to the table
+            output_table.add_row(
+                status,
+                progress,
+                transformed_path, # Rich handles wrapping this string automatically
+                md_rel_path,
+                misspelled_count,
+                language
+            )
 
     except Exception as e:
         out_f.write(f"Error processing {file_path}: {e}\n\n")
@@ -166,6 +247,7 @@ def main(txt_folder, md_folder):
     with open(result_file, "a", encoding="utf-8") as out_f:
         for i, file_path in enumerate(txt_files, 1):
             process_file(file_path, out_f, i, total_files, md_folder)
+    console.print(output_table)
 
     print(f"✅ All files processed. Results saved in '{result_file}'.")
 

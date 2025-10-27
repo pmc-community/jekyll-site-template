@@ -534,10 +534,10 @@
         "tabs"
       ],
       "excerpt": "scroll spy, folder, documents, document, content",
-      "lastUpdate": "2025-08-02 01:05:20 +0300",
+      "lastUpdate": "2025-10-27 11:38:11 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-08-02 01:05:20 +0300",
-      "createTimeUTC": 1754085920,
+      "createTime": "2025-10-27 11:38:11 +0200",
+      "createTimeUTC": 1761557891,
       "relatedPages": [
         {
           "title": "Content items",
@@ -1584,7 +1584,7 @@
         {
           "title": "Scroll Spy & Tabs",
           "permalink": "/components/scrollspy/",
-          "lastUpdate": "02-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Content items",
@@ -2064,7 +2064,7 @@
         {
           "title": "Scroll Spy & Tabs",
           "permalink": "/components/scrollspy/",
-          "lastUpdate": "02-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         }
       ],
       "numPages": 1
@@ -2134,7 +2134,7 @@
         {
           "title": "Scroll Spy & Tabs",
           "permalink": "/components/scrollspy/",
-          "lastUpdate": "02-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         }
       ],
       "numPages": 1
@@ -2241,7 +2241,7 @@
         {
           "title": "Scroll Spy & Tabs",
           "permalink": "/components/scrollspy/",
-          "lastUpdate": "02-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "XLSX Charts",
