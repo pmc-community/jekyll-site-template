@@ -9,7 +9,7 @@ nav_order: 3
 ---
 
 # Summary
-Docaroo provides out-of-the-box full integration with Algolia DocSearch. Full integration means that we provide both Algolia index cusotmisation as well as a very powerful and extended UI experience. For Algolia search, at the moment, we provide full indexing and index update during site build, but we do not provide (yet) the UI experience. However, for most of the potential use cases of Docaroo, Algolia DocSearch covers any search need. Also it is free for ever as long as you meet Algolia DocSearch eligibility.
+Docaroo provides out-of-the-box full integration with Algolia DocSearch. Full integration means that we provide both Algolia index customisation as well as a very powerful and extended UI experience. For Algolia search, at the moment, we provide full indexing and index update during site build, but we do not provide (yet) the UI experience. However, for most of the potential use cases of Docaroo, Algolia DocSearch covers any search need. Also it is free for ever as long as you meet Algolia DocSearch eligibility.
 
 Algolia DocSearch UI experience is provided by default once this integration is enabled and properly configured. The search experience has multilanguage support by default. Additionally, we provide a very nice `search-on-site` feature, meaning that is not always necessary to open the search box to do your search. Host select a text on page and see `Search in site` option in the context menu. 
 
@@ -74,7 +74,7 @@ As described earlier, for Algolia search, at the moment, we provide full indexin
 To use Algolia search integration it is needed to:
 1. create the Algolia search app and (if allowed by your plan) the crawler
 2. (if applicable) modify the crawler using the crawler script we provide. Test your crawler
-3. apply mimimum index configuration with the configuration we provide for custom indexes
+3. apply minimum index configuration with the configuration we provide for custom indexes
 4. if you already have content published, force full re-build of the site by removing `doc-raw-contents` folder. `Be aware that it may take a while, depending on how much content you already have`. This will create the records in the index.
 5. create the search UI experience. `You may need to consult Algolia documentation at this point!`
 6. deploy the site

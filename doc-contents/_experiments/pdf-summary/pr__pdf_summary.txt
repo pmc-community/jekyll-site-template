@@ -28,10 +28,10 @@ timestamp: 1755270400858
 <div id="pdf_summary-section-title-4C9n6U6TWcQWbaDD" class="pdf_summary-section-title my-2 fw-medium text-primary fs-6">Specific Objectives</div>
 <p>• Specific Objective 1: To ensure availability of relevant information. The inventory of existing information systems collaborate for the implementation. The system is installed and configured in the appropriate way.</p>
 
-<p>Adequate and sufficient beneficiary resources have been provided. All potential non-conformities (from FATtesting) were corrected.</p>
+<p>Adequate and sufficient beneficiary resources have been provided. All potential non-conformities (from FAT testing) were corrected.</p>
 
 <div id="pdf_summary-section-title-8kHJ4i7qvQfuvWHv" class="pdf_summary-section-title my-2 fw-medium text-primary fs-6">Acceptance Testing</div>
-<p>• All potential non-conformities (from Functionalproduction environment) are considered. The planning of the training sessions is also considered. Adequate and sufficient beneficiary protections are in place.</p>
+<p>• All potential non-conformities (from Functional production environment) are considered. The planning of the training sessions is also considered. Adequate and sufficient beneficiary protections are in place.</p>
 
 <p>A workplan has been drawn up for the project. The summary of the workplan is:Table 4: Workplan.</p>
 

@@ -1,145 +1,145 @@
 Permalink: /components/alerts/
 File: _components/alerts.md
 Language detected: en
-Misspelled words: ac, ad, aliquam, aliquet, amet, aptent, auctor, augue, bibendum, colors, consectetur, consequat, conubia, convallis, curabitur, dapibus, docaroo, dui, duis, eget, elit, enim, erat, et, etiam, eu, ex, github, hendrerit, himenaeos, iaculis, imperdiet, inceptos, interdum, ipsum, lacinia, lectus, litora, lorem, luctus, magna, malesuada, mattis, mauris, metus, mollis, nec, neque, nibh, nisl, nostra, nulla, nullam, nunc, orci, ornare, placerat, proin, pulvinar, quam, quis, repo, rhoncus, risus, rutrum, sapien, sed, sociosqu, taciti, tempor, torquent, turpis, ultricies, ut, venenatis, vestibulum
+No misspellings detected.
 
 Permalink: /components/card/
 File: _components/card.md
 Language detected: en
-Misspelled words: docaroo, innohub, pmc, viewport
+No misspellings detected.
 
 Permalink: /components/download-link/
 File: _components/download-link/download-link.md
 Language detected: en
-Misspelled words: prossible
+No misspellings detected.
 
 Permalink: /components/image/
 File: _components/images.md
 Language detected: en
-Misspelled words: acoording, thre
+No misspellings detected.
 
 Permalink: /components/intro/
 File: _components/components.md
 Language detected: en
-Misspelled words: docaroo, faq, figma, pre
+No misspellings detected.
 
 Permalink: /components/link-button/
 File: _components/link-btn.md
 Language detected: en
-Misspelled words: bootstap, docaroo, functionalitieds, permalink
+No misspellings detected.
 
 Permalink: /components/qitem/
 File: _components/faq-item.md
 Language detected: en
-Misspelled words: algolia, annswer, docaroo, faq, readibility, suports, toc
+No misspellings detected.
 
 Permalink: /components/rich-media/
 File: _components/rich-media.md
 Language detected: en
-Misspelled words: backend, docaroo, doesn, figma, html, proto, resetbtn
+No misspellings detected.
 
 Permalink: /components/scrollspy/
 File: _components/scroll-spy.md
 Language detected: ca
-Misspelled words: ac, according, added, adipiscing, aenean, again, aliquam, although, amet, an, and, ante, any, anywhere, applicable, arcu, are, around, as, at, auctor, augue, based, be, because, below, blandit, can, combine, commodo, condimentum, congue, conntent, consectetur, consequat, consist, created, cursus, dapibus, default, diam, dictum, dignissim, dis, do, docaroo, documents, don, donec, dui, easy, efficitur, egestas, eget, either, eleifend, elementum, enim, erat, eros, esternal, etiam, eu, ex, example, external, facilisi, false, fames, faucibus, feel, felis, feugiat, files, finally, finibus, folder, following, for, free, fringilla, from, fusce, gravida, great, habitant, height, hendrerit, here, iaculis, id, if, imperdiet, importing, in, include, included, including, information, inside, integer, interdum, into, ipsum, is, issues, it, item, justo, lacinia, lacus, laoreet, lectus, leo, libero, ligula, like, lobortis, looks, lorem, luctus, made, magna, magnis, malesuada, markdown, mattis, mauris, maximus, metus, mi, mobile, molestie, mollis, montes, morbi, mus, nascetur, natoque, nec, needs, neque, netus, nibh, nisi, nisl, non, not, nulla, nullam, number, nunc, odio, of, one, ones, orci, organising, other, our, parameter, parameters, parturient, pellentesque, penatibus, pharetra, phasellus, phone, place, placed, populate, porttitor, posuere, potential, pretium, primary, primis, provide, provided, pulvinar, purus, quam, quis, quisque, readability, recommend, recommendation, rhoncus, rich, ridiculus, risus, rutrum, sagittis, sapien, scelerisque, screens, scroll, sed, semper, senectus, simply, sit, size, sodales, sollicitudin, spies, spy, stored, structure, sub, suscipit, tabs, tellus, tempus, the, them, then, this, tincidunt, too, tristique, turpis, ullamcorper, ultrices, ultricies, urna, use, used, ut, value, values, varius, vehicula, velit, venenatis, vitae, vivamus, volutpat, way, ways, we, well, when, which, will, you, your
+Misspelled words: conntent
 
 Permalink: /components/xlsx-charts/
 File: _components/xlsx-to-html-chart/xlsx-to-html-chart.md
 Language detected: en
-Misspelled words: baset, colors, xlsx
+No misspellings detected.
 
 Permalink: /components/xlsx-tables/
 File: _components/xlsx-to-html-table/xlsx-to-html-table.md
 Language detected: en
-Misspelled words: cels, colspan, doesn, horizonrtal, rowspan, xlsx
+No misspellings detected.
 
 Permalink: /content/content-items/
 File: _content/content-items.md
 Language detected: en
-Misspelled words: docaroo, github, multilanguage, whrn
+No misspellings detected.
 
 Permalink: /content/ec/
 File: _content/external-content.md
 Language detected: en
-Misspelled words: accumsan, adipiscing, aenean, algolia, amet, api, auctor, bewteen, bibendum, confiured, congue, consectetur, consequat, convallis, cras, cutom, dapibus, docaroo, dolor, dui, eget, elementum, elit, et, eu, euismod, facilisis, faucibus, feugiat, finibus, fringilla, fusce, github, hendrerit, html, iaculis, innohub, interdum, ipsum, justo, lacinia, lacus, lorem, magna, malesuada, massa, mauris, metus, mi, mollis, morbi, myinnohub, nec, neque, nibh, nisl, nulla, ornare, pellentesque, porta, porttitor, proin, pulvinar, quam, refelcted, sagittis, sapien, scelerisque, searcing, sed, semper, shortcodes, sollicitudin, tincidunt, toc, tristique, turpis, ullamcorper, ultrices, ultricies, urna, ut, velit, viverra, vulputate, wordpress
+No misspellings detected.
 
 Permalink: /content/intro/
 File: _content/content.md
 Language detected: en
-Misspelled words: beeing, docaroo, doesn, github, html, vimeo
+No misspellings detected.
 
 Permalink: /experiments/docx-summary/
 File: _experiments/docx-summary/docx-summary.md
 Language detected: en
-Misspelled words: acknowledgments, apa, api, betweeen, birnin, bovet, cgs, checkings, cm, comparation, deliverables, dioxane, docx, doesn, du, dérivé, easlily, ed, eid, eids, eseal, et, forneau, frenchs, github, http, huggingface, macos, math, mathtype, mc, multilanguage, nouveau, oersteds, pdf, pe, pennlive, pharmacodyn, pr, pt, raney, rao, readibility, recherches, remeber, ronpub, routledge, runtime, si, simons, subesequent, subsubsection, subsubsections, sympathicolytique, telford, toc, ts, un, url, ux, wakanda, wbs, wisa, wkbr, wkca, wmi, workplan, www, zana
+Misspelled words: apa, birnin, bovet, cgs, cm, dioxane, du, dérivé, ed, eid, eids, eseal, forneau, frenchs, mc, nouveau, oersteds, pe, pennlive, pharmacodyn, pr, pt, raney, rao, recherches, ronpub, routledge, si, simons, subsubsection, subsubsections, sympathicolytique, telford, ts, un, wakanda, wbs, wisa, wkbr, wkca, wmi, www, zana
 
 Permalink: /experiments/intro/
 File: _experiments/experiments.md
 Language detected: en
-Misspelled words: althouth, cpu, dev, docx, gpu, pdf
+No misspellings detected.
 
 Permalink: /experiments/pdf-summary/
 File: _experiments/pdf-summary/pdf-summary.md
 Language detected: en
-Misspelled words: ac, acm, api, bdis, betweeen, birnin, cao, checkings, cm, conformities, dc, deliverables, dfr, digitalidentity, docx, dr, easlily, eid, enotary, ewakanda, fattesting, fr, functionalproduction, github, http, huggingface, iaeng, ibm, iceis, ieee, impor, ka, kajor, macos, mcpr, mom, mr, ms, multilanguage, pdf, pe, pr, pt, rao, readibility, remeber, reportingperiod, ronpub, si, structureo, subesequent, subsubsections, toc, url, ux, wbs, workplan, www, zana
+Misspelled words: acm, bdis, birnin, cao, cm, dc, dfr, digitalidentity, dr, eid, enotary, ewakanda, fr, iaeng, ibm, iceis, ieee, impor, ka, kajor, mcpr, mom, mr, ms, pe, pr, pt, rao, reportingperiod, ronpub, si, structureo, subsubsections, wbs, www, zana
 
 Permalink: /get-started/
 File: get-started.md
 Language detected: en
-Misspelled words: buid, compoents, desigend, docaroo, documentaion, github, macos, multilanguage, multilangual, ocnfiguration, py, shoud, sigle
+No misspellings detected.
 
 Permalink: /get-started/config-files/
 File: site-config/config-files.md
 Language detected: en
-Misspelled words: _config, _data, appearence, docaroo, yml
+No misspellings detected.
 
 Permalink: /get-started/config-options/
 File: site-config/config-options.md
 Language detected: en
-Misspelled words: _config, config, dev, yml
+No misspellings detected.
 
 Permalink: /get-started/doc-contents/
 File: doc-contents.md
 Language detected: en
-Misspelled words: colors, defininig, docaroo, faq, permalink
+No misspellings detected.
 
 Permalink: /get-started/env/
 File: environments/env.md
 Language detected: en
-Misspelled words: config, dev, docaroo, docx, env, github, netlify, pdf, ui
+No misspellings detected.
 
 Permalink: /integrate/
 File: integrations/integrations.md
 Language detected: en
-Misspelled words: analytics, api, config, docaroo, env, ga, gtm
+No misspellings detected.
 
 Permalink: /integrations/algolia/
 File: integrations/algolia.md
 Language detected: en
-Misspelled words: algolia, cusotmisation, docaroo, docsearch, github, mimimum, multilanguage, netlify, ui
+No misspellings detected.
 
 Permalink: /integrations/ga-gtm/
 File: integrations/ga-gtm.md
 Language detected: en
-Misspelled words: _data, analytics, buildconfig, config, docaroo, folow, ga, gtm, hookable, yml
+No misspellings detected.
 
 Permalink: /integrations/github/
 File: integrations/github.md
 Language detected: en
-Misspelled words: api, dev, docaroo, github, netlify
+No misspellings detected.
 
 Permalink: /integrations/hubspot/
 File: integrations/hubspot.md
 Language detected: en
-Misspelled words: cand, css, docaroo, formid, htis, hubspot, js, multilanguage, plese, portalid, scss
+No misspellings detected.
 
 Permalink: /integrations/new-relic/
 File: integrations/new-relic.md
 Language detected: en
-Misspelled words: folow, funtion, ga, github, gtm, hookable, measurint, netlify, perfomance
+No misspellings detected.
 
 Permalink: /intro/
 File: intro.md
 Language detected: en
-Misspelled words: analytics, changelogs, ci, docaroo, figma, github, netlify, onboarding, pre, seo, vs
+No misspellings detected.
 

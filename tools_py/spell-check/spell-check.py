@@ -10,6 +10,7 @@ from rich.table import Table, Column
 from rich.live import Live
 from rich import box
 import tempfile
+import re
 
 console = Console()
 
@@ -130,18 +131,58 @@ def tokenize_words(text):
     return filtered_words
 
 
-def detect_misspellings(text, sym_spell):
-    """Return list of misspelled words only using the given SymSpell instance."""
+
+def detect_misspellings(text, sym_spell, lang):
+    ignored_languages = ["la"]
+    """Return list of misspelled words using SymSpell, ignoring words in dict-ignore-{lang}.txt and URLs."""
     if not sym_spell:
         return []
+
+    # 1. Define a regular expression for URLs
+    # This pattern catches common http/https/ftp/www prefixes and generic domain formats.
+    # It's a balance between accuracy and complexity for this task.
+    URL_PATTERN = re.compile(
+        r'(?:https?://|www\.)[^\s/$.?#].[^\s]*'
+    )
+
+    # Tokenize text (Assuming tokenize_words is defined elsewhere)
     words = tokenize_words(text)
     misspelled = []
+
+    # SymSpell lookup
     for w in words:
-        suggestions = sym_spell.lookup(w, Verbosity.CLOSEST, max_edit_distance=2)
+        # 2. Skip the word if it matches a URL pattern
+        if URL_PATTERN.match(w):
+            continue
+            
+        # we want exact match because we only flag misspellings, we do not propose corretions
+        # so we set max_edit_distance=0
+        suggestions = sym_spell.lookup(w, Verbosity.CLOSEST, max_edit_distance=0)
+        
+        # 3. Flag as misspelled if not found exactly in the dictionary
         if not suggestions or suggestions[0].term.lower() != w.lower():
             misspelled.append(w)
-    return sorted(set(misspelled))
 
+    # Remove duplicates
+    misspelled = sorted(set(misspelled))
+
+    # Check for locale-specific ignore dictionary
+    ignore_file = os.path.join("assets", "locales", f"dict-ignore-{lang}.txt")
+    if os.path.exists(ignore_file):
+        with open(ignore_file, "r", encoding="utf-8") as f:
+            ignore_words = set(line.strip().lower() for line in f if line.strip())
+        # Remove ignored words
+        misspelled = [w for w in misspelled if w.lower() not in ignore_words]
+
+    # Check for global ignore dictionary
+    ignore_file = os.path.join("assets", "locales", "dict-ignore-global.txt")
+    if os.path.exists(ignore_file):
+        with open(ignore_file, "r", encoding="utf-8") as f:
+            ignore_words = set(line.strip().lower() for line in f if line.strip())
+        # Remove ignored words
+        misspelled = [w for w in misspelled if w.lower() not in ignore_words]
+
+    return misspelled
 
 def find_md_by_permalink(permalink, md_root_folder):
     """Search all .md files for a front matter permalink that matches the given one."""
@@ -182,7 +223,7 @@ def process_file(file_path, out_f, file_index, total_files, md_root_folder):
             lang = "unknown"
 
         sym_spell = load_symspell_for_lang(lang)
-        misspelled = detect_misspellings(text, sym_spell)
+        misspelled = detect_misspellings(text, sym_spell, lang)
 
         filename = os.path.basename(file_path)
         filename_no_ext = os.path.splitext(filename)[0]
@@ -247,6 +288,7 @@ def main(txt_folder, md_folder):
     with open(result_file, "a", encoding="utf-8") as out_f:
         for i, file_path in enumerate(txt_files, 1):
             process_file(file_path, out_f, i, total_files, md_folder)
+            
     console.print(output_table)
 
     print(f"✅ All files processed. Results saved in '{result_file}'.")

@@ -9,16 +9,16 @@ nav_order: 3
 ---
 
 # Summary
-New Relic integration is provided out-of-the-box once this integration is enabled. This integration allows monitoring and measuring the perfomance of the site. Used in combination with the `hooks` extension capabilities, it provides a robust way to log the user interactions with site. We provide a function that logs to new Relic the execution of any target function used as part of the code base of the site. 
+New Relic integration is provided out-of-the-box once this integration is enabled. This integration allows monitoring and measuring the performance of the site. Used in combination with the `hooks` extension capabilities, it provides a robust way to log the user interactions with site. We provide a function that logs to new Relic the execution of any target function used as part of the code base of the site. 
 
-Hooking the logging function to the target function will send to New Relic the context information of the target function execution (timestamp, target function arguments, execution result, the page on which the target funtion was executed, user anonymous id, device and browser information). Using the logs brings valuable information about how the site is functioning and can lead to important optimisations and fixes.
+Hooking the logging function to the target function will send to New Relic the context information of the target function execution (timestamp, target function arguments, execution result, the page on which the target function was executed, user anonymous id, device and browser information). Using the logs brings valuable information about how the site is functioning and can lead to important optimisations and fixes.
 
 # Usage
 Using this integration requires a little bit of code and New Relic knowledge. First, it is needed to do the needed configurations in New Relic and get the integration parameters to be configured as environment variables. Second, locate the function which you want to log and bring it into global scope. Then, define the hook and, finally, activate it. 
 
 {% include elements/alert.html 
   class="primary" 
-  content="You may need to consult New Relic documentation. Folow the instructions from that documentation to create and configure a `browser app` which must be used for this integration."
+  content="You may need to consult New Relic documentation. Follow the instructions from that documentation to create and configure a `browser app` which must be used for this integration."
   title="New Relic"
 %}
 
@@ -73,7 +73,7 @@ When the deployment is on `Github pages` or `Netlify`, then the Github integrati
 %}
 
 Using New Relic integration requires:
-1. configure the `New Relic browser app`, retrieve the integration parameters and configure them in the `.env` file or as `Github actions secrets` or as `Netlify build environment variables`. This would be enough for monitoring and measurint the performance of the site.
+1. configure the `New Relic browser app`, retrieve the integration parameters and configure them in the `.env` file or as `Github actions secrets` or as `Netlify build environment variables`. This would be enough for monitoring and measuring the performance of the site.
 2. bring into global scope the target functions that you want to log
 3. hook into the target functions executions, use the `nrLog` function inside the hooks and activate the hooks
 

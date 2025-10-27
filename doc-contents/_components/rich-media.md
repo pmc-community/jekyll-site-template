@@ -114,7 +114,7 @@ To test if slides are embedded correctly on mobile, add `testSlides="true"` para
 
 ## Decks
 
-{% include elements/alert.html class="primary" content="Deck files doesn't need a `Reset view` button since slide navigation is added by default. Also, there is no way to lose the slides from focus as in case of design and boards with pan move. So, for deck files, resetBtn will be ignored even if you specify it." title="Reset view button" %}
+{% include elements/alert.html class="primary" content="Deck files does not need a `Reset view` button since slide navigation is added by default. Also, there is no way to lose the slides from focus as in case of design and boards with pan move. So, for deck files, resetBtn will be ignored even if you specify it." title="Reset view button" %}
 
 {% highlight javascript %}
 {% raw %}
@@ -136,7 +136,7 @@ To test if slides are embedded correctly on mobile, add `testSlides="true"` para
 
 ## Prototypes
 
-`elements/figma.html` doesn't accept prototypes, it accepts only `design`, `board`, `slides` and `deck` files. If you try something like the following include (with anything else than the accepted file types), you will get an alert.
+`elements/figma.html` does not accept prototypes, it accepts only `design`, `board`, `slides` and `deck` files. If you try something like the following include (with anything else than the accepted file types), you will get an alert.
 
 {% highlight javascript %}
 {% raw %}

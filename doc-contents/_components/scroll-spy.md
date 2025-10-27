@@ -7,7 +7,7 @@ tags: [scrollspy, content, tabs]
 ---
 
 # Summary
-`Scroll Spy` and `Tabs` are great ways of organising information inside your documents. We made them flexible and easy to be included in the documents. Any Docaroo component, including importing esternal content or rich content ones, can be used to populate scroll spies and tabs. 
+`Scroll Spy` and `Tabs` are great ways of organising information inside your documents. We made them flexible and easy to be included in the documents. Any Docaroo component, including importing external content or rich content ones, can be used to populate scroll spies and tabs. 
 
 # Scroll spy
 The content of a scroll spy consist in a number of markdown files placed anywhere inside your `doc-contents` folder. Our recommendation is to place this content either in `partials` sub-folder (as it is in the following example), or in a folder created for the document in which the scroll spy is used.

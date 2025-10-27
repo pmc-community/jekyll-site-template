@@ -1,4 +1,4 @@
-Docaroo suports 2 types of text search:
+Docaroo supports 2 types of text search:
 - Native search
 - Algolia Docs search
 

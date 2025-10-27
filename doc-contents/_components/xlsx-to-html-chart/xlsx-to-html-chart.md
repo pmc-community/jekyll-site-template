@@ -15,10 +15,10 @@ Currently we support only:
 - Column and Bar charts
 - Pie and doughnut charts
 
-We do not support importing the colors you assign to the series in the Excel chart. The colors that will be used are randomly selected in order to provide the best user experience possible.
+We do not support importing the colours you assign to the series in the Excel chart. The colours that will be used are randomly selected in order to provide the best user experience possible.
 
 # Examples
-The next examples are baset on the files located as shown below:
+The next examples are based on the files located as shown below:
 
 {% DirStructure doc-contents/_components/xlsx-to-html-chart %}
 

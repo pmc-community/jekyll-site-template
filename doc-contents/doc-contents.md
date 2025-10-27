@@ -57,7 +57,7 @@ After creating the root folder of your documentation, you can start adding docum
 # Collections
 Using collections is the best way to group your documentation in thematic sections. Docaroo works with two types of collections, `custom collections` and `default collections`. 
 
-{% include elements/alert.html class="warning" content="While there is no limitations when defininig `custom collections`, the `default collections` configuration must not be changed." %}
+{% include elements/alert.html class="warning" content="While there is no limitations when defining `custom collections`, the `default collections` configuration must not be changed." %}
 
 ## Definition
 
@@ -112,7 +112,7 @@ Collections are shown on the home page in a dedicated collection section (after 
 - `itemsToShow`: number of collection docs to be shown in the list on home page. Most recent documents will be selected.
 - `collectionStartBtnText`: the text shown on the button link to the collection entry document (if such entry point is defined)
 - `buttonsClass`: the type of the button link to the collection entry document (see **[Bootstrap buttons](https://getbootstrap.com/docs/5.3/components/buttons/){: target="_blank" }**)
-- `buttonsTextClass`: the type of the text shown on he button link to the collection entry document (see **[Text colors](https://getbootstrap.com/docs/5.3/utilities/colors/){: target="_blank" }**)
+- `buttonsTextClass`: the type of the text shown on he button link to the collection entry document (see **[Text colours](https://getbootstrap.com/docs/5.3/utilities/colors/){: target="_blank" }**)
 
 ## Entry point
 A collection can have (or not) a document which is its entry point. In case if this document is defined, when building the side and creating the collection section of the home page, a link button is added to the list of the documents from the collection and points to the collection entry document. The `collection entry point configuration` is defined in the `front_matter` of the document which needs to be such an entry point, as shown below, as example:

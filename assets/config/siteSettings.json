@@ -280,12 +280,12 @@
           "permalink": "/content/content-items/"
         },
         {
-          "title": "Image",
-          "permalink": "/components/image/"
-        },
-        {
           "title": "FAQ Item",
           "permalink": "/components/qitem/"
+        },
+        {
+          "title": "Alerts",
+          "permalink": "/components/alerts/"
         }
       ],
       "autoSummary": "Cards can be included as single items or in galleries of cards.",
@@ -327,8 +327,12 @@
           "title": "Content items"
         },
         {
-          "permalink": "/intro/",
-          "title": "Introduction"
+          "permalink": "/content/intro/",
+          "title": "Content"
+        },
+        {
+          "permalink": "/content/ec/",
+          "title": "External content"
         }
       ],
       "readingTime": 1,
@@ -402,13 +406,8 @@
           "permalink": "/components/intro/"
         }
       ],
-      "autoSummary": "The question should always be a text. The answer to the question can be simple text or any rich content that is allowed in markdown. Docaroo suports 2 types of text search: native search and algolia docs search.",
-      "similarByContent": [
-        {
-          "permalink": "/components/intro/",
-          "title": "Components"
-        }
-      ],
+      "autoSummary": "Docaroo supports 2 types of text search: native search and algolia docs search. We provide an advanced search based on different parameters such as the taxonomies.",
+      "similarByContent": [],
       "readingTime": 2,
       "hasDynamicContent": false,
       "parent": ""
@@ -424,23 +423,23 @@
         "component",
         "gallery"
       ],
-      "excerpt": "component, placing, images, content, captions, credits, copyright, designed",
+      "excerpt": "images, image, path, gallery, folder",
       "lastUpdate": "2025-08-14 18:04:50 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-08-14 18:04:50 +0300",
       "createTimeUTC": 1755183890,
       "relatedPages": [
         {
-          "title": "Card",
-          "permalink": "/components/card/"
-        },
-        {
           "title": "XLSX Charts",
           "permalink": "/components/xlsx-charts/"
         },
         {
-          "title": "Experiments",
-          "permalink": "/experiments/intro/"
+          "title": "Card",
+          "permalink": "/components/card/"
+        },
+        {
+          "title": "Scroll Spy & Tabs",
+          "permalink": "/components/scrollspy/"
         }
       ],
       "autoSummary": "This component allows placing images into your content. Images can have captions (lets say you need to show some credits or copyright information) or not. The component is designed to work with responsive images.",
@@ -479,7 +478,7 @@
           "permalink": "/components/scrollspy/"
         }
       ],
-      "autoSummary": "Link buttons helps users to navigate inside your documentation or access external sites. Docaroo provides link buttons in style. You can add individual link buttons or group link buttons. You can place anchors anywhere in the document and references to them.",
+      "autoSummary": "Link buttons helps users to navigate inside your documentation or access external sites. Docaroo provides link buttons in style. You can add individual link buttons or group link buttons.",
       "similarByContent": [],
       "readingTime": 2,
       "hasDynamicContent": false,
@@ -533,7 +532,7 @@
         "content",
         "tabs"
       ],
-      "excerpt": "scroll spy, folder, documents, document, content",
+      "excerpt": "folder, documents, document, content, regular",
       "lastUpdate": "2025-10-27 11:38:11 +0200",
       "lastUpdateUTC": 0,
       "createTime": "2025-10-27 11:38:11 +0200",
@@ -552,7 +551,7 @@
           "permalink": "/components/alerts/"
         }
       ],
-      "autoSummary": "Scroll spies are great ways of organising information inside your documents. We made them flexible and easy to be included in the documents. Any docaroo component, including importing esternal content or rich content ones, can be used to populate scroll spies and tabs.",
+      "autoSummary": "Scroll spies are great ways of organising information inside your documents. We made them flexible and easy to be included in the documents. Any docaroo component, including importing external content or rich content ones, can be used to populate scroll spies and tabs.",
       "similarByContent": [],
       "readingTime": 7,
       "hasDynamicContent": false,
@@ -570,7 +569,7 @@
         "chart",
         "office"
       ],
-      "excerpt": "component, folder, documents, colors, excel",
+      "excerpt": "component, folder, documents, colours, excel",
       "lastUpdate": "2025-08-11 13:46:56 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-08-11 13:46:56 +0300",
@@ -585,11 +584,11 @@
           "permalink": "/components/scrollspy/"
         },
         {
-          "title": "Experiments",
-          "permalink": "/experiments/intro/"
+          "title": "PDF Summary",
+          "permalink": "/experiments/pdf-summary/"
         }
       ],
-      "autoSummary": "This component allows importing excel charts into your documents. Combined with component, this one provides the full support to share structured data in a professional way. Currently we support only: line charts column and bar charts pie and doughnut charts we do not support importing the colors you assign to.",
+      "autoSummary": "This component allows importing excel charts into your documents. Combined with component, this one provides the full support to share structured data in a professional way. Currently we support only: line charts column and bar charts pie and doughnut charts we do not support importing the colours you assign to.",
       "similarByContent": [
         {
           "permalink": "/components/xlsx-tables/",
@@ -611,7 +610,7 @@
         "xls",
         "office"
       ],
-      "excerpt": "users, creating, table, markdown, challenge, merged, cells, crazy, quick, maintaining",
+      "excerpt": "table, tables, cells, component, markdown",
       "lastUpdate": "2025-10-01 20:46:55 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-10-01 20:46:55 +0300",
@@ -622,12 +621,12 @@
           "permalink": "/components/xlsx-charts/"
         },
         {
-          "title": "Content items",
-          "permalink": "/content/content-items/"
-        },
-        {
           "title": "DOCX Summary",
           "permalink": "/experiments/docx-summary/"
+        },
+        {
+          "title": "PDF Summary",
+          "permalink": "/experiments/pdf-summary/"
         }
       ],
       "autoSummary": "This component allows users to create tables in markdown and load them in excel. It offers two types of tables: fully featured and without some features.",
@@ -651,7 +650,7 @@
         "items",
         "content"
       ],
-      "excerpt": "content, documentation, documents, markdown, markers",
+      "excerpt": "content, documentation, charts, documents, markdown",
       "lastUpdate": "2025-10-07 18:39:32 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-10-07 18:39:32 +0300",
@@ -677,8 +676,12 @@
           "title": "Components"
         },
         {
-          "permalink": "/intro/",
-          "title": "Introduction"
+          "permalink": "/content/intro/",
+          "title": "Content"
+        },
+        {
+          "permalink": "/content/ec/",
+          "title": "External content"
         }
       ],
       "readingTime": 2,
@@ -715,7 +718,20 @@
         }
       ],
       "autoSummary": "Learn how to structure and use the content in the most efficient way. The secret is to use to the maximum extent the features made available. Importing external content (at build time or at run time) is the most powerful.",
-      "similarByContent": [],
+      "similarByContent": [
+        {
+          "permalink": "/content/content-items/",
+          "title": "Content items"
+        },
+        {
+          "permalink": "/components/intro/",
+          "title": "Components"
+        },
+        {
+          "permalink": "/content/ec/",
+          "title": "External content"
+        }
+      ],
       "readingTime": 2,
       "hasDynamicContent": false,
       "parent": ""
@@ -731,16 +747,12 @@
         "external",
         "import"
       ],
-      "excerpt": "content, type, aware, time, documents",
+      "excerpt": "content, type, aware, time, markers",
       "lastUpdate": "2025-10-24 11:43:21 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-10-24 11:43:21 +0300",
       "createTimeUTC": 1761295401,
       "relatedPages": [
-        {
-          "title": "Content",
-          "permalink": "/content/intro/"
-        },
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/"
@@ -748,10 +760,18 @@
         {
           "title": "GitHub",
           "permalink": "/integrations/github/"
+        },
+        {
+          "title": "Alerts",
+          "permalink": "/components/alerts/"
         }
       ],
       "autoSummary": "Docaroo allows to your documents. External content is important because it allows you to create of content and import these parts in multiple places. It is possible to import content from external public and private GitHub repositories.",
       "similarByContent": [
+        {
+          "permalink": "/content/intro/",
+          "title": "Content"
+        },
         {
           "permalink": "/content/content-items/",
           "title": "Content items"
@@ -778,7 +798,7 @@
         "summary",
         "office"
       ],
-      "excerpt": "component, helps, enhancing, content, auto, generated, summaries, docx, files, combined",
+      "excerpt": "summary, component, models, huggingface, corrections",
       "lastUpdate": "2025-08-17 22:52:59 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-08-17 22:52:59 +0300",
@@ -793,8 +813,8 @@
           "permalink": "/experiments/intro/"
         },
         {
-          "title": "XLSX Charts",
-          "permalink": "/components/xlsx-charts/"
+          "title": "XLSX Tables",
+          "permalink": "/components/xlsx-tables/"
         }
       ],
       "autoSummary": "This component helps enhancing your content with auto generated summaries from docx files. It is combined with the download component, so the output rendered will be a summary of the docx file and a download button.",
@@ -837,8 +857,8 @@
           "permalink": "/experiments/docx-summary/"
         },
         {
-          "title": "XLSX Charts",
-          "permalink": "/components/xlsx-charts/"
+          "title": "XLSX Tables",
+          "permalink": "/components/xlsx-tables/"
         }
       ],
       "autoSummary": "We are working on a series of interesting features that will make your life much easier when creating content. We consider those features as experiments. You are encouraged to use them and to send us your feedback.",
@@ -860,7 +880,7 @@
         "summary",
         "office"
       ],
-      "excerpt": "component, helps, enhancing, content, auto, generated, summaries, pdf, files, combined",
+      "excerpt": "summary, component, models, huggingface, corrections",
       "lastUpdate": "2025-08-17 22:52:59 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-08-17 22:52:59 +0300",
@@ -875,8 +895,8 @@
           "permalink": "/experiments/intro/"
         },
         {
-          "title": "XLSX Charts",
-          "permalink": "/components/xlsx-charts/"
+          "title": "XLSX Tables",
+          "permalink": "/components/xlsx-tables/"
         }
       ],
       "autoSummary": "This component helps enhancing your content with auto generated summaries from pdf files. It is combined with the download component, so the output rendered will be a summary of the pdf file and a download button.",
@@ -913,16 +933,21 @@
           "permalink": "/intro/"
         },
         {
-          "title": "Content",
-          "permalink": "/content/intro/"
+          "title": "Get started",
+          "permalink": "/get-started/"
         },
         {
-          "title": "Config Files",
-          "permalink": "/get-started/config-files/"
+          "title": "Content",
+          "permalink": "/content/intro/"
         }
       ],
       "autoSummary": "Doc-contents is the root folder of the documents and collections. The way in which this folder is organised is strictly depending on the structure you want to have for your documentation. Some sub-folders are necessary to be present: the collection folder where the qa files must be placed if a.",
-      "similarByContent": [],
+      "similarByContent": [
+        {
+          "permalink": "/content/intro/",
+          "title": "Content"
+        }
+      ],
       "readingTime": 3,
       "hasDynamicContent": false,
       "parent": "Get started"
@@ -953,12 +978,12 @@
           "permalink": "/get-started/config-files/"
         },
         {
-          "title": "GitHub",
-          "permalink": "/integrations/github/"
-        },
-        {
           "title": "Config Options",
           "permalink": "/get-started/config-options/"
+        },
+        {
+          "title": "GitHub",
+          "permalink": "/integrations/github/"
         }
       ],
       "autoSummary": "Environment variables are used only at build time. At run time (in dev or production environments) the environment variables are not used anymore. They are mostly used to store values that should never be exposed, such as access keys and tokens that are used to integrate some external features and.",
@@ -978,7 +1003,7 @@
         "documentation",
         "docs"
       ],
-      "excerpt": "started, docaroo, requires, design, documentation, organising, blog, crucial, involve",
+      "excerpt": "documentation, browser, settings, incompatibility, docaroo",
       "lastUpdate": "2025-09-06 16:52:21 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-09-06 16:52:21 +0300",
@@ -998,12 +1023,7 @@
         }
       ],
       "autoSummary": "Getting started with docaroo requires, first of all, to design your documentation. Organising well your documentation (or blog) is crucial. This will involve defining the folder structure and also the taxonomies. Docaroo can take care of automatically generating other information about you documentation.",
-      "similarByContent": [
-        {
-          "permalink": "/content/ec/",
-          "title": "External content"
-        }
-      ],
+      "similarByContent": [],
       "readingTime": 3,
       "hasDynamicContent": false,
       "parent": ""
@@ -1039,7 +1059,7 @@
           "permalink": "/integrations/hubspot/"
         }
       ],
-      "autoSummary": "Docaroo provides out-of-the-box full integration with algolia docsearch. The search experience has multilanguage support by default. The ui experience is provided by default once this integration is enabled and properly configured.",
+      "autoSummary": "Docaroo provides out-of-the-box full integration with algolia docsearch. The search experience has multilanguage support by default.",
       "similarByContent": [],
       "readingTime": 3,
       "hasDynamicContent": false,
@@ -1103,16 +1123,16 @@
       "createTimeUTC": 1761295401,
       "relatedPages": [
         {
-          "title": "New Relic",
-          "permalink": "/integrations/new-relic/"
-        },
-        {
           "title": "Algolia",
           "permalink": "/integrations/algolia/"
         },
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/"
+        },
+        {
+          "title": "New Relic",
+          "permalink": "/integrations/new-relic/"
         }
       ],
       "autoSummary": "Docaroo integration allows you to import content from public and private repositories. For the private repositories, content can be imported only from the repositories within the scope of the personal access token that must be configured. At the moment, we do not support importing content from private repositories at run.",
@@ -1214,26 +1234,26 @@
         "measure",
         "performance"
       ],
-      "excerpt": "integration, function, netlify, github, hooks",
+      "excerpt": "function, integration, netlify, hook, performance",
       "lastUpdate": "2025-10-24 15:21:18 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-10-24 15:21:18 +0300",
       "createTimeUTC": 1761308478,
       "relatedPages": [
         {
+          "title": "GA/GTM",
+          "permalink": "/integrations/ga-gtm/"
+        },
+        {
           "title": "Algolia",
           "permalink": "/integrations/algolia/"
         },
         {
-          "title": "GitHub",
-          "permalink": "/integrations/github/"
-        },
-        {
-          "title": "GA/GTM",
-          "permalink": "/integrations/ga-gtm/"
+          "title": "Integrate",
+          "permalink": "/integrate/"
         }
       ],
-      "autoSummary": "New relic integration is provided out-of-the-box once this integration is enabled. This integration allows monitoring and measuring the perfomance of the site. Used in combination with the extension capabilities, it provides a robust way to log the user interactions with site.",
+      "autoSummary": "New relic integration is provided out-of-the-box once this integration is enabled. This integration allows monitoring and measuring the performance of the site. Used in combination with the extension capabilities, it provides a robust way to log the user interactions with site.",
       "similarByContent": [],
       "readingTime": 2,
       "hasDynamicContent": false,
@@ -1277,6 +1297,10 @@
         {
           "permalink": "/content/content-items/",
           "title": "Content items"
+        },
+        {
+          "permalink": "/content/intro/",
+          "title": "Content"
         }
       ],
       "readingTime": 3,
@@ -1297,16 +1321,12 @@
         "collections",
         "configuration"
       ],
-      "excerpt": "configuration, time, docaroo, configurations, folder",
+      "excerpt": "docaroo, provide, multiple, options, configure, functionality, appearance, configurations, _config, yml",
       "lastUpdate": "2025-10-09 00:27:46 +0300",
       "lastUpdateUTC": 0,
       "createTime": "2025-10-09 00:27:46 +0300",
       "createTimeUTC": 1759958866,
       "relatedPages": [
-        {
-          "title": "Docs root",
-          "permalink": "/get-started/doc-contents/"
-        },
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/"
@@ -1314,9 +1334,13 @@
         {
           "title": "Get started",
           "permalink": "/get-started/"
+        },
+        {
+          "title": "Docs root",
+          "permalink": "/get-started/doc-contents/"
         }
       ],
-      "autoSummary": "Docaroo provide multiple options to configure the the site functionality and appearence. Each time when a configuration is changed, it is necessary to re-build the site to make the configuration effective. Docaroo configurations are of two categories: necessary at build time necessary at run time.",
+      "autoSummary": "Docaroo provide multiple options to configure the the site functionality and appearance. Each time when a configuration is changed, it is necessary to re-build the site to make the configuration effective.",
       "similarByContent": [],
       "readingTime": 1,
       "hasDynamicContent": false,

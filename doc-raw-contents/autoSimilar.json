@@ -9,14 +9,13 @@
         "permalink": "/components/intro/",
         "similarFiles": [
             "/content/content-items/",
-            "/intro/"
+            "/content/intro/",
+            "/content/ec/"
         ]
     },
     {
         "permalink": "/components/qitem/",
-        "similarFiles": [
-            "/components/intro/"
-        ]
+        "similarFiles": []
     },
     {
         "permalink": "/components/link-button/",
@@ -28,11 +27,16 @@
     },
     {
         "permalink": "/content/intro/",
-        "similarFiles": []
+        "similarFiles": [
+            "/content/content-items/",
+            "/components/intro/",
+            "/content/ec/"
+        ]
     },
     {
         "permalink": "/content/ec/",
         "similarFiles": [
+            "/content/intro/",
             "/content/content-items/",
             "/components/intro/"
         ]
@@ -41,14 +45,13 @@
         "permalink": "/intro/",
         "similarFiles": [
             "/components/intro/",
-            "/content/content-items/"
+            "/content/content-items/",
+            "/content/intro/"
         ]
     },
     {
         "permalink": "/get-started/",
-        "similarFiles": [
-            "/content/ec/"
-        ]
+        "similarFiles": []
     },
     {
         "permalink": "/components/scrollspy/",
@@ -86,7 +89,8 @@
         "permalink": "/content/content-items/",
         "similarFiles": [
             "/components/intro/",
-            "/intro/"
+            "/content/intro/",
+            "/content/ec/"
         ]
     },
     {
@@ -111,7 +115,9 @@
     },
     {
         "permalink": "/get-started/doc-contents/",
-        "similarFiles": []
+        "similarFiles": [
+            "/content/intro/"
+        ]
     },
     {
         "permalink": "/get-started/site-config/",

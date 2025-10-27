@@ -10,11 +10,11 @@
         },
         {
             "permalink": "/components/qitem/",
-            "summary": "The question should always be a text. The answer to the question can be simple text or any rich content that is allowed in markdown. Docaroo suports 2 types of text search: native search and algolia docs search."
+            "summary": "Docaroo supports 2 types of text search: native search and algolia docs search. We provide an advanced search based on different parameters such as the taxonomies."
         },
         {
             "permalink": "/components/link-button/",
-            "summary": "Link buttons helps users to navigate inside your documentation or access external sites. Docaroo provides link buttons in style. You can add individual link buttons or group link buttons. You can place anchors anywhere in the document and references to them."
+            "summary": "Link buttons helps users to navigate inside your documentation or access external sites. Docaroo provides link buttons in style. You can add individual link buttons or group link buttons."
         },
         {
             "permalink": "/components/rich-media/",
@@ -38,7 +38,7 @@
         },
         {
             "permalink": "/components/scrollspy/",
-            "summary": "Scroll spies are great ways of organising information inside your documents. We made them flexible and easy to be included in the documents. Any docaroo component, including importing esternal content or rich content ones, can be used to populate scroll spies and tabs."
+            "summary": "Scroll spies are great ways of organising information inside your documents. We made them flexible and easy to be included in the documents. Any docaroo component, including importing external content or rich content ones, can be used to populate scroll spies and tabs."
         },
         {
             "permalink": "/components/content-items/",
@@ -58,7 +58,7 @@
         },
         {
             "permalink": "/components/xlsx-charts/",
-            "summary": "This component allows importing excel charts into your documents. Combined with component, this one provides the full support to share structured data in a professional way. Currently we support only: line charts column and bar charts pie and doughnut charts we do not support importing the colors you assign to."
+            "summary": "This component allows importing excel charts into your documents. Combined with component, this one provides the full support to share structured data in a professional way. Currently we support only: line charts column and bar charts pie and doughnut charts we do not support importing the colours you assign to."
         },
         {
             "permalink": "/components/image/",
@@ -94,7 +94,7 @@
         },
         {
             "permalink": "/get-started/config-files/",
-            "summary": "Docaroo provide multiple options to configure the the site functionality and appearence. Each time when a configuration is changed, it is necessary to re-build the site to make the configuration effective. Docaroo configurations are of two categories: necessary at build time necessary at run time."
+            "summary": "Docaroo provide multiple options to configure the the site functionality and appearance. Each time when a configuration is changed, it is necessary to re-build the site to make the configuration effective."
         },
         {
             "permalink": "/get-started/config-options/",
@@ -114,7 +114,7 @@
         },
         {
             "permalink": "/integrations/algolia/",
-            "summary": "Docaroo provides out-of-the-box full integration with algolia docsearch. The search experience has multilanguage support by default. The ui experience is provided by default once this integration is enabled and properly configured."
+            "summary": "Docaroo provides out-of-the-box full integration with algolia docsearch. The search experience has multilanguage support by default."
         },
         {
             "permalink": "/integrations/github/",
@@ -126,7 +126,7 @@
         },
         {
             "permalink": "/integrations/new-relic/",
-            "summary": "New relic integration is provided out-of-the-box once this integration is enabled. This integration allows monitoring and measuring the perfomance of the site. Used in combination with the extension capabilities, it provides a robust way to log the user interactions with site."
+            "summary": "New relic integration is provided out-of-the-box once this integration is enabled. This integration allows monitoring and measuring the performance of the site. Used in combination with the extension capabilities, it provides a robust way to log the user interactions with site."
         }
     ]
 }
