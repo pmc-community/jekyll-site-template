@@ -2,7 +2,7 @@
 name: External content
 ---
 
-**External conntent below:**
+**External content below:**
 
 {% 
     ExternalSiteContent  {

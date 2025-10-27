@@ -41,7 +41,7 @@ No misspellings detected.
 Permalink: /components/scrollspy/
 File: _components/scroll-spy.md
 Language detected: ca
-Misspelled words: conntent
+No misspellings detected.
 
 Permalink: /components/xlsx-charts/
 File: _components/xlsx-to-html-chart/xlsx-to-html-chart.md
@@ -81,7 +81,7 @@ No misspellings detected.
 Permalink: /experiments/pdf-summary/
 File: _experiments/pdf-summary/pdf-summary.md
 Language detected: en
-Misspelled words: acm, bdis, birnin, cao, cm, dc, dfr, digitalidentity, dr, eid, enotary, ewakanda, fr, iaeng, ibm, iceis, ieee, impor, ka, kajor, mcpr, mom, mr, ms, pe, pr, pt, rao, reportingperiod, ronpub, si, structureo, subsubsections, wbs, www, zana
+Misspelled words: acm, bdis, birnin, cao, cm, dc, dfr, digitalidentity, dr, eid, enotary, ewakanda, fr, iaeng, ibm, iceis, ieee, ka, kajor, mcpr, mom, mr, ms, pe, pr, pt, rao, ronpub, si, subsubsections, wbs, www, zana
 
 Permalink: /get-started/
 File: get-started.md
