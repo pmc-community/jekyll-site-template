@@ -6,4 +6,4 @@
  source ~/py-dev-env-392/bin/activate
  
  print_color "$YELLOW" "📋 Spell check ..."
- python3 tools_py/spell-check/spell-check.py doc-raw-contents
+ python3 tools_py/spell-check/spell-check.py doc-raw-contents doc-contents

@@ -13,7 +13,7 @@ tags: [scrollspy, content, tabs]
 The content of a scroll spy consist in a number of markdown files placed anywhere inside your `doc-contents` folder. Our recommendation is to place this content either in `partials` sub-folder (as it is in the following example), or in a folder created for the document in which the scroll spy is used.
 For the following example we use a scroll spy content stored in the following structure:
 
-{% DirStructure doc-contents/partials %}
+{% DirStructure doc-contents/partials/scroll-spy %}
 
 The scroll spy is simply added to document like this:
 

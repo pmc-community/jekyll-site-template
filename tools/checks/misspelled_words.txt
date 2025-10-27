@@ -1,87 +1,145 @@
-Permalink: /components/alerts/ (Language detected: en)
+Permalink: /components/alerts/
+File: _components/alerts.md
+Language detected: en
 Misspelled words: ac, ad, aliquam, aliquet, amet, aptent, auctor, augue, bibendum, colors, consectetur, consequat, conubia, convallis, curabitur, dapibus, docaroo, dui, duis, eget, elit, enim, erat, et, etiam, eu, ex, github, hendrerit, himenaeos, iaculis, imperdiet, inceptos, interdum, ipsum, lacinia, lectus, litora, lorem, luctus, magna, malesuada, mattis, mauris, metus, mollis, nec, neque, nibh, nisl, nostra, nulla, nullam, nunc, orci, ornare, placerat, proin, pulvinar, quam, quis, repo, rhoncus, risus, rutrum, sapien, sed, sociosqu, taciti, tempor, torquent, turpis, ultricies, ut, venenatis, vestibulum
 
-Permalink: /components/card/ (Language detected: en)
+Permalink: /components/card/
+File: _components/card.md
+Language detected: en
 Misspelled words: docaroo, innohub, pmc, viewport
 
-Permalink: /components/download-link/ (Language detected: en)
+Permalink: /components/download-link/
+File: _components/download-link/download-link.md
+Language detected: en
 Misspelled words: prossible
 
-Permalink: /components/image/ (Language detected: en)
+Permalink: /components/image/
+File: _components/images.md
+Language detected: en
 Misspelled words: acoording, thre
 
-Permalink: /components/intro/ (Language detected: en)
+Permalink: /components/intro/
+File: _components/components.md
+Language detected: en
 Misspelled words: docaroo, faq, figma, pre
 
-Permalink: /components/link-button/ (Language detected: en)
+Permalink: /components/link-button/
+File: _components/link-btn.md
+Language detected: en
 Misspelled words: bootstap, docaroo, functionalitieds, permalink
 
-Permalink: /components/qitem/ (Language detected: en)
+Permalink: /components/qitem/
+File: _components/faq-item.md
+Language detected: en
 Misspelled words: algolia, annswer, docaroo, faq, readibility, suports, toc
 
-Permalink: /components/rich-media/ (Language detected: en)
+Permalink: /components/rich-media/
+File: _components/rich-media.md
+Language detected: en
 Misspelled words: backend, docaroo, doesn, figma, html, proto, resetbtn
 
-Permalink: /components/scrollspy/ (Language detected: ca)
-Misspelled words: ac, adipiscing, aenean, aliquam, amet, arcu, auctor, augue, blandit, commodo, condimentum, congue, conntent, consectetur, consequat, cursus, dapibus, dignissim, docaroo, dolor, donec, dui, efficitur, egestas, eget, eleifend, elementum, elit, enim, erat, esternal, et, etiam, eu, ex, facilisi, fames, faucibus, felis, feugiat, finibus, fringilla, fusce, gravida, hendrerit, iaculis, imperdiet, interdum, ipsum, justo, lacinia, lacus, laoreet, lectus, lobortis, lorem, luctus, magna, magnis, malesuada, massa, mattis, mauris, maximus, metus, mi, molestie, mollis, morbi, nascetur, natoque, nec, neque, netus, nibh, nisl, nulla, nullam, nunc, odio, orci, pellentesque, penatibus, pharetra, phasellus, porta, porttitor, posuere, pretium, primis, pulvinar, quam, quis, quisque, rhoncus, ridiculus, risus, rutrum, sagittis, sapien, scelerisque, sed, semper, senectus, sodales, sollicitudin, suscipit, tempus, tincidunt, tristique, turpis, ullamcorper, ultrices, ultricies, urna, ut, varius, vehicula, velit, venenatis, vivamus, volutpat
+Permalink: /components/scrollspy/
+File: _components/scroll-spy.md
+Language detected: ca
+Language not supported for spellcheck.
 
-Permalink: /components/xlsx-charts/ (Language detected: en)
+Permalink: /components/xlsx-charts/
+File: _components/xlsx-to-html-chart/xlsx-to-html-chart.md
+Language detected: en
 Misspelled words: baset, colors, xlsx
 
-Permalink: /components/xlsx-tables/ (Language detected: en)
+Permalink: /components/xlsx-tables/
+File: _components/xlsx-to-html-table/xlsx-to-html-table.md
+Language detected: en
 Misspelled words: cels, colspan, doesn, horizonrtal, rowspan, xlsx
 
-Permalink: /content/content-items/ (Language detected: en)
+Permalink: /content/content-items/
+File: _content/content-items.md
+Language detected: en
 Misspelled words: docaroo, github, multilanguage, whrn
 
-Permalink: /content/ec/ (Language detected: en)
+Permalink: /content/ec/
+File: _content/external-content.md
+Language detected: en
 Misspelled words: accumsan, adipiscing, aenean, algolia, amet, api, auctor, bewteen, bibendum, confiured, congue, consectetur, consequat, convallis, cras, cutom, dapibus, docaroo, dolor, dui, eget, elementum, elit, et, eu, euismod, facilisis, faucibus, feugiat, finibus, fringilla, fusce, github, hendrerit, html, iaculis, innohub, interdum, ipsum, justo, lacinia, lacus, lorem, magna, malesuada, massa, mauris, metus, mi, mollis, morbi, myinnohub, nec, neque, nibh, nisl, nulla, ornare, pellentesque, porta, porttitor, proin, pulvinar, quam, refelcted, sagittis, sapien, scelerisque, searcing, sed, semper, shortcodes, sollicitudin, tincidunt, toc, tristique, turpis, ullamcorper, ultrices, ultricies, urna, ut, velit, viverra, vulputate, wordpress
 
-Permalink: /content/intro/ (Language detected: en)
+Permalink: /content/intro/
+File: _content/content.md
+Language detected: en
 Misspelled words: beeing, docaroo, doesn, github, html, vimeo
 
-Permalink: /experiments/docx-summary/ (Language detected: en)
-Misspelled words: acknowledgments, apa, api, betweeen, birnin, bovet, cgs, checkings, cm, comparation, deliverables, dioxane, docx, doesn, du, easlily, ed, eid, eids, eseal, et, forneau, frenchs, github, http, huggingface, macos, math, mathtype, mc, multilanguage, nouveau, oersteds, pdf, pe, pennlive, pharmacodyn, pr, pt, raney, rao, readibility, recherches, remeber, ronpub, routledge, runtime, si, simons, subesequent, subsubsection, subsubsections, sympathicolytique, telford, toc, ts, un, url, ux, wakanda, wbs, wisa, wkbr, wkca, wmi, workplan, www, zana
+Permalink: /experiments/docx-summary/
+File: _experiments/docx-summary/docx-summary.md
+Language detected: en
+Misspelled words: acknowledgments, apa, api, betweeen, birnin, bovet, cgs, checkings, cm, comparation, deliverables, dioxane, docx, doesn, du, dérivé, easlily, ed, eid, eids, eseal, et, forneau, frenchs, github, http, huggingface, macos, math, mathtype, mc, multilanguage, nouveau, oersteds, pdf, pe, pennlive, pharmacodyn, pr, pt, raney, rao, readibility, recherches, remeber, ronpub, routledge, runtime, si, simons, subesequent, subsubsection, subsubsections, sympathicolytique, telford, toc, ts, un, url, ux, wakanda, wbs, wisa, wkbr, wkca, wmi, workplan, www, zana
 
-Permalink: /experiments/intro/ (Language detected: en)
+Permalink: /experiments/intro/
+File: _experiments/experiments.md
+Language detected: en
 Misspelled words: althouth, cpu, dev, docx, gpu, pdf
 
-Permalink: /experiments/pdf-summary/ (Language detected: en)
+Permalink: /experiments/pdf-summary/
+File: _experiments/pdf-summary/pdf-summary.md
+Language detected: en
 Misspelled words: ac, acm, api, bdis, betweeen, birnin, cao, checkings, cm, conformities, dc, deliverables, dfr, digitalidentity, docx, dr, easlily, eid, enotary, ewakanda, fattesting, fr, functionalproduction, github, http, huggingface, iaeng, ibm, iceis, ieee, impor, ka, kajor, macos, mcpr, mom, mr, ms, multilanguage, pdf, pe, pr, pt, rao, readibility, remeber, reportingperiod, ronpub, si, structureo, subesequent, subsubsections, toc, url, ux, wbs, workplan, www, zana
 
-Permalink: /get-started/ (Language detected: en)
+Permalink: /get-started/
+File: get-started.md
+Language detected: en
 Misspelled words: buid, compoents, desigend, docaroo, documentaion, github, macos, multilanguage, multilangual, ocnfiguration, py, shoud, sigle
 
-Permalink: /get-started/config-files/ (Language detected: en)
-Misspelled words: appearence, docaroo, yml
+Permalink: /get-started/config-files/
+File: site-config/config-files.md
+Language detected: en
+Misspelled words: _config, _data, appearence, docaroo, yml
 
-Permalink: /get-started/config-options/ (Language detected: en)
-Misspelled words: config, dev, yml
+Permalink: /get-started/config-options/
+File: site-config/config-options.md
+Language detected: en
+Misspelled words: _config, config, dev, yml
 
-Permalink: /get-started/doc-contents/ (Language detected: en)
+Permalink: /get-started/doc-contents/
+File: doc-contents.md
+Language detected: en
 Misspelled words: colors, defininig, docaroo, faq, permalink
 
-Permalink: /get-started/env/ (Language detected: en)
+Permalink: /get-started/env/
+File: environments/env.md
+Language detected: en
 Misspelled words: config, dev, docaroo, docx, env, github, netlify, pdf, ui
 
-Permalink: /integrate/ (Language detected: en)
+Permalink: /integrate/
+File: integrations/integrations.md
+Language detected: en
 Misspelled words: analytics, api, config, docaroo, env, ga, gtm
 
-Permalink: /integrations/algolia/ (Language detected: en)
+Permalink: /integrations/algolia/
+File: integrations/algolia.md
+Language detected: en
 Misspelled words: algolia, cusotmisation, docaroo, docsearch, github, mimimum, multilanguage, netlify, ui
 
-Permalink: /integrations/ga-gtm/ (Language detected: en)
-Misspelled words: analytics, buildconfig, config, docaroo, folow, ga, gtm, hookable, yml
+Permalink: /integrations/ga-gtm/
+File: integrations/ga-gtm.md
+Language detected: en
+Misspelled words: _data, analytics, buildconfig, config, docaroo, folow, ga, gtm, hookable, yml
 
-Permalink: /integrations/github/ (Language detected: en)
+Permalink: /integrations/github/
+File: integrations/github.md
+Language detected: en
 Misspelled words: api, dev, docaroo, github, netlify
 
-Permalink: /integrations/hubspot/ (Language detected: en)
+Permalink: /integrations/hubspot/
+File: integrations/hubspot.md
+Language detected: en
 Misspelled words: cand, css, docaroo, formid, htis, hubspot, js, multilanguage, plese, portalid, scss
 
-Permalink: /integrations/new-relic/ (Language detected: en)
+Permalink: /integrations/new-relic/
+File: integrations/new-relic.md
+Language detected: en
 Misspelled words: folow, funtion, ga, github, gtm, hookable, measurint, netlify, perfomance
 
-Permalink: /intro/ (Language detected: en)
+Permalink: /intro/
+File: intro.md
+Language detected: en
 Misspelled words: analytics, changelogs, ci, docaroo, figma, github, netlify, onboarding, pre, seo, vs
 
