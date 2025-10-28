@@ -73,7 +73,7 @@ Site title setting is placed in `_config.yml` file.
 # Auxiliary buttons
 These buttons are placed on the right side of the site header and are used to point the user to some external sites that may be related or of interest (such as the company website). Technically, there is no limit of how many buttons ccan be added, but it is not recommended to have more than two buttons. Auxiliary buttons setting is placed in `_config.yml` file.
 
-```javascript
+```yml
 {% 
     ExternalRepoContent  { 
         "markdown": true,
@@ -94,7 +94,7 @@ These buttons are placed on the right side of the site header and are used to po
 # Theme text and background
 The settings for the text and background colors of the dark and light themes are placed in `_data/siteConfig.yml`.
 
-```javascript
+```yml
 {% 
     ExternalRepoContentMM  {
         "needAuth": false,
@@ -123,10 +123,10 @@ The settings for the text and background colors of the dark and light themes are
 %}
 ```
 
-# Sidebar footer
+# Site footer
 The settings for the footer visible on the bottom of the left sidebar are placed in `_data/buildConfig.yml`. Configuring a nice footer requires basic knowledge of HTML. The footer is made of a number of rows, each row can be individually designed. Technically there is no limitation in how many rows to configure in the footer, but the recommendation is to not have more than two rows.
 
-```javascript
+```yml
 {% 
     ExternalRepoContent  { 
         "markdown": true,
@@ -167,6 +167,7 @@ The settings for changing the header background and text colors are placed in `_
 # Config options
 
 Detailed information about all the configuration options are here:
+
 {% include 
     elements/link-btn.html 
     type="warning" 
