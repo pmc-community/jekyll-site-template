@@ -911,6 +911,30 @@
       "parent": ""
     },
     {
+      "title": "Taxonomies",
+      "permalink": "/taxonomies/intro/",
+      "categories": [
+        "Taxonomies"
+      ],
+      "tags": [
+        "tags",
+        "categories",
+        "notes",
+        "annotations"
+      ],
+      "excerpt": "purpose, users, documentation, categories, time",
+      "lastUpdate": "2025-10-28 11:58:25 +0200",
+      "lastUpdateUTC": 0,
+      "createTime": "2025-10-28 11:58:25 +0200",
+      "createTimeUTC": 1761645505,
+      "relatedPages": [],
+      "autoSummary": "One of the most powerful features we offer out-of-the-box is defining and using custom taxonomies. This feature allows the users to organise the information in a way that suits their preference.",
+      "similarByContent": [],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
       "title": "Docs root",
       "permalink": "/get-started/doc-contents/",
       "categories": [
@@ -978,12 +1002,12 @@
           "permalink": "/get-started/config-files/"
         },
         {
-          "title": "Config Options",
-          "permalink": "/get-started/config-options/"
-        },
-        {
           "title": "GitHub",
           "permalink": "/integrations/github/"
+        },
+        {
+          "title": "Config Options",
+          "permalink": "/get-started/config-options/"
         }
       ],
       "autoSummary": "Environment variables are used only at build time. At run time (in dev or production environments) the environment variables are not used anymore. They are mostly used to store values that should never be exposed, such as access keys and tokens that are used to integrate some external features and.",
@@ -1005,10 +1029,10 @@
         "code"
       ],
       "excerpt": "functionality, execution, aware, skills, possibility",
-      "lastUpdate": "2025-10-28 10:05:02 +0200",
+      "lastUpdate": "2025-10-28 10:53:15 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-28 10:05:02 +0200",
-      "createTimeUTC": 1761638702,
+      "createTime": "2025-10-28 10:53:15 +0200",
+      "createTimeUTC": 1761641595,
       "relatedPages": [],
       "autoSummary": "We offer out-of-the-box the possibility to extend the functionality of the site by hooking on the execution of the functions on browser side. Be aware that using extensions requires development skills (mostly on javascript). The level of the required skills depends on the complexity of the extension.",
       "similarByContent": [],
@@ -1065,28 +1089,28 @@
         "test",
         "deploy"
       ],
-      "excerpt": "colors, background, branding, appearance, light",
-      "lastUpdate": "2025-10-28 10:37:40 +0200",
+      "excerpt": "logo, settings, folder, file, footer",
+      "lastUpdate": "2025-10-28 10:53:15 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-28 10:37:40 +0200",
-      "createTimeUTC": 1761640660,
+      "createTime": "2025-10-28 10:53:15 +0200",
+      "createTimeUTC": 1761641595,
       "relatedPages": [
-        {
-          "title": "Build and test",
-          "permalink": "/go-live/build/"
-        },
         {
           "title": "Go live",
           "permalink": "/go-live/"
+        },
+        {
+          "title": "Build and test",
+          "permalink": "/go-live/build/"
         },
         {
           "title": "Deploy",
           "permalink": "/go-live/deploy/"
         }
       ],
-      "autoSummary": "Setting the appearance means to set the branding an colors of the site. The branding elements are the logo, the site title and the footer visible at the bottom of the left sidebar.",
+      "autoSummary": "Setting the appearance means to set the branding an colors of the site. Branding elements are the logo, the site title, the addtional buttons on the header and the footer visible at the bottom of the left sidebar. Change appearance do not forget to build and deploy the site after.",
       "similarByContent": [],
-      "readingTime": 1,
+      "readingTime": 2,
       "hasDynamicContent": false,
       "parent": "Go live"
     },
@@ -1104,10 +1128,10 @@
         "deploy"
       ],
       "excerpt": "functionality, corrections, appearance, fine, time",
-      "lastUpdate": "2025-10-28 10:51:07 +0200",
+      "lastUpdate": "2025-10-28 10:53:15 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-28 10:51:07 +0200",
-      "createTimeUTC": 1761641467,
+      "createTime": "2025-10-28 10:53:15 +0200",
+      "createTimeUTC": 1761641595,
       "relatedPages": [
         {
           "title": "Go live",
@@ -1142,10 +1166,10 @@
         "deploy"
       ],
       "excerpt": "netlify, prem",
-      "lastUpdate": "2025-10-28 10:49:26 +0200",
+      "lastUpdate": "2025-10-28 10:53:15 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-28 10:49:26 +0200",
-      "createTimeUTC": 1761641366,
+      "createTime": "2025-10-28 10:53:15 +0200",
+      "createTimeUTC": 1761641595,
       "relatedPages": [
         {
           "title": "Go live",
@@ -1180,10 +1204,10 @@
         "deploy"
       ],
       "excerpt": "content, process, functionality, frustration, unavailable",
-      "lastUpdate": "2025-10-28 10:48:53 +0200",
+      "lastUpdate": "2025-10-28 10:53:15 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-28 10:48:53 +0200",
-      "createTimeUTC": 1761641333,
+      "createTime": "2025-10-28 10:53:15 +0200",
+      "createTimeUTC": 1761641595,
       "relatedPages": [
         {
           "title": "Build and test",
@@ -1220,10 +1244,10 @@
         "code"
       ],
       "excerpt": "algolia, integration, netlify, configuration, docaroo",
-      "lastUpdate": "2025-10-27 16:39:50 +0200",
+      "lastUpdate": "2025-10-28 10:53:15 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-27 16:39:50 +0200",
-      "createTimeUTC": 1761575990,
+      "createTime": "2025-10-28 10:53:15 +0200",
+      "createTimeUTC": 1761641595,
       "relatedPages": [
         {
           "title": "GitHub",
@@ -1259,10 +1283,10 @@
         "low-code"
       ],
       "excerpt": "event, hook, gtm, configurations, integration",
-      "lastUpdate": "2025-10-27 16:39:50 +0200",
+      "lastUpdate": "2025-10-28 10:53:15 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-27 16:39:50 +0200",
-      "createTimeUTC": 1761575990,
+      "createTime": "2025-10-28 10:53:15 +0200",
+      "createTimeUTC": 1761641595,
       "relatedPages": [
         {
           "title": "New Relic",
@@ -1298,10 +1322,10 @@
         "no-code"
       ],
       "excerpt": "content, github, time, netlify, deployment",
-      "lastUpdate": "2025-10-24 11:43:21 +0300",
+      "lastUpdate": "2025-10-28 10:53:15 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-24 11:43:21 +0300",
-      "createTimeUTC": 1761295401,
+      "createTime": "2025-10-28 10:53:15 +0200",
+      "createTimeUTC": 1761641595,
       "relatedPages": [
         {
           "title": "Algolia",
@@ -1339,10 +1363,10 @@
         "code"
       ],
       "excerpt": "form, hubspot, docaroo, object, type=",
-      "lastUpdate": "2025-10-27 16:39:50 +0200",
+      "lastUpdate": "2025-10-28 10:53:15 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-27 16:39:50 +0200",
-      "createTimeUTC": 1761575990,
+      "createTime": "2025-10-28 10:53:15 +0200",
+      "createTimeUTC": 1761641595,
       "relatedPages": [
         {
           "title": "Algolia",
@@ -1420,10 +1444,10 @@
         "low-code"
       ],
       "excerpt": "function, integration, netlify, hook, performance",
-      "lastUpdate": "2025-10-27 16:39:50 +0200",
+      "lastUpdate": "2025-10-28 10:53:15 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-27 16:39:50 +0200",
-      "createTimeUTC": 1761575990,
+      "createTime": "2025-10-28 10:53:15 +0200",
+      "createTimeUTC": 1761641595,
       "relatedPages": [
         {
           "title": "GA/GTM",
@@ -1577,10 +1601,12 @@
     "algolia",
     "analytics",
     "anchor",
+    "annotations",
     "appearance",
     "build",
     "button",
     "card",
+    "categories",
     "chart",
     "code",
     "collections",
@@ -1618,6 +1644,7 @@
     "monitor",
     "new relic",
     "no-code",
+    "notes",
     "office",
     "options",
     "organise docs",
@@ -1630,6 +1657,7 @@
     "table",
     "tabs",
     "tag manager",
+    "tags",
     "test",
     "variable",
     "video",
@@ -1651,7 +1679,7 @@
         {
           "title": "Algolia",
           "permalink": "/integrations/algolia/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1661,12 +1689,12 @@
         {
           "title": "GA/GTM",
           "permalink": "/integrations/ga-gtm/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "HubSpot",
           "permalink": "/integrations/hubspot/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 2
@@ -1677,6 +1705,16 @@
           "title": "Link button",
           "permalink": "/components/link-button/",
           "lastUpdate": "27-Oct-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "annotations": {
+      "pages": [
+        {
+          "title": "Taxonomies",
+          "permalink": "/taxonomies/intro/",
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1761,6 +1799,16 @@
       ],
       "numPages": 1
     },
+    "categories": {
+      "pages": [
+        {
+          "title": "Taxonomies",
+          "permalink": "/taxonomies/intro/",
+          "lastUpdate": "28-Oct-2025"
+        }
+      ],
+      "numPages": 1
+    },
     "chart": {
       "pages": [
         {
@@ -1781,17 +1829,17 @@
         {
           "title": "Algolia",
           "permalink": "/integrations/algolia/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "GitHub",
           "permalink": "/integrations/github/",
-          "lastUpdate": "24-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "HubSpot",
           "permalink": "/integrations/hubspot/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 4
@@ -1876,7 +1924,7 @@
         {
           "title": "GitHub",
           "permalink": "/integrations/github/",
-          "lastUpdate": "24-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 6
@@ -2101,7 +2149,7 @@
         {
           "title": "HubSpot",
           "permalink": "/integrations/hubspot/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 1
@@ -2126,7 +2174,7 @@
         {
           "title": "GitHub",
           "permalink": "/integrations/github/",
-          "lastUpdate": "24-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 1
@@ -2136,7 +2184,7 @@
         {
           "title": "GA/GTM",
           "permalink": "/integrations/ga-gtm/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 1
@@ -2156,7 +2204,7 @@
         {
           "title": "HubSpot",
           "permalink": "/integrations/hubspot/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 1
@@ -2186,22 +2234,22 @@
         {
           "title": "Algolia",
           "permalink": "/integrations/algolia/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "GA/GTM",
           "permalink": "/integrations/ga-gtm/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "GitHub",
           "permalink": "/integrations/github/",
-          "lastUpdate": "24-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "HubSpot",
           "permalink": "/integrations/hubspot/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "Integrate",
@@ -2211,7 +2259,7 @@
         {
           "title": "New Relic",
           "permalink": "/integrations/new-relic/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 6
@@ -2256,7 +2304,7 @@
         {
           "title": "New Relic",
           "permalink": "/integrations/new-relic/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 2
@@ -2281,12 +2329,12 @@
         {
           "title": "GA/GTM",
           "permalink": "/integrations/ga-gtm/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "New Relic",
           "permalink": "/integrations/new-relic/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 3
@@ -2301,7 +2349,7 @@
         {
           "title": "New Relic",
           "permalink": "/integrations/new-relic/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 2
@@ -2316,7 +2364,7 @@
         {
           "title": "New Relic",
           "permalink": "/integrations/new-relic/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 2
@@ -2326,7 +2374,7 @@
         {
           "title": "New Relic",
           "permalink": "/integrations/new-relic/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 1
@@ -2336,20 +2384,30 @@
         {
           "title": "Algolia",
           "permalink": "/integrations/algolia/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "GitHub",
           "permalink": "/integrations/github/",
-          "lastUpdate": "24-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "HubSpot",
           "permalink": "/integrations/hubspot/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 3
+    },
+    "notes": {
+      "pages": [
+        {
+          "title": "Taxonomies",
+          "permalink": "/taxonomies/intro/",
+          "lastUpdate": "28-Oct-2025"
+        }
+      ],
+      "numPages": 1
     },
     "office": {
       "pages": [
@@ -2421,7 +2479,7 @@
         {
           "title": "New Relic",
           "permalink": "/integrations/new-relic/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 1
@@ -2441,7 +2499,7 @@
         {
           "title": "Algolia",
           "permalink": "/integrations/algolia/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "Integrate",
@@ -2511,7 +2569,17 @@
         {
           "title": "GA/GTM",
           "permalink": "/integrations/ga-gtm/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "tags": {
+      "pages": [
+        {
+          "title": "Taxonomies",
+          "permalink": "/taxonomies/intro/",
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 1
@@ -2587,7 +2655,8 @@
     "Go live",
     "Integrations",
     "Site config",
-    "Start"
+    "Start",
+    "Taxonomies"
   ],
   "catDetails": {
     "Components": {
@@ -2735,12 +2804,12 @@
         {
           "title": "Algolia",
           "permalink": "/integrations/algolia/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "HubSpot",
           "permalink": "/integrations/hubspot/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 2
@@ -2820,27 +2889,27 @@
         {
           "title": "Algolia",
           "permalink": "/integrations/algolia/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "GA/GTM",
           "permalink": "/integrations/ga-gtm/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "GitHub",
           "permalink": "/integrations/github/",
-          "lastUpdate": "24-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "HubSpot",
           "permalink": "/integrations/hubspot/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "New Relic",
           "permalink": "/integrations/new-relic/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 5
@@ -2905,22 +2974,22 @@
         {
           "title": "Algolia",
           "permalink": "/integrations/algolia/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "GA/GTM",
           "permalink": "/integrations/ga-gtm/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "GitHub",
           "permalink": "/integrations/github/",
-          "lastUpdate": "24-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "HubSpot",
           "permalink": "/integrations/hubspot/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "Integrate",
@@ -2930,7 +2999,7 @@
         {
           "title": "New Relic",
           "permalink": "/integrations/new-relic/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "Config Files",
@@ -2944,6 +3013,16 @@
         }
       ],
       "numPages": 15
+    },
+    "Taxonomies": {
+      "pages": [
+        {
+          "title": "Taxonomies",
+          "permalink": "/taxonomies/intro/",
+          "lastUpdate": "28-Oct-2025"
+        }
+      ],
+      "numPages": 1
     }
   },
   "hsSettings": {

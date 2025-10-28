@@ -64,8 +64,9 @@ $fs-0-60: 0.6rem;
 $fs-0-90em: 0.9em; // used for DocSearch hit details
 $fs-docSearchStandard: $fs-0-90em;
 
-$siteHeaderBackground: $c-dark-blue; // HERE TO CHANGE SITE HEADER COLOR (ABOVE SIDE-BAR, ABOVE CONTENT, ETC.)
-$siteHeaderTextColor: $c-white; // HERE TO CHANGE SITE HEADER TEXT COLOR (ABOVE SIDE-BAR, ABOVE CONTENT, ETC.)
+ // HERE TO CHANGE SITE HEADER COLOR AND HEADER TEXT COLOR (ABOVE SIDE-BAR, ABOVE CONTENT, ETC.)
+$siteHeaderBackground: $c-dark-blue;
+$siteHeaderTextColor: $c-white;
 
 // spaces
 $s-0: 0;

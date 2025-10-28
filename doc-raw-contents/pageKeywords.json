@@ -353,11 +353,11 @@
     {
       "permalink": "/go-live/appearance/",
       "keywords": [
-        "colors",
-        "background",
-        "branding",
-        "appearance",
-        "light"
+        "logo",
+        "settings",
+        "folder",
+        "file",
+        "footer"
       ]
     },
     {
@@ -374,6 +374,16 @@
         "corrections",
         "appearance",
         "fine",
+        "time"
+      ]
+    },
+    {
+      "permalink": "/taxonomies/intro/",
+      "keywords": [
+        "purpose",
+        "users",
+        "documentation",
+        "categories",
         "time"
       ]
     }

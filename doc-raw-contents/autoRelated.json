@@ -289,6 +289,10 @@
     ]
   },
   {
+    "permalink": "/taxonomies/intro/",
+    "related": []
+  },
+  {
     "permalink": "/get-started/doc-contents/",
     "related": [
       {
@@ -313,12 +317,12 @@
         "permalink": "/get-started/config-files/"
       },
       {
-        "title": "Config Options",
-        "permalink": "/get-started/config-options/"
-      },
-      {
         "title": "GitHub",
         "permalink": "/integrations/github/"
+      },
+      {
+        "title": "Config Options",
+        "permalink": "/get-started/config-options/"
       }
     ]
   },
@@ -347,12 +351,12 @@
     "permalink": "/go-live/appearance/",
     "related": [
       {
-        "title": "Build and test",
-        "permalink": "/go-live/build/"
-      },
-      {
         "title": "Go live",
         "permalink": "/go-live/"
+      },
+      {
+        "title": "Build and test",
+        "permalink": "/go-live/build/"
       },
       {
         "title": "Deploy",

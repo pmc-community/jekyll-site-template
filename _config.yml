@@ -101,6 +101,9 @@ collections:
   experiments:
     permalink: "/:collection/:path"
     output: true
+  taxonomies:
+    permalink: "/:collection/:path"
+    output: true
   
 
   # default collections (last position(s)) --- do not modify
@@ -124,6 +127,9 @@ just_the_docs:
       nav_fold: true
     experiments:
       name: Experiments
+      nav_fold: true
+    taxonomies:
+      name: Taxonomies
       nav_fold: true
 
     # default collections (last position(s)) --- do not modify

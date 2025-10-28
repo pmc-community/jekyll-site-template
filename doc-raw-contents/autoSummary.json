@@ -138,7 +138,7 @@
         },
         {
             "permalink": "/go-live/appearance/",
-            "summary": "Setting the appearance means to set the branding an colors of the site. The branding elements are the logo, the site title and the footer visible at the bottom of the left sidebar."
+            "summary": "Setting the appearance means to set the branding an colors of the site. Branding elements are the logo, the site title, the addtional buttons on the header and the footer visible at the bottom of the left sidebar. Change appearance do not forget to build and deploy the site after."
         },
         {
             "permalink": "/go-live/build/",
@@ -147,6 +147,10 @@
         {
             "permalink": "/go-live/deploy/",
             "summary": "Deploying the site means to update the production environment (such as on-prem, or github pages or netlify, or similar)."
+        },
+        {
+            "permalink": "/taxonomies/intro/",
+            "summary": "One of the most powerful features we offer out-of-the-box is defining and using custom taxonomies. This feature allows the users to organise the information in a way that suits their preference."
         }
     ]
 }
