@@ -164,6 +164,7 @@ The settings for changing the header background and text colors are placed in `_
     }
 %}
 ```
+# Config options
 
 Detailed information about all the configuration options are here:
 {% include 
