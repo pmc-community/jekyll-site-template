@@ -449,6 +449,30 @@
     "parent": "Get started"
   },
   {
+    "title": "Extend",
+    "permalink": "/extend/",
+    "categories": [
+      "General"
+    ],
+    "tags": [
+      "extend",
+      "hooks",
+      "low-code",
+      "code"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-10-28 10:05:02 +0200",
+    "lastUpdateUTC": 1761638702,
+    "createTime": "2025-10-28 10:05:02 +0200",
+    "createTimeUTC": 1761638702,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
     "title": "Get started",
     "permalink": "/get-started/",
     "categories": [
@@ -472,16 +496,119 @@
     "parent": ""
   },
   {
+    "title": "Set appearance",
+    "permalink": "/go-live/appearance/",
+    "categories": [
+      "Start",
+      "Go live"
+    ],
+    "tags": [
+      "appearance",
+      "build",
+      "test",
+      "deploy"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-10-28 10:37:40 +0200",
+    "lastUpdateUTC": 1761640660,
+    "createTime": "2025-10-28 10:37:40 +0200",
+    "createTimeUTC": 1761640660,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": "Go live"
+  },
+  {
+    "title": "Build and test",
+    "permalink": "/go-live/build/",
+    "categories": [
+      "Start",
+      "Go live"
+    ],
+    "tags": [
+      "appearance",
+      "build",
+      "test",
+      "deploy"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-10-28 10:51:07 +0200",
+    "lastUpdateUTC": 1761641467,
+    "createTime": "2025-10-28 10:51:07 +0200",
+    "createTimeUTC": 1761641467,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": "Go live"
+  },
+  {
+    "title": "Deploy",
+    "permalink": "/go-live/deploy/",
+    "categories": [
+      "Start",
+      "Go live"
+    ],
+    "tags": [
+      "appearance",
+      "build",
+      "test",
+      "deploy"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-10-28 10:49:26 +0200",
+    "lastUpdateUTC": 1761641366,
+    "createTime": "2025-10-28 10:49:26 +0200",
+    "createTimeUTC": 1761641366,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": "Go live"
+  },
+  {
+    "title": "Go live",
+    "permalink": "/go-live/",
+    "categories": [
+      "Start",
+      "Go live"
+    ],
+    "tags": [
+      "appearance",
+      "build",
+      "test",
+      "deploy"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-10-28 10:48:53 +0200",
+    "lastUpdateUTC": 1761641333,
+    "createTime": "2025-10-28 10:48:53 +0200",
+    "createTimeUTC": 1761641333,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
     "title": "Algolia",
     "permalink": "/integrations/algolia/",
     "categories": [
       "Integrations",
-      "Start"
+      "Start",
+      "Extensions"
     ],
     "tags": [
       "integration",
       "algolia",
-      "search"
+      "search",
+      "no-code",
+      "code"
     ],
     "excerpt": "",
     "lastUpdate": "2025-10-27 16:39:50 +0200",
@@ -506,7 +633,8 @@
       "integration",
       "google",
       "analytics",
-      "tag manager"
+      "tag manager",
+      "low-code"
     ],
     "excerpt": "",
     "lastUpdate": "2025-10-27 16:39:50 +0200",
@@ -531,7 +659,8 @@
       "integration",
       "github",
       "code",
-      "content"
+      "content",
+      "no-code"
     ],
     "excerpt": "",
     "lastUpdate": "2025-10-24 11:43:21 +0300",
@@ -550,13 +679,16 @@
     "permalink": "/integrations/hubspot/",
     "categories": [
       "Integrations",
-      "Start"
+      "Start",
+      "Extensions"
     ],
     "tags": [
       "integration",
       "hubspot",
       "analytics",
-      "forms"
+      "forms",
+      "no-code",
+      "code"
     ],
     "excerpt": "",
     "lastUpdate": "2025-10-27 16:39:50 +0200",
@@ -610,7 +742,8 @@
       "log",
       "monitor",
       "measure",
-      "performance"
+      "performance",
+      "low-code"
     ],
     "excerpt": "",
     "lastUpdate": "2025-10-27 16:39:50 +0200",

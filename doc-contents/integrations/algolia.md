@@ -2,8 +2,8 @@
 layout: page
 title: Algolia
 permalink: /integrations/algolia/
-categories: [Integrations, Start]
-tags: [integration, algolia, search]
+categories: [Integrations, Start, Extensions]
+tags: [integration, algolia, search, no-code, code]
 parent: Integrate
 nav_order: 3
 ---

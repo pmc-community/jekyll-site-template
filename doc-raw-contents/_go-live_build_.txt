@@ -1,0 +1,1 @@
+building and testing the site means go generate the site, running the automatic testing and the spell checking. following the site build and tests results, corrections may be needed. when everything is fine, is time to serve the site locally and test its appearance and functionality.

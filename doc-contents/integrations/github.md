@@ -3,7 +3,7 @@ layout: page
 title: GitHub
 permalink: /integrations/github/
 categories: [Integrations, Start]
-tags: [integration, github, code, content]
+tags: [integration, github, code, content, no-code]
 parent: Integrate
 nav_order: 4
 ---

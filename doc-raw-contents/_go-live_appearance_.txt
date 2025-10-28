@@ -1,0 +1,1 @@
+setting the appearance means to set the branding an colors of the site. the branding elements are the logo, the site title and the footer visible at the bottom of the left sidebar. additionally the following colors can be set: background and text colors for light and dark themes and the header background color.

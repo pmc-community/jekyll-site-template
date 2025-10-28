@@ -933,12 +933,12 @@
           "permalink": "/intro/"
         },
         {
-          "title": "Get started",
-          "permalink": "/get-started/"
-        },
-        {
           "title": "Content",
           "permalink": "/content/intro/"
+        },
+        {
+          "title": "Get started",
+          "permalink": "/get-started/"
         }
       ],
       "autoSummary": "Doc-contents is the root folder of the documents and collections. The way in which this folder is organised is strictly depending on the structure you want to have for your documentation. Some sub-folders are necessary to be present: the collection folder where the qa files must be placed if a.",
@@ -993,6 +993,30 @@
       "parent": "Get started"
     },
     {
+      "title": "Extend",
+      "permalink": "/extend/",
+      "categories": [
+        "General"
+      ],
+      "tags": [
+        "extend",
+        "hooks",
+        "low-code",
+        "code"
+      ],
+      "excerpt": "functionality, execution, aware, skills, possibility",
+      "lastUpdate": "2025-10-28 10:05:02 +0200",
+      "lastUpdateUTC": 0,
+      "createTime": "2025-10-28 10:05:02 +0200",
+      "createTimeUTC": 1761638702,
+      "relatedPages": [],
+      "autoSummary": "We offer out-of-the-box the possibility to extend the functionality of the site by hooking on the execution of the functions on browser side. Be aware that using extensions requires development skills (mostly on javascript). The level of the required skills depends on the complexity of the extension.",
+      "similarByContent": [],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
       "title": "Get started",
       "permalink": "/get-started/",
       "categories": [
@@ -1029,16 +1053,171 @@
       "parent": ""
     },
     {
+      "title": "Set appearance",
+      "permalink": "/go-live/appearance/",
+      "categories": [
+        "Start",
+        "Go live"
+      ],
+      "tags": [
+        "appearance",
+        "build",
+        "test",
+        "deploy"
+      ],
+      "excerpt": "colors, background, branding, appearance, light",
+      "lastUpdate": "2025-10-28 10:37:40 +0200",
+      "lastUpdateUTC": 0,
+      "createTime": "2025-10-28 10:37:40 +0200",
+      "createTimeUTC": 1761640660,
+      "relatedPages": [
+        {
+          "title": "Build and test",
+          "permalink": "/go-live/build/"
+        },
+        {
+          "title": "Go live",
+          "permalink": "/go-live/"
+        },
+        {
+          "title": "Deploy",
+          "permalink": "/go-live/deploy/"
+        }
+      ],
+      "autoSummary": "Setting the appearance means to set the branding an colors of the site. The branding elements are the logo, the site title and the footer visible at the bottom of the left sidebar.",
+      "similarByContent": [],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": "Go live"
+    },
+    {
+      "title": "Build and test",
+      "permalink": "/go-live/build/",
+      "categories": [
+        "Start",
+        "Go live"
+      ],
+      "tags": [
+        "appearance",
+        "build",
+        "test",
+        "deploy"
+      ],
+      "excerpt": "functionality, corrections, appearance, fine, time",
+      "lastUpdate": "2025-10-28 10:51:07 +0200",
+      "lastUpdateUTC": 0,
+      "createTime": "2025-10-28 10:51:07 +0200",
+      "createTimeUTC": 1761641467,
+      "relatedPages": [
+        {
+          "title": "Go live",
+          "permalink": "/go-live/"
+        },
+        {
+          "title": "Set appearance",
+          "permalink": "/go-live/appearance/"
+        },
+        {
+          "title": "Deploy",
+          "permalink": "/go-live/deploy/"
+        }
+      ],
+      "autoSummary": "Building and testing the site means go generate the site, running the automatic testing and the spell checking. Following the site build and tests results, corrections may be needed. When everything is fine, is time to serve the site locally and test its appearance and functionality.",
+      "similarByContent": [],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": "Go live"
+    },
+    {
+      "title": "Deploy",
+      "permalink": "/go-live/deploy/",
+      "categories": [
+        "Start",
+        "Go live"
+      ],
+      "tags": [
+        "appearance",
+        "build",
+        "test",
+        "deploy"
+      ],
+      "excerpt": "netlify, prem",
+      "lastUpdate": "2025-10-28 10:49:26 +0200",
+      "lastUpdateUTC": 0,
+      "createTime": "2025-10-28 10:49:26 +0200",
+      "createTimeUTC": 1761641366,
+      "relatedPages": [
+        {
+          "title": "Go live",
+          "permalink": "/go-live/"
+        },
+        {
+          "title": "Build and test",
+          "permalink": "/go-live/build/"
+        },
+        {
+          "title": "Set appearance",
+          "permalink": "/go-live/appearance/"
+        }
+      ],
+      "autoSummary": "Deploying the site means to update the production environment (such as on-prem, or github pages or netlify, or similar).",
+      "similarByContent": [],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": "Go live"
+    },
+    {
+      "title": "Go live",
+      "permalink": "/go-live/",
+      "categories": [
+        "Start",
+        "Go live"
+      ],
+      "tags": [
+        "appearance",
+        "build",
+        "test",
+        "deploy"
+      ],
+      "excerpt": "content, process, functionality, frustration, unavailable",
+      "lastUpdate": "2025-10-28 10:48:53 +0200",
+      "lastUpdateUTC": 0,
+      "createTime": "2025-10-28 10:48:53 +0200",
+      "createTimeUTC": 1761641333,
+      "relatedPages": [
+        {
+          "title": "Build and test",
+          "permalink": "/go-live/build/"
+        },
+        {
+          "title": "Deploy",
+          "permalink": "/go-live/deploy/"
+        },
+        {
+          "title": "Set appearance",
+          "permalink": "/go-live/appearance/"
+        }
+      ],
+      "autoSummary": "Going live with the site is a pretty straight forward process. It involves tuning of the appearance (if needed), building and testing in the development environment and publishing (deploying) in production environment. We make available the necessary tools for each step of this process.",
+      "similarByContent": [],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
       "title": "Algolia",
       "permalink": "/integrations/algolia/",
       "categories": [
         "Integrations",
-        "Start"
+        "Start",
+        "Extensions"
       ],
       "tags": [
         "integration",
         "algolia",
-        "search"
+        "search",
+        "no-code",
+        "code"
       ],
       "excerpt": "algolia, integration, netlify, configuration, docaroo",
       "lastUpdate": "2025-10-27 16:39:50 +0200",
@@ -1047,16 +1226,16 @@
       "createTimeUTC": 1761575990,
       "relatedPages": [
         {
-          "title": "New Relic",
-          "permalink": "/integrations/new-relic/"
-        },
-        {
           "title": "GitHub",
           "permalink": "/integrations/github/"
         },
         {
           "title": "HubSpot",
           "permalink": "/integrations/hubspot/"
+        },
+        {
+          "title": "New Relic",
+          "permalink": "/integrations/new-relic/"
         }
       ],
       "autoSummary": "Docaroo provides out-of-the-box full integration with algolia docsearch. The search experience has multilanguage support by default.",
@@ -1076,7 +1255,8 @@
         "integration",
         "google",
         "analytics",
-        "tag manager"
+        "tag manager",
+        "low-code"
       ],
       "excerpt": "event, hook, gtm, configurations, integration",
       "lastUpdate": "2025-10-27 16:39:50 +0200",
@@ -1114,7 +1294,8 @@
         "integration",
         "github",
         "code",
-        "content"
+        "content",
+        "no-code"
       ],
       "excerpt": "content, github, time, netlify, deployment",
       "lastUpdate": "2025-10-24 11:43:21 +0300",
@@ -1146,13 +1327,16 @@
       "permalink": "/integrations/hubspot/",
       "categories": [
         "Integrations",
-        "Start"
+        "Start",
+        "Extensions"
       ],
       "tags": [
         "integration",
         "hubspot",
         "analytics",
-        "forms"
+        "forms",
+        "no-code",
+        "code"
       ],
       "excerpt": "form, hubspot, docaroo, object, type=",
       "lastUpdate": "2025-10-27 16:39:50 +0200",
@@ -1165,12 +1349,12 @@
           "permalink": "/integrations/algolia/"
         },
         {
-          "title": "GA/GTM",
-          "permalink": "/integrations/ga-gtm/"
-        },
-        {
           "title": "GitHub",
           "permalink": "/integrations/github/"
+        },
+        {
+          "title": "GA/GTM",
+          "permalink": "/integrations/ga-gtm/"
         }
       ],
       "autoSummary": "Hubspot tracking code is installed by default if hubspot integration is enabled in . This will enable the features that are related to the tracking code such as monitoring the visits on the site. The feedback form can be located on the right-bottom corner of each page.",
@@ -1205,12 +1389,12 @@
           "permalink": "/integrations/new-relic/"
         },
         {
-          "title": "Algolia",
-          "permalink": "/integrations/algolia/"
-        },
-        {
           "title": "Config Options",
           "permalink": "/get-started/config-options/"
+        },
+        {
+          "title": "Algolia",
+          "permalink": "/integrations/algolia/"
         }
       ],
       "autoSummary": "Docaroo provides out-of-the-box a series of integrations. The main purpose is to enhance the functionalities of the site. Each integration can be independently enabled and configured or disabled.",
@@ -1232,7 +1416,8 @@
         "log",
         "monitor",
         "measure",
-        "performance"
+        "performance",
+        "low-code"
       ],
       "excerpt": "function, integration, netlify, hook, performance",
       "lastUpdate": "2025-10-27 16:39:50 +0200",
@@ -1392,6 +1577,8 @@
     "algolia",
     "analytics",
     "anchor",
+    "appearance",
+    "build",
     "button",
     "card",
     "chart",
@@ -1400,12 +1587,14 @@
     "component",
     "configuration",
     "content",
+    "deploy",
     "docs",
     "documentation",
     "docx",
     "download",
     "embed",
     "environment",
+    "extend",
     "external",
     "faq",
     "feedback",
@@ -1415,6 +1604,7 @@
     "gallery",
     "github",
     "google",
+    "hooks",
     "hubspot",
     "image",
     "import",
@@ -1423,9 +1613,11 @@
     "link",
     "log",
     "lottie",
+    "low-code",
     "measure",
     "monitor",
     "new relic",
+    "no-code",
     "office",
     "options",
     "organise docs",
@@ -1438,6 +1630,7 @@
     "table",
     "tabs",
     "tag manager",
+    "test",
     "variable",
     "video",
     "xls"
@@ -1488,6 +1681,56 @@
       ],
       "numPages": 1
     },
+    "appearance": {
+      "pages": [
+        {
+          "title": "Set appearance",
+          "permalink": "/go-live/appearance/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "Build and test",
+          "permalink": "/go-live/build/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "Deploy",
+          "permalink": "/go-live/deploy/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "Go live",
+          "permalink": "/go-live/",
+          "lastUpdate": "28-Oct-2025"
+        }
+      ],
+      "numPages": 4
+    },
+    "build": {
+      "pages": [
+        {
+          "title": "Set appearance",
+          "permalink": "/go-live/appearance/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "Build and test",
+          "permalink": "/go-live/build/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "Deploy",
+          "permalink": "/go-live/deploy/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "Go live",
+          "permalink": "/go-live/",
+          "lastUpdate": "28-Oct-2025"
+        }
+      ],
+      "numPages": 4
+    },
     "button": {
       "pages": [
         {
@@ -1531,12 +1774,27 @@
     "code": {
       "pages": [
         {
+          "title": "Extend",
+          "permalink": "/extend/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "Algolia",
+          "permalink": "/integrations/algolia/",
+          "lastUpdate": "27-Oct-2025"
+        },
+        {
           "title": "GitHub",
           "permalink": "/integrations/github/",
           "lastUpdate": "24-Oct-2025"
+        },
+        {
+          "title": "HubSpot",
+          "permalink": "/integrations/hubspot/",
+          "lastUpdate": "27-Oct-2025"
         }
       ],
-      "numPages": 1
+      "numPages": 4
     },
     "collections": {
       "pages": [
@@ -1622,6 +1880,31 @@
         }
       ],
       "numPages": 6
+    },
+    "deploy": {
+      "pages": [
+        {
+          "title": "Set appearance",
+          "permalink": "/go-live/appearance/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "Build and test",
+          "permalink": "/go-live/build/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "Deploy",
+          "permalink": "/go-live/deploy/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "Go live",
+          "permalink": "/go-live/",
+          "lastUpdate": "28-Oct-2025"
+        }
+      ],
+      "numPages": 4
     },
     "docs": {
       "pages": [
@@ -1748,6 +2031,16 @@
       ],
       "numPages": 1
     },
+    "extend": {
+      "pages": [
+        {
+          "title": "Extend",
+          "permalink": "/extend/",
+          "lastUpdate": "28-Oct-2025"
+        }
+      ],
+      "numPages": 1
+    },
     "external": {
       "pages": [
         {
@@ -1844,6 +2137,16 @@
           "title": "GA/GTM",
           "permalink": "/integrations/ga-gtm/",
           "lastUpdate": "27-Oct-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "hooks": {
+      "pages": [
+        {
+          "title": "Extend",
+          "permalink": "/extend/",
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1968,6 +2271,26 @@
       ],
       "numPages": 1
     },
+    "low-code": {
+      "pages": [
+        {
+          "title": "Extend",
+          "permalink": "/extend/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "GA/GTM",
+          "permalink": "/integrations/ga-gtm/",
+          "lastUpdate": "27-Oct-2025"
+        },
+        {
+          "title": "New Relic",
+          "permalink": "/integrations/new-relic/",
+          "lastUpdate": "27-Oct-2025"
+        }
+      ],
+      "numPages": 3
+    },
     "measure": {
       "pages": [
         {
@@ -2007,6 +2330,26 @@
         }
       ],
       "numPages": 1
+    },
+    "no-code": {
+      "pages": [
+        {
+          "title": "Algolia",
+          "permalink": "/integrations/algolia/",
+          "lastUpdate": "27-Oct-2025"
+        },
+        {
+          "title": "GitHub",
+          "permalink": "/integrations/github/",
+          "lastUpdate": "24-Oct-2025"
+        },
+        {
+          "title": "HubSpot",
+          "permalink": "/integrations/hubspot/",
+          "lastUpdate": "27-Oct-2025"
+        }
+      ],
+      "numPages": 3
     },
     "office": {
       "pages": [
@@ -2173,6 +2516,31 @@
       ],
       "numPages": 1
     },
+    "test": {
+      "pages": [
+        {
+          "title": "Set appearance",
+          "permalink": "/go-live/appearance/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "Build and test",
+          "permalink": "/go-live/build/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "Deploy",
+          "permalink": "/go-live/deploy/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "Go live",
+          "permalink": "/go-live/",
+          "lastUpdate": "28-Oct-2025"
+        }
+      ],
+      "numPages": 4
+    },
     "variable": {
       "pages": [
         {
@@ -2214,7 +2582,9 @@
     "Content",
     "Environment",
     "Experiments",
+    "Extensions",
     "General",
+    "Go live",
     "Integrations",
     "Site config",
     "Start"
@@ -2360,6 +2730,21 @@
       ],
       "numPages": 3
     },
+    "Extensions": {
+      "pages": [
+        {
+          "title": "Algolia",
+          "permalink": "/integrations/algolia/",
+          "lastUpdate": "27-Oct-2025"
+        },
+        {
+          "title": "HubSpot",
+          "permalink": "/integrations/hubspot/",
+          "lastUpdate": "27-Oct-2025"
+        }
+      ],
+      "numPages": 2
+    },
     "General": {
       "pages": [
         {
@@ -2371,6 +2756,11 @@
           "title": "Environments",
           "permalink": "/get-started/env/",
           "lastUpdate": "05-Oct-2025"
+        },
+        {
+          "title": "Extend",
+          "permalink": "/extend/",
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "Get started",
@@ -2398,7 +2788,32 @@
           "lastUpdate": "20-Oct-2025"
         }
       ],
-      "numPages": 7
+      "numPages": 8
+    },
+    "Go live": {
+      "pages": [
+        {
+          "title": "Set appearance",
+          "permalink": "/go-live/appearance/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "Build and test",
+          "permalink": "/go-live/build/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "Deploy",
+          "permalink": "/go-live/deploy/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "Go live",
+          "permalink": "/go-live/",
+          "lastUpdate": "28-Oct-2025"
+        }
+      ],
+      "numPages": 4
     },
     "Integrations": {
       "pages": [
@@ -2468,6 +2883,26 @@
           "lastUpdate": "27-Oct-2025"
         },
         {
+          "title": "Set appearance",
+          "permalink": "/go-live/appearance/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "Build and test",
+          "permalink": "/go-live/build/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "Deploy",
+          "permalink": "/go-live/deploy/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "Go live",
+          "permalink": "/go-live/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
           "title": "Algolia",
           "permalink": "/integrations/algolia/",
           "lastUpdate": "27-Oct-2025"
@@ -2508,7 +2943,7 @@
           "lastUpdate": "20-Oct-2025"
         }
       ],
-      "numPages": 11
+      "numPages": 15
     }
   },
   "hsSettings": {

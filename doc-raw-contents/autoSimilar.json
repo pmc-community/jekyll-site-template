@@ -158,5 +158,21 @@
     {
         "permalink": "/integrations/new-relic/",
         "similarFiles": []
+    },
+    {
+        "permalink": "/go-live/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/go-live/appearance/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/go-live/build/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/go-live/deploy/",
+        "similarFiles": []
     }
 ]

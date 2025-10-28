@@ -83,6 +83,11 @@ File: _experiments/pdf-summary/pdf-summary.md
 Language detected: en
 Misspelled words: acm, bdis, birnin, cao, cm, dc, dfr, digitalidentity, dr, eid, enotary, ewakanda, fr, iaeng, ibm, iceis, ieee, ka, kajor, mcpr, mom, mr, ms, pe, pr, pt, rao, ronpub, si, subsubsections, wbs, www, zana
 
+Permalink: /extend/
+File: extend.md
+Language detected: en
+No misspellings detected.
+
 Permalink: /get-started/
 File: get-started.md
 Language detected: en
@@ -105,6 +110,26 @@ No misspellings detected.
 
 Permalink: /get-started/env/
 File: environments/env.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /go-live/
+File: go-live/intro.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /go-live/appearance/
+File: go-live/appearance.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /go-live/build/
+File: go-live/build-correct-test.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /go-live/deploy/
+File: go-live/deploy.md
 Language detected: en
 No misspellings detected.
 

@@ -296,12 +296,12 @@
         "permalink": "/intro/"
       },
       {
-        "title": "Get started",
-        "permalink": "/get-started/"
-      },
-      {
         "title": "Content",
         "permalink": "/content/intro/"
+      },
+      {
+        "title": "Get started",
+        "permalink": "/get-started/"
       }
     ]
   },
@@ -323,6 +323,10 @@
     ]
   },
   {
+    "permalink": "/extend/",
+    "related": []
+  },
+  {
     "permalink": "/get-started/",
     "related": [
       {
@@ -340,12 +344,76 @@
     ]
   },
   {
-    "permalink": "/integrations/algolia/",
+    "permalink": "/go-live/appearance/",
     "related": [
       {
-        "title": "New Relic",
-        "permalink": "/integrations/new-relic/"
+        "title": "Build and test",
+        "permalink": "/go-live/build/"
       },
+      {
+        "title": "Go live",
+        "permalink": "/go-live/"
+      },
+      {
+        "title": "Deploy",
+        "permalink": "/go-live/deploy/"
+      }
+    ]
+  },
+  {
+    "permalink": "/go-live/build/",
+    "related": [
+      {
+        "title": "Go live",
+        "permalink": "/go-live/"
+      },
+      {
+        "title": "Set appearance",
+        "permalink": "/go-live/appearance/"
+      },
+      {
+        "title": "Deploy",
+        "permalink": "/go-live/deploy/"
+      }
+    ]
+  },
+  {
+    "permalink": "/go-live/deploy/",
+    "related": [
+      {
+        "title": "Go live",
+        "permalink": "/go-live/"
+      },
+      {
+        "title": "Build and test",
+        "permalink": "/go-live/build/"
+      },
+      {
+        "title": "Set appearance",
+        "permalink": "/go-live/appearance/"
+      }
+    ]
+  },
+  {
+    "permalink": "/go-live/",
+    "related": [
+      {
+        "title": "Build and test",
+        "permalink": "/go-live/build/"
+      },
+      {
+        "title": "Deploy",
+        "permalink": "/go-live/deploy/"
+      },
+      {
+        "title": "Set appearance",
+        "permalink": "/go-live/appearance/"
+      }
+    ]
+  },
+  {
+    "permalink": "/integrations/algolia/",
+    "related": [
       {
         "title": "GitHub",
         "permalink": "/integrations/github/"
@@ -353,6 +421,10 @@
       {
         "title": "HubSpot",
         "permalink": "/integrations/hubspot/"
+      },
+      {
+        "title": "New Relic",
+        "permalink": "/integrations/new-relic/"
       }
     ]
   },
@@ -398,12 +470,12 @@
         "permalink": "/integrations/algolia/"
       },
       {
-        "title": "GA/GTM",
-        "permalink": "/integrations/ga-gtm/"
-      },
-      {
         "title": "GitHub",
         "permalink": "/integrations/github/"
+      },
+      {
+        "title": "GA/GTM",
+        "permalink": "/integrations/ga-gtm/"
       }
     ]
   },
@@ -415,12 +487,12 @@
         "permalink": "/integrations/new-relic/"
       },
       {
-        "title": "Algolia",
-        "permalink": "/integrations/algolia/"
-      },
-      {
         "title": "Config Options",
         "permalink": "/get-started/config-options/"
+      },
+      {
+        "title": "Algolia",
+        "permalink": "/integrations/algolia/"
       }
     ]
   },

@@ -3,7 +3,7 @@ layout: page
 title: New Relic
 permalink: /integrations/new-relic/
 categories: [Integrations, Start]
-tags: [integration, new relic, log, monitor, measure, performance]
+tags: [integration, new relic, log, monitor, measure, performance, low-code]
 parent: Integrate
 nav_order: 3
 ---

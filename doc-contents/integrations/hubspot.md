@@ -2,8 +2,8 @@
 layout: page
 title: HubSpot
 permalink: /integrations/hubspot/
-categories: [Integrations, Start]
-tags: [integration, hubspot, analytics, forms]
+categories: [Integrations, Start, Extensions]
+tags: [integration, hubspot, analytics, forms, no-code, code]
 parent: Integrate
 nav_order: 2
 ---

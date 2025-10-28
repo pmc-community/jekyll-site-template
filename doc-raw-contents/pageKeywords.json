@@ -329,6 +329,53 @@
         "netlify",
         "deployment"
       ]
+    },
+    {
+      "permalink": "/extend/",
+      "keywords": [
+        "functionality",
+        "execution",
+        "aware",
+        "skills",
+        "possibility"
+      ]
+    },
+    {
+      "permalink": "/go-live/",
+      "keywords": [
+        "content",
+        "process",
+        "functionality",
+        "frustration",
+        "unavailable"
+      ]
+    },
+    {
+      "permalink": "/go-live/appearance/",
+      "keywords": [
+        "colors",
+        "background",
+        "branding",
+        "appearance",
+        "light"
+      ]
+    },
+    {
+      "permalink": "/go-live/deploy/",
+      "keywords": [
+        "netlify",
+        "prem"
+      ]
+    },
+    {
+      "permalink": "/go-live/build/",
+      "keywords": [
+        "functionality",
+        "corrections",
+        "appearance",
+        "fine",
+        "time"
+      ]
     }
   ]
 }

@@ -3,7 +3,7 @@ layout: page
 title: GA/GTM
 permalink: /integrations/ga-gtm/
 categories: [Integrations, Start]
-tags: [integration, google, analytics, tag manager]
+tags: [integration, google, analytics, tag manager, low-code]
 parent: Integrate
 nav_order: 1
 ---

@@ -127,6 +127,26 @@
         {
             "permalink": "/integrations/new-relic/",
             "summary": "New relic integration is provided out-of-the-box once this integration is enabled. This integration allows monitoring and measuring the performance of the site. Used in combination with the extension capabilities, it provides a robust way to log the user interactions with site."
+        },
+        {
+            "permalink": "/extend/",
+            "summary": "We offer out-of-the-box the possibility to extend the functionality of the site by hooking on the execution of the functions on browser side. Be aware that using extensions requires development skills (mostly on javascript). The level of the required skills depends on the complexity of the extension."
+        },
+        {
+            "permalink": "/go-live/",
+            "summary": "Going live with the site is a pretty straight forward process. It involves tuning of the appearance (if needed), building and testing in the development environment and publishing (deploying) in production environment. We make available the necessary tools for each step of this process."
+        },
+        {
+            "permalink": "/go-live/appearance/",
+            "summary": "Setting the appearance means to set the branding an colors of the site. The branding elements are the logo, the site title and the footer visible at the bottom of the left sidebar."
+        },
+        {
+            "permalink": "/go-live/build/",
+            "summary": "Building and testing the site means go generate the site, running the automatic testing and the spell checking. Following the site build and tests results, corrections may be needed. When everything is fine, is time to serve the site locally and test its appearance and functionality."
+        },
+        {
+            "permalink": "/go-live/deploy/",
+            "summary": "Deploying the site means to update the production environment (such as on-prem, or github pages or netlify, or similar)."
         }
     ]
 }
