@@ -147,7 +147,7 @@ The settings for the footer visible on the bottom of the left sidebar are placed
 # Header background and text
 The settings for changing the header background and text colors are placed in `_sass/custom/custom-vars.scss`.
 
-```javascript
+```yml
 {% 
     ExternalRepoContent  { 
         "markdown": true,
