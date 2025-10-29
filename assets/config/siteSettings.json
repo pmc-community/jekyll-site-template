@@ -928,7 +928,7 @@
       "createTime": "2025-10-28 13:06:40 +0200",
       "createTimeUTC": 1761649600,
       "relatedPages": [],
-      "autoSummary": "One of the most powerful features we offer out-of-the-box is defining and using custom taxonomies. This feature allows the users to organise the information in a way that suits their preference.",
+      "autoSummary": "One of the most powerful features we offer out-of-the-box is defining and using custom taxonomies. This allows the usage of documentation to be customised as per the goal and purpose needed by the user. There is no limit in how many ways the documentation can be organised.",
       "similarByContent": [],
       "readingTime": 1,
       "hasDynamicContent": false,
@@ -1002,12 +1002,12 @@
           "permalink": "/get-started/config-files/"
         },
         {
-          "title": "GitHub",
-          "permalink": "/integrations/github/"
-        },
-        {
           "title": "Config Options",
           "permalink": "/get-started/config-options/"
+        },
+        {
+          "title": "GitHub",
+          "permalink": "/integrations/github/"
         }
       ],
       "autoSummary": "Environment variables are used only at build time. At run time (in dev or production environments) the environment variables are not used anymore. They are mostly used to store values that should never be exposed, such as access keys and tokens that are used to integrate some external features and.",
@@ -1090,10 +1090,10 @@
         "deploy"
       ],
       "excerpt": "logo, settings, folder, file, footer",
-      "lastUpdate": "2025-10-28 13:17:58 +0200",
+      "lastUpdate": "2025-10-28 17:00:26 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-28 13:17:58 +0200",
-      "createTimeUTC": 1761650278,
+      "createTime": "2025-10-28 17:00:26 +0200",
+      "createTimeUTC": 1761663626,
       "relatedPages": [
         {
           "title": "Go live",
@@ -1108,7 +1108,7 @@
           "permalink": "/go-live/deploy/"
         }
       ],
-      "autoSummary": "Setting the appearance means to set the branding an colors of the site. Branding elements are the logo, the site title, the addtional buttons on the header and the footer visible at the bottom of the left sidebar. Change appearance do not forget to build and deploy the site after.",
+      "autoSummary": "Setting the appearance means to set the branding an colors of the site. Branding elements are the logo, the site title, the additional buttons on the header and the footer visible at the bottom of the left sidebar. Additionally the following colors can be set: background and text colors for.",
       "similarByContent": [],
       "readingTime": 2,
       "hasDynamicContent": false,
@@ -1127,7 +1127,7 @@
         "test",
         "deploy"
       ],
-      "excerpt": "functionality, corrections, appearance, fine, time",
+      "excerpt": "script, functionality, corrections, appearance, building",
       "lastUpdate": "2025-10-28 10:53:15 +0200",
       "lastUpdateUTC": 0,
       "createTime": "2025-10-28 10:53:15 +0200",
@@ -1146,7 +1146,7 @@
           "permalink": "/go-live/deploy/"
         }
       ],
-      "autoSummary": "Building and testing the site means go generate the site, running the automatic testing and the spell checking. Following the site build and tests results, corrections may be needed. When everything is fine, is time to serve the site locally and test its appearance and functionality.",
+      "autoSummary": "Docaroo provides a ready-made script for building and running automatic tests on the development environment. This script is optimised for macos and linux and can be started with command.",
       "similarByContent": [],
       "readingTime": 1,
       "hasDynamicContent": false,

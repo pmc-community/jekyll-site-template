@@ -9,13 +9,7 @@ nav_order: 1
 ---
 
 # Summary
-Setting the appearance means to set the branding an colors of the site. The branding elements are the logo, the site title, the addtional buttons on the header and the footer visible at the bottom of the left sidebar. Additionally the following colors can be set: background and text colors for light and dark themes and the header background color.
-
-{% include elements/alert.html 
-  class="warning" 
-  content="Do not forget to build and deploy the site after making changes to appearance settings!!!"
-  title="Change appearance" 
-%}
+Setting the appearance means to set the branding an colors of the site. The branding elements are the logo, the site title, the additional buttons on the header and the footer visible at the bottom of the left sidebar. Additionally the following colors can be set: background and text colors for light and dark themes and the header background color.
 
 # Logo and Title
 Site logo is an image located in `assets/img` folder. To set the site logo, copy the image file that you want in the mentioned folder, edit `_data/siteConfig.yml` and use the name of the file (only the name, not the full path) in the right place. Then build, test, deploy ... 
@@ -71,7 +65,7 @@ Site title setting is placed in `_config.yml` file.
 ```
 
 # Auxiliary buttons
-These buttons are placed on the right side of the site header and are used to point the user to some external sites that may be related or of interest (such as the company website). Technically, there is no limit of how many buttons ccan be added, but it is not recommended to have more than two buttons. Auxiliary buttons setting is placed in `_config.yml` file.
+These buttons are placed on the right side of the site header and are used to point the user to some external sites that may be related or of interest (such as the company website). Technically, there is no limit of how many buttons can be added, but it is not recommended to have more than two buttons. Auxiliary buttons setting is placed in `_config.yml` file.
 
 ```yml
 {% 
@@ -164,8 +158,8 @@ The settings for changing the header background and text colors are placed in `_
     }
 %}
 ```
-# Config options
 
+# Config options
 Detailed information about all the configuration options are here:
 
 {% include 
@@ -174,4 +168,10 @@ Detailed information about all the configuration options are here:
     outline="false" text="Config options" 
     href="/get-started/config-options/" 
     newTab="true" 
+%}
+
+{% include elements/alert.html 
+  class="warning" 
+  content="Do not forget to build and deploy the site after making changes to appearance settings!!!"
+  title="Change appearance" 
 %}

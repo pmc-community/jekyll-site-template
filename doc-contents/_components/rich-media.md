@@ -160,18 +160,42 @@ To test if slides are embedded correctly on mobile, add `testSlides="true"` para
 ## Youtube
 {% highlight javascript %}
 {% raw %}
-{% include elements/youtube.html 
-    id="HFsPgkqMUzc" 
-    width="640" 
-    height="360" 
-%}
-{% endraw %}
-{% endhighlight %}
+{% capture moments %}
+    text=Moment 1|sec=12,
+    text=Moment 2|sec=37.2
+{% endcapture %}
 
 {% include elements/youtube.html 
     id="HFsPgkqMUzc" 
     width="640" 
-    height="360" 
+    height="360"
+    moments=moments
+%}
+{% endraw %}
+{% endhighlight %}
+
+{% include elements/alert.html 
+  class="primary" 
+  content="Note that a number video moments can be passed as argument. When the video is playing, the moments will be shown as buttons under the player. Clicking on moment button will move the video to the specified second and will pause it there."
+   title="Moments" 
+%}
+
+{% capture moments %}
+    text=Moment 1|sec=12,
+    text=Moment 2|sec=37.2
+{% endcapture %}
+
+{% include elements/youtube.html 
+    id="HFsPgkqMUzc" 
+    width="640" 
+    height="360"
+    moments=moments
+%}
+
+{% include elements/alert.html 
+  class="warning" 
+  content="Technically, there is no limitation on the number of moments that can be defined, but the recommendation is to not have more than 3-4 moments. Also it is highly recommended to label the moments with relevant short words, no more than 2 words."
+   title="Note" 
 %}
 
 ## Vimeo

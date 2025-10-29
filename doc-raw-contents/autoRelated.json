@@ -317,12 +317,12 @@
         "permalink": "/get-started/config-files/"
       },
       {
-        "title": "GitHub",
-        "permalink": "/integrations/github/"
-      },
-      {
         "title": "Config Options",
         "permalink": "/get-started/config-options/"
+      },
+      {
+        "title": "GitHub",
+        "permalink": "/integrations/github/"
       }
     ]
   },

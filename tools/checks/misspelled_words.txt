@@ -168,3 +168,8 @@ File: intro.md
 Language detected: en
 No misspellings detected.
 
+Permalink: /taxonomies/intro/
+File: _taxonomies/taxonomies.md
+Language detected: en
+No misspellings detected.
+

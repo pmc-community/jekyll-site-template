@@ -138,11 +138,11 @@
         },
         {
             "permalink": "/go-live/appearance/",
-            "summary": "Setting the appearance means to set the branding an colors of the site. Branding elements are the logo, the site title, the addtional buttons on the header and the footer visible at the bottom of the left sidebar. Change appearance do not forget to build and deploy the site after."
+            "summary": "Setting the appearance means to set the branding an colors of the site. Branding elements are the logo, the site title, the additional buttons on the header and the footer visible at the bottom of the left sidebar. Additionally the following colors can be set: background and text colors for."
         },
         {
             "permalink": "/go-live/build/",
-            "summary": "Building and testing the site means go generate the site, running the automatic testing and the spell checking. Following the site build and tests results, corrections may be needed. When everything is fine, is time to serve the site locally and test its appearance and functionality."
+            "summary": "Docaroo provides a ready-made script for building and running automatic tests on the development environment. This script is optimised for macos and linux and can be started with command."
         },
         {
             "permalink": "/go-live/deploy/",
@@ -150,7 +150,7 @@
         },
         {
             "permalink": "/taxonomies/intro/",
-            "summary": "One of the most powerful features we offer out-of-the-box is defining and using custom taxonomies. This feature allows the users to organise the information in a way that suits their preference."
+            "summary": "One of the most powerful features we offer out-of-the-box is defining and using custom taxonomies. This allows the usage of documentation to be customised as per the goal and purpose needed by the user. There is no limit in how many ways the documentation can be organised."
         }
     ]
 }
