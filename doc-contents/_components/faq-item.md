@@ -10,7 +10,7 @@ tags: [embed, faq, content]
 Learn how to add `faq-item` like elements to your documents. `faq-item` element contain a question.header and an answer/body to the question. While the question should always be a text, the answer to the question can be simple text or any rich content that is allowed in markdown. Any Docaroo component can be used to render the answer to a question, including importing content from external sources, at build time or run time.
 
 # Simple FAQ item
-In a simple FAQ item both question and answer are simple texts. Markdown syntax for text format can be used to enrich the annswer. 
+In a simple FAQ item both question and answer are simple texts. Markdown syntax for text format can be used to enrich the answer. 
 {% raw %}
 ```javascript
 {% assign q = "This is a question" %}
@@ -150,6 +150,6 @@ Adding FAQ items one after the other will result in a FAQ section.
 
 {% include elements/alert.html class="primary" content="Observe that the FAQ item question/header will be included in the page ToC" title="Note" %}
 
-Take a look to the FAQ page of this site to understand better the layout of multiple FAQ items. We do not recommend to overuse this component. It is always better to alternate regular content and FAQ items and to not have more than 5 such items in one section because the readibility of the document may be affected.
+Take a look to the FAQ page of this site to understand better the layout of multiple FAQ items. We do not recommend to overuse this component. It is always better to alternate regular content and FAQ items and to not have more than 5 such items in one section because the readability of the document may be affected.
 
 {% include elements/link-btn.html type="warning" text="Site FAQ" href="/faq" newTab="true" %}

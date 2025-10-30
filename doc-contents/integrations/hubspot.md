@@ -2,8 +2,8 @@
 layout: page
 title: HubSpot
 permalink: /integrations/hubspot/
-categories: [Integrations, Start]
-tags: [integration, hubspot, analytics, forms]
+categories: [Integrations, Start, Extensions]
+tags: [integration, hubspot, analytics, forms, no-code, code]
 parent: Integrate
 nav_order: 2
 ---
@@ -26,7 +26,7 @@ The second out-of-the-box HubSpot integration feature offered by Docaroo is the 
 
 {% include elements/alert.html 
   class="primary" 
-  content="Plese consult the HubSpot documentation to learn how to add custom props to HubSpot objects and HubSpot forms designer documentation to learn how to design a HubSpot form."
+  content="Please consult the HubSpot documentation to learn how to add custom props to HubSpot objects and HubSpot forms designer documentation to learn how to design a HubSpot form."
 %}
 
 {% capture img %}
@@ -43,7 +43,7 @@ The second out-of-the-box HubSpot integration feature offered by Docaroo is the 
 %}
 
 # Advanced
-HubSpot forms integration is not limited to the feedback form which is provided out-of-the-box and in a no-code way. Docaroo offers the possibility to embed any HubSpot form created in the HubSpot forms designer, but htis requires a bit more advanced coding skills. Even in this case, it is not necessary to start everything from scratch, Docaroo assists you with:
+HubSpot forms integration is not limited to the feedback form which is provided out-of-the-box and in a no-code way. Docaroo offers the possibility to embed any HubSpot form created in the HubSpot forms designer, but this requires a bit more advanced coding skills. Even in this case, it is not necessary to start everything from scratch, Docaroo assists you with:
 - a framework to embed any form: see `assets/js/hs-integrate.js`
 - a very easy to understand model to style and adjust the form to your needs and preferences: see `assets/js/hs/hs-feedback-form.js` and `assets/css/hs`
 - the easiest way to activate your form in a page, and to apply the custom features and styles: see `assets/js/site-page.js`, function `page__getPageFeedbackForm`
@@ -62,6 +62,6 @@ When using the pattern above, embedding a HubSpot form into the documents means:
 
 {% include elements/alert.html 
   class="primary" 
-  content="There is no limitations to the number of style and js scripts to can use to customise your form. Feel free to split your code in as many files as you need, but do not forget to include them all in the form activation function. You may also use SASS/SCSS to generate your styles, but be aware that only CSS files cand be sent to the form for styling"
+  content="There is no limitations to the number of style and js scripts to can use to customise your form. Feel free to split your code in as many files as you need, but do not forget to include them all in the form activation function. You may also use SASS/SCSS to generate your styles, but be aware that only CSS files can be sent to the form for styling"
   title="Style/Customisations" 
 %}

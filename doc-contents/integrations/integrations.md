@@ -21,6 +21,15 @@ However, it is not mandatory to use the integrations, thus each integration can 
 {% include elements/link-btn-group.html buttons=buttons %}
 
 # Integrations
+Docaroo provides out-of-the-box a series of integrations with other platforms as listed below. The main purpose is to enhance the functionalities of the site and to provide means to monitor and measure the performance as well as to collect feedback from the users or advanced search features.
+
+{% include elements/alert.html 
+  class="primary" 
+  content="Use the integrations only in the case you really need to monitor/measure performance or you want advanced search or you need to collect feedback or you need to communicate somehow with your users through various forms. If not the case, you may simple disable them all or only some of them as further instructed. Everything will work fine even without integrations."
+  title="Use integrations"
+%}
+
+As general rule, the integrations are provided in `no code`/`low code` way. However, the framework on which Docaroo is built provides the options to extend the functionalities and enhance integrations in a traditional way ... writing code.
 
 {% include elements/xlsx-to-html-table.html 
     file="integrations.xlsx" 
@@ -31,3 +40,7 @@ However, it is not mandatory to use the integrations, thus each integration can 
     showHead="true"
     freeze=1
 %}
+
+As general rule and except GA/GTM integration which does not depend at all on a Google paid plan or similar because Analytics and Tag Manager are free to use, all the other integrations `can work well on the related platform free plans`. In fact, for small/medium sites, the free plans of the integrated platforms are enough for regular operations. However, if the site gains more users and the traffic grows (which we all want 😁), paid plans for the integrated platforms should be considered. 
+
+While `Algolia` and `HubSpot` are less sensitive to this aspect (having a paid plan depends more on what additional features your business requires rather than on those features necessary for integration), `New Relic` may need a superior plan due its data retention and data ingestion limits in the free plan and `Github` may require a paid plan to increase the API limits. 

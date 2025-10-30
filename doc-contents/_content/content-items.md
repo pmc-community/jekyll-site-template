@@ -41,7 +41,7 @@ Using this feature you can create re-usable pieces of content and place those in
 
 Another important aspect is that you can create your documentation outside the project directory, in another branch of the project repository or even in external repositories. This can be really helpful for multilanguage documentations and allows you to keep good consistency of your content creation process.
 
-Last, but not least, you are able to import content at run time (not only at build time). This can be very helpful whrn you want to add pieces of content that are very dynamic and subject of frequent changes and you don't want to re-build your site each time. 
+Last, but not least, you are able to import content at run time (not only at build time). This can be very helpful when you want to add pieces of content that are very dynamic and subject of frequent changes and you don't want to re-build your site each time. 
 
 However, `when importing content from external repositories, be aware of potential API limits` imposed by GitHub. Click on the next button to find out how you can import content from other sources into your docs.
 

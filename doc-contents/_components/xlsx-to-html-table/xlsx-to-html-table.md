@@ -35,7 +35,7 @@ Considering the following folder structure:
 See how tables from Excel can be imported in your docs.
 
 ## From same folder
-Here is an example of a `simple` table without head, having merged cels on rows and columns and having rotated text. It is imported from the same folder as the parent document. It has a fixed height, thus sticky header (set 10 rows per page to see how sticky heder behave). The first column is frozen (increase the width of any column to enable horizonrtal scroll to see how a frozen column behave).
+Here is an example of a `simple` table without head, having merged cells on rows and columns and having rotated text. It is imported from the same folder as the parent document. It has a fixed height, thus sticky header (set 10 rows per page to see how sticky heder behave). The first column is frozen (increase the width of any column to enable horizontal scroll to see how a frozen column behave).
 
 {% raw %}
 ```javascript
@@ -91,7 +91,7 @@ Here is an example of a `featured` table with head, without merged cells on rows
 %}
 
 {% include elements/alert.html class="primary" 
-    content="Note that the table above doesn't contains merged cells, thus can be fully featured, depending on `simple` parameter." 
+    content="Note that the table above does not contains merged cells, thus can be fully featured, depending on `simple` parameter." 
 %}
 
 # Parameters

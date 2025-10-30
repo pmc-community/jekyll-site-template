@@ -34,9 +34,9 @@
       "permalink": "/content/ec/",
       "keywords": [
         "content",
-        "source",
-        "file",
         "type",
+        "aware",
+        "time",
         "markers"
       ]
     },
@@ -83,25 +83,21 @@
     {
       "permalink": "/get-started/",
       "keywords": [
-        "started",
-        "docaroo",
-        "requires",
-        "design",
         "documentation",
-        "organising",
-        "blog",
-        "crucial",
-        "involve"
+        "browser",
+        "settings",
+        "incompatibility",
+        "docaroo"
       ]
     },
     {
       "permalink": "/components/scrollspy/",
       "keywords": [
-        "scroll spy",
         "folder",
         "documents",
         "document",
-        "content"
+        "content",
+        "regular"
       ]
     },
     {
@@ -137,16 +133,11 @@
     {
       "permalink": "/components/xlsx-tables/",
       "keywords": [
-        "users",
-        "creating",
         "table",
-        "markdown",
-        "challenge",
-        "merged",
+        "tables",
         "cells",
-        "crazy",
-        "quick",
-        "maintaining"
+        "component",
+        "markdown"
       ]
     },
     {
@@ -155,21 +146,18 @@
         "component",
         "folder",
         "documents",
-        "colors",
+        "colours",
         "excel"
       ]
     },
     {
       "permalink": "/components/image/",
       "keywords": [
-        "component",
-        "placing",
         "images",
-        "content",
-        "captions",
-        "credits",
-        "copyright",
-        "designed"
+        "image",
+        "path",
+        "gallery",
+        "folder"
       ]
     },
     {
@@ -177,24 +165,19 @@
       "keywords": [
         "content",
         "documentation",
+        "charts",
         "documents",
-        "markdown",
-        "markers"
+        "markdown"
       ]
     },
     {
       "permalink": "/components/card/",
       "keywords": [
+        "cards",
         "card",
-        "emphasise",
-        "piece",
-        "provide",
-        "relevant",
-        "visual",
-        "experience",
-        "images",
-        "references",
-        "detailed"
+        "content",
+        "documentation",
+        "readability"
       ]
     },
     {
@@ -210,31 +193,21 @@
     {
       "permalink": "/experiments/pdf-summary/",
       "keywords": [
+        "summary",
         "component",
-        "helps",
-        "enhancing",
-        "content",
-        "auto",
-        "generated",
-        "summaries",
-        "pdf",
-        "files",
-        "combined"
+        "models",
+        "huggingface",
+        "corrections"
       ]
     },
     {
       "permalink": "/experiments/docx-summary/",
       "keywords": [
+        "summary",
         "component",
-        "helps",
-        "enhancing",
-        "content",
-        "auto",
-        "generated",
-        "summaries",
-        "docx",
-        "files",
-        "combined"
+        "models",
+        "huggingface",
+        "corrections"
       ]
     },
     {
@@ -265,11 +238,16 @@
     {
       "permalink": "/get-started/config-files/",
       "keywords": [
-        "configuration",
-        "time",
         "docaroo",
+        "provide",
+        "multiple",
+        "options",
+        "configure",
+        "functionality",
+        "appearance",
         "configurations",
-        "folder"
+        "_config",
+        "yml"
       ]
     },
     {
@@ -297,9 +275,9 @@
       "keywords": [
         "integrations",
         "performance",
-        "integration",
-        "mandatory",
-        "feedback"
+        "feedback",
+        "users",
+        "functionalities"
       ]
     },
     {
@@ -315,11 +293,11 @@
     {
       "permalink": "/integrations/algolia/",
       "keywords": [
-        "crawler",
-        "modal",
-        "title",
-        "info",
-        "close"
+        "algolia",
+        "integration",
+        "netlify",
+        "configuration",
+        "docaroo"
       ]
     },
     {
@@ -335,23 +313,78 @@
     {
       "permalink": "/integrations/new-relic/",
       "keywords": [
-        "logs",
-        "vitals",
-        "performance",
-        "modal",
-        "title",
-        "info",
-        "close"
+        "function",
+        "integration",
+        "netlify",
+        "hook",
+        "performance"
       ]
     },
     {
       "permalink": "/integrations/github/",
       "keywords": [
         "content",
-        "netlify",
-        "deployment",
         "github",
-        "repositories"
+        "time",
+        "netlify",
+        "deployment"
+      ]
+    },
+    {
+      "permalink": "/extend/",
+      "keywords": [
+        "functionality",
+        "execution",
+        "aware",
+        "skills",
+        "possibility"
+      ]
+    },
+    {
+      "permalink": "/go-live/",
+      "keywords": [
+        "content",
+        "process",
+        "functionality",
+        "frustration",
+        "unavailable"
+      ]
+    },
+    {
+      "permalink": "/go-live/appearance/",
+      "keywords": [
+        "logo",
+        "settings",
+        "folder",
+        "file",
+        "footer"
+      ]
+    },
+    {
+      "permalink": "/go-live/deploy/",
+      "keywords": [
+        "netlify",
+        "prem"
+      ]
+    },
+    {
+      "permalink": "/go-live/build/",
+      "keywords": [
+        "environment",
+        "command",
+        "checking",
+        "content",
+        "tests"
+      ]
+    },
+    {
+      "permalink": "/taxonomies/intro/",
+      "keywords": [
+        "purpose",
+        "users",
+        "documentation",
+        "categories",
+        "time"
       ]
     }
   ]

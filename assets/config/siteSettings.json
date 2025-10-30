@@ -269,23 +269,23 @@
         "link",
         "gallery"
       ],
-      "excerpt": "card, emphasise, piece, provide, relevant, visual, experience, images, references, detailed",
-      "lastUpdate": "2025-08-05 15:23:23 +0300",
+      "excerpt": "cards, card, content, documentation, readability",
+      "lastUpdate": "2025-10-26 13:40:14 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-08-05 15:23:23 +0300",
-      "createTimeUTC": 1754396603,
+      "createTime": "2025-10-26 13:40:14 +0200",
+      "createTimeUTC": 1761478814,
       "relatedPages": [
         {
-          "title": "Image",
-          "permalink": "/components/image/"
+          "title": "Content items",
+          "permalink": "/content/content-items/"
         },
         {
-          "title": "Link button",
-          "permalink": "/components/link-button/"
+          "title": "FAQ Item",
+          "permalink": "/components/qitem/"
         },
         {
-          "title": "Downloads",
-          "permalink": "/components/download-link/"
+          "title": "Alerts",
+          "permalink": "/components/alerts/"
         }
       ],
       "autoSummary": "Cards can be included as single items or in galleries of cards.",
@@ -327,8 +327,8 @@
           "title": "Content items"
         },
         {
-          "permalink": "/intro/",
-          "title": "Introduction"
+          "permalink": "/content/intro/",
+          "title": "Content"
         },
         {
           "permalink": "/content/ec/",
@@ -352,10 +352,10 @@
         "button"
       ],
       "excerpt": "directory, download, file, document, default",
-      "lastUpdate": "2025-07-22 17:26:26 +0300",
+      "lastUpdate": "2025-10-27 16:39:50 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-07-22 17:26:26 +0300",
-      "createTimeUTC": 1753194386,
+      "createTime": "2025-10-27 16:39:50 +0200",
+      "createTimeUTC": 1761575990,
       "relatedPages": [
         {
           "title": "Link button",
@@ -388,10 +388,10 @@
         "content"
       ],
       "excerpt": "answer, content, time, header, docaroo",
-      "lastUpdate": "2025-08-02 01:05:20 +0300",
+      "lastUpdate": "2025-10-27 16:39:50 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-08-02 01:05:20 +0300",
-      "createTimeUTC": 1754085920,
+      "createTime": "2025-10-27 16:39:50 +0200",
+      "createTimeUTC": 1761575990,
       "relatedPages": [
         {
           "title": "Alerts",
@@ -406,13 +406,8 @@
           "permalink": "/components/intro/"
         }
       ],
-      "autoSummary": "The question should always be a text. The answer to the question can be simple text or any rich content that is allowed in markdown. Docaroo suports 2 types of text search: native search and algolia docs search.",
-      "similarByContent": [
-        {
-          "permalink": "/components/intro/",
-          "title": "Components"
-        }
-      ],
+      "autoSummary": "Docaroo supports 2 types of text search: native search and algolia docs search. We provide an advanced search based on different parameters such as the taxonomies.",
+      "similarByContent": [],
       "readingTime": 2,
       "hasDynamicContent": false,
       "parent": ""
@@ -428,23 +423,23 @@
         "component",
         "gallery"
       ],
-      "excerpt": "component, placing, images, content, captions, credits, copyright, designed",
-      "lastUpdate": "2025-08-14 18:04:50 +0300",
+      "excerpt": "images, image, path, gallery, folder",
+      "lastUpdate": "2025-10-27 16:39:50 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-08-14 18:04:50 +0300",
-      "createTimeUTC": 1755183890,
+      "createTime": "2025-10-27 16:39:50 +0200",
+      "createTimeUTC": 1761575990,
       "relatedPages": [
-        {
-          "title": "Card",
-          "permalink": "/components/card/"
-        },
         {
           "title": "XLSX Charts",
           "permalink": "/components/xlsx-charts/"
         },
         {
-          "title": "Experiments",
-          "permalink": "/experiments/intro/"
+          "title": "Card",
+          "permalink": "/components/card/"
+        },
+        {
+          "title": "Scroll Spy & Tabs",
+          "permalink": "/components/scrollspy/"
         }
       ],
       "autoSummary": "This component allows placing images into your content. Images can have captions (lets say you need to show some credits or copyright information) or not. The component is designed to work with responsive images.",
@@ -465,10 +460,10 @@
         "anchor"
       ],
       "excerpt": "document, link, buttons, button, links",
-      "lastUpdate": "2025-07-31 18:50:45 +0300",
+      "lastUpdate": "2025-10-27 16:39:50 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-07-31 18:50:45 +0300",
-      "createTimeUTC": 1753977045,
+      "createTime": "2025-10-27 16:39:50 +0200",
+      "createTimeUTC": 1761575990,
       "relatedPages": [
         {
           "title": "Downloads",
@@ -483,7 +478,7 @@
           "permalink": "/components/scrollspy/"
         }
       ],
-      "autoSummary": "Link buttons helps users to navigate inside your documentation or access external sites. Docaroo provides link buttons in style. You can add individual link buttons or group link buttons. You can place anchors anywhere in the document and references to them.",
+      "autoSummary": "Link buttons helps users to navigate inside your documentation or access external sites. Docaroo provides link buttons in style. You can add individual link buttons or group link buttons.",
       "similarByContent": [],
       "readingTime": 2,
       "hasDynamicContent": false,
@@ -502,18 +497,18 @@
         "video"
       ],
       "excerpt": "figma, public, design, file, permissions",
-      "lastUpdate": "2025-07-21 14:31:07 +0300",
+      "lastUpdate": "2025-10-29 15:35:35 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-07-21 14:31:07 +0300",
-      "createTimeUTC": 1753097467,
+      "createTime": "2025-10-29 15:35:35 +0200",
+      "createTimeUTC": 1761744935,
       "relatedPages": [
         {
           "title": "Downloads",
           "permalink": "/components/download-link/"
         },
         {
-          "title": "External content",
-          "permalink": "/content/ec/"
+          "title": "Alerts",
+          "permalink": "/components/alerts/"
         },
         {
           "title": "FAQ Item",
@@ -537,11 +532,11 @@
         "content",
         "tabs"
       ],
-      "excerpt": "scroll spy, folder, documents, document, content",
-      "lastUpdate": "2025-08-02 01:05:20 +0300",
+      "excerpt": "folder, documents, document, content, regular",
+      "lastUpdate": "2025-10-27 16:39:50 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-08-02 01:05:20 +0300",
-      "createTimeUTC": 1754085920,
+      "createTime": "2025-10-27 16:39:50 +0200",
+      "createTimeUTC": 1761575990,
       "relatedPages": [
         {
           "title": "Content items",
@@ -556,7 +551,7 @@
           "permalink": "/components/alerts/"
         }
       ],
-      "autoSummary": "Scroll spies are great ways of organising information inside your documents. We made them flexible and easy to be included in the documents. Any docaroo component, including importing esternal content or rich content ones, can be used to populate scroll spies and tabs.",
+      "autoSummary": "Scroll spies are great ways of organising information inside your documents. We made them flexible and easy to be included in the documents. Any docaroo component, including importing external content or rich content ones, can be used to populate scroll spies and tabs.",
       "similarByContent": [],
       "readingTime": 7,
       "hasDynamicContent": false,
@@ -574,11 +569,11 @@
         "chart",
         "office"
       ],
-      "excerpt": "component, folder, documents, colors, excel",
-      "lastUpdate": "2025-08-11 13:46:56 +0300",
+      "excerpt": "component, folder, documents, colours, excel",
+      "lastUpdate": "2025-10-27 16:39:50 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-08-11 13:46:56 +0300",
-      "createTimeUTC": 1754909216,
+      "createTime": "2025-10-27 16:39:50 +0200",
+      "createTimeUTC": 1761575990,
       "relatedPages": [
         {
           "title": "XLSX Tables",
@@ -589,11 +584,11 @@
           "permalink": "/components/scrollspy/"
         },
         {
-          "title": "Experiments",
-          "permalink": "/experiments/intro/"
+          "title": "PDF Summary",
+          "permalink": "/experiments/pdf-summary/"
         }
       ],
-      "autoSummary": "This component allows importing excel charts into your documents. Combined with component, this one provides the full support to share structured data in a professional way. Currently we support only: line charts column and bar charts pie and doughnut charts we do not support importing the colors you assign to.",
+      "autoSummary": "This component allows importing excel charts into your documents. Combined with component, this one provides the full support to share structured data in a professional way. Currently we support only: line charts column and bar charts pie and doughnut charts we do not support importing the colours you assign to.",
       "similarByContent": [
         {
           "permalink": "/components/xlsx-tables/",
@@ -615,23 +610,23 @@
         "xls",
         "office"
       ],
-      "excerpt": "users, creating, table, markdown, challenge, merged, cells, crazy, quick, maintaining",
-      "lastUpdate": "2025-10-01 20:46:55 +0300",
+      "excerpt": "table, tables, cells, component, markdown",
+      "lastUpdate": "2025-10-27 16:39:50 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-01 20:46:55 +0300",
-      "createTimeUTC": 1759340815,
+      "createTime": "2025-10-27 16:39:50 +0200",
+      "createTimeUTC": 1761575990,
       "relatedPages": [
         {
           "title": "XLSX Charts",
           "permalink": "/components/xlsx-charts/"
         },
         {
-          "title": "Content items",
-          "permalink": "/content/content-items/"
-        },
-        {
           "title": "DOCX Summary",
           "permalink": "/experiments/docx-summary/"
+        },
+        {
+          "title": "PDF Summary",
+          "permalink": "/experiments/pdf-summary/"
         }
       ],
       "autoSummary": "This component allows users to create tables in markdown and load them in excel. It offers two types of tables: fully featured and without some features.",
@@ -655,23 +650,23 @@
         "items",
         "content"
       ],
-      "excerpt": "content, documentation, documents, markdown, markers",
-      "lastUpdate": "2025-10-07 18:39:32 +0300",
+      "excerpt": "content, documentation, charts, documents, markdown",
+      "lastUpdate": "2025-10-27 16:39:50 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-07 18:39:32 +0300",
-      "createTimeUTC": 1759851572,
+      "createTime": "2025-10-27 16:39:50 +0200",
+      "createTimeUTC": 1761575990,
       "relatedPages": [
         {
           "title": "Scroll Spy & Tabs",
           "permalink": "/components/scrollspy/"
         },
         {
-          "title": "Components",
-          "permalink": "/components/intro/"
+          "title": "Card",
+          "permalink": "/components/card/"
         },
         {
-          "title": "Content",
-          "permalink": "/content/intro/"
+          "title": "Components",
+          "permalink": "/components/intro/"
         }
       ],
       "autoSummary": "Docaroo makes available a series of content items that can be used to enrich your documents and to be very efficient when wanting to incorporate pieces of content in a fast and robust way.",
@@ -681,12 +676,12 @@
           "title": "Components"
         },
         {
-          "permalink": "/content/ec/",
-          "title": "External content"
+          "permalink": "/content/intro/",
+          "title": "Content"
         },
         {
-          "permalink": "/intro/",
-          "title": "Introduction"
+          "permalink": "/content/ec/",
+          "title": "External content"
         }
       ],
       "readingTime": 2,
@@ -704,10 +699,10 @@
         "organise docs"
       ],
       "excerpt": "content, documents, documentation, document, folder",
-      "lastUpdate": "2025-10-07 12:49:03 +0300",
+      "lastUpdate": "2025-10-27 16:39:50 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-07 12:49:03 +0300",
-      "createTimeUTC": 1759830543,
+      "createTime": "2025-10-27 16:39:50 +0200",
+      "createTimeUTC": 1761575990,
       "relatedPages": [
         {
           "title": "Docs root",
@@ -723,7 +718,20 @@
         }
       ],
       "autoSummary": "Learn how to structure and use the content in the most efficient way. The secret is to use to the maximum extent the features made available. Importing external content (at build time or at run time) is the most powerful.",
-      "similarByContent": [],
+      "similarByContent": [
+        {
+          "permalink": "/content/content-items/",
+          "title": "Content items"
+        },
+        {
+          "permalink": "/components/intro/",
+          "title": "Components"
+        },
+        {
+          "permalink": "/content/ec/",
+          "title": "External content"
+        }
+      ],
       "readingTime": 2,
       "hasDynamicContent": false,
       "parent": ""
@@ -739,27 +747,31 @@
         "external",
         "import"
       ],
-      "excerpt": "content, source, file, type, markers",
-      "lastUpdate": "2025-07-20 10:25:22 +0300",
+      "excerpt": "content, type, aware, time, markers",
+      "lastUpdate": "2025-10-27 16:39:50 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-07-20 10:25:22 +0300",
-      "createTimeUTC": 1752996322,
+      "createTime": "2025-10-27 16:39:50 +0200",
+      "createTimeUTC": 1761575990,
       "relatedPages": [
+        {
+          "title": "FAQ Item",
+          "permalink": "/components/qitem/"
+        },
+        {
+          "title": "GitHub",
+          "permalink": "/integrations/github/"
+        },
         {
           "title": "Alerts",
           "permalink": "/components/alerts/"
-        },
-        {
-          "title": "Content items",
-          "permalink": "/content/content-items/"
-        },
-        {
-          "title": "Content",
-          "permalink": "/content/intro/"
         }
       ],
       "autoSummary": "Docaroo allows to your documents. External content is important because it allows you to create of content and import these parts in multiple places. It is possible to import content from external public and private GitHub repositories.",
       "similarByContent": [
+        {
+          "permalink": "/content/intro/",
+          "title": "Content"
+        },
         {
           "permalink": "/content/content-items/",
           "title": "Content items"
@@ -769,7 +781,7 @@
           "title": "Components"
         }
       ],
-      "readingTime": 4,
+      "readingTime": 5,
       "hasDynamicContent": true,
       "parent": ""
     },
@@ -786,11 +798,11 @@
         "summary",
         "office"
       ],
-      "excerpt": "component, helps, enhancing, content, auto, generated, summaries, docx, files, combined",
-      "lastUpdate": "2025-08-17 22:52:59 +0300",
+      "excerpt": "summary, component, models, huggingface, corrections",
+      "lastUpdate": "2025-10-27 16:39:50 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-08-17 22:52:59 +0300",
-      "createTimeUTC": 1755460379,
+      "createTime": "2025-10-27 16:39:50 +0200",
+      "createTimeUTC": 1761575990,
       "relatedPages": [
         {
           "title": "PDF Summary",
@@ -801,8 +813,8 @@
           "permalink": "/experiments/intro/"
         },
         {
-          "title": "XLSX Charts",
-          "permalink": "/components/xlsx-charts/"
+          "title": "XLSX Tables",
+          "permalink": "/components/xlsx-tables/"
         }
       ],
       "autoSummary": "This component helps enhancing your content with auto generated summaries from docx files. It is combined with the download component, so the output rendered will be a summary of the docx file and a download button.",
@@ -831,10 +843,10 @@
         "office"
       ],
       "excerpt": "experiments, production, content, component, subject",
-      "lastUpdate": "2025-08-11 23:46:44 +0300",
+      "lastUpdate": "2025-10-27 16:39:50 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-08-11 23:46:44 +0300",
-      "createTimeUTC": 1754945204,
+      "createTime": "2025-10-27 16:39:50 +0200",
+      "createTimeUTC": 1761575990,
       "relatedPages": [
         {
           "title": "PDF Summary",
@@ -845,8 +857,8 @@
           "permalink": "/experiments/docx-summary/"
         },
         {
-          "title": "XLSX Charts",
-          "permalink": "/components/xlsx-charts/"
+          "title": "XLSX Tables",
+          "permalink": "/components/xlsx-tables/"
         }
       ],
       "autoSummary": "We are working on a series of interesting features that will make your life much easier when creating content. We consider those features as experiments. You are encouraged to use them and to send us your feedback.",
@@ -868,11 +880,11 @@
         "summary",
         "office"
       ],
-      "excerpt": "component, helps, enhancing, content, auto, generated, summaries, pdf, files, combined",
-      "lastUpdate": "2025-08-17 22:52:59 +0300",
+      "excerpt": "summary, component, models, huggingface, corrections",
+      "lastUpdate": "2025-10-27 16:39:50 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-08-17 22:52:59 +0300",
-      "createTimeUTC": 1755460379,
+      "createTime": "2025-10-27 16:39:50 +0200",
+      "createTimeUTC": 1761575990,
       "relatedPages": [
         {
           "title": "DOCX Summary",
@@ -883,8 +895,8 @@
           "permalink": "/experiments/intro/"
         },
         {
-          "title": "XLSX Charts",
-          "permalink": "/components/xlsx-charts/"
+          "title": "XLSX Tables",
+          "permalink": "/components/xlsx-tables/"
         }
       ],
       "autoSummary": "This component helps enhancing your content with auto generated summaries from pdf files. It is combined with the download component, so the output rendered will be a summary of the pdf file and a download button.",
@@ -895,6 +907,30 @@
         }
       ],
       "readingTime": 10,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
+      "title": "Taxonomies",
+      "permalink": "/taxonomies/intro/",
+      "categories": [
+        "Taxonomies"
+      ],
+      "tags": [
+        "tags",
+        "categories",
+        "notes",
+        "annotations"
+      ],
+      "excerpt": "purpose, users, documentation, categories, time",
+      "lastUpdate": "2025-10-29 15:35:35 +0200",
+      "lastUpdateUTC": 0,
+      "createTime": "2025-10-29 15:35:35 +0200",
+      "createTimeUTC": 1761744935,
+      "relatedPages": [],
+      "autoSummary": "One of the most powerful features we offer out-of-the-box is defining and using custom taxonomies. This allows the usage of documentation to be customised as per the goal and purpose needed by the user. There is no limit in how many ways the documentation can be organised.",
+      "similarByContent": [],
+      "readingTime": 1,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -911,26 +947,31 @@
         "collections"
       ],
       "excerpt": "documentation, folder, collections, documents, structure",
-      "lastUpdate": "2025-09-29 12:11:57 +0300",
+      "lastUpdate": "2025-10-27 16:39:50 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-09-29 12:11:57 +0300",
-      "createTimeUTC": 1759137117,
+      "createTime": "2025-10-27 16:39:50 +0200",
+      "createTimeUTC": 1761575990,
       "relatedPages": [
         {
           "title": "Introduction",
           "permalink": "/intro/"
         },
         {
-          "title": "Content",
-          "permalink": "/content/intro/"
+          "title": "Get started",
+          "permalink": "/get-started/"
         },
         {
-          "title": "Config Files",
-          "permalink": "/get-started/config-files/"
+          "title": "Content",
+          "permalink": "/content/intro/"
         }
       ],
       "autoSummary": "Doc-contents is the root folder of the documents and collections. The way in which this folder is organised is strictly depending on the structure you want to have for your documentation. Some sub-folders are necessary to be present: the collection folder where the qa files must be placed if a.",
-      "similarByContent": [],
+      "similarByContent": [
+        {
+          "permalink": "/content/intro/",
+          "title": "Content"
+        }
+      ],
       "readingTime": 3,
       "hasDynamicContent": false,
       "parent": "Get started"
@@ -963,6 +1004,10 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/"
+        },
+        {
+          "title": "GitHub",
+          "permalink": "/integrations/github/"
         }
       ],
       "autoSummary": "Environment variables are used only at build time. At run time (in dev or production environments) the environment variables are not used anymore. They are mostly used to store values that should never be exposed, such as access keys and tokens that are used to integrate some external features and.",
@@ -970,6 +1015,30 @@
       "readingTime": 1,
       "hasDynamicContent": false,
       "parent": "Get started"
+    },
+    {
+      "title": "Extend",
+      "permalink": "/extend/",
+      "categories": [
+        "General"
+      ],
+      "tags": [
+        "extend",
+        "hooks",
+        "low-code",
+        "code"
+      ],
+      "excerpt": "functionality, execution, aware, skills, possibility",
+      "lastUpdate": "2025-10-28 10:53:15 +0200",
+      "lastUpdateUTC": 0,
+      "createTime": "2025-10-28 10:53:15 +0200",
+      "createTimeUTC": 1761641595,
+      "relatedPages": [],
+      "autoSummary": "We offer out-of-the-box the possibility to extend the functionality of the site by hooking on the execution of the functions on browser side. Be aware that using extensions requires development skills (mostly on javascript). The level of the required skills depends on the complexity of the extension.",
+      "similarByContent": [],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": ""
     },
     {
       "title": "Get started",
@@ -982,11 +1051,11 @@
         "documentation",
         "docs"
       ],
-      "excerpt": "started, docaroo, requires, design, documentation, organising, blog, crucial, involve",
-      "lastUpdate": "2025-09-06 16:52:21 +0300",
+      "excerpt": "documentation, browser, settings, incompatibility, docaroo",
+      "lastUpdate": "2025-10-27 16:39:50 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-09-06 16:52:21 +0300",
-      "createTimeUTC": 1757166741,
+      "createTime": "2025-10-27 16:39:50 +0200",
+      "createTimeUTC": 1761575990,
       "relatedPages": [
         {
           "title": "Introduction",
@@ -1002,13 +1071,160 @@
         }
       ],
       "autoSummary": "Getting started with docaroo requires, first of all, to design your documentation. Organising well your documentation (or blog) is crucial. This will involve defining the folder structure and also the taxonomies. Docaroo can take care of automatically generating other information about you documentation.",
-      "similarByContent": [
+      "similarByContent": [],
+      "readingTime": 3,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
+      "title": "Set appearance",
+      "permalink": "/go-live/appearance/",
+      "categories": [
+        "Start",
+        "Go live"
+      ],
+      "tags": [
+        "appearance",
+        "build",
+        "test",
+        "deploy"
+      ],
+      "excerpt": "logo, settings, folder, file, footer",
+      "lastUpdate": "2025-10-29 15:35:35 +0200",
+      "lastUpdateUTC": 0,
+      "createTime": "2025-10-29 15:35:35 +0200",
+      "createTimeUTC": 1761744935,
+      "relatedPages": [
         {
-          "permalink": "/content/ec/",
-          "title": "External content"
+          "title": "Build and test",
+          "permalink": "/go-live/build/"
+        },
+        {
+          "title": "Go live",
+          "permalink": "/go-live/"
+        },
+        {
+          "title": "Deploy",
+          "permalink": "/go-live/deploy/"
         }
       ],
-      "readingTime": 3,
+      "autoSummary": "Setting the appearance means to set the branding an colors of the site. Branding elements are the logo, the site title, the additional buttons on the header and the footer visible at the bottom of the left sidebar. Additionally the following colors can be set: background and text colors for.",
+      "similarByContent": [],
+      "readingTime": 2,
+      "hasDynamicContent": false,
+      "parent": "Go live"
+    },
+    {
+      "title": "Build and test",
+      "permalink": "/go-live/build/",
+      "categories": [
+        "Start",
+        "Go live"
+      ],
+      "tags": [
+        "appearance",
+        "build",
+        "test",
+        "deploy"
+      ],
+      "excerpt": "environment, command, checking, content, tests",
+      "lastUpdate": "2025-10-30 12:27:31 +0200",
+      "lastUpdateUTC": 0,
+      "createTime": "2025-10-30 12:27:31 +0200",
+      "createTimeUTC": 1761820051,
+      "relatedPages": [
+        {
+          "title": "Go live",
+          "permalink": "/go-live/"
+        },
+        {
+          "title": "Set appearance",
+          "permalink": "/go-live/appearance/"
+        },
+        {
+          "title": "Deploy",
+          "permalink": "/go-live/deploy/"
+        }
+      ],
+      "autoSummary": "Building and testing the site means go generate the site, running the automatic testing and the spell checking. Following the site build and tests results, corrections may be needed. When everything is fine, is time to serve the site locally and test its appearance and functionality.",
+      "similarByContent": [],
+      "readingTime": 6,
+      "hasDynamicContent": false,
+      "parent": "Go live"
+    },
+    {
+      "title": "Deploy",
+      "permalink": "/go-live/deploy/",
+      "categories": [
+        "Start",
+        "Go live"
+      ],
+      "tags": [
+        "appearance",
+        "build",
+        "test",
+        "deploy"
+      ],
+      "excerpt": "netlify, prem",
+      "lastUpdate": "2025-10-28 10:53:15 +0200",
+      "lastUpdateUTC": 0,
+      "createTime": "2025-10-28 10:53:15 +0200",
+      "createTimeUTC": 1761641595,
+      "relatedPages": [
+        {
+          "title": "Go live",
+          "permalink": "/go-live/"
+        },
+        {
+          "title": "Build and test",
+          "permalink": "/go-live/build/"
+        },
+        {
+          "title": "Set appearance",
+          "permalink": "/go-live/appearance/"
+        }
+      ],
+      "autoSummary": "Deploying the site means to update the production environment (such as on-prem, or github pages or netlify, or similar).",
+      "similarByContent": [],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": "Go live"
+    },
+    {
+      "title": "Go live",
+      "permalink": "/go-live/",
+      "categories": [
+        "Start",
+        "Go live"
+      ],
+      "tags": [
+        "appearance",
+        "build",
+        "test",
+        "deploy"
+      ],
+      "excerpt": "content, process, functionality, frustration, unavailable",
+      "lastUpdate": "2025-10-28 10:53:15 +0200",
+      "lastUpdateUTC": 0,
+      "createTime": "2025-10-28 10:53:15 +0200",
+      "createTimeUTC": 1761641595,
+      "relatedPages": [
+        {
+          "title": "Build and test",
+          "permalink": "/go-live/build/"
+        },
+        {
+          "title": "Deploy",
+          "permalink": "/go-live/deploy/"
+        },
+        {
+          "title": "Set appearance",
+          "permalink": "/go-live/appearance/"
+        }
+      ],
+      "autoSummary": "Going live with the site is a pretty straight forward process. It involves tuning of the appearance (if needed), building and testing in the development environment and publishing (deploying) in production environment. We make available the necessary tools for each step of this process.",
+      "similarByContent": [],
+      "readingTime": 1,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -1017,27 +1233,38 @@
       "permalink": "/integrations/algolia/",
       "categories": [
         "Integrations",
-        "Start"
+        "Start",
+        "Extensions"
       ],
       "tags": [
         "integration",
         "algolia",
-        "search"
+        "search",
+        "no-code",
+        "code"
       ],
-      "excerpt": "crawler, modal, title, info, close",
-      "lastUpdate": "2025-10-23 13:35:49 +0300",
+      "excerpt": "algolia, integration, netlify, configuration, docaroo",
+      "lastUpdate": "2025-10-28 10:53:15 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-23 13:35:49 +0300",
-      "createTimeUTC": 1761215749,
+      "createTime": "2025-10-28 10:53:15 +0200",
+      "createTimeUTC": 1761641595,
       "relatedPages": [
+        {
+          "title": "GitHub",
+          "permalink": "/integrations/github/"
+        },
+        {
+          "title": "HubSpot",
+          "permalink": "/integrations/hubspot/"
+        },
         {
           "title": "New Relic",
           "permalink": "/integrations/new-relic/"
         }
       ],
-      "autoSummary": "Index crawler crawler test modal title info close. Index crawler crawller test Modal title Info close.",
+      "autoSummary": "Docaroo provides out-of-the-box full integration with algolia docsearch. The search experience has multilanguage support by default.",
       "similarByContent": [],
-      "readingTime": 1,
+      "readingTime": 3,
       "hasDynamicContent": false,
       "parent": "Integrate"
     },
@@ -1052,25 +1279,26 @@
         "integration",
         "google",
         "analytics",
-        "tag manager"
+        "tag manager",
+        "low-code"
       ],
       "excerpt": "event, hook, gtm, configurations, integration",
-      "lastUpdate": "2025-10-23 13:35:49 +0300",
+      "lastUpdate": "2025-10-28 10:53:15 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-23 13:35:49 +0300",
-      "createTimeUTC": 1761215749,
+      "createTime": "2025-10-28 10:53:15 +0200",
+      "createTimeUTC": 1761641595,
       "relatedPages": [
+        {
+          "title": "New Relic",
+          "permalink": "/integrations/new-relic/"
+        },
+        {
+          "title": "Algolia",
+          "permalink": "/integrations/algolia/"
+        },
         {
           "title": "HubSpot",
           "permalink": "/integrations/hubspot/"
-        },
-        {
-          "title": "Integrate",
-          "permalink": "/integrate/"
-        },
-        {
-          "title": "GitHub",
-          "permalink": "/integrations/github/"
         }
       ],
       "autoSummary": "Google analytics and google tag manager are installed by default if enabled and configured in _databuildconfig.yml. This will enable the collection of data about the site. When ga and gtm are connected, ga collects the information available when a gtm tag fires. However, the most important feature of the integration.",
@@ -1090,30 +1318,31 @@
         "integration",
         "github",
         "code",
-        "content"
+        "content",
+        "no-code"
       ],
-      "excerpt": "content, netlify, deployment, github, repositories",
-      "lastUpdate": "2025-10-23 21:03:43 +0300",
+      "excerpt": "content, github, time, netlify, deployment",
+      "lastUpdate": "2025-10-28 10:53:15 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-23 21:03:43 +0300",
-      "createTimeUTC": 1761242623,
+      "createTime": "2025-10-28 10:53:15 +0200",
+      "createTimeUTC": 1761641595,
       "relatedPages": [
         {
-          "title": "Content items",
-          "permalink": "/content/content-items/"
-        },
-        {
-          "title": "Alerts",
-          "permalink": "/components/alerts/"
+          "title": "Algolia",
+          "permalink": "/integrations/algolia/"
         },
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/"
+        },
+        {
+          "title": "New Relic",
+          "permalink": "/integrations/new-relic/"
         }
       ],
-      "autoSummary": "Docaroo offers out-of-the-box the possibility to integrate with github and to import content from public and private repositories. For the private repositories, content can be imported only from the repositories within the scope of the personal access token that must be configured. Content from external public github repositories can be.",
+      "autoSummary": "Docaroo integration allows you to import content from public and private repositories. For the private repositories, content can be imported only from the repositories within the scope of the personal access token that must be configured. At the moment, we do not support importing content from private repositories at run.",
       "similarByContent": [],
-      "readingTime": 1,
+      "readingTime": 2,
       "hasDynamicContent": false,
       "parent": "Integrate"
     },
@@ -1122,27 +1351,34 @@
       "permalink": "/integrations/hubspot/",
       "categories": [
         "Integrations",
-        "Start"
+        "Start",
+        "Extensions"
       ],
       "tags": [
         "integration",
         "hubspot",
         "analytics",
-        "forms"
+        "forms",
+        "no-code",
+        "code"
       ],
       "excerpt": "form, hubspot, docaroo, object, type=",
-      "lastUpdate": "2025-10-23 14:16:11 +0300",
+      "lastUpdate": "2025-10-28 10:53:15 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-23 14:16:11 +0300",
-      "createTimeUTC": 1761218171,
+      "createTime": "2025-10-28 10:53:15 +0200",
+      "createTimeUTC": 1761641595,
       "relatedPages": [
         {
-          "title": "GA/GTM",
-          "permalink": "/integrations/ga-gtm/"
+          "title": "Algolia",
+          "permalink": "/integrations/algolia/"
         },
         {
           "title": "GitHub",
           "permalink": "/integrations/github/"
+        },
+        {
+          "title": "GA/GTM",
+          "permalink": "/integrations/ga-gtm/"
         }
       ],
       "autoSummary": "Hubspot tracking code is installed by default if hubspot integration is enabled in . This will enable the features that are related to the tracking code such as monitoring the visits on the site. The feedback form can be located on the right-bottom corner of each page.",
@@ -1166,24 +1402,28 @@
         "measure",
         "search"
       ],
-      "excerpt": "integrations, performance, integration, mandatory, feedback",
-      "lastUpdate": "2025-10-23 13:58:56 +0300",
+      "excerpt": "integrations, performance, feedback, users, functionalities",
+      "lastUpdate": "2025-10-25 18:08:51 +0300",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-23 13:58:56 +0300",
-      "createTimeUTC": 1761217136,
+      "createTime": "2025-10-25 18:08:51 +0300",
+      "createTimeUTC": 1761404931,
       "relatedPages": [
         {
           "title": "New Relic",
           "permalink": "/integrations/new-relic/"
         },
         {
-          "title": "GA/GTM",
-          "permalink": "/integrations/ga-gtm/"
+          "title": "Config Options",
+          "permalink": "/get-started/config-options/"
+        },
+        {
+          "title": "Algolia",
+          "permalink": "/integrations/algolia/"
         }
       ],
-      "autoSummary": "Docaroo provides out-of-the-box a series of integrations. The purpose of the integrations is to make available in a no-code or low-code mode some important features.",
+      "autoSummary": "Docaroo provides out-of-the-box a series of integrations. The main purpose is to enhance the functionalities of the site. Each integration can be independently enabled and configured or disabled.",
       "similarByContent": [],
-      "readingTime": 1,
+      "readingTime": 2,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -1200,14 +1440,19 @@
         "log",
         "monitor",
         "measure",
-        "performance"
+        "performance",
+        "low-code"
       ],
-      "excerpt": "logs, vitals, performance, modal, title, info, close",
-      "lastUpdate": "2025-10-23 13:35:49 +0300",
+      "excerpt": "function, integration, netlify, hook, performance",
+      "lastUpdate": "2025-10-28 10:53:15 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-23 13:35:49 +0300",
-      "createTimeUTC": 1761215749,
+      "createTime": "2025-10-28 10:53:15 +0200",
+      "createTimeUTC": 1761641595,
       "relatedPages": [
+        {
+          "title": "GA/GTM",
+          "permalink": "/integrations/ga-gtm/"
+        },
         {
           "title": "Algolia",
           "permalink": "/integrations/algolia/"
@@ -1217,9 +1462,9 @@
           "permalink": "/integrate/"
         }
       ],
-      "autoSummary": "Logs.logs web vitals performance modal title info close. Logs.Logs web.vitals performance Modal Title info.",
+      "autoSummary": "New relic integration is provided out-of-the-box once this integration is enabled. This integration allows monitoring and measuring the performance of the site. Used in combination with the extension capabilities, it provides a robust way to log the user interactions with site.",
       "similarByContent": [],
-      "readingTime": 1,
+      "readingTime": 2,
       "hasDynamicContent": false,
       "parent": "Integrate"
     },
@@ -1234,10 +1479,10 @@
         "docs"
       ],
       "excerpt": "guide, documentation, content, structure, markdown",
-      "lastUpdate": "2025-07-26 17:29:03 +0300",
+      "lastUpdate": "2025-10-26 16:06:09 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-07-26 17:29:03 +0300",
-      "createTimeUTC": 1753540143,
+      "createTime": "2025-10-26 16:06:09 +0200",
+      "createTimeUTC": 1761487569,
       "relatedPages": [
         {
           "title": "Docs root",
@@ -1261,6 +1506,10 @@
         {
           "permalink": "/content/content-items/",
           "title": "Content items"
+        },
+        {
+          "permalink": "/content/intro/",
+          "title": "Content"
         }
       ],
       "readingTime": 3,
@@ -1281,16 +1530,12 @@
         "collections",
         "configuration"
       ],
-      "excerpt": "configuration, time, docaroo, configurations, folder",
-      "lastUpdate": "2025-10-09 00:27:46 +0300",
+      "excerpt": "docaroo, provide, multiple, options, configure, functionality, appearance, configurations, _config, yml",
+      "lastUpdate": "2025-10-27 16:39:50 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-09 00:27:46 +0300",
-      "createTimeUTC": 1759958866,
+      "createTime": "2025-10-27 16:39:50 +0200",
+      "createTimeUTC": 1761575990,
       "relatedPages": [
-        {
-          "title": "Docs root",
-          "permalink": "/get-started/doc-contents/"
-        },
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/"
@@ -1298,9 +1543,13 @@
         {
           "title": "Get started",
           "permalink": "/get-started/"
+        },
+        {
+          "title": "Docs root",
+          "permalink": "/get-started/doc-contents/"
         }
       ],
-      "autoSummary": "Docaroo provide multiple options to configure the the site functionality and appearence. Each time when a configuration is changed, it is necessary to re-build the site to make the configuration effective. Docaroo configurations are of two categories: necessary at build time necessary at run time.",
+      "autoSummary": "Docaroo provide multiple options to configure the the site functionality and appearance. Each time when a configuration is changed, it is necessary to re-build the site to make the configuration effective.",
       "similarByContent": [],
       "readingTime": 1,
       "hasDynamicContent": false,
@@ -1322,10 +1571,10 @@
         "options"
       ],
       "excerpt": "functionalities, personalisation, appearance, options, _config.yml",
-      "lastUpdate": "2025-10-20 18:45:48 +0300",
+      "lastUpdate": "2025-10-30 12:27:31 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-20 18:45:48 +0300",
-      "createTimeUTC": 1760975148,
+      "createTime": "2025-10-30 12:27:31 +0200",
+      "createTimeUTC": 1761820051,
       "relatedPages": [
         {
           "title": "Config Files",
@@ -1352,20 +1601,26 @@
     "algolia",
     "analytics",
     "anchor",
+    "annotations",
+    "appearance",
+    "build",
     "button",
     "card",
+    "categories",
     "chart",
     "code",
     "collections",
     "component",
     "configuration",
     "content",
+    "deploy",
     "docs",
     "documentation",
     "docx",
     "download",
     "embed",
     "environment",
+    "extend",
     "external",
     "faq",
     "feedback",
@@ -1375,6 +1630,7 @@
     "gallery",
     "github",
     "google",
+    "hooks",
     "hubspot",
     "image",
     "import",
@@ -1383,9 +1639,12 @@
     "link",
     "log",
     "lottie",
+    "low-code",
     "measure",
     "monitor",
     "new relic",
+    "no-code",
+    "notes",
     "office",
     "options",
     "organise docs",
@@ -1398,6 +1657,8 @@
     "table",
     "tabs",
     "tag manager",
+    "tags",
+    "test",
     "variable",
     "video",
     "xls"
@@ -1418,7 +1679,7 @@
         {
           "title": "Algolia",
           "permalink": "/integrations/algolia/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1428,12 +1689,12 @@
         {
           "title": "GA/GTM",
           "permalink": "/integrations/ga-gtm/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "HubSpot",
           "permalink": "/integrations/hubspot/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 2
@@ -1443,27 +1704,87 @@
         {
           "title": "Link button",
           "permalink": "/components/link-button/",
-          "lastUpdate": "31-Jul-2025"
+          "lastUpdate": "27-Oct-2025"
         }
       ],
       "numPages": 1
+    },
+    "annotations": {
+      "pages": [
+        {
+          "title": "Taxonomies",
+          "permalink": "/taxonomies/intro/",
+          "lastUpdate": "29-Oct-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "appearance": {
+      "pages": [
+        {
+          "title": "Set appearance",
+          "permalink": "/go-live/appearance/",
+          "lastUpdate": "29-Oct-2025"
+        },
+        {
+          "title": "Build and test",
+          "permalink": "/go-live/build/",
+          "lastUpdate": "30-Oct-2025"
+        },
+        {
+          "title": "Deploy",
+          "permalink": "/go-live/deploy/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "Go live",
+          "permalink": "/go-live/",
+          "lastUpdate": "28-Oct-2025"
+        }
+      ],
+      "numPages": 4
+    },
+    "build": {
+      "pages": [
+        {
+          "title": "Set appearance",
+          "permalink": "/go-live/appearance/",
+          "lastUpdate": "29-Oct-2025"
+        },
+        {
+          "title": "Build and test",
+          "permalink": "/go-live/build/",
+          "lastUpdate": "30-Oct-2025"
+        },
+        {
+          "title": "Deploy",
+          "permalink": "/go-live/deploy/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "Go live",
+          "permalink": "/go-live/",
+          "lastUpdate": "28-Oct-2025"
+        }
+      ],
+      "numPages": 4
     },
     "button": {
       "pages": [
         {
           "title": "Card",
           "permalink": "/components/card/",
-          "lastUpdate": "05-Aug-2025"
+          "lastUpdate": "26-Oct-2025"
         },
         {
           "title": "Downloads",
           "permalink": "/components/download-link/",
-          "lastUpdate": "22-Jul-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Link button",
           "permalink": "/components/link-button/",
-          "lastUpdate": "31-Jul-2025"
+          "lastUpdate": "27-Oct-2025"
         }
       ],
       "numPages": 3
@@ -1473,7 +1794,17 @@
         {
           "title": "Card",
           "permalink": "/components/card/",
-          "lastUpdate": "05-Aug-2025"
+          "lastUpdate": "26-Oct-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "categories": {
+      "pages": [
+        {
+          "title": "Taxonomies",
+          "permalink": "/taxonomies/intro/",
+          "lastUpdate": "29-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1483,7 +1814,7 @@
         {
           "title": "XLSX Charts",
           "permalink": "/components/xlsx-charts/",
-          "lastUpdate": "11-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1491,29 +1822,44 @@
     "code": {
       "pages": [
         {
+          "title": "Extend",
+          "permalink": "/extend/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "Algolia",
+          "permalink": "/integrations/algolia/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
           "title": "GitHub",
           "permalink": "/integrations/github/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "HubSpot",
+          "permalink": "/integrations/hubspot/",
+          "lastUpdate": "28-Oct-2025"
         }
       ],
-      "numPages": 1
+      "numPages": 4
     },
     "collections": {
       "pages": [
         {
           "title": "Docs root",
           "permalink": "/get-started/doc-contents/",
-          "lastUpdate": "29-Sep-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Config Files",
           "permalink": "/get-started/config-files/",
-          "lastUpdate": "09-Oct-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "20-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         }
       ],
       "numPages": 3
@@ -1523,7 +1869,7 @@
         {
           "title": "Image",
           "permalink": "/components/image/",
-          "lastUpdate": "14-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1538,12 +1884,12 @@
         {
           "title": "Config Files",
           "permalink": "/get-started/config-files/",
-          "lastUpdate": "09-Oct-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "20-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         }
       ],
       "numPages": 3
@@ -1558,57 +1904,82 @@
         {
           "title": "Card",
           "permalink": "/components/card/",
-          "lastUpdate": "05-Aug-2025"
+          "lastUpdate": "26-Oct-2025"
         },
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/",
-          "lastUpdate": "02-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Scroll Spy & Tabs",
           "permalink": "/components/scrollspy/",
-          "lastUpdate": "02-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Content items",
           "permalink": "/content/content-items/",
-          "lastUpdate": "07-Oct-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "GitHub",
           "permalink": "/integrations/github/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 6
+    },
+    "deploy": {
+      "pages": [
+        {
+          "title": "Set appearance",
+          "permalink": "/go-live/appearance/",
+          "lastUpdate": "29-Oct-2025"
+        },
+        {
+          "title": "Build and test",
+          "permalink": "/go-live/build/",
+          "lastUpdate": "30-Oct-2025"
+        },
+        {
+          "title": "Deploy",
+          "permalink": "/go-live/deploy/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "Go live",
+          "permalink": "/go-live/",
+          "lastUpdate": "28-Oct-2025"
+        }
+      ],
+      "numPages": 4
     },
     "docs": {
       "pages": [
         {
           "title": "Docs root",
           "permalink": "/get-started/doc-contents/",
-          "lastUpdate": "29-Sep-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Get started",
           "permalink": "/get-started/",
-          "lastUpdate": "06-Sep-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "26-Jul-2025"
+          "lastUpdate": "26-Oct-2025"
         },
         {
           "title": "Config Files",
           "permalink": "/get-started/config-files/",
-          "lastUpdate": "09-Oct-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "20-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         }
       ],
       "numPages": 5
@@ -1618,32 +1989,32 @@
         {
           "title": "Content",
           "permalink": "/content/intro/",
-          "lastUpdate": "07-Oct-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Docs root",
           "permalink": "/get-started/doc-contents/",
-          "lastUpdate": "29-Sep-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Get started",
           "permalink": "/get-started/",
-          "lastUpdate": "06-Sep-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "26-Jul-2025"
+          "lastUpdate": "26-Oct-2025"
         },
         {
           "title": "Config Files",
           "permalink": "/get-started/config-files/",
-          "lastUpdate": "09-Oct-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "20-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         }
       ],
       "numPages": 6
@@ -1653,12 +2024,12 @@
         {
           "title": "DOCX Summary",
           "permalink": "/experiments/docx-summary/",
-          "lastUpdate": "17-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Experiments",
           "permalink": "/experiments/intro/",
-          "lastUpdate": "11-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         }
       ],
       "numPages": 2
@@ -1668,7 +2039,7 @@
         {
           "title": "Downloads",
           "permalink": "/components/download-link/",
-          "lastUpdate": "22-Jul-2025"
+          "lastUpdate": "27-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1683,17 +2054,17 @@
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/",
-          "lastUpdate": "02-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "21-Jul-2025"
+          "lastUpdate": "29-Oct-2025"
         },
         {
           "title": "External content",
           "permalink": "/content/ec/",
-          "lastUpdate": "20-Jul-2025"
+          "lastUpdate": "27-Oct-2025"
         }
       ],
       "numPages": 4
@@ -1708,17 +2079,27 @@
       ],
       "numPages": 1
     },
+    "extend": {
+      "pages": [
+        {
+          "title": "Extend",
+          "permalink": "/extend/",
+          "lastUpdate": "28-Oct-2025"
+        }
+      ],
+      "numPages": 1
+    },
     "external": {
       "pages": [
         {
           "title": "Card",
           "permalink": "/components/card/",
-          "lastUpdate": "05-Aug-2025"
+          "lastUpdate": "26-Oct-2025"
         },
         {
           "title": "External content",
           "permalink": "/content/ec/",
-          "lastUpdate": "20-Jul-2025"
+          "lastUpdate": "27-Oct-2025"
         }
       ],
       "numPages": 2
@@ -1728,7 +2109,7 @@
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/",
-          "lastUpdate": "02-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1738,7 +2119,7 @@
         {
           "title": "Integrate",
           "permalink": "/integrate/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "25-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1748,7 +2129,7 @@
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "21-Jul-2025"
+          "lastUpdate": "29-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1758,7 +2139,7 @@
         {
           "title": "Downloads",
           "permalink": "/components/download-link/",
-          "lastUpdate": "22-Jul-2025"
+          "lastUpdate": "27-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1768,7 +2149,7 @@
         {
           "title": "HubSpot",
           "permalink": "/integrations/hubspot/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1778,12 +2159,12 @@
         {
           "title": "Card",
           "permalink": "/components/card/",
-          "lastUpdate": "05-Aug-2025"
+          "lastUpdate": "26-Oct-2025"
         },
         {
           "title": "Image",
           "permalink": "/components/image/",
-          "lastUpdate": "14-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         }
       ],
       "numPages": 2
@@ -1793,7 +2174,7 @@
         {
           "title": "GitHub",
           "permalink": "/integrations/github/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1803,7 +2184,17 @@
         {
           "title": "GA/GTM",
           "permalink": "/integrations/ga-gtm/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "hooks": {
+      "pages": [
+        {
+          "title": "Extend",
+          "permalink": "/extend/",
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1813,7 +2204,7 @@
         {
           "title": "HubSpot",
           "permalink": "/integrations/hubspot/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1823,7 +2214,7 @@
         {
           "title": "Image",
           "permalink": "/components/image/",
-          "lastUpdate": "14-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1833,7 +2224,7 @@
         {
           "title": "External content",
           "permalink": "/content/ec/",
-          "lastUpdate": "20-Jul-2025"
+          "lastUpdate": "27-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1843,32 +2234,32 @@
         {
           "title": "Algolia",
           "permalink": "/integrations/algolia/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "GA/GTM",
           "permalink": "/integrations/ga-gtm/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "GitHub",
           "permalink": "/integrations/github/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "HubSpot",
           "permalink": "/integrations/hubspot/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "Integrate",
           "permalink": "/integrate/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "25-Oct-2025"
         },
         {
           "title": "New Relic",
           "permalink": "/integrations/new-relic/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 6
@@ -1878,7 +2269,7 @@
         {
           "title": "Content items",
           "permalink": "/content/content-items/",
-          "lastUpdate": "07-Oct-2025"
+          "lastUpdate": "27-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1888,17 +2279,17 @@
         {
           "title": "Card",
           "permalink": "/components/card/",
-          "lastUpdate": "05-Aug-2025"
+          "lastUpdate": "26-Oct-2025"
         },
         {
           "title": "Downloads",
           "permalink": "/components/download-link/",
-          "lastUpdate": "22-Jul-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Link button",
           "permalink": "/components/link-button/",
-          "lastUpdate": "31-Jul-2025"
+          "lastUpdate": "27-Oct-2025"
         }
       ],
       "numPages": 3
@@ -1908,12 +2299,12 @@
         {
           "title": "Integrate",
           "permalink": "/integrate/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "25-Oct-2025"
         },
         {
           "title": "New Relic",
           "permalink": "/integrations/new-relic/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 2
@@ -1923,22 +2314,42 @@
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "21-Jul-2025"
+          "lastUpdate": "29-Oct-2025"
         }
       ],
       "numPages": 1
+    },
+    "low-code": {
+      "pages": [
+        {
+          "title": "Extend",
+          "permalink": "/extend/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "GA/GTM",
+          "permalink": "/integrations/ga-gtm/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "New Relic",
+          "permalink": "/integrations/new-relic/",
+          "lastUpdate": "28-Oct-2025"
+        }
+      ],
+      "numPages": 3
     },
     "measure": {
       "pages": [
         {
           "title": "Integrate",
           "permalink": "/integrate/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "25-Oct-2025"
         },
         {
           "title": "New Relic",
           "permalink": "/integrations/new-relic/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 2
@@ -1948,12 +2359,12 @@
         {
           "title": "Integrate",
           "permalink": "/integrate/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "25-Oct-2025"
         },
         {
           "title": "New Relic",
           "permalink": "/integrations/new-relic/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 2
@@ -1963,7 +2374,37 @@
         {
           "title": "New Relic",
           "permalink": "/integrations/new-relic/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "no-code": {
+      "pages": [
+        {
+          "title": "Algolia",
+          "permalink": "/integrations/algolia/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "GitHub",
+          "permalink": "/integrations/github/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "HubSpot",
+          "permalink": "/integrations/hubspot/",
+          "lastUpdate": "28-Oct-2025"
+        }
+      ],
+      "numPages": 3
+    },
+    "notes": {
+      "pages": [
+        {
+          "title": "Taxonomies",
+          "permalink": "/taxonomies/intro/",
+          "lastUpdate": "29-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1973,27 +2414,27 @@
         {
           "title": "XLSX Charts",
           "permalink": "/components/xlsx-charts/",
-          "lastUpdate": "11-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "XLSX Tables",
           "permalink": "/components/xlsx-tables/",
-          "lastUpdate": "01-Oct-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "DOCX Summary",
           "permalink": "/experiments/docx-summary/",
-          "lastUpdate": "17-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Experiments",
           "permalink": "/experiments/intro/",
-          "lastUpdate": "11-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "PDF Summary",
           "permalink": "/experiments/pdf-summary/",
-          "lastUpdate": "17-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         }
       ],
       "numPages": 5
@@ -2003,7 +2444,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "20-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         }
       ],
       "numPages": 1
@@ -2013,7 +2454,7 @@
         {
           "title": "Content",
           "permalink": "/content/intro/",
-          "lastUpdate": "07-Oct-2025"
+          "lastUpdate": "27-Oct-2025"
         }
       ],
       "numPages": 1
@@ -2023,12 +2464,12 @@
         {
           "title": "Experiments",
           "permalink": "/experiments/intro/",
-          "lastUpdate": "11-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "PDF Summary",
           "permalink": "/experiments/pdf-summary/",
-          "lastUpdate": "17-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         }
       ],
       "numPages": 2
@@ -2038,7 +2479,7 @@
         {
           "title": "New Relic",
           "permalink": "/integrations/new-relic/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 1
@@ -2048,7 +2489,7 @@
         {
           "title": "Scroll Spy & Tabs",
           "permalink": "/components/scrollspy/",
-          "lastUpdate": "02-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         }
       ],
       "numPages": 1
@@ -2058,12 +2499,12 @@
         {
           "title": "Algolia",
           "permalink": "/integrations/algolia/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "Integrate",
           "permalink": "/integrate/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "25-Oct-2025"
         }
       ],
       "numPages": 2
@@ -2083,17 +2524,17 @@
         {
           "title": "DOCX Summary",
           "permalink": "/experiments/docx-summary/",
-          "lastUpdate": "17-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Experiments",
           "permalink": "/experiments/intro/",
-          "lastUpdate": "11-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "PDF Summary",
           "permalink": "/experiments/pdf-summary/",
-          "lastUpdate": "17-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         }
       ],
       "numPages": 3
@@ -2103,12 +2544,12 @@
         {
           "title": "XLSX Charts",
           "permalink": "/components/xlsx-charts/",
-          "lastUpdate": "11-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "XLSX Tables",
           "permalink": "/components/xlsx-tables/",
-          "lastUpdate": "01-Oct-2025"
+          "lastUpdate": "27-Oct-2025"
         }
       ],
       "numPages": 2
@@ -2118,7 +2559,7 @@
         {
           "title": "Scroll Spy & Tabs",
           "permalink": "/components/scrollspy/",
-          "lastUpdate": "02-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         }
       ],
       "numPages": 1
@@ -2128,10 +2569,45 @@
         {
           "title": "GA/GTM",
           "permalink": "/integrations/ga-gtm/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 1
+    },
+    "tags": {
+      "pages": [
+        {
+          "title": "Taxonomies",
+          "permalink": "/taxonomies/intro/",
+          "lastUpdate": "29-Oct-2025"
+        }
+      ],
+      "numPages": 1
+    },
+    "test": {
+      "pages": [
+        {
+          "title": "Set appearance",
+          "permalink": "/go-live/appearance/",
+          "lastUpdate": "29-Oct-2025"
+        },
+        {
+          "title": "Build and test",
+          "permalink": "/go-live/build/",
+          "lastUpdate": "30-Oct-2025"
+        },
+        {
+          "title": "Deploy",
+          "permalink": "/go-live/deploy/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "Go live",
+          "permalink": "/go-live/",
+          "lastUpdate": "28-Oct-2025"
+        }
+      ],
+      "numPages": 4
     },
     "variable": {
       "pages": [
@@ -2148,7 +2624,7 @@
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "21-Jul-2025"
+          "lastUpdate": "29-Oct-2025"
         }
       ],
       "numPages": 1
@@ -2158,12 +2634,12 @@
         {
           "title": "XLSX Charts",
           "permalink": "/components/xlsx-charts/",
-          "lastUpdate": "11-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "XLSX Tables",
           "permalink": "/components/xlsx-tables/",
-          "lastUpdate": "01-Oct-2025"
+          "lastUpdate": "27-Oct-2025"
         }
       ],
       "numPages": 2
@@ -2174,10 +2650,13 @@
     "Content",
     "Environment",
     "Experiments",
+    "Extensions",
     "General",
+    "Go live",
     "Integrations",
     "Site config",
-    "Start"
+    "Start",
+    "Taxonomies"
   ],
   "catDetails": {
     "Components": {
@@ -2190,7 +2669,7 @@
         {
           "title": "Card",
           "permalink": "/components/card/",
-          "lastUpdate": "05-Aug-2025"
+          "lastUpdate": "26-Oct-2025"
         },
         {
           "title": "Components",
@@ -2200,62 +2679,62 @@
         {
           "title": "Downloads",
           "permalink": "/components/download-link/",
-          "lastUpdate": "22-Jul-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "FAQ Item",
           "permalink": "/components/qitem/",
-          "lastUpdate": "02-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Image",
           "permalink": "/components/image/",
-          "lastUpdate": "14-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Link button",
           "permalink": "/components/link-button/",
-          "lastUpdate": "31-Jul-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Rich media",
           "permalink": "/components/rich-media/",
-          "lastUpdate": "21-Jul-2025"
+          "lastUpdate": "29-Oct-2025"
         },
         {
           "title": "Scroll Spy & Tabs",
           "permalink": "/components/scrollspy/",
-          "lastUpdate": "02-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "XLSX Charts",
           "permalink": "/components/xlsx-charts/",
-          "lastUpdate": "11-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "XLSX Tables",
           "permalink": "/components/xlsx-tables/",
-          "lastUpdate": "01-Oct-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Content items",
           "permalink": "/content/content-items/",
-          "lastUpdate": "07-Oct-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "DOCX Summary",
           "permalink": "/experiments/docx-summary/",
-          "lastUpdate": "17-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Experiments",
           "permalink": "/experiments/intro/",
-          "lastUpdate": "11-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "PDF Summary",
           "permalink": "/experiments/pdf-summary/",
-          "lastUpdate": "17-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         }
       ],
       "numPages": 15
@@ -2265,27 +2744,27 @@
         {
           "title": "Content",
           "permalink": "/content/intro/",
-          "lastUpdate": "07-Oct-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "External content",
           "permalink": "/content/ec/",
-          "lastUpdate": "20-Jul-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "DOCX Summary",
           "permalink": "/experiments/docx-summary/",
-          "lastUpdate": "17-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Experiments",
           "permalink": "/experiments/intro/",
-          "lastUpdate": "11-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "PDF Summary",
           "permalink": "/experiments/pdf-summary/",
-          "lastUpdate": "17-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         }
       ],
       "numPages": 5
@@ -2305,27 +2784,42 @@
         {
           "title": "DOCX Summary",
           "permalink": "/experiments/docx-summary/",
-          "lastUpdate": "17-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Experiments",
           "permalink": "/experiments/intro/",
-          "lastUpdate": "11-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "PDF Summary",
           "permalink": "/experiments/pdf-summary/",
-          "lastUpdate": "17-Aug-2025"
+          "lastUpdate": "27-Oct-2025"
         }
       ],
       "numPages": 3
+    },
+    "Extensions": {
+      "pages": [
+        {
+          "title": "Algolia",
+          "permalink": "/integrations/algolia/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "HubSpot",
+          "permalink": "/integrations/hubspot/",
+          "lastUpdate": "28-Oct-2025"
+        }
+      ],
+      "numPages": 2
     },
     "General": {
       "pages": [
         {
           "title": "Docs root",
           "permalink": "/get-started/doc-contents/",
-          "lastUpdate": "29-Sep-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Environments",
@@ -2333,59 +2827,89 @@
           "lastUpdate": "05-Oct-2025"
         },
         {
+          "title": "Extend",
+          "permalink": "/extend/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
           "title": "Get started",
           "permalink": "/get-started/",
-          "lastUpdate": "06-Sep-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Integrate",
           "permalink": "/integrate/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "25-Oct-2025"
         },
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "26-Jul-2025"
+          "lastUpdate": "26-Oct-2025"
         },
         {
           "title": "Config Files",
           "permalink": "/get-started/config-files/",
-          "lastUpdate": "09-Oct-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "20-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         }
       ],
-      "numPages": 7
+      "numPages": 8
+    },
+    "Go live": {
+      "pages": [
+        {
+          "title": "Set appearance",
+          "permalink": "/go-live/appearance/",
+          "lastUpdate": "29-Oct-2025"
+        },
+        {
+          "title": "Build and test",
+          "permalink": "/go-live/build/",
+          "lastUpdate": "30-Oct-2025"
+        },
+        {
+          "title": "Deploy",
+          "permalink": "/go-live/deploy/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "Go live",
+          "permalink": "/go-live/",
+          "lastUpdate": "28-Oct-2025"
+        }
+      ],
+      "numPages": 4
     },
     "Integrations": {
       "pages": [
         {
           "title": "Algolia",
           "permalink": "/integrations/algolia/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "GA/GTM",
           "permalink": "/integrations/ga-gtm/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "GitHub",
           "permalink": "/integrations/github/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "HubSpot",
           "permalink": "/integrations/hubspot/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "New Relic",
           "permalink": "/integrations/new-relic/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         }
       ],
       "numPages": 5
@@ -2400,12 +2924,12 @@
         {
           "title": "Config Files",
           "permalink": "/get-started/config-files/",
-          "lastUpdate": "09-Oct-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "20-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         }
       ],
       "numPages": 3
@@ -2415,7 +2939,7 @@
         {
           "title": "Docs root",
           "permalink": "/get-started/doc-contents/",
-          "lastUpdate": "29-Sep-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Environments",
@@ -2425,50 +2949,80 @@
         {
           "title": "Get started",
           "permalink": "/get-started/",
-          "lastUpdate": "06-Sep-2025"
+          "lastUpdate": "27-Oct-2025"
+        },
+        {
+          "title": "Set appearance",
+          "permalink": "/go-live/appearance/",
+          "lastUpdate": "29-Oct-2025"
+        },
+        {
+          "title": "Build and test",
+          "permalink": "/go-live/build/",
+          "lastUpdate": "30-Oct-2025"
+        },
+        {
+          "title": "Deploy",
+          "permalink": "/go-live/deploy/",
+          "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "Go live",
+          "permalink": "/go-live/",
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "Algolia",
           "permalink": "/integrations/algolia/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "GA/GTM",
           "permalink": "/integrations/ga-gtm/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "GitHub",
           "permalink": "/integrations/github/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "HubSpot",
           "permalink": "/integrations/hubspot/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "Integrate",
           "permalink": "/integrate/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "25-Oct-2025"
         },
         {
           "title": "New Relic",
           "permalink": "/integrations/new-relic/",
-          "lastUpdate": "23-Oct-2025"
+          "lastUpdate": "28-Oct-2025"
         },
         {
           "title": "Config Files",
           "permalink": "/get-started/config-files/",
-          "lastUpdate": "09-Oct-2025"
+          "lastUpdate": "27-Oct-2025"
         },
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "20-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         }
       ],
-      "numPages": 11
+      "numPages": 15
+    },
+    "Taxonomies": {
+      "pages": [
+        {
+          "title": "Taxonomies",
+          "permalink": "/taxonomies/intro/",
+          "lastUpdate": "29-Oct-2025"
+        }
+      ],
+      "numPages": 1
     }
   },
   "hsSettings": {

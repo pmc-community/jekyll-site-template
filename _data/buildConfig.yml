@@ -85,7 +85,7 @@ siteFooter:
         <a href="https://innohub.space/eng/privacy/" target=_blank>Privacy</a> |
         <a href="https://innohub.space/eng/cookie-policy/" target=_blank>Cookies</a>
     - content: > 
-        Copyright <i class="bi bi-c-circle"></i> | 
+        Copyright <i class="bi bi-c-circle"></i> 
         <a href="https://pmc-expert.com" target=_blank>PMC</a>
 googleAnalytics:
   enabled: true #enable/disable GA integration
@@ -126,3 +126,4 @@ elements:
 cloudflare:
   enabled: true
   workerBase: https://docaroo-scripts.innohub-space.workers.dev/cdn-proxy/
+spellCheck: true

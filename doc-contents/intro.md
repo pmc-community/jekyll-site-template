@@ -78,7 +78,7 @@ By the end of this guide, you will understand:
 
 # 🛠️ Prerequisites
 
-To follow along with this guide, you’ll need:
+To follow along with this guide, you will need:
 
 - Basic familiarity with Git and GitHub 
 - A working knowledge of Markdown  
@@ -108,7 +108,7 @@ Well-written documentation is more than just a user manual:
 - It enables contribution and collaboration  
 - It preserves institutional knowledge  
 
-Good documentation isn't just nice to have — it's a **core part of product success**.
+Good documentation is not just nice to have — it's a **core part of product success**.
 
 # ✅ Let’s Get Started
 

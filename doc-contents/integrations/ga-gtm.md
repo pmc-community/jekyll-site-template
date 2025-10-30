@@ -3,7 +3,7 @@ layout: page
 title: GA/GTM
 permalink: /integrations/ga-gtm/
 categories: [Integrations, Start]
-tags: [integration, google, analytics, tag manager]
+tags: [integration, google, analytics, tag manager, low-code]
 parent: Integrate
 nav_order: 1
 ---
@@ -22,7 +22,7 @@ Using this integration requires a little bit of code and GA/GTM knowledge. First
 
 {% include elements/alert.html 
   class="primary" 
-  content="You may need to consult GA and GTM documentation. Folow the instructions from that documentation to configure and activate the custom tag and event."
+  content="You may need to consult GA and GTM documentation. Follow the instructions from that documentation to configure and activate the custom tag and event."
 %}
 
 {% include elements/alert.html 

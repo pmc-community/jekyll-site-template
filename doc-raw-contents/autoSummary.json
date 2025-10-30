@@ -10,11 +10,11 @@
         },
         {
             "permalink": "/components/qitem/",
-            "summary": "The question should always be a text. The answer to the question can be simple text or any rich content that is allowed in markdown. Docaroo suports 2 types of text search: native search and algolia docs search."
+            "summary": "Docaroo supports 2 types of text search: native search and algolia docs search. We provide an advanced search based on different parameters such as the taxonomies."
         },
         {
             "permalink": "/components/link-button/",
-            "summary": "Link buttons helps users to navigate inside your documentation or access external sites. Docaroo provides link buttons in style. You can add individual link buttons or group link buttons. You can place anchors anywhere in the document and references to them."
+            "summary": "Link buttons helps users to navigate inside your documentation or access external sites. Docaroo provides link buttons in style. You can add individual link buttons or group link buttons."
         },
         {
             "permalink": "/components/rich-media/",
@@ -38,7 +38,7 @@
         },
         {
             "permalink": "/components/scrollspy/",
-            "summary": "Scroll spies are great ways of organising information inside your documents. We made them flexible and easy to be included in the documents. Any docaroo component, including importing esternal content or rich content ones, can be used to populate scroll spies and tabs."
+            "summary": "Scroll spies are great ways of organising information inside your documents. We made them flexible and easy to be included in the documents. Any docaroo component, including importing external content or rich content ones, can be used to populate scroll spies and tabs."
         },
         {
             "permalink": "/components/content-items/",
@@ -58,7 +58,7 @@
         },
         {
             "permalink": "/components/xlsx-charts/",
-            "summary": "This component allows importing excel charts into your documents. Combined with component, this one provides the full support to share structured data in a professional way. Currently we support only: line charts column and bar charts pie and doughnut charts we do not support importing the colors you assign to."
+            "summary": "This component allows importing excel charts into your documents. Combined with component, this one provides the full support to share structured data in a professional way. Currently we support only: line charts column and bar charts pie and doughnut charts we do not support importing the colours you assign to."
         },
         {
             "permalink": "/components/image/",
@@ -94,7 +94,7 @@
         },
         {
             "permalink": "/get-started/config-files/",
-            "summary": "Docaroo provide multiple options to configure the the site functionality and appearence. Each time when a configuration is changed, it is necessary to re-build the site to make the configuration effective. Docaroo configurations are of two categories: necessary at build time necessary at run time."
+            "summary": "Docaroo provide multiple options to configure the the site functionality and appearance. Each time when a configuration is changed, it is necessary to re-build the site to make the configuration effective."
         },
         {
             "permalink": "/get-started/config-options/",
@@ -106,7 +106,7 @@
         },
         {
             "permalink": "/integrate/",
-            "summary": "Docaroo provides out-of-the-box a series of integrations. The purpose of the integrations is to make available in a no-code or low-code mode some important features."
+            "summary": "Docaroo provides out-of-the-box a series of integrations. The main purpose is to enhance the functionalities of the site. Each integration can be independently enabled and configured or disabled."
         },
         {
             "permalink": "/integrations/ga-gtm/",
@@ -114,11 +114,11 @@
         },
         {
             "permalink": "/integrations/algolia/",
-            "summary": "Index crawler crawler test modal title info close. Index crawler crawller test Modal title Info close."
+            "summary": "Docaroo provides out-of-the-box full integration with algolia docsearch. The search experience has multilanguage support by default."
         },
         {
             "permalink": "/integrations/github/",
-            "summary": "Docaroo offers out-of-the-box the possibility to integrate with github and to import content from public and private repositories. For the private repositories, content can be imported only from the repositories within the scope of the personal access token that must be configured. Content from external public github repositories can be."
+            "summary": "Docaroo integration allows you to import content from public and private repositories. For the private repositories, content can be imported only from the repositories within the scope of the personal access token that must be configured. At the moment, we do not support importing content from private repositories at run."
         },
         {
             "permalink": "/integrations/hubspot/",
@@ -126,7 +126,31 @@
         },
         {
             "permalink": "/integrations/new-relic/",
-            "summary": "Logs.logs web vitals performance modal title info close. Logs.Logs web.vitals performance Modal Title info."
+            "summary": "New relic integration is provided out-of-the-box once this integration is enabled. This integration allows monitoring and measuring the performance of the site. Used in combination with the extension capabilities, it provides a robust way to log the user interactions with site."
+        },
+        {
+            "permalink": "/extend/",
+            "summary": "We offer out-of-the-box the possibility to extend the functionality of the site by hooking on the execution of the functions on browser side. Be aware that using extensions requires development skills (mostly on javascript). The level of the required skills depends on the complexity of the extension."
+        },
+        {
+            "permalink": "/go-live/",
+            "summary": "Going live with the site is a pretty straight forward process. It involves tuning of the appearance (if needed), building and testing in the development environment and publishing (deploying) in production environment. We make available the necessary tools for each step of this process."
+        },
+        {
+            "permalink": "/go-live/appearance/",
+            "summary": "Setting the appearance means to set the branding an colors of the site. Branding elements are the logo, the site title, the additional buttons on the header and the footer visible at the bottom of the left sidebar. Additionally the following colors can be set: background and text colors for."
+        },
+        {
+            "permalink": "/go-live/build/",
+            "summary": "Building and testing the site means go generate the site, running the automatic testing and the spell checking. Following the site build and tests results, corrections may be needed. When everything is fine, is time to serve the site locally and test its appearance and functionality."
+        },
+        {
+            "permalink": "/go-live/deploy/",
+            "summary": "Deploying the site means to update the production environment (such as on-prem, or github pages or netlify, or similar)."
+        },
+        {
+            "permalink": "/taxonomies/intro/",
+            "summary": "One of the most powerful features we offer out-of-the-box is defining and using custom taxonomies. This allows the usage of documentation to be customised as per the goal and purpose needed by the user. There is no limit in how many ways the documentation can be organised."
         }
     ]
 }

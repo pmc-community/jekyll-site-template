@@ -1,0 +1,29 @@
+#!/bin/bash
+
+source tools_sh/colors.sh
+source tools_sh/globals.sh
+
+echo ""
+
+# PYTHON POST-BUILD SCRIPTS
+pyEnable=$(grep 'pyEnable' _data/buildConfig.yml | awk '{print $2}')
+
+if [ "$pyEnable" = "true" ]; then
+
+    source ~/py-dev-env-392/bin/activate
+    
+    # SPELL CHECK
+    spellCheck=$(grep 'spellCheck' _data/buildConfig.yml | awk '{print $2}')
+
+    if [ "$spellCheck" = "true" ]; then
+        print_color "$YELLOW" "📋 Spell check ..."
+        python3 tools_py/spell-check/spell-check.py doc-raw-contents doc-contents
+    else
+        echo "Spell check is disabled ... skipping!!!"
+    fi
+
+else
+  echo "pyEnable is false. Skipping the execution of python scripts. Some site features may not be available."
+fi
+
+echo ""

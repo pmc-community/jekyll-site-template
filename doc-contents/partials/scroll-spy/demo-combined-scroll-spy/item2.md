@@ -2,7 +2,7 @@
 name: Item 2
 ---
 
-**External conntent below:**
+**External content below:**
 
 {% 
     ExternalSiteContent  {

@@ -7,7 +7,7 @@ tags: [image, component, gallery]
 ---
 
 # Summary
-This component allows placing images into your content. Images can have captions (let's say you need to show some credits or copyright information) or not. The component is designed to work with responsive images. You can specify a desired height and with (or only one of these), but we do not recommend this approach since it may break thre responsiveness. Images can be stored in any place inside the documents root folder (`doc-contents`). Depending on how you want to organise your documentation, images may be stored in the same folder of the parent document (or in a sub-folder of it) or you can create a dedicated media folder inside `doc-contents`, the image is found based on the relative path inside `doc-content`.
+This component allows placing images into your content. Images can have captions (let's say you need to show some credits or copyright information) or not. The component is designed to work with responsive images. You can specify a desired height and with (or only one of these), but we do not recommend this approach since it may break the responsiveness. Images can be stored in any place inside the documents root folder (`doc-contents`). Depending on how you want to organise your documentation, images may be stored in the same folder of the parent document (or in a sub-folder of it) or you can create a dedicated media folder inside `doc-contents`, the image is found based on the relative path inside `doc-content`.
 
 # Examples
 The following examples are based on a dedicated media folder:
@@ -96,4 +96,4 @@ Galleries of images can be added to documents as further shown. The number of im
 - `hg`: fixed height of the whole gallery (useful for large galleries). Vertical scroll is enabled if necessary.
 - `oneRow`: the gallery is rendered on a single row and horizontal scroll is enabled. 
 
-Note that `oneRow` can be `none`, `all`, `mobile` or `desktop`. Any other value will make it to be assigned with `none`. When a device type is specified, the gallery is rendered on a single row on that device and acoording to `hg` on other devices. When `oneRow` is missing or set to `none`, the gallery is rendered on all devices with a height equal to `hg` or full height if `hg` is missing.
+Note that `oneRow` can be `none`, `all`, `mobile` or `desktop`. Any other value will make it to be assigned with `none`. When a device type is specified, the gallery is rendered on a single row on that device and according to `hg` on other devices. When `oneRow` is missing or set to `none`, the gallery is rendered on all devices with a height equal to `hg` or full height if `hg` is missing.

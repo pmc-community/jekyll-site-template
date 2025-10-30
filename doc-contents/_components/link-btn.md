@@ -10,7 +10,7 @@ tags: [button, link, anchor]
 Learn how to add link buttons to your content. Link buttons helps users to navigate inside your documentation or access external sites.
 Docaroo provides link buttons in `bootstrap` style. Check [`Bootstrap button styles`](https://getbootstrap.com/docs/5.3/components/buttons/){: target="_blank" } for more details. You can add individual link buttons or group link buttons. Additionally, you can place anchors anywhere in the document and references to them. As example, here is an {%- include elements/anchor.html id="anchorInDocumentSummary" -%} [`anchor`](#docarooTestAnchorId) placed in this document.
 
-We do not overwrite the known markdown syntax for links, we only complement it by adding new functionalitieds for links.
+We do not overwrite the known markdown syntax for links, we only complement it by adding new functionalities for links.
 
 # Single button link
 Primary outline link button targeting external link in a new tab.
@@ -69,8 +69,8 @@ Please observe and respect the syntax as shown in the example above. Changing th
 {% include elements/link-btn-group.html buttons=buttons %}
 
 # Parameters
-- `type`: type of the link (`primary`, `secondary`, `warning`, `succees`, `danger`, `info`, `light`, `dark`, `link`). See also [Bootstap buttons](https://getbootstrap.com/docs/5.3/components/buttons/). Default value is `primary`. If type=`link`, `outline` and `border` are ignored.
-- `outline`: See [Bootstap buttons](https://getbootstrap.com/docs/5.3/components/buttons/)
+- `type`: type of the link (`primary`, `secondary`, `warning`, `succees`, `danger`, `info`, `light`, `dark`, `link`). See also [Bootstrap buttons](https://getbootstrap.com/docs/5.3/components/buttons/). Default value is `primary`. If type=`link`, `outline` and `border` are ignored.
+- `outline`: See [Bootstrap buttons](https://getbootstrap.com/docs/5.3/components/buttons/)
 - `border`: specify if the button has or not a border, default value is `false`
 - `href`: link to be targeted when click on the button
 - `newTab`: specify if to open `href` in the same or a new tab

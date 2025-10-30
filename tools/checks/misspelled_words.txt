@@ -1,0 +1,175 @@
+Permalink: /components/alerts/
+File: _components/alerts.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /components/card/
+File: _components/card.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /components/download-link/
+File: _components/download-link/download-link.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /components/image/
+File: _components/images.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /components/intro/
+File: _components/components.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /components/link-button/
+File: _components/link-btn.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /components/qitem/
+File: _components/faq-item.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /components/rich-media/
+File: _components/rich-media.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /components/scrollspy/
+File: _components/scroll-spy.md
+Language detected: ca
+No misspellings detected.
+
+Permalink: /components/xlsx-charts/
+File: _components/xlsx-to-html-chart/xlsx-to-html-chart.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /components/xlsx-tables/
+File: _components/xlsx-to-html-table/xlsx-to-html-table.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /content/content-items/
+File: _content/content-items.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /content/ec/
+File: _content/external-content.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /content/intro/
+File: _content/content.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /experiments/docx-summary/
+File: _experiments/docx-summary/docx-summary.md
+Language detected: en
+Misspelled words: apa, birnin, bovet, cgs, cm, dioxane, du, dérivé, ed, eid, eids, eseal, forneau, frenchs, mc, nouveau, oersteds, pe, pennlive, pharmacodyn, pr, pt, raney, rao, recherches, ronpub, routledge, si, simons, subsubsection, subsubsections, sympathicolytique, telford, ts, un, wakanda, wbs, wisa, wkbr, wkca, wmi, www, zana
+
+Permalink: /experiments/intro/
+File: _experiments/experiments.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /experiments/pdf-summary/
+File: _experiments/pdf-summary/pdf-summary.md
+Language detected: en
+Misspelled words: acm, bdis, birnin, cao, cm, dc, dfr, digitalidentity, dr, eid, enotary, ewakanda, fr, iaeng, ibm, iceis, ieee, ka, kajor, mcpr, mom, mr, ms, pe, pr, pt, rao, ronpub, si, subsubsections, wbs, www, zana
+
+Permalink: /extend/
+File: extend.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /get-started/
+File: get-started.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /get-started/config-files/
+File: site-config/config-files.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /get-started/config-options/
+File: site-config/config-options.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /get-started/doc-contents/
+File: doc-contents.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /get-started/env/
+File: environments/env.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /go-live/
+File: go-live/intro.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /go-live/appearance/
+File: go-live/appearance.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /go-live/build/
+File: go-live/build-correct-test.md
+Language detected: en
+Misspelled words: allmost, dificult, laguage, nore
+
+Permalink: /go-live/deploy/
+File: go-live/deploy.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /integrate/
+File: integrations/integrations.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /integrations/algolia/
+File: integrations/algolia.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /integrations/ga-gtm/
+File: integrations/ga-gtm.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /integrations/github/
+File: integrations/github.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /integrations/hubspot/
+File: integrations/hubspot.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /integrations/new-relic/
+File: integrations/new-relic.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /intro/
+File: intro.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /taxonomies/intro/
+File: _taxonomies/taxonomies.md
+Language detected: en
+No misspellings detected.
+

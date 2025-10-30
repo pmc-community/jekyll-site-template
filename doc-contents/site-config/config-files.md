@@ -9,7 +9,7 @@ nav_order: 2
 ---
 
 # Summary
-Docaroo provide multiple options to configure the the site functionality and appearence. The configurations can be made in _config.yml and in the configuration files placed in _data folder. As a general rule, each time when a configuration is changed, it is necessary to re-build the site to make the configuration effective (if the site is running in test mode, it is necessary to stop it and serve it again).
+Docaroo provide multiple options to configure the the site functionality and appearance. The configurations can be made in _config.yml and in the configuration files placed in _data folder. As a general rule, each time when a configuration is changed, it is necessary to re-build the site to make the configuration effective (if the site is running in test mode, it is necessary to stop it and serve it again).
 
 Docaroo configurations are of two categories:
 - necessary at build time

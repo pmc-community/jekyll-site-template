@@ -11,13 +11,7 @@ print_color "$BOLD_WHITE" "-------------------------------"
 # PYTHON PRE-BUILD SCRIPTS
 echo ""
 print_color_enclosed "$PURPLE" "PY pre-build scripts"
-pyEnable=$(grep 'pyEnable' _data/buildConfig.yml | awk '{print $2}')
-
-if [ "$pyEnable" = "true" ]; then
-  ./tools_py/preBuild-pyScripts
-else
-  echo "pyEnable is false. Skipping the execution of python scripts. Some site features may not be available."
-fi
+./tools_py/preBuild-pyScripts
 
 # PRE-FLIGHT CHECKS
 # that's good only for local dev environment
@@ -25,15 +19,7 @@ fi
 echo ""
 print_color_enclosed "$PURPLE" "Doing pre-flight site check"
 echo "HEADS UP!!! PRE-FLIGHT CHECK WILL NOT RUN WHEN BUILDING IN PRODUCTION,  IT IS ONLY FOR DEV ..."
-
-preFlight=$(grep 'preFlight' _data/buildConfig.yml | awk '{print $2}')
-
-if [ "$preFlight" = "true" ]; then
-  ./check
-else
-  echo "preFlight check is false. Skipping pre-build site checking. You can always run it manually."
-fi
-echo ""
+./check false
 
 print_color_enclosed "$PURPLE" "Time to build the site. Sit back and relax ... "
 
@@ -44,7 +30,11 @@ print_color_enclosed "$PURPLE" "Time to build the site. Sit back and relax ... "
 source ~/py-dev-env-392/bin/activate
 
 # BUILDING THE SITE
-bundle exec jekyll clean
-
+bundle exec jekyll clean > /dev/null
 # serving on localhost:4000 with the possibility to be accessed from other devices in the same network
 LANG="en_US.UTF-8" LC_ALL="en_US.UTF-8" bundle exec jekyll build --incremental --trace
+
+# PYTHON POST-BUILD SCRIPTS
+echo ""
+print_color_enclosed "$PURPLE" "PY post-build scripts"
+./tools_py/postBuild-pyScripts

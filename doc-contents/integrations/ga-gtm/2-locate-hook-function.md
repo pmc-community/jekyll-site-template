@@ -1,8 +1,8 @@
 ---
-name: ⚒️ Modify hook function
+name: ⚒️ Target function
 ---
 
-👀 Locate and bring the hook function to global scope
+👀 Locate and bring the target function to global scope
 {: .text-primary}
 
 - Go to `assets\js\savedItems.js` 

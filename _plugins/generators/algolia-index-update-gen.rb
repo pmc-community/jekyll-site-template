@@ -13,7 +13,7 @@ module Jekyll
 
       def generate(site)
 
-        if (ENV["ALGOLIA_NETLIFY_ENABLED"] || ENV["ALGOLIA_CUSTOM_ENABLED"])
+        if (ENV["ALGOLIA_CUSTOM_ENABLED"])
           Globals.putsColText(Globals::PURPLE,"Updating Algolia index ...")
 
           modified_files = FileUtilities.read_json_file("#{site.data['buildConfig']["rawContentFolder"]}/modified_files.json")["files"]
@@ -91,15 +91,6 @@ module Jekyll
                     end
                     i +=1 
                   end
-                end
-
-                if (ENV["ALGOLIA_NETLIFY_ENABLED"] == "true")
-                  update_index(
-                    ENV["ALGOLIA_NETLIFY_APP_ID"], 
-                    ENV["ALGOLIA_NETLIFY_WRITE_API_KEY"], 
-                    ENV["ALGOLIA_NETLIFY_INDEX"], 
-                    records_array
-                  )     
                 end
 
                 if (ENV["ALGOLIA_CUSTOM_ENABLED"] == "true")

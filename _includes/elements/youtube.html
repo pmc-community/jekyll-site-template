@@ -2,6 +2,7 @@
 {% assign video_width = include.width | default: "560" %}
 {% assign video_height = include.height | default: "315" %}
 {% assign video_centered = include.center | default: "false"%}
+{% assign video_moments = include.moments | default: ""%}
 
 {% capture uuid %}
   {% UUID %}
@@ -16,7 +17,7 @@
   {% assign vidMargin = "auto" %}
 {% endif %}
 
-<div class="youtube-container youtube-{{ vid }}"
+<div class="youtube-container youtube-{{vid}}"
      data-id="{{ video_id }}"
      data-width="{{ video_width }}"
      data-height="{{ video_height }}"
@@ -25,9 +26,54 @@
   <div class="play-button"><i class="bi bi-play-fill"></i></div>
 </div>
 
+<div id="ytplayer-{{vid}}-moments" class="my-4 d-flex" style="visibility: hidden">
+{% if video_moments != "" %}
+ {% assign moments_defs = video_moments | split: "," %}
+  {% for def in moments_defs %}
+   {% assign text = "" %}
+   {% assign sec = "" %}
+
+   {% comment %} Split each definition into key-value pairs {% endcomment %}
+   {% assign parts = def | split: "|" %}
+
+   {% for pair in parts %}
+    {% assign pair_parts = pair | split: "=" %}
+    {% assign key = pair_parts[0] | strip %}
+    {% assign val = pair_parts[1] | strip %}
+
+    {% comment %}
+     Remove leading/trailing quotes from the value.
+     This is a more reliable way than checking first/last char and slicing.
+    {% endcomment %}
+    {% assign val = val | remove: '"' %}
+
+    {% case key %}
+     {% when "text" %}
+      {% assign text = val %}
+     {% when "sec" %}
+      {% assign sec = val %}
+    {% endcase %}
+   {% endfor %}
+
+   {% capture uuid %}
+    {% UUID %}
+   {% endcapture %}
+   {% assign bid = uuid | strip %}
+
+   <button 
+    class="btn btn-sm btn-success mx-1 my-1" 
+    id="ytplayer-{{vid}}-moments-{{bid}}"
+    data-sec="{{sec}}">
+    {{text}}
+   </button>
+
+  {% endfor %}
+{% endif %}
+</div>
+
 <script>
   $(function () {
-    $('.youtube-{{ vid }}').on('click', function () {
+    $('.youtube-{{vid}}').on('click', function () {
       const videoId = $(this).data('id');
       const width = $(this).data('width');
       const height = $(this).data('height');
@@ -38,18 +84,68 @@
       const iframe = $('<iframe>', {
         width: '100%',
         height: iframeHeight,
-        src: `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&showinfo=0&modestbranding=1`,
+        src: `https://www.youtube.com/embed/${videoId}?enablejsapi=1&autoplay=1&rel=0&showinfo=0&modestbranding=1`,
         frameborder: 0,
         allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
-        allowfullscreen: true
+        allowfullscreen: true,
+        id: 'youtube-{{vid}}'
       });
 
       $(this).replaceWith(iframe);
+      
+      let hasFrozen__{{vid}} = false;
+      let player__{{vid}};
+      player__{{vid}} = new YT.Player('youtube-{{vid}}', {
+       events: {
+        'onReady': function(event) {
+
+          $('button[id^="ytplayer-{{vid}}-moments-"]').on('click', function() {
+           const sec = parseFloat($(this).data('sec')).toFixed(2);
+           player__{{vid}}.mute();
+           player__{{vid}}.playVideo();
+           player__{{vid}}.seekTo(sec, true);
+           const checkReady = setInterval(() => {
+            const state = player__{{vid}}.getPlayerState();
+            if (state === YT.PlayerState.PLAYING || state === YT.PlayerState.PAUSED) {
+             player__{{vid}}.pauseVideo();      
+             clearInterval(checkReady); 
+            }
+           }, 50);
+           
+          });
+        },
+        'onStateChange': function(event) {
+          if (event.data === YT.PlayerState.PLAYING) {
+           $('#ytplayer-{{vid}}-moments').css('visibility','visible');
+           const currentTime = player__{{vid}}.getCurrentTime();
+           const duration = player__{{vid}}.getDuration();
+           if (currentTime < duration - 1) {
+            hasFrozen__{{vid}} = false;
+           }
+
+           if (hasFrozen__{{vid}}) {
+            player__{{vid}}.seekTo(0, true);
+           }
+          };
+
+          if (event.data === YT.PlayerState.ENDED && !hasFrozen__{{vid}}) {
+           const duration__{{vid}} = player__{{vid}}.getDuration();
+           player__{{vid}}.seekTo(duration__{{vid}} - 1, true);
+           player__{{vid}}.pauseVideo();
+           hasFrozen__{{vid}} = true;
+          }
+
+         }
+       }
+      });
+
     });
   });
+
 </script>
 
 <style>
+
 .youtube-container.youtube-{{ vid }} {
   position: relative;
   width: 100%;

@@ -114,7 +114,7 @@ To test if slides are embedded correctly on mobile, add `testSlides="true"` para
 
 ## Decks
 
-{% include elements/alert.html class="primary" content="Deck files doesn't need a `Reset view` button since slide navigation is added by default. Also, there is no way to lose the slides from focus as in case of design and boards with pan move. So, for deck files, resetBtn will be ignored even if you specify it." title="Reset view button" %}
+{% include elements/alert.html class="primary" content="Deck files does not need a `Reset view` button since slide navigation is added by default. Also, there is no way to lose the slides from focus as in case of design and boards with pan move. So, for deck files, resetBtn will be ignored even if you specify it." title="Reset view button" %}
 
 {% highlight javascript %}
 {% raw %}
@@ -136,7 +136,7 @@ To test if slides are embedded correctly on mobile, add `testSlides="true"` para
 
 ## Prototypes
 
-`elements/figma.html` doesn't accept prototypes, it accepts only `design`, `board`, `slides` and `deck` files. If you try something like the following include (with anything else than the accepted file types), you will get an alert.
+`elements/figma.html` does not accept prototypes, it accepts only `design`, `board`, `slides` and `deck` files. If you try something like the following include (with anything else than the accepted file types), you will get an alert.
 
 {% highlight javascript %}
 {% raw %}
@@ -160,18 +160,42 @@ To test if slides are embedded correctly on mobile, add `testSlides="true"` para
 ## Youtube
 {% highlight javascript %}
 {% raw %}
-{% include elements/youtube.html 
-    id="HFsPgkqMUzc" 
-    width="640" 
-    height="360" 
-%}
-{% endraw %}
-{% endhighlight %}
+{% capture moments %}
+    text=Moment 1|sec=12,
+    text=Moment 2|sec=37.2
+{% endcapture %}
 
 {% include elements/youtube.html 
     id="HFsPgkqMUzc" 
     width="640" 
-    height="360" 
+    height="360"
+    moments=moments
+%}
+{% endraw %}
+{% endhighlight %}
+
+{% include elements/alert.html 
+  class="primary" 
+  content="Note that a number video moments can be passed as argument. When the video is playing, the moments will be shown as buttons under the player. Clicking on moment button will move the video to the specified second and will pause it there."
+   title="Moments" 
+%}
+
+{% capture moments %}
+    text=Moment 1|sec=12,
+    text=Moment 2|sec=37.2
+{% endcapture %}
+
+{% include elements/youtube.html 
+    id="HFsPgkqMUzc" 
+    width="640" 
+    height="360"
+    moments=moments
+%}
+
+{% include elements/alert.html 
+  class="warning" 
+  content="Technically, there is no limitation on the number of moments that can be defined, but the recommendation is to not have more than 3-4 moments. Also it is highly recommended to label the moments with relevant short words, no more than 2 words."
+   title="Note" 
 %}
 
 ## Vimeo

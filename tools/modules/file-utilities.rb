@@ -119,7 +119,10 @@ module FileUtilities
         page = Jekyll::PageWithoutAFile.new(site, site.source, File.dirname(file_path), File.basename(file_path))
         page.content = content_body
         page.data = front_matter
-  
+
+        # ✅ Explicitly tell Jekyll this is Markdown
+        page.ext = ".md"
+
         # Determine the layout to use (default to 'default' layout if not specified)
         layout_name = front_matter['layout'] || 'default'
   
