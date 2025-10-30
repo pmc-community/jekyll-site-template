@@ -565,12 +565,12 @@ algolia = {
         // HERE WE SEAT ALSO THE FUNCTIONS OF THE PAGINATION BUTTONS
         const createPagination = (totalPages, query) => {
             removePagination(); // Clear existing pagination
-            const paginationContainer = $('<div>').addClass('pagination-buttons d-flex justify-content-start mt-2 p-2');
+            const paginationContainer = $('<div>').addClass('pagination-buttons justify-content-start mt-2 p-2');
             
             for (let i = 0; i < totalPages; i++) {
                 const button = $('<button>')
                     .attr('siteFunction',`docSearchPaginationPage_${i}`)
-                    .addClass('docSearchPaginationPage btn btn-sm btn-outline-secondary border border-secondary border-opacity-25 mx-1 text-dark')
+                    .addClass('docSearchPaginationPage btn btn-sm btn-outline-secondary border border-secondary border-opacity-25 mx-1 my-1 text-dark text-nowrap')
                     .css('width', '2rem')
                     .text(i + 1)
                     .data('page', i)

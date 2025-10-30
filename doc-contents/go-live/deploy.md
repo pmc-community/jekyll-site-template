@@ -89,6 +89,8 @@ Deployment on Github pages is provided out-of-the-box by a deployment action.
 
 {% DirStructure .github/workflows %}
 
+The action used for Github pages deplyment is `deploy-site-multilang-no-py.yml` ans is named `(NO-PY) Manual Deploy Multilingual Jekyll site to Pages`. This action is designed to perform the minimum needed processing of the content for prodcution and for deploying a multilanguage site (each language variant being hosted in a dedicated repository branch named with the two-digit language code). It is also designed to `not executing` the time consuming building tasks (the ones based on using Huggingface models or using intensive Python content processing), thus we emphasise again that `ALWAYAS BUILD AND TEST THE SITE IN THE DEVELOPMENT ENVIRONMENT BEFORE DEPLOYING TO PRODUCTION`.
+
 {% capture moments %}
     text=Check|sec=12,
     text=Generate|sec=35.8,
@@ -99,5 +101,13 @@ Deployment on Github pages is provided out-of-the-box by a deployment action.
     id="OzPopskhjL8" 
     width="640" 
     height="360"
+%}
+
+It is seen that the deploy action is triggered manually. Of course, at any time, the action trigger can be modified in order to start the deployment automatically (i.e. when new content is pushed to the `gh-pages` or any language branch) or scheduled (if your Github plan allows to schedule actions).
+
+{% include elements/alert.html 
+  class="warning" 
+  content="It is strongly recommended to avoid automatic deploy action trigger on content push, mostly when the content is created in a collaborative way by many authors. The best option is to trigger it manually (as provided by default) or scheduled (once per week if there are relevant content updates)"
+  title="GHP Deploy" 
 %}
 
