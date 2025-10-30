@@ -136,7 +136,7 @@ The spell check feature is built around a Python package, `symspellpy`. To insta
         "include_start_marker": true,
         "end_marker": "}" ,
         "include_end_marker": true,
-        "needAuth": true
+        "needAuth": false
     }
 %}
 ```

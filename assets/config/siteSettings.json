@@ -998,12 +998,12 @@
       "createTimeUTC": 1759673895,
       "relatedPages": [
         {
-          "title": "Config Files",
-          "permalink": "/get-started/config-files/"
-        },
-        {
           "title": "Config Options",
           "permalink": "/get-started/config-options/"
+        },
+        {
+          "title": "Config Files",
+          "permalink": "/get-started/config-files/"
         },
         {
           "title": "GitHub",
@@ -1138,12 +1138,12 @@
           "permalink": "/go-live/"
         },
         {
-          "title": "Set appearance",
-          "permalink": "/go-live/appearance/"
-        },
-        {
           "title": "Deploy",
           "permalink": "/go-live/deploy/"
+        },
+        {
+          "title": "Set appearance",
+          "permalink": "/go-live/appearance/"
         }
       ],
       "autoSummary": "Building and testing the site means go generate the site, running the automatic testing and the spell checking. Following the site build and tests results, corrections may be needed. When everything is fine, is time to serve the site locally and test its appearance and functionality.",
@@ -1165,28 +1165,28 @@
         "test",
         "deploy"
       ],
-      "excerpt": "netlify, prem",
-      "lastUpdate": "2025-10-28 10:53:15 +0200",
+      "excerpt": "environment, process, essence, box, https://raw.githubusercontent.com/pmc-community/jekyll-site-template/gh-pages/doc-contents/go-live/algolia-doc-search-content.md",
+      "lastUpdate": "2025-10-30 13:02:57 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-28 10:53:15 +0200",
-      "createTimeUTC": 1761641595,
+      "createTime": "2025-10-30 13:02:57 +0200",
+      "createTimeUTC": 1761822177,
       "relatedPages": [
-        {
-          "title": "Go live",
-          "permalink": "/go-live/"
-        },
         {
           "title": "Build and test",
           "permalink": "/go-live/build/"
+        },
+        {
+          "title": "Go live",
+          "permalink": "/go-live/"
         },
         {
           "title": "Set appearance",
           "permalink": "/go-live/appearance/"
         }
       ],
-      "autoSummary": "Deploying the site means to update the production environment (such as on-prem, or github pages or netlify, or similar).",
+      "autoSummary": "Deploying the site means to update the production environment (such as on-prem, or github pages or netlify, or similar) this is the next step after building and testing the site. Docaroo provides out-of-the-box actions to deploy on github pages and on netlifying. Multilanguage deployment is provided out- of-the.box only for.",
       "similarByContent": [],
-      "readingTime": 1,
+      "readingTime": 2,
       "hasDynamicContent": false,
       "parent": "Go live"
     },
@@ -1734,7 +1734,7 @@
         {
           "title": "Deploy",
           "permalink": "/go-live/deploy/",
-          "lastUpdate": "28-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         },
         {
           "title": "Go live",
@@ -1759,7 +1759,7 @@
         {
           "title": "Deploy",
           "permalink": "/go-live/deploy/",
-          "lastUpdate": "28-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         },
         {
           "title": "Go live",
@@ -1944,7 +1944,7 @@
         {
           "title": "Deploy",
           "permalink": "/go-live/deploy/",
-          "lastUpdate": "28-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         },
         {
           "title": "Go live",
@@ -2599,7 +2599,7 @@
         {
           "title": "Deploy",
           "permalink": "/go-live/deploy/",
-          "lastUpdate": "28-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         },
         {
           "title": "Go live",
@@ -2874,7 +2874,7 @@
         {
           "title": "Deploy",
           "permalink": "/go-live/deploy/",
-          "lastUpdate": "28-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         },
         {
           "title": "Go live",
@@ -2964,7 +2964,7 @@
         {
           "title": "Deploy",
           "permalink": "/go-live/deploy/",
-          "lastUpdate": "28-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         },
         {
           "title": "Go live",

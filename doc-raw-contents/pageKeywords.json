@@ -363,8 +363,11 @@
     {
       "permalink": "/go-live/deploy/",
       "keywords": [
-        "netlify",
-        "prem"
+        "environment",
+        "process",
+        "essence",
+        "box",
+        "https://raw.githubusercontent.com/pmc-community/jekyll-site-template/gh-pages/doc-contents/go-live/algolia-doc-search-content.md"
       ]
     },
     {

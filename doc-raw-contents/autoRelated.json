@@ -313,12 +313,12 @@
     "permalink": "/get-started/env/",
     "related": [
       {
-        "title": "Config Files",
-        "permalink": "/get-started/config-files/"
-      },
-      {
         "title": "Config Options",
         "permalink": "/get-started/config-options/"
+      },
+      {
+        "title": "Config Files",
+        "permalink": "/get-started/config-files/"
       },
       {
         "title": "GitHub",
@@ -372,12 +372,12 @@
         "permalink": "/go-live/"
       },
       {
-        "title": "Set appearance",
-        "permalink": "/go-live/appearance/"
-      },
-      {
         "title": "Deploy",
         "permalink": "/go-live/deploy/"
+      },
+      {
+        "title": "Set appearance",
+        "permalink": "/go-live/appearance/"
       }
     ]
   },
@@ -385,12 +385,12 @@
     "permalink": "/go-live/deploy/",
     "related": [
       {
-        "title": "Go live",
-        "permalink": "/go-live/"
-      },
-      {
         "title": "Build and test",
         "permalink": "/go-live/build/"
+      },
+      {
+        "title": "Go live",
+        "permalink": "/go-live/"
       },
       {
         "title": "Set appearance",
