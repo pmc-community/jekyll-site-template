@@ -1128,18 +1128,18 @@
         "deploy"
       ],
       "excerpt": "environment, command, checking, content, tests",
-      "lastUpdate": "2025-10-30 14:00:19 +0200",
+      "lastUpdate": "2025-10-30 15:25:59 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-30 14:00:19 +0200",
-      "createTimeUTC": 1761825619,
+      "createTime": "2025-10-30 15:25:59 +0200",
+      "createTimeUTC": 1761830759,
       "relatedPages": [
-        {
-          "title": "Go live",
-          "permalink": "/go-live/"
-        },
         {
           "title": "Deploy",
           "permalink": "/go-live/deploy/"
+        },
+        {
+          "title": "Go live",
+          "permalink": "/go-live/"
         },
         {
           "title": "Set appearance",
@@ -1171,10 +1171,10 @@
         "deploy"
       ],
       "excerpt": "environment, process, essence, netlify, box",
-      "lastUpdate": "2025-10-30 14:54:59 +0200",
+      "lastUpdate": "2025-10-30 15:25:59 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-30 14:54:59 +0200",
-      "createTimeUTC": 1761828899,
+      "createTime": "2025-10-30 15:25:59 +0200",
+      "createTimeUTC": 1761830759,
       "relatedPages": [
         {
           "title": "Build and test",

@@ -368,12 +368,12 @@
     "permalink": "/go-live/build/",
     "related": [
       {
-        "title": "Go live",
-        "permalink": "/go-live/"
-      },
-      {
         "title": "Deploy",
         "permalink": "/go-live/deploy/"
+      },
+      {
+        "title": "Go live",
+        "permalink": "/go-live/"
       },
       {
         "title": "Set appearance",

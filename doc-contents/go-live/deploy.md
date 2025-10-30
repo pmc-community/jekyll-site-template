@@ -136,3 +136,5 @@ Deployment to Netlify is even more straight forward than deployment on Github pa
   content="It is strongly recommended to create a separated production branch in your repository and to merge any other development branches into it, manually or scheduled to avoid triggering a build each time when the content changes, thus minimising the CI/CD pipeline time consumption."
   title="Netlify production branch" 
 %}
+
+One important reason to choose Netlify as production environment is that, even in the free plan, Netlify provides a solution to have a backend (Netlify functions) and this can open many opportunities to further extend the functionality.
