@@ -15,7 +15,7 @@ Dotenv.load
 Jekyll::Hooks.register :site, :post_write do |site|
     algoliaSearch = ENV["ALGOLIA_SEARCH_ENABLED"]
     algoliaCustom = ENV["ALGOLIA_CUSTOM_ENABLED"]
-    if (algoliaSearch || algoliaCustom)
+    if (algoliaSearch == 'true' || algoliaCustom == 'true')
         Globals.putsColText(Globals::PURPLE,"Algolia is enabled - updating just-the-docs.js ...")
         source = File.join(site.dest, 'assets/js/just-the-docs.js')
         jtdJS = File.read(source)

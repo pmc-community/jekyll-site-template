@@ -136,7 +136,7 @@ The spell check feature is built around a Python package, `symspellpy`. To insta
         "include_start_marker": true,
         "end_marker": "}" ,
         "include_end_marker": true,
-        "needAuth": true
+        "needAuth": false
     }
 %}
 ```
@@ -148,13 +148,13 @@ The spell check feature is built around a Python package, `symspellpy`. To insta
 %}
 
 # Maintaining dictionaries
-Installing and using frequency dictionaries from external sources does not guarantee that the highest quality spell check is guaranteed. Allmost in any cases, the dictionaries may not contain specific domain words (such as tech words) and, for sure, does not contain words in other languages (such as Latin) in the case when the content is mixing languages. These situations will lead to false positive misspellings reported by the spell checking. There is no problem to ignore these false positive misspellings. 
+Installing and using frequency dictionaries from external sources does not guarantee that the highest quality spell check is guaranteed. Almost in any cases, the dictionaries may not contain specific domain words (such as tech words) and, for sure, does not contain words in other languages (such as Latin) in the case when the content is mixing languages. These situations will lead to false positive misspellings reported by the spell checking. There is no problem to ignore these false positive misspellings. 
 
-However, in some situations (mostly when many false positives misspellings are detected), will be visually dificult to identify the real misspellings which are mixed with the false positive ones. For this reason, it is recommended to maintain a list of words that should be ignored and not reported as false positive misspellings. This can be achieved by maintaining the `dict-ignore-....txt` files inside `assets/locales` directory. The site has one `dict-ignore-<lang_code>.txt` file per each language and one `dict-ignore-global.txt` file as next shown.
+However, in some situations (mostly when many false positives misspellings are detected), will be visually difficult to identify the real misspellings which are mixed with the false positive ones. For this reason, it is recommended to maintain a list of words that should be ignored and not reported as false positive misspellings. This can be achieved by maintaining the `dict-ignore-....txt` files inside `assets/locales` directory. The site has one `dict-ignore-<lang_code>.txt` file per each language and one `dict-ignore-global.txt` file as next shown.
 
 {% DirStructure assets/locales %}
 
-The `dict-ignore-....txt` files have a very simple structure, one word per line, no nore than that. The recommended usage is very logical, if (for example) you use words from Latin laguage in all your content regardless of the content language, then add those words to `dict-ignore-global.txt`. If you use specific english tech words or is you use specific English abbreviations, then add those to `dict-ignore-en.txt`.
+The `dict-ignore-....txt` files have a very simple structure, one word per line, no more than that. The recommended usage is very logical, if (for example) you use words from Latin language in all your content regardless of the content language, then add those words to `dict-ignore-global.txt`. If you use specific english tech words or is you use specific English abbreviations, then add those to `dict-ignore-en.txt`.
 
 # Test
 Docaroo provides a ready-made script for serving the site in the development environment. This script is optimised for MacOS and Linux and can be started with `./serve` command. In a similar way, on Windows machines, `serve.bat` can be used. In essence, this script is building the site (but without automatic tests) and serving it on the machine where the site is built, the site being accessible from the local network as `https://<dev-machine-IP-or-URL>:4000`. Please consult [Jekyll documentation](https://jekyllrb.com){: target="_blank"} to understand more about how the site is served in the development environment.

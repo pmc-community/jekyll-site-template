@@ -9,7 +9,7 @@ silent = ARGV[2]&.downcase == 'true'? true : false
 Globals.clearConsole() if ARGV[1]&.downcase == 'true'
 
 Globals.putsColText(Globals::GREEN,"-----------------------\nSTART BROKEN EXTERNAL LINKS CHECK")
-Globals.putsColText(Globals::PURPLE,"HEADS UP!!!\nOnly files containing external links will be checked.")
+Globals.putsColText(Globals::PURPLE,"HEADS UP!!! Only files containing external links will be checked.")
 FileUtilities.clear_or_create_file("#{Globals::ROOT_DIR}/tools/checks/broken-external-links.log")
 
 extLinksInPages = 
