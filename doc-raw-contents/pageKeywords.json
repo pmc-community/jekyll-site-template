@@ -366,8 +366,8 @@
         "environment",
         "process",
         "essence",
-        "box",
-        "netlify"
+        "netlify",
+        "box"
       ]
     },
     {

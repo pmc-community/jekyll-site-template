@@ -169,11 +169,15 @@
     },
     {
         "permalink": "/go-live/build/",
-        "similarFiles": []
+        "similarFiles": [
+            "/go-live/deploy/"
+        ]
     },
     {
         "permalink": "/go-live/deploy/",
-        "similarFiles": []
+        "similarFiles": [
+            "/go-live/build/"
+        ]
     },
     {
         "permalink": "/taxonomies/intro/",

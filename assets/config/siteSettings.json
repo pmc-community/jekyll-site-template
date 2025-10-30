@@ -1100,12 +1100,12 @@
           "permalink": "/go-live/build/"
         },
         {
-          "title": "Go live",
-          "permalink": "/go-live/"
-        },
-        {
           "title": "Deploy",
           "permalink": "/go-live/deploy/"
+        },
+        {
+          "title": "Go live",
+          "permalink": "/go-live/"
         }
       ],
       "autoSummary": "Setting the appearance means to set the branding an colors of the site. Branding elements are the logo, the site title, the additional buttons on the header and the footer visible at the bottom of the left sidebar. Additionally the following colors can be set: background and text colors for.",
@@ -1147,7 +1147,12 @@
         }
       ],
       "autoSummary": "Building and testing the site means go generate the site, running the automatic testing and the spell checking. Following the site build and tests results, corrections may be needed. When everything is fine, is time to serve the site locally and test its appearance and functionality.",
-      "similarByContent": [],
+      "similarByContent": [
+        {
+          "permalink": "/go-live/deploy/",
+          "title": "Deploy"
+        }
+      ],
       "readingTime": 6,
       "hasDynamicContent": false,
       "parent": "Go live"
@@ -1165,11 +1170,11 @@
         "test",
         "deploy"
       ],
-      "excerpt": "environment, process, essence, box, netlify",
-      "lastUpdate": "2025-10-30 14:07:14 +0200",
+      "excerpt": "environment, process, essence, netlify, box",
+      "lastUpdate": "2025-10-30 14:54:59 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-30 14:07:14 +0200",
-      "createTimeUTC": 1761826034,
+      "createTime": "2025-10-30 14:54:59 +0200",
+      "createTimeUTC": 1761828899,
       "relatedPages": [
         {
           "title": "Build and test",
@@ -1184,8 +1189,13 @@
           "permalink": "/go-live/appearance/"
         }
       ],
-      "autoSummary": "Deploying the site means to update the production environment (such as on-prem, or github pages or netlify, or similar) this is the next step after building and testing the site. Docaroo provides out-of-the-box actions to deploy on github pages and on netlifying. Multilanguage deployment is provided out- of-the.box only for.",
-      "similarByContent": [],
+      "autoSummary": "Deploying the site means to update the production environment (such as on-prem, or github pages or netlify, or similar) this is the next step after building and testing the site. Docaroo provides out-of-the-box actions to deploy on github pages and on netlifying.",
+      "similarByContent": [
+        {
+          "permalink": "/go-live/build/",
+          "title": "Build and test"
+        }
+      ],
       "readingTime": 3,
       "hasDynamicContent": false,
       "parent": "Go live"

@@ -19,7 +19,7 @@ print_color_enclosed "$PURPLE" "PY pre-build scripts"
 echo ""
 print_color_enclosed "$PURPLE" "Doing pre-flight site check"
 echo "HEADS UP!!! PRE-FLIGHT CHECK WILL NOT RUN WHEN BUILDING IN PRODUCTION,  IT IS ONLY FOR DEV ..."
-./check false
+./check true
 
 print_color_enclosed "$PURPLE" "Time to build the site. Sit back and relax ... "
 

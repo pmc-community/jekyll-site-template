@@ -146,7 +146,7 @@
         },
         {
             "permalink": "/go-live/deploy/",
-            "summary": "Deploying the site means to update the production environment (such as on-prem, or github pages or netlify, or similar) this is the next step after building and testing the site. Docaroo provides out-of-the-box actions to deploy on github pages and on netlifying. Multilanguage deployment is provided out- of-the.box only for."
+            "summary": "Deploying the site means to update the production environment (such as on-prem, or github pages or netlify, or similar) this is the next step after building and testing the site. Docaroo provides out-of-the-box actions to deploy on github pages and on netlifying."
         },
         {
             "permalink": "/taxonomies/intro/",

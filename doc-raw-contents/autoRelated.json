@@ -355,12 +355,12 @@
         "permalink": "/go-live/build/"
       },
       {
-        "title": "Go live",
-        "permalink": "/go-live/"
-      },
-      {
         "title": "Deploy",
         "permalink": "/go-live/deploy/"
+      },
+      {
+        "title": "Go live",
+        "permalink": "/go-live/"
       }
     ]
   },
