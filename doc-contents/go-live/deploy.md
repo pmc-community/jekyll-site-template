@@ -30,7 +30,7 @@ The deployment process depends on the production environment option. Docaroo pro
         "owner":"pmc-community", 
         "repo":"jekyll-site-template", 
         "branch":"gh-pages", 
-        "file_path":"doc-contents/go-live/algolia-doc-search-content.md", 
+        "file_path":"doc-contents/go-live/algolia-doc-search-limitation.md", 
         "ignore_wp_shortcodes": true, 
         "start_marker": "fullFile",
         "include_start_marker": false,
