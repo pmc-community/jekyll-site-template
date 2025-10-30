@@ -150,7 +150,7 @@
         },
         {
             "permalink": "/taxonomies/intro/",
-            "summary": "One of the most powerful features we offer out-of-the-box is defining and using custom taxonomies. This allows the usage of documentation to be customised as per the goal and purpose needed by the user. There is no limit in how many ways the documentation can be organised."
+            "summary": "Custom taxonomies allow users to organise the information in a way that suits their preference. There is no limit in how many ways the documentation can be organised."
         }
     ]
 }

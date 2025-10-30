@@ -922,15 +922,15 @@
         "notes",
         "annotations"
       ],
-      "excerpt": "purpose, users, documentation, categories, time",
+      "excerpt": "user, categories, documents, users, classification",
       "lastUpdate": "2025-10-29 15:35:35 +0200",
       "lastUpdateUTC": 0,
       "createTime": "2025-10-29 15:35:35 +0200",
       "createTimeUTC": 1761744935,
       "relatedPages": [],
-      "autoSummary": "One of the most powerful features we offer out-of-the-box is defining and using custom taxonomies. This allows the usage of documentation to be customised as per the goal and purpose needed by the user. There is no limit in how many ways the documentation can be organised.",
+      "autoSummary": "Custom taxonomies allow users to organise the information in a way that suits their preference. There is no limit in how many ways the documentation can be organised.",
       "similarByContent": [],
-      "readingTime": 1,
+      "readingTime": 3,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -1171,10 +1171,10 @@
         "deploy"
       ],
       "excerpt": "environment, process, essence, netlify, box",
-      "lastUpdate": "2025-10-30 16:14:09 +0200",
+      "lastUpdate": "2025-10-30 16:56:08 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-30 16:14:09 +0200",
-      "createTimeUTC": 1761833649,
+      "createTime": "2025-10-30 16:56:08 +0200",
+      "createTimeUTC": 1761836168,
       "relatedPages": [
         {
           "title": "Build and test",
@@ -1196,7 +1196,7 @@
           "title": "Build and test"
         }
       ],
-      "readingTime": 3,
+      "readingTime": 4,
       "hasDynamicContent": false,
       "parent": "Go live"
     },
