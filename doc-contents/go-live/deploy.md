@@ -93,18 +93,11 @@ Before deploying on Github pages it is necessary to configure the pages for the 
   title="Github pages" 
 %}
 
-
 Deployment on Github pages is provided out-of-the-box by a deployment action. 
 
 {% DirStructure .github/workflows %}
 
 The action used for Github pages deployment is `deploy-site-multilang-no-py.yml` ans is named `(NO-PY) Manual Deploy Multilingual Jekyll site to Pages`. This action is designed to perform the minimum needed processing of the content for production and for deploying a multilanguage site (each language variant being hosted in a dedicated repository branch named with the two-digit language code). It is also designed to `not executing` the time consuming building tasks (the ones based on using Huggingface models or using intensive Python content processing), thus we emphasise again that `ALWAYS BUILD AND TEST THE SITE IN THE DEVELOPMENT ENVIRONMENT BEFORE DEPLOYING TO PRODUCTION`.
-
-{% capture moments %}
-    text=Check|sec=12,
-    text=Generate|sec=35.8,
-    text=Spelling|sec=37.2
-{% endcapture %}
 
 {% include elements/youtube.html 
     id="OzPopskhjL8" 
@@ -127,6 +120,12 @@ Before deploying on Netlify it is necessary to configure the environment for the
   class="primary" 
   content="Please consult [Netlify documentation](https://docs.netlify.com/manage/domains/manage-domains/assign-a-domain-to-your-site-app){: target=\"_blank\"} to understand how to configure it for the site repository and for the site domain."
   title="Github pages" 
+%}
+
+{% include elements/youtube.html 
+    id="bOkA8w7muEA" 
+    width="640" 
+    height="360"
 %}
 
 Deployment to Netlify is even more straight forward than deployment on Github pages. Once the Netlify site is connected to the site repository (to the production branch of your choice) and the environment variables are set, builds are automatically triggered when push on the production branch.
