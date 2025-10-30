@@ -1128,10 +1128,10 @@
         "deploy"
       ],
       "excerpt": "environment, command, checking, content, tests",
-      "lastUpdate": "2025-10-30 12:27:31 +0200",
+      "lastUpdate": "2025-10-30 14:00:19 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-30 12:27:31 +0200",
-      "createTimeUTC": 1761820051,
+      "createTime": "2025-10-30 14:00:19 +0200",
+      "createTimeUTC": 1761825619,
       "relatedPages": [
         {
           "title": "Go live",
@@ -1166,10 +1166,10 @@
         "deploy"
       ],
       "excerpt": "environment, process, essence, box, https://raw.githubusercontent.com/pmc-community/jekyll-site-template/gh-pages/doc-contents/go-live/algolia-doc-search-content.md",
-      "lastUpdate": "2025-10-30 13:02:57 +0200",
+      "lastUpdate": "2025-10-30 14:00:19 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-30 13:02:57 +0200",
-      "createTimeUTC": 1761822177,
+      "createTime": "2025-10-30 14:00:19 +0200",
+      "createTimeUTC": 1761825619,
       "relatedPages": [
         {
           "title": "Build and test",
