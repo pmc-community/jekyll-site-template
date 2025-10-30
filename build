@@ -34,7 +34,7 @@ bundle exec jekyll clean > /dev/null
 # serving on localhost:4000 with the possibility to be accessed from other devices in the same network
 LANG="en_US.UTF-8" LC_ALL="en_US.UTF-8" bundle exec jekyll build --incremental --trace
 
-# PYTHON PRE-BUILD SCRIPTS
+# PYTHON POST-BUILD SCRIPTS
 echo ""
 print_color_enclosed "$PURPLE" "PY post-build scripts"
 ./tools_py/postBuild-pyScripts

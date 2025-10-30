@@ -171,3 +171,6 @@ hubspot
 url
 ux
 algolia
+permalink
+permalinks
+iso

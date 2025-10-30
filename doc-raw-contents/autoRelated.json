@@ -300,12 +300,12 @@
         "permalink": "/intro/"
       },
       {
-        "title": "Content",
-        "permalink": "/content/intro/"
-      },
-      {
         "title": "Get started",
         "permalink": "/get-started/"
+      },
+      {
+        "title": "Content",
+        "permalink": "/content/intro/"
       }
     ]
   },
@@ -351,12 +351,12 @@
     "permalink": "/go-live/appearance/",
     "related": [
       {
-        "title": "Go live",
-        "permalink": "/go-live/"
-      },
-      {
         "title": "Build and test",
         "permalink": "/go-live/build/"
+      },
+      {
+        "title": "Go live",
+        "permalink": "/go-live/"
       },
       {
         "title": "Deploy",

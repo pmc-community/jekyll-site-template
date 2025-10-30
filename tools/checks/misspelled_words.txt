@@ -126,7 +126,7 @@ No misspellings detected.
 Permalink: /go-live/build/
 File: go-live/build-correct-test.md
 Language detected: en
-No misspellings detected.
+Misspelled words: allmost, dificult, laguage, nore
 
 Permalink: /go-live/deploy/
 File: go-live/deploy.md

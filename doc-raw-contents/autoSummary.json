@@ -142,7 +142,7 @@
         },
         {
             "permalink": "/go-live/build/",
-            "summary": "Docaroo provides a ready-made script for building and running automatic tests on the development environment. This script is optimised for macos and linux and can be started with command."
+            "summary": "Building and testing the site means go generate the site, running the automatic testing and the spell checking. Following the site build and tests results, corrections may be needed. When everything is fine, is time to serve the site locally and test its appearance and functionality."
         },
         {
             "permalink": "/go-live/deploy/",

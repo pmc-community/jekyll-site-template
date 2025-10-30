@@ -126,3 +126,4 @@ elements:
 cloudflare:
   enabled: true
   workerBase: https://docaroo-scripts.innohub-space.workers.dev/cdn-proxy/
+spellCheck: true
