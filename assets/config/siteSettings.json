@@ -1128,10 +1128,10 @@
         "deploy"
       ],
       "excerpt": "environment, command, checking, content, tests",
-      "lastUpdate": "2025-10-29 15:35:35 +0200",
+      "lastUpdate": "2025-10-30 12:27:31 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-29 15:35:35 +0200",
-      "createTimeUTC": 1761744935,
+      "createTime": "2025-10-30 12:27:31 +0200",
+      "createTimeUTC": 1761820051,
       "relatedPages": [
         {
           "title": "Go live",
@@ -1571,10 +1571,10 @@
         "options"
       ],
       "excerpt": "functionalities, personalisation, appearance, options, _config.yml",
-      "lastUpdate": "2025-10-20 18:45:48 +0300",
+      "lastUpdate": "2025-10-30 12:27:31 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-20 18:45:48 +0300",
-      "createTimeUTC": 1760975148,
+      "createTime": "2025-10-30 12:27:31 +0200",
+      "createTimeUTC": 1761820051,
       "relatedPages": [
         {
           "title": "Config Files",
@@ -1729,7 +1729,7 @@
         {
           "title": "Build and test",
           "permalink": "/go-live/build/",
-          "lastUpdate": "29-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         },
         {
           "title": "Deploy",
@@ -1754,7 +1754,7 @@
         {
           "title": "Build and test",
           "permalink": "/go-live/build/",
-          "lastUpdate": "29-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         },
         {
           "title": "Deploy",
@@ -1859,7 +1859,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "20-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         }
       ],
       "numPages": 3
@@ -1889,7 +1889,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "20-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         }
       ],
       "numPages": 3
@@ -1939,7 +1939,7 @@
         {
           "title": "Build and test",
           "permalink": "/go-live/build/",
-          "lastUpdate": "29-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         },
         {
           "title": "Deploy",
@@ -1979,7 +1979,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "20-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         }
       ],
       "numPages": 5
@@ -2014,7 +2014,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "20-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         }
       ],
       "numPages": 6
@@ -2444,7 +2444,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "20-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         }
       ],
       "numPages": 1
@@ -2594,7 +2594,7 @@
         {
           "title": "Build and test",
           "permalink": "/go-live/build/",
-          "lastUpdate": "29-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         },
         {
           "title": "Deploy",
@@ -2854,7 +2854,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "20-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         }
       ],
       "numPages": 8
@@ -2869,7 +2869,7 @@
         {
           "title": "Build and test",
           "permalink": "/go-live/build/",
-          "lastUpdate": "29-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         },
         {
           "title": "Deploy",
@@ -2929,7 +2929,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "20-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         }
       ],
       "numPages": 3
@@ -2959,7 +2959,7 @@
         {
           "title": "Build and test",
           "permalink": "/go-live/build/",
-          "lastUpdate": "29-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         },
         {
           "title": "Deploy",
@@ -3009,7 +3009,7 @@
         {
           "title": "Config Options",
           "permalink": "/get-started/config-options/",
-          "lastUpdate": "20-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         }
       ],
       "numPages": 15
