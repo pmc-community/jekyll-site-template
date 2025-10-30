@@ -99,6 +99,8 @@ Deployment on Github pages is provided out-of-the-box by a deployment action.
 
 The action used for Github pages deployment is `deploy-site-multilang-no-py.yml` ans is named `(NO-PY) Manual Deploy Multilingual Jekyll site to Pages`. This action is designed to perform the minimum needed processing of the content for production and for deploying a multilanguage site (each language variant being hosted in a dedicated repository branch named with the two-digit language code). It is also designed to `not executing` the time consuming building tasks (the ones based on using Huggingface models or using intensive Python content processing), thus we emphasise again that `ALWAYS BUILD AND TEST THE SITE IN THE DEVELOPMENT ENVIRONMENT BEFORE DEPLOYING TO PRODUCTION`.
 
+See in the next video how a successful deployment on Github pages should look like:
+
 {% include elements/youtube.html 
     id="OzPopskhjL8" 
     width="640" 
@@ -121,6 +123,8 @@ Before deploying on Netlify it is necessary to configure the environment for the
   content="Please consult [Netlify documentation](https://docs.netlify.com/manage/domains/manage-domains/assign-a-domain-to-your-site-app){: target=\"_blank\"} to understand how to configure it for the site repository and for the site domain."
   title="Github pages" 
 %}
+
+See in the next video how a successful deployment on Netlify should look like:
 
 {% include elements/youtube.html 
     id="bOkA8w7muEA" 
