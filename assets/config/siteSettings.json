@@ -226,10 +226,10 @@
         "content"
       ],
       "excerpt": "alerts, github, permissions, documentation, added, contain, blocks, sources, docaroo, public",
-      "lastUpdate": "2025-10-05 17:01:55 +0300",
+      "lastUpdate": "2025-10-31 20:24:10 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-05 17:01:55 +0300",
-      "createTimeUTC": 1759672915,
+      "createTime": "2025-10-31 20:24:10 +0200",
+      "createTimeUTC": 1761935050,
       "relatedPages": [
         {
           "title": "FAQ Item",
@@ -707,10 +707,10 @@
         "organise docs"
       ],
       "excerpt": "github, external, repository, document, importing, modify, features, html, sources, private",
-      "lastUpdate": "2025-10-27 16:39:50 +0200",
+      "lastUpdate": "2025-10-31 20:24:10 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-27 16:39:50 +0200",
-      "createTimeUTC": 1761575990,
+      "createTime": "2025-10-31 20:24:10 +0200",
+      "createTimeUTC": 1761935050,
       "relatedPages": [
         {
           "title": "External content",
@@ -785,8 +785,24 @@
       "autoSummary": "Docaroo allows to your documents. External content is important because it allows you to create of content and import these parts in multiple places. It is possible to import content from external public and private GitHub repositories.",
       "similarByContent": [
         {
+          "permalink": "/content/intro/",
+          "title": "Content"
+        },
+        {
+          "permalink": "/content/content-items/",
+          "title": "Content items"
+        },
+        {
           "permalink": "/components/alerts/",
           "title": "Alerts"
+        },
+        {
+          "permalink": "/components/intro/",
+          "title": "Components"
+        },
+        {
+          "permalink": "/integrations/github/",
+          "title": "GitHub"
         }
       ],
       "readingTime": 5,
@@ -1998,7 +2014,7 @@
         {
           "title": "Alerts",
           "permalink": "/components/alerts/",
-          "lastUpdate": "05-Oct-2025"
+          "lastUpdate": "31-Oct-2025"
         }
       ],
       "numPages": 1
@@ -2258,7 +2274,7 @@
         {
           "title": "Alerts",
           "permalink": "/components/alerts/",
-          "lastUpdate": "05-Oct-2025"
+          "lastUpdate": "31-Oct-2025"
         },
         {
           "title": "Card",
@@ -2378,7 +2394,7 @@
         {
           "title": "Content",
           "permalink": "/content/intro/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "31-Oct-2025"
         },
         {
           "title": "Docs root",
@@ -2438,7 +2454,7 @@
         {
           "title": "Alerts",
           "permalink": "/components/alerts/",
-          "lastUpdate": "05-Oct-2025"
+          "lastUpdate": "31-Oct-2025"
         },
         {
           "title": "FAQ Item",
@@ -2853,7 +2869,7 @@
         {
           "title": "Content",
           "permalink": "/content/intro/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "31-Oct-2025"
         }
       ],
       "numPages": 1
@@ -3108,7 +3124,7 @@
         {
           "title": "Alerts",
           "permalink": "/components/alerts/",
-          "lastUpdate": "05-Oct-2025"
+          "lastUpdate": "31-Oct-2025"
         },
         {
           "title": "Card",
@@ -3188,7 +3204,7 @@
         {
           "title": "Content",
           "permalink": "/content/intro/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "31-Oct-2025"
         },
         {
           "title": "External content",

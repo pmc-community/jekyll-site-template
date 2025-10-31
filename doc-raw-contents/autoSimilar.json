@@ -76,7 +76,11 @@
     {
         "permalink": "/content/ec/",
         "similarFiles": [
-            "/components/alerts/"
+            "/content/intro/",
+            "/content/content-items/",
+            "/components/alerts/",
+            "/components/intro/",
+            "/integrations/github/"
         ]
     },
     {
