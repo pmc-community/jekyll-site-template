@@ -911,6 +911,204 @@
       "parent": ""
     },
     {
+      "title": "Custom annotations",
+      "permalink": "/taxonomies/custom-annotations/",
+      "categories": [
+        "Taxonomies"
+      ],
+      "tags": [
+        "annotation",
+        "custom",
+        "taxonomy"
+      ],
+      "excerpt": "annotations, user, document, placeholders, note",
+      "lastUpdate": "2025-10-31 13:51:10 +0200",
+      "lastUpdateUTC": 0,
+      "createTime": "2025-10-31 13:51:10 +0200",
+      "createTimeUTC": 1761911470,
+      "relatedPages": [
+        {
+          "title": "Custom notes",
+          "permalink": "/taxonomies/custom-notes/"
+        },
+        {
+          "title": "Custom tags",
+          "permalink": "/taxonomies/custom-tags/"
+        },
+        {
+          "title": "Sharing taxonomies",
+          "permalink": "/taxonomies/sharing/"
+        }
+      ],
+      "autoSummary": "Custom annotations are comments added by the user to parts of the documents. Can be seen and used only by theuser who created them. Working with custom annotations is possible only from the document body.",
+      "similarByContent": [],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
+      "title": "Custom categories",
+      "permalink": "/taxonomies/custom-cats/",
+      "categories": [
+        "Taxonomies"
+      ],
+      "tags": [
+        "category",
+        "custom",
+        "taxonomy"
+      ],
+      "excerpt": "documents",
+      "lastUpdate": "2025-10-31 13:24:11 +0200",
+      "lastUpdateUTC": 0,
+      "createTime": "2025-10-31 13:24:11 +0200",
+      "createTimeUTC": 1761909851,
+      "relatedPages": [
+        {
+          "title": "Custom tags",
+          "permalink": "/taxonomies/custom-tags/"
+        },
+        {
+          "title": "Custom annotations",
+          "permalink": "/taxonomies/custom-annotations/"
+        },
+        {
+          "title": "Custom notes",
+          "permalink": "/taxonomies/custom-notes/"
+        }
+      ],
+      "autoSummary": "Adding, removing and updating custom categories works exactly in the same way as the similar features related to the custom tags. The only feature that is not available for custom categories is adding custom categories to documents from selected text in the document body.",
+      "similarByContent": [
+        {
+          "permalink": "/taxonomies/custom-tags/",
+          "title": "Custom tags"
+        }
+      ],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
+      "title": "Custom notes",
+      "permalink": "/taxonomies/custom-notes/",
+      "categories": [
+        "Taxonomies"
+      ],
+      "tags": [
+        "notes",
+        "custom",
+        "taxonomy"
+      ],
+      "excerpt": "document, user, placeholders, note, annotations",
+      "lastUpdate": "2025-10-31 13:35:06 +0200",
+      "lastUpdateUTC": 0,
+      "createTime": "2025-10-31 13:35:06 +0200",
+      "createTimeUTC": 1761910506,
+      "relatedPages": [
+        {
+          "title": "Custom annotations",
+          "permalink": "/taxonomies/custom-annotations/"
+        },
+        {
+          "title": "Custom tags",
+          "permalink": "/taxonomies/custom-tags/"
+        },
+        {
+          "title": "Taxonomies",
+          "permalink": "/taxonomies/intro/"
+        }
+      ],
+      "autoSummary": "Custom notes are comments added by the user to the documents. Can be seen and used only by theuser who created them. Working with custom notes is possible only from the document info panel.",
+      "similarByContent": [],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
+      "title": "Custom tags",
+      "permalink": "/taxonomies/custom-tags/",
+      "categories": [
+        "Taxonomies"
+      ],
+      "tags": [
+        "tag",
+        "custom",
+        "taxonomy"
+      ],
+      "excerpt": "documents, desktop, document, option, feature",
+      "lastUpdate": "2025-10-31 14:24:53 +0200",
+      "lastUpdateUTC": 0,
+      "createTime": "2025-10-31 14:24:53 +0200",
+      "createTimeUTC": 1761913493,
+      "relatedPages": [
+        {
+          "title": "Custom categories",
+          "permalink": "/taxonomies/custom-cats/"
+        },
+        {
+          "title": "Custom annotations",
+          "permalink": "/taxonomies/custom-annotations/"
+        },
+        {
+          "title": "Custom notes",
+          "permalink": "/taxonomies/custom-notes/"
+        }
+      ],
+      "autoSummary": "Custom tags can be added to the current document directly selecting a group of words (usually, max. 3 words or 20 characters) and applying tag document option (this feature is available on desktop only). If the site uses algolia docsearch, there is another feature available when selecting text in a.",
+      "similarByContent": [
+        {
+          "permalink": "/taxonomies/intro/",
+          "title": "Taxonomies"
+        }
+      ],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
+      "title": "Sharing taxonomies",
+      "permalink": "/taxonomies/sharing/",
+      "categories": [
+        "Taxonomies"
+      ],
+      "tags": [
+        "annotation",
+        "notes",
+        "tag",
+        "category",
+        "custom",
+        "taxonomy"
+      ],
+      "excerpt": "active, users, installation, development, processes",
+      "lastUpdate": "2025-10-31 14:27:53 +0200",
+      "lastUpdateUTC": 0,
+      "createTime": "2025-10-31 14:27:53 +0200",
+      "createTimeUTC": 1761913673,
+      "relatedPages": [
+        {
+          "title": "Custom annotations",
+          "permalink": "/taxonomies/custom-annotations/"
+        },
+        {
+          "title": "Custom notes",
+          "permalink": "/taxonomies/custom-notes/"
+        },
+        {
+          "title": "Custom tags",
+          "permalink": "/taxonomies/custom-tags/"
+        }
+      ],
+      "autoSummary": "Sharing custom taxonomies is a feature that allows the users to save and load a certain custom taxonomy configuration. This means that custom taxonomicies can be used by may users or, maybe even more important, a user can configure multiple custom taxonenies and load them to fit the purpose of.",
+      "similarByContent": [
+        {
+          "permalink": "/taxonomies/intro/",
+          "title": "Taxonomies"
+        }
+      ],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
       "title": "Taxonomies",
       "permalink": "/taxonomies/intro/",
       "categories": [
@@ -923,13 +1121,35 @@
         "annotations"
       ],
       "excerpt": "user, categories, documents, users, classification",
-      "lastUpdate": "2025-10-29 15:35:35 +0200",
+      "lastUpdate": "2025-10-30 19:59:56 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-29 15:35:35 +0200",
-      "createTimeUTC": 1761744935,
-      "relatedPages": [],
-      "autoSummary": "Custom taxonomies allow users to organise the information in a way that suits their preference. There is no limit in how many ways the documentation can be organised.",
-      "similarByContent": [],
+      "createTime": "2025-10-30 19:59:56 +0200",
+      "createTimeUTC": 1761847196,
+      "relatedPages": [
+        {
+          "title": "Custom notes",
+          "permalink": "/taxonomies/custom-notes/"
+        },
+        {
+          "title": "Sharing taxonomies",
+          "permalink": "/taxonomies/sharing/"
+        },
+        {
+          "title": "Custom categories",
+          "permalink": "/taxonomies/custom-cats/"
+        }
+      ],
+      "autoSummary": "Custom taxonomies allow users to organise the information in a way that suits their preference. There is no limit in how many ways the documentation can be organised using custom taxonomyies.",
+      "similarByContent": [
+        {
+          "permalink": "/taxonomies/sharing/",
+          "title": "Sharing taxonomies"
+        },
+        {
+          "permalink": "/taxonomies/custom-tags/",
+          "title": "Custom tags"
+        }
+      ],
       "readingTime": 3,
       "hasDynamicContent": false,
       "parent": ""
@@ -998,16 +1218,16 @@
       "createTimeUTC": 1759673895,
       "relatedPages": [
         {
+          "title": "GitHub",
+          "permalink": "/integrations/github/"
+        },
+        {
           "title": "Config Options",
           "permalink": "/get-started/config-options/"
         },
         {
           "title": "Config Files",
           "permalink": "/get-started/config-files/"
-        },
-        {
-          "title": "GitHub",
-          "permalink": "/integrations/github/"
         }
       ],
       "autoSummary": "Environment variables are used only at build time. At run time (in dev or production environments) the environment variables are not used anymore. They are mostly used to store values that should never be exposed, such as access keys and tokens that are used to integrate some external features and.",
@@ -1611,18 +1831,21 @@
     "algolia",
     "analytics",
     "anchor",
+    "annotation",
     "annotations",
     "appearance",
     "build",
     "button",
     "card",
     "categories",
+    "category",
     "chart",
     "code",
     "collections",
     "component",
     "configuration",
     "content",
+    "custom",
     "deploy",
     "docs",
     "documentation",
@@ -1666,8 +1889,10 @@
     "summary",
     "table",
     "tabs",
+    "tag",
     "tag manager",
     "tags",
+    "taxonomy",
     "test",
     "variable",
     "video",
@@ -1719,12 +1944,27 @@
       ],
       "numPages": 1
     },
+    "annotation": {
+      "pages": [
+        {
+          "title": "Custom annotations",
+          "permalink": "/taxonomies/custom-annotations/",
+          "lastUpdate": "31-Oct-2025"
+        },
+        {
+          "title": "Sharing taxonomies",
+          "permalink": "/taxonomies/sharing/",
+          "lastUpdate": "31-Oct-2025"
+        }
+      ],
+      "numPages": 2
+    },
     "annotations": {
       "pages": [
         {
           "title": "Taxonomies",
           "permalink": "/taxonomies/intro/",
-          "lastUpdate": "29-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         }
       ],
       "numPages": 1
@@ -1814,10 +2054,25 @@
         {
           "title": "Taxonomies",
           "permalink": "/taxonomies/intro/",
-          "lastUpdate": "29-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         }
       ],
       "numPages": 1
+    },
+    "category": {
+      "pages": [
+        {
+          "title": "Custom categories",
+          "permalink": "/taxonomies/custom-cats/",
+          "lastUpdate": "31-Oct-2025"
+        },
+        {
+          "title": "Sharing taxonomies",
+          "permalink": "/taxonomies/sharing/",
+          "lastUpdate": "31-Oct-2025"
+        }
+      ],
+      "numPages": 2
     },
     "chart": {
       "pages": [
@@ -1938,6 +2193,36 @@
         }
       ],
       "numPages": 6
+    },
+    "custom": {
+      "pages": [
+        {
+          "title": "Custom annotations",
+          "permalink": "/taxonomies/custom-annotations/",
+          "lastUpdate": "31-Oct-2025"
+        },
+        {
+          "title": "Custom categories",
+          "permalink": "/taxonomies/custom-cats/",
+          "lastUpdate": "31-Oct-2025"
+        },
+        {
+          "title": "Custom notes",
+          "permalink": "/taxonomies/custom-notes/",
+          "lastUpdate": "31-Oct-2025"
+        },
+        {
+          "title": "Custom tags",
+          "permalink": "/taxonomies/custom-tags/",
+          "lastUpdate": "31-Oct-2025"
+        },
+        {
+          "title": "Sharing taxonomies",
+          "permalink": "/taxonomies/sharing/",
+          "lastUpdate": "31-Oct-2025"
+        }
+      ],
+      "numPages": 5
     },
     "deploy": {
       "pages": [
@@ -2412,12 +2697,22 @@
     "notes": {
       "pages": [
         {
+          "title": "Custom notes",
+          "permalink": "/taxonomies/custom-notes/",
+          "lastUpdate": "31-Oct-2025"
+        },
+        {
+          "title": "Sharing taxonomies",
+          "permalink": "/taxonomies/sharing/",
+          "lastUpdate": "31-Oct-2025"
+        },
+        {
           "title": "Taxonomies",
           "permalink": "/taxonomies/intro/",
-          "lastUpdate": "29-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         }
       ],
-      "numPages": 1
+      "numPages": 3
     },
     "office": {
       "pages": [
@@ -2574,6 +2869,21 @@
       ],
       "numPages": 1
     },
+    "tag": {
+      "pages": [
+        {
+          "title": "Custom tags",
+          "permalink": "/taxonomies/custom-tags/",
+          "lastUpdate": "31-Oct-2025"
+        },
+        {
+          "title": "Sharing taxonomies",
+          "permalink": "/taxonomies/sharing/",
+          "lastUpdate": "31-Oct-2025"
+        }
+      ],
+      "numPages": 2
+    },
     "tag manager": {
       "pages": [
         {
@@ -2589,10 +2899,40 @@
         {
           "title": "Taxonomies",
           "permalink": "/taxonomies/intro/",
-          "lastUpdate": "29-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         }
       ],
       "numPages": 1
+    },
+    "taxonomy": {
+      "pages": [
+        {
+          "title": "Custom annotations",
+          "permalink": "/taxonomies/custom-annotations/",
+          "lastUpdate": "31-Oct-2025"
+        },
+        {
+          "title": "Custom categories",
+          "permalink": "/taxonomies/custom-cats/",
+          "lastUpdate": "31-Oct-2025"
+        },
+        {
+          "title": "Custom notes",
+          "permalink": "/taxonomies/custom-notes/",
+          "lastUpdate": "31-Oct-2025"
+        },
+        {
+          "title": "Custom tags",
+          "permalink": "/taxonomies/custom-tags/",
+          "lastUpdate": "31-Oct-2025"
+        },
+        {
+          "title": "Sharing taxonomies",
+          "permalink": "/taxonomies/sharing/",
+          "lastUpdate": "31-Oct-2025"
+        }
+      ],
+      "numPages": 5
     },
     "test": {
       "pages": [
@@ -3027,12 +3367,37 @@
     "Taxonomies": {
       "pages": [
         {
+          "title": "Custom annotations",
+          "permalink": "/taxonomies/custom-annotations/",
+          "lastUpdate": "31-Oct-2025"
+        },
+        {
+          "title": "Custom categories",
+          "permalink": "/taxonomies/custom-cats/",
+          "lastUpdate": "31-Oct-2025"
+        },
+        {
+          "title": "Custom notes",
+          "permalink": "/taxonomies/custom-notes/",
+          "lastUpdate": "31-Oct-2025"
+        },
+        {
+          "title": "Custom tags",
+          "permalink": "/taxonomies/custom-tags/",
+          "lastUpdate": "31-Oct-2025"
+        },
+        {
+          "title": "Sharing taxonomies",
+          "permalink": "/taxonomies/sharing/",
+          "lastUpdate": "31-Oct-2025"
+        },
+        {
           "title": "Taxonomies",
           "permalink": "/taxonomies/intro/",
-          "lastUpdate": "29-Oct-2025"
+          "lastUpdate": "30-Oct-2025"
         }
       ],
-      "numPages": 1
+      "numPages": 6
     }
   },
   "hsSettings": {

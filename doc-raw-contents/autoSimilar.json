@@ -181,6 +181,35 @@
     },
     {
         "permalink": "/taxonomies/intro/",
+        "similarFiles": [
+            "/taxonomies/sharing/",
+            "/taxonomies/custom-tags/"
+        ]
+    },
+    {
+        "permalink": "/taxonomies/custom-tags/",
+        "similarFiles": [
+            "/taxonomies/intro/"
+        ]
+    },
+    {
+        "permalink": "/taxonomies/custom-cats/",
+        "similarFiles": [
+            "/taxonomies/custom-tags/"
+        ]
+    },
+    {
+        "permalink": "/taxonomies/custom-notes/",
         "similarFiles": []
+    },
+    {
+        "permalink": "/taxonomies/custom-annotations/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/taxonomies/sharing/",
+        "similarFiles": [
+            "/taxonomies/intro/"
+        ]
     }
 ]

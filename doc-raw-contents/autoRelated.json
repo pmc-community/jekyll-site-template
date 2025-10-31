@@ -289,8 +289,106 @@
     ]
   },
   {
+    "permalink": "/taxonomies/custom-annotations/",
+    "related": [
+      {
+        "title": "Custom notes",
+        "permalink": "/taxonomies/custom-notes/"
+      },
+      {
+        "title": "Custom tags",
+        "permalink": "/taxonomies/custom-tags/"
+      },
+      {
+        "title": "Sharing taxonomies",
+        "permalink": "/taxonomies/sharing/"
+      }
+    ]
+  },
+  {
+    "permalink": "/taxonomies/custom-cats/",
+    "related": [
+      {
+        "title": "Custom tags",
+        "permalink": "/taxonomies/custom-tags/"
+      },
+      {
+        "title": "Custom annotations",
+        "permalink": "/taxonomies/custom-annotations/"
+      },
+      {
+        "title": "Custom notes",
+        "permalink": "/taxonomies/custom-notes/"
+      }
+    ]
+  },
+  {
+    "permalink": "/taxonomies/custom-notes/",
+    "related": [
+      {
+        "title": "Custom annotations",
+        "permalink": "/taxonomies/custom-annotations/"
+      },
+      {
+        "title": "Custom tags",
+        "permalink": "/taxonomies/custom-tags/"
+      },
+      {
+        "title": "Taxonomies",
+        "permalink": "/taxonomies/intro/"
+      }
+    ]
+  },
+  {
+    "permalink": "/taxonomies/custom-tags/",
+    "related": [
+      {
+        "title": "Custom categories",
+        "permalink": "/taxonomies/custom-cats/"
+      },
+      {
+        "title": "Custom annotations",
+        "permalink": "/taxonomies/custom-annotations/"
+      },
+      {
+        "title": "Custom notes",
+        "permalink": "/taxonomies/custom-notes/"
+      }
+    ]
+  },
+  {
+    "permalink": "/taxonomies/sharing/",
+    "related": [
+      {
+        "title": "Custom annotations",
+        "permalink": "/taxonomies/custom-annotations/"
+      },
+      {
+        "title": "Custom notes",
+        "permalink": "/taxonomies/custom-notes/"
+      },
+      {
+        "title": "Custom tags",
+        "permalink": "/taxonomies/custom-tags/"
+      }
+    ]
+  },
+  {
     "permalink": "/taxonomies/intro/",
-    "related": []
+    "related": [
+      {
+        "title": "Custom notes",
+        "permalink": "/taxonomies/custom-notes/"
+      },
+      {
+        "title": "Sharing taxonomies",
+        "permalink": "/taxonomies/sharing/"
+      },
+      {
+        "title": "Custom categories",
+        "permalink": "/taxonomies/custom-cats/"
+      }
+    ]
   },
   {
     "permalink": "/get-started/doc-contents/",
@@ -313,16 +411,16 @@
     "permalink": "/get-started/env/",
     "related": [
       {
+        "title": "GitHub",
+        "permalink": "/integrations/github/"
+      },
+      {
         "title": "Config Options",
         "permalink": "/get-started/config-options/"
       },
       {
         "title": "Config Files",
         "permalink": "/get-started/config-files/"
-      },
-      {
-        "title": "GitHub",
-        "permalink": "/integrations/github/"
       }
     ]
   },

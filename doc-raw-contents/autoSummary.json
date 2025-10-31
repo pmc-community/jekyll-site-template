@@ -150,7 +150,27 @@
         },
         {
             "permalink": "/taxonomies/intro/",
-            "summary": "Custom taxonomies allow users to organise the information in a way that suits their preference. There is no limit in how many ways the documentation can be organised."
+            "summary": "Custom taxonomies allow users to organise the information in a way that suits their preference. There is no limit in how many ways the documentation can be organised using custom taxonomyies."
+        },
+        {
+            "permalink": "/taxonomies/custom-tags/",
+            "summary": "Custom tags can be added to the current document directly selecting a group of words (usually, max. 3 words or 20 characters) and applying tag document option (this feature is available on desktop only). If the site uses algolia docsearch, there is another feature available when selecting text in a."
+        },
+        {
+            "permalink": "/taxonomies/custom-cats/",
+            "summary": "Adding, removing and updating custom categories works exactly in the same way as the similar features related to the custom tags. The only feature that is not available for custom categories is adding custom categories to documents from selected text in the document body."
+        },
+        {
+            "permalink": "/taxonomies/custom-notes/",
+            "summary": "Custom notes are comments added by the user to the documents. Can be seen and used only by theuser who created them. Working with custom notes is possible only from the document info panel."
+        },
+        {
+            "permalink": "/taxonomies/custom-annotations/",
+            "summary": "Custom annotations are comments added by the user to parts of the documents. Can be seen and used only by theuser who created them. Working with custom annotations is possible only from the document body."
+        },
+        {
+            "permalink": "/taxonomies/sharing/",
+            "summary": "Sharing custom taxonomies is a feature that allows the users to save and load a certain custom taxonomy configuration. This means that custom taxonomicies can be used by may users or, maybe even more important, a user can configure multiple custom taxonenies and load them to fit the purpose of."
         }
     ]
 }

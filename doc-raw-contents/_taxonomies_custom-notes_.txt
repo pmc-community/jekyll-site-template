@@ -1,0 +1,1 @@
+custom notes are comments added by the user to the documents. can be seen and used only by the user who created them. working with custom notes is possible only from the document info panel. note the difference between a custom note and a custom annotation is that a note is connected to a document, while annotations are connected to parts or placeholders inside a document.

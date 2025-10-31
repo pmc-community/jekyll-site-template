@@ -398,6 +398,124 @@
     "parent": ""
   },
   {
+    "title": "Custom annotations",
+    "permalink": "/taxonomies/custom-annotations/",
+    "categories": [
+      "Taxonomies"
+    ],
+    "tags": [
+      "annotation",
+      "custom",
+      "taxonomy"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-10-31 13:51:10 +0200",
+    "lastUpdateUTC": 1761911470,
+    "createTime": "2025-10-31 13:51:10 +0200",
+    "createTimeUTC": 1761911470,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Custom categories",
+    "permalink": "/taxonomies/custom-cats/",
+    "categories": [
+      "Taxonomies"
+    ],
+    "tags": [
+      "category",
+      "custom",
+      "taxonomy"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-10-31 13:24:11 +0200",
+    "lastUpdateUTC": 1761909851,
+    "createTime": "2025-10-31 13:24:11 +0200",
+    "createTimeUTC": 1761909851,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Custom notes",
+    "permalink": "/taxonomies/custom-notes/",
+    "categories": [
+      "Taxonomies"
+    ],
+    "tags": [
+      "notes",
+      "custom",
+      "taxonomy"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-10-31 13:35:06 +0200",
+    "lastUpdateUTC": 1761910506,
+    "createTime": "2025-10-31 13:35:06 +0200",
+    "createTimeUTC": 1761910506,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Custom tags",
+    "permalink": "/taxonomies/custom-tags/",
+    "categories": [
+      "Taxonomies"
+    ],
+    "tags": [
+      "tag",
+      "custom",
+      "taxonomy"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-10-31 14:24:53 +0200",
+    "lastUpdateUTC": 1761913493,
+    "createTime": "2025-10-31 14:24:53 +0200",
+    "createTimeUTC": 1761913493,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Sharing taxonomies",
+    "permalink": "/taxonomies/sharing/",
+    "categories": [
+      "Taxonomies"
+    ],
+    "tags": [
+      "annotation",
+      "notes",
+      "tag",
+      "category",
+      "custom",
+      "taxonomy"
+    ],
+    "excerpt": "",
+    "lastUpdate": "2025-10-31 14:27:53 +0200",
+    "lastUpdateUTC": 1761913673,
+    "createTime": "2025-10-31 14:27:53 +0200",
+    "createTimeUTC": 1761913673,
+    "relatedPages": [],
+    "autoSummary": "",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
     "title": "Taxonomies",
     "permalink": "/taxonomies/intro/",
     "categories": [
@@ -410,10 +528,10 @@
       "annotations"
     ],
     "excerpt": "",
-    "lastUpdate": "2025-10-29 15:35:35 +0200",
-    "lastUpdateUTC": 1761744935,
-    "createTime": "2025-10-29 15:35:35 +0200",
-    "createTimeUTC": 1761744935,
+    "lastUpdate": "2025-10-30 19:59:56 +0200",
+    "lastUpdateUTC": 1761847196,
+    "createTime": "2025-10-30 19:59:56 +0200",
+    "createTimeUTC": 1761847196,
     "relatedPages": [],
     "autoSummary": "",
     "similarByContent": [],

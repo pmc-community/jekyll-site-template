@@ -6,6 +6,7 @@ nav_order: 1
 start: true
 categories: [Taxonomies]
 tags: [tags, categories, notes, annotations]
+nav_order: 1
 ---
 
 # Summary
@@ -14,7 +15,19 @@ One of the most powerful features we offer out-of-the-box is defining and using 
 {% include elements/alert.html 
   class="warning" 
   content="Taxonomy systems are composed from tags, categories, document notes and in-document annotations. Be aware that custom tags and categories cannot duplicate the ones coming defined at build time."
-  title="Cutom taxonomy" 
+  title="Custom taxonomy" 
+%}
+
+# Tags
+We will use the following classification:
+- `Site tags`: The built-in tags created when the documents are drafted. Once the site is built, these tags cannot be further modified by the user
+- `Custom tags`: Tags that can be added/modified/removed by the user. These can be seen and used only by the user who created them. However, sharing with other users it is possible.
+
+{% include elements/link-btn.html 
+    type="warning" 
+    text="Custom tags" 
+    href="/taxonomies/custom-tags/"
+    newTab="true" 
 %}
 
 # Categories
@@ -22,31 +35,47 @@ We will use the following classification:
 - `Site categories`: The built-in categories created when the documents are drafted. Once the site is built, these categories cannot be further modified by the user
 - `Custom categories`: Categories that can be added/modified/removed by the user. These can be seen and used only by the user who created them. However, sharing with other users it is possible.
 
-# Tags
-We will use the following classification:
-- `Site tags`: The built-in tags created when the documents are drafted. Once the site is built, these tags cannot be further modified by the user
-- `Custom tags`: Tags that can be added/modified/removed by the user. These can be seen and used only by the user who created them. However, sharing with other users it is possible.
+{% include elements/link-btn.html 
+    type="warning" 
+    text="Custom categories" 
+    href="/taxonomies/custom-cats/"
+    newTab="true" 
+%}
 
 # Notes
-These are comments added by the user to the documents. Can be seen and used only by the user who creted them. However, sharing with other users it is possible.
+These are comments added by the user to the documents. Can be seen and used only by the user who created them. However, sharing with other users it is possible.
 
 {% include elements/alert.html 
   class="warning" 
-  content="The traditional blog posts comments feature is not available since the site is a static site (no backend provided by default). If such feature is manadatory for the goals you follow, consider to deploy on Netifly and use Netlify functions or comments plugins (if available) or consider to develop your won backend (Cloudflare workers and turnstile may be a good option for developing a backend)"
+  content="The traditional blog posts comments feature is not available since the site is a static site (no backend provided by default). If such feature is mandatory for the goals you follow, consider to deploy on Netlify and use Netlify functions or comments plugins (if available) or consider to develop your won backend (Cloudflare workers and turnstile may be a good option for developing a backend)"
   title="Info" 
+%}
+
+{% include elements/link-btn.html 
+    type="warning" 
+    text="Custom notes" 
+    href="/taxonomies/custom-notes/"
+    newTab="true" 
 %}
 
 # Annotation
-These are comments added by users to specific sections or parts of the text from a document. Can be seen and used only by the user who creted them. However, sharing with other users it is possible.
+These are comments added by users to specific sections or parts of the text from a document. Can be seen and used only by the user who created them. However, sharing with other users it is possible.
 
 {% include elements/alert.html 
   class="warning" 
-  content="The traditional blog posts comments feature is not available since the site is a static site (no backend provided by default). If such feature is manadatory for the goals you follow, consider to deploy on Netifly and use Netlify functions or comments plugins (if available) or consider to develop your won backend (Cloudflare workers and turnstile may be a good option for developing a backend)"
+  content="The traditional blog posts comments feature is not available since the site is a static site (no backend provided by default). If such feature is mandatory for the goals you follow, consider to deploy on Netlify and use Netlify functions or a comments plugins (if available) or consider to develop your own backend (Cloudflare workers and turnstile may be a good option for developing such backend)"
   title="Info" 
 %}
 
+{% include elements/link-btn.html 
+    type="warning" 
+    text="Custom annotations" 
+    href="/taxonomies/custom-annotations/"
+    newTab="true" 
+%}
+
 # Manage taxonomies
-We provide the features needed for managing the custom taxonomy system. Additionally, custom taxonomies are completelly integrated in the site search as long as Algolia is used (DocSearch or Search) as search engine.
+We provide the features needed for managing the custom taxonomy system. Additionally, custom taxonomies are completely integrated in the site search as long as Algolia is used (DocSearch or Search) as search engine.
 
 {% capture buttons %}
     type=primary|outline=false|text="Tags"|href="/tag-info/"|newTab=true,
@@ -56,4 +85,4 @@ We provide the features needed for managing the custom taxonomy system. Addition
 {% include elements/link-btn-group.html buttons=buttons %}
 
 # Enable custom taxonomies
-To use custom taxonomies on documents it is necessary to `save` a reference to the document to the user's device. 
+To use custom taxonomies on documents it is necessary to `save` a reference to the document to the user's device. This can be made from the document info panel or from the document management tool.

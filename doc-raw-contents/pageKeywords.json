@@ -389,6 +389,52 @@
         "users",
         "classification"
       ]
+    },
+    {
+      "permalink": "/taxonomies/custom-tags/",
+      "keywords": [
+        "documents",
+        "desktop",
+        "document",
+        "option",
+        "feature"
+      ]
+    },
+    {
+      "permalink": "/taxonomies/custom-cats/",
+      "keywords": [
+        "documents"
+      ]
+    },
+    {
+      "permalink": "/taxonomies/custom-notes/",
+      "keywords": [
+        "document",
+        "user",
+        "placeholders",
+        "note",
+        "annotations"
+      ]
+    },
+    {
+      "permalink": "/taxonomies/custom-annotations/",
+      "keywords": [
+        "annotations",
+        "user",
+        "document",
+        "placeholders",
+        "note"
+      ]
+    },
+    {
+      "permalink": "/taxonomies/sharing/",
+      "keywords": [
+        "active",
+        "users",
+        "installation",
+        "development",
+        "processes"
+      ]
     }
   ]
 }
