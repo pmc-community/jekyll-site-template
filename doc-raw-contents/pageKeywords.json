@@ -1,439 +1,603 @@
 {
   "keywords": [
     {
-      "permalink": "/components/qitem/",
-      "keywords": [
-        "answer",
-        "content",
-        "time",
-        "header",
-        "docaroo"
-      ]
-    },
-    {
-      "permalink": "/components/link-button/",
-      "keywords": [
-        "document",
-        "link",
-        "buttons",
-        "button",
-        "links"
-      ]
-    },
-    {
-      "permalink": "/content/intro/",
-      "keywords": [
-        "content",
-        "documents",
-        "documentation",
-        "document",
-        "folder"
-      ]
-    },
-    {
-      "permalink": "/content/ec/",
-      "keywords": [
-        "content",
-        "type",
-        "aware",
-        "time",
-        "markers"
-      ]
-    },
-    {
-      "permalink": "/components/rich-media/",
-      "keywords": [
-        "figma",
-        "public",
-        "design",
-        "file",
-        "permissions"
-      ]
-    },
-    {
       "permalink": "/components/alerts/",
       "keywords": [
-        "content",
         "alerts",
-        "private",
-        "repo",
-        "key"
-      ]
-    },
-    {
-      "permalink": "/intro/",
-      "keywords": [
-        "guide",
+        "github",
+        "permissions",
         "documentation",
-        "content",
-        "structure",
-        "markdown"
-      ]
-    },
-    {
-      "permalink": "/components/intro/",
-      "keywords": [
-        "content",
-        "docs",
-        "components",
-        "documents",
-        "docaroo"
-      ]
-    },
-    {
-      "permalink": "/get-started/",
-      "keywords": [
-        "documentation",
-        "browser",
-        "settings",
-        "incompatibility",
-        "docaroo"
-      ]
-    },
-    {
-      "permalink": "/components/scrollspy/",
-      "keywords": [
-        "folder",
-        "documents",
-        "document",
-        "content",
-        "regular"
-      ]
-    },
-    {
-      "permalink": "/components/content-items/",
-      "keywords": [
+        "added",
+        "contain",
+        "blocks",
+        "sources",
         "docaroo",
-        "series",
-        "content",
-        "items",
-        "enrich",
-        "documents",
-        "efficient",
-        "incorporate",
-        "piecers"
-      ]
-    },
-    {
-      "permalink": "/components/downloads/",
-      "keywords": [
-        "download"
-      ]
-    },
-    {
-      "permalink": "/components/download-link/",
-      "keywords": [
-        "directory",
-        "download",
-        "file",
-        "document",
-        "default"
-      ]
-    },
-    {
-      "permalink": "/components/xlsx-tables/",
-      "keywords": [
-        "table",
-        "tables",
-        "cells",
-        "component",
-        "markdown"
-      ]
-    },
-    {
-      "permalink": "/components/xlsx-charts/",
-      "keywords": [
-        "component",
-        "folder",
-        "documents",
-        "colours",
-        "excel"
-      ]
-    },
-    {
-      "permalink": "/components/image/",
-      "keywords": [
-        "images",
-        "image",
-        "path",
-        "gallery",
-        "folder"
-      ]
-    },
-    {
-      "permalink": "/content/content-items/",
-      "keywords": [
-        "content",
-        "documentation",
-        "charts",
-        "documents",
-        "markdown"
+        "public"
       ]
     },
     {
       "permalink": "/components/card/",
       "keywords": [
-        "cards",
         "card",
+        "galleries",
+        "docaroo",
+        "create",
+        "component",
+        "settings",
+        "links",
+        "embedding",
+        "documents",
+        "examples"
+      ]
+    },
+    {
+      "permalink": "/components/intro/",
+      "keywords": [
+        "components",
+        "formatting",
+        "tags",
+        "markdown",
         "content",
+        "faq",
+        "document",
+        "embedded",
+        "inline",
+        "docaroo"
+      ]
+    },
+    {
+      "permalink": "/components/download-link/",
+      "keywords": [
+        "download",
         "documentation",
+        "directory",
+        "link",
+        "button",
+        "external",
+        "generates",
+        "default",
+        "files",
+        "component"
+      ]
+    },
+    {
+      "permalink": "/components/qitem/",
+      "keywords": [
+        "faq",
+        "markdown",
+        "contain",
+        "search",
+        "header",
+        "adding",
+        "texts",
+        "format",
+        "content",
         "readability"
+      ]
+    },
+    {
+      "permalink": "/components/image/",
+      "keywords": [
+        "captions",
+        "documentation",
+        "image",
+        "folder",
+        "component",
+        "pages",
+        "examples",
+        "content",
+        "render",
+        "stored"
+      ]
+    },
+    {
+      "permalink": "/components/link-button/",
+      "keywords": [
+        "links",
+        "bootstrap",
+        "add",
+        "click",
+        "button",
+        "permalink",
+        "docaroo",
+        "markdown",
+        "outline",
+        "navigate"
+      ]
+    },
+    {
+      "permalink": "/components/rich-media/",
+      "keywords": [
+        "embed",
+        "figma",
+        "docaroo",
+        "components",
+        "documentation",
+        "slides",
+        "prototypes",
+        "jam",
+        "decks",
+        "media"
+      ]
+    },
+    {
+      "permalink": "/components/scrollspy/",
+      "keywords": [
+        "scroll",
+        "markdown",
+        "document",
+        "folder",
+        "spies",
+        "importing",
+        "stored",
+        "docaroo",
+        "ullamcorper",
+        "interdum"
+      ]
+    },
+    {
+      "permalink": "/components/xlsx-charts/",
+      "keywords": [
+        "excel",
+        "charts",
+        "data",
+        "component",
+        "files",
+        "importing",
+        "formats",
+        "sheet",
+        "default",
+        "colours"
+      ]
+    },
+    {
+      "permalink": "/components/xlsx-tables/",
+      "keywords": [
+        "markdown",
+        "tables",
+        "excel",
+        "column",
+        "widths",
+        "import",
+        "create",
+        "merged",
+        "loading",
+        "featured"
+      ]
+    },
+    {
+      "permalink": "/content/content-items/",
+      "keywords": [
+        "docaroo",
+        "documentations",
+        "content",
+        "useful",
+        "markdown",
+        "render",
+        "directory",
+        "repository",
+        "changes",
+        "github"
+      ]
+    },
+    {
+      "permalink": "/content/intro/",
+      "keywords": [
+        "github",
+        "external",
+        "repository",
+        "document",
+        "importing",
+        "modify",
+        "features",
+        "html",
+        "sources",
+        "private"
+      ]
+    },
+    {
+      "permalink": "/content/ec/",
+      "keywords": [
+        "docaroo",
+        "documentation",
+        "import",
+        "github",
+        "indexed",
+        "shortcodes",
+        "repositories",
+        "api",
+        "wordpress",
+        "features"
+      ]
+    },
+    {
+      "permalink": "/experiments/docx-summary/",
+      "keywords": [
+        "docx",
+        "generates",
+        "download",
+        "updates",
+        "component",
+        "document",
+        "huggingface",
+        "rendered",
+        "summary",
+        "source"
       ]
     },
     {
       "permalink": "/experiments/intro/",
       "keywords": [
         "experiments",
-        "production",
-        "content",
-        "component",
-        "subject"
+        "features",
+        "pdf",
+        "build",
+        "generated",
+        "optimise",
+        "docx",
+        "summarise",
+        "dev",
+        "corrections"
       ]
     },
     {
       "permalink": "/experiments/pdf-summary/",
       "keywords": [
-        "summary",
+        "pdf",
+        "generates",
+        "render",
+        "updates",
         "component",
-        "models",
         "huggingface",
-        "corrections"
-      ]
-    },
-    {
-      "permalink": "/experiments/docx-summary/",
-      "keywords": [
-        "summary",
-        "component",
-        "models",
-        "huggingface",
-        "corrections"
-      ]
-    },
-    {
-      "permalink": "/get-started/doc-contents/",
-      "keywords": [
-        "documentation",
-        "folder",
-        "collections",
-        "documents",
-        "structure"
-      ]
-    },
-    {
-      "permalink": "/get-started/site-config/",
-      "keywords": [
-        "docaroo",
-        "provide",
-        "multiple",
-        "options",
-        "configure",
-        "functionality",
-        "appearence",
-        "configurations",
-        "_config",
-        "yml"
-      ]
-    },
-    {
-      "permalink": "/get-started/config-files/",
-      "keywords": [
-        "docaroo",
-        "provide",
-        "multiple",
-        "options",
-        "configure",
-        "functionality",
-        "appearance",
-        "configurations",
-        "_config",
-        "yml"
-      ]
-    },
-    {
-      "permalink": "/get-started/config-options/",
-      "keywords": [
-        "functionalities",
-        "personalisation",
-        "appearance",
-        "options",
-        "_config.yml"
-      ]
-    },
-    {
-      "permalink": "/get-started/env/",
-      "keywords": [
-        "variables",
-        "tokens",
-        "note",
-        "time",
-        "features"
-      ]
-    },
-    {
-      "permalink": "/integrate/",
-      "keywords": [
-        "integrations",
-        "performance",
-        "feedback",
-        "users",
-        "functionalities"
-      ]
-    },
-    {
-      "permalink": "/integrations/ga-gtm/",
-      "keywords": [
-        "event",
-        "hook",
-        "gtm",
-        "configurations",
-        "integration"
-      ]
-    },
-    {
-      "permalink": "/integrations/algolia/",
-      "keywords": [
-        "algolia",
-        "integration",
-        "netlify",
-        "configuration",
-        "docaroo"
-      ]
-    },
-    {
-      "permalink": "/integrations/hubspot/",
-      "keywords": [
-        "form",
-        "hubspot",
-        "docaroo",
-        "object",
-        "type="
-      ]
-    },
-    {
-      "permalink": "/integrations/new-relic/",
-      "keywords": [
-        "function",
-        "integration",
-        "netlify",
-        "hook",
-        "performance"
-      ]
-    },
-    {
-      "permalink": "/integrations/github/",
-      "keywords": [
-        "content",
         "github",
-        "time",
-        "netlify",
-        "deployment"
-      ]
-    },
-    {
-      "permalink": "/extend/",
-      "keywords": [
-        "functionality",
-        "execution",
-        "aware",
-        "skills",
-        "possibility"
-      ]
-    },
-    {
-      "permalink": "/go-live/",
-      "keywords": [
-        "content",
-        "process",
-        "functionality",
-        "frustration",
-        "unavailable"
-      ]
-    },
-    {
-      "permalink": "/go-live/appearance/",
-      "keywords": [
-        "logo",
-        "settings",
-        "folder",
-        "file",
-        "footer"
-      ]
-    },
-    {
-      "permalink": "/go-live/deploy/",
-      "keywords": [
-        "environment",
-        "process",
-        "essence",
-        "netlify",
-        "box"
-      ]
-    },
-    {
-      "permalink": "/go-live/build/",
-      "keywords": [
-        "environment",
-        "command",
-        "checking",
-        "content",
-        "tests"
-      ]
-    },
-    {
-      "permalink": "/taxonomies/intro/",
-      "keywords": [
-        "user",
-        "categories",
-        "documents",
-        "users",
-        "classification"
-      ]
-    },
-    {
-      "permalink": "/taxonomies/custom-tags/",
-      "keywords": [
-        "documents",
-        "desktop",
-        "document",
-        "option",
-        "feature"
-      ]
-    },
-    {
-      "permalink": "/taxonomies/custom-cats/",
-      "keywords": [
-        "documents"
-      ]
-    },
-    {
-      "permalink": "/taxonomies/custom-notes/",
-      "keywords": [
-        "document",
-        "user",
-        "placeholders",
-        "note",
-        "annotations"
+        "source",
+        "automatically",
+        "macos"
       ]
     },
     {
       "permalink": "/taxonomies/custom-annotations/",
       "keywords": [
         "annotations",
-        "user",
-        "document",
+        "annotation",
+        "custom",
+        "comments",
+        "taxonomies",
+        "note",
+        "added",
+        "documents",
         "placeholders",
-        "note"
+        "variant"
+      ]
+    },
+    {
+      "permalink": "/taxonomies/custom-cats/",
+      "keywords": [
+        "categories",
+        "tags",
+        "custom",
+        "updating",
+        "removed",
+        "adding",
+        "features",
+        "category",
+        "removing",
+        "modified"
+      ]
+    },
+    {
+      "permalink": "/taxonomies/custom-notes/",
+      "keywords": [
+        "annotations",
+        "annotation",
+        "custom",
+        "notes",
+        "note",
+        "comments",
+        "documents",
+        "document",
+        "added",
+        "placeholders"
+      ]
+    },
+    {
+      "permalink": "/taxonomies/custom-tags/",
+      "keywords": [
+        "tags",
+        "taxonomies",
+        "docsearch",
+        "custom",
+        "removed",
+        "algolia",
+        "adding",
+        "words",
+        "selecting",
+        "feature"
       ]
     },
     {
       "permalink": "/taxonomies/sharing/",
       "keywords": [
-        "active",
+        "taxonomies",
+        "taxonomy",
+        "custom",
+        "configuration",
+        "configure",
+        "sharing",
+        "workflows",
+        "allows",
         "users",
-        "installation",
-        "development",
-        "processes"
+        "user"
+      ]
+    },
+    {
+      "permalink": "/taxonomies/intro/",
+      "keywords": [
+        "taxonomies",
+        "workflows",
+        "customised",
+        "tags",
+        "annotations",
+        "features",
+        "plugins",
+        "users",
+        "posts",
+        "backend"
+      ]
+    },
+    {
+      "permalink": "/get-started/doc-contents/",
+      "keywords": [
+        "folder",
+        "documentation",
+        "faq",
+        "repository",
+        "docaroo",
+        "permalink",
+        "sections",
+        "downloading",
+        "default",
+        "configuration"
+      ]
+    },
+    {
+      "permalink": "/get-started/env/",
+      "keywords": [
+        "env",
+        "variables",
+        "settings",
+        "netlify",
+        "github",
+        "repositories",
+        "include",
+        "dev",
+        "deploying",
+        "purposes"
+      ]
+    },
+    {
+      "permalink": "/extend/",
+      "keywords": [
+        "extensions",
+        "javascript",
+        "hooking",
+        "extend",
+        "hooks",
+        "functionality",
+        "integrations",
+        "skills",
+        "execute",
+        "gtm"
+      ]
+    },
+    {
+      "permalink": "/get-started/",
+      "keywords": [
+        "documentation",
+        "docaroo",
+        "python",
+        "blog",
+        "customising",
+        "directory",
+        "keywords",
+        "macos",
+        "install",
+        "framework"
+      ]
+    },
+    {
+      "permalink": "/go-live/appearance/",
+      "keywords": [
+        "settings",
+        "website",
+        "logo",
+        "appearance",
+        "header",
+        "themes",
+        "sidebar",
+        "config",
+        "html",
+        "title"
+      ]
+    },
+    {
+      "permalink": "/go-live/build/",
+      "keywords": [
+        "build",
+        "github",
+        "sites",
+        "tests",
+        "generate",
+        "docaroo",
+        "deploy",
+        "sections",
+        "permalink",
+        "process"
+      ]
+    },
+    {
+      "permalink": "/go-live/deploy/",
+      "keywords": [
+        "deploying",
+        "hosting",
+        "netlify",
+        "github",
+        "configuring",
+        "process",
+        "env",
+        "build",
+        "update",
+        "docaroo"
+      ]
+    },
+    {
+      "permalink": "/go-live/",
+      "keywords": [
+        "netlify",
+        "github",
+        "live",
+        "tests",
+        "site",
+        "branding",
+        "tuning",
+        "update",
+        "pages",
+        "functionality"
+      ]
+    },
+    {
+      "permalink": "/integrations/algolia/",
+      "keywords": [
+        "docsearch",
+        "docaroo",
+        "algolia",
+        "integration",
+        "documentation",
+        "index",
+        "github",
+        "manually",
+        "option",
+        "settings"
+      ]
+    },
+    {
+      "permalink": "/integrations/ga-gtm/",
+      "keywords": [
+        "gtm",
+        "buildconfig",
+        "tags",
+        "analytics",
+        "google",
+        "hookable",
+        "custom",
+        "enabled",
+        "deploy",
+        "default"
+      ]
+    },
+    {
+      "permalink": "/integrations/github/",
+      "keywords": [
+        "github",
+        "docaroo",
+        "repositories",
+        "api",
+        "caching",
+        "limits",
+        "settings",
+        "imported",
+        "accessed",
+        "dev"
+      ]
+    },
+    {
+      "permalink": "/integrations/hubspot/",
+      "keywords": [
+        "hubspot",
+        "tracking",
+        "feedback",
+        "enabled",
+        "portalid",
+        "documentation",
+        "embed",
+        "feature",
+        "configure",
+        "custom"
+      ]
+    },
+    {
+      "permalink": "/integrate/",
+      "keywords": [
+        "docaroo",
+        "integrations",
+        "api",
+        "purpose",
+        "configuration",
+        "provides",
+        "env",
+        "enabled",
+        "files",
+        "feedback"
+      ]
+    },
+    {
+      "permalink": "/integrations/new-relic/",
+      "keywords": [
+        "documentation",
+        "integration",
+        "activate",
+        "relic",
+        "new",
+        "configured",
+        "scope",
+        "interactions",
+        "github",
+        "log"
+      ]
+    },
+    {
+      "permalink": "/intro/",
+      "keywords": [
+        "documentation",
+        "markdown",
+        "docaroo",
+        "developer",
+        "create",
+        "guide",
+        "faqs",
+        "excel",
+        "contributor",
+        "onboarding"
+      ]
+    },
+    {
+      "permalink": "/get-started/config-files/",
+      "keywords": [
+        "docaroo",
+        "configuration",
+        "config",
+        "configurations",
+        "configure",
+        "options",
+        "files",
+        "functionality",
+        "folder",
+        "yml"
+      ]
+    },
+    {
+      "permalink": "/get-started/config-options/",
+      "keywords": [
+        "config",
+        "options",
+        "documentation",
+        "personalisation",
+        "functionalities",
+        "dev",
+        "appearance",
+        "modified",
+        "sections",
+        "mode"
       ]
     }
   ]

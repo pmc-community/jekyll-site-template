@@ -7,12 +7,12 @@
         "permalink": "/components/qitem/"
       },
       {
-        "title": "Scroll Spy & Tabs",
-        "permalink": "/components/scrollspy/"
-      },
-      {
         "title": "Content items",
         "permalink": "/content/content-items/"
+      },
+      {
+        "title": "Scroll Spy & Tabs",
+        "permalink": "/components/scrollspy/"
       }
     ]
   },
@@ -20,16 +20,16 @@
     "permalink": "/components/card/",
     "related": [
       {
-        "title": "Content items",
-        "permalink": "/content/content-items/"
+        "title": "Link button",
+        "permalink": "/components/link-button/"
       },
       {
-        "title": "FAQ Item",
-        "permalink": "/components/qitem/"
+        "title": "Image",
+        "permalink": "/components/image/"
       },
       {
-        "title": "Alerts",
-        "permalink": "/components/alerts/"
+        "title": "Downloads",
+        "permalink": "/components/download-link/"
       }
     ]
   },
@@ -62,8 +62,8 @@
         "permalink": "/components/card/"
       },
       {
-        "title": "Rich media",
-        "permalink": "/components/rich-media/"
+        "title": "XLSX Charts",
+        "permalink": "/components/xlsx-charts/"
       }
     ]
   },
@@ -88,16 +88,16 @@
     "permalink": "/components/image/",
     "related": [
       {
-        "title": "XLSX Charts",
-        "permalink": "/components/xlsx-charts/"
-      },
-      {
         "title": "Card",
         "permalink": "/components/card/"
       },
       {
-        "title": "Scroll Spy & Tabs",
-        "permalink": "/components/scrollspy/"
+        "title": "Downloads",
+        "permalink": "/components/download-link/"
+      },
+      {
+        "title": "Content items",
+        "permalink": "/content/content-items/"
       }
     ]
   },
@@ -113,8 +113,8 @@
         "permalink": "/components/card/"
       },
       {
-        "title": "Scroll Spy & Tabs",
-        "permalink": "/components/scrollspy/"
+        "title": "Components",
+        "permalink": "/components/intro/"
       }
     ]
   },
@@ -122,8 +122,25 @@
     "permalink": "/components/rich-media/",
     "related": [
       {
-        "title": "Downloads",
-        "permalink": "/components/download-link/"
+        "title": "Alerts",
+        "permalink": "/components/alerts/"
+      },
+      {
+        "title": "Components",
+        "permalink": "/components/intro/"
+      },
+      {
+        "title": "External content",
+        "permalink": "/content/ec/"
+      }
+    ]
+  },
+  {
+    "permalink": "/components/scrollspy/",
+    "related": [
+      {
+        "title": "Content items",
+        "permalink": "/content/content-items/"
       },
       {
         "title": "Alerts",
@@ -136,23 +153,6 @@
     ]
   },
   {
-    "permalink": "/components/scrollspy/",
-    "related": [
-      {
-        "title": "Content items",
-        "permalink": "/content/content-items/"
-      },
-      {
-        "title": "Content",
-        "permalink": "/content/intro/"
-      },
-      {
-        "title": "Alerts",
-        "permalink": "/components/alerts/"
-      }
-    ]
-  },
-  {
     "permalink": "/components/xlsx-charts/",
     "related": [
       {
@@ -160,8 +160,8 @@
         "permalink": "/components/xlsx-tables/"
       },
       {
-        "title": "Scroll Spy & Tabs",
-        "permalink": "/components/scrollspy/"
+        "title": "Downloads",
+        "permalink": "/components/download-link/"
       },
       {
         "title": "PDF Summary",
@@ -177,12 +177,12 @@
         "permalink": "/components/xlsx-charts/"
       },
       {
-        "title": "DOCX Summary",
-        "permalink": "/experiments/docx-summary/"
+        "title": "Card",
+        "permalink": "/components/card/"
       },
       {
-        "title": "PDF Summary",
-        "permalink": "/experiments/pdf-summary/"
+        "title": "Content items",
+        "permalink": "/content/content-items/"
       }
     ]
   },
@@ -190,16 +190,16 @@
     "permalink": "/content/content-items/",
     "related": [
       {
+        "title": "FAQ Item",
+        "permalink": "/components/qitem/"
+      },
+      {
+        "title": "Alerts",
+        "permalink": "/components/alerts/"
+      },
+      {
         "title": "Scroll Spy & Tabs",
         "permalink": "/components/scrollspy/"
-      },
-      {
-        "title": "Card",
-        "permalink": "/components/card/"
-      },
-      {
-        "title": "Components",
-        "permalink": "/components/intro/"
       }
     ]
   },
@@ -207,16 +207,16 @@
     "permalink": "/content/intro/",
     "related": [
       {
+        "title": "External content",
+        "permalink": "/content/ec/"
+      },
+      {
         "title": "Docs root",
         "permalink": "/get-started/doc-contents/"
       },
       {
-        "title": "Scroll Spy & Tabs",
-        "permalink": "/components/scrollspy/"
-      },
-      {
-        "title": "Introduction",
-        "permalink": "/intro/"
+        "title": "Get started",
+        "permalink": "/get-started/"
       }
     ]
   },
@@ -224,16 +224,16 @@
     "permalink": "/content/ec/",
     "related": [
       {
-        "title": "FAQ Item",
-        "permalink": "/components/qitem/"
+        "title": "Alerts",
+        "permalink": "/components/alerts/"
       },
       {
         "title": "GitHub",
         "permalink": "/integrations/github/"
       },
       {
-        "title": "Alerts",
-        "permalink": "/components/alerts/"
+        "title": "Content",
+        "permalink": "/content/intro/"
       }
     ]
   },
@@ -249,8 +249,8 @@
         "permalink": "/experiments/intro/"
       },
       {
-        "title": "XLSX Tables",
-        "permalink": "/components/xlsx-tables/"
+        "title": "Downloads",
+        "permalink": "/components/download-link/"
       }
     ]
   },
@@ -264,10 +264,6 @@
       {
         "title": "DOCX Summary",
         "permalink": "/experiments/docx-summary/"
-      },
-      {
-        "title": "XLSX Tables",
-        "permalink": "/components/xlsx-tables/"
       }
     ]
   },
@@ -283,8 +279,8 @@
         "permalink": "/experiments/intro/"
       },
       {
-        "title": "XLSX Tables",
-        "permalink": "/components/xlsx-tables/"
+        "title": "XLSX Charts",
+        "permalink": "/components/xlsx-charts/"
       }
     ]
   },
@@ -330,12 +326,12 @@
         "permalink": "/taxonomies/custom-annotations/"
       },
       {
-        "title": "Custom tags",
-        "permalink": "/taxonomies/custom-tags/"
+        "title": "Custom categories",
+        "permalink": "/taxonomies/custom-cats/"
       },
       {
-        "title": "Taxonomies",
-        "permalink": "/taxonomies/intro/"
+        "title": "Custom tags",
+        "permalink": "/taxonomies/custom-tags/"
       }
     ]
   },
@@ -351,8 +347,8 @@
         "permalink": "/taxonomies/custom-annotations/"
       },
       {
-        "title": "Custom notes",
-        "permalink": "/taxonomies/custom-notes/"
+        "title": "Sharing taxonomies",
+        "permalink": "/taxonomies/sharing/"
       }
     ]
   },
@@ -364,12 +360,12 @@
         "permalink": "/taxonomies/custom-annotations/"
       },
       {
-        "title": "Custom notes",
-        "permalink": "/taxonomies/custom-notes/"
-      },
-      {
         "title": "Custom tags",
         "permalink": "/taxonomies/custom-tags/"
+      },
+      {
+        "title": "Custom notes",
+        "permalink": "/taxonomies/custom-notes/"
       }
     ]
   },
@@ -377,16 +373,16 @@
     "permalink": "/taxonomies/intro/",
     "related": [
       {
-        "title": "Custom notes",
-        "permalink": "/taxonomies/custom-notes/"
-      },
-      {
         "title": "Sharing taxonomies",
         "permalink": "/taxonomies/sharing/"
       },
       {
-        "title": "Custom categories",
-        "permalink": "/taxonomies/custom-cats/"
+        "title": "Custom notes",
+        "permalink": "/taxonomies/custom-notes/"
+      },
+      {
+        "title": "Custom annotations",
+        "permalink": "/taxonomies/custom-annotations/"
       }
     ]
   },
@@ -394,16 +390,16 @@
     "permalink": "/get-started/doc-contents/",
     "related": [
       {
-        "title": "Introduction",
-        "permalink": "/intro/"
+        "title": "Config Files",
+        "permalink": "/get-started/config-files/"
       },
       {
         "title": "Get started",
         "permalink": "/get-started/"
       },
       {
-        "title": "Content",
-        "permalink": "/content/intro/"
+        "title": "Config Options",
+        "permalink": "/get-started/config-options/"
       }
     ]
   },
@@ -411,16 +407,16 @@
     "permalink": "/get-started/env/",
     "related": [
       {
+        "title": "Deploy",
+        "permalink": "/go-live/deploy/"
+      },
+      {
         "title": "GitHub",
         "permalink": "/integrations/github/"
       },
       {
         "title": "Config Options",
         "permalink": "/get-started/config-options/"
-      },
-      {
-        "title": "Config Files",
-        "permalink": "/get-started/config-files/"
       }
     ]
   },
@@ -500,12 +496,12 @@
     "permalink": "/go-live/",
     "related": [
       {
-        "title": "Build and test",
-        "permalink": "/go-live/build/"
-      },
-      {
         "title": "Deploy",
         "permalink": "/go-live/deploy/"
+      },
+      {
+        "title": "Build and test",
+        "permalink": "/go-live/build/"
       },
       {
         "title": "Set appearance",
@@ -534,16 +530,16 @@
     "permalink": "/integrations/ga-gtm/",
     "related": [
       {
+        "title": "HubSpot",
+        "permalink": "/integrations/hubspot/"
+      },
+      {
         "title": "New Relic",
         "permalink": "/integrations/new-relic/"
       },
       {
-        "title": "Algolia",
-        "permalink": "/integrations/algolia/"
-      },
-      {
-        "title": "HubSpot",
-        "permalink": "/integrations/hubspot/"
+        "title": "GitHub",
+        "permalink": "/integrations/github/"
       }
     ]
   },
@@ -555,12 +551,12 @@
         "permalink": "/integrations/algolia/"
       },
       {
-        "title": "FAQ Item",
-        "permalink": "/components/qitem/"
+        "title": "Environments",
+        "permalink": "/get-started/env/"
       },
       {
-        "title": "New Relic",
-        "permalink": "/integrations/new-relic/"
+        "title": "HubSpot",
+        "permalink": "/integrations/hubspot/"
       }
     ]
   },
@@ -572,12 +568,12 @@
         "permalink": "/integrations/algolia/"
       },
       {
-        "title": "GitHub",
-        "permalink": "/integrations/github/"
-      },
-      {
         "title": "GA/GTM",
         "permalink": "/integrations/ga-gtm/"
+      },
+      {
+        "title": "GitHub",
+        "permalink": "/integrations/github/"
       }
     ]
   },
@@ -589,8 +585,8 @@
         "permalink": "/integrations/new-relic/"
       },
       {
-        "title": "Config Options",
-        "permalink": "/get-started/config-options/"
+        "title": "Config Files",
+        "permalink": "/get-started/config-files/"
       },
       {
         "title": "Algolia",
@@ -602,12 +598,12 @@
     "permalink": "/integrations/new-relic/",
     "related": [
       {
-        "title": "GA/GTM",
-        "permalink": "/integrations/ga-gtm/"
-      },
-      {
         "title": "Algolia",
         "permalink": "/integrations/algolia/"
+      },
+      {
+        "title": "GA/GTM",
+        "permalink": "/integrations/ga-gtm/"
       },
       {
         "title": "Integrate",
@@ -619,16 +615,16 @@
     "permalink": "/intro/",
     "related": [
       {
-        "title": "Docs root",
-        "permalink": "/get-started/doc-contents/"
-      },
-      {
         "title": "Get started",
         "permalink": "/get-started/"
       },
       {
-        "title": "Content",
-        "permalink": "/content/intro/"
+        "title": "Docs root",
+        "permalink": "/get-started/doc-contents/"
+      },
+      {
+        "title": "Config Files",
+        "permalink": "/get-started/config-files/"
       }
     ]
   },
@@ -636,16 +632,16 @@
     "permalink": "/get-started/config-files/",
     "related": [
       {
+        "title": "Docs root",
+        "permalink": "/get-started/doc-contents/"
+      },
+      {
         "title": "Config Options",
         "permalink": "/get-started/config-options/"
       },
       {
         "title": "Get started",
         "permalink": "/get-started/"
-      },
-      {
-        "title": "Docs root",
-        "permalink": "/get-started/doc-contents/"
       }
     ]
   },

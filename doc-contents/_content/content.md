@@ -20,11 +20,6 @@ We define an `external source` as a source of content which is outside the curre
 # Organise documents
 As example, we will use the structure of Docaroo documentation. The documents are located in `doc-contents` folder inside the project folder. We name `doc-contents` as the `docs root folder`.
 
-{% include elements/dir-structure.html 
-  dir="doc-contents" 
-  h="400px"
-%}
-
 Following the structure of Docaroo documents, you can organise your documentation based on the next recommendations:
 1. Do not rename the `docs root folder`, it has to be always named `doc-contents`
 2. Do not remove the following sub-folders: 
