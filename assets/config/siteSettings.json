@@ -922,10 +922,10 @@
         "taxonomy"
       ],
       "excerpt": "annotations, user, document, placeholders, note",
-      "lastUpdate": "2025-10-31 13:51:10 +0200",
+      "lastUpdate": "2025-10-31 14:33:31 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-31 13:51:10 +0200",
-      "createTimeUTC": 1761911470,
+      "createTime": "2025-10-31 14:33:31 +0200",
+      "createTimeUTC": 1761914011,
       "relatedPages": [
         {
           "title": "Custom notes",
@@ -958,10 +958,10 @@
         "taxonomy"
       ],
       "excerpt": "documents",
-      "lastUpdate": "2025-10-31 13:24:11 +0200",
+      "lastUpdate": "2025-10-31 14:33:31 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-31 13:24:11 +0200",
-      "createTimeUTC": 1761909851,
+      "createTime": "2025-10-31 14:33:31 +0200",
+      "createTimeUTC": 1761914011,
       "relatedPages": [
         {
           "title": "Custom tags",
@@ -999,10 +999,10 @@
         "taxonomy"
       ],
       "excerpt": "document, user, placeholders, note, annotations",
-      "lastUpdate": "2025-10-31 13:35:06 +0200",
+      "lastUpdate": "2025-10-31 14:33:31 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-31 13:35:06 +0200",
-      "createTimeUTC": 1761910506,
+      "createTime": "2025-10-31 14:33:31 +0200",
+      "createTimeUTC": 1761914011,
       "relatedPages": [
         {
           "title": "Custom annotations",
@@ -1035,10 +1035,10 @@
         "taxonomy"
       ],
       "excerpt": "documents, desktop, document, option, feature",
-      "lastUpdate": "2025-10-31 14:24:53 +0200",
+      "lastUpdate": "2025-10-31 14:33:31 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-31 14:24:53 +0200",
-      "createTimeUTC": 1761913493,
+      "createTime": "2025-10-31 14:33:31 +0200",
+      "createTimeUTC": 1761914011,
       "relatedPages": [
         {
           "title": "Custom categories",
@@ -1079,10 +1079,10 @@
         "taxonomy"
       ],
       "excerpt": "active, users, installation, development, processes",
-      "lastUpdate": "2025-10-31 14:27:53 +0200",
+      "lastUpdate": "2025-10-31 14:33:31 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-31 14:27:53 +0200",
-      "createTimeUTC": 1761913673,
+      "createTime": "2025-10-31 14:33:31 +0200",
+      "createTimeUTC": 1761914011,
       "relatedPages": [
         {
           "title": "Custom annotations",
@@ -1121,10 +1121,10 @@
         "annotations"
       ],
       "excerpt": "user, categories, documents, users, classification",
-      "lastUpdate": "2025-10-30 19:59:56 +0200",
+      "lastUpdate": "2025-10-31 14:33:31 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-30 19:59:56 +0200",
-      "createTimeUTC": 1761847196,
+      "createTime": "2025-10-31 14:33:31 +0200",
+      "createTimeUTC": 1761914011,
       "relatedPages": [
         {
           "title": "Custom notes",
@@ -1964,7 +1964,7 @@
         {
           "title": "Taxonomies",
           "permalink": "/taxonomies/intro/",
-          "lastUpdate": "30-Oct-2025"
+          "lastUpdate": "31-Oct-2025"
         }
       ],
       "numPages": 1
@@ -2054,7 +2054,7 @@
         {
           "title": "Taxonomies",
           "permalink": "/taxonomies/intro/",
-          "lastUpdate": "30-Oct-2025"
+          "lastUpdate": "31-Oct-2025"
         }
       ],
       "numPages": 1
@@ -2709,7 +2709,7 @@
         {
           "title": "Taxonomies",
           "permalink": "/taxonomies/intro/",
-          "lastUpdate": "30-Oct-2025"
+          "lastUpdate": "31-Oct-2025"
         }
       ],
       "numPages": 3
@@ -2899,7 +2899,7 @@
         {
           "title": "Taxonomies",
           "permalink": "/taxonomies/intro/",
-          "lastUpdate": "30-Oct-2025"
+          "lastUpdate": "31-Oct-2025"
         }
       ],
       "numPages": 1
@@ -3394,7 +3394,7 @@
         {
           "title": "Taxonomies",
           "permalink": "/taxonomies/intro/",
-          "lastUpdate": "30-Oct-2025"
+          "lastUpdate": "31-Oct-2025"
         }
       ],
       "numPages": 6
