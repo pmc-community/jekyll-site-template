@@ -1,0 +1,669 @@
+[
+  {
+    "permalink": "/components/alerts/",
+    "related": [
+      {
+        "title": "FAQ Item",
+        "permalink": "/components/qitem/"
+      },
+      {
+        "title": "Scroll Spy & Tabs",
+        "permalink": "/components/scrollspy/"
+      },
+      {
+        "title": "Content items",
+        "permalink": "/content/content-items/"
+      }
+    ]
+  },
+  {
+    "permalink": "/components/card/",
+    "related": [
+      {
+        "title": "Content items",
+        "permalink": "/content/content-items/"
+      },
+      {
+        "title": "FAQ Item",
+        "permalink": "/components/qitem/"
+      },
+      {
+        "title": "Alerts",
+        "permalink": "/components/alerts/"
+      }
+    ]
+  },
+  {
+    "permalink": "/components/intro/",
+    "related": [
+      {
+        "title": "Content items",
+        "permalink": "/content/content-items/"
+      },
+      {
+        "title": "FAQ Item",
+        "permalink": "/components/qitem/"
+      },
+      {
+        "title": "Scroll Spy & Tabs",
+        "permalink": "/components/scrollspy/"
+      }
+    ]
+  },
+  {
+    "permalink": "/components/download-link/",
+    "related": [
+      {
+        "title": "Link button",
+        "permalink": "/components/link-button/"
+      },
+      {
+        "title": "Card",
+        "permalink": "/components/card/"
+      },
+      {
+        "title": "Rich media",
+        "permalink": "/components/rich-media/"
+      }
+    ]
+  },
+  {
+    "permalink": "/components/qitem/",
+    "related": [
+      {
+        "title": "Alerts",
+        "permalink": "/components/alerts/"
+      },
+      {
+        "title": "Content items",
+        "permalink": "/content/content-items/"
+      },
+      {
+        "title": "Components",
+        "permalink": "/components/intro/"
+      }
+    ]
+  },
+  {
+    "permalink": "/components/image/",
+    "related": [
+      {
+        "title": "XLSX Charts",
+        "permalink": "/components/xlsx-charts/"
+      },
+      {
+        "title": "Card",
+        "permalink": "/components/card/"
+      },
+      {
+        "title": "Scroll Spy & Tabs",
+        "permalink": "/components/scrollspy/"
+      }
+    ]
+  },
+  {
+    "permalink": "/components/link-button/",
+    "related": [
+      {
+        "title": "Downloads",
+        "permalink": "/components/download-link/"
+      },
+      {
+        "title": "Card",
+        "permalink": "/components/card/"
+      },
+      {
+        "title": "Scroll Spy & Tabs",
+        "permalink": "/components/scrollspy/"
+      }
+    ]
+  },
+  {
+    "permalink": "/components/rich-media/",
+    "related": [
+      {
+        "title": "Downloads",
+        "permalink": "/components/download-link/"
+      },
+      {
+        "title": "Alerts",
+        "permalink": "/components/alerts/"
+      },
+      {
+        "title": "FAQ Item",
+        "permalink": "/components/qitem/"
+      }
+    ]
+  },
+  {
+    "permalink": "/components/scrollspy/",
+    "related": [
+      {
+        "title": "Content items",
+        "permalink": "/content/content-items/"
+      },
+      {
+        "title": "Content",
+        "permalink": "/content/intro/"
+      },
+      {
+        "title": "Alerts",
+        "permalink": "/components/alerts/"
+      }
+    ]
+  },
+  {
+    "permalink": "/components/xlsx-charts/",
+    "related": [
+      {
+        "title": "XLSX Tables",
+        "permalink": "/components/xlsx-tables/"
+      },
+      {
+        "title": "Scroll Spy & Tabs",
+        "permalink": "/components/scrollspy/"
+      },
+      {
+        "title": "PDF Summary",
+        "permalink": "/experiments/pdf-summary/"
+      }
+    ]
+  },
+  {
+    "permalink": "/components/xlsx-tables/",
+    "related": [
+      {
+        "title": "XLSX Charts",
+        "permalink": "/components/xlsx-charts/"
+      },
+      {
+        "title": "DOCX Summary",
+        "permalink": "/experiments/docx-summary/"
+      },
+      {
+        "title": "PDF Summary",
+        "permalink": "/experiments/pdf-summary/"
+      }
+    ]
+  },
+  {
+    "permalink": "/content/content-items/",
+    "related": [
+      {
+        "title": "Scroll Spy & Tabs",
+        "permalink": "/components/scrollspy/"
+      },
+      {
+        "title": "Card",
+        "permalink": "/components/card/"
+      },
+      {
+        "title": "Components",
+        "permalink": "/components/intro/"
+      }
+    ]
+  },
+  {
+    "permalink": "/content/intro/",
+    "related": [
+      {
+        "title": "Docs root",
+        "permalink": "/get-started/doc-contents/"
+      },
+      {
+        "title": "Scroll Spy & Tabs",
+        "permalink": "/components/scrollspy/"
+      },
+      {
+        "title": "Introduction",
+        "permalink": "/intro/"
+      }
+    ]
+  },
+  {
+    "permalink": "/content/ec/",
+    "related": [
+      {
+        "title": "FAQ Item",
+        "permalink": "/components/qitem/"
+      },
+      {
+        "title": "GitHub",
+        "permalink": "/integrations/github/"
+      },
+      {
+        "title": "Alerts",
+        "permalink": "/components/alerts/"
+      }
+    ]
+  },
+  {
+    "permalink": "/experiments/docx-summary/",
+    "related": [
+      {
+        "title": "PDF Summary",
+        "permalink": "/experiments/pdf-summary/"
+      },
+      {
+        "title": "Experiments",
+        "permalink": "/experiments/intro/"
+      },
+      {
+        "title": "XLSX Tables",
+        "permalink": "/components/xlsx-tables/"
+      }
+    ]
+  },
+  {
+    "permalink": "/experiments/intro/",
+    "related": [
+      {
+        "title": "PDF Summary",
+        "permalink": "/experiments/pdf-summary/"
+      },
+      {
+        "title": "DOCX Summary",
+        "permalink": "/experiments/docx-summary/"
+      },
+      {
+        "title": "XLSX Tables",
+        "permalink": "/components/xlsx-tables/"
+      }
+    ]
+  },
+  {
+    "permalink": "/experiments/pdf-summary/",
+    "related": [
+      {
+        "title": "DOCX Summary",
+        "permalink": "/experiments/docx-summary/"
+      },
+      {
+        "title": "Experiments",
+        "permalink": "/experiments/intro/"
+      },
+      {
+        "title": "XLSX Tables",
+        "permalink": "/components/xlsx-tables/"
+      }
+    ]
+  },
+  {
+    "permalink": "/taxonomies/custom-annotations/",
+    "related": [
+      {
+        "title": "Custom notes",
+        "permalink": "/taxonomies/custom-notes/"
+      },
+      {
+        "title": "Custom tags",
+        "permalink": "/taxonomies/custom-tags/"
+      },
+      {
+        "title": "Sharing taxonomies",
+        "permalink": "/taxonomies/sharing/"
+      }
+    ]
+  },
+  {
+    "permalink": "/taxonomies/custom-cats/",
+    "related": [
+      {
+        "title": "Custom tags",
+        "permalink": "/taxonomies/custom-tags/"
+      },
+      {
+        "title": "Custom annotations",
+        "permalink": "/taxonomies/custom-annotations/"
+      },
+      {
+        "title": "Custom notes",
+        "permalink": "/taxonomies/custom-notes/"
+      }
+    ]
+  },
+  {
+    "permalink": "/taxonomies/custom-notes/",
+    "related": [
+      {
+        "title": "Custom annotations",
+        "permalink": "/taxonomies/custom-annotations/"
+      },
+      {
+        "title": "Custom tags",
+        "permalink": "/taxonomies/custom-tags/"
+      },
+      {
+        "title": "Taxonomies",
+        "permalink": "/taxonomies/intro/"
+      }
+    ]
+  },
+  {
+    "permalink": "/taxonomies/custom-tags/",
+    "related": [
+      {
+        "title": "Custom categories",
+        "permalink": "/taxonomies/custom-cats/"
+      },
+      {
+        "title": "Custom annotations",
+        "permalink": "/taxonomies/custom-annotations/"
+      },
+      {
+        "title": "Custom notes",
+        "permalink": "/taxonomies/custom-notes/"
+      }
+    ]
+  },
+  {
+    "permalink": "/taxonomies/sharing/",
+    "related": [
+      {
+        "title": "Custom annotations",
+        "permalink": "/taxonomies/custom-annotations/"
+      },
+      {
+        "title": "Custom notes",
+        "permalink": "/taxonomies/custom-notes/"
+      },
+      {
+        "title": "Custom tags",
+        "permalink": "/taxonomies/custom-tags/"
+      }
+    ]
+  },
+  {
+    "permalink": "/taxonomies/intro/",
+    "related": [
+      {
+        "title": "Custom notes",
+        "permalink": "/taxonomies/custom-notes/"
+      },
+      {
+        "title": "Sharing taxonomies",
+        "permalink": "/taxonomies/sharing/"
+      },
+      {
+        "title": "Custom categories",
+        "permalink": "/taxonomies/custom-cats/"
+      }
+    ]
+  },
+  {
+    "permalink": "/get-started/doc-contents/",
+    "related": [
+      {
+        "title": "Introduction",
+        "permalink": "/intro/"
+      },
+      {
+        "title": "Get started",
+        "permalink": "/get-started/"
+      },
+      {
+        "title": "Content",
+        "permalink": "/content/intro/"
+      }
+    ]
+  },
+  {
+    "permalink": "/get-started/env/",
+    "related": [
+      {
+        "title": "GitHub",
+        "permalink": "/integrations/github/"
+      },
+      {
+        "title": "Config Options",
+        "permalink": "/get-started/config-options/"
+      },
+      {
+        "title": "Config Files",
+        "permalink": "/get-started/config-files/"
+      }
+    ]
+  },
+  {
+    "permalink": "/extend/",
+    "related": []
+  },
+  {
+    "permalink": "/get-started/",
+    "related": [
+      {
+        "title": "Introduction",
+        "permalink": "/intro/"
+      },
+      {
+        "title": "Docs root",
+        "permalink": "/get-started/doc-contents/"
+      },
+      {
+        "title": "Config Files",
+        "permalink": "/get-started/config-files/"
+      }
+    ]
+  },
+  {
+    "permalink": "/go-live/appearance/",
+    "related": [
+      {
+        "title": "Build and test",
+        "permalink": "/go-live/build/"
+      },
+      {
+        "title": "Deploy",
+        "permalink": "/go-live/deploy/"
+      },
+      {
+        "title": "Go live",
+        "permalink": "/go-live/"
+      }
+    ]
+  },
+  {
+    "permalink": "/go-live/build/",
+    "related": [
+      {
+        "title": "Deploy",
+        "permalink": "/go-live/deploy/"
+      },
+      {
+        "title": "Go live",
+        "permalink": "/go-live/"
+      },
+      {
+        "title": "Set appearance",
+        "permalink": "/go-live/appearance/"
+      }
+    ]
+  },
+  {
+    "permalink": "/go-live/deploy/",
+    "related": [
+      {
+        "title": "Build and test",
+        "permalink": "/go-live/build/"
+      },
+      {
+        "title": "Go live",
+        "permalink": "/go-live/"
+      },
+      {
+        "title": "Set appearance",
+        "permalink": "/go-live/appearance/"
+      }
+    ]
+  },
+  {
+    "permalink": "/go-live/",
+    "related": [
+      {
+        "title": "Build and test",
+        "permalink": "/go-live/build/"
+      },
+      {
+        "title": "Deploy",
+        "permalink": "/go-live/deploy/"
+      },
+      {
+        "title": "Set appearance",
+        "permalink": "/go-live/appearance/"
+      }
+    ]
+  },
+  {
+    "permalink": "/integrations/algolia/",
+    "related": [
+      {
+        "title": "GitHub",
+        "permalink": "/integrations/github/"
+      },
+      {
+        "title": "HubSpot",
+        "permalink": "/integrations/hubspot/"
+      },
+      {
+        "title": "New Relic",
+        "permalink": "/integrations/new-relic/"
+      }
+    ]
+  },
+  {
+    "permalink": "/integrations/ga-gtm/",
+    "related": [
+      {
+        "title": "New Relic",
+        "permalink": "/integrations/new-relic/"
+      },
+      {
+        "title": "Algolia",
+        "permalink": "/integrations/algolia/"
+      },
+      {
+        "title": "HubSpot",
+        "permalink": "/integrations/hubspot/"
+      }
+    ]
+  },
+  {
+    "permalink": "/integrations/github/",
+    "related": [
+      {
+        "title": "Algolia",
+        "permalink": "/integrations/algolia/"
+      },
+      {
+        "title": "FAQ Item",
+        "permalink": "/components/qitem/"
+      },
+      {
+        "title": "New Relic",
+        "permalink": "/integrations/new-relic/"
+      }
+    ]
+  },
+  {
+    "permalink": "/integrations/hubspot/",
+    "related": [
+      {
+        "title": "Algolia",
+        "permalink": "/integrations/algolia/"
+      },
+      {
+        "title": "GitHub",
+        "permalink": "/integrations/github/"
+      },
+      {
+        "title": "GA/GTM",
+        "permalink": "/integrations/ga-gtm/"
+      }
+    ]
+  },
+  {
+    "permalink": "/integrate/",
+    "related": [
+      {
+        "title": "New Relic",
+        "permalink": "/integrations/new-relic/"
+      },
+      {
+        "title": "Config Options",
+        "permalink": "/get-started/config-options/"
+      },
+      {
+        "title": "Algolia",
+        "permalink": "/integrations/algolia/"
+      }
+    ]
+  },
+  {
+    "permalink": "/integrations/new-relic/",
+    "related": [
+      {
+        "title": "GA/GTM",
+        "permalink": "/integrations/ga-gtm/"
+      },
+      {
+        "title": "Algolia",
+        "permalink": "/integrations/algolia/"
+      },
+      {
+        "title": "Integrate",
+        "permalink": "/integrate/"
+      }
+    ]
+  },
+  {
+    "permalink": "/intro/",
+    "related": [
+      {
+        "title": "Docs root",
+        "permalink": "/get-started/doc-contents/"
+      },
+      {
+        "title": "Get started",
+        "permalink": "/get-started/"
+      },
+      {
+        "title": "Content",
+        "permalink": "/content/intro/"
+      }
+    ]
+  },
+  {
+    "permalink": "/get-started/config-files/",
+    "related": [
+      {
+        "title": "Config Options",
+        "permalink": "/get-started/config-options/"
+      },
+      {
+        "title": "Get started",
+        "permalink": "/get-started/"
+      },
+      {
+        "title": "Docs root",
+        "permalink": "/get-started/doc-contents/"
+      }
+    ]
+  },
+  {
+    "permalink": "/get-started/config-options/",
+    "related": [
+      {
+        "title": "Config Files",
+        "permalink": "/get-started/config-files/"
+      },
+      {
+        "title": "Docs root",
+        "permalink": "/get-started/doc-contents/"
+      },
+      {
+        "title": "Get started",
+        "permalink": "/get-started/"
+      }
+    ]
+  }
+]

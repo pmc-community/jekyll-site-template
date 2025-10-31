@@ -1,0 +1,215 @@
+[
+    {
+        "permalink": "/components/alerts/",
+        "similarFiles": [
+            "/content/ec/"
+        ]
+    },
+    {
+        "permalink": "/components/intro/",
+        "similarFiles": [
+            "/content/content-items/",
+            "/content/intro/",
+            "/content/ec/"
+        ]
+    },
+    {
+        "permalink": "/components/qitem/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/components/link-button/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/components/rich-media/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/content/intro/",
+        "similarFiles": [
+            "/content/content-items/",
+            "/components/intro/",
+            "/content/ec/"
+        ]
+    },
+    {
+        "permalink": "/content/ec/",
+        "similarFiles": [
+            "/content/intro/",
+            "/content/content-items/",
+            "/components/intro/"
+        ]
+    },
+    {
+        "permalink": "/intro/",
+        "similarFiles": [
+            "/components/intro/",
+            "/content/content-items/",
+            "/content/intro/"
+        ]
+    },
+    {
+        "permalink": "/get-started/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/components/scrollspy/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/components/content-items/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/components/downloads/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/components/download-link/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/components/xlsx-tables/",
+        "similarFiles": [
+            "/components/xlsx-charts/"
+        ]
+    },
+    {
+        "permalink": "/components/xlsx-charts/",
+        "similarFiles": [
+            "/components/xlsx-tables/"
+        ]
+    },
+    {
+        "permalink": "/components/image/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/content/content-items/",
+        "similarFiles": [
+            "/components/intro/",
+            "/content/intro/",
+            "/content/ec/"
+        ]
+    },
+    {
+        "permalink": "/components/card/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/experiments/intro/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/experiments/pdf-summary/",
+        "similarFiles": [
+            "/experiments/docx-summary/"
+        ]
+    },
+    {
+        "permalink": "/experiments/docx-summary/",
+        "similarFiles": [
+            "/experiments/pdf-summary/"
+        ]
+    },
+    {
+        "permalink": "/get-started/doc-contents/",
+        "similarFiles": [
+            "/content/intro/"
+        ]
+    },
+    {
+        "permalink": "/get-started/site-config/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/get-started/config-options/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/get-started/config-files/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/get-started/env/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/integrate/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/integrations/ga-gtm/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/integrations/algolia/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/integrations/github/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/integrations/hubspot/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/integrations/new-relic/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/go-live/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/go-live/appearance/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/go-live/build/",
+        "similarFiles": [
+            "/go-live/deploy/"
+        ]
+    },
+    {
+        "permalink": "/go-live/deploy/",
+        "similarFiles": [
+            "/go-live/build/"
+        ]
+    },
+    {
+        "permalink": "/taxonomies/intro/",
+        "similarFiles": [
+            "/taxonomies/sharing/",
+            "/taxonomies/custom-tags/"
+        ]
+    },
+    {
+        "permalink": "/taxonomies/custom-tags/",
+        "similarFiles": [
+            "/taxonomies/intro/"
+        ]
+    },
+    {
+        "permalink": "/taxonomies/custom-cats/",
+        "similarFiles": [
+            "/taxonomies/custom-tags/"
+        ]
+    },
+    {
+        "permalink": "/taxonomies/custom-notes/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/taxonomies/custom-annotations/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/taxonomies/sharing/",
+        "similarFiles": [
+            "/taxonomies/intro/"
+        ]
+    }
+]
