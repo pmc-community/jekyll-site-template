@@ -174,3 +174,4 @@ algolia
 permalink
 permalinks
 iso
+cloudflare

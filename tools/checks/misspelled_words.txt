@@ -168,8 +168,33 @@ File: intro.md
 Language detected: en
 No misspellings detected.
 
+Permalink: /taxonomies/custom-annotations/
+File: _taxonomies/custom-annotations.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /taxonomies/custom-cats/
+File: _taxonomies/custom-cats.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /taxonomies/custom-notes/
+File: _taxonomies/custom-notes.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /taxonomies/custom-tags/
+File: _taxonomies/custom-tags.md
+Language detected: en
+No misspellings detected.
+
 Permalink: /taxonomies/intro/
 File: _taxonomies/taxonomies.md
+Language detected: en
+No misspellings detected.
+
+Permalink: /taxonomies/sharing/
+File: _taxonomies/sharing-taxonomies.md
 Language detected: en
 No misspellings detected.
 
