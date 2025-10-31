@@ -6,15 +6,28 @@
         ]
     },
     {
+        "permalink": "/components/card/",
+        "similarFiles": []
+    },
+    {
         "permalink": "/components/intro/",
         "similarFiles": [
             "/content/content-items/",
             "/content/intro/",
+            "/intro/",
             "/content/ec/"
         ]
     },
     {
+        "permalink": "/components/download-link/",
+        "similarFiles": []
+    },
+    {
         "permalink": "/components/qitem/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/components/image/",
         "similarFiles": []
     },
     {
@@ -26,54 +39,8 @@
         "similarFiles": []
     },
     {
-        "permalink": "/content/intro/",
-        "similarFiles": [
-            "/content/content-items/",
-            "/components/intro/",
-            "/content/ec/"
-        ]
-    },
-    {
-        "permalink": "/content/ec/",
-        "similarFiles": [
-            "/content/intro/",
-            "/content/content-items/",
-            "/components/intro/"
-        ]
-    },
-    {
-        "permalink": "/intro/",
-        "similarFiles": [
-            "/components/intro/",
-            "/content/content-items/",
-            "/content/intro/"
-        ]
-    },
-    {
-        "permalink": "/get-started/",
-        "similarFiles": []
-    },
-    {
         "permalink": "/components/scrollspy/",
         "similarFiles": []
-    },
-    {
-        "permalink": "/components/content-items/",
-        "similarFiles": []
-    },
-    {
-        "permalink": "/components/downloads/",
-        "similarFiles": []
-    },
-    {
-        "permalink": "/components/download-link/",
-        "similarFiles": []
-    },
-    {
-        "permalink": "/components/xlsx-tables/",
-        "similarFiles": [
-            "/components/xlsx-charts/"
-        ]
     },
     {
         "permalink": "/components/xlsx-charts/",
@@ -82,20 +49,41 @@
         ]
     },
     {
-        "permalink": "/components/image/",
-        "similarFiles": []
+        "permalink": "/components/xlsx-tables/",
+        "similarFiles": [
+            "/components/xlsx-charts/"
+        ]
     },
     {
         "permalink": "/content/content-items/",
         "similarFiles": [
             "/components/intro/",
             "/content/intro/",
-            "/content/ec/"
+            "/content/ec/",
+            "/intro/"
         ]
     },
     {
-        "permalink": "/components/card/",
-        "similarFiles": []
+        "permalink": "/content/intro/",
+        "similarFiles": [
+            "/content/content-items/",
+            "/components/intro/",
+            "/content/ec/",
+            "/intro/",
+            "/get-started/doc-contents/"
+        ]
+    },
+    {
+        "permalink": "/content/ec/",
+        "similarFiles": [
+            "/components/alerts/"
+        ]
+    },
+    {
+        "permalink": "/experiments/docx-summary/",
+        "similarFiles": [
+            "/experiments/pdf-summary/"
+        ]
     },
     {
         "permalink": "/experiments/intro/",
@@ -108,88 +96,9 @@
         ]
     },
     {
-        "permalink": "/experiments/docx-summary/",
+        "permalink": "/taxonomies/custom-annotations/",
         "similarFiles": [
-            "/experiments/pdf-summary/"
-        ]
-    },
-    {
-        "permalink": "/get-started/doc-contents/",
-        "similarFiles": [
-            "/content/intro/"
-        ]
-    },
-    {
-        "permalink": "/get-started/site-config/",
-        "similarFiles": []
-    },
-    {
-        "permalink": "/get-started/config-options/",
-        "similarFiles": []
-    },
-    {
-        "permalink": "/get-started/config-files/",
-        "similarFiles": []
-    },
-    {
-        "permalink": "/get-started/env/",
-        "similarFiles": []
-    },
-    {
-        "permalink": "/integrate/",
-        "similarFiles": []
-    },
-    {
-        "permalink": "/integrations/ga-gtm/",
-        "similarFiles": []
-    },
-    {
-        "permalink": "/integrations/algolia/",
-        "similarFiles": []
-    },
-    {
-        "permalink": "/integrations/github/",
-        "similarFiles": []
-    },
-    {
-        "permalink": "/integrations/hubspot/",
-        "similarFiles": []
-    },
-    {
-        "permalink": "/integrations/new-relic/",
-        "similarFiles": []
-    },
-    {
-        "permalink": "/go-live/",
-        "similarFiles": []
-    },
-    {
-        "permalink": "/go-live/appearance/",
-        "similarFiles": []
-    },
-    {
-        "permalink": "/go-live/build/",
-        "similarFiles": [
-            "/go-live/deploy/"
-        ]
-    },
-    {
-        "permalink": "/go-live/deploy/",
-        "similarFiles": [
-            "/go-live/build/"
-        ]
-    },
-    {
-        "permalink": "/taxonomies/intro/",
-        "similarFiles": [
-            "/taxonomies/sharing/",
-            "/taxonomies/custom-tags/"
-        ]
-    },
-    {
-        "permalink": "/taxonomies/custom-tags/",
-        "similarFiles": [
-            "/taxonomies/intro/"
+            "/taxonomies/custom-notes/"
         ]
     },
     {
@@ -200,16 +109,131 @@
     },
     {
         "permalink": "/taxonomies/custom-notes/",
-        "similarFiles": []
+        "similarFiles": [
+            "/taxonomies/custom-annotations/"
+        ]
     },
     {
-        "permalink": "/taxonomies/custom-annotations/",
-        "similarFiles": []
+        "permalink": "/taxonomies/custom-tags/",
+        "similarFiles": [
+            "/taxonomies/custom-cats/",
+            "/taxonomies/intro/"
+        ]
     },
     {
         "permalink": "/taxonomies/sharing/",
         "similarFiles": [
             "/taxonomies/intro/"
+        ]
+    },
+    {
+        "permalink": "/taxonomies/intro/",
+        "similarFiles": [
+            "/taxonomies/sharing/",
+            "/taxonomies/custom-tags/"
+        ]
+    },
+    {
+        "permalink": "/get-started/doc-contents/",
+        "similarFiles": [
+            "/content/intro/"
+        ]
+    },
+    {
+        "permalink": "/get-started/env/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/extend/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/get-started/",
+        "similarFiles": [
+            "/go-live/deploy/",
+            "/go-live/build/",
+            "/integrations/algolia/"
+        ]
+    },
+    {
+        "permalink": "/go-live/appearance/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/go-live/build/",
+        "similarFiles": [
+            "/go-live/",
+            "/get-started/",
+            "/go-live/deploy/"
+        ]
+    },
+    {
+        "permalink": "/go-live/deploy/",
+        "similarFiles": [
+            "/get-started/",
+            "/integrations/github/",
+            "/integrations/algolia/",
+            "/go-live/build/"
+        ]
+    },
+    {
+        "permalink": "/go-live/",
+        "similarFiles": [
+            "/go-live/build/"
+        ]
+    },
+    {
+        "permalink": "/integrations/algolia/",
+        "similarFiles": [
+            "/go-live/deploy/",
+            "/get-started/"
+        ]
+    },
+    {
+        "permalink": "/integrations/ga-gtm/",
+        "similarFiles": [
+            "/integrations/new-relic/"
+        ]
+    },
+    {
+        "permalink": "/integrations/github/",
+        "similarFiles": [
+            "/go-live/deploy/",
+            "/content/ec/"
+        ]
+    },
+    {
+        "permalink": "/integrations/hubspot/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/integrate/",
+        "similarFiles": []
+    },
+    {
+        "permalink": "/integrations/new-relic/",
+        "similarFiles": [
+            "/integrations/ga-gtm/"
+        ]
+    },
+    {
+        "permalink": "/intro/",
+        "similarFiles": [
+            "/components/intro/",
+            "/content/content-items/",
+            "/content/intro/"
+        ]
+    },
+    {
+        "permalink": "/get-started/config-files/",
+        "similarFiles": [
+            "/get-started/config-options/"
+        ]
+    },
+    {
+        "permalink": "/get-started/config-options/",
+        "similarFiles": [
+            "/get-started/config-files/"
         ]
     }
 ]
