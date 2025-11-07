@@ -11,7 +11,7 @@
         <img fetchpriority="high" width="600" height="400" src="assets/img/home.webp" alt="Docaroo by PMC" decoding="async" loading="eager" style="display:block;" loading="lazy">
     collections_section:
       enabledInHome: true
-      except: ["posts", "tools"] # collection name must be the one from _config.yml[collections]
+      except: ["posts"] # collection name must be the one from _config.yml[collections]
       itemsToShow: 4
       collectionStartBtnText: "Start here"
       buttonsClass: "btn-primary"

@@ -978,7 +978,7 @@ const page__showPageCustomTags = () => {
                 <div 
                     id="pageTags"
                     siteFunction="pageTags" 
-                    class="mb-4">
+                    class="mb-4 col-12 col-md-7">
                     <span 
                         siteFunction="pageTagsContainer" 
                         class="fs-6 fw-medium">
