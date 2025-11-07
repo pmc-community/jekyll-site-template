@@ -422,7 +422,12 @@
   },
   {
     "permalink": "/extend/",
-    "related": []
+    "related": [
+      {
+        "title": "GA/GTM",
+        "permalink": "/integrations/ga-gtm/"
+      }
+    ]
   },
   {
     "permalink": "/get-started/",
@@ -538,8 +543,8 @@
         "permalink": "/integrations/new-relic/"
       },
       {
-        "title": "GitHub",
-        "permalink": "/integrations/github/"
+        "title": "Extend",
+        "permalink": "/extend/"
       }
     ]
   },

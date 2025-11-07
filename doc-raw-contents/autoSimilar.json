@@ -14,8 +14,7 @@
         "similarFiles": [
             "/content/content-items/",
             "/content/intro/",
-            "/intro/",
-            "/content/ec/"
+            "/intro/"
         ]
     },
     {
@@ -59,7 +58,6 @@
         "similarFiles": [
             "/components/intro/",
             "/content/intro/",
-            "/content/ec/",
             "/intro/"
         ]
     },
@@ -68,9 +66,7 @@
         "similarFiles": [
             "/content/content-items/",
             "/components/intro/",
-            "/content/ec/",
-            "/intro/",
-            "/get-started/doc-contents/"
+            "/intro/"
         ]
     },
     {

@@ -333,10 +333,6 @@
         {
           "permalink": "/intro/",
           "title": "Introduction"
-        },
-        {
-          "permalink": "/content/ec/",
-          "title": "External content"
         }
       ],
       "readingTime": 1,
@@ -684,10 +680,6 @@
           "title": "Content"
         },
         {
-          "permalink": "/content/ec/",
-          "title": "External content"
-        },
-        {
           "permalink": "/intro/",
           "title": "Introduction"
         }
@@ -736,16 +728,8 @@
           "title": "Components"
         },
         {
-          "permalink": "/content/ec/",
-          "title": "External content"
-        },
-        {
           "permalink": "/intro/",
           "title": "Introduction"
-        },
-        {
-          "permalink": "/get-started/doc-contents/",
-          "title": "Docs root"
         }
       ],
       "readingTime": 2,
@@ -1155,10 +1139,10 @@
         "annotations"
       ],
       "excerpt": "taxonomies, workflows, customised, tags, annotations, features, plugins, users, posts, backend",
-      "lastUpdate": "2025-10-31 14:33:31 +0200",
+      "lastUpdate": "2025-11-07 23:38:12 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-31 14:33:31 +0200",
-      "createTimeUTC": 1761914011,
+      "createTime": "2025-11-07 23:38:12 +0200",
+      "createTimeUTC": 1762551492,
       "relatedPages": [
         {
           "title": "Sharing taxonomies",
@@ -1282,15 +1266,20 @@
         "low-code",
         "code"
       ],
-      "excerpt": "extensions, javascript, hooking, extend, hooks, functionality, integrations, skills, execute, gtm",
+      "excerpt": "hookable, extend, javascript, plugins, gtm, function, scope, parameters, globals, inline",
       "lastUpdate": "2025-10-28 10:53:15 +0200",
       "lastUpdateUTC": 0,
       "createTime": "2025-10-28 10:53:15 +0200",
       "createTimeUTC": 1761641595,
-      "relatedPages": [],
-      "autoSummary": "We offer out-of-the-box the possibility to extend the functionality of the site by hooking on the execution of the functions on browser side. Be aware that using extensions requires development skills (mostly on javascript). The level of the required skills depends on the complexity of the extension.",
+      "relatedPages": [
+        {
+          "title": "GA/GTM",
+          "permalink": "/integrations/ga-gtm/"
+        }
+      ],
+      "autoSummary": "We offer out-of-the-box the possibility to extend the functionality of the site by hooking on the execution of the functions on browser side. The hook is set by method which takes the following parameters: : the name of the target function : array of values which will be attached to.",
       "similarByContent": [],
-      "readingTime": 1,
+      "readingTime": 3,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -1608,8 +1597,8 @@
           "permalink": "/integrations/new-relic/"
         },
         {
-          "title": "GitHub",
-          "permalink": "/integrations/github/"
+          "title": "Extend",
+          "permalink": "/extend/"
         }
       ],
       "autoSummary": "Google analytics and google tag manager are installed by default if enabled and configured in _databuildconfig.yml. This will enable the collection of data about the site. When ga and gtm are connected, ga collects the information available when a gtm tag fires. However, the most important feature of the integration.",
@@ -2074,7 +2063,7 @@
         {
           "title": "Taxonomies",
           "permalink": "/taxonomies/intro/",
-          "lastUpdate": "31-Oct-2025"
+          "lastUpdate": "07-Nov-2025"
         }
       ],
       "numPages": 1
@@ -2164,7 +2153,7 @@
         {
           "title": "Taxonomies",
           "permalink": "/taxonomies/intro/",
-          "lastUpdate": "31-Oct-2025"
+          "lastUpdate": "07-Nov-2025"
         }
       ],
       "numPages": 1
@@ -2819,7 +2808,7 @@
         {
           "title": "Taxonomies",
           "permalink": "/taxonomies/intro/",
-          "lastUpdate": "31-Oct-2025"
+          "lastUpdate": "07-Nov-2025"
         }
       ],
       "numPages": 3
@@ -3009,7 +2998,7 @@
         {
           "title": "Taxonomies",
           "permalink": "/taxonomies/intro/",
-          "lastUpdate": "31-Oct-2025"
+          "lastUpdate": "07-Nov-2025"
         }
       ],
       "numPages": 1
@@ -3504,7 +3493,7 @@
         {
           "title": "Taxonomies",
           "permalink": "/taxonomies/intro/",
-          "lastUpdate": "31-Oct-2025"
+          "lastUpdate": "07-Nov-2025"
         }
       ],
       "numPages": 6
