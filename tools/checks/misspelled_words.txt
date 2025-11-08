@@ -131,7 +131,7 @@ No misspellings detected.
 Permalink: /go-live/deploy/
 File: go-live/deploy.md
 Language detected: en
-Misspelled words: ghp
+No misspellings detected.
 
 Permalink: /integrate/
 File: integrations/integrations.md

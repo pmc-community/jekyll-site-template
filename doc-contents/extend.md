@@ -46,7 +46,7 @@ These hooks are ideally for inline functions executed within `<script> tags` and
 
 {% include elements/alert.html 
   class="warning" 
-  content="INIT-HOOKS does not have access to any asset (variables, functions) since these are not available at the time of such target function execution. Only the super globals are available at the moment of the execution of the INIT-HOOKS tatget functions."
+  content="INIT-HOOKS does not have access to any asset (variables, functions) since these are not available at the time of such target function execution. Only the super globals are available at the moment of the execution of the INIT-HOOKS target functions."
 %}
 
 Example of an init hook:
@@ -98,7 +98,7 @@ Examples of pre-hooks:
 ```
 
 ## POST-HOOKS
-These hookes are ideally for functions executed in user actions such as click on buttons (`POST-HOOKS`). These hooks are located in `assets/js/post-hooks.js`.
+These hooks are ideally for functions executed in user actions such as click on buttons (`POST-HOOKS`). These hooks are located in `assets/js/post-hooks.js`.
 
 {% include elements/alert.html 
   class="warning" 

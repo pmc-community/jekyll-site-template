@@ -95,7 +95,7 @@ This site is divided into logical sections, each building on the previous one:
 3. **Going Live with the Site** – Installing, configuring, and running your documentation framework  
 4. **Writing Great Docs** – Organise content, use content items, import content  
 5. **Components and Experiments** – Interactive content elements, reusable components, integrate content from popular formats  
-6. **Custom taxonomies** – Create and use your onwn docs organisation on multiple dimensions  
+6. **Custom taxonomies** – Create and use your own docs organisation on multiple dimensions  
 
 # 🧭 Why Docs Matters
 

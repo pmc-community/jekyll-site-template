@@ -125,4 +125,6 @@ you
 your
 conformities
 img
+async
+globals
 
