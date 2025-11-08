@@ -39,7 +39,6 @@ nav_exclude: true
     setTimeout(()=>{
       const ref = document.referrer || 'unknown';
       $('#404_trigger_doc').text(ref);
-      preFlight.handle404(ref);
       const url = window.location.href;
       const newPath = url.replace(/\/404\.html$/, '/');
       window.history.replaceState({}, document.title, newPath);
@@ -64,3 +63,8 @@ nav_exclude: true
     </div>
   </div>
 </div>
+
+<script>
+  const ref404 = document.referrer || 'unknown';
+  preFlight.handle404(ref404);
+</script>
