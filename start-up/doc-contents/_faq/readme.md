@@ -1,0 +1,1 @@
+This folder can be used to store Q&A files in their specific format.
