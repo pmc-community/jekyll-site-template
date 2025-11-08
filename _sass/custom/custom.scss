@@ -1,5 +1,7 @@
 /* HEADS UP!
- * AS OF APRIL 2024, @use RULES CANNOT BE USED WHEN DEPLOYING TO GHP
+ * APRIL 2024: @use RULES CANNOT BE USED WHEN DEPLOYING TO GHP
+ * PATHS ARE NOT RESOLVED CORRECTLY
+ * 
 */
 
 /* HEADS UP!
@@ -245,3 +247,16 @@ $alwaysTextAlignmentLeft: ('.alwaysTextToLeft');
         text-align: $tal-h-left !important;
     }
 }
+
+// sometimes we want li elements to not have the default 0.25rem margin
+$liWithoutDefaultMargin: (
+    'div[siteFunction="homePageCollectionsSection"] li',
+    'div[siteFunction="homePageRecentAndPopularSection"] li',
+    'div[siteFunction="homePageStatsSection"] li'
+);
+@each $element in $liWithoutDefaultMargin {
+        #{$element} {
+            margin:$m-0px !important;
+        }
+}
+
