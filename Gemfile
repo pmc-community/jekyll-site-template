@@ -9,7 +9,7 @@ gem 'dotenv', groups: [:development, :test]
   # IF DEPLOY FROM ACTION, CAN BE THE LATEST JEKYLL VERSION
 
 # a good idea is to use the ltest version of Jekyll
-gem "jekyll", "~> 4.3.3"
+gem "jekyll", "~> 4.4.1"
 
 # JTD LAST CAN BE USED WHEN DEPLOY FROM GH ACTION
 gem "just-the-docs"
