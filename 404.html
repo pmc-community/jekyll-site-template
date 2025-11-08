@@ -1,0 +1,70 @@
+---
+permalink: /404.html
+layout: page
+title: Not found
+nav_exclude: true
+---
+
+<script>
+  $(document).ready(function () {
+
+    if (!isProd) return;
+
+    const availableLanguages = settings.multilang.availableLang;
+    const supportedLangs = _.map(availableLanguages, 'lang');
+
+    const currentPath = window.location.pathname;
+
+    const langMatch = currentPath.match(/^\/([a-z]{2,3})(\/|$)/);
+    const currentLang = langMatch && supportedLangs.includes(langMatch[1]) ? langMatch[1] : '';
+
+    const isInLocalizedPath = currentLang && currentPath.startsWith(`/${currentLang}/`);
+    const alreadyRedirected = sessionStorage.getItem('redirectedToLocalized404');
+
+    if (alreadyRedirected) {
+      sessionStorage.removeItem('redirectedToLocalized404');
+      return;
+    } else {
+      sessionStorage.setItem('redirectedToLocalized404', 'true');
+      let lang404 = currentLang === '' ? '/404.html' : `/${currentLang}/404.html`;
+      lang404 = lang404.replace(/\/{2,}/g, '/');
+      window.location.replace(lang404);
+      return;
+    }
+  });
+</script>
+
+<script>
+  $(document).ready(function () {
+    setTimeout(()=>{
+      const ref = document.referrer || 'unknown';
+      $('#404_trigger_doc').text(ref);
+      const url = window.location.href;
+      const newPath = url.replace(/\/404\.html$/, '/');
+      window.history.replaceState({}, document.title, newPath);
+    },200);
+  });
+</script>
+
+<div class="container position-relative" style="height: 40vh">
+  <div class="w-100 position-absolute start-50 translate-middle-x top-50">
+    <div> 
+      <img class="mb-4" src="/assets/img/404-250.png" />
+      <p id="404_trigger_doc" class="text-primary fw-medium">referrer</p>
+      <p data-i18n="404_row_1">The requested document could not be found.</p>
+      <p data-i18n="404_row_2">Contact support if you believe that the document should be here.</p>
+      <a 
+        type="button" 
+        class="btn btn-danger text-light"
+        href="{{site.data.siteConfig.links.supportLink}}"
+        data-i18n="404_support_btn_text"> 
+        Support 
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  const ref404 = document.referrer || 'unknown';
+  preFlight.handle404(ref404);
+</script>
