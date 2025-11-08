@@ -1,3 +1,4 @@
+
 ---
 permalink: /404.html
 layout: default
@@ -7,13 +8,7 @@ title: Not found
 nav_exclude: true
 ---
 
-<script id="redirect_to_localised_404">
-    if (isProd) {
-      const ref = document.referrer || 'unknown';
-      preFlight.handle404(ref);
-      $('#404_trigger_doc').text(ref);
-    }
-
+<script>
   $(document).ready(function () {
 
     if (!isProd) return;
@@ -42,11 +37,24 @@ nav_exclude: true
   });
 </script>
 
+<script>
+  $(document).ready(function () {
+    setTimeout(()=>{
+      const ref = document.referrer || 'unknown';
+      preFlight.handle404(ref);
+      $('#404_trigger_doc').text(ref);
+      const url = window.location.href;
+      const newPath = url.replace(/\/404\.html$/, '/');
+      window.history.replaceState({}, document.title, newPath);
+    },200);
+  });
+</script>
+
 <div class="container position-relative" style="height: 40vh">
   <div class="w-100 position-absolute start-50 translate-middle-x top-50">
     <div> 
       <img class="mb-4" src="/assets/img/404-250.png" />
-      <p id="404_trigger_doc" class="text-primary fw-medium">referrer</p>
+      <p id="404_trigger_doc" class="text-primary fw-medium"></p>
       <p data-i18n="404_row_1">The requested document could not be found.</p>
       <p data-i18n="404_row_2">Contact support if you believe that the document should be here.</p>
       <a 
