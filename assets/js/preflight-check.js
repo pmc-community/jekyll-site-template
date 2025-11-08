@@ -245,8 +245,8 @@ preFlight = {
             argsExtra:[ref]
         };
         nrLog(
-            '404 page not found', 
-            'page not found', 
+            `404 page not found: ${ref}`, 
+            `page not found: ${ref}`, 
             'error', 
             funcData
         );

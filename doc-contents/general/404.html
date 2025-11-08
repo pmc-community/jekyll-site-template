@@ -8,14 +8,15 @@ nav_exclude: true
 ---
 
 <script id="redirect_to_localised_404">
-    const ref = document.referrer || 'unknown';
-    preFlight.handle404(ref);
-    $('#404_trigger_doc').text(ref);
+    if (isProd) {
+      const ref = document.referrer || 'unknown';
+      preFlight.handle404(ref);
+      $('#404_trigger_doc').text(ref);
+    }
 
   $(document).ready(function () {
 
     if (!isProd) return;
-
 
     const availableLanguages = settings.multilang.availableLang;
     const supportedLangs = _.map(availableLanguages, 'lang');
