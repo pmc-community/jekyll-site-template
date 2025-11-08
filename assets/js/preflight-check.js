@@ -237,17 +237,18 @@ preFlight = {
     handle404: (ref) => {
         // here we may use jQuery since it should be loaded already if this point is reached
         $(document).ready(function() {
-            console.log(ref);
             $('#ihs_go_to_top_btn').remove();
             if (preFlight.envInfo.device.deviceType === 'mobile') $('.site-footer').remove();
+            const funcData = {
+                functionName: 'handle404',
+                result: ref,
+                args: [ref]
+            };
             nrLog(
                 '404 page not found', 
                 'page not found', 
                 'error', 
-                {
-                    functionName: 'handle404',
-                    referrer: ref
-                }
+                funcData
             );
         });
         
