@@ -234,7 +234,7 @@ preFlight = {
         document.body.style.visibility = 'visible'; //because body was made invisible in _includes/head_custom.html
     },
 
-    handle404: () => {
+    handle404: (ref) => {
         // here we may use jQuery since it should be loaded already if this point is reached
         $(document).ready(function() {
             $('#ihs_go_to_top_btn').remove();
@@ -245,6 +245,7 @@ preFlight = {
                 'error', 
                 {
                     functionName: 'handle404',
+                    args: [ref]
                 }
             );
         });
@@ -289,7 +290,6 @@ let siteObservers = new Map();
 let pageInfo = {}; // used for full page info canvas
 let hsForms = [];
 let docSearchHitPageToc = [];
-window.mainJQuery = jQuery; // exposing jQuery to be able to use it in iFrames
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -310,7 +310,6 @@ document.addEventListener('DOMContentLoaded', function() {
             // HEADS UP!!!! BODY VISIBILITY IS HIDDEN HERE (from _includes/head_custom.html)
             $('html').append($loading);
             $('#contentLoading').removeClass('d-none');
-            $('body').attr('data-instant-intensity', 'viewport').attr('data-instant-vary-accept');
         }
         else {
             console.log(jQuery)
@@ -319,5 +318,4 @@ document.addEventListener('DOMContentLoaded', function() {
     
     }
 });
-
 
