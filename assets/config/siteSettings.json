@@ -1267,10 +1267,10 @@
         "code"
       ],
       "excerpt": "hookable, extend, javascript, plugins, gtm, function, scope, parameters, globals, inline",
-      "lastUpdate": "2025-10-28 10:53:15 +0200",
+      "lastUpdate": "2025-11-08 01:41:46 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-28 10:53:15 +0200",
-      "createTimeUTC": 1761641595,
+      "createTime": "2025-11-08 01:41:46 +0200",
+      "createTimeUTC": 1762558906,
       "relatedPages": [
         {
           "title": "GA/GTM",
@@ -1798,10 +1798,10 @@
         "docs"
       ],
       "excerpt": "documentation, markdown, docaroo, developer, create, guide, faqs, excel, contributor, onboarding",
-      "lastUpdate": "2025-10-26 16:06:09 +0200",
+      "lastUpdate": "2025-11-08 01:41:46 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-26 16:06:09 +0200",
-      "createTimeUTC": 1761487569,
+      "createTime": "2025-11-08 01:41:46 +0200",
+      "createTimeUTC": 1762558906,
       "relatedPages": [
         {
           "title": "Get started",
@@ -2188,7 +2188,7 @@
         {
           "title": "Extend",
           "permalink": "/extend/",
-          "lastUpdate": "28-Oct-2025"
+          "lastUpdate": "08-Nov-2025"
         },
         {
           "title": "Algolia",
@@ -2363,7 +2363,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "26-Oct-2025"
+          "lastUpdate": "08-Nov-2025"
         },
         {
           "title": "Config Files",
@@ -2398,7 +2398,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "26-Oct-2025"
+          "lastUpdate": "08-Nov-2025"
         },
         {
           "title": "Config Files",
@@ -2478,7 +2478,7 @@
         {
           "title": "Extend",
           "permalink": "/extend/",
-          "lastUpdate": "28-Oct-2025"
+          "lastUpdate": "08-Nov-2025"
         }
       ],
       "numPages": 1
@@ -2588,7 +2588,7 @@
         {
           "title": "Extend",
           "permalink": "/extend/",
-          "lastUpdate": "28-Oct-2025"
+          "lastUpdate": "08-Nov-2025"
         }
       ],
       "numPages": 1
@@ -2718,7 +2718,7 @@
         {
           "title": "Extend",
           "permalink": "/extend/",
-          "lastUpdate": "28-Oct-2025"
+          "lastUpdate": "08-Nov-2025"
         },
         {
           "title": "GA/GTM",
@@ -3278,7 +3278,7 @@
         {
           "title": "Extend",
           "permalink": "/extend/",
-          "lastUpdate": "28-Oct-2025"
+          "lastUpdate": "08-Nov-2025"
         },
         {
           "title": "Get started",
@@ -3293,7 +3293,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "26-Oct-2025"
+          "lastUpdate": "08-Nov-2025"
         },
         {
           "title": "Config Files",
