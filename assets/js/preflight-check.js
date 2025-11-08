@@ -234,9 +234,10 @@ preFlight = {
         document.body.style.visibility = 'visible'; //because body was made invisible in _includes/head_custom.html
     },
 
-    handle404: () => {
+    handle404: (ref) => {
         // here we may use jQuery since it should be loaded already if this point is reached
         $(document).ready(function() {
+            console.log(ref);
             $('#ihs_go_to_top_btn').remove();
             if (preFlight.envInfo.device.deviceType === 'mobile') $('.site-footer').remove();
             nrLog(
@@ -245,6 +246,7 @@ preFlight = {
                 'error', 
                 {
                     functionName: 'handle404',
+                    referrer: ref
                 }
             );
         });
