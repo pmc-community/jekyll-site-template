@@ -1,0 +1,977 @@
+[
+  {
+    "title": "Alerts",
+    "permalink": "/components/alerts/",
+    "categories": [
+      "Components"
+    ],
+    "tags": [
+      "embed",
+      "alert",
+      "content"
+    ],
+    "excerpt": "alerts, github, permissions, documentation, added, contain, blocks, sources, docaroo, public",
+    "lastUpdate": "2025-10-31 20:24:10 +0200",
+    "lastUpdateUTC": 1761935050,
+    "createTime": "2025-10-31 20:24:10 +0200",
+    "createTimeUTC": 1761935050,
+    "relatedPages": [],
+    "autoSummary": "Learn how to add blocks to your content. You can add both and alerts. Alerts can contain content introduced in clear but also can refer from other documents from your documentation or from external public or private repositories.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Card",
+    "permalink": "/components/card/",
+    "categories": [
+      "Components"
+    ],
+    "tags": [
+      "card",
+      "content",
+      "external",
+      "button",
+      "link",
+      "gallery"
+    ],
+    "excerpt": "card, galleries, docaroo, create, component, settings, links, embedding, documents, examples",
+    "lastUpdate": "2025-10-26 13:40:14 +0200",
+    "lastUpdateUTC": 1761478814,
+    "createTime": "2025-10-26 13:40:14 +0200",
+    "createTimeUTC": 1761478814,
+    "relatedPages": [],
+    "autoSummary": "Cards can be included as single items or in galleries of cards.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Components",
+    "permalink": "/components/intro/",
+    "categories": [
+      "Components"
+    ],
+    "tags": [],
+    "excerpt": "components, formatting, tags, markdown, content, faq, document, embedded, inline, docaroo",
+    "lastUpdate": "2025-09-27 18:12:23 +0300",
+    "lastUpdateUTC": 1758985943,
+    "createTime": "2025-09-27 18:12:23 +0300",
+    "createTimeUTC": 1758985943,
+    "relatedPages": [],
+    "autoSummary": "Learn how to add different pre-defined and to your content. These are elements that can be embedded in your documents using tags. Pre- defined components represents the most efficient way to create complex and easy to maintain quality content. Content items are helpful liquid tags generating pieces of content.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Downloads",
+    "permalink": "/components/download-link/",
+    "categories": [
+      "Components"
+    ],
+    "tags": [
+      "download",
+      "file",
+      "link",
+      "button"
+    ],
+    "excerpt": "download, documentation, directory, link, button, external, generates, default, files, component",
+    "lastUpdate": "2025-10-27 16:39:50 +0200",
+    "lastUpdateUTC": 1761575990,
+    "createTime": "2025-10-27 16:39:50 +0200",
+    "createTimeUTC": 1761575990,
+    "relatedPages": [],
+    "autoSummary": "Download-link component generates a button link for downloading files from your documentation site. Only downloading from your site is allowed, for security reasons it is not allowed to create download links targeting files hosted on external sites.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "FAQ Item",
+    "permalink": "/components/qitem/",
+    "categories": [
+      "Components"
+    ],
+    "tags": [
+      "embed",
+      "faq",
+      "content"
+    ],
+    "excerpt": "faq, markdown, contain, search, header, adding, texts, format, content, readability",
+    "lastUpdate": "2025-10-27 16:39:50 +0200",
+    "lastUpdateUTC": 1761575990,
+    "createTime": "2025-10-27 16:39:50 +0200",
+    "createTimeUTC": 1761575990,
+    "relatedPages": [],
+    "autoSummary": "Docaroo supports 2 types of text search: native search and algolia docs search. We provide an advanced search based on different parameters such as the taxonomies.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Image",
+    "permalink": "/components/image/",
+    "categories": [
+      "Components"
+    ],
+    "tags": [
+      "image",
+      "component",
+      "gallery"
+    ],
+    "excerpt": "captions, documentation, image, folder, component, pages, examples, content, render, stored",
+    "lastUpdate": "2025-10-27 16:39:50 +0200",
+    "lastUpdateUTC": 1761575990,
+    "createTime": "2025-10-27 16:39:50 +0200",
+    "createTimeUTC": 1761575990,
+    "relatedPages": [],
+    "autoSummary": "This component allows placing images into your content. Images can have captions (lets say you need to show some credits or copyright information) or not. The component is designed to work with responsive images.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Link button",
+    "permalink": "/components/link-button/",
+    "categories": [
+      "Components"
+    ],
+    "tags": [
+      "button",
+      "link",
+      "anchor"
+    ],
+    "excerpt": "links, bootstrap, add, click, button, permalink, docaroo, markdown, outline, navigate",
+    "lastUpdate": "2025-10-27 16:39:50 +0200",
+    "lastUpdateUTC": 1761575990,
+    "createTime": "2025-10-27 16:39:50 +0200",
+    "createTimeUTC": 1761575990,
+    "relatedPages": [],
+    "autoSummary": "Link buttons helps users to navigate inside your documentation or access external sites. Docaroo provides link buttons in style. You can add individual link buttons or group link buttons.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Rich media",
+    "permalink": "/components/rich-media/",
+    "categories": [
+      "Components"
+    ],
+    "tags": [
+      "embed",
+      "figma",
+      "lottie",
+      "video"
+    ],
+    "excerpt": "embed, figma, docaroo, components, documentation, slides, prototypes, jam, decks, media",
+    "lastUpdate": "2025-10-29 15:35:35 +0200",
+    "lastUpdateUTC": 1761744935,
+    "createTime": "2025-10-29 15:35:35 +0200",
+    "createTimeUTC": 1761744935,
+    "relatedPages": [],
+    "autoSummary": "Learn how to use docaroo components to embed rich media into your content. Currently we support design, boards (fig jam), slides and deck files. Prototypes are not supported for the moment, we are working on this.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Scroll Spy & Tabs",
+    "permalink": "/components/scrollspy/",
+    "categories": [
+      "Components"
+    ],
+    "tags": [
+      "scrollspy",
+      "content",
+      "tabs"
+    ],
+    "excerpt": "scroll, markdown, document, folder, spies, importing, stored, docaroo, ullamcorper, interdum",
+    "lastUpdate": "2025-10-27 16:39:50 +0200",
+    "lastUpdateUTC": 1761575990,
+    "createTime": "2025-10-27 16:39:50 +0200",
+    "createTimeUTC": 1761575990,
+    "relatedPages": [],
+    "autoSummary": "Scroll spies are great ways of organising information inside your documents. We made them flexible and easy to be included in the documents. Any docaroo component, including importing external content or rich content ones, can be used to populate scroll spies and tabs.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "XLSX Charts",
+    "permalink": "/components/xlsx-charts/",
+    "categories": [
+      "Components"
+    ],
+    "tags": [
+      "table",
+      "xls",
+      "chart",
+      "office"
+    ],
+    "excerpt": "excel, charts, data, component, files, importing, formats, sheet, default, colours",
+    "lastUpdate": "2025-10-27 16:39:50 +0200",
+    "lastUpdateUTC": 1761575990,
+    "createTime": "2025-10-27 16:39:50 +0200",
+    "createTimeUTC": 1761575990,
+    "relatedPages": [],
+    "autoSummary": "This component allows importing excel charts into your documents. Combined with component, this one provides the full support to share structured data in a professional way. Currently we support only: line charts column and bar charts pie and doughnut charts we do not support importing the colours you assign to.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "XLSX Tables",
+    "permalink": "/components/xlsx-tables/",
+    "categories": [
+      "Components"
+    ],
+    "tags": [
+      "table",
+      "xls",
+      "office"
+    ],
+    "excerpt": "markdown, tables, excel, column, widths, import, create, merged, loading, featured",
+    "lastUpdate": "2025-10-27 16:39:50 +0200",
+    "lastUpdateUTC": 1761575990,
+    "createTime": "2025-10-27 16:39:50 +0200",
+    "createTimeUTC": 1761575990,
+    "relatedPages": [],
+    "autoSummary": "This component allows users to create tables in markdown and load them in excel. It offers two types of tables: fully featured and without some features.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Content items",
+    "permalink": "/content/content-items/",
+    "categories": [
+      "Components"
+    ],
+    "tags": [
+      "items",
+      "content"
+    ],
+    "excerpt": "docaroo, documentations, content, useful, markdown, render, directory, repository, changes, github",
+    "lastUpdate": "2025-10-27 16:39:50 +0200",
+    "lastUpdateUTC": 1761575990,
+    "createTime": "2025-10-27 16:39:50 +0200",
+    "createTimeUTC": 1761575990,
+    "relatedPages": [],
+    "autoSummary": "Docaroo makes available a series of content items that can be used to enrich your documents and to be very efficient when wanting to incorporate pieces of content in a fast and robust way.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Content",
+    "permalink": "/content/intro/",
+    "categories": [
+      "Content"
+    ],
+    "tags": [
+      "documentation",
+      "organise docs"
+    ],
+    "excerpt": "github, external, repository, document, importing, modify, features, html, sources, private",
+    "lastUpdate": "2025-10-31 20:24:10 +0200",
+    "lastUpdateUTC": 1761935050,
+    "createTime": "2025-10-31 20:24:10 +0200",
+    "createTimeUTC": 1761935050,
+    "relatedPages": [],
+    "autoSummary": "Learn how to structure and use the content in the most efficient way. The secret is to use to the maximum extent the features made available. Importing external content (at build time or at run time) is the most powerful.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "External content",
+    "permalink": "/content/ec/",
+    "categories": [
+      "Content"
+    ],
+    "tags": [
+      "embed",
+      "external",
+      "import"
+    ],
+    "excerpt": "docaroo, documentation, import, github, indexed, shortcodes, repositories, api, wordpress, features",
+    "lastUpdate": "2025-10-27 16:39:50 +0200",
+    "lastUpdateUTC": 1761575990,
+    "createTime": "2025-10-27 16:39:50 +0200",
+    "createTimeUTC": 1761575990,
+    "relatedPages": [],
+    "autoSummary": "Docaroo allows to your documents. External content is important because it allows you to create of content and import these parts in multiple places. It is possible to import content from external public and private GitHub repositories.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": true,
+    "parent": ""
+  },
+  {
+    "title": "DOCX Summary",
+    "permalink": "/experiments/docx-summary/",
+    "categories": [
+      "Experiments",
+      "Content",
+      "Components"
+    ],
+    "tags": [
+      "docx",
+      "summary",
+      "office"
+    ],
+    "excerpt": "docx, generates, download, updates, component, document, huggingface, rendered, summary, source",
+    "lastUpdate": "2025-10-27 16:39:50 +0200",
+    "lastUpdateUTC": 1761575990,
+    "createTime": "2025-10-27 16:39:50 +0200",
+    "createTimeUTC": 1761575990,
+    "relatedPages": [],
+    "autoSummary": "This component helps enhancing your content with auto generated summaries from docx files. It is combined with the download component, so the output rendered will be a summary of the docx file and a download button.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Experiments",
+    "permalink": "/experiments/intro/",
+    "categories": [
+      "Experiments",
+      "Content",
+      "Components"
+    ],
+    "tags": [
+      "pdf",
+      "docx",
+      "summary",
+      "office"
+    ],
+    "excerpt": "experiments, features, pdf, build, generated, optimise, docx, summarise, dev, corrections",
+    "lastUpdate": "2025-10-27 16:39:50 +0200",
+    "lastUpdateUTC": 1761575990,
+    "createTime": "2025-10-27 16:39:50 +0200",
+    "createTimeUTC": 1761575990,
+    "relatedPages": [],
+    "autoSummary": "We are working on a series of interesting features that will make your life much easier when creating content. We consider those features as experiments. You are encouraged to use them and to send us your feedback.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "PDF Summary",
+    "permalink": "/experiments/pdf-summary/",
+    "categories": [
+      "Experiments",
+      "Content",
+      "Components"
+    ],
+    "tags": [
+      "pdf",
+      "summary",
+      "office"
+    ],
+    "excerpt": "pdf, generates, render, updates, component, huggingface, github, source, automatically, macos",
+    "lastUpdate": "2025-10-27 16:39:50 +0200",
+    "lastUpdateUTC": 1761575990,
+    "createTime": "2025-10-27 16:39:50 +0200",
+    "createTimeUTC": 1761575990,
+    "relatedPages": [],
+    "autoSummary": "This component helps enhancing your content with auto generated summaries from pdf files. It is combined with the download component, so the output rendered will be a summary of the pdf file and a download button.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Custom annotations",
+    "permalink": "/taxonomies/custom-annotations/",
+    "categories": [
+      "Taxonomies"
+    ],
+    "tags": [
+      "annotation",
+      "custom",
+      "taxonomy"
+    ],
+    "excerpt": "annotations, annotation, custom, comments, taxonomies, note, added, documents, placeholders, variant",
+    "lastUpdate": "2025-10-31 14:33:31 +0200",
+    "lastUpdateUTC": 1761914011,
+    "createTime": "2025-10-31 14:33:31 +0200",
+    "createTimeUTC": 1761914011,
+    "relatedPages": [],
+    "autoSummary": "Custom annotations are comments added by the user to parts of the documents. Can be seen and used only by theuser who created them. Working with custom annotations is possible only from the document body.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Custom categories",
+    "permalink": "/taxonomies/custom-cats/",
+    "categories": [
+      "Taxonomies"
+    ],
+    "tags": [
+      "category",
+      "custom",
+      "taxonomy"
+    ],
+    "excerpt": "categories, tags, custom, updating, removed, adding, features, category, removing, modified",
+    "lastUpdate": "2025-10-31 14:33:31 +0200",
+    "lastUpdateUTC": 1761914011,
+    "createTime": "2025-10-31 14:33:31 +0200",
+    "createTimeUTC": 1761914011,
+    "relatedPages": [],
+    "autoSummary": "Adding, removing and updating custom categories works exactly in the same way as the similar features related to the custom tags. The only feature that is not available for custom categories is adding custom categories to documents from selected text in the document body.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Custom notes",
+    "permalink": "/taxonomies/custom-notes/",
+    "categories": [
+      "Taxonomies"
+    ],
+    "tags": [
+      "notes",
+      "custom",
+      "taxonomy"
+    ],
+    "excerpt": "annotations, annotation, custom, notes, note, comments, documents, document, added, placeholders",
+    "lastUpdate": "2025-10-31 14:33:31 +0200",
+    "lastUpdateUTC": 1761914011,
+    "createTime": "2025-10-31 14:33:31 +0200",
+    "createTimeUTC": 1761914011,
+    "relatedPages": [],
+    "autoSummary": "Custom notes are comments added by the user to the documents. Can be seen and used only by theuser who created them. Working with custom notes is possible only from the document info panel.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Custom tags",
+    "permalink": "/taxonomies/custom-tags/",
+    "categories": [
+      "Taxonomies"
+    ],
+    "tags": [
+      "tag",
+      "custom",
+      "taxonomy"
+    ],
+    "excerpt": "tags, taxonomies, docsearch, custom, removed, algolia, adding, words, selecting, feature",
+    "lastUpdate": "2025-10-31 14:33:31 +0200",
+    "lastUpdateUTC": 1761914011,
+    "createTime": "2025-10-31 14:33:31 +0200",
+    "createTimeUTC": 1761914011,
+    "relatedPages": [],
+    "autoSummary": "Custom tags can be added to the current document directly selecting a group of words (usually, max. 3 words or 20 characters) and applying tag document option (this feature is available on desktop only). If the site uses algolia docsearch, there is another feature available when selecting text in a.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Sharing taxonomies",
+    "permalink": "/taxonomies/sharing/",
+    "categories": [
+      "Taxonomies"
+    ],
+    "tags": [
+      "annotation",
+      "notes",
+      "tag",
+      "category",
+      "custom",
+      "taxonomy"
+    ],
+    "excerpt": "taxonomies, taxonomy, custom, configuration, configure, sharing, workflows, allows, users, user",
+    "lastUpdate": "2025-10-31 14:33:31 +0200",
+    "lastUpdateUTC": 1761914011,
+    "createTime": "2025-10-31 14:33:31 +0200",
+    "createTimeUTC": 1761914011,
+    "relatedPages": [],
+    "autoSummary": "Sharing custom taxonomies is a feature that allows the users to save and load a certain custom taxonomy configuration. This means that custom taxonomicies can be used by may users or, maybe even more important, a user can configure multiple custom taxonenies and load them to fit the purpose of.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Taxonomies",
+    "permalink": "/taxonomies/intro/",
+    "categories": [
+      "Taxonomies"
+    ],
+    "tags": [
+      "tags",
+      "categories",
+      "notes",
+      "annotations"
+    ],
+    "excerpt": "taxonomies, workflows, customised, tags, annotations, features, plugins, users, posts, backend",
+    "lastUpdate": "2025-11-07 23:38:12 +0200",
+    "lastUpdateUTC": 1762551492,
+    "createTime": "2025-11-07 23:38:12 +0200",
+    "createTimeUTC": 1762551492,
+    "relatedPages": [],
+    "autoSummary": "Custom taxonomies allow users to organise the information in a way that suits their preference. There is no limit in how many ways the documentation can be organised using custom taxonomyies.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Docs root",
+    "permalink": "/get-started/doc-contents/",
+    "categories": [
+      "General",
+      "Start"
+    ],
+    "tags": [
+      "documentation",
+      "docs",
+      "collections"
+    ],
+    "excerpt": "folder, documentation, faq, repository, docaroo, permalink, sections, downloading, default, configuration",
+    "lastUpdate": "2025-10-27 16:39:50 +0200",
+    "lastUpdateUTC": 1761575990,
+    "createTime": "2025-10-27 16:39:50 +0200",
+    "createTimeUTC": 1761575990,
+    "relatedPages": [],
+    "autoSummary": "Doc-contents is the root folder of the documents and collections. The way in which this folder is organised is strictly depending on the structure you want to have for your documentation. Some sub-folders are necessary to be present: the collection folder where the qa files must be placed if a.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": "Get started"
+  },
+  {
+    "title": "Environments",
+    "permalink": "/get-started/env/",
+    "categories": [
+      "General",
+      "Start",
+      "Site config",
+      "Environment"
+    ],
+    "tags": [
+      "start",
+      "configuration",
+      "environment",
+      "variable"
+    ],
+    "excerpt": "env, variables, settings, netlify, github, repositories, include, dev, deploying, purposes",
+    "lastUpdate": "2025-10-05 17:18:15 +0300",
+    "lastUpdateUTC": 1759673895,
+    "createTime": "2025-10-05 17:18:15 +0300",
+    "createTimeUTC": 1759673895,
+    "relatedPages": [],
+    "autoSummary": "Environment variables are used only at build time. At run time (in dev or production environments) the environment variables are not used anymore. They are mostly used to store values that should never be exposed, such as access keys and tokens that are used to integrate some external features and.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": "Get started"
+  },
+  {
+    "title": "Extend",
+    "permalink": "/extend/",
+    "categories": [
+      "General"
+    ],
+    "tags": [
+      "extend",
+      "hooks",
+      "low-code",
+      "code"
+    ],
+    "excerpt": "hookable, extend, javascript, plugins, gtm, function, scope, parameters, globals, inline",
+    "lastUpdate": "2025-11-08 17:21:34 +0200",
+    "lastUpdateUTC": 1762615294,
+    "createTime": "2025-11-08 17:21:34 +0200",
+    "createTimeUTC": 1762615294,
+    "relatedPages": [],
+    "autoSummary": "We offer out-of-the-box the possibility to extend the functionality of the site by hooking on the execution of the functions on browser side. The hook is set by method which takes the following parameters: : the name of the target function : array of values which will be attached to.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Get started",
+    "permalink": "/get-started/",
+    "categories": [
+      "General",
+      "Start"
+    ],
+    "tags": [
+      "documentation",
+      "docs"
+    ],
+    "excerpt": "documentation, docaroo, python, blog, customising, directory, keywords, macos, install, framework",
+    "lastUpdate": "2025-10-27 16:39:50 +0200",
+    "lastUpdateUTC": 1761575990,
+    "createTime": "2025-10-27 16:39:50 +0200",
+    "createTimeUTC": 1761575990,
+    "relatedPages": [],
+    "autoSummary": "Getting started with docaroo requires, first of all, to design your documentation. Organising well your documentation (or blog) is crucial. This will involve defining the folder structure and also the taxonomies. Docaroo can take care of automatically generating other information about you documentation.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Set appearance",
+    "permalink": "/go-live/appearance/",
+    "categories": [
+      "Start",
+      "Go live"
+    ],
+    "tags": [
+      "appearance",
+      "build",
+      "test",
+      "deploy"
+    ],
+    "excerpt": "settings, website, logo, appearance, header, themes, sidebar, config, html, title",
+    "lastUpdate": "2025-10-29 15:35:35 +0200",
+    "lastUpdateUTC": 1761744935,
+    "createTime": "2025-10-29 15:35:35 +0200",
+    "createTimeUTC": 1761744935,
+    "relatedPages": [],
+    "autoSummary": "Setting the appearance means to set the branding an colors of the site. Branding elements are the logo, the site title, the additional buttons on the header and the footer visible at the bottom of the left sidebar. Additionally the following colors can be set: background and text colors for.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": "Go live"
+  },
+  {
+    "title": "Build and test",
+    "permalink": "/go-live/build/",
+    "categories": [
+      "Start",
+      "Go live"
+    ],
+    "tags": [
+      "appearance",
+      "build",
+      "test",
+      "deploy"
+    ],
+    "excerpt": "build, github, sites, tests, generate, docaroo, deploy, sections, permalink, process",
+    "lastUpdate": "2025-10-30 15:25:59 +0200",
+    "lastUpdateUTC": 1761830759,
+    "createTime": "2025-10-30 15:25:59 +0200",
+    "createTimeUTC": 1761830759,
+    "relatedPages": [],
+    "autoSummary": "Building and testing the site means go generate the site, running the automatic testing and the spell checking. Following the site build and tests results, corrections may be needed. When everything is fine, is time to serve the site locally and test its appearance and functionality.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": "Go live"
+  },
+  {
+    "title": "Deploy",
+    "permalink": "/go-live/deploy/",
+    "categories": [
+      "Start",
+      "Go live"
+    ],
+    "tags": [
+      "appearance",
+      "build",
+      "test",
+      "deploy"
+    ],
+    "excerpt": "deploying, hosting, netlify, github, configuring, process, env, build, update, docaroo",
+    "lastUpdate": "2025-10-30 16:56:08 +0200",
+    "lastUpdateUTC": 1761836168,
+    "createTime": "2025-10-30 16:56:08 +0200",
+    "createTimeUTC": 1761836168,
+    "relatedPages": [],
+    "autoSummary": "Deploying the site means to update the production environment (such as on-prem, or github pages or netlify, or similar) this is the next step after building and testing the site. Docaroo provides out-of-the-box actions to deploy on github pages and on netlifying.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": "Go live"
+  },
+  {
+    "title": "Go live",
+    "permalink": "/go-live/",
+    "categories": [
+      "Start",
+      "Go live"
+    ],
+    "tags": [
+      "appearance",
+      "build",
+      "test",
+      "deploy"
+    ],
+    "excerpt": "netlify, github, live, tests, site, branding, tuning, update, pages, functionality",
+    "lastUpdate": "2025-10-28 10:53:15 +0200",
+    "lastUpdateUTC": 1761641595,
+    "createTime": "2025-10-28 10:53:15 +0200",
+    "createTimeUTC": 1761641595,
+    "relatedPages": [],
+    "autoSummary": "Going live with the site is a pretty straight forward process. It involves tuning of the appearance (if needed), building and testing in the development environment and publishing (deploying) in production environment. We make available the necessary tools for each step of this process.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Algolia",
+    "permalink": "/integrations/algolia/",
+    "categories": [
+      "Integrations",
+      "Start",
+      "Extensions"
+    ],
+    "tags": [
+      "integration",
+      "algolia",
+      "search",
+      "no-code",
+      "code"
+    ],
+    "excerpt": "docsearch, docaroo, algolia, integration, documentation, index, github, manually, option, settings",
+    "lastUpdate": "2025-10-28 10:53:15 +0200",
+    "lastUpdateUTC": 1761641595,
+    "createTime": "2025-10-28 10:53:15 +0200",
+    "createTimeUTC": 1761641595,
+    "relatedPages": [],
+    "autoSummary": "Docaroo provides out-of-the-box full integration with algolia docsearch. The search experience has multilanguage support by default.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": "Integrate"
+  },
+  {
+    "title": "GA/GTM",
+    "permalink": "/integrations/ga-gtm/",
+    "categories": [
+      "Integrations",
+      "Start"
+    ],
+    "tags": [
+      "integration",
+      "google",
+      "analytics",
+      "tag manager",
+      "low-code"
+    ],
+    "excerpt": "gtm, buildconfig, tags, analytics, google, hookable, custom, enabled, deploy, default",
+    "lastUpdate": "2025-10-28 10:53:15 +0200",
+    "lastUpdateUTC": 1761641595,
+    "createTime": "2025-10-28 10:53:15 +0200",
+    "createTimeUTC": 1761641595,
+    "relatedPages": [],
+    "autoSummary": "Google analytics and google tag manager are installed by default if enabled and configured in _databuildconfig.yml. This will enable the collection of data about the site. When ga and gtm are connected, ga collects the information available when a gtm tag fires. However, the most important feature of the integration.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": "Integrate"
+  },
+  {
+    "title": "GitHub",
+    "permalink": "/integrations/github/",
+    "categories": [
+      "Integrations",
+      "Start"
+    ],
+    "tags": [
+      "integration",
+      "github",
+      "code",
+      "content",
+      "no-code"
+    ],
+    "excerpt": "github, docaroo, repositories, api, caching, limits, settings, imported, accessed, dev",
+    "lastUpdate": "2025-10-28 10:53:15 +0200",
+    "lastUpdateUTC": 1761641595,
+    "createTime": "2025-10-28 10:53:15 +0200",
+    "createTimeUTC": 1761641595,
+    "relatedPages": [],
+    "autoSummary": "Docaroo integration allows you to import content from public and private repositories. For the private repositories, content can be imported only from the repositories within the scope of the personal access token that must be configured. At the moment, we do not support importing content from private repositories at run.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": "Integrate"
+  },
+  {
+    "title": "HubSpot",
+    "permalink": "/integrations/hubspot/",
+    "categories": [
+      "Integrations",
+      "Start",
+      "Extensions"
+    ],
+    "tags": [
+      "integration",
+      "hubspot",
+      "analytics",
+      "forms",
+      "no-code",
+      "code"
+    ],
+    "excerpt": "hubspot, tracking, feedback, enabled, portalid, documentation, embed, feature, configure, custom",
+    "lastUpdate": "2025-10-28 10:53:15 +0200",
+    "lastUpdateUTC": 1761641595,
+    "createTime": "2025-10-28 10:53:15 +0200",
+    "createTimeUTC": 1761641595,
+    "relatedPages": [],
+    "autoSummary": "Hubspot tracking code is installed by default if hubspot integration is enabled in . This will enable the features that are related to the tracking code such as monitoring the visits on the site. The feedback form can be located on the right-bottom corner of each page.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": "Integrate"
+  },
+  {
+    "title": "Integrate",
+    "permalink": "/integrate/",
+    "categories": [
+      "General",
+      "Start"
+    ],
+    "tags": [
+      "integration",
+      "log",
+      "monitor",
+      "feedback",
+      "measure",
+      "search"
+    ],
+    "excerpt": "docaroo, integrations, api, purpose, configuration, provides, env, enabled, files, feedback",
+    "lastUpdate": "2025-10-25 18:08:51 +0300",
+    "lastUpdateUTC": 1761404931,
+    "createTime": "2025-10-25 18:08:51 +0300",
+    "createTimeUTC": 1761404931,
+    "relatedPages": [],
+    "autoSummary": "Docaroo provides out-of-the-box a series of integrations. The main purpose is to enhance the functionalities of the site. Each integration can be independently enabled and configured or disabled.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "New Relic",
+    "permalink": "/integrations/new-relic/",
+    "categories": [
+      "Integrations",
+      "Start"
+    ],
+    "tags": [
+      "integration",
+      "new relic",
+      "log",
+      "monitor",
+      "measure",
+      "performance",
+      "low-code"
+    ],
+    "excerpt": "documentation, integration, activate, relic, new, configured, scope, interactions, github, log",
+    "lastUpdate": "2025-10-28 10:53:15 +0200",
+    "lastUpdateUTC": 1761641595,
+    "createTime": "2025-10-28 10:53:15 +0200",
+    "createTimeUTC": 1761641595,
+    "relatedPages": [],
+    "autoSummary": "New relic integration is provided out-of-the-box once this integration is enabled. This integration allows monitoring and measuring the performance of the site. Used in combination with the extension capabilities, it provides a robust way to log the user interactions with site.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": "Integrate"
+  },
+  {
+    "title": "Introduction",
+    "permalink": "/intro/",
+    "categories": [
+      "General"
+    ],
+    "tags": [
+      "documentation",
+      "docs"
+    ],
+    "excerpt": "documentation, markdown, docaroo, developer, create, guide, faqs, excel, contributor, onboarding",
+    "lastUpdate": "2025-11-08 17:21:34 +0200",
+    "lastUpdateUTC": 1762615294,
+    "createTime": "2025-11-08 17:21:34 +0200",
+    "createTimeUTC": 1762615294,
+    "relatedPages": [],
+    "autoSummary": "Documentation site builder guide for any kind of project, product, or organization. Walk you through everything you need to know about building a complete, maintainable, and professional documentation site from scratch.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": ""
+  },
+  {
+    "title": "Config Files",
+    "permalink": "/get-started/config-files/",
+    "categories": [
+      "General",
+      "Start",
+      "Site config"
+    ],
+    "tags": [
+      "documentation",
+      "docs",
+      "collections",
+      "configuration"
+    ],
+    "excerpt": "docaroo, configuration, config, configurations, configure, options, files, functionality, folder, yml",
+    "lastUpdate": "2025-10-27 16:39:50 +0200",
+    "lastUpdateUTC": 1761575990,
+    "createTime": "2025-10-27 16:39:50 +0200",
+    "createTimeUTC": 1761575990,
+    "relatedPages": [],
+    "autoSummary": "Docaroo provide multiple options to configure the the site functionality and appearance. Each time when a configuration is changed, it is necessary to re-build the site to make the configuration effective.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": "Get started"
+  },
+  {
+    "title": "Config Options",
+    "permalink": "/get-started/config-options/",
+    "categories": [
+      "General",
+      "Start",
+      "Site config"
+    ],
+    "tags": [
+      "documentation",
+      "docs",
+      "collections",
+      "configuration",
+      "options"
+    ],
+    "excerpt": "config, options, documentation, personalisation, functionalities, dev, appearance, modified, sections, mode",
+    "lastUpdate": "2025-10-30 12:27:31 +0200",
+    "lastUpdateUTC": 1761820051,
+    "createTime": "2025-10-30 12:27:31 +0200",
+    "createTimeUTC": 1761820051,
+    "relatedPages": [],
+    "autoSummary": "All the options available for site appearance and functionalities are shown in the next table. These options are available in _config.yml or in the configuration files and will allow personalisation of the documentation site. Note the site must be built and deployed (where applicable) in order to make new config.",
+    "similarByContent": [],
+    "readingTime": 0,
+    "hasDynamicContent": false,
+    "parent": "Get started"
+  }
+]
