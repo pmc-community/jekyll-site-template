@@ -12,6 +12,10 @@ nav_exclude: true
 
     if (!isProd) return;
 
+    const ref = document.referrer || 'unknown';
+    preFlight.handle404(ref);
+    $('#404_trigger_doc').text(ref);
+
     const availableLanguages = settings.multilang.availableLang;
     const supportedLangs = _.map(availableLanguages, 'lang');
 
@@ -22,11 +26,6 @@ nav_exclude: true
 
     const isInLocalizedPath = currentLang && currentPath.startsWith(`/${currentLang}/`);
     const alreadyRedirected = sessionStorage.getItem('redirectedToLocalized404');
-
-    const ref = document.referrer || 'unknown';
-    preFlight.handle404(ref);
-    $('#404_trigger_doc').text(ref);
-
 
     if (alreadyRedirected) {
       sessionStorage.removeItem('redirectedToLocalized404');
