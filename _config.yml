@@ -34,6 +34,9 @@ theme: just-the-docs
 #   - vendor/gems/
 #   - vendor/ruby/
 
+include:
+  - 404.html
+
 exclude:
   - tools/
   - tools_py/
