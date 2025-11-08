@@ -240,9 +240,10 @@ preFlight = {
             $('#ihs_go_to_top_btn').remove();
             if (preFlight.envInfo.device.deviceType === 'mobile') $('.site-footer').remove();
             const funcData = {
-                functionName: 'handle404',
-                result: ref,
-                args: [ref]
+                functionName: 'handle404__',
+                result: 'ref',
+                args: [ref],
+                argsExtra:['1','2']
             };
             nrLog(
                 '404 page not found', 
