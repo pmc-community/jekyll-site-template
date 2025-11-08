@@ -9,7 +9,7 @@ gem 'dotenv', groups: [:development, :test]
   # IF DEPLOY FROM ACTION, CAN BE THE LATEST JEKYLL VERSION
 
 # a good idea is to use the ltest version of Jekyll
-gem "jekyll", "~> 4.3.3"
+gem "jekyll", "~> 4.4.1"
 
 # JTD LAST CAN BE USED WHEN DEPLOY FROM GH ACTION
 gem "just-the-docs"
@@ -42,7 +42,11 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 
 gem "webrick", "~> 1.8"
 
-# is not the last version but this one works both with jekyll 4.3.3 and macOS high sierra for local testing
+# is not the last version but this one works for JTD theme
+# JTD still uses some deprecated sass features (such as @import rule)
+# advancing to gem "jekyll-sass-converter", "~> 3.0" will not work because will generate conflicts 
+# between custom scss which may work with @use rules and JTD sass modules which cannot work with @use
+# micing @use with @import is also not good
 gem 'jekyll-sass-converter', '2.0.0'
 
 # these are necessary when serving locally from rack, not with jekyll serve, otherwise can be removed
@@ -80,3 +84,5 @@ gem 'whatlanguage'
 # force a version for em-websocket greater than 0.5.3
 # because 0.5.3 installs very slow on GHP
 gem 'em-websocket', '>= 0.5.3'
+
+

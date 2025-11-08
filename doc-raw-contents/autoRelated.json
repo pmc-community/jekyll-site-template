@@ -215,8 +215,8 @@
         "permalink": "/get-started/doc-contents/"
       },
       {
-        "title": "Get started",
-        "permalink": "/get-started/"
+        "title": "Content items",
+        "permalink": "/content/content-items/"
       }
     ]
   },
@@ -390,16 +390,16 @@
     "permalink": "/get-started/doc-contents/",
     "related": [
       {
-        "title": "Config Files",
-        "permalink": "/get-started/config-files/"
+        "title": "Config Options",
+        "permalink": "/get-started/config-options/"
       },
       {
         "title": "Get started",
         "permalink": "/get-started/"
       },
       {
-        "title": "Config Options",
-        "permalink": "/get-started/config-options/"
+        "title": "Introduction",
+        "permalink": "/intro/"
       }
     ]
   },
@@ -422,7 +422,12 @@
   },
   {
     "permalink": "/extend/",
-    "related": []
+    "related": [
+      {
+        "title": "GA/GTM",
+        "permalink": "/integrations/ga-gtm/"
+      }
+    ]
   },
   {
     "permalink": "/get-started/",
@@ -538,8 +543,8 @@
         "permalink": "/integrations/new-relic/"
       },
       {
-        "title": "GitHub",
-        "permalink": "/integrations/github/"
+        "title": "Extend",
+        "permalink": "/extend/"
       }
     ]
   },
@@ -632,12 +637,12 @@
     "permalink": "/get-started/config-files/",
     "related": [
       {
-        "title": "Docs root",
-        "permalink": "/get-started/doc-contents/"
-      },
-      {
         "title": "Config Options",
         "permalink": "/get-started/config-options/"
+      },
+      {
+        "title": "Docs root",
+        "permalink": "/get-started/doc-contents/"
       },
       {
         "title": "Get started",

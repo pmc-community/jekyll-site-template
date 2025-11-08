@@ -90,13 +90,12 @@ To follow along with this guide, you will need:
 This site is divided into logical sections, each building on the previous one:
 
 1. **Getting Started** – Overview, goals, and tooling setup  
-2. **Planning Your Docs** – Audience analysis, content hierarchy, and types  
-3. **Building the Site** – Installing, configuring, and running your documentation framework  
-4. **Writing Great Docs** – Tips, formatting, structure, and consistency  
-5. **Customization** – Layout, themes, branding, and interactive elements  
-6. **Deployment** – Hosting, CI/CD pipelines, versioning, and analytics  
-7. **Best Practices** – Accessibility, localization, SEO, and maintenance workflows  
-8. **Examples & Templates** – Starter projects, reusable snippets, and content scaffolds  
+2. **Integrating Your Docs** – Connect your docs to powerful external platforms for monitoring, analysis and many other
+3. **Extend Tour Docs** - Add more functionalities as you need  
+3. **Going Live with the Site** – Installing, configuring, and running your documentation framework  
+4. **Writing Great Docs** – Organise content, use content items, import content  
+5. **Components and Experiments** – Interactive content elements, reusable components, integrate content from popular formats  
+6. **Custom taxonomies** – Create and use your own docs organisation on multiple dimensions  
 
 # 🧭 Why Docs Matters
 
@@ -113,3 +112,10 @@ Good documentation is not just nice to have — it's a **core part of product su
 # ✅ Let’s Get Started
 
 Use the sidebar to navigate to the first section and begin your journey. Each topic includes examples, templates, and real-world tips to help you go from blank page to beautiful docs.
+
+{% include elements/link-btn.html 
+    type="warning" 
+    text="Get started" 
+    href="/get-started/"
+    newTab="false" 
+%}

@@ -78,9 +78,9 @@ These are comments added by users to specific sections or parts of the text from
 We provide the features needed for managing the custom taxonomy system. Additionally, custom taxonomies are completely integrated in the site search as long as Algolia is used (DocSearch or Search) as search engine.
 
 {% capture buttons %}
-    type=primary|outline=false|text="Tags"|href="/tag-info/"|newTab=true,
-    type=danger|outline=false|text="Categories"|href="/cat-info/"|newTab=true,
-    type=warning|outline=false|text="Documents"|href="/site-pages/"|newTab=true
+    type=primary|outline=false|text="Tags"|href="/tag-info"|newTab=true,
+    type=danger|outline=false|text="Categories"|href="/cat-info"|newTab=true,
+    type=warning|outline=false|text="Documents"|href="/site-pages"|newTab=true
 {% endcapture %}
 {% include elements/link-btn-group.html buttons=buttons %}
 

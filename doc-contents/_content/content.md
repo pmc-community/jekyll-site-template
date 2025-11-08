@@ -23,7 +23,6 @@ As example, we will use the structure of Docaroo documentation. The documents ar
 Following the structure of Docaroo documents, you can organise your documentation based on the next recommendations:
 1. Do not rename the `docs root folder`, it has to be always named `doc-contents`
 2. Do not remove the following sub-folders: 
-    - `general`: it contains some mandatory html files (currently 404.html, which you can customise as you need)
     - `_tools`: it contains the main tools made available by Docaroo for easy work documents and taxonomies as well as `faq` page if this feature is active
     - `_faq`: if `faq` feature is active for the site, this sub-folder contains the questions and answers
 3. Use `collections` of documents to group your documents in relevant sections. A collection is a folder starting with `_` and properly declared in `_config.yml`

@@ -1,0 +1,1 @@
+This folder can be used to store reusable content. The folder can contain a multi-level structure os sub-folders, as it may be needed.

@@ -1,9 +1,7 @@
 ---
 permalink: /404.html
-layout: default
+layout: page
 title: Not found
-
-#nav_exclude is for not having the page in the navigation bar
 nav_exclude: true
 ---
 
@@ -67,5 +65,6 @@ nav_exclude: true
 </div>
 
 <script>
-  preFlight.handle404();
+  const ref404 = document.referrer || 'unknown';
+  preFlight.handle404(ref404);
 </script>

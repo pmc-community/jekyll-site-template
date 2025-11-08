@@ -333,10 +333,6 @@
         {
           "permalink": "/intro/",
           "title": "Introduction"
-        },
-        {
-          "permalink": "/content/ec/",
-          "title": "External content"
         }
       ],
       "readingTime": 1,
@@ -684,10 +680,6 @@
           "title": "Content"
         },
         {
-          "permalink": "/content/ec/",
-          "title": "External content"
-        },
-        {
           "permalink": "/intro/",
           "title": "Introduction"
         }
@@ -706,11 +698,11 @@
         "documentation",
         "organise docs"
       ],
-      "excerpt": "github, external, repository, document, importing, modify, features, html, sources, private",
-      "lastUpdate": "2025-10-31 20:24:10 +0200",
+      "excerpt": "github, external, repository, content, document, importing, modify, features, sources, private",
+      "lastUpdate": "2025-11-09 01:02:47 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-31 20:24:10 +0200",
-      "createTimeUTC": 1761935050,
+      "createTime": "2025-11-09 01:02:47 +0200",
+      "createTimeUTC": 1762642967,
       "relatedPages": [
         {
           "title": "External content",
@@ -721,28 +713,12 @@
           "permalink": "/get-started/doc-contents/"
         },
         {
-          "title": "Get started",
-          "permalink": "/get-started/"
+          "title": "Content items",
+          "permalink": "/content/content-items/"
         }
       ],
       "autoSummary": "Learn how to structure and use the content in the most efficient way. The secret is to use to the maximum extent the features made available. Importing external content (at build time or at run time) is the most powerful.",
       "similarByContent": [
-        {
-          "permalink": "/content/content-items/",
-          "title": "Content items"
-        },
-        {
-          "permalink": "/components/intro/",
-          "title": "Components"
-        },
-        {
-          "permalink": "/content/ec/",
-          "title": "External content"
-        },
-        {
-          "permalink": "/intro/",
-          "title": "Introduction"
-        },
         {
           "permalink": "/get-started/doc-contents/",
           "title": "Docs root"
@@ -1155,10 +1131,10 @@
         "annotations"
       ],
       "excerpt": "taxonomies, workflows, customised, tags, annotations, features, plugins, users, posts, backend",
-      "lastUpdate": "2025-10-31 14:33:31 +0200",
+      "lastUpdate": "2025-11-07 23:38:12 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-31 14:33:31 +0200",
-      "createTimeUTC": 1761914011,
+      "createTime": "2025-11-07 23:38:12 +0200",
+      "createTimeUTC": 1762551492,
       "relatedPages": [
         {
           "title": "Sharing taxonomies",
@@ -1200,26 +1176,26 @@
         "docs",
         "collections"
       ],
-      "excerpt": "folder, documentation, faq, repository, docaroo, permalink, sections, downloading, default, configuration",
-      "lastUpdate": "2025-10-27 16:39:50 +0200",
+      "excerpt": "folders, documentation, faq, repository, permalink, sections, doc, downloading, page, file",
+      "lastUpdate": "2025-11-09 01:02:47 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-27 16:39:50 +0200",
-      "createTimeUTC": 1761575990,
+      "createTime": "2025-11-09 01:02:47 +0200",
+      "createTimeUTC": 1762642967,
       "relatedPages": [
         {
-          "title": "Config Files",
-          "permalink": "/get-started/config-files/"
+          "title": "Config Options",
+          "permalink": "/get-started/config-options/"
         },
         {
           "title": "Get started",
           "permalink": "/get-started/"
         },
         {
-          "title": "Config Options",
-          "permalink": "/get-started/config-options/"
+          "title": "Introduction",
+          "permalink": "/intro/"
         }
       ],
-      "autoSummary": "Doc-contents is the root folder of the documents and collections. The way in which this folder is organised is strictly depending on the structure you want to have for your documentation. Some sub-folders are necessary to be present: the collection folder where the qa files must be placed if a.",
+      "autoSummary": "Doc-contents is the root folder of the documents and collections. The way in which this folder is organised is strictly depending on the structure you want to have for your documentation.",
       "similarByContent": [
         {
           "permalink": "/content/intro/",
@@ -1282,15 +1258,20 @@
         "low-code",
         "code"
       ],
-      "excerpt": "extensions, javascript, hooking, extend, hooks, functionality, integrations, skills, execute, gtm",
-      "lastUpdate": "2025-10-28 10:53:15 +0200",
+      "excerpt": "hookable, extend, javascript, plugins, gtm, function, scope, parameters, globals, inline",
+      "lastUpdate": "2025-11-08 17:21:34 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-28 10:53:15 +0200",
-      "createTimeUTC": 1761641595,
-      "relatedPages": [],
-      "autoSummary": "We offer out-of-the-box the possibility to extend the functionality of the site by hooking on the execution of the functions on browser side. Be aware that using extensions requires development skills (mostly on javascript). The level of the required skills depends on the complexity of the extension.",
+      "createTime": "2025-11-08 17:21:34 +0200",
+      "createTimeUTC": 1762615294,
+      "relatedPages": [
+        {
+          "title": "GA/GTM",
+          "permalink": "/integrations/ga-gtm/"
+        }
+      ],
+      "autoSummary": "We offer out-of-the-box the possibility to extend the functionality of the site by hooking on the execution of the functions on browser side. The hook is set by method which takes the following parameters: : the name of the target function : array of values which will be attached to.",
       "similarByContent": [],
-      "readingTime": 1,
+      "readingTime": 3,
       "hasDynamicContent": false,
       "parent": ""
     },
@@ -1608,8 +1589,8 @@
           "permalink": "/integrations/new-relic/"
         },
         {
-          "title": "GitHub",
-          "permalink": "/integrations/github/"
+          "title": "Extend",
+          "permalink": "/extend/"
         }
       ],
       "autoSummary": "Google analytics and google tag manager are installed by default if enabled and configured in _databuildconfig.yml. This will enable the collection of data about the site. When ga and gtm are connected, ga collects the information available when a gtm tag fires. However, the most important feature of the integration.",
@@ -1809,10 +1790,10 @@
         "docs"
       ],
       "excerpt": "documentation, markdown, docaroo, developer, create, guide, faqs, excel, contributor, onboarding",
-      "lastUpdate": "2025-10-26 16:06:09 +0200",
+      "lastUpdate": "2025-11-08 17:21:34 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-10-26 16:06:09 +0200",
-      "createTimeUTC": 1761487569,
+      "createTime": "2025-11-08 17:21:34 +0200",
+      "createTimeUTC": 1762615294,
       "relatedPages": [
         {
           "title": "Get started",
@@ -1867,12 +1848,12 @@
       "createTimeUTC": 1761575990,
       "relatedPages": [
         {
-          "title": "Docs root",
-          "permalink": "/get-started/doc-contents/"
-        },
-        {
           "title": "Config Options",
           "permalink": "/get-started/config-options/"
+        },
+        {
+          "title": "Docs root",
+          "permalink": "/get-started/doc-contents/"
         },
         {
           "title": "Get started",
@@ -2074,7 +2055,7 @@
         {
           "title": "Taxonomies",
           "permalink": "/taxonomies/intro/",
-          "lastUpdate": "31-Oct-2025"
+          "lastUpdate": "07-Nov-2025"
         }
       ],
       "numPages": 1
@@ -2164,7 +2145,7 @@
         {
           "title": "Taxonomies",
           "permalink": "/taxonomies/intro/",
-          "lastUpdate": "31-Oct-2025"
+          "lastUpdate": "07-Nov-2025"
         }
       ],
       "numPages": 1
@@ -2199,7 +2180,7 @@
         {
           "title": "Extend",
           "permalink": "/extend/",
-          "lastUpdate": "28-Oct-2025"
+          "lastUpdate": "08-Nov-2025"
         },
         {
           "title": "Algolia",
@@ -2224,7 +2205,7 @@
         {
           "title": "Docs root",
           "permalink": "/get-started/doc-contents/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "09-Nov-2025"
         },
         {
           "title": "Config Files",
@@ -2364,7 +2345,7 @@
         {
           "title": "Docs root",
           "permalink": "/get-started/doc-contents/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "09-Nov-2025"
         },
         {
           "title": "Get started",
@@ -2374,7 +2355,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "26-Oct-2025"
+          "lastUpdate": "08-Nov-2025"
         },
         {
           "title": "Config Files",
@@ -2394,12 +2375,12 @@
         {
           "title": "Content",
           "permalink": "/content/intro/",
-          "lastUpdate": "31-Oct-2025"
+          "lastUpdate": "09-Nov-2025"
         },
         {
           "title": "Docs root",
           "permalink": "/get-started/doc-contents/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "09-Nov-2025"
         },
         {
           "title": "Get started",
@@ -2409,7 +2390,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "26-Oct-2025"
+          "lastUpdate": "08-Nov-2025"
         },
         {
           "title": "Config Files",
@@ -2489,7 +2470,7 @@
         {
           "title": "Extend",
           "permalink": "/extend/",
-          "lastUpdate": "28-Oct-2025"
+          "lastUpdate": "08-Nov-2025"
         }
       ],
       "numPages": 1
@@ -2599,7 +2580,7 @@
         {
           "title": "Extend",
           "permalink": "/extend/",
-          "lastUpdate": "28-Oct-2025"
+          "lastUpdate": "08-Nov-2025"
         }
       ],
       "numPages": 1
@@ -2729,7 +2710,7 @@
         {
           "title": "Extend",
           "permalink": "/extend/",
-          "lastUpdate": "28-Oct-2025"
+          "lastUpdate": "08-Nov-2025"
         },
         {
           "title": "GA/GTM",
@@ -2819,7 +2800,7 @@
         {
           "title": "Taxonomies",
           "permalink": "/taxonomies/intro/",
-          "lastUpdate": "31-Oct-2025"
+          "lastUpdate": "07-Nov-2025"
         }
       ],
       "numPages": 3
@@ -2869,7 +2850,7 @@
         {
           "title": "Content",
           "permalink": "/content/intro/",
-          "lastUpdate": "31-Oct-2025"
+          "lastUpdate": "09-Nov-2025"
         }
       ],
       "numPages": 1
@@ -3009,7 +2990,7 @@
         {
           "title": "Taxonomies",
           "permalink": "/taxonomies/intro/",
-          "lastUpdate": "31-Oct-2025"
+          "lastUpdate": "07-Nov-2025"
         }
       ],
       "numPages": 1
@@ -3204,7 +3185,7 @@
         {
           "title": "Content",
           "permalink": "/content/intro/",
-          "lastUpdate": "31-Oct-2025"
+          "lastUpdate": "09-Nov-2025"
         },
         {
           "title": "External content",
@@ -3279,7 +3260,7 @@
         {
           "title": "Docs root",
           "permalink": "/get-started/doc-contents/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "09-Nov-2025"
         },
         {
           "title": "Environments",
@@ -3289,7 +3270,7 @@
         {
           "title": "Extend",
           "permalink": "/extend/",
-          "lastUpdate": "28-Oct-2025"
+          "lastUpdate": "08-Nov-2025"
         },
         {
           "title": "Get started",
@@ -3304,7 +3285,7 @@
         {
           "title": "Introduction",
           "permalink": "/intro/",
-          "lastUpdate": "26-Oct-2025"
+          "lastUpdate": "08-Nov-2025"
         },
         {
           "title": "Config Files",
@@ -3399,7 +3380,7 @@
         {
           "title": "Docs root",
           "permalink": "/get-started/doc-contents/",
-          "lastUpdate": "27-Oct-2025"
+          "lastUpdate": "09-Nov-2025"
         },
         {
           "title": "Environments",
@@ -3504,7 +3485,7 @@
         {
           "title": "Taxonomies",
           "permalink": "/taxonomies/intro/",
-          "lastUpdate": "31-Oct-2025"
+          "lastUpdate": "07-Nov-2025"
         }
       ],
       "numPages": 6

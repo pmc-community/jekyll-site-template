@@ -94,7 +94,7 @@
         },
         {
             "permalink": "/get-started/doc-contents/",
-            "summary": "Doc-contents is the root folder of the documents and collections. The way in which this folder is organised is strictly depending on the structure you want to have for your documentation. Some sub-folders are necessary to be present: the collection folder where the qa files must be placed if a."
+            "summary": "Doc-contents is the root folder of the documents and collections. The way in which this folder is organised is strictly depending on the structure you want to have for your documentation."
         },
         {
             "permalink": "/get-started/env/",
@@ -102,7 +102,7 @@
         },
         {
             "permalink": "/extend/",
-            "summary": "We offer out-of-the-box the possibility to extend the functionality of the site by hooking on the execution of the functions on browser side. Be aware that using extensions requires development skills (mostly on javascript). The level of the required skills depends on the complexity of the extension."
+            "summary": "We offer out-of-the-box the possibility to extend the functionality of the site by hooking on the execution of the functions on browser side. The hook is set by method which takes the following parameters: : the name of the target function : array of values which will be attached to."
         },
         {
             "permalink": "/get-started/",

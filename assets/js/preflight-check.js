@@ -234,7 +234,7 @@ preFlight = {
         document.body.style.visibility = 'visible'; //because body was made invisible in _includes/head_custom.html
     },
 
-    handle404: () => {
+    handle404: (ref) => {
         // here we may use jQuery since it should be loaded already if this point is reached
         $(document).ready(function() {
             $('#ihs_go_to_top_btn').remove();
@@ -245,6 +245,7 @@ preFlight = {
                 'error', 
                 {
                     functionName: 'handle404',
+                    args: [ref]
                 }
             );
         });
@@ -317,5 +318,4 @@ document.addEventListener('DOMContentLoaded', function() {
     
     }
 });
-
 
