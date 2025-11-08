@@ -698,7 +698,7 @@
         "documentation",
         "organise docs"
       ],
-      "excerpt": "github, external, repository, document, importing, modify, features, html, sources, private",
+      "excerpt": "github, external, repository, content, document, importing, modify, features, sources, private",
       "lastUpdate": "2025-10-31 20:24:10 +0200",
       "lastUpdateUTC": 0,
       "createTime": "2025-10-31 20:24:10 +0200",
@@ -713,23 +713,15 @@
           "permalink": "/get-started/doc-contents/"
         },
         {
-          "title": "Get started",
-          "permalink": "/get-started/"
+          "title": "Content items",
+          "permalink": "/content/content-items/"
         }
       ],
       "autoSummary": "Learn how to structure and use the content in the most efficient way. The secret is to use to the maximum extent the features made available. Importing external content (at build time or at run time) is the most powerful.",
       "similarByContent": [
         {
-          "permalink": "/content/content-items/",
-          "title": "Content items"
-        },
-        {
-          "permalink": "/components/intro/",
-          "title": "Components"
-        },
-        {
-          "permalink": "/intro/",
-          "title": "Introduction"
+          "permalink": "/get-started/doc-contents/",
+          "title": "Docs root"
         }
       ],
       "readingTime": 2,
@@ -1184,26 +1176,26 @@
         "docs",
         "collections"
       ],
-      "excerpt": "folder, documentation, faq, repository, docaroo, permalink, sections, downloading, default, configuration",
+      "excerpt": "folders, documentation, faq, repository, permalink, sections, doc, downloading, page, file",
       "lastUpdate": "2025-10-27 16:39:50 +0200",
       "lastUpdateUTC": 0,
       "createTime": "2025-10-27 16:39:50 +0200",
       "createTimeUTC": 1761575990,
       "relatedPages": [
         {
-          "title": "Config Files",
-          "permalink": "/get-started/config-files/"
+          "title": "Config Options",
+          "permalink": "/get-started/config-options/"
         },
         {
           "title": "Get started",
           "permalink": "/get-started/"
         },
         {
-          "title": "Config Options",
-          "permalink": "/get-started/config-options/"
+          "title": "Introduction",
+          "permalink": "/intro/"
         }
       ],
-      "autoSummary": "Doc-contents is the root folder of the documents and collections. The way in which this folder is organised is strictly depending on the structure you want to have for your documentation. Some sub-folders are necessary to be present: the collection folder where the qa files must be placed if a.",
+      "autoSummary": "Doc-contents is the root folder of the documents and collections. The way in which this folder is organised is strictly depending on the structure you want to have for your documentation.",
       "similarByContent": [
         {
           "permalink": "/content/intro/",
@@ -1856,12 +1848,12 @@
       "createTimeUTC": 1761575990,
       "relatedPages": [
         {
-          "title": "Docs root",
-          "permalink": "/get-started/doc-contents/"
-        },
-        {
           "title": "Config Options",
           "permalink": "/get-started/config-options/"
+        },
+        {
+          "title": "Docs root",
+          "permalink": "/get-started/doc-contents/"
         },
         {
           "title": "Get started",

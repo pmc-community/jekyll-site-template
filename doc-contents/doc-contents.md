@@ -14,7 +14,6 @@ Doc-contents is the root folder of the documents and collections. The way in whi
 However, some sub-folders are necessary to be present:
 - `_faq`: the collection folder where the Q&A files must be placed if a FAQ section is enabled for the site
 - `downloads`: the folder where is recommended to place the download files, see also **[`Download component`](/components/download-link/){: target="_blank" }**
-- `general`: 404 page is placed here
 - `partials`: the folder where is recommended to place reusable content. The structure of this folder is not limited.
 - `_tools`: the folder in which the helper pages are placed
 

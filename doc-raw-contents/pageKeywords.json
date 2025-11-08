@@ -186,11 +186,11 @@
         "github",
         "external",
         "repository",
+        "content",
         "document",
         "importing",
         "modify",
         "features",
-        "html",
         "sources",
         "private"
       ]
@@ -348,16 +348,16 @@
     {
       "permalink": "/get-started/doc-contents/",
       "keywords": [
-        "folder",
+        "folders",
         "documentation",
         "faq",
         "repository",
-        "docaroo",
         "permalink",
         "sections",
+        "doc",
         "downloading",
-        "default",
-        "configuration"
+        "page",
+        "file"
       ]
     },
     {
