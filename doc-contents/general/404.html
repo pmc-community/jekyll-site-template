@@ -7,7 +7,7 @@ title: Not found
 nav_exclude: true
 ---
 
-<script>
+<script id="redirect_to_localised_404">
   $(document).ready(function () {
 
     if (!isProd) return;
@@ -36,10 +36,11 @@ nav_exclude: true
   });
 </script>
 
-<script>
+<script id="update_localised_404">
   $(document).ready(function () {
     setTimeout(()=>{
       const ref = document.referrer || 'unknown';
+      preFlight.handle404(ref);
       $('#404_trigger_doc').text(ref);
       const url = window.location.href;
       const newPath = url.replace(/\/404\.html$/, '/');
@@ -65,9 +66,3 @@ nav_exclude: true
     </div>
   </div>
 </div>
-
-<script>
-  const ref_404 = document.referrer || 'unknown';
-  console.log('1: ',ref_404);
-  preFlight.handle404(ref_404);
-</script>
