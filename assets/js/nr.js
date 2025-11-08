@@ -10,7 +10,7 @@ const nrLog = (logMessage, logAction, logLevel = null, funcData) => {
             datetime: getFullCurrentDateTime(),
             action:logAction,
             function: funcData.functionName,
-            args: funcData.args,
+            args: funcData.args ? funcData.args : [],
             argsExtra: funcData.argsExtra ? funcData.argsExtra : [],
             result: funcData.result ? funcData.result : `func ${funcData.functionName} doesn\'t return anything`,
             user: Cookies.get(settings.user.userTokenCookie),
