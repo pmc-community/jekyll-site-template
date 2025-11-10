@@ -634,6 +634,23 @@
     ]
   },
   {
+    "permalink": "/maintain/",
+    "related": [
+      {
+        "title": "Custom categories",
+        "permalink": "/taxonomies/custom-cats/"
+      },
+      {
+        "title": "Get started",
+        "permalink": "/get-started/"
+      },
+      {
+        "title": "Config Options",
+        "permalink": "/get-started/config-options/"
+      }
+    ]
+  },
+  {
     "permalink": "/get-started/config-files/",
     "related": [
       {

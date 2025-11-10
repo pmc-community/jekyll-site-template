@@ -1828,6 +1828,43 @@
       "parent": ""
     },
     {
+      "title": "Maintain",
+      "permalink": "/maintain/",
+      "categories": [
+        "Start",
+        "Go live"
+      ],
+      "tags": [
+        "docs",
+        "documents",
+        "maintain"
+      ],
+      "excerpt": "documentation, updating, maintaining, taxonomies, update, tags, content, modified, users, categories",
+      "lastUpdate": "2025-11-10 17:44:55 +0200",
+      "lastUpdateUTC": 0,
+      "createTime": "2025-11-10 17:44:55 +0200",
+      "createTimeUTC": 1762789495,
+      "relatedPages": [
+        {
+          "title": "Custom categories",
+          "permalink": "/taxonomies/custom-cats/"
+        },
+        {
+          "title": "Get started",
+          "permalink": "/get-started/"
+        },
+        {
+          "title": "Config Options",
+          "permalink": "/get-started/config-options/"
+        }
+      ],
+      "autoSummary": "Maintaining the documentation is about keeping the content up-to-date, removing obsolete content or adding new content. Updating content can be related to refreshing the associated taxonomies (site tags, site categories) as well.",
+      "similarByContent": [],
+      "readingTime": 1,
+      "hasDynamicContent": false,
+      "parent": ""
+    },
+    {
       "title": "Config Files",
       "permalink": "/get-started/config-files/",
       "categories": [
@@ -1940,6 +1977,7 @@
     "deploy",
     "docs",
     "documentation",
+    "documents",
     "docx",
     "download",
     "embed",
@@ -1964,6 +2002,7 @@
     "log",
     "lottie",
     "low-code",
+    "maintain",
     "measure",
     "monitor",
     "new relic",
@@ -2358,6 +2397,11 @@
           "lastUpdate": "08-Nov-2025"
         },
         {
+          "title": "Maintain",
+          "permalink": "/maintain/",
+          "lastUpdate": "10-Nov-2025"
+        },
+        {
           "title": "Config Files",
           "permalink": "/get-started/config-files/",
           "lastUpdate": "27-Oct-2025"
@@ -2368,7 +2412,7 @@
           "lastUpdate": "30-Oct-2025"
         }
       ],
-      "numPages": 5
+      "numPages": 6
     },
     "documentation": {
       "pages": [
@@ -2404,6 +2448,16 @@
         }
       ],
       "numPages": 6
+    },
+    "documents": {
+      "pages": [
+        {
+          "title": "Maintain",
+          "permalink": "/maintain/",
+          "lastUpdate": "10-Nov-2025"
+        }
+      ],
+      "numPages": 1
     },
     "docx": {
       "pages": [
@@ -2724,6 +2778,16 @@
         }
       ],
       "numPages": 3
+    },
+    "maintain": {
+      "pages": [
+        {
+          "title": "Maintain",
+          "permalink": "/maintain/",
+          "lastUpdate": "10-Nov-2025"
+        }
+      ],
+      "numPages": 1
     },
     "measure": {
       "pages": [
@@ -3321,9 +3385,14 @@
           "title": "Go live",
           "permalink": "/go-live/",
           "lastUpdate": "28-Oct-2025"
+        },
+        {
+          "title": "Maintain",
+          "permalink": "/maintain/",
+          "lastUpdate": "10-Nov-2025"
         }
       ],
-      "numPages": 4
+      "numPages": 5
     },
     "Integrations": {
       "pages": [
@@ -3443,6 +3512,11 @@
           "lastUpdate": "28-Oct-2025"
         },
         {
+          "title": "Maintain",
+          "permalink": "/maintain/",
+          "lastUpdate": "10-Nov-2025"
+        },
+        {
           "title": "Config Files",
           "permalink": "/get-started/config-files/",
           "lastUpdate": "27-Oct-2025"
@@ -3453,7 +3527,7 @@
           "lastUpdate": "30-Oct-2025"
         }
       ],
-      "numPages": 15
+      "numPages": 16
     },
     "Taxonomies": {
       "pages": [

@@ -599,6 +599,21 @@
         "sections",
         "mode"
       ]
+    },
+    {
+      "permalink": "/maintain/",
+      "keywords": [
+        "documentation",
+        "updating",
+        "maintaining",
+        "taxonomies",
+        "update",
+        "tags",
+        "content",
+        "modified",
+        "users",
+        "categories"
+      ]
     }
   ]
 }

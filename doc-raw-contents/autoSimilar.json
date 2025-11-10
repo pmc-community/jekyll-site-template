@@ -233,5 +233,9 @@
         "similarFiles": [
             "/get-started/config-files/"
         ]
+    },
+    {
+        "permalink": "/maintain/",
+        "similarFiles": []
     }
 ]

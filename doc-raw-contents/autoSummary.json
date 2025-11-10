@@ -159,6 +159,10 @@
         {
             "permalink": "/get-started/config-options/",
             "summary": "All the options available for site appearance and functionalities are shown in the next table. These options are available in _config.yml or in the configuration files and will allow personalisation of the documentation site. Note the site must be built and deployed (where applicable) in order to make new config."
+        },
+        {
+            "permalink": "/maintain/",
+            "summary": "Maintaining the documentation is about keeping the content up-to-date, removing obsolete content or adding new content. Updating content can be related to refreshing the associated taxonomies (site tags, site categories) as well."
         }
     ]
 }
