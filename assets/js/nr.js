@@ -1,9 +1,15 @@
+const getIP = async() => {
+    const response = await fetch('https://api.ipify.org?format=json');
+    const data = await response.json();
+    return data.ip;
+  }
+
 
 // logLevel must be one of: debug | error | info | trace | warn
-const nrLog = (logMessage, logAction, logLevel = null, funcData) => {
+const nrLog = async (logMessage, logAction, logLevel = null, funcData) => {
     if (nrSettings.newRelicEnabled === 'true') {
         if (!logLevel) logLevel = 'info';
-        
+                
         logCustomAttributes = {
             source: settings.siteTitle,
             permalink: $('page-data-permalink').text() ? $('page-data-permalink').text() : '/',
@@ -14,7 +20,7 @@ const nrLog = (logMessage, logAction, logLevel = null, funcData) => {
             argsExtra: funcData.argsExtra ? funcData.argsExtra : [],
             result: funcData.result ? funcData.result : `func ${funcData.functionName} doesn\'t return anything`,
             user: Cookies.get(settings.user.userTokenCookie),
-            userIP: userIP,
+            userIP: await getIP(),
             envInfo: !preFlight ? {} : !preFlight.envInfo ? {} : preFlight.envInfo,
         }
         
