@@ -179,3 +179,5 @@ ghp
 zettlr
 txt
 iawriter
+ios
+vpn

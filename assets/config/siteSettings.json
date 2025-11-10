@@ -1228,12 +1228,12 @@
       "createTimeUTC": 1759673895,
       "relatedPages": [
         {
-          "title": "Deploy",
-          "permalink": "/go-live/deploy/"
-        },
-        {
           "title": "GitHub",
           "permalink": "/integrations/github/"
+        },
+        {
+          "title": "Deploy",
+          "permalink": "/go-live/deploy/"
         },
         {
           "title": "Config Options",
@@ -1310,14 +1310,6 @@
         {
           "permalink": "/go-live/deploy/",
           "title": "Deploy"
-        },
-        {
-          "permalink": "/go-live/build/",
-          "title": "Build and test"
-        },
-        {
-          "permalink": "/integrations/algolia/",
-          "title": "Algolia"
         }
       ],
       "readingTime": 3,
@@ -1397,16 +1389,8 @@
       "autoSummary": "Building and testing the site means go generate the site, running the automatic testing and the spell checking. Following the site build and tests results, corrections may be needed. When everything is fine, is time to serve the site locally and test its appearance and functionality.",
       "similarByContent": [
         {
-          "permalink": "/go-live/",
-          "title": "Go live"
-        },
-        {
           "permalink": "/get-started/",
           "title": "Get started"
-        },
-        {
-          "permalink": "/go-live/deploy/",
-          "title": "Deploy"
         }
       ],
       "readingTime": 6,
@@ -1454,17 +1438,9 @@
         {
           "permalink": "/integrations/github/",
           "title": "GitHub"
-        },
-        {
-          "permalink": "/integrations/algolia/",
-          "title": "Algolia"
-        },
-        {
-          "permalink": "/go-live/build/",
-          "title": "Build and test"
         }
       ],
-      "readingTime": 4,
+      "readingTime": 5,
       "hasDynamicContent": false,
       "parent": "Go live"
     },
@@ -1547,10 +1523,6 @@
       ],
       "autoSummary": "Docaroo provides out-of-the-box full integration with algolia docsearch. The search experience has multilanguage support by default.",
       "similarByContent": [
-        {
-          "permalink": "/go-live/deploy/",
-          "title": "Deploy"
-        },
         {
           "permalink": "/get-started/",
           "title": "Get started"
@@ -1642,10 +1614,6 @@
         {
           "permalink": "/go-live/deploy/",
           "title": "Deploy"
-        },
-        {
-          "permalink": "/content/ec/",
-          "title": "External content"
         }
       ],
       "readingTime": 2,
@@ -1839,11 +1807,11 @@
         "documents",
         "maintain"
       ],
-      "excerpt": "documentation, iawriter, markdown, maintaining, repository, editor, zettlr, tags, site, update",
-      "lastUpdate": "2025-11-10 18:00:20 +0200",
+      "excerpt": "documentation, iawriter, markdown, maintaining, repository, editor, zettlr, tags, update, site",
+      "lastUpdate": "2025-11-10 19:06:57 +0200",
       "lastUpdateUTC": 0,
-      "createTime": "2025-11-10 18:00:20 +0200",
-      "createTimeUTC": 1762790420,
+      "createTime": "2025-11-10 19:06:57 +0200",
+      "createTimeUTC": 1762794417,
       "relatedPages": [
         {
           "title": "Docs root",

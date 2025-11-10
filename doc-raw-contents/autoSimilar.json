@@ -148,9 +148,7 @@
     {
         "permalink": "/get-started/",
         "similarFiles": [
-            "/go-live/deploy/",
-            "/go-live/build/",
-            "/integrations/algolia/"
+            "/go-live/deploy/"
         ]
     },
     {
@@ -160,18 +158,14 @@
     {
         "permalink": "/go-live/build/",
         "similarFiles": [
-            "/go-live/",
-            "/get-started/",
-            "/go-live/deploy/"
+            "/get-started/"
         ]
     },
     {
         "permalink": "/go-live/deploy/",
         "similarFiles": [
             "/get-started/",
-            "/integrations/github/",
-            "/integrations/algolia/",
-            "/go-live/build/"
+            "/integrations/github/"
         ]
     },
     {
@@ -183,7 +177,6 @@
     {
         "permalink": "/integrations/algolia/",
         "similarFiles": [
-            "/go-live/deploy/",
             "/get-started/"
         ]
     },
@@ -196,8 +189,7 @@
     {
         "permalink": "/integrations/github/",
         "similarFiles": [
-            "/go-live/deploy/",
-            "/content/ec/"
+            "/go-live/deploy/"
         ]
     },
     {

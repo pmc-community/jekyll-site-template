@@ -31,9 +31,15 @@ async function getIP(timeoutMs = 3000) {
 
   return '0.0.0.0'; // fallback if all fail
 }
+let userIP = '0.0.0.0';
+
+// init userIP global
+(async () => {
+  userIP = await getIP();
+})();
 
 // logLevel must be one of: debug | error | info | trace | warn
-const nrLog = async (logMessage, logAction, logLevel = null, funcData) => {
+const nrLog = (logMessage, logAction, logLevel = null, funcData) => {
     if (nrSettings.newRelicEnabled === 'true') {
         if (!logLevel) logLevel = 'info';
                 
@@ -47,7 +53,7 @@ const nrLog = async (logMessage, logAction, logLevel = null, funcData) => {
             argsExtra: funcData.argsExtra ? funcData.argsExtra : [],
             result: funcData.result ? funcData.result : `func ${funcData.functionName} doesn\'t return anything`,
             user: Cookies.get(settings.user.userTokenCookie),
-            userIP: await getIP(),
+            userIP: userIP,
             envInfo: !preFlight ? {} : !preFlight.envInfo ? {} : preFlight.envInfo,
         }
         

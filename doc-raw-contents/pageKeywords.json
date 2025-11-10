@@ -611,8 +611,8 @@
         "editor",
         "zettlr",
         "tags",
-        "site",
-        "update"
+        "update",
+        "site"
       ]
     }
   ]

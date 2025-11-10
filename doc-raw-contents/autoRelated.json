@@ -407,12 +407,12 @@
     "permalink": "/get-started/env/",
     "related": [
       {
-        "title": "Deploy",
-        "permalink": "/go-live/deploy/"
-      },
-      {
         "title": "GitHub",
         "permalink": "/integrations/github/"
+      },
+      {
+        "title": "Deploy",
+        "permalink": "/go-live/deploy/"
       },
       {
         "title": "Config Options",

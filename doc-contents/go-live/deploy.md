@@ -141,3 +141,17 @@ Deployment to Netlify is even more straight forward than deployment on Github pa
 %}
 
 One important reason to choose Netlify as production environment is that, even in the free plan, Netlify provides a solution to have a backend (Netlify functions) and this can open many opportunities to further extend the functionality.
+
+# Multiple authors
+Using Docaroo in a multi-authors environment depends on the maturity of the organisation in using various collaboration/sharing tools.
+
+The easiest option for having multiple authors is to clone the site repository on a shared folder in your network (✳️ this will be the development environment ✳️) ➡️ install the editor of your choice on the devices of the authors ➡️ add shared `doc-contents` to the editors ➡️ build and test in development environment ➡️ deploy to production environment.
+
+It is also possible to create a more sophisticated environment using `Git Submodules`:
+Create a dedicated contents repository ➡️ Clone Docaroo repository to your development environment ➡️ Remove default `doc-contents` folder ➡️ link contents repository to the main repository ➡️ install the editor of your choice on authors devices ➡️ clone/fork the content repository on author devices ➡️ for convenience, Github desktop can be installed to authors devices to facilitate pushing content to the content repository ➡️ merge pull requests opened by authors when pushing updates to the content repository ➡️ fetch content repository into main repository on the development environment ➡️ build and test ➡️ deploy in production
+
+{% include elements/alert.html 
+  class="primary" 
+  content="There are pros and cons for each multi-author deployment; while the easy way may require additional configurations (such as VPN) if authors are contributing from outside the organisation and will keep only the last version of a document (previous ones being overwritten), but it is so easy to be used, the sophisticated deployment can require learning to use some additional apps (such as Github desktop), requires better administration skills and Github knowledge but it is fully multi-author and preserves the whole history of modifications."
+  title="Info" 
+%}

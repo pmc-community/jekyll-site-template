@@ -17,7 +17,7 @@
 {% endcapture %}
 {% assign bgid = uuid | strip %}
 
-<div class="d-flex flex-wrap" id="btn-lnk-group-{{ bgid }}">
+<div class="d-flex flex-wrap my-2" id="btn-lnk-group-{{ bgid }}">
   {% assign button_defs = include.buttons | split: "," %}
 
   {% for def in button_defs %}
