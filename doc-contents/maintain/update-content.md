@@ -2,7 +2,7 @@ Be aware that `updating the site content should be followed by building the site
 
 {% capture buttons %}
     type=primary|outline=false|text=Build and test|href="/go-live/build/"|newTab=true,
-    type=warning|outline=false|text=deploy|href="/go-live/deploy/"|newTab=true
+    type=warning|outline=false|text=Deploy|href="/go-live/deploy/"|newTab=true
 {% endcapture %}
 
 {% include elements/link-btn-group.html buttons=buttons %}

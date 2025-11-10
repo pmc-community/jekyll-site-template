@@ -168,6 +168,11 @@ File: intro.md
 Language detected: en
 No misspellings detected.
 
+Permalink: /maintain/
+File: maintain/maintain.md
+Language detected: en
+No misspellings detected.
+
 Permalink: /taxonomies/custom-annotations/
 File: _taxonomies/custom-annotations.md
 Language detected: en

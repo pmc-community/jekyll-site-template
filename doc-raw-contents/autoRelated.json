@@ -637,16 +637,16 @@
     "permalink": "/maintain/",
     "related": [
       {
-        "title": "Custom categories",
-        "permalink": "/taxonomies/custom-cats/"
+        "title": "Docs root",
+        "permalink": "/get-started/doc-contents/"
       },
       {
         "title": "Get started",
         "permalink": "/get-started/"
       },
       {
-        "title": "Config Options",
-        "permalink": "/get-started/config-options/"
+        "title": "Introduction",
+        "permalink": "/intro/"
       }
     ]
   },
