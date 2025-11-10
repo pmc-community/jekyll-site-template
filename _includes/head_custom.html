@@ -49,6 +49,14 @@
     body {visibility: hidden}
 </style>
 
+<script type="application/javascript">
+  let userIP;
+  function getIP(json) {
+    userIP = json.ip;
+  }
+</script>
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
 <!-- New Relic if applicable -->
 {% include siteIncludes/partials/new-relic.html %}
 
