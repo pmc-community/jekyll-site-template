@@ -372,7 +372,6 @@ algolia = {
             appId: algolia.appId,
             apiKey: algolia.apiKey,
             indexName: algolia.indexName,
-            askAi: '5p4e6rtxwAoB',
             container: algolia.container,
             debug: algolia.debug,
             maxResultsPerGroup: algolia.maxResultsPerGroup,
